@@ -90,3 +90,55 @@ canvas.preview{max-width:100%;border:1px solid var(--border);border-radius:10px;
   .site-footer .cols{grid-template-columns:1fr}
   .nav{display:none}
 }
+
+/* ============ FEATURES UPDATE: dark mode, favorites, ratings, chips, share ============ */
+
+/* Dark mode */
+body.dark{--bg:#0f172a;--card:#1e293b;--border:#334155;--ink:#f1f5f9;--muted:#94a3b8;--shadow:0 4px 18px rgba(0,0,0,.45)}
+body.dark input[type=text],body.dark input[type=number],body.dark input[type=date],body.dark input[type=time],body.dark input[type=color],body.dark select,body.dark textarea{background:#0f172a;color:#f1f5f9;border-color:#334155}
+body.dark .result{background:#052e16;border-color:#166534;color:#f1f5f9}
+body.dark .howto,body.dark .faq details{background:#1e293b;border-color:#334155}
+body.dark .ad-slot{background:#1e293b;border-color:#334155;color:#64748b}
+body.dark .btn.secondary{background:#334155;color:#f1f5f9}
+body.dark .btn.secondary:hover{background:#475569}
+body.dark .drop{background:#1e293b}
+body.dark .cat-tag{background:#1e3a8a;color:#bfdbfe}
+body.dark .chip{background:#1e293b;border-color:#334155;color:#e2e8f0}
+body.dark .chip:hover{border-color:var(--primary)}
+body.dark .share-btn{background:#1e293b;border-color:#334155}
+
+/* Dark mode floating toggle */
+.dark-toggle{position:fixed;right:18px;bottom:18px;z-index:60;width:48px;height:48px;border-radius:50%;border:1px solid var(--border);background:var(--card);font-size:22px;cursor:pointer;box-shadow:var(--shadow);display:flex;align-items:center;justify-content:center}
+.dark-toggle:hover{transform:scale(1.08)}
+
+/* Favorite stars */
+.tool-card{position:relative}
+.fav-star{position:absolute;top:10px;right:12px;background:none;border:none;font-size:22px;cursor:pointer;color:#cbd5e1;line-height:1;padding:2px}
+.fav-star.on{color:#f59e0b}
+.fav-star:hover{transform:scale(1.2)}
+.fav-star.big{position:static;font-size:30px}
+.tool-actions{display:flex;gap:26px;align-items:flex-start;flex-wrap:wrap;margin:14px 0 4px;padding:14px 18px;background:var(--card);border:1px solid var(--border);border-radius:var(--radius)}
+.action-item{display:flex;flex-direction:column;align-items:center;gap:4px}
+.action-label{font-size:12px;color:var(--muted);font-weight:600}
+.stars span{font-size:26px;cursor:pointer;color:#cbd5e1;line-height:1}
+.stars span.on{color:#f59e0b}
+.rate-msg{width:100%;font-size:13px;color:#16a34a;font-weight:600;min-height:18px}
+.share-row{flex-direction:row;gap:8px;flex-wrap:wrap;align-items:center}
+.share-btn{display:inline-flex;width:38px;height:38px;border-radius:50%;background:#f1f5f9;border:1px solid var(--border);align-items:center;justify-content:center;font-size:18px;text-decoration:none}
+.share-btn:hover{transform:scale(1.12);text-decoration:none}
+
+/* Category filter chips */
+.chips{display:flex;gap:10px;flex-wrap:wrap;justify-content:center;margin-top:20px}
+.chip{background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.25);color:#e2e8f0;padding:8px 18px;border-radius:999px;font-size:13px;font-weight:600;cursor:pointer}
+.chip:hover{border-color:#fff}
+.chip.active{background:#fff;color:var(--primary);border-color:#fff}
+
+/* Blog cards */
+.blog-card{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:24px;box-shadow:var(--shadow);margin:18px 0;display:block;color:var(--ink)}
+.blog-card:hover{text-decoration:none;transform:translateY(-2px)}
+.blog-card h3{margin:0 0 8px;font-size:19px}
+.blog-card p{color:var(--muted);font-size:14px;margin:0}
+.blog-card .meta{font-size:12px;color:var(--muted);margin-bottom:8px}
+.article{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:28px;margin:24px 0;box-shadow:var(--shadow)}
+.article h2{margin-top:0}
+.article h3{margin-top:22px}
