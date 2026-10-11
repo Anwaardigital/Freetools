@@ -1190,23 +1190,48 @@ reg('link-shortener', function (root) {
     if (!url) { out.textContent = 'Please paste a URL first.'; return; }
     if (!/^https?:\/\//i.test(url)) url = 'https://' + url;
     out.textContent = 'Shortening...';
-    fetch('https://is.gd/create.php?format=simple&url=' + encodeURIComponent(url))
-      .then(function (r) { return r.text(); })
-      .then(function (short) {
-        short = short.trim();
-        out.innerHTML = '';
-        if (!/^https?:\/\//i.test(short)) { out.textContent = 'Error: ' + short; return; }
-        out.appendChild(h('div', null, 'Your short link:'));
-        var link = h('a', { href: short, target: '_blank', rel: 'noopener' }, short);
-        link.style.cssText = 'font-size:1.3em;font-weight:bold;word-break:break-all;';
-        out.appendChild(h('div', null, link));
-        var cp = btn('Copy Link', 'green', function () { copyText(short, cp); });
-        out.appendChild(btnRow(cp));
-      })
-      .catch(function () { out.textContent = 'Could not reach the shortening service. Check your internet and try again.'; });
+    // NOTE: is.gd / tinyurl / v.gd block browser fetch (no usable CORS headers);
+    // da.gd sends Access-Control-Allow-Origin:* so it works directly, and a
+    // public CORS proxy is kept as a last resort for the other services.
+    var dagd = 'https://da.gd/s?url=',
+        isgd = 'https://is.gd/create.php?format=simple&url=',
+        vgd = 'https://v.gd/create.php?format=simple&url=',
+        tiny = 'https://tinyurl.com/api-create.php?url=',
+        proxy = 'https://api.allorigins.win/raw?url=';
+    var services = [
+      dagd + encodeURIComponent(url),
+      isgd + encodeURIComponent(url),
+      vgd + encodeURIComponent(url),
+      tiny + encodeURIComponent(url),
+      proxy + encodeURIComponent(tiny + encodeURIComponent(url)),
+      proxy + encodeURIComponent(isgd + encodeURIComponent(url))
+    ];
+    var tryService = function (idx) {
+      if (idx >= services.length) {
+        out.textContent = 'Could not reach the shortening service. Check your internet and try again.';
+        return;
+      }
+      var ctl = (typeof AbortController !== 'undefined') ? new AbortController() : null;
+      var to = setTimeout(function () { if (ctl) ctl.abort(); }, 20000);
+      fetch(services[idx], ctl ? { signal: ctl.signal } : {})
+        .then(function (r) { clearTimeout(to); return r.text(); })
+        .then(function (short) {
+          short = short.trim();
+          if (!/^https?:\/\//i.test(short)) { tryService(idx + 1); return; }
+          out.innerHTML = '';
+          out.appendChild(h('div', null, 'Your short link:'));
+          var link = h('a', { href: short, target: '_blank', rel: 'noopener' }, short);
+          link.style.cssText = 'font-size:1.3em;font-weight:bold;word-break:break-all;';
+          out.appendChild(h('div', null, link));
+          var cp = btn('Copy Link', 'green', function () { copyText(short, cp); });
+          out.appendChild(btnRow(cp));
+        })
+        .catch(function () { clearTimeout(to); tryService(idx + 1); });
+    };
+    tryService(0);
   })));
   root.appendChild(out);
-  root.appendChild(h('p', { class: 'note' }, 'Note: shortening uses the free is.gd service over HTTPS.'));
+  root.appendChild(h('p', { class: 'note' }, 'Note: uses the free da.gd / is.gd service over HTTPS.'));
 });
 
 /* ---------- init ---------- */
