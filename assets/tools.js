@@ -484,7 +484,7 @@ function needQR() {
   if (window.QRCode) return Promise.resolve();
   return new Promise(function (res, rej) {
     var s = document.createElement('script');
-    s.src = 'https://cdn.jsdelivr.net/npm/qrcode@1.5.3/build/qrcode.min.js';
+    s.src = 'https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js';
     s.onload = res; s.onerror = function () { rej(new Error('Could not load QR engine (internet needed once).')); };
     document.head.appendChild(s);
   });
@@ -496,15 +496,28 @@ reg('qr-generator', function (root) {
   root.appendChild(field('Text / URL', txt));
   root.appendChild(field('Size (px)', size));
   root.appendChild(btnRow(btn('Generate QR Code', '', function () {
-    box.innerHTML = '';
+    box.innerHTML = ''; cur = null;
     needQR().then(function () {
-      var c = h('canvas', { class: 'preview' });
-      window.QRCode.toCanvas(c, txt.value || 'https://example.com', { width: +size.value }, function (err) {
-        if (err) { box.textContent = 'Error: ' + err; return; }
-        box.appendChild(c); cur = c;
-      });
+      try {
+        new window.QRCode(box, {
+          text: txt.value || 'https://example.com',
+          width: +size.value, height: +size.value,
+          colorDark: '#000000', colorLight: '#ffffff',
+          correctLevel: window.QRCode.CorrectLevel.M
+        });
+        cur = box.querySelector('canvas') || box.querySelector('img');
+      } catch (e) { box.textContent = 'Error: ' + e.message; }
     }).catch(function (e) { box.textContent = 'Error: ' + e.message; });
-  }), btn('Download PNG', 'green', function () { if (cur) canvasDownload(cur, 'qrcode.png'); })));
+  }), btn('Download PNG', 'green', function () {
+    var b = cur || box.querySelector('canvas') || box.querySelector('img');
+    if (!b) return;
+    if (b.tagName === 'CANVAS' || b.toBlob) { canvasDownload(b, 'qrcode.png'); }
+    else {
+      var c = h('canvas'); c.width = b.naturalWidth || +size.value; c.height = b.naturalHeight || +size.value;
+      c.getContext('2d').drawImage(b, 0, 0, c.width, c.height);
+      canvasDownload(c, 'qrcode.png');
+    }
+  })));
   root.appendChild(box);
 });
 
