@@ -142,3 +142,56 @@ body.dark .share-btn{background:#1e293b;border-color:#334155}
 .article{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:28px;margin:24px 0;box-shadow:var(--shadow)}
 .article h2{margin-top:0}
 .article h3{margin-top:22px}
+
+/* ============ MUFTTOOLS-STYLE UPDATE: language toggle, featured carousel ============ */
+
+/* Language toggle in header */
+.lang-toggle{margin-left:2px;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.25);color:#fff;padding:7px 16px;border-radius:999px;font-size:13px;font-weight:700;cursor:pointer;white-space:nowrap}
+.lang-toggle:hover{background:rgba(255,255,255,.24)}
+
+/* Featured tools carousel (auto-scrolls right -> left) */
+.featured-sec{padding-bottom:10px}
+.carousel-wrap{position:relative}
+.carousel{display:flex;gap:16px;overflow-x:auto;padding:6px 2px 16px;scroll-snap-type:x proximity;scrollbar-width:thin;direction:ltr}
+.carousel::-webkit-scrollbar{height:8px}
+.carousel::-webkit-scrollbar-track{background:transparent}
+.carousel::-webkit-scrollbar-thumb{background:#cbd5e1;border-radius:99px}
+.feat-card{position:relative;flex:0 0 250px;background:var(--card);border:1px solid var(--border);border-radius:16px;padding:20px 18px 18px;box-shadow:var(--shadow);cursor:pointer;transition:transform .15s,box-shadow .15s;scroll-snap-align:start}
+.feat-card:hover{transform:translateY(-4px);box-shadow:0 12px 30px rgba(15,23,42,.14)}
+.feat-icon{width:64px;height:64px;border-radius:16px;background:linear-gradient(135deg,#ede9fe,#dbeafe);display:flex;align-items:center;justify-content:center;font-size:32px;margin-bottom:14px}
+.feat-card h3{margin:0 0 6px;font-size:16px;padding-right:30px}
+.feat-card p{margin:0 0 14px;color:var(--muted);font-size:13px;min-height:40px}
+.feat-open{display:inline-block;background:#ede9fe;color:#6d28d9;font-weight:700;font-size:14px;padding:8px 20px;border-radius:999px}
+.feat-open:hover{background:#ddd6fe;text-decoration:none}
+.feat-heart{position:absolute;top:12px;right:14px;background:none;border:none;font-size:22px;cursor:pointer;color:#cbd5e1;line-height:1;padding:2px}
+.feat-heart.on{color:#ef4444}
+.feat-heart:hover{transform:scale(1.2)}
+.car-btn{position:absolute;top:36%;z-index:5;width:42px;height:42px;border-radius:50%;border:1px solid var(--border);background:var(--card);box-shadow:var(--shadow);font-size:22px;cursor:pointer;color:var(--ink);display:flex;align-items:center;justify-content:center;line-height:1;padding:0}
+#carPrev{left:-12px}
+#carNext{right:-12px}
+.car-btn:hover{background:var(--primary);color:#fff;border-color:var(--primary)}
+
+/* Dark mode for new elements */
+body.dark .feat-open{background:#1e3a8a;color:#bfdbfe}
+body.dark .feat-open:hover{background:#1e40af}
+body.dark .feat-icon{background:linear-gradient(135deg,#312e81,#1e3a8a)}
+body.dark .car-btn{background:#1e293b}
+body.dark .carousel::-webkit-scrollbar-thumb{background:#475569}
+
+/* RTL (Urdu) adjustments */
+html[dir=rtl] .searchbar .icon{left:auto;right:16px}
+html[dir=rtl] .searchbar input{padding:14px 18px 14px 46px}
+html[dir=rtl] .fav-star{right:auto;left:12px}
+html[dir=rtl] .feat-card h3{padding-right:0;padding-left:30px}
+html[dir=rtl] .feat-heart{right:auto;left:14px}
+html[dir=rtl] .nav{margin-left:0;margin-right:auto}
+html[dir=rtl] .lang-toggle{margin-left:0;margin-right:2px}
+html[dir=rtl] .dark-toggle{right:auto;left:18px}
+html[dir=rtl] .carousel{direction:ltr} /* carousel always glides right -> left */
+
+@media(max-width:700px){
+  #carPrev{left:4px}
+  #carNext{right:4px}
+  .feat-card{flex-basis:225px}
+  .lang-toggle{padding:6px 12px;font-size:12px}
+}
