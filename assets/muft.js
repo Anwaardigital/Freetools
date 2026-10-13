@@ -36,6 +36,8 @@ en: {
   noResults:'No tools found. Try another keyword.',
   nlTitle:'📧 Newsletter', nlText:'Get notified when we add new free tools. No spam, ever.',
   nlPh:'Your email address', nlBtn:'Subscribe', nlDone:'✅ Subscribed! We will keep you posted.',
+  ytTitle:'📺 Our YouTube Channels', ytSub:'Learn, laugh and explore — subscribe for new videos every week',
+  ytSubscribe:'Subscribe', footYouTube:'YouTube',
   footTag:'50+ free online tools. No signup, no tracking — everything runs in your browser.',
   footPopular:'Popular', footSite:'Site', footReq:'Request a Tool', footPrivacy:'Privacy Policy',
   useBadge:function (n) { return '🔥 ' + n + ' tool uses on this device'; }
@@ -52,6 +54,8 @@ ur: {
   noResults:'کوئی ٹول نہیں ملا۔ کوئی اور لفظ آزمائیں۔',
   nlTitle:'📧 نیوزلیٹر', nlText:'جب ہم نئے مفت ٹولز شامل کریں تو اطلاع پائیں۔ کوئی سپام نہیں۔',
   nlPh:'آپ کا ای میل ایڈریس', nlBtn:'سبسکرائب کریں', nlDone:'✅ سبسکرائب ہو گیا! ہم آپ کو باخبر رکھیں گے۔',
+  ytTitle:'📺 ہمارے یوٹیوب چینلز', ytSub:'سیکھیں، ہنسیں اور دریافت کریں — ہر ہفتے نئی ویڈیوز کے لیے سبسکرائب کریں',
+  ytSubscribe:'سبسکرائب', footYouTube:'یوٹیوب',
   footTag:'50+ مفت آن لائن ٹولز۔ کوئی سائن اپ نہیں، کوئی ٹریکنگ نہیں — سب کچھ آپ کے براؤزر میں چلتا ہے۔',
   footPopular:'مقبول', footSite:'سائٹ', footReq:'ٹول کی درخواست', footPrivacy:'پرائیویسی پالیسی',
   useBadge:function (n) { return '🔥 اس ڈیوائس پر ' + n + ' ٹول استعمال'; }
@@ -164,30 +168,46 @@ function initCarousel() {
   FEATURED.forEach(function (s) { var c = featCard(s); if (c) car.appendChild(c); });
   FEATURED.forEach(function (s) { var c = featCard(s); if (c) car.appendChild(c); });
 
-  var timer = null, resumeT = null;
-  function step() {
-    if (document.hidden) return;
-    car.scrollLeft += 1; /* cards glide right -> left */
-    if (car.scrollLeft >= car.scrollWidth / 2 - 4) car.scrollLeft -= car.scrollWidth / 2;
-  }
-  function start() { stop(); timer = setInterval(step, 28); }
-  function stop() { if (timer) { clearInterval(timer); timer = null; } }
+  var SPEED = 40; /* px per second */
+  var paused = false, rafId = null, resumeT = null, last = 0;
 
-  car.addEventListener('pointerenter', stop);
-  car.addEventListener('pointerleave', start);
-  car.addEventListener('touchstart', stop, { passive: true });
-  car.addEventListener('touchend', function () { clearTimeout(resumeT); resumeT = setTimeout(start, 3000); });
+  function tick(now) {
+    if (!paused && !document.hidden) {
+      if (last) {
+        car.scrollLeft += (now - last) / 1000 * SPEED; /* cards glide right -> left */
+        var half = car.scrollWidth / 2;
+        if (half > 0 && car.scrollLeft >= half - 4) car.scrollLeft -= half;
+      }
+      last = now;
+    } else {
+      last = 0; /* avoid a jump after pause */
+    }
+    rafId = requestAnimationFrame(tick);
+  }
+  function pause() { paused = true; }
+  function resume() { paused = false; }
+  function scheduleResume(ms) {
+    clearTimeout(resumeT);
+    resumeT = setTimeout(resume, ms);
+  }
+
+  /* pause on mouse hover only (touch uses touchstart/touchend below) */
+  car.addEventListener('pointerenter', function (e) { if (e.pointerType === 'mouse') pause(); });
+  car.addEventListener('pointerleave', function (e) { if (e.pointerType === 'mouse') resume(); });
+  car.addEventListener('touchstart', pause, { passive: true });
+  car.addEventListener('touchend', function () { scheduleResume(2500); });
+  document.addEventListener('visibilitychange', function () { if (!document.hidden) resume(); });
 
   function manual(d) {
-    stop();
-    clearTimeout(resumeT);
+    pause();
     car.scrollBy({ left: d, behavior: 'smooth' });
-    resumeT = setTimeout(start, 4000);
+    scheduleResume(4000);
   }
   var pv = document.getElementById('carPrev'), nx = document.getElementById('carNext');
   if (pv) pv.addEventListener('click', function () { manual(-280); });
   if (nx) nx.addEventListener('click', function () { manual(280); });
-  start();
+
+  rafId = requestAnimationFrame(tick); /* auto-glide starts immediately */
 }
 
 /* ================= init ================= */

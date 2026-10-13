@@ -78,7 +78,7 @@ canvas.preview{max-width:100%;border:1px solid var(--border);border-radius:10px;
 
 /* Footer */
 .site-footer{background:var(--ink);color:#94a3b8;padding:40px 0;margin-top:50px;font-size:14px}
-.site-footer .cols{display:grid;grid-template-columns:2fr 1fr 1fr;gap:30px}
+.site-footer .cols{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:30px}
 .site-footer h4{color:#fff;margin:0 0 12px;font-size:15px}
 .site-footer a{color:#94a3b8;display:block;margin-bottom:8px}
 .site-footer a:hover{color:#fff}
@@ -151,7 +151,7 @@ body.dark .share-btn{background:#1e293b;border-color:#334155}
 
 /* Featured tools carousel (auto-scrolls right -> left) */
 .featured-sec{padding-bottom:10px}
-.carousel-wrap{position:relative}
+.carousel-wrap{position:relative;padding:0 52px}
 .carousel{display:flex;gap:16px;overflow-x:auto;padding:6px 2px 16px;scroll-snap-type:x proximity;scrollbar-width:thin;direction:ltr}
 .carousel::-webkit-scrollbar{height:8px}
 .carousel::-webkit-scrollbar-track{background:transparent}
@@ -167,9 +167,21 @@ body.dark .share-btn{background:#1e293b;border-color:#334155}
 .feat-heart.on{color:#ef4444}
 .feat-heart:hover{transform:scale(1.2)}
 .car-btn{position:absolute;top:36%;z-index:5;width:42px;height:42px;border-radius:50%;border:1px solid var(--border);background:var(--card);box-shadow:var(--shadow);font-size:22px;cursor:pointer;color:var(--ink);display:flex;align-items:center;justify-content:center;line-height:1;padding:0}
-#carPrev{left:-12px}
-#carNext{right:-12px}
+#carPrev{left:0}
+#carNext{right:0}
 .car-btn:hover{background:var(--primary);color:#fff;border-color:var(--primary)}
+
+/* YouTube channels section */
+.yt-grid{grid-template-columns:repeat(auto-fit,minmax(240px,1fr))}
+.yt-card{display:flex;gap:14px;align-items:flex-start;background:var(--card);border:1px solid var(--border);border-radius:16px;padding:18px;box-shadow:var(--shadow);transition:transform .15s,box-shadow .15s;color:var(--ink)}
+.yt-card:hover{transform:translateY(-4px);box-shadow:0 12px 30px rgba(15,23,42,.14);text-decoration:none}
+.yt-icon{font-size:34px;flex:0 0 auto;line-height:1}
+.yt-card h3{margin:0 0 2px;font-size:16px}
+.yt-handle{margin:0 0 6px;font-size:12px;color:var(--muted)}
+.yt-card .yt-desc{margin:0;font-size:13px;color:var(--muted)}
+.yt-sub{display:inline-block;margin-top:10px;background:#ff0000;color:#fff;font-weight:700;font-size:13px;padding:7px 18px;border-radius:999px}
+.yt-card:hover .yt-sub{background:#cc0000}
+body.dark .yt-sub{background:#ff0000}
 
 /* Dark mode for new elements */
 body.dark .feat-open{background:#1e3a8a;color:#bfdbfe}
@@ -190,8 +202,12 @@ html[dir=rtl] .dark-toggle{right:auto;left:18px}
 html[dir=rtl] .carousel{direction:ltr} /* carousel always glides right -> left */
 
 @media(max-width:700px){
-  #carPrev{left:4px}
-  #carNext{right:4px}
   .feat-card{flex-basis:225px}
   .lang-toggle{padding:6px 12px;font-size:12px}
+}
+
+/* Mobile: hide carousel arrows — auto-scroll handles navigation */
+@media(max-width:640px){
+  .car-btn{display:none}
+  .carousel-wrap{padding:0}
 }
