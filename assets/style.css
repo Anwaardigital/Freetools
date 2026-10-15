@@ -211,3 +211,13 @@ html[dir=rtl] .carousel{direction:ltr} /* carousel always glides right -> left *
   .car-btn{display:none}
   .carousel-wrap{padding:0}
 }
+
+/* Developer taruf section */
+.dev-photos{display:flex;gap:20px;flex-wrap:wrap;margin:18px 0}
+.dev-photo{flex:1 1 220px;margin:0;text-align:center;background:#f8fafc;border:1px solid #e2e8f0;border-radius:14px;padding:14px}
+.dev-photo img{width:100%;max-width:260px;height:260px;object-fit:cover;border-radius:10px}
+.dev-photo figcaption{margin-top:10px;font-weight:700;font-size:15px;line-height:1.5}
+.dev-photo figcaption span{font-weight:400;font-size:13px;color:#64748b}
+@media (prefers-color-scheme:dark){.dev-photo{background:#0f172a;border-color:#1e293b}.dev-photo figcaption span{color:#94a3b8}}
+.dev-card{transition:transform .15s ease}
+a:hover .dev-card{transform:translateY(-2px)}
