@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<link rel="icon" type="image/png" sizes="192x192" href="https://anwaardigital.github.io/Freetools/freetools-icon-192.png">
+<link rel="icon" type="image/png" sizes="512x512" href="https://anwaardigital.github.io/Freetools/freetools-icon-512.png">
+<link rel="apple-touch-icon" href="https://anwaardigital.github.io/Freetools/freetools-icon-192.png">
+
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>How to Encode HTML Entities Online for Free (2026 Guide) | Free Privacy Tools</title>
+<meta name="description" content="Convert <, >, & and quotes into safe HTML entities for displaying code on web pages. Free 2026 step-by-step guide with a handy entity reference table.">
+<meta property="og:type" content="article">
+<meta property="og:title" content="How to Encode HTML Entities Online for Free (2026 Guide)">
+<meta property="og:description" content="Convert <, >, & and quotes into safe HTML entities for displaying code on web pages. Step-by-step guide with a handy entity reference table.">
+<meta property="og:url" content="https://anwaardigital.github.io/Freetools/blog/how-to-html-encoder-online.html">
+<link rel="canonical" href="https://anwaardigital.github.io/Freetools/blog/how-to-html-encoder-online.html">
+<meta property="og:image" content="https://anwaardigital.github.io/anwaar-icon-512.png">
+<meta name="twitter:card" content="summary">
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+<header class="site-header"><div class="wrap">
+<a class="logo" href="../index.html"><span class="shield">🛡️</span> Free Privacy Tools</a>
+<button class="nav-toggle" aria-label="Menu" aria-expanded="false">☰</button><nav class="nav"><a href="../index.html">Home</a><a href="../index.html#tools">All Tools</a><a href="../about.html">About</a><a href="../faq.html">FAQ</a><a href="../blog.html">Blog</a><a href="../contact.html">Contact</a><a href="../privacy.html">Privacy</a></nav>
+</div></header>
+
+<main class="wrap">
+<div class="crumbs"><a href="../index.html">Home</a> / <a href="../blog.html">Blog</a> / How to Encode HTML Entities Online</div>
+
+<article class="article">
+<div class="meta">Guides • 7 min read • Updated October 2026</div>
+<h1>How to Encode HTML Entities Online for Free (2026 Guide)</h1>
+<p>Try pasting <code>&lt;div&gt;Hello&lt;/div&gt;</code> into a blog post and you'll see the problem: the browser interprets <code>&lt;div&gt;</code> as an actual HTML tag instead of displaying it as text. The fix is <strong>HTML encoding</strong> — converting special characters into <em>entities</em> like <code>&amp;lt;</code> that browsers display literally. Bloggers, CMS users, email-template builders, and developers all need it constantly. This guide shows you how to encode and decode HTML entities with our free <a href="../tools/html-encoder.html">HTML Encoder</a>, gives you a handy reference table, and explains the honest security boundaries of encoding.</p>
+
+<h2>What are HTML entities?</h2>
+<p>An HTML entity is a text sequence that represents a single character, written as <code>&amp;name;</code> (named) or <code>&amp;#number;</code> (numeric). When a browser sees <code>&amp;lt;</code> in page source, it renders a literal <code>&lt;</code> character instead of starting a tag. The five characters that matter most:</p>
+<ul>
+<li><code>&lt;</code> → <code>&amp;lt;</code> (less-than — would otherwise start a tag)</li>
+<li><code>&gt;</code> → <code>&amp;gt;</code> (greater-than — would otherwise end a tag)</li>
+<li><code>&amp;</code> → <code>&amp;amp;</code> (ampersand — would otherwise start an entity)</li>
+<li><code>"</code> → <code>&amp;quot;</code> (double quote — would otherwise end an attribute value)</li>
+<li><code>'</code> → <code>&amp;#39;</code> (single quote — same concern in single-quoted attributes)</li>
+</ul>
+<p>Encode the ampersand first (or let a tool handle ordering) — otherwise you'd double-encode the entities you just created.</p>
+
+<h2>Step 1: Open the HTML Encoder</h2>
+<p>Open our <a href="../tools/html-encoder.html">HTML Encoder</a> in any browser. No signup, no installation. You'll see an input area, encode/decode buttons, and an output area.</p>
+
+<h2>Step 2: Encode your code or text</h2>
+<ol>
+<li>Paste the snippet you want to display — for example: <code>&lt;p class="note"&gt;Tom &amp; Jerry&lt;/p&gt;</code>.</li>
+<li>Click <strong>Encode</strong>.</li>
+<li>The output shows the entity-encoded version, safe to paste into any HTML page, blog editor, or CMS that accepts raw HTML.</li>
+<li>Copy the result with the copy button.</li>
+</ol>
+<p>When you view the page containing the encoded snippet, visitors see the code exactly as you wrote it — tags, quotes, and all — instead of the browser trying to render it.</p>
+
+<h2>Step 3: Decode entities back to characters</h2>
+<ol>
+<li>Paste entity-encoded text (like something copied from a page's source view).</li>
+<li>Click <strong>Decode</strong>.</li>
+<li>The original characters are restored.</li>
+</ol>
+<p>Decoding is handy when you've inherited encoded content — from a database export, an old CMS, or scraped HTML — and need the clean original back.</p>
+
+<h2>When do you need HTML encoding?</h2>
+<ul>
+<li><strong>Code snippets in articles:</strong> tutorials showing HTML, or even text containing <code>&lt;</code> <code>&gt;</code> <code>&amp;</code>, break without encoding.</li>
+<li><strong>CMS and blog content:</strong> pasting code into WordPress-style editors or static-site markdown often requires encoded entities to survive rendering.</li>
+<li><strong>Email templates:</strong> HTML emails with literal code samples or special characters need entities to display consistently across mail clients.</li>
+<li><strong>Displaying user input:</strong> showing text a user typed (comments, form previews) without encoding lets their <code>&lt;script&gt;</code> become your page's script — the classic stored-XSS setup.</li>
+<li><strong>Attribute values:</strong> quotes inside attribute values must be encoded or the attribute (and potentially the markup) breaks.</li>
+</ul>
+
+<h2>Quick entity reference table</h2>
+<ul>
+<li><code>&amp;lt;</code> — &lt; · <code>&amp;gt;</code> — &gt; · <code>&amp;amp;</code> — &amp;</li>
+<li><code>&amp;quot;</code> — " · <code>&amp;#39;</code> — ' · <code>&amp;nbsp;</code> — non-breaking space</li>
+<li><code>&amp;copy;</code> — © · <code>&amp;reg;</code> — ® · <code>&amp;trade;</code> — ™</li>
+<li><code>&amp;ndash;</code> — – · <code>&amp;mdash;</code> — — · <code>&amp;hellip;</code> — …</li>
+<li><code>&amp;euro;</code> — € · <code>&amp;pound;</code> — £ · <code>&amp;deg;</code> — °</li>
+</ul>
+<p>Named entities cover the common cases; numeric entities (<code>&amp;#60;</code> for <code>&lt;</code>, for instance) can represent any Unicode character.</p>
+
+<h2>The honest security picture</h2>
+<p>HTML-encoding user content before displaying it is a genuine, important defense against cross-site scripting (XSS) — it's how comments stay comments instead of becoming executable code. But keep the boundaries straight:</p>
+<ul>
+<li><strong>Encoding is context-dependent.</strong> HTML-encoding protects text placed into HTML body content. It does <em>not</em> make the same string safe inside a <code>&lt;script&gt;</code> block, a CSS context, or a URL — each context needs its own encoding (<a href="../tools/url-encoder.html">URL encoding</a> for URLs, for example).</li>
+<li><strong>Encoding is one layer, not a complete strategy.</strong> Serious applications combine output encoding with input validation, Content-Security-Policy headers (see our <a href="../tools/security-headers-checker.html">Security Headers Checker</a>), and framework-provided auto-escaping.</li>
+<li><strong>Encoding ≠ encryption or hiding.</strong> Entities are trivially reversible — don't use them to conceal secrets.</li>
+</ul>
+
+<h2>Mistakes to avoid</h2>
+<ul>
+<li><strong>Double encoding:</strong> encoding <code>&amp;lt;</code> again produces <code>&amp;amp;lt;</code>, which displays literally as "&amp;lt;" instead of "&lt;". If your page shows entity names as text, something was encoded twice.</li>
+<li><strong>Encoding the ampersand last:</strong> always encode <code>&amp;</code> first (tools do this automatically); doing it last corrupts the entities you just created.</li>
+<li><strong>Forgetting quotes in attributes:</strong> <code>&lt;</code> and <code>&gt;</code> get all the attention, but an unencoded quote inside an attribute value is what breaks markup — and enables injection.</li>
+</ul>
+
+<h2>Frequently asked questions</h2>
+<h3>Is the HTML encoder private?</h3>
+<p>Yes — encoding and decoding run entirely in your browser. Nothing you paste is uploaded anywhere.</p>
+<h3>What's the difference between named and numeric entities?</h3>
+<p>Named entities (<code>&amp;lt;</code>) are readable mnemonics for common characters; numeric entities (<code>&amp;#60;</code> or <code>&amp;#x3C;</code>) address characters by Unicode code point and can represent anything. Browsers treat them identically.</p>
+<h3>Do I still need encoding if my framework auto-escapes?</h3>
+<p>Modern frameworks (React, Vue, Django templates) escape by default in most contexts — which is great. You still need manual encoding for raw HTML insertion points, email templates, static content, and anywhere you bypass the framework's escaping.</p>
+<h3>Can encoded text contain a virus or hack?</h3>
+<p>Encoded text is inert — it's just characters. The danger was always in the <em>unencoded</em> version being interpreted as code. That's precisely what encoding prevents.</p>
+
+<p><strong>Try it now:</strong> <a href="../tools/html-encoder.html">Free HTML Encoder</a> · <a href="../tools/url-encoder.html">Free URL Encoder</a> · <a href="../tools/base64.html">Free Base64 Encoder</a></p>
+</article>
+</main>
+
+<footer class="site-footer"><div class="wrap">
+<div class="cols">
+<div><h4>🛡️ Free Privacy Tools</h4><p>55 free online tools. No signup — everything runs in your browser.</p></div>
+<div><h4>Popular</h4><a href="../tools/image-compressor.html">Image Compressor</a><a href="../tools/word-counter.html">Word Counter</a><a href="../tools/password-generator.html">Password Generator</a><a href="../tools/pdf-merger.html">PDF Merger</a><a href="../tools/age-calculator.html">Age Calculator</a></div>
+<div><h4>Site</h4><a href="../index.html">Home</a><a href="../index.html#tools">All Tools</a><a href="../about.html">About</a><a href="../faq.html">FAQ</a><a href="../blog.html">Blog</a><a href="../contact.html">Contact</a><a href="../request.html">Request a Tool</a><a href="../privacy.html">Privacy Policy</a><a href="../terms.html">Terms of Service</a><a href="../disclaimer.html">Disclaimer</a></div>
+</div>
+<div class="foot-note">© 2026 Free Privacy Tools — All tools run 100% in your browser.<br>Developed by <a href="https://anwaardigital.github.io/" target="_blank" rel="noopener" style="color:#fbbf24;font-weight:700">Malik Anwaar</a> ❤️</div>
+</div></footer>
+<script src="../assets/app.js"></script>
+<script src="../assets/features.js"></script>
+</body></html>
