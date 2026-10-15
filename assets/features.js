@@ -184,6 +184,13 @@ onReady(function () {
   var activeCat = '';
   function applyFilter() {
     var q = (document.getElementById('toolSearch').value || '').trim().toLowerCase();
+    /* Typing a query searches across ALL categories: auto-reset any active category chip to "All" */
+    if (q && activeCat) {
+      activeCat = '';
+      chipsBox.querySelectorAll('.chip').forEach(function (x) { x.classList.remove('active'); });
+      var allChip = chipsBox.querySelector('.chip');
+      if (allChip) allChip.classList.add('active');
+    }
     var visibleSections = {};
     document.querySelectorAll('.tool-card').forEach(function (c) {
       var hitQ = !q || (c.dataset.search || '').indexOf(q) !== -1;

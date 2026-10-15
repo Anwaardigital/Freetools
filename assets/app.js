@@ -2,6 +2,14 @@
 document.addEventListener('DOMContentLoaded', function () {
   var input = document.getElementById('toolSearch');
   if (!input) return;
+  /* Search button (right-side icon): clicking re-runs the live filter */
+  var searchBtn = document.getElementById('searchBtn');
+  if (searchBtn) {
+    searchBtn.addEventListener('click', function () {
+      input.focus();
+      input.dispatchEvent(new Event('input', { bubbles: true }));
+    });
+  }
   input.addEventListener('input', function () {
     var q = input.value.trim().toLowerCase();
     var cards = document.querySelectorAll('.tool-card');
