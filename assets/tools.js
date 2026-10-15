@@ -17,9 +17,15 @@ function h(tag, attrs) {
   }
   return e;
 }
+var __fieldSeq = 0;
 function field(label, input) {
   var d = h('div', { class: 'field' });
-  d.appendChild(h('label', null, label));
+  var slug = String(label == null ? '' : label).toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, '') || 'fld';
+  var id = 'f' + (++__fieldSeq) + '-' + slug;
+  if (input && typeof input.setAttribute === 'function' && !input.getAttribute('id')) {
+    input.setAttribute('id', id);
+  }
+  d.appendChild(h('label', { for: id }, label));
   d.appendChild(input);
   return d;
 }
