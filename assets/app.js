@@ -50,3 +50,11 @@ document.addEventListener('DOMContentLoaded', function () {
     addWhatsAppButton();
   }
 })();
+
+/* PWA: home-screen icon + manifest + theme color (injected head tags) */
+(function(){var b='/Freetools';var h=document.head;if(!h||document.querySelector('link[rel="manifest"]'))return;
+function L(r,hr,t){var l=document.createElement('link');l.rel=r;l.href=b+hr;if(t)l.type=t;h.appendChild(l);}
+function M(n,c){var m=document.createElement('meta');m.name=n;m.content=c;h.appendChild(m);}
+L('icon','/icon.svg','image/svg+xml');L('manifest','/manifest.json');
+M('theme-color','#1d4ed8');M('mobile-web-app-capable','yes');M('apple-mobile-web-app-capable','yes');
+M('apple-mobile-web-app-status-bar-style','black-translucent');M('apple-mobile-web-app-title','FreeTools');})();
