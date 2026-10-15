@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<link rel="icon" type="image/png" sizes="192x192" href="https://anwaardigital.github.io/Freetools/freetools-icon-192.png">
+<link rel="icon" type="image/png" sizes="512x512" href="https://anwaardigital.github.io/Freetools/freetools-icon-512.png">
+<link rel="apple-touch-icon" href="https://anwaardigital.github.io/Freetools/freetools-icon-192.png">
+
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>How to Check Website Security Headers Online for Free (2026 Guide) | Free Privacy Tools</title>
+<meta name="description" content="Audit any website's HTTP security headers — HSTS, CSP, X-Frame-Options and more — with a free checker. Step-by-step 2026 guide for owners and the curious.">
+<meta property="og:type" content="article">
+<meta property="og:title" content="How to Check Website Security Headers Online for Free (2026 Guide)">
+<meta property="og:description" content="Audit any website's HTTP security headers — HSTS, CSP, X-Frame-Options and more. Step-by-step guide with plain-English explanations of each header.">
+<meta property="og:url" content="https://anwaardigital.github.io/Freetools/blog/how-to-security-headers-checker-online.html">
+<link rel="canonical" href="https://anwaardigital.github.io/Freetools/blog/how-to-security-headers-checker-online.html">
+<meta property="og:image" content="https://anwaardigital.github.io/anwaar-icon-512.png">
+<meta name="twitter:card" content="summary">
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+<header class="site-header"><div class="wrap">
+<a class="logo" href="../index.html"><span class="shield">🛡️</span> Free Privacy Tools</a>
+<button class="nav-toggle" aria-label="Menu" aria-expanded="false">☰</button><nav class="nav"><a href="../index.html">Home</a><a href="../index.html#tools">All Tools</a><a href="../about.html">About</a><a href="../faq.html">FAQ</a><a href="../blog.html">Blog</a><a href="../contact.html">Contact</a><a href="../privacy.html">Privacy</a></nav>
+</div></header>
+
+<main class="wrap">
+<div class="crumbs"><a href="../index.html">Home</a> / <a href="../blog.html">Blog</a> / How to Check Website Security Headers</div>
+
+<article class="article">
+<div class="meta">Guides • 7 min read • Updated October 2026</div>
+<h1>How to Check Website Security Headers Online for Free (2026 Guide)</h1>
+<p>When your browser loads a website, the visible page is only half the conversation. Behind the scenes, the server also sends <strong>HTTP security headers</strong> — invisible instructions that tell the browser how to behave: only use encrypted connections, don't let this page be framed by other sites, block unexpected script sources. They're one of the cheapest, most effective defenses a site owner can deploy, and they're completely invisible to visitors. This guide shows you how to audit any site's headers with our free <a href="../tools/security-headers-checker.html">Security Headers Checker</a>, what each header means in plain English, and what to do with the results.</p>
+
+<h2>What are security headers?</h2>
+<p>Every web response carries headers — small key/value metadata lines sent before the page content. Most are mundane (content type, caching). Security headers are the subset that <strong>harden the browser's behavior</strong> for that site. They cost nothing to send, require no user action, and mitigate entire classes of attacks: eavesdropping, clickjacking, cross-site scripting, and content-type confusion. A site missing them isn't necessarily "hacked" — but it's leaving free protection on the table.</p>
+
+<h2>Step 1: Enter the website's URL</h2>
+<p>Open the <a href="../tools/security-headers-checker.html">Security Headers Checker</a> and type a website address — <code>example.com</code> works fine as a test. You can check any public site: your own, your employer's, or one you're just curious about. Checking headers is a normal, harmless diagnostic — you're only reading the same public response headers any browser receives.</p>
+
+<h2>Step 2: Run the check</h2>
+<p>Click <strong>Check Headers</strong>. The tool fetches the site's response headers and evaluates the important security ones. Within seconds you get a per-header report.</p>
+<p><strong>One caveat:</strong> a few sites block cross-origin header checks, so occasionally a site can't be scanned from a browser-based tool. If that happens, the tool will tell you — and for a deeper scan you can also try the well-known securityheaders.com service.</p>
+
+<h2>Step 3: Read the results — green means present, red means missing</h2>
+<p>Each header gets a simple verdict: <strong style="color:#16a34a">green</strong> means the header is present, <strong style="color:#dc2626">red</strong> means it's missing. Don't panic at red — treat the report as a to-do list, not a breach alert. Below is what each header actually does.</p>
+
+<h2>Header by header, in plain English</h2>
+<h3>Strict-Transport-Security (HSTS)</h3>
+<p>Tells the browser: "only ever talk to this site over HTTPS, even if someone tries to downgrade the connection." This defeats sslstrip-style attacks that try to silently strip encryption. Any site handling logins or payments should send it.</p>
+<h3>Content-Security-Policy (CSP)</h3>
+<p>A whitelist declaring where the page may load scripts, styles, and other resources from. It's the strongest available mitigation against cross-site scripting (XSS): even if an attacker injects a script tag, the browser refuses to run it unless the source is allowed. It's also the trickiest header to configure correctly, which is why many sites lack it.</p>
+<h3>X-Frame-Options</h3>
+<p>Controls whether the page may be embedded in a frame or iframe on another site. Set to <code>DENY</code> or <code>SAMEORIGIN</code>, it blocks <strong>clickjacking</strong> — attacks that layer an invisible malicious page over (or under) a legitimate one to hijack clicks. (Modern sites may use CSP's <code>frame-ancestors</code> directive instead, which supersedes it.)</p>
+<h3>X-Content-Type-Options</h3>
+<p>With the value <code>nosniff</code>, it stops browsers from second-guessing a file's declared content type. Without it, a browser might "sniff" an uploaded file, decide it's actually HTML/JavaScript, and execute it — a classic vector for attacks via file uploads.</p>
+<h3>Referrer-Policy</h3>
+<p>Controls how much of the page's URL is sent as the HTTP Referer when navigating away. A strict policy (like <code>strict-origin-when-cross-origin</code> or <code>no-referrer</code>) prevents leaking internal URLs, session tokens in query strings, or private paths to third-party sites.</p>
+
+<h2>If it's your site: what to do with missing headers</h2>
+<ol>
+<li><strong>Prioritize HSTS and X-Content-Type-Options</strong> — they're one-line additions on virtually every server and web framework.</li>
+<li><strong>Add X-Frame-Options</strong> (or CSP <code>frame-ancestors</code>) unless you have a specific reason to allow framing.</li>
+<li><strong>Plan Content-Security-Policy carefully.</strong> Start with a report-only policy to discover what your pages legitimately load, then enforce. A misconfigured CSP breaks your site visibly, so test in staging first.</li>
+<li><strong>Re-scan after each change</strong> with the checker to confirm the headers are actually being sent.</li>
+</ol>
+<p>Headers are set at the server or application level (web server config, framework middleware, or a CDN's edge rules) — the exact steps depend on your stack, but every major platform documents them.</p>
+
+<h2>If it's someone else's site: how to interpret red</h2>
+<p>A missing header on a site you merely visit is worth noting, not worth panicking over. Security headers are defense-in-depth: their absence doesn't mean the site is compromised or that your data there is exposed. It means the site's operators haven't enabled a layer of free protection. For sites where you enter sensitive information, you might reasonably prefer competitors that take hardening seriously — but don't treat a red row as evidence of wrongdoing.</p>
+
+<h2>What header checks can't tell you</h2>
+<p>Honesty matters here too. A header scan checks <em>configuration</em>, not <em>vulnerabilities</em>: it can't find SQL injection, broken authentication, leaked secrets, or outdated software. A site can score perfectly on headers and still be insecure underneath — and a site missing a few headers can otherwise be well-engineered. Think of it as checking whether a house has deadbolts: useful information, not a full security audit.</p>
+
+<h2>Frequently asked questions</h2>
+<h3>Is it legal to check a website's headers?</h3>
+<p>Yes. You're requesting the site's public homepage and reading the standard response metadata every browser receives. It's the same category of activity as viewing page source.</p>
+<h3>Why can't some sites be checked?</h3>
+<p>A few sites block cross-origin requests, which prevents browser-based tools from reading their headers. For those, a server-side scanner like securityheaders.com usually works.</p>
+<h3>Do security headers slow down a website?</h3>
+<p>No measurable effect — they're a few extra bytes in the response. There's no performance reason to skip them.</p>
+<h3>Will adding headers break my site?</h3>
+<p>Most headers are safe to add outright. Content-Security-Policy is the exception: test it in report-only mode first, because an overly strict policy blocks legitimate scripts and breaks functionality.</p>
+
+<p><strong>Audit a site now:</strong> <a href="../tools/security-headers-checker.html">Free Security Headers Checker</a> · <a href="../tools/ip-lookup.html">Free IP Lookup</a> · <a href="../tools/phishing-url-checker.html">Free Phishing URL Checker</a></p>
+</article>
+</main>
+
+<footer class="site-footer"><div class="wrap">
+<div class="cols">
+<div><h4>🛡️ Free Privacy Tools</h4><p>55 free online tools. No signup — everything runs in your browser.</p></div>
+<div><h4>Popular</h4><a href="../tools/image-compressor.html">Image Compressor</a><a href="../tools/word-counter.html">Word Counter</a><a href="../tools/password-generator.html">Password Generator</a><a href="../tools/pdf-merger.html">PDF Merger</a><a href="../tools/age-calculator.html">Age Calculator</a></div>
+<div><h4>Site</h4><a href="../index.html">Home</a><a href="../index.html#tools">All Tools</a><a href="../about.html">About</a><a href="../faq.html">FAQ</a><a href="../blog.html">Blog</a><a href="../contact.html">Contact</a><a href="../request.html">Request a Tool</a><a href="../privacy.html">Privacy Policy</a><a href="../terms.html">Terms of Service</a><a href="../disclaimer.html">Disclaimer</a></div>
+</div>
+<div class="foot-note">© 2026 Free Privacy Tools — All tools run 100% in your browser.<br>Developed by <a href="https://anwaardigital.github.io/" target="_blank" rel="noopener" style="color:#fbbf24;font-weight:700">Malik Anwaar</a> ❤️</div>
+</div></footer>
+<script src="../assets/app.js"></script>
+<script src="../assets/features.js"></script>
+</body></html>
