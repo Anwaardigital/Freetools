@@ -1247,6 +1247,234 @@ reg('link-shortener', function (root) {
   root.appendChild(h('p', { class: 'note' }, 'Note: uses the free da.gd / is.gd service over HTTPS.'));
 });
 
+/* ================= NEW SECURITY TOOLS (2026-10-15) ================= */
+reg('password-strength-checker', function (root) {
+  var pw = h('input', { type: 'password', placeholder: 'Type your password...', autocomplete: 'off' });
+  pw.style.cssText = 'font-size:18px;padding:10px;width:100%;box-sizing:border-box;';
+  var meterWrap = h('div', { style: 'margin:14px 0 6px;background:#e2e8f0;border-radius:8px;height:14px;overflow:hidden;' });
+  var meter = h('div', { style: 'height:100%;width:0%;border-radius:8px;transition:width .3s,background .3s;' });
+  meterWrap.appendChild(meter);
+  var scoreLine = h('p', { style: 'font-weight:bold;font-size:17px;margin:6px 0;' });
+  var crackLine = h('p', { style: 'color:#64748b;margin:4px 0;' });
+  var tips = h('ul', { style: 'color:#475569;line-height:1.9;' });
+  var showBtn = btn('Show', 'secondary', function () {
+    pw.type = pw.type === 'password' ? 'text' : 'password';
+    showBtn.textContent = pw.type === 'password' ? 'Show' : 'Hide';
+  });
+  root.appendChild(field('Password', pw));
+  root.appendChild(btnRow(showBtn));
+  root.appendChild(meterWrap);
+  root.appendChild(scoreLine); root.appendChild(crackLine);
+  root.appendChild(h('h3', null, 'How to improve')); root.appendChild(tips);
+
+  function entropy(s) {
+    var pool = 0;
+    if (/[a-z]/.test(s)) pool += 26;
+    if (/[A-Z]/.test(s)) pool += 26;
+    if (/[0-9]/.test(s)) pool += 10;
+    if (/[^a-zA-Z0-9]/.test(s)) pool += 32;
+    if (/[\u0080-\uffff]/.test(s)) pool += 100;
+    return s.length * Math.log2(pool || 1);
+  }
+  function crackTime(bits) {
+    var guesses = Math.pow(2, bits - 1), perSec = 1e10;
+    var secs = guesses / perSec;
+    if (secs < 1) return 'less than a second';
+    if (secs < 60) return Math.round(secs) + ' seconds';
+    if (secs < 3600) return Math.round(secs / 60) + ' minutes';
+    if (secs < 86400) return Math.round(secs / 3600) + ' hours';
+    if (secs < 31536000) return Math.round(secs / 86400) + ' days';
+    if (secs < 3153600000) return Math.round(secs / 31536000) + ' years';
+    return 'centuries';
+  }
+  pw.addEventListener('input', function () {
+    var s = pw.value, bits = entropy(s), score = Math.min(100, Math.round(bits * 1.4));
+    var label, color;
+    if (!s) { label = ''; color = '#e2e8f0'; score = 0; }
+    else if (score < 30) { label = 'Weak'; color = '#dc2626'; }
+    else if (score < 55) { label = 'Fair'; color = '#f59e0b'; }
+    else if (score < 80) { label = 'Good'; color = '#84cc16'; }
+    else { label = 'Strong'; color = '#16a34a'; }
+    meter.style.width = score + '%'; meter.style.background = color;
+    scoreLine.textContent = s ? label + ' — ' + score + '/100' : '';
+    scoreLine.style.color = color;
+    crackLine.textContent = s ? 'Estimated time to crack: ' + crackTime(bits) + ' (10 billion guesses/sec).' : '';
+    var t = [];
+    if (s.length < 12) t.push('Make it at least 12 characters long (16+ is better).');
+    if (!/[A-Z]/.test(s)) t.push('Add uppercase letters.');
+    if (!/[a-z]/.test(s)) t.push('Add lowercase letters.');
+    if (!/[0-9]/.test(s)) t.push('Add numbers.');
+    if (!/[^a-zA-Z0-9]/.test(s)) t.push('Add symbols like !@#$%.');
+    if (/(.)\1\1/.test(s)) t.push('Avoid repeating the same character 3+ times.');
+    if (/^(123|abc|password|qwerty)/i.test(s)) t.push('Avoid common patterns and dictionary words.');
+    if (!t.length && s) t.push('Great! This looks like a strong password. Use a unique one per site.');
+    tips.innerHTML = '';
+    t.forEach(function (x) { var li = h('li', null, x); tips.appendChild(li); });
+  });
+  root.appendChild(h('p', { style: 'font-size:13px;color:#64748b' }, 'Checked 100% locally in your browser — your password is never sent anywhere.'));
+});
+
+reg('ip-lookup', function (root) {
+  var inp = h('input', { type: 'text', placeholder: 'IP address or domain — e.g. 8.8.8.8' });
+  inp.style.cssText = 'width:100%;box-sizing:border-box;padding:10px;font-size:16px;';
+  var out = resultBox();
+  root.appendChild(field('IP or domain', inp));
+  function render(d) {
+    out.innerHTML = '';
+    var rows = [
+      ['IP address', d.ip || '—'], ['City', d.city || '—'], ['Region', d.region || '—'],
+      ['Country', (d.country_name || '') + (d.country_code ? ' (' + d.country_code + ')' : '')],
+      ['ISP / Org', d.org || '—'], ['Timezone', d.timezone || '—'],
+      ['Latitude / Longitude', (d.latitude != null ? d.latitude + ', ' + d.longitude : '—')]
+    ];
+    var tbl = h('table', { style: 'width:100%;border-collapse:collapse;' });
+    rows.forEach(function (r) {
+      var tr = h('tr');
+      tr.appendChild(h('td', { style: 'padding:8px;border-bottom:1px solid #e2e8f0;font-weight:bold;width:40%;' }, r[0]));
+      tr.appendChild(h('td', { style: 'padding:8px;border-bottom:1px solid #e2e8f0;word-break:break-all;' }, r[1]));
+      tbl.appendChild(tr);
+    });
+    out.appendChild(tbl);
+  }
+  function lookup(q) {
+    out.textContent = 'Looking up…';
+    fetch('https://ipapi.co/' + encodeURIComponent(q) + '/json/')
+      .then(function (r) { return r.json(); })
+      .then(function (d) {
+        if (d.error) { out.textContent = 'Lookup failed: ' + d.reason + '. Try again in a moment.'; return; }
+        render(d);
+      })
+      .catch(function () { out.textContent = 'Could not reach the lookup service. Check your internet and try again.'; });
+  }
+  root.appendChild(btnRow(
+    btn('Look Up', '', function () {
+      var q = inp.value.trim().replace(/^https?:\/\//i, '').split('/')[0];
+      if (!q) { out.textContent = 'Enter an IP address or domain first.'; return; }
+      lookup(q);
+    }),
+    btn('My IP', 'secondary', function () { lookup(''); inp.value = ''; })
+  ));
+  root.appendChild(out);
+  root.appendChild(h('p', { style: 'font-size:13px;color:#64748b' }, 'Uses the free ipapi.co geolocation API. Locations are approximate (ISP level).'));
+});
+
+reg('security-headers-checker', function (root) {
+  var inp = h('input', { type: 'text', placeholder: 'example.com' });
+  inp.style.cssText = 'width:100%;box-sizing:border-box;padding:10px;font-size:16px;';
+  var out = resultBox();
+  root.appendChild(field('Website URL', inp));
+  var HEADERS = [
+    ['strict-transport-security', 'Strict-Transport-Security (HSTS)', 'Forces browsers to use HTTPS only. Protects against protocol-downgrade attacks.'],
+    ['content-security-policy', 'Content-Security-Policy (CSP)', 'Controls which scripts, styles and resources may load. Key defense against XSS attacks.'],
+    ['x-frame-options', 'X-Frame-Options', 'Prevents the page being embedded in iframes — stops clickjacking attacks.'],
+    ['x-content-type-options', 'X-Content-Type-Options', 'Stops browsers "sniffing" file types — set to nosniff.'],
+    ['referrer-policy', 'Referrer-Policy', 'Controls how much referrer info is sent when users click away.'],
+    ['permissions-policy', 'Permissions-Policy', 'Restricts powerful browser features (camera, mic, geolocation).']
+  ];
+  function render(found) {
+    out.innerHTML = '';
+    var present = 0;
+    HEADERS.forEach(function (hd) {
+      var key = hd[0], val = null, rawKey = null;
+      Object.keys(found).forEach(function (k) { if (k.toLowerCase() === key) { val = found[k]; rawKey = k; } });
+      var ok = val !== null; if (ok) present++;
+      var row = h('div', { style: 'padding:10px;border:1px solid ' + (ok ? '#bbf7d0' : '#fecaca') + ';border-radius:8px;margin-bottom:8px;background:' + (ok ? '#f0fdf4' : '#fef2f2') + ';' });
+      row.appendChild(h('div', { style: 'font-weight:bold;' }, (ok ? '✅ ' : '❌ ') + hd[1]));
+      row.appendChild(h('div', { style: 'font-size:13px;color:#475569;margin-top:4px;' }, hd[2]));
+      if (ok) row.appendChild(h('code', { style: 'font-size:12px;word-break:break-all;display:block;margin-top:6px;color:#166534;' }, rawKey + ': ' + String(val).slice(0, 220)));
+      out.appendChild(row);
+    });
+    var sum = h('p', { style: 'font-weight:bold;margin-top:10px;' }, 'Score: ' + present + ' / ' + HEADERS.length + ' security headers present.');
+    out.appendChild(sum);
+    out.appendChild(h('p', { style: 'font-size:13px;color:#64748b' }, 'For a deeper automated scan, also try securityheaders.com.'));
+  }
+  root.appendChild(btnRow(btn('Check Headers', '', function () {
+    var q = inp.value.trim().replace(/^https?:\/\//i, '').split('/')[0];
+    if (!q) { out.textContent = 'Enter a website URL first.'; return; }
+    out.textContent = 'Fetching headers…';
+    fetch('https://api.hackertarget.com/httpheaders/?q=' + encodeURIComponent(q))
+      .then(function (r) { return r.text(); })
+      .then(function (t) {
+        if (/error/i.test(t) && t.length < 200) { out.textContent = 'Lookup failed: ' + t.trim(); return; }
+        var found = {};
+        t.split(/\r?\n/).forEach(function (line) {
+          var i = line.indexOf(':');
+          if (i > 0) found[line.slice(0, i).trim()] = line.slice(i + 1).trim();
+        });
+        if (!Object.keys(found).length) { out.textContent = 'No headers returned. The site may block this check — try securityheaders.com instead.'; return; }
+        render(found);
+      })
+      .catch(function () { out.textContent = 'Could not reach the header service. Check your internet and try again.'; });
+  })));
+  root.appendChild(out);
+  root.appendChild(h('p', { style: 'font-size:13px;color:#64748b' }, 'Header fetch uses the free hackertarget.com API. Explanations are educational — this is a defensive learning tool.'));
+});
+
+reg('phishing-url-checker', function (root) {
+  var inp = h('input', { type: 'text', placeholder: 'Paste the suspicious URL here…' });
+  inp.style.cssText = 'width:100%;box-sizing:border-box;padding:10px;font-size:16px;';
+  var out = resultBox();
+  root.appendChild(field('URL to analyze', inp));
+  var SHORTENERS = ['bit.ly', 'tinyurl.com', 't.co', 'goo.gl', 'ow.ly', 'is.gd', 'buff.ly', 'adf.ly', 'shorte.st'];
+  var SUSPICIOUS_TLDS = ['.tk', '.ml', '.ga', '.cf', '.gq', '.xyz', '.top', '.click', '.link', '.work', '.loan'];
+  function check(raw) {
+    var url = raw.trim(), findings = [], risk = 0;
+    var u;
+    try {
+      u = new URL(/^[a-z]+:\/\//i.test(url) ? url : 'http://' + url);
+    } catch (e) { return { err: 'That does not look like a valid URL.' }; }
+    var host = u.hostname.toLowerCase(), full = u.href;
+    function add(pts, ok, text) { risk += pts; findings.push({ pts: pts, ok: ok, text: text }); }
+    if (/^https:/i.test(u.protocol)) add(0, true, 'Uses HTTPS (encrypted connection).');
+    else add(25, false, 'No HTTPS — data is sent unencrypted.');
+    if (/^\d+\.\d+\.\d+\.\d+$/.test(host)) add(25, false, 'Host is a raw IP address instead of a domain name.');
+    else add(0, true, 'Host is a domain name, not a raw IP.');
+    var parts = host.split('.');
+    if (parts.length > 3) add(15, false, 'Many subdomains (' + parts.length + ' parts) — a common phishing trick.');
+    else add(0, true, 'Subdomain depth looks normal.');
+    var tldBad = SUSPICIOUS_TLDS.some(function (t) { return host.endsWith(t); });
+    if (tldBad) add(20, false, 'Uses a top-level domain often abused by scammers.');
+    else add(0, true, 'Top-level domain is not on the high-risk list.');
+    if (full.indexOf('@') !== -1) add(25, false, 'Contains "@" — everything before it can be fake.');
+    else add(0, true, 'No "@" trick in the URL.');
+    if (/-/.test(host) && /paypal|apple|google|amazon|bank|login|secure|account|verify/i.test(host))
+      add(25, false, 'Brand-like words combined with hyphens (e.g. "paypal-secure-login").');
+    else add(0, true, 'No brand-imitating hyphen pattern detected.');
+    var short = SHORTENERS.some(function (s) { return host === s || host.endsWith('.' + s); });
+    if (short) add(15, false, 'URL shortener hides the real destination.');
+    else add(0, true, 'Not a known URL shortener.');
+    if (full.length > 120) add(10, false, 'Very long URL (' + full.length + ' chars) — can hide the true domain.');
+    else add(0, true, 'URL length looks normal.');
+    if (/[а-яё\u0370-\u03ff\u3040-\u30ff\u4e00-\u9fff]/i.test(full))
+      add(20, false, 'Contains non-Latin characters — possible homograph attack.');
+    else add(0, true, 'No suspicious non-Latin characters.');
+    if (/\d/.test(host.replace(/\./g, '')) && /login|secure|verify|account|bank/i.test(host))
+      add(10, false, 'Numbers mixed into a sensitive-looking domain.');
+    return { risk: Math.min(100, risk), findings: findings };
+  }
+  root.appendChild(btnRow(btn('Check URL', '', function () {
+    var r = check(inp.value);
+    out.innerHTML = '';
+    if (r.err) { out.textContent = r.err; return; }
+    var label, color;
+    if (r.risk < 25) { label = 'Looks Safe'; color = '#16a34a'; }
+    else if (r.risk < 60) { label = 'Suspicious'; color = '#f59e0b'; }
+    else { label = 'Dangerous'; color = '#dc2626'; }
+    var head = h('div', { style: 'text-align:center;padding:16px;border-radius:10px;background:' + color + '18;border:2px solid ' + color + ';margin-bottom:12px;' });
+    head.appendChild(h('div', { style: 'font-size:26px;font-weight:bold;color:' + color + ';' }, label + ' — ' + r.risk + '/100 risk'));
+    out.appendChild(head);
+    r.findings.forEach(function (f) {
+      var row = h('div', { style: 'padding:8px 10px;border-bottom:1px solid #e2e8f0;font-size:14px;' });
+      row.appendChild(h('span', { style: 'font-weight:bold;color:' + (f.ok ? '#16a34a' : '#dc2626') + ';' }, f.ok ? '✅ ' : '⚠️ '));
+      row.appendChild(document.createTextNode(f.text + (f.pts ? ' (+' + f.pts + ' risk)' : '')));
+      out.appendChild(row);
+    });
+    out.appendChild(h('p', { style: 'font-size:13px;color:#64748b;margin-top:10px;' }, 'Disclaimer: this is a first-pass heuristic check only and cannot guarantee a site is legitimate. When in doubt, never enter passwords or payment details.'));
+  })));
+  root.appendChild(out);
+  root.appendChild(h('p', { style: 'font-size:13px;color:#64748b' }, 'Analysis runs 100% locally in your browser — the URL is never sent anywhere.'));
+});
+
 /* ---------- init ---------- */
 document.addEventListener('DOMContentLoaded', function () {
   var root = document.getElementById('tool-root');
