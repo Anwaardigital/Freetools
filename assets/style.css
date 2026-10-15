@@ -50,7 +50,8 @@ a:hover{text-decoration:underline}
 .tool-hero h1{font-size:30px;margin:6px 0}
 .tool-hero p{color:var(--muted);max-width:720px}
 .tool-box{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);box-shadow:var(--shadow);padding:26px;margin:20px 0}
-.ad-slot{background:#f1f5f9;border:1px dashed #cbd5e1;border-radius:10px;color:#94a3b8;text-align:center;padding:26px;margin:22px 0;font-size:13px}
+/* AdSense placeholder hidden until ads are approved (AdSense policy: no empty ad boxes) */
+.ad-slot{display:none!important}
 
 /* Form controls */
 .field{margin:0 0 14px}
@@ -105,7 +106,7 @@ body.dark{--bg:#0f172a;--card:#1e293b;--border:#334155;--ink:#f1f5f9;--muted:#94
 body.dark input[type=text],body.dark input[type=number],body.dark input[type=date],body.dark input[type=time],body.dark input[type=color],body.dark select,body.dark textarea{background:#0f172a;color:#f1f5f9;border-color:#334155}
 body.dark .result{background:#052e16;border-color:#166534;color:#f1f5f9}
 body.dark .howto,body.dark .faq details{background:#1e293b;border-color:#334155}
-body.dark .ad-slot{background:#1e293b;border-color:#334155;color:#64748b}
+body.dark .ad-slot{display:none!important}
 body.dark .btn.secondary{background:#334155;color:#f1f5f9}
 body.dark .btn.secondary:hover{background:#475569}
 body.dark .drop{background:#1e293b}
