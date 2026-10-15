@@ -18,6 +18,8 @@ a:hover{text-decoration:underline}
 .nav{margin-left:auto;display:flex;gap:4px}
 .nav a{color:#cbd5e1;padding:8px 12px;border-radius:8px;font-size:14px}
 .nav a:hover{background:rgba(255,255,255,.08);color:#fff;text-decoration:none}
+.nav-toggle{display:none;background:none;border:none;color:#fff;font-size:24px;cursor:pointer;line-height:1;padding:6px 8px;border-radius:8px}
+.nav-toggle:hover{background:rgba(255,255,255,.08)}
 
 /* Hero */
 .hero{background:linear-gradient(135deg,#0f172a 0%,#1e3a8a 60%,#2563eb 100%);color:#fff;padding:64px 0 56px;text-align:center}
@@ -89,7 +91,11 @@ canvas.preview{max-width:100%;border:1px solid var(--border);border-radius:10px;
   .hero h1{font-size:28px}
   .row,.row3{grid-template-columns:1fr}
   .site-footer .cols{grid-template-columns:1fr}
-  .nav{display:none}
+  .nav-toggle{display:block;margin-left:auto}
+  .nav{display:none;position:absolute;top:100%;left:0;right:0;background:var(--ink);flex-direction:column;padding:10px 14px 14px;gap:2px;margin:0;border-top:1px solid rgba(255,255,255,.12);box-shadow:0 12px 24px rgba(0,0,0,.25)}
+  .nav.open{display:flex}
+  .nav a{padding:10px 12px;font-size:15px}
+  html[dir=rtl] .nav-toggle{margin-left:0;margin-right:auto}
 }
 
 /* ============ FEATURES UPDATE: dark mode, favorites, ratings, chips, share ============ */
