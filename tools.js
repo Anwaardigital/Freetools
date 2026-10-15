@@ -223,17 +223,12 @@ reg('pdf-compressor', function (root) {
 });
 
 function needPdfJs() {
-  if (window.pdfjsLib) return Promise.resolve();
-  return new Promise(function (res, rej) {
-    var s = document.createElement('script');
-    s.src = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js';
-    s.onload = function () {
-      window.pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js';
-      res();
-    };
-    s.onerror = function () { rej(new Error('Could not load PDF engine (internet needed once).')); };
-    document.head.appendChild(s);
-  });
+  if (window.pdfjsLib && window.pdfjsLib.getDocument) return Promise.resolve();
+  /* pdf.js 4.x is module-only: load via dynamic import (CVE-2024-4367 fixed in 4.2.67+). */
+  return import('https://cdnjs.cloudflare.com/ajax/libs/pdf.js/4.10.38/pdf.min.mjs').then(function (mod) {
+    window.pdfjsLib = (mod && mod.getDocument) ? mod : window.pdfjsLib;
+    window.pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/4.10.38/pdf.worker.min.mjs';
+  }).catch(function () { throw new Error('Could not load PDF engine (internet needed once).'); });
 }
 
 reg('pdf-to-text', function (root) {
