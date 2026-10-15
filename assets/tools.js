@@ -1,4 +1,4 @@
-/* Free Privacy Tools — all 50 tools, 100% client-side. No uploads, no tracking. */
+/* Free Privacy Tools — all 50 tools, 100% client-side. No uploads. */
 (function () {
 'use strict';
 
