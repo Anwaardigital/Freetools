@@ -26,8 +26,9 @@ a:hover{text-decoration:underline}
 .badges{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-bottom:26px}
 .badge{background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.2);padding:6px 14px;border-radius:999px;font-size:13px;color:#e2e8f0}
 .searchbar{max-width:520px;margin:0 auto;position:relative}
-.searchbar input{width:100%;padding:14px 18px 14px 46px;border-radius:999px;border:none;font-size:16px;outline:none;box-shadow:var(--shadow)}
-.searchbar .icon{position:absolute;left:16px;top:50%;transform:translateY(-50%);font-size:18px}
+.searchbar input{width:100%;padding:14px 48px 14px 18px;border-radius:999px;border:none;font-size:16px;outline:none;box-shadow:var(--shadow)}
+.searchbar .icon-btn{position:absolute;right:8px;top:50%;transform:translateY(-50%);font-size:18px;background:none;border:none;cursor:pointer;padding:8px;line-height:1;border-radius:50%}
+.searchbar .icon-btn:hover{background:rgba(0,0,0,.06)}
 
 /* Tool grid */
 .section{padding:44px 0}
@@ -191,8 +192,8 @@ body.dark .car-btn{background:#1e293b}
 body.dark .carousel::-webkit-scrollbar-thumb{background:#475569}
 
 /* RTL (Urdu) adjustments */
-html[dir=rtl] .searchbar .icon{left:auto;right:16px}
-html[dir=rtl] .searchbar input{padding:14px 18px 14px 46px}
+html[dir=rtl] .searchbar .icon-btn{right:auto;left:8px}
+html[dir=rtl] .searchbar input{padding:14px 18px 14px 48px}
 html[dir=rtl] .fav-star{right:auto;left:12px}
 html[dir=rtl] .feat-card h3{padding-right:0;padding-left:30px}
 html[dir=rtl] .feat-heart{right:auto;left:14px}
