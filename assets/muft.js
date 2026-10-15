@@ -27,7 +27,7 @@ var STR = {
 en: {
   navHome:'Home', navTools:'All Tools', navAbout:'About', navFaq:'FAQ', navBlog:'Blog', navContact:'Contact', navPrivacy:'Privacy',
   heroTitle:'50+ Free Online Tools',
-  heroSub:'PDF, image, text, calculators, security, color & developer tools — free forever. No signup. No tracking. Everything runs privately in your browser.',
+  heroSub:'PDF, image, text, calculators, security, color & developer tools — free forever. No signup. Everything runs privately in your browser.',
   searchPh:'Search 55 tools... e.g. pdf, qr, password',
   featuredTitle:'Featured Tools', featuredSub:'Our most-loved tools — picked for you',
   openBtn:'Open',
@@ -38,14 +38,14 @@ en: {
   nlPh:'Your email address', nlBtn:'Subscribe', nlDone:'✅ Subscribed! We will keep you posted.',
   ytTitle:'📺 Our YouTube Channels', ytSub:'Learn, laugh and explore — subscribe for new videos every week',
   ytSubscribe:'Subscribe', footYouTube:'YouTube',
-  footTag:'50+ free online tools. No signup, no tracking — everything runs in your browser.',
+  footTag:'50+ free online tools. No signup — everything runs in your browser.',
   footPopular:'Popular', footSite:'Site', footReq:'Request a Tool', footPrivacy:'Privacy Policy',
   useBadge:function (n) { return '🔥 ' + n + ' tool uses on this device'; }
 },
 ur: {
   navHome:'ہوم', navTools:'تمام ٹولز', navAbout:'ہمارے بارے میں', navFaq:'سوالات', navBlog:'بلاگ', navContact:'رابطہ', navPrivacy:'پرائیویسی',
   heroTitle:'50+ مفت آن لائن ٹولز',
-  heroSub:'PDF، تصویر، متن، کیلکولیٹر، سیکیورٹی، رنگ اور ڈیولپر ٹولز — ہمیشہ مفت۔ کوئی سائن اپ نہیں۔ کوئی ٹریکنگ نہیں۔ سب کچھ آپ کے براؤزر میں نجی طور پر چلتا ہے۔',
+  heroSub:'PDF، تصویر، متن، کیلکولیٹر، سیکیورٹی، رنگ اور ڈیولپر ٹولز — ہمیشہ مفت۔ کوئی سائن اپ نہیں۔ سب کچھ آپ کے براؤزر میں نجی طور پر چلتا ہے۔',
   searchPh:'55 ٹولز تلاش کریں... مثلاً pdf، qr، password',
   featuredTitle:'نمایاں ٹولز', featuredSub:'ہمارے سب سے مقبول ٹولز — آپ کے لیے منتخب',
   openBtn:'کھولیں',
@@ -56,7 +56,7 @@ ur: {
   nlPh:'آپ کا ای میل ایڈریس', nlBtn:'سبسکرائب کریں', nlDone:'✅ سبسکرائب ہو گیا! ہم آپ کو باخبر رکھیں گے۔',
   ytTitle:'📺 ہمارے یوٹیوب چینلز', ytSub:'سیکھیں، ہنسیں اور دریافت کریں — ہر ہفتے نئی ویڈیوز کے لیے سبسکرائب کریں',
   ytSubscribe:'سبسکرائب', footYouTube:'یوٹیوب',
-  footTag:'50+ مفت آن لائن ٹولز۔ کوئی سائن اپ نہیں، کوئی ٹریکنگ نہیں — سب کچھ آپ کے براؤزر میں چلتا ہے۔',
+  footTag:'50+ مفت آن لائن ٹولز۔ کوئی سائن اپ نہیں — سب کچھ آپ کے براؤزر میں چلتا ہے۔',
   footPopular:'مقبول', footSite:'سائٹ', footReq:'ٹول کی درخواست', footPrivacy:'پرائیویسی پالیسی',
   useBadge:function (n) { return '🔥 اس ڈیوائس پر ' + n + ' ٹول استعمال'; }
 }};
