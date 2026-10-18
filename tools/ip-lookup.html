@@ -70,13 +70,14 @@
 
 <main class="wrap">
 <div class="crumbs"><a href="../index.html">Home</a> / Security Tools / IP Lookup</div>
-<div class="tool-hero"><h1>🌐 IP Lookup</h1><p>Look up any IP address or domain — city, region, country, ISP and timezone. Free, unlimited — the lookup uses a public geolocation API.</p></div>
+<div class="tool-hero"><h1>🌐 IP Lookup</h1><p>Look up any IP address or domain — city, country, ISP and timezone. Useful for network troubleshooting and understanding where a connection comes from. Free, unlimited — the lookup uses a public geolocation API.</p></div>
 <div class="ad-slot"><!-- AdSense code goes here --></div>
 <div class="tool-box" id="tool-root" data-tool="ip-lookup"></div>
 <div class="howto"><h2>How to use</h2><ol><li>Enter an IP address (e.g. 8.8.8.8) or a domain (e.g. example.com).</li><li>Click "Look Up" — or press "My IP" to detect your own address.</li><li>Read the location and network details below.</li></ol></div>
 <div class="faq"><h2>FAQ</h2><details><summary>Is it really free?</summary><p>Yes — every tool on this site is 100% free with no limits, no signup and no watermarks.</p></details><details><summary>Is the location exact?</summary><p>No. IP geolocation shows the approximate location of your internet provider's server — usually correct to the city, sometimes only the region.</p></details></div>
 <div class="related"><h2>Related tools</h2><div class="grid"><a class="tool-card" href="./security-headers-checker.html"><div class="ticon">🛡️</div><h3>Security Headers Checker</h3><p>Check a website's security headers and learn what they mean.</p></a><a class="tool-card" href="./phishing-url-checker.html"><div class="ticon">🎣</div><h3>Phishing URL Checker</h3><p>Analyze a URL for phishing risk with client-side heuristics.</p></a><a class="tool-card" href="./password-strength-checker.html"><div class="ticon">💪</div><h3>Password Strength Checker</h3><p>Score your password live with crack-time estimates.</p></a></div></div>
 </div>
+<div class="related-guides"><h2>Related guides</h2><div class="grid"><a class="tool-card" href="../blog/how-to-ip-lookup-online.html"><h3>How to Look Up an IP Address Online for Free (2026 Guide) | Free Privacy Tools</h3><p>Find the approximate location, ISP and timezone of any IP or domain with a free IP lookup tool. Step-by-step 2026 guide with honest accuracy notes.</p></a><a class="tool-card" href="../blog/how-to-security-headers-checker-online.html"><h3>How to Check Website Security Headers Online for Free (2026 Guide) | Free Privacy Tools</h3><p>Audit any website's HTTP security headers — HSTS, CSP, X-Frame-Options and more — with a free checker. Step-by-step 2026 guide for owners and the curious.</p></a><a class="tool-card" href="../blog/how-to-phishing-url-checker-online.html"><h3>How to Check a URL for Phishing Risk Online for Free (2026 Guide) | Free Privacy Tools</h3><p>Screen suspicious links with a free phishing URL checker. Step-by-step 2026 guide: heuristic checks, reading the risk score, and what to do when a link looks dangerous.</p></a></div></div>
 </main>
 <footer class="site-footer"><div class="wrap">
 <div class="cols">
@@ -89,4 +90,17 @@
 <script src="../assets/app.js"></script>
 <script src="../assets/tools.js"></script>
 <script src="../assets/features.js"></script>
+
+<!-- Back to top button -->
+<button id="backToTop" aria-label="Back to top" title="Back to top"
+style="position:fixed;bottom:24px;right:24px;width:48px;height:48px;border-radius:50%;border:none;background:#2563eb;color:#ffffff;font-size:22px;line-height:1;cursor:pointer;opacity:0;visibility:hidden;transition:opacity .3s,visibility .3s,transform .2s;box-shadow:0 4px 12px rgba(0,0,0,.35);z-index:9999;padding:0;">&#8593;</button>
+<script>
+(function(){var b=document.getElementById('backToTop');if(!b)return;
+window.addEventListener('scroll',function(){var s=window.pageYOffset||document.documentElement.scrollTop;
+if(s>300){b.style.opacity='1';b.style.visibility='visible';}else{b.style.opacity='0';b.style.visibility='hidden';}},{passive:true});
+b.addEventListener('click',function(){window.scrollTo({top:0,behavior:'smooth'});});
+b.addEventListener('mouseenter',function(){b.style.transform='scale(1.12)';});
+b.addEventListener('mouseleave',function(){b.style.transform='scale(1)';});})();
+</script>
+
 </body></html>

@@ -70,13 +70,14 @@
 
 <main class="wrap">
 <div class="crumbs"><a href="../index.html">Home</a> / Developer Tools / Link Shortener</div>
-<div class="tool-hero"><h1>🔗 Link Shortener</h1><p>Turn long, ugly URLs into short, shareable links in one click. Free, unlimited, no signup.</p></div>
+<div class="tool-hero"><h1>🔗 Link Shortener</h1><p>Turn long, ugly URLs into short, shareable links in one click via a free shortening service (da.gd / is.gd). Useful for social posts and SMS where space is tight. Free, unlimited, no signup — nothing is stored on this site.</p></div>
 <div class="ad-slot"><!-- AdSense code goes here --></div>
 <div class="tool-box" id="tool-root" data-tool="link-shortener"></div>
 <div class="howto"><h2>How to use</h2><ol><li>Paste your long URL in the box below.</li><li>Click "Shorten Link" — your short link appears instantly.</li><li>Copy it with one click and share anywhere.</li></ol></div>
 <div class="faq"><h2>FAQ</h2><details><summary>Is it really free?</summary><p>Yes — every tool on this site is 100% free with no limits and no signup.</p></details><details><summary>How does it work?</summary><p>Your URL is sent to a free shortening service (da.gd / is.gd) over a secure connection, which returns a compact link. Nothing is stored on this site.</p></details></div>
 <div class="related"><h2>Related tools</h2><div class="grid"><a class="tool-card" href="./qr-generator.html"><div class="ticon">🔳</div><h3>QR Code Generator</h3><p>Create custom QR codes from any text or URL, any size.</p></a><a class="tool-card" href="./url-encoder.html"><div class="ticon">🔗</div><h3>URL Encoder / Decoder</h3><p>Percent-encode URLs or decode them back to readable text.</p></a><a class="tool-card" href="./base64.html"><div class="ticon">🔐</div><h3>Base64 Encoder / Decoder</h3><p>Encode text to Base64 or decode Base64 back to text.</p></a></div></div>
 </div>
+<div class="related-guides"><h2>Related guides</h2><div class="grid"><a class="tool-card" href="../blog/shorten-urls-safely.html"><h3>How to Shorten Long URLs and Share Them Safely (2026 Guide) | Free Privacy Tools</h3><p>Long messy links look bad and break in messages. This 2026 guide explains how URL shorteners work, how to shorten links step by step, and how to stay safe from phishing hiding behind short links — with free browser tools, no signup.</p></a><a class="tool-card" href="../blog/how-to-url-encoder-online.html"><h3>How to URL-Encode Text Online for Free (2026 Guide) | Free Privacy Tools</h3><p>Percent-encode URLs and decode them back with a free browser tool. Step-by-step 2026 guide: examples, when encoding matters, and common mistakes.</p></a><a class="tool-card" href="../blog/how-to-base64-online.html"><h3>How to Encode and Decode Base64 Online for Free (2026 Guide) | Free Privacy Tools</h3><p>Encode text to Base64 or decode it back in seconds with a free browser tool. Step-by-step 2026 guide: real uses, examples and an important security warning.</p></a></div></div>
 </main>
 <footer class="site-footer"><div class="wrap">
 <div class="cols">
@@ -89,4 +90,17 @@
 <script src="../assets/app.js"></script>
 <script src="../assets/tools.js"></script>
 <script src="../assets/features.js"></script>
+
+<!-- Back to top button -->
+<button id="backToTop" aria-label="Back to top" title="Back to top"
+style="position:fixed;bottom:24px;right:24px;width:48px;height:48px;border-radius:50%;border:none;background:#2563eb;color:#ffffff;font-size:22px;line-height:1;cursor:pointer;opacity:0;visibility:hidden;transition:opacity .3s,visibility .3s,transform .2s;box-shadow:0 4px 12px rgba(0,0,0,.35);z-index:9999;padding:0;">&#8593;</button>
+<script>
+(function(){var b=document.getElementById('backToTop');if(!b)return;
+window.addEventListener('scroll',function(){var s=window.pageYOffset||document.documentElement.scrollTop;
+if(s>300){b.style.opacity='1';b.style.visibility='visible';}else{b.style.opacity='0';b.style.visibility='hidden';}},{passive:true});
+b.addEventListener('click',function(){window.scrollTo({top:0,behavior:'smooth'});});
+b.addEventListener('mouseenter',function(){b.style.transform='scale(1.12)';});
+b.addEventListener('mouseleave',function(){b.style.transform='scale(1)';});})();
+</script>
+
 </body></html>
