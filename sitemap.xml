@@ -1,76 +1,147 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-<url><loc>https://anwaardigital.github.io/Freetools/about.html</loc><changefreq>monthly</changefreq></url>
-<url><loc>https://anwaardigital.github.io/Freetools/blog.html</loc><changefreq>monthly</changefreq></url>
-<url><loc>https://anwaardigital.github.io/Freetools/blog/free-online-tools-for-freelancers.html</loc><changefreq>monthly</changefreq></url>
-<url><loc>https://anwaardigital.github.io/Freetools/blog/how-to-count-words-online.html</loc><changefreq>monthly</changefreq></url>
-<url><loc>https://anwaardigital.github.io/Freetools/blog/how-to-generate-strong-passwords-online.html</loc><changefreq>monthly</changefreq></url>
-<url><loc>https://anwaardigital.github.io/Freetools/blog/how-to-generate-qr-codes.html</loc><changefreq>monthly</changefreq></url>
-<url><loc>https://anwaardigital.github.io/Freetools/blog/image-compression-guide.html</loc><changefreq>monthly</changefreq></url>
-<url><loc>https://anwaardigital.github.io/Freetools/blog/password-security-best-practices.html</loc><changefreq>monthly</changefreq></url>
-<url><loc>https://anwaardigital.github.io/Freetools/blog/shorten-urls-safely.html</loc><changefreq>monthly</changefreq></url>
-<url><loc>https://anwaardigital.github.io/Freetools/blog/text-to-pdf-complete-guide.html</loc><changefreq>monthly</changefreq></url>
-<url><loc>https://anwaardigital.github.io/Freetools/contact.html</loc><changefreq>monthly</changefreq></url>
-<url><loc>https://anwaardigital.github.io/Freetools/disclaimer.html</loc><changefreq>yearly</changefreq></url>
-<url><loc>https://anwaardigital.github.io/Freetools/faq.html</loc><changefreq>monthly</changefreq></url>
-<url><loc>https://anwaardigital.github.io/Freetools/</loc><changefreq>monthly</changefreq></url>
-<url><loc>https://anwaardigital.github.io/Freetools/privacy.html</loc><changefreq>monthly</changefreq></url>
-<url><loc>https://anwaardigital.github.io/Freetools/request.html</loc><changefreq>monthly</changefreq></url>
-<url><loc>https://anwaardigital.github.io/Freetools/terms.html</loc><changefreq>yearly</changefreq></url>
-<url><loc>https://anwaardigital.github.io/Freetools/tools/age-calculator.html</loc><changefreq>monthly</changefreq></url>
-<url><loc>https://anwaardigital.github.io/Freetools/tools/base64.html</loc><changefreq>monthly</changefreq></url>
-<url><loc>https://anwaardigital.github.io/Freetools/tools/bmi-calculator.html</loc><changefreq>monthly</changefreq></url>
-<url><loc>https://anwaardigital.github.io/Freetools/tools/case-converter.html</loc><changefreq>monthly</changefreq></url>
-<url><loc>https://anwaardigital.github.io/Freetools/tools/character-counter.html</loc><changefreq>monthly</changefreq></url>
-<url><loc>https://anwaardigital.github.io/Freetools/tools/coin-flip.html</loc><changefreq>monthly</changefreq></url>
-<url><loc>https://anwaardigital.github.io/Freetools/tools/color-picker.html</loc><changefreq>monthly</changefreq></url>
-<url><loc>https://anwaardigital.github.io/Freetools/tools/contrast-checker.html</loc><changefreq>monthly</changefreq></url>
-<url><loc>https://anwaardigital.github.io/Freetools/tools/css-minifier.html</loc><changefreq>monthly</changefreq></url>
-<url><loc>https://anwaardigital.github.io/Freetools/tools/currency-converter.html</loc><changefreq>monthly</changefreq></url>
-<url><loc>https://anwaardigital.github.io/Freetools/tools/date-duration.html</loc><changefreq>monthly</changefreq></url>
-<url><loc>https://anwaardigital.github.io/Freetools/tools/dice-roller.html</loc><changefreq>monthly</changefreq></url>
-<url><loc>https://anwaardigital.github.io/Freetools/tools/discount-calculator.html</loc><changefreq>monthly</changefreq></url>
-<url><loc>https://anwaardigital.github.io/Freetools/tools/favicon-generator.html</loc><changefreq>monthly</changefreq></url>
-<url><loc>https://anwaardigital.github.io/Freetools/tools/gradient-generator.html</loc><changefreq>monthly</changefreq></url>
-<url><loc>https://anwaardigital.github.io/Freetools/tools/grayscale-filter.html</loc><changefreq>monthly</changefreq></url>
-<url><loc>https://anwaardigital.github.io/Freetools/tools/hash-generator.html</loc><changefreq>monthly</changefreq></url>
-<url><loc>https://anwaardigital.github.io/Freetools/tools/hex-to-rgb.html</loc><changefreq>monthly</changefreq></url>
-<url><loc>https://anwaardigital.github.io/Freetools/tools/html-encoder.html</loc><changefreq>monthly</changefreq></url>
-<url><loc>https://anwaardigital.github.io/Freetools/tools/image-compressor.html</loc><changefreq>monthly</changefreq></url>
-<url><loc>https://anwaardigital.github.io/Freetools/tools/image-converter.html</loc><changefreq>monthly</changefreq></url>
-<url><loc>https://anwaardigital.github.io/Freetools/tools/image-cropper.html</loc><changefreq>monthly</changefreq></url>
-<url><loc>https://anwaardigital.github.io/Freetools/tools/image-resizer.html</loc><changefreq>monthly</changefreq></url>
-<url><loc>https://anwaardigital.github.io/Freetools/tools/image-rotator.html</loc><changefreq>monthly</changefreq></url>
-<url><loc>https://anwaardigital.github.io/Freetools/tools/images-to-pdf.html</loc><changefreq>monthly</changefreq></url>
-<url><loc>https://anwaardigital.github.io/Freetools/tools/ip-lookup.html</loc><changefreq>monthly</changefreq></url>
-<url><loc>https://anwaardigital.github.io/Freetools/tools/js-minifier.html</loc><changefreq>monthly</changefreq></url>
-<url><loc>https://anwaardigital.github.io/Freetools/tools/json-formatter.html</loc><changefreq>monthly</changefreq></url>
-<url><loc>https://anwaardigital.github.io/Freetools/tools/link-shortener.html</loc><changefreq>monthly</changefreq></url>
-<url><loc>https://anwaardigital.github.io/Freetools/tools/loan-calculator.html</loc><changefreq>monthly</changefreq></url>
-<url><loc>https://anwaardigital.github.io/Freetools/tools/lorem-ipsum.html</loc><changefreq>monthly</changefreq></url>
-<url><loc>https://anwaardigital.github.io/Freetools/tools/password-generator.html</loc><changefreq>monthly</changefreq></url>
-<url><loc>https://anwaardigital.github.io/Freetools/tools/password-strength-checker.html</loc><changefreq>monthly</changefreq></url>
-<url><loc>https://anwaardigital.github.io/Freetools/tools/pdf-compressor.html</loc><changefreq>monthly</changefreq></url>
-<url><loc>https://anwaardigital.github.io/Freetools/tools/pdf-merger.html</loc><changefreq>monthly</changefreq></url>
-<url><loc>https://anwaardigital.github.io/Freetools/tools/pdf-splitter.html</loc><changefreq>monthly</changefreq></url>
-<url><loc>https://anwaardigital.github.io/Freetools/tools/pdf-to-text.html</loc><changefreq>monthly</changefreq></url>
-<url><loc>https://anwaardigital.github.io/Freetools/tools/percentage-calculator.html</loc><changefreq>monthly</changefreq></url>
-<url><loc>https://anwaardigital.github.io/Freetools/tools/phishing-url-checker.html</loc><changefreq>monthly</changefreq></url>
-<url><loc>https://anwaardigital.github.io/Freetools/tools/qr-generator.html</loc><changefreq>monthly</changefreq></url>
-<url><loc>https://anwaardigital.github.io/Freetools/tools/qr-reader.html</loc><changefreq>monthly</changefreq></url>
-<url><loc>https://anwaardigital.github.io/Freetools/tools/random-color.html</loc><changefreq>monthly</changefreq></url>
-<url><loc>https://anwaardigital.github.io/Freetools/tools/random-number.html</loc><changefreq>monthly</changefreq></url>
-<url><loc>https://anwaardigital.github.io/Freetools/tools/remove-duplicates.html</loc><changefreq>monthly</changefreq></url>
-<url><loc>https://anwaardigital.github.io/Freetools/tools/security-headers-checker.html</loc><changefreq>monthly</changefreq></url>
-<url><loc>https://anwaardigital.github.io/Freetools/tools/text-reverser.html</loc><changefreq>monthly</changefreq></url>
-<url><loc>https://anwaardigital.github.io/Freetools/tools/timestamp-converter.html</loc><changefreq>monthly</changefreq></url>
-<url><loc>https://anwaardigital.github.io/Freetools/tools/timezone-converter.html</loc><changefreq>monthly</changefreq></url>
-<url><loc>https://anwaardigital.github.io/Freetools/tools/tip-calculator.html</loc><changefreq>monthly</changefreq></url>
-<url><loc>https://anwaardigital.github.io/Freetools/tools/unit-converter.html</loc><changefreq>monthly</changefreq></url>
-<url><loc>https://anwaardigital.github.io/Freetools/tools/url-encoder.html</loc><changefreq>monthly</changefreq></url>
-<url><loc>https://anwaardigital.github.io/Freetools/tools/uuid-generator.html</loc><changefreq>monthly</changefreq></url>
-<url><loc>https://anwaardigital.github.io/Freetools/tools/whitespace-remover.html</loc><changefreq>monthly</changefreq></url>
-<url><loc>https://anwaardigital.github.io/Freetools/tools/word-counter.html</loc><changefreq>monthly</changefreq></url>
+<url><loc>https://anwaardigital.github.io/Freetools/about.html</loc>
+    <lastmod>2026-10-18</lastmod><changefreq>monthly</changefreq></url>
+<url><loc>https://anwaardigital.github.io/Freetools/blog.html</loc>
+    <lastmod>2026-10-19</lastmod><changefreq>monthly</changefreq></url>
+<url><loc>https://anwaardigital.github.io/Freetools/blog/free-online-tools-for-freelancers.html</loc>
+    <lastmod>2026-10-19</lastmod><changefreq>monthly</changefreq></url>
+<url><loc>https://anwaardigital.github.io/Freetools/blog/how-to-count-words-online.html</loc>
+    <lastmod>2026-10-19</lastmod><changefreq>monthly</changefreq></url>
+<url><loc>https://anwaardigital.github.io/Freetools/blog/how-to-generate-strong-passwords-online.html</loc>
+    <lastmod>2026-10-19</lastmod><changefreq>monthly</changefreq></url>
+<url><loc>https://anwaardigital.github.io/Freetools/blog/how-to-generate-qr-codes.html</loc>
+    <lastmod>2026-10-19</lastmod><changefreq>monthly</changefreq></url>
+<url><loc>https://anwaardigital.github.io/Freetools/blog/image-compression-guide.html</loc>
+    <lastmod>2026-10-19</lastmod><changefreq>monthly</changefreq></url>
+<url><loc>https://anwaardigital.github.io/Freetools/blog/password-security-best-practices.html</loc>
+    <lastmod>2026-10-19</lastmod><changefreq>monthly</changefreq></url>
+<url><loc>https://anwaardigital.github.io/Freetools/blog/shorten-urls-safely.html</loc>
+    <lastmod>2026-10-19</lastmod><changefreq>monthly</changefreq></url>
+<url><loc>https://anwaardigital.github.io/Freetools/blog/text-to-pdf-complete-guide.html</loc>
+    <lastmod>2026-10-19</lastmod><changefreq>monthly</changefreq></url>
+<url><loc>https://anwaardigital.github.io/Freetools/contact.html</loc>
+    <lastmod>2026-10-18</lastmod><changefreq>monthly</changefreq></url>
+<url><loc>https://anwaardigital.github.io/Freetools/disclaimer.html</loc>
+    <lastmod>2026-10-18</lastmod><changefreq>yearly</changefreq></url>
+<url><loc>https://anwaardigital.github.io/Freetools/faq.html</loc>
+    <lastmod>2026-10-18</lastmod><changefreq>monthly</changefreq></url>
+<url><loc>https://anwaardigital.github.io/Freetools/</loc>
+    <lastmod>2026-10-18</lastmod><changefreq>monthly</changefreq></url>
+<url><loc>https://anwaardigital.github.io/Freetools/privacy.html</loc>
+    <lastmod>2026-10-18</lastmod><changefreq>monthly</changefreq></url>
+<url><loc>https://anwaardigital.github.io/Freetools/request.html</loc>
+    <lastmod>2026-10-18</lastmod><changefreq>monthly</changefreq></url>
+<url><loc>https://anwaardigital.github.io/Freetools/terms.html</loc>
+    <lastmod>2026-10-18</lastmod><changefreq>yearly</changefreq></url>
+<url><loc>https://anwaardigital.github.io/Freetools/tools/age-calculator.html</loc>
+    <lastmod>2026-10-18</lastmod><changefreq>monthly</changefreq></url>
+<url><loc>https://anwaardigital.github.io/Freetools/tools/base64.html</loc>
+    <lastmod>2026-10-18</lastmod><changefreq>monthly</changefreq></url>
+<url><loc>https://anwaardigital.github.io/Freetools/tools/bmi-calculator.html</loc>
+    <lastmod>2026-10-18</lastmod><changefreq>monthly</changefreq></url>
+<url><loc>https://anwaardigital.github.io/Freetools/tools/case-converter.html</loc>
+    <lastmod>2026-10-18</lastmod><changefreq>monthly</changefreq></url>
+<url><loc>https://anwaardigital.github.io/Freetools/tools/character-counter.html</loc>
+    <lastmod>2026-10-18</lastmod><changefreq>monthly</changefreq></url>
+<url><loc>https://anwaardigital.github.io/Freetools/tools/coin-flip.html</loc>
+    <lastmod>2026-10-18</lastmod><changefreq>monthly</changefreq></url>
+<url><loc>https://anwaardigital.github.io/Freetools/tools/color-picker.html</loc>
+    <lastmod>2026-10-18</lastmod><changefreq>monthly</changefreq></url>
+<url><loc>https://anwaardigital.github.io/Freetools/tools/contrast-checker.html</loc>
+    <lastmod>2026-10-18</lastmod><changefreq>monthly</changefreq></url>
+<url><loc>https://anwaardigital.github.io/Freetools/tools/css-minifier.html</loc>
+    <lastmod>2026-10-18</lastmod><changefreq>monthly</changefreq></url>
+<url><loc>https://anwaardigital.github.io/Freetools/tools/currency-converter.html</loc>
+    <lastmod>2026-10-18</lastmod><changefreq>monthly</changefreq></url>
+<url><loc>https://anwaardigital.github.io/Freetools/tools/date-duration.html</loc>
+    <lastmod>2026-10-18</lastmod><changefreq>monthly</changefreq></url>
+<url><loc>https://anwaardigital.github.io/Freetools/tools/dice-roller.html</loc>
+    <lastmod>2026-10-18</lastmod><changefreq>monthly</changefreq></url>
+<url><loc>https://anwaardigital.github.io/Freetools/tools/discount-calculator.html</loc>
+    <lastmod>2026-10-18</lastmod><changefreq>monthly</changefreq></url>
+<url><loc>https://anwaardigital.github.io/Freetools/tools/favicon-generator.html</loc>
+    <lastmod>2026-10-18</lastmod><changefreq>monthly</changefreq></url>
+<url><loc>https://anwaardigital.github.io/Freetools/tools/gradient-generator.html</loc>
+    <lastmod>2026-10-18</lastmod><changefreq>monthly</changefreq></url>
+<url><loc>https://anwaardigital.github.io/Freetools/tools/grayscale-filter.html</loc>
+    <lastmod>2026-10-18</lastmod><changefreq>monthly</changefreq></url>
+<url><loc>https://anwaardigital.github.io/Freetools/tools/hash-generator.html</loc>
+    <lastmod>2026-10-18</lastmod><changefreq>monthly</changefreq></url>
+<url><loc>https://anwaardigital.github.io/Freetools/tools/hex-to-rgb.html</loc>
+    <lastmod>2026-10-18</lastmod><changefreq>monthly</changefreq></url>
+<url><loc>https://anwaardigital.github.io/Freetools/tools/html-encoder.html</loc>
+    <lastmod>2026-10-18</lastmod><changefreq>monthly</changefreq></url>
+<url><loc>https://anwaardigital.github.io/Freetools/tools/image-compressor.html</loc>
+    <lastmod>2026-10-18</lastmod><changefreq>monthly</changefreq></url>
+<url><loc>https://anwaardigital.github.io/Freetools/tools/image-converter.html</loc>
+    <lastmod>2026-10-18</lastmod><changefreq>monthly</changefreq></url>
+<url><loc>https://anwaardigital.github.io/Freetools/tools/image-cropper.html</loc>
+    <lastmod>2026-10-18</lastmod><changefreq>monthly</changefreq></url>
+<url><loc>https://anwaardigital.github.io/Freetools/tools/image-resizer.html</loc>
+    <lastmod>2026-10-18</lastmod><changefreq>monthly</changefreq></url>
+<url><loc>https://anwaardigital.github.io/Freetools/tools/image-rotator.html</loc>
+    <lastmod>2026-10-18</lastmod><changefreq>monthly</changefreq></url>
+<url><loc>https://anwaardigital.github.io/Freetools/tools/images-to-pdf.html</loc>
+    <lastmod>2026-10-18</lastmod><changefreq>monthly</changefreq></url>
+<url><loc>https://anwaardigital.github.io/Freetools/tools/ip-lookup.html</loc>
+    <lastmod>2026-10-18</lastmod><changefreq>monthly</changefreq></url>
+<url><loc>https://anwaardigital.github.io/Freetools/tools/js-minifier.html</loc>
+    <lastmod>2026-10-18</lastmod><changefreq>monthly</changefreq></url>
+<url><loc>https://anwaardigital.github.io/Freetools/tools/json-formatter.html</loc>
+    <lastmod>2026-10-18</lastmod><changefreq>monthly</changefreq></url>
+<url><loc>https://anwaardigital.github.io/Freetools/tools/link-shortener.html</loc>
+    <lastmod>2026-10-18</lastmod><changefreq>monthly</changefreq></url>
+<url><loc>https://anwaardigital.github.io/Freetools/tools/loan-calculator.html</loc>
+    <lastmod>2026-10-18</lastmod><changefreq>monthly</changefreq></url>
+<url><loc>https://anwaardigital.github.io/Freetools/tools/lorem-ipsum.html</loc>
+    <lastmod>2026-10-18</lastmod><changefreq>monthly</changefreq></url>
+<url><loc>https://anwaardigital.github.io/Freetools/tools/password-generator.html</loc>
+    <lastmod>2026-10-18</lastmod><changefreq>monthly</changefreq></url>
+<url><loc>https://anwaardigital.github.io/Freetools/tools/password-strength-checker.html</loc>
+    <lastmod>2026-10-18</lastmod><changefreq>monthly</changefreq></url>
+<url><loc>https://anwaardigital.github.io/Freetools/tools/pdf-compressor.html</loc>
+    <lastmod>2026-10-18</lastmod><changefreq>monthly</changefreq></url>
+<url><loc>https://anwaardigital.github.io/Freetools/tools/pdf-merger.html</loc>
+    <lastmod>2026-10-18</lastmod><changefreq>monthly</changefreq></url>
+<url><loc>https://anwaardigital.github.io/Freetools/tools/pdf-splitter.html</loc>
+    <lastmod>2026-10-18</lastmod><changefreq>monthly</changefreq></url>
+<url><loc>https://anwaardigital.github.io/Freetools/tools/pdf-to-text.html</loc>
+    <lastmod>2026-10-18</lastmod><changefreq>monthly</changefreq></url>
+<url><loc>https://anwaardigital.github.io/Freetools/tools/percentage-calculator.html</loc>
+    <lastmod>2026-10-18</lastmod><changefreq>monthly</changefreq></url>
+<url><loc>https://anwaardigital.github.io/Freetools/tools/phishing-url-checker.html</loc>
+    <lastmod>2026-10-18</lastmod><changefreq>monthly</changefreq></url>
+<url><loc>https://anwaardigital.github.io/Freetools/tools/qr-generator.html</loc>
+    <lastmod>2026-10-18</lastmod><changefreq>monthly</changefreq></url>
+<url><loc>https://anwaardigital.github.io/Freetools/tools/qr-reader.html</loc>
+    <lastmod>2026-10-18</lastmod><changefreq>monthly</changefreq></url>
+<url><loc>https://anwaardigital.github.io/Freetools/tools/random-color.html</loc>
+    <lastmod>2026-10-18</lastmod><changefreq>monthly</changefreq></url>
+<url><loc>https://anwaardigital.github.io/Freetools/tools/random-number.html</loc>
+    <lastmod>2026-10-18</lastmod><changefreq>monthly</changefreq></url>
+<url><loc>https://anwaardigital.github.io/Freetools/tools/remove-duplicates.html</loc>
+    <lastmod>2026-10-18</lastmod><changefreq>monthly</changefreq></url>
+<url><loc>https://anwaardigital.github.io/Freetools/tools/security-headers-checker.html</loc>
+    <lastmod>2026-10-18</lastmod><changefreq>monthly</changefreq></url>
+<url><loc>https://anwaardigital.github.io/Freetools/tools/text-reverser.html</loc>
+    <lastmod>2026-10-18</lastmod><changefreq>monthly</changefreq></url>
+<url><loc>https://anwaardigital.github.io/Freetools/tools/timestamp-converter.html</loc>
+    <lastmod>2026-10-18</lastmod><changefreq>monthly</changefreq></url>
+<url><loc>https://anwaardigital.github.io/Freetools/tools/timezone-converter.html</loc>
+    <lastmod>2026-10-18</lastmod><changefreq>monthly</changefreq></url>
+<url><loc>https://anwaardigital.github.io/Freetools/tools/tip-calculator.html</loc>
+    <lastmod>2026-10-18</lastmod><changefreq>monthly</changefreq></url>
+<url><loc>https://anwaardigital.github.io/Freetools/tools/unit-converter.html</loc>
+    <lastmod>2026-10-18</lastmod><changefreq>monthly</changefreq></url>
+<url><loc>https://anwaardigital.github.io/Freetools/tools/url-encoder.html</loc>
+    <lastmod>2026-10-18</lastmod><changefreq>monthly</changefreq></url>
+<url><loc>https://anwaardigital.github.io/Freetools/tools/uuid-generator.html</loc>
+    <lastmod>2026-10-18</lastmod><changefreq>monthly</changefreq></url>
+<url><loc>https://anwaardigital.github.io/Freetools/tools/whitespace-remover.html</loc>
+    <lastmod>2026-10-18</lastmod><changefreq>monthly</changefreq></url>
+<url><loc>https://anwaardigital.github.io/Freetools/tools/word-counter.html</loc>
+    <lastmod>2026-10-18</lastmod><changefreq>monthly</changefreq></url>
 <url><loc>https://anwaardigital.github.io/Freetools/blog/how-to-merge-pdfs-online.html</loc><lastmod>2026-10-15</lastmod><changefreq>monthly</changefreq></url>
 <url><loc>https://anwaardigital.github.io/Freetools/blog/how-to-split-pdfs-online.html</loc><lastmod>2026-10-15</lastmod><changefreq>monthly</changefreq></url>
 <url><loc>https://anwaardigital.github.io/Freetools/blog/how-to-compress-pdfs-online.html</loc><lastmod>2026-10-15</lastmod><changefreq>monthly</changefreq></url>
