@@ -55,6 +55,38 @@
             "@type": "Answer",
             "text": "Absolutely. All processing happens locally in your browser. Your files are never uploaded to any server."
           }
+        },
+        {
+          "@type": "Question",
+          "name": "What is the difference between HEX, RGB, and HSL?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "HEX (#FF5733) is a compact way to write RGB values — the same color in three notations. RGB (255, 87, 51) describes red/green/blue light intensities. HSL (11°, 100%, 60%) describes hue, saturation, and lightness, which many designers find more intuitive for adjusting colors. They are interchangeable; pick whichever your tool needs."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How do I pick colors that go well together?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Start with one base color, then try its complement (opposite on the color wheel) for high contrast, analogous neighbors for harmony, or a triadic trio for vibrant balance. The palette generator beside the picker can build these schemes automatically from your chosen color."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is the eyedropper tool and how do I use it?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The eyedropper lets you sample any color visible on your screen — click it, then click any pixel in the browser window to capture that exact color's codes. Perfect for matching brand colors from a logo or borrowing inspiration from a website you admire."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Why does my color look different on another screen?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Displays vary in brightness, contrast, and color calibration — a color tuned on a phone may look washed out on a cheap monitor. For critical brand work, check colors on multiple devices and consider formal color profiles (sRGB is the safe web standard)."
+          }
         }
       ]
     }
@@ -73,8 +105,19 @@
 <div class="tool-hero"><h1>🎨 Color Picker</h1><p>Pick colors visually and get instant HEX + RGB values to copy. Useful for designers and developers matching brand colors. Free, unlimited, private — works entirely in your browser.</p></div>
 <div class="ad-slot"><!-- AdSense code goes here --></div>
 <div class="tool-box" id="tool-root" data-tool="color-picker"></div>
-<div class="howto"><h2>How to use</h2><ol><li>Open the tool — nothing to install, it runs in your browser.</li><li>Enter your input or upload your file.</li><li>Click the action button and download or copy the result.</li></ol></div>
-<div class="faq"><h2>FAQ</h2><details><summary>Is it really free?</summary><p>Yes — every tool on this site is 100% free with no limits, no signup and no watermarks.</p></details><details><summary>Is my data private?</summary><p>Absolutely. All processing happens locally in your browser. Your files are never uploaded to any server.</p></details></div>
+<div class="howto"><h2>How to use</h2><ol><li>Click anywhere on the color spectrum or drag the selector to pick a hue visually.</li><li>Fine-tune with the brightness/saturation slider, or type exact values into the HEX, RGB, or HSL fields.</li><li>See your color displayed large with all its codes (HEX, RGB, HSL, CMYK) ready to copy.</li><li>Click any code to copy it, or save colors to your palette for the session.</li></ol></div>
+<div class="faq"><h2>FAQ</h2><details><summary>Is it really free?</summary><p>Yes — every tool on this site is 100% free with no limits, no signup and no watermarks.</p></details><details><summary>Is my data private?</summary><p>Absolutely. All processing happens locally in your browser. Your files are never uploaded to any server.</p></details><details><summary>What is the difference between HEX, RGB, and HSL?</summary><p>HEX (#FF5733) is a compact way to write RGB values — the same color in three notations. RGB (255, 87, 51) describes red/green/blue light intensities. HSL (11°, 100%, 60%) describes hue, saturation, and lightness, which many designers find more intuitive for adjusting colors. They are interchangeable; pick whichever your tool needs.</p></details><details><summary>How do I pick colors that go well together?</summary><p>Start with one base color, then try its complement (opposite on the color wheel) for high contrast, analogous neighbors for harmony, or a triadic trio for vibrant balance. The palette generator beside the picker can build these schemes automatically from your chosen color.</p></details><details><summary>What is the eyedropper tool and how do I use it?</summary><p>The eyedropper lets you sample any color visible on your screen — click it, then click any pixel in the browser window to capture that exact color's codes. Perfect for matching brand colors from a logo or borrowing inspiration from a website you admire.</p></details><details><summary>Why does my color look different on another screen?</summary><p>Displays vary in brightness, contrast, and color calibration — a color tuned on a phone may look washed out on a cheap monitor. For critical brand work, check colors on multiple devices and consider formal color profiles (sRGB is the safe web standard).</p></details></div>
+<div class="tool-guide" style="margin:32px 0;padding:24px;background:#fafafa;border:1px solid #e5e7eb;border-radius:12px;line-height:1.75"><h2 style="margin-top:0">📘 Complete Guide to Picking Colors Like a Designer</h2><p>Color is the fastest emotional signal in design — visitors form opinions about a website in milliseconds, and color does most of that talking. Yet most people pick colors by vague feeling and hope. This guide gives you the working knowledge: color models, harmony rules, accessibility, and practical workflows.</p>
+<h3>Color models, demystified</h3>
+<p><strong>HEX</strong> (#3B82F6) is RGB written compactly — six hexadecimal digits for red, green, blue. It is the lingua franca of web CSS. <strong>RGB</strong> (59, 130, 246) is the same data in decimal, used in design tools and canvas code. <strong>HSL</strong> (217°, 91%, 60%) reframes color as hue (position on the wheel), saturation (intensity), and lightness — far easier for humans: "make it a bit darker" is just lowering L. <strong>CMYK</strong> is for print, not screens — ignore it unless you are sending something to a printer. Convert freely; the color is identical, only the notation changes.</p>
+<h3>Harmony: colors that belong together</h3>
+<p>The color wheel is your cheat sheet. <strong>Complementary</strong> pairs (opposites: blue/orange) create maximum energy and contrast — great for CTAs. <strong>Analogous</strong> groups (neighbors: blue/teal/green) feel calm and cohesive — great for backgrounds. <strong>Triadic</strong> trios (evenly spaced: red/yellow/blue) feel playful and bold. <strong>Monochromatic</strong> schemes (one hue, varied lightness) look effortlessly sophisticated. Rule of thumb: pick one dominant color, one supporting color, and one accent — then stop. Most ugly palettes fail from too many colors, not wrong ones.</p>
+<h3>The 60-30-10 rule</h3>
+<p>Interior designers swear by it and it works on screens too: 60% dominant color (backgrounds), 30% secondary (sections, cards), 10% accent (buttons, links, highlights). It guarantees balance no matter which hues you choose.</p>
+<h3>Accessibility is not optional</h3>
+<p>About 1 in 12 men has some color-vision deficiency. Never encode meaning in color alone — pair it with labels, icons, or patterns. For text, check contrast ratios (4.5:1 minimum for body text per WCAG); our Contrast Checker tool verifies this in one click. Dark text on light backgrounds remains the most readable combination ever tested.</p>
+<h3>Workflow tips</h3>
+<p>Sample real-world inspiration with the eyedropper — brand logos, photographs, movie posters. Build a small palette (3–5 colors) and reuse it everywhere for instant visual consistency. Name your colors ("brand blue", "alert red") in your notes so the whole team uses the same values. And when in doubt, steal from nature: sunsets, forests, and oceans have perfected palettes over millions of years.</p></div>
 <div class="tutorial-promo" style="margin:1.5rem 0;padding:1rem 1.25rem;border:1px solid #e5e7eb;border-radius:10px;background:#f8fafc"><p style="margin:0">📖 <strong>Step-by-step tutorial:</strong> <a href="../blog/how-to-color-picker-online.html">How to Pick Colors Online and Get HEX &amp; RGB Codes for Free (2026 Guide)</a></p></div>
 <div class="related"><h2>Related tools</h2><div class="grid"><a class="tool-card" href="./hex-to-rgb.html"><div class="ticon">🌈</div><h3>HEX to RGB Converter</h3><p>Convert HEX colors to RGB and back.</p></a><a class="tool-card" href="./random-color.html"><div class="ticon">🖌️</div><h3>Random Color Palette</h3><p>Generate beautiful random color palettes, click to copy.</p></a><a class="tool-card" href="./gradient-generator.html"><div class="ticon">🌅</div><h3>Gradient Generator</h3><p>Design CSS gradients with live preview and copy-ready code.</p></a></div></div>
 </div>

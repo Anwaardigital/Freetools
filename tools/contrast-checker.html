@@ -55,6 +55,38 @@
             "@type": "Answer",
             "text": "Absolutely. All processing happens locally in your browser. Your files are never uploaded to any server."
           }
+        },
+        {
+          "@type": "Question",
+          "name": "What is a contrast ratio?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "It measures the luminance difference between text and background, from 1:1 (identical, invisible) to 21:1 (pure black on pure white, maximum). The ratio is calculated with a standard WCAG formula based on relative luminance — higher means more readable."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What do WCAG AA and AAA mean?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "WCAG (Web Content Accessibility Guidelines) sets the bar: AA requires 4.5:1 for normal text and 3:1 for large text (18pt+ or 14pt bold) — the legal standard in most countries. AAA is stricter: 7:1 for normal text, 4.5:1 for large. Aim for AA minimum; AAA where you can."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Does large text really get an easier target?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. Large text (at least 18pt, or 14pt bold) only needs 3:1 for AA because thicker strokes stay legible at lower contrast. But 'large' in WCAG terms is bigger than most body text — when in doubt, test against the normal-text 4.5:1 bar."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "My brand colors fail — what should I do?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "You rarely need to abandon brand colors: darken the text shade or lighten the background tint until it passes — the tool's suggestion feature finds the closest passing color. Reserve low-contrast brand pairings for large headlines or decorative elements, never body copy."
+          }
         }
       ]
     }
@@ -73,8 +105,19 @@
 <div class="tool-hero"><h1>👁️ Contrast Checker</h1><p>Check WCAG text contrast ratios for accessibility. Useful for designers making sure text is readable for everyone. Free, unlimited, private — works entirely in your browser.</p></div>
 <div class="ad-slot"><!-- AdSense code goes here --></div>
 <div class="tool-box" id="tool-root" data-tool="contrast-checker"></div>
-<div class="howto"><h2>How to use</h2><ol><li>Open the tool — nothing to install, it runs in your browser.</li><li>Enter your input or upload your file.</li><li>Click the action button and download or copy the result.</li></ol></div>
-<div class="faq"><h2>FAQ</h2><details><summary>Is it really free?</summary><p>Yes — every tool on this site is 100% free with no limits, no signup and no watermarks.</p></details><details><summary>Is my data private?</summary><p>Absolutely. All processing happens locally in your browser. Your files are never uploaded to any server.</p></details></div>
+<div class="howto"><h2>How to use</h2><ol><li>Enter your text (foreground) color — pick from the palette, use the eyedropper, or type a HEX/RGB value.</li><li>Enter your background color the same way.</li><li>Read the instant contrast ratio (e.g. 7.2:1) plus the WCAG pass/fail badges for AA and AAA levels.</li><li>Adjust either color until you pass — the tool suggests the nearest passing shade with one click.</li></ol></div>
+<div class="faq"><h2>FAQ</h2><details><summary>Is it really free?</summary><p>Yes — every tool on this site is 100% free with no limits, no signup and no watermarks.</p></details><details><summary>Is my data private?</summary><p>Absolutely. All processing happens locally in your browser. Your files are never uploaded to any server.</p></details><details><summary>What is a contrast ratio?</summary><p>It measures the luminance difference between text and background, from 1:1 (identical, invisible) to 21:1 (pure black on pure white, maximum). The ratio is calculated with a standard WCAG formula based on relative luminance — higher means more readable.</p></details><details><summary>What do WCAG AA and AAA mean?</summary><p>WCAG (Web Content Accessibility Guidelines) sets the bar: AA requires 4.5:1 for normal text and 3:1 for large text (18pt+ or 14pt bold) — the legal standard in most countries. AAA is stricter: 7:1 for normal text, 4.5:1 for large. Aim for AA minimum; AAA where you can.</p></details><details><summary>Does large text really get an easier target?</summary><p>Yes. Large text (at least 18pt, or 14pt bold) only needs 3:1 for AA because thicker strokes stay legible at lower contrast. But 'large' in WCAG terms is bigger than most body text — when in doubt, test against the normal-text 4.5:1 bar.</p></details><details><summary>My brand colors fail — what should I do?</summary><p>You rarely need to abandon brand colors: darken the text shade or lighten the background tint until it passes — the tool's suggestion feature finds the closest passing color. Reserve low-contrast brand pairings for large headlines or decorative elements, never body copy.</p></details></div>
+<div class="tool-guide" style="margin:32px 0;padding:24px;background:#fafafa;border:1px solid #e5e7eb;border-radius:12px;line-height:1.75"><h2 style="margin-top:0">📘 Complete Guide to Color Contrast & Readability</h2><p>Contrast is the single most impactful accessibility fix on the web — and the most commonly failed. Light-grey text on white backgrounds looks "clean" to designers and is unreadable to millions of visitors, including anyone over 40, anyone in bright sunlight, and the roughly 5% of people with low vision. This guide explains the standard, the math, and how to fix failures without wrecking your design.</p>
+<h3>The WCAG standard in plain English</h3>
+<p>WCAG 2.x defines two conformance levels for contrast. <strong>Level AA</strong> (the one laws reference — including the EU Accessibility Act and ADA case law in the US) demands a 4.5:1 ratio for normal text and 3:1 for large text. <strong>Level AAA</strong> (the gold standard) demands 7:1 and 4.5:1 respectively. Logos and purely decorative text are exempt — but if it conveys information, it must pass. Note: WCAG 3.0 (in draft) will eventually replace ratios with a new APCA model, but ratios remain the enforceable standard today.</p>
+<h3>Why contrast fails so often</h3>
+<p>Three culprits: <strong>fashion</strong> (ultra-light greys trend in portfolios), <strong>brand colors</strong> used at full strength for text (a vivid brand orange that pops as a button fails as 12px text), and <strong>text over images</strong> where the background varies — a photo's bright patch can silently destroy legibility. The fix for images: a semi-transparent dark overlay or a solid scrim behind the text, then re-test the worst-case area.</p>
+<h3>Beyond the ratio: real-world readability</h3>
+<p>The ratio is necessary but not sufficient. Thin font weights (100–300) need more contrast than the formula assumes — prefer 400+ for body text. Very small text (under 12px) strains even at passing ratios. Glossy screens, sunlight, and cheap monitors all effectively lower contrast, so treat 4.5:1 as a floor, not a target — 7:1 body text is noticeably more comfortable for everyone, not just those with impairments.</p>
+<h3>Fixing failures gracefully</h3>
+<p>Do not redesign from scratch. Nudge: darken text by 10–20% lightness or add opacity to background tints — usually enough to cross the threshold while staying on-brand. For links, remember that color alone cannot distinguish them (use underlines too). For disabled buttons and placeholders, low contrast is expected — but ensure the <em>reason</em> is communicated another way. Test your final palette in greyscale: if the hierarchy still reads, your contrast is doing its job.</p>
+<h3>Who this helps (hint: everyone)</h3>
+<p>Accessibility improvements help far beyond the nominal beneficiaries: captions help in noisy cafés, high contrast helps in sunlight, clear focus states help power keyboard users. Roughly 15% of the global population lives with some disability — designing for contrast is designing for a sixth of your audience, plus everyone having a bad-screen day.</p></div>
 <div class="tutorial-promo" style="margin:1.5rem 0;padding:1rem 1.25rem;border:1px solid #e5e7eb;border-radius:10px;background:#f8fafc"><p style="margin:0">📖 <strong>Step-by-step tutorial:</strong> <a href="../blog/how-to-contrast-checker-online.html">How to Check Text Contrast for Accessibility Online for Free (2026 Guide)</a></p></div>
 <div class="related"><h2>Related tools</h2><div class="grid"><a class="tool-card" href="./color-picker.html"><div class="ticon">🎨</div><h3>Color Picker</h3><p>Pick colors and get instant HEX + RGB values.</p></a><a class="tool-card" href="./hex-to-rgb.html"><div class="ticon">🌈</div><h3>HEX to RGB Converter</h3><p>Convert HEX colors to RGB and back.</p></a><a class="tool-card" href="./random-color.html"><div class="ticon">🖌️</div><h3>Random Color Palette</h3><p>Generate beautiful random color palettes, click to copy.</p></a></div></div>
 </div>
