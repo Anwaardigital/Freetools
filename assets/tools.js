@@ -391,38 +391,16 @@ reg('image-converter', function (root) {
 
 reg('background-remover', function (root) {
   var tol = numInput(30, 0, 150, 1);
-  var status = h('p', { style: 'color:#16a34a;font-weight:600' }, '');
   root.appendChild(h('p', null, 'Removes solid white / light backgrounds (great for logos & product shots). For complex photos use a dedicated AI tool.'));
   imgWorkArea(root, 'image/*', null, function (st, cv, controls) {
     controls.appendChild(field('Tolerance (0-150)', tol));
-    controls.appendChild(status);
     controls.appendChild(btnRow(btn('Remove Background', '', function () {
-      try {
-        var t = parseInt(tol.value, 10);
-        if (isNaN(t)) t = 30;
-        t = Math.max(0, Math.min(150, t));
-        var ctx = cv.getContext('2d');
-        var d = ctx.getImageData(0, 0, cv.width, cv.height), p = d.data;
-        var threshold = 255 - t;
-        var removed = 0;
-        for (var i = 0; i < p.length; i += 4) {
-          if (p[i] > threshold && p[i + 1] > threshold && p[i + 2] > threshold) {
-            p[i + 3] = 0;
-            removed++;
-          }
-        }
-        ctx.putImageData(d, 0, 0);
-        if (removed === 0) {
-          status.style.color = '#dc2626';
-          status.textContent = 'No light background pixels found. Try increasing Tolerance, or use an image with a white/light background.';
-        } else {
-          status.style.color = '#16a34a';
-          status.textContent = 'Done! ' + removed + ' pixels made transparent. Click Download PNG to save.';
-        }
-      } catch (e) {
-        status.style.color = '#dc2626';
-        status.textContent = 'Error: ' + e.message;
+      var ctx = cv.getContext('2d');
+      var d = ctx.getImageData(0, 0, cv.width, cv.height), p = d.data, t = +tol.value;
+      for (var i = 0; i < p.length; i += 4) {
+        if (p[i] > 255 - t && p[i + 1] > 255 - t && p[i + 2] > 255 - t) p[i + 3] = 0;
       }
+      ctx.putImageData(d, 0, 0);
     }), btn('Download PNG', 'green', function () { canvasDownload(cv, st.name + '-nobg.png'); })));
   });
 });

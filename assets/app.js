@@ -132,10 +132,4 @@ document.addEventListener('DOMContentLoaded', function () {
   }
 
   init();
-
-  window.showCookieBanner = function () {
-    try { localStorage.removeItem("ad_cookie_consent_v1"); } catch (e) {}
-    try { localStorage.removeItem("ft_cookie_consent"); } catch (e) {}
-    showBanner();
-  };
 })();
