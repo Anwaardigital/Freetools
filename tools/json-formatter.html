@@ -55,6 +55,38 @@
             "@type": "Answer",
             "text": "Absolutely. All processing happens locally in your browser. Your files are never uploaded to any server."
           }
+        },
+        {
+          "@type": "Question",
+          "name": "What does the Format / Beautify button do?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "It parses your JSON and re-prints it with clean 2-space indentation — one key-value pair per line and properly nested objects — so deep structures are easy to read and scan."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What's the difference between beautify and minify?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Beautify expands JSON into human-readable, indented text. Minify strips all unnecessary whitespace and line breaks into a single compact line, ideal when size matters — for example, embedding data in URLs or sending payloads over an API."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How do the error messages help me find mistakes?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "When parsing fails, the tool shows the exact reason and character position, e.g. 'Unexpected token } in JSON at position 42'. The usual culprits are trailing commas, single quotes instead of double quotes, unquoted keys, or comments — JSON allows none of those."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Does it validate my JSON against a schema?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No — this tool validates JSON syntax (correct structure), not schema or meaning. It confirms your JSON is well-formed so any parser will accept it, but it doesn't check whether the fields match what your API expects."
+          }
         }
       ]
     }
@@ -73,8 +105,9 @@
 <div class="tool-hero"><h1>🧾 JSON Formatter</h1><p>Beautify, minify and validate JSON data with clear error messages. Useful for developers debugging APIs and config files. Free, unlimited, private — works entirely in your browser.</p></div>
 <div class="ad-slot"><!-- AdSense code goes here --></div>
 <div class="tool-box" id="tool-root" data-tool="json-formatter"></div>
-<div class="howto"><h2>How to use</h2><ol><li>Open the tool — nothing to install, it runs in your browser.</li><li>Enter your input or upload your file.</li><li>Click the action button and download or copy the result.</li></ol></div>
-<div class="faq"><h2>FAQ</h2><details><summary>Is it really free?</summary><p>Yes — every tool on this site is 100% free with no limits, no signup and no watermarks.</p></details><details><summary>Is my data private?</summary><p>Absolutely. All processing happens locally in your browser. Your files are never uploaded to any server.</p></details></div>
+<div class="howto"><h2>How to use</h2><ol><li>Paste your JSON into the input box above — copy it straight from an API response, a config file or your code editor.</li><li>Click <strong>Format / Beautify</strong> to expand it into readable, 2-space-indented JSON, or <strong>Minify</strong> to compress it into one compact line.</li><li>If your JSON is broken, you'll see an exact error message (like "Unexpected token } in JSON at position 42") showing where the mistake is — fix it and re-run.</li><li>Use <strong>Validate</strong> to check correctness without reformatting, then hit <strong>Copy</strong> to grab the clean result.</li></ol></div>
+<div class="faq"><h2>FAQ</h2><details><summary>Is it really free?</summary><p>Yes — every tool on this site is 100% free with no limits, no signup and no watermarks.</p></details><details><summary>Is my data private?</summary><p>Absolutely. All processing happens locally in your browser. Your files are never uploaded to any server.</p></details><details><summary>What does the Format / Beautify button do?</summary><p>It parses your JSON and re-prints it with clean 2-space indentation — one key-value pair per line and properly nested objects — so deep structures are easy to read and scan.</p></details><details><summary>What's the difference between beautify and minify?</summary><p>Beautify expands JSON into human-readable, indented text. Minify does the opposite: it strips all unnecessary whitespace and line breaks into a single compact line, which is ideal when size matters — for example, embedding data in URLs or sending payloads over an API.</p></details><details><summary>How do the error messages help me find mistakes?</summary><p>When parsing fails, the tool shows the exact reason and character position, e.g. "Unexpected token } in JSON at position 42". The usual culprits are trailing commas, single quotes instead of double quotes, unquoted keys, or comments — JSON allows none of those.</p></details><details><summary>Does it validate my JSON against a schema?</summary><p>No — this tool validates JSON syntax (correct structure), not schema or meaning. It confirms your JSON is well-formed so any parser will accept it, but it doesn't check whether the fields match what your API expects.</p></details></div>
+<div class="tool-guide"><h2>Understanding JSON Formatting, Minifying and Validation</h2><p>JSON (JavaScript Object Notation) is the most common way data travels between servers, APIs and apps today. Whenever you fetch data from an API, edit a config file, or work with a database export, you are probably looking at JSON. The problem is that raw JSON is rarely readable: APIs return it as one giant line, and a single misplaced character can break an entire integration. That is what a JSON formatter is for — it turns unreadable blobs into clean, structured text you can actually work with.</p><p>This tool gives you three modes. <strong>Format / Beautify</strong> takes compact or messy JSON and re-prints it with 2-space indentation, one key-value pair per line, so nested objects and arrays unfold visually and you can trace the structure at a glance. <strong>Minify</strong> does the reverse: it strips every unnecessary space and line break, producing the smallest possible string. Minified JSON is ideal when payload size matters — sending data over an API, embedding it in a URL parameter, or storing it in a size-limited field. <strong>Validate</strong> simply checks whether your JSON is structurally correct without changing anything, giving you a clear "Valid JSON" confirmation or a precise error.</p><h3>Common JSON mistakes that break parsing</h3><p>JSON is stricter than JavaScript, and most validation failures come from a small set of mistakes. Trailing commas — a comma after the last item in an object or array — are the number one cause. Single quotes instead of double quotes around strings and keys are another; JSON requires double quotes, always. Unquoted keys, comments (which JSON does not support at all), and control characters inside strings also break parsing. When the tool reports an error like "Unexpected token } in JSON at position 42", look exactly at that character: the real mistake is usually just before it — a missing comma, an extra brace, or an unterminated string.</p><h3>Pro tips for working with JSON</h3><p>Always validate an API response before writing code against it — many "bugs" are just malformed data, not broken logic. When debugging, beautify first to see the structure, fix the data, then minify before sending it back. Watch out for duplicate keys: JSON technically allows them, but most parsers keep only the last one, silently dropping data. And keep privacy in mind: unlike many online formatters, this tool runs entirely in your browser, so API keys, tokens and personal data in your JSON are never uploaded anywhere.</p></div>
 <div class="tut-box" style="background:#f0f9ff;border:1px solid #bae6fd;border-radius:12px;padding:14px 18px;margin:18px 0"><p style="margin:0">📖 <strong>Step-by-step tutorial:</strong> New to this tool? Read our <a href="../blog/how-to-json-formatter-online.html">complete guide to formatting and validating JSON online</a> — with practical examples.</p></div>
 <div class="related"><h2>Related tools</h2><div class="grid"><a class="tool-card" href="./word-counter.html"><div class="ticon">🔢</div><h3>Word Counter</h3><p>Count words, characters, sentences and reading time in real time.</p></a><a class="tool-card" href="./character-counter.html"><div class="ticon">🔤</div><h3>Character Counter</h3><p>Live character, line and whitespace-free counts.</p></a><a class="tool-card" href="./case-converter.html"><div class="ticon">🔠</div><h3>Text Case Converter</h3><p>Convert text to UPPERCASE, lowercase, Title Case and more.</p></a></div></div>
 </div>

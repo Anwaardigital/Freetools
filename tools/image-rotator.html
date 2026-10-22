@@ -56,6 +56,39 @@
             "text": "Absolutely. All processing happens locally in your browser. Your files are never uploaded to any server."
           }
         }
+      ,
+        {
+          "@type": "Question",
+          "name": "Why do some of my photos appear sideways?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Phone and camera photos store orientation as EXIF metadata rather than rotating the actual pixels. Some apps and websites ignore this metadata, showing the image sideways or upside down. Rotating here bakes the correct orientation into the pixels themselves, so it displays correctly everywhere."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Does rotating reduce image quality?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "90-degree rotations are lossless for the pixel data \u2014 pixels are just rearranged, not recalculated. The tool re-encodes the file on download though, so for maximum fidelity download as PNG, or accept the tiny recompression if you choose JPG."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What's the difference between rotate and flip?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Rotate turns the image like a steering wheel (90, 180, 270 degrees). Flip mirrors it like a reflection \u2014 horizontal flip swaps left and right (useful for selfies that appear mirrored), vertical flip swaps top and bottom. They're independent operations you can combine."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I rotate by an arbitrary angle like 15 degrees?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "This tool rotates in 90-degree steps, which are lossless. Arbitrary-angle rotation requires resampling that softens the image and adds empty corner areas needing a background fill \u2014 for that, use a full photo editor instead."
+          }
+        }
       ]
     }
   ]
@@ -73,9 +106,24 @@
 <div class="tool-hero"><h1>🔃 Image Rotator</h1><p>Rotate images 90° or 180°, or flip them horizontally and vertically. Useful for fixing sideways photos from your camera or phone. Free, unlimited, private — works entirely in your browser.</p></div>
 <div class="ad-slot"><!-- AdSense code goes here --></div>
 <div class="tool-box" id="tool-root" data-tool="image-rotator"></div>
-<div class="howto"><h2>How to use</h2><ol><li>Open the tool — nothing to install, it runs in your browser.</li><li>Enter your input or upload your file.</li><li>Click the action button and download or copy the result.</li></ol></div>
+<div class="howto"><h2>How to use</h2><ol><li>Upload your image by clicking the upload area or dragging the file into the tool.</li><li>Click the rotate left (counterclockwise) or rotate right (clockwise) buttons to turn the image in 90-degree steps.</li><li>Use the flip horizontal or flip vertical buttons if you need a mirror image instead of a rotation.</li><li>Preview the result, then click Download to save your correctly oriented image.</li></ol></div>
 <div class="faq"><h2>FAQ</h2><details><summary>Is it really free?</summary><p>Yes — every tool on this site is 100% free with no limits, no signup and no watermarks.</p></details><details><summary>Is my data private?</summary><p>Absolutely. All processing happens locally in your browser. Your files are never uploaded to any server.</p></details></div>
-<div class="tutorial-promo" style="margin:1.5rem 0;padding:1rem 1.25rem;border:1px solid #e5e7eb;border-radius:10px;background:#f8fafc"><p style="margin:0">📖 <strong>Step-by-step tutorial:</strong> <a href="../blog/how-to-image-rotator-online.html">How to Rotate and Flip Images Online for Free (2026 Guide)</a></p></div>
+<div class="tutorial-promo" style="margin:1.5rem 0;padding:1rem 1.25rem;border:1px solid #e5e7eb;border-radius:10px;background:#f8fafc"><p style="margin:0">📖 <strong>Step-by-step tutorial:</strong> <a href="../blog/how-to-image-rotator-online.html">How to Rotate and Flip Images Online for Free (2026 Guide)</a></p><details><summary>Why do some of my photos appear sideways?</summary><p>Phone and camera photos store orientation as EXIF metadata rather than rotating the actual pixels. Some apps and websites ignore this metadata, showing the image sideways or upside down. Rotating here bakes the correct orientation into the pixels themselves, so it displays correctly everywhere.</p></details><details><summary>Does rotating reduce image quality?</summary><p>90-degree rotations are lossless for the pixel data — pixels are just rearranged, not recalculated. The tool re-encodes the file on download though, so for maximum fidelity download as PNG, or accept the tiny recompression if you choose JPG.</p></details><details><summary>What&#x27;s the difference between rotate and flip?</summary><p>Rotate turns the image like a steering wheel (90, 180, 270 degrees). Flip mirrors it like a reflection — horizontal flip swaps left and right (useful for selfies that appear mirrored), vertical flip swaps top and bottom. They&#x27;re independent operations you can combine.</p></details><details><summary>Can I rotate by an arbitrary angle like 15 degrees?</summary><p>This tool rotates in 90-degree steps, which are lossless. Arbitrary-angle rotation requires resampling that softens the image and adds empty corner areas needing a background fill — for that, use a full photo editor instead.</p></details></div>
+<div class="tool-guide"><h2>Image Rotator — Complete Guide</h2>
+<p>Sideways photos are one of the most common image annoyances — you took a perfect portrait shot, but it displays lying on its side in some app. The Image Rotator fixes orientation in seconds with lossless 90-degree rotations and mirror flips, all processed privately in your browser.</p>
+<h3>How it works</h3>
+<p>Rotating by 90, 180 or 270 degrees simply remaps pixel positions — no interpolation, no quality loss in the pixel data itself. Flipping mirrors the pixel grid horizontally or vertically. The corrected orientation is written into the actual image data (not just metadata), so the result displays correctly in every app, browser and device, even ones that ignore EXIF orientation tags.</p>
+<h3>The EXIF orientation problem</h3>
+<p>When you take a photo with your phone held vertically, many cameras don't rotate the pixels — they just set an EXIF flag saying 'display this rotated.' Well-behaved software honors the flag; plenty of software doesn't, leaving you with sideways images on certain websites, email clients or older apps. The reliable fix is exactly what this tool does: physically rotate the pixels and reset the orientation flag, eliminating the ambiguity permanently.</p>
+<h3>Common use cases</h3>
+<ul>
+<li><strong>Fixing sideways phone photos</strong> before uploading to websites that ignore EXIF data.</li>
+<li><strong>Correcting scanned documents</strong> that were fed into the scanner upside down or sideways.</li>
+<li><strong>Un-mirroring selfies:</strong> front cameras often save mirrored images; a horizontal flip restores the true orientation (text on clothing reads correctly).</li>
+<li><strong>Creating variations:</strong> designers flip images to test compositions or create symmetrical layouts.</li>
+</ul>
+<h3>Tips</h3>
+<p>Fix orientation as the first step in your editing workflow — before cropping, resizing or compressing — so all subsequent operations work on correctly oriented pixels. If an image needs both rotation and flipping, the order doesn't matter for the final result. And keep the original: if you later realize a flip was wrong (mirrored text is the classic giveaway), you can redo it from the source.</p></div>
 <div class="related"><h2>Related tools</h2><div class="grid"><a class="tool-card" href="./image-compressor.html"><div class="ticon">🗜️</div><h3>Image Compressor</h3><p>Reduce image file size with adjustable quality — JPG and WebP output.</p></a><a class="tool-card" href="./image-resizer.html"><div class="ticon">📐</div><h3>Image Resizer</h3><p>Resize images to exact pixel dimensions with aspect-ratio lock.</p></a><a class="tool-card" href="./image-converter.html"><div class="ticon">🔄</div><h3>Image Converter</h3><p>Convert images between PNG, JPG, WebP and BMP formats.</p></a></div></div>
 </div>
 <div class="related-guides"><h2>Related guides</h2><div class="grid"><a class="tool-card" href="../blog/how-to-image-rotator-online.html"><h3>How to Rotate and Flip Images Online for Free (2026 Guide) | Free Privacy Tools</h3><p>Rotate images 90 or 180 degrees and flip them horizontally or vertically right in your browser. Step-by-step guide to fixing sideways photos, mirroring selfies, and downloading the corrected image — free, no signup.</p></a><a class="tool-card" href="../blog/image-compression-guide.html"><h3>Image Compression Guide: Shrink Photos Without Losing Quality (2026) | Free Privacy Tools</h3><p>Compress images without visible quality loss. Complete 2026 guide: JPG vs WebP vs PNG, quality settings, resizing before compressing, and free browser tools — no signup.</p></a><a class="tool-card" href="../blog/how-to-resize-images-online.html"><h3>How to Resize Images Online for Free (2026 Guide) | Free Privacy Tools</h3><p>Learn how to resize images online for free. Set exact pixel dimensions with or without aspect-ratio lock — in your browser, no signup, no uploads.</p></a></div></div>
