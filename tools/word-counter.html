@@ -1,10 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<link rel="icon" type="image/png" sizes="192x192" href="https://anwaardigital.github.io/Freetools/freetools-icon-192.png">
-<link rel="icon" type="image/png" sizes="512x512" href="https://anwaardigital.github.io/Freetools/freetools-icon-512.png">
-<link rel="apple-touch-icon" href="https://anwaardigital.github.io/Freetools/freetools-icon-192.png">
-
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-M0NYM1FT9H"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-M0NYM1FT9H');
+</script>
 
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -14,7 +18,6 @@
 <meta property="og:title" content="Free Word Counter — Words &amp; Reading Time | Anwaar Digital">
 <meta property="og:description" content="Count words, characters, sentences and reading time in real time with our free word counter. Writers love it. Try free now! Runs fully in your browser.">
 <meta property="og:url" content="https://anwaardigital.github.io/Freetools/tools/word-counter.html">
-<meta property="og:image" content="https://anwaardigital.github.io/anwaar-icon-512.png">
 <meta name="twitter:card" content="summary">
 <link rel="canonical" href="https://anwaardigital.github.io/Freetools/tools/word-counter.html">
 <link rel="stylesheet" href="../assets/style.css">
@@ -55,6 +58,38 @@
             "@type": "Answer",
             "text": "Absolutely. All processing happens locally in your browser. Your files are never uploaded to any server."
           }
+        },
+        {
+          "@type": "Question",
+          "name": "How does the tool define a \"word\"?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "A word is a sequence of letters or numbers separated by whitespace or punctuation. Hyphenated compounds like \"well-known\" count as one word, and contractions like \"don't\" count as one word \u2014 matching how most editors and publishers count."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How is reading time calculated?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Using the standard 200\u2013225 words per minute for average adult readers. Speaking time uses roughly 150 words per minute, the average presentation pace. Dense academic or technical text will naturally take longer."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Does it count words in other languages?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes \u2014 the counter is Unicode-aware and handles Arabic, Urdu, and other scripts correctly. Note that for languages written without spaces between words (such as Chinese or Japanese), word counts are approximate."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is there a maximum text length?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. Paste an entire novel if you like \u2014 counting runs locally in your browser and stays fast even with hundreds of thousands of words."
+          }
         }
       ]
     }
@@ -70,18 +105,38 @@
 
 <main class="wrap">
 <div class="crumbs"><a href="../index.html">Home</a> / Text Tools / Word Counter</div>
-<div class="tool-hero"><h1>🔢 Word Counter</h1><p>Count words, characters, sentences and reading time in real time as you type. Useful for writers, students and freelancers meeting word limits. Free, unlimited, private — works entirely in your browser.</p></div>
+<div class="tool-hero"><h1>🔢 Word Counter</h1><p>Count words, characters, sentences and reading time in real time. Free, unlimited, private — works entirely in your browser.</p></div>
 <div class="ad-slot"><!-- AdSense code goes here --></div>
 <div class="tool-box" id="tool-root" data-tool="word-counter"></div>
-<div class="howto"><h2>How to use</h2><ol><li>Open the tool — nothing to install, it runs in your browser.</li><li>Enter your input or upload your file.</li><li>Click the action button and download or copy the result.</li></ol></div>
-<div class="faq"><h2>FAQ</h2><details><summary>Is it really free?</summary><p>Yes — every tool on this site is 100% free with no limits, no signup and no watermarks.</p></details><details><summary>Is my data private?</summary><p>Absolutely. All processing happens locally in your browser. Your files are never uploaded to any server.</p></details></div>
+<div class="howto"><h2>How to use</h2><ol><li>Type directly into the editor or <strong>paste your text</strong> — counting starts instantly as you type.</li><li>Watch the live dashboard: <strong>words, characters, characters without spaces, sentences, and paragraphs</strong>.</li><li>Check the <strong>reading time</strong> and <strong>speaking time</strong> estimates for your text.</li><li>Open the <strong>keyword density</strong> panel to see your most frequently used words.</li></ol></div>
+<div class="faq"><h2>FAQ</h2><details><summary>Is it really free?</summary><p>Yes — every tool on this site is 100% free with no limits, no signup and no watermarks.</p></details><details><summary>Is my data private?</summary><p>Absolutely. All processing happens locally in your browser. Your files are never uploaded to any server.</p></details><details><summary>How does the tool define a "word"?</summary><p>A word is a sequence of letters or numbers separated by whitespace or punctuation. Hyphenated compounds like "well-known" count as one word, and contractions like "don't" count as one word — matching how most editors and publishers count.</p></details><details><summary>How is reading time calculated?</summary><p>Using the standard 200–225 words per minute for average adult readers. Speaking time uses roughly 150 words per minute, the average presentation pace. Dense academic or technical text will naturally take longer.</p></details><details><summary>Does it count words in other languages?</summary><p>Yes — the counter is Unicode-aware and handles Arabic, Urdu, and other scripts correctly. Note that for languages written without spaces between words (such as Chinese or Japanese), word counts are approximate.</p></details><details><summary>Is there a maximum text length?</summary><p>No. Paste an entire novel if you like — counting runs locally in your browser and stays fast even with hundreds of thousands of words.</p></details></div>
+<div class="tool-guide"><h2>Complete Guide to Word Counting</h2><p>Word counts quietly govern much of professional writing: the college essay capped at 650 words, the product description that must fit a marketplace limit, the blog post aiming for SEO-friendly depth. This counter tracks words, characters, sentences, paragraphs, reading time, and keyword density live as you type — no signup, no uploads, no waiting.</p>
+<h3>Limits you will run into</h3>
+<ul>
+<li><strong>Social media:</strong> X/Twitter posts (280 characters), Instagram captions (2,200 characters), LinkedIn posts (3,000 characters).</li>
+<li><strong>Academia:</strong> abstracts (150–300 words), essays with tolerance bands, dissertations with strict maxima.</li>
+<li><strong>Publishing:</strong> flash fiction (under 1,000 words), short stories (1,000–7,500), novels (70,000+), and the famous 50,000-word novel-writing sprint.</li>
+<li><strong>SEO:</strong> thin pages under about 300 words rarely rank; comprehensive guides typically run 1,500+ words.</li>
+</ul>
+<h3>Beyond the count: writing better</h3>
+<p>The <strong>sentence count</strong> reveals rhythm — an essay of twenty 40-word sentences reads like a legal contract. Aim for variety: mix short punchy sentences with longer flowing ones. <strong>Reading time</strong> tells you the true cost of your piece to a busy reader; if your "quick update" takes 12 minutes to read, it is not quick. <strong>Keyword density</strong> exposes crutch words — if "very" or "really" tops your list, your draft needs a pruning pass.</p>
+<p>A practical editing loop: draft freely, check the count against your target, use keyword density to spot repetition, then cut 10%. Good writing is rewriting — and precise counts make the rewriting measurable. Pair this with the <a href="./character-counter.html">Character Counter</a> for platform-specific limits and the <a href="./whitespace-remover.html">Whitespace Remover</a> to clean pasted drafts first.</p>
+<h3>Word count targets by format</h3>
+<ul>
+<li><strong>Meta descriptions:</strong> 150–160 characters (not words) — check with the character counter.</li>
+<li><strong>News articles:</strong> 300–800 words for standard reporting; 1,500+ for features.</li>
+<li><strong>Academic papers:</strong> conference papers often cap at 8,000 words including references.</li>
+<li><strong>Speeches:</strong> a 5-minute talk is roughly 750 words at a comfortable 150 wpm pace.</li>
+<li><strong>Video scripts:</strong> YouTube narration runs about 150 words per minute — a 10-minute video needs roughly 1,500 words.</li>
+</ul>
+<h3>Understanding keyword density</h3>
+<p>Keyword density — how often a word appears relative to total words — is a useful diagnostic, not a target to game. A natural 1–2% density for your main topic term is normal; anything above 3–4% starts to read as stuffed, both to humans and search engines. More valuable is spotting <em>unintentional</em> repetition: if "however" appears 40 times in a 2,000-word essay, your transitions need variety. Use the density panel as an editing mirror, rewrite the worst offenders, and watch your prose tighten up.</p></div>
 <div class="related"><h2>Related tools</h2><div class="grid"><a class="tool-card" href="./character-counter.html"><div class="ticon">🔤</div><h3>Character Counter</h3><p>Live character, line and whitespace-free counts.</p></a><a class="tool-card" href="./case-converter.html"><div class="ticon">🔠</div><h3>Text Case Converter</h3><p>Convert text to UPPERCASE, lowercase, Title Case and more.</p></a><a class="tool-card" href="./remove-duplicates.html"><div class="ticon">🧹</div><h3>Remove Duplicate Lines</h3><p>Delete duplicate lines, sort and clean up lists instantly.</p></a></div></div>
 </div>
-<div class="related-guides"><h2>Related guides</h2><div class="grid"><a class="tool-card" href="../blog/how-to-count-words-online.html"><h3>How to Count Words Online for Free (2026 Guide) | Free Privacy Tools</h3><p>Count words, characters, sentences and reading time online for free. Complete 2026 guide to word counting for essays, SEO, social media and publishing — no signup needed.</p></a><a class="tool-card" href="../blog/how-to-character-counter-online.html"><h3>How to Count Characters Online for Free (2026 Guide) | Free Privacy Tools</h3><p>Count characters, spaces and lines in real time with our free character counter. Step-by-step guide — perfect for tweets, bios, essays, meta titles and SMS limits.</p></a><a class="tool-card" href="../blog/how-to-case-converter-online.html"><h3>How to Change Text Case Online for Free (2026 Guide) | Free Privacy Tools</h3><p>Convert text to UPPERCASE, lowercase, Title Case and more with our free case converter. Step-by-step guide with examples for writers, students, bloggers and coders.</p></a></div></div>
 </main>
 <footer class="site-footer"><div class="wrap">
 <div class="cols">
-<div><h4>🛡️ Free Privacy Tools</h4><p>50+ free online tools. No signup — everything runs in your browser.</p></div>
+<div><h4>🛡️ Free Privacy Tools</h4><p>50+ free online tools. No signup, no tracking — everything runs in your browser.</p></div>
 <div><h4>Popular</h4><a href="./image-compressor.html">Image Compressor</a><a href="./word-counter.html">Word Counter</a><a href="./password-generator.html">Password Generator</a><a href="./pdf-merger.html">PDF Merger</a><a href="./age-calculator.html">Age Calculator</a></div>
 <div><h4>Site</h4><a href="../index.html">Home</a><a href="../index.html#tools">All Tools</a><a href="../about.html">About</a><a href="../faq.html">FAQ</a><a href="../blog.html">Blog</a><a href="../contact.html">Contact</a><a href="../request.html">Request a Tool</a><a href="../privacy.html">Privacy Policy</a><a href="../terms.html">Terms of Service</a><a href="../disclaimer.html">Disclaimer</a></div>
 </div>
@@ -90,17 +145,4 @@
 <script src="../assets/app.js"></script>
 <script src="../assets/tools.js"></script>
 <script src="../assets/features.js"></script>
-
-<!-- Back to top button -->
-<button id="backToTop" aria-label="Back to top" title="Back to top"
-style="position:fixed;bottom:24px;right:24px;width:48px;height:48px;border-radius:50%;border:none;background:#2563eb;color:#ffffff;font-size:22px;line-height:1;cursor:pointer;opacity:0;visibility:hidden;transition:opacity .3s,visibility .3s,transform .2s;box-shadow:0 4px 12px rgba(0,0,0,.35);z-index:9999;padding:0;">&#8593;</button>
-<script>
-(function(){var b=document.getElementById('backToTop');if(!b)return;
-window.addEventListener('scroll',function(){var s=window.pageYOffset||document.documentElement.scrollTop;
-if(s>300){b.style.opacity='1';b.style.visibility='visible';}else{b.style.opacity='0';b.style.visibility='hidden';}},{passive:true});
-b.addEventListener('click',function(){window.scrollTo({top:0,behavior:'smooth'});});
-b.addEventListener('mouseenter',function(){b.style.transform='scale(1.12)';});
-b.addEventListener('mouseleave',function(){b.style.transform='scale(1)';});})();
-</script>
-
 </body></html>
