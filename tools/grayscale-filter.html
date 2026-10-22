@@ -55,6 +55,38 @@
             "@type": "Answer",
             "text": "Absolutely. All processing happens locally in your browser. Your files are never uploaded to any server."
           }
+        },
+        {
+          "@type": "Question",
+          "name": "Will converting to grayscale reduce my image quality?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. The pixel dimensions stay exactly the same — only the color information is removed, leaving 256 shades of gray. Save as PNG for a lossless result; JPEG re-compression is what actually degrades quality."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is the difference between grayscale and pure black-and-white?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Grayscale preserves smooth tonal gradation across 256 gray levels, keeping photos natural. Pure black-and-white (threshold) forces every pixel to either black or white, creating a harsh, high-contrast poster look."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I undo the effect after downloading?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The downloaded file contains only the filtered version, so keep your original file as a backup. To try a different intensity, just re-upload the original and process it again — it's instant."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Why would I want a grayscale image?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Artistic black-and-white photography, print layouts (many printers are monochrome), checking an image's tonal contrast without color distraction, and slightly smaller file sizes for web use."
+          }
         }
       ]
     }
@@ -73,8 +105,18 @@
 <div class="tool-hero"><h1>🎨 Photo Filters</h1><p>Apply grayscale, sepia, invert, vintage and blur filters to photos with one click. Useful for giving your pictures a quick creative touch. Free, unlimited, private — works entirely in your browser.</p></div>
 <div class="ad-slot"><!-- AdSense code goes here --></div>
 <div class="tool-box" id="tool-root" data-tool="grayscale-filter"></div>
-<div class="howto"><h2>How to use</h2><ol><li>Open the tool — nothing to install, it runs in your browser.</li><li>Enter your input or upload your file.</li><li>Click the action button and download or copy the result.</li></ol></div>
-<div class="faq"><h2>FAQ</h2><details><summary>Is it really free?</summary><p>Yes — every tool on this site is 100% free with no limits, no signup and no watermarks.</p></details><details><summary>Is my data private?</summary><p>Absolutely. All processing happens locally in your browser. Your files are never uploaded to any server.</p></details></div>
+<div class="howto"><h2>How to use</h2><ol><li>Upload an image using the upload button or by dragging and dropping a JPG, PNG, or WebP file.</li><li>The tool instantly converts your image to grayscale — use the intensity slider if you want a partial black-and-white effect.</li><li>Compare the preview with the original to make sure the tones look right.</li><li>Click download to save the grayscale version to your device.</li></ol></div>
+<div class="faq"><h2>FAQ</h2><details><summary>Is it really free?</summary><p>Yes — every tool on this site is 100% free with no limits, no signup and no watermarks.</p></details><details><summary>Is my data private?</summary><p>Absolutely. All processing happens locally in your browser. Your files are never uploaded to any server.</p></details><details><summary>Will converting to grayscale reduce my image quality?</summary><p>No. The pixel dimensions stay exactly the same — only the color information is removed, leaving 256 shades of gray. Save as PNG for a lossless result; JPEG re-compression is what actually degrades quality.</p></details><details><summary>What is the difference between grayscale and pure black-and-white?</summary><p>Grayscale preserves smooth tonal gradation across 256 gray levels, keeping photos natural. Pure black-and-white (threshold) forces every pixel to either black or white, creating a harsh, high-contrast poster look.</p></details><details><summary>Can I undo the effect after downloading?</summary><p>The downloaded file contains only the filtered version, so keep your original file as a backup. To try a different intensity, just re-upload the original and process it again — it's instant.</p></details><details><summary>Why would I want a grayscale image?</summary><p>Artistic black-and-white photography, print layouts (many printers are monochrome), checking an image's tonal contrast without color distraction, and slightly smaller file sizes for web use.</p></details></div>
+<div class="tool-guide"><h2>Grayscale Filter — Complete Guide</h2>
+<p>Color grabs attention; grayscale reveals structure. Removing color strips a photo down to light, shadow, and composition — which is why black-and-white photography remains timeless a century after color arrived. This filter converts any image to grayscale instantly in your browser, with no uploads and no quality loss.</p>
+<h3>How grayscale conversion works</h3>
+<p>A color pixel stores red, green, and blue values. Grayscale conversion computes a single brightness (luminance) value per pixel — typically weighting green most heavily because human eyes are most sensitive to green light. The result is 256 shades from pure black to pure white, preserving all the tonal detail of the original.</p>
+<h3>Creative and practical uses</h3>
+<p><strong>Photography:</strong> portraits gain drama, street scenes gain timelessness, and distracting color casts disappear. <strong>Design:</strong> test whether a layout works on luminosity alone — if it reads well in gray, its contrast is solid. <strong>Print:</strong> preview exactly how a color document will look on a monochrome printer before you waste paper. <strong>Accessibility checks:</strong> color-blind users perceive the world closer to luminance differences; a grayscale preview exposes information carried by color alone. <strong>Backgrounds:</strong> desaturated photos make calmer, less distracting backdrops behind text.</p>
+<h3>Tips for great black-and-white results</h3>
+<p>Not every photo converts beautifully — images that relied on color contrast (a red flower on green leaves) can turn flat, since both may map to similar grays. Photos with strong light-and-shadow patterns convert best. If your tool offers an intensity slider, partial desaturation (say 60–80%) can keep a hint of mood while gaining the monochrome feel. For maximum punch, follow conversion with a slight contrast boost — deep blacks and bright whites are the soul of the medium.</p>
+<h3>Privacy note</h3>
+<p>Photos often contain sensitive metadata and personal moments. Because conversion happens entirely on your device, your images never travel to a server — process freely without privacy worries.</p></div>
 <div class="tutorial-promo" style="margin:1.5rem 0;padding:1rem 1.25rem;border:1px solid #e5e7eb;border-radius:10px;background:#f8fafc"><p style="margin:0">📖 <strong>Step-by-step tutorial:</strong> <a href="../blog/how-to-grayscale-filter-online.html">How to Apply Photo Filters Online for Free (2026 Guide)</a></p></div>
 <div class="related"><h2>Related tools</h2><div class="grid"><a class="tool-card" href="./image-compressor.html"><div class="ticon">🗜️</div><h3>Image Compressor</h3><p>Reduce image file size with adjustable quality — JPG and WebP output.</p></a><a class="tool-card" href="./image-resizer.html"><div class="ticon">📐</div><h3>Image Resizer</h3><p>Resize images to exact pixel dimensions with aspect-ratio lock.</p></a><a class="tool-card" href="./image-converter.html"><div class="ticon">🔄</div><h3>Image Converter</h3><p>Convert images between PNG, JPG, WebP and BMP formats.</p></a></div></div>
 </div>

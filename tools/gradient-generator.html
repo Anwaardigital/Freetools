@@ -55,6 +55,38 @@
             "@type": "Answer",
             "text": "Absolutely. All processing happens locally in your browser. Your files are never uploaded to any server."
           }
+        },
+        {
+          "@type": "Question",
+          "name": "What CSS code does the tool generate?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "A standard declaration like background: linear-gradient(135deg, #667eea 0%, #764ba2 100%). The syntax is pure modern CSS — no vendor prefixes needed — and it also works as a background-image value you can layer with other backgrounds."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I use more than two colors?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. Add extra color stops to build multi-color gradients — sunsets, ocean depths, or rainbow effects. Each stop gets its own color and position percentage, giving you full control over the blend."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is the difference between linear and radial gradients?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Linear gradients blend colors along a straight line at an angle you choose (0° = bottom to top, 90° = left to right). Radial gradients blend outward from a center point in a circle or ellipse — ideal for glows, vignettes, and spotlight effects."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Will the gradient look the same in every browser?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. The standard gradient syntax is supported identically by Chrome, Firefox, Safari, and Edge. Colors may vary slightly between screens due to display calibration, but the CSS itself renders consistently."
+          }
         }
       ]
     }
@@ -73,8 +105,18 @@
 <div class="tool-hero"><h1>🌅 Gradient Generator</h1><p>Design CSS gradients with live preview and copy-ready code. Useful for web designers styling buttons, banners and backgrounds. Free, unlimited, private — works entirely in your browser.</p></div>
 <div class="ad-slot"><!-- AdSense code goes here --></div>
 <div class="tool-box" id="tool-root" data-tool="gradient-generator"></div>
-<div class="howto"><h2>How to use</h2><ol><li>Open the tool — nothing to install, it runs in your browser.</li><li>Enter your input or upload your file.</li><li>Click the action button and download or copy the result.</li></ol></div>
-<div class="faq"><h2>FAQ</h2><details><summary>Is it really free?</summary><p>Yes — every tool on this site is 100% free with no limits, no signup and no watermarks.</p></details><details><summary>Is my data private?</summary><p>Absolutely. All processing happens locally in your browser. Your files are never uploaded to any server.</p></details></div>
+<div class="howto"><h2>How to use</h2><ol><li>Pick your colors using the color pickers — start with two, or add more color stops for richer blends.</li><li>Choose linear for a directional blend or radial for a glow spreading from a center point.</li><li>Fine-tune the angle (for linear) and drag the color-stop positions to control where each color peaks.</li><li>Copy the generated CSS snippet and paste it into your stylesheet — it works in all modern browsers.</li></ol></div>
+<div class="faq"><h2>FAQ</h2><details><summary>Is it really free?</summary><p>Yes — every tool on this site is 100% free with no limits, no signup and no watermarks.</p></details><details><summary>Is my data private?</summary><p>Absolutely. All processing happens locally in your browser. Your files are never uploaded to any server.</p></details><details><summary>What CSS code does the tool generate?</summary><p>A standard declaration like background: linear-gradient(135deg, #667eea 0%, #764ba2 100%). The syntax is pure modern CSS — no vendor prefixes needed — and it also works as a background-image value you can layer with other backgrounds.</p></details><details><summary>Can I use more than two colors?</summary><p>Yes. Add extra color stops to build multi-color gradients — sunsets, ocean depths, or rainbow effects. Each stop gets its own color and position percentage, giving you full control over the blend.</p></details><details><summary>What is the difference between linear and radial gradients?</summary><p>Linear gradients blend colors along a straight line at an angle you choose (0° = bottom to top, 90° = left to right). Radial gradients blend outward from a center point in a circle or ellipse — ideal for glows, vignettes, and spotlight effects.</p></details><details><summary>Will the gradient look the same in every browser?</summary><p>Yes. The standard gradient syntax is supported identically by Chrome, Firefox, Safari, and Edge. Colors may vary slightly between screens due to display calibration, but the CSS itself renders consistently.</p></details></div>
+<div class="tool-guide"><h2>Gradient Generator — Complete Guide</h2>
+<p>Flat colors are safe; gradients are memorable. From iconic app logos to award-winning websites, smooth color blends define modern digital design. This gradient generator lets you compose linear and radial gradients visually and exports clean, copy-ready CSS — no design software required.</p>
+<h3>A quick color-theory primer</h3>
+<p>Gradients work best with colors that share a relationship. <strong>Analogous</strong> colors (neighbors on the color wheel, like blue to purple) blend seamlessly and feel calm. <strong>Complementary</strong> colors (opposites, like orange to blue) create vibrant energy but can turn muddy in the middle — add a midpoint stop to control the transition. For text overlays, keep gradients subtle and dark enough that white text stays readable.</p>
+<h3>Where gradients shine</h3>
+<p><strong>Hero sections:</strong> a full-width gradient background instantly elevates a landing page. <strong>Buttons and CTAs:</strong> gradient buttons draw the eye without shouting. <strong>Image overlays:</strong> a dark gradient fading upward makes white headline text legible over any photo. <strong>Cards and dividers:</strong> thin gradient rules and borders add polish. <strong>Dark mode:</strong> subtle gradients prevent flat dark surfaces from looking lifeless.</p>
+<h3>Pro techniques</h3>
+<p>Use <em>hard stops</em> (two stops at the same percentage) for crisp striped or duotone effects instead of smooth blends. Layer a semi-transparent gradient over a background image for depth. Animate gradients subtly with background-position shifts for living, breathing interfaces — but keep motion gentle to respect users with vestibular sensitivities. And always check contrast ratios: decorative gradients are fine, but text sitting on a gradient must still meet accessibility standards.</p>
+<h3>Performance and best practices</h3>
+<p>CSS gradients are resolution-independent and typically lighter than background images — a big win for page speed. Prefer CSS over gradient PNGs wherever possible. When you need the exact same gradient in multiple places, store it as a CSS custom property (--brand-gradient) so a future rebrand means editing one line.</p></div>
 <div class="tutorial-promo" style="margin:1.5rem 0;padding:1rem 1.25rem;border:1px solid #e5e7eb;border-radius:10px;background:#f8fafc"><p style="margin:0">📖 <strong>Step-by-step tutorial:</strong> <a href="../blog/how-to-gradient-generator-online.html">How to Create CSS Gradients Online for Free (2026 Guide)</a></p></div>
 <div class="related"><h2>Related tools</h2><div class="grid"><a class="tool-card" href="./color-picker.html"><div class="ticon">🎨</div><h3>Color Picker</h3><p>Pick colors and get instant HEX + RGB values.</p></a><a class="tool-card" href="./hex-to-rgb.html"><div class="ticon">🌈</div><h3>HEX to RGB Converter</h3><p>Convert HEX colors to RGB and back.</p></a><a class="tool-card" href="./random-color.html"><div class="ticon">🖌️</div><h3>Random Color Palette</h3><p>Generate beautiful random color palettes, click to copy.</p></a></div></div>
 </div>

@@ -55,6 +55,38 @@
             "@type": "Answer",
             "text": "Absolutely. All processing happens locally in your browser. Your files are never uploaded to any server."
           }
+        },
+        {
+          "@type": "Question",
+          "name": "What kind of image makes a good favicon?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "A simple, bold, high-contrast design. Fine text and thin lines disappear at 16×16 pixels, so use a simplified mark — often just one letter or symbol from your logo on a solid background. Square source images work best."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Which favicon sizes do I actually need?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "16×16 and 32×32 cover browser tabs and bookmarks; 180×180 is the Apple touch icon for iOS home screens; 192×192 and 512×512 are required for the PWA web manifest (installable apps). Generating all five covers every modern use case."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Do I still need the old .ico format?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "PNG favicons work in all modern browsers, but a favicon.ico in your site root remains the most compatible fallback — some older browsers and tools still look for it. If maximum compatibility matters, include one."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Where do I put the files and code?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Upload the generated files to your website's root folder (or an /images/ folder), then paste the link tags into the head section of every page — or better, into your shared header template so it applies site-wide."
+          }
         }
       ]
     }
@@ -73,8 +105,18 @@
 <div class="tool-hero"><h1>⭐ Favicon Generator</h1><p>Generate favicon PNGs in 16, 32, 48 and 180px sizes from any image. Useful for web developers adding a site icon quickly. Free, unlimited, private — works entirely in your browser.</p></div>
 <div class="ad-slot"><!-- AdSense code goes here --></div>
 <div class="tool-box" id="tool-root" data-tool="favicon-generator"></div>
-<div class="howto"><h2>How to use</h2><ol><li>Open the tool — nothing to install, it runs in your browser.</li><li>Enter your input or upload your file.</li><li>Click the action button and download or copy the result.</li></ol></div>
-<div class="faq"><h2>FAQ</h2><details><summary>Is it really free?</summary><p>Yes — every tool on this site is 100% free with no limits, no signup and no watermarks.</p></details><details><summary>Is my data private?</summary><p>Absolutely. All processing happens locally in your browser. Your files are never uploaded to any server.</p></details></div>
+<div class="howto"><h2>How to use</h2><ol><li>Upload a square image (PNG or JPG) — your logo or a simplified icon works best.</li><li>The tool automatically generates every standard favicon size: 16×16, 32×32, 180×180, 192×192, and 512×512.</li><li>Preview each size to check your design stays recognizable at tiny dimensions.</li><li>Download the favicon pack, upload the files to your website, and add the provided link tags to your HTML head.</li></ol></div>
+<div class="faq"><h2>FAQ</h2><details><summary>Is it really free?</summary><p>Yes — every tool on this site is 100% free with no limits, no signup and no watermarks.</p></details><details><summary>Is my data private?</summary><p>Absolutely. All processing happens locally in your browser. Your files are never uploaded to any server.</p></details><details><summary>What kind of image makes a good favicon?</summary><p>A simple, bold, high-contrast design. Fine text and thin lines disappear at 16×16 pixels, so use a simplified mark — often just one letter or symbol from your logo on a solid background. Square source images work best.</p></details><details><summary>Which favicon sizes do I actually need?</summary><p>16×16 and 32×32 cover browser tabs and bookmarks; 180×180 is the Apple touch icon for iOS home screens; 192×192 and 512×512 are required for the PWA web manifest (installable apps). Generating all five covers every modern use case.</p></details><details><summary>Do I still need the old .ico format?</summary><p>PNG favicons work in all modern browsers, but a favicon.ico in your site root remains the most compatible fallback — some older browsers and tools still look for it. If maximum compatibility matters, include one.</p></details><details><summary>Where do I put the files and code?</summary><p>Upload the generated files to your website's root folder (or an /images/ folder), then paste the link tags into the head section of every page — or better, into your shared header template so it applies site-wide.</p></details></div>
+<div class="tool-guide"><h2>Favicon Generator — Complete Guide</h2>
+<p>The favicon is the tiny icon in the browser tab — small in pixels, huge in branding. Sites with a crisp favicon look professional and are easier to find among twenty open tabs; sites without one show a generic globe and look unfinished. This generator turns any square image into a complete, production-ready favicon pack in seconds, entirely in your browser.</p>
+<h3>Why favicons matter more than you think</h3>
+<p>Users identify tabs by icon long before reading titles. A recognizable favicon improves return visits (your bookmark stands out), reinforces brand trust, and completes the PWA install experience on phones — where your icon sits on the home screen next to major apps. It's one of the highest-visibility-per-effort improvements a website can make.</p>
+<h3>Designing for 16 pixels</h3>
+<p>The brutal truth: your beautiful detailed logo will become mush at 16×16. Design a <em>favicon-first</em> variant — one bold letter, a single glyph, or a simplified shape on a solid brand color. Test legibility by squinting: if you can't identify it blurred, simplify further. Keep generous padding so the mark doesn't touch the edges, and avoid gradients that band at tiny sizes.</p>
+<h3>The full size checklist</h3>
+<p><strong>16×16 / 32×32:</strong> browser tabs, address bar, bookmarks. <strong>180×180:</strong> Apple touch icon (iOS adds its own rounded corners — keep content centered). <strong>192×192 &amp; 512×512:</strong> web app manifest icons for "Add to Home Screen" and PWA installation; the 512px version should be maskable-safe with padding. <strong>SVG (optional):</strong> a vector favicon scales perfectly and can even adapt to dark mode — consider adding one alongside the PNGs.</p>
+<h3>Implementation tips</h3>
+<p>Place files in your site root so browsers find /favicon.ico automatically, and declare each size explicitly with link tags for reliability. After deploying, hard-refresh (Ctrl+Shift+R) — browsers cache favicons aggressively, and a stale icon can linger for days. Validate with a favicon checker to confirm every size resolves, and test both light and dark browser themes to make sure your icon stays visible.</p></div>
 <div class="tutorial-promo" style="margin:1.5rem 0;padding:1rem 1.25rem;border:1px solid #e5e7eb;border-radius:10px;background:#f8fafc"><p style="margin:0">📖 <strong>Step-by-step tutorial:</strong> <a href="../blog/how-to-favicon-generator-online.html">How to Create a Favicon Online for Free (2026 Guide)</a></p></div>
 <div class="related"><h2>Related tools</h2><div class="grid"><a class="tool-card" href="./image-compressor.html"><div class="ticon">🗜️</div><h3>Image Compressor</h3><p>Reduce image file size with adjustable quality — JPG and WebP output.</p></a><a class="tool-card" href="./image-resizer.html"><div class="ticon">📐</div><h3>Image Resizer</h3><p>Resize images to exact pixel dimensions with aspect-ratio lock.</p></a><a class="tool-card" href="./image-converter.html"><div class="ticon">🔄</div><h3>Image Converter</h3><p>Convert images between PNG, JPG, WebP and BMP formats.</p></a></div></div>
 </div>
