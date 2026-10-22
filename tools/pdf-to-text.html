@@ -55,6 +55,38 @@
             "@type": "Answer",
             "text": "Absolutely. All processing happens locally in your browser. Your files are never uploaded to any server."
           }
+        },
+        {
+          "@type": "Question",
+          "name": "What if my PDF is scanned images?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Scanned PDFs are pictures of pages, not real text. This tool reads the PDF's text layer, so image-only scans will return little or nothing. For scanned documents you need OCR (optical character recognition) software first, then paste the OCR output here for cleanup."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Will the original formatting be preserved?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No \u2014 this tool extracts plain text only. Fonts, columns, images, and layout are dropped. If your PDF uses multi-column layouts, lines may run together. The result is best for reading, searching, and copying quotes, not for reproducing the design."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is there a file size limit?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Your browser's memory is the practical limit. Most PDFs under 50 MB work smoothly. Very large files with thousands of pages may slow down or stall on low-memory phones \u2014 try splitting them with our PDF Splitter first, then extract each part."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Does it work with password-protected PDFs?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. Encrypted or password-locked PDFs cannot be opened by this tool. Remove the password with the owner's permission using a desktop PDF app first, then upload the unlocked file here."
+          }
         }
       ]
     }
@@ -73,8 +105,27 @@
 <div class="tool-hero"><h1>📝 PDF to Text</h1><p>Extract all text content from PDF files instantly so you can copy, edit or search it. Useful for students and office workers reusing report content. Free, unlimited, private — works entirely in your browser.</p></div>
 <div class="ad-slot"><!-- AdSense code goes here --></div>
 <div class="tool-box" id="tool-root" data-tool="pdf-to-text"></div>
-<div class="howto"><h2>How to use</h2><ol><li>Open the tool — nothing to install, it runs in your browser.</li><li>Enter your input or upload your file.</li><li>Click the action button and download or copy the result.</li></ol></div>
-<div class="faq"><h2>FAQ</h2><details><summary>Is it really free?</summary><p>Yes — every tool on this site is 100% free with no limits, no signup and no watermarks.</p></details><details><summary>Is my data private?</summary><p>Absolutely. All processing happens locally in your browser. Your files are never uploaded to any server.</p></details></div>
+<div class="howto"><h2>How to use</h2><ol><li>Click <strong>Choose PDF</strong> (or drag and drop) to load your PDF file — it stays on your device.</li><li>Wait a few seconds while the tool reads every page and pulls out the text layer.</li><li>Review the extracted text in the preview pane; copy what you need to your clipboard.</li><li>Click <strong>Download</strong> to save the full result as a .txt file for editing or searching.</li></ol></div>
+<div class="faq"><h2>FAQ</h2><details><summary>Is it really free?</summary><p>Yes — every tool on this site is 100% free with no limits, no signup and no watermarks.</p></details><details><summary>Is my data private?</summary><p>Absolutely. All processing happens locally in your browser. Your files are never uploaded to any server.</p></details><details><summary>What if my PDF is scanned images?</summary><p>Scanned PDFs are pictures of pages, not real text. This tool reads the PDF's text layer, so image-only scans will return little or nothing. For scanned documents you need OCR (optical character recognition) software first, then paste the OCR output here for cleanup.</p></details><details><summary>Will the original formatting be preserved?</summary><p>No — this tool extracts plain text only. Fonts, columns, images, and layout are dropped. If your PDF uses multi-column layouts, lines may run together. The result is best for reading, searching, and copying quotes, not for reproducing the design.</p></details><details><summary>Is there a file size limit?</summary><p>Your browser's memory is the practical limit. Most PDFs under 50 MB work smoothly. Very large files with thousands of pages may slow down or stall on low-memory phones — try splitting them with our PDF Splitter first, then extract each part.</p></details><details><summary>Does it work with password-protected PDFs?</summary><p>No. Encrypted or password-locked PDFs cannot be opened by this tool. Remove the password with the owner's permission using a desktop PDF app first, then upload the unlocked file here.</p></details></div>
+<div class="tool-guide" style="margin:24px 0"><h2>PDF to Text — Complete Guide</h2><p>PDF files are great for sharing documents that look the same everywhere, but they are terrible when you actually need the words inside them. A <strong>PDF to Text</strong> extractor solves that: it reads the hidden text layer of a PDF and hands you plain, editable text you can copy, search, and reformat.</p>
+<h3>How it works</h3>
+<p>Most PDFs created from Word, Google Docs, or InDesign contain an invisible text layer — the actual characters, plus their positions. This tool uses your browser's built-in PDF engine to walk through each page, collect that text, and stitch it into one continuous document. Because everything runs locally, your file never travels to a server.</p>
+<h3>When to use it</h3>
+<ul>
+<li><strong>Students &amp; researchers:</strong> pull quotes and citations from papers without retyping.</li>
+<li><strong>Office workers:</strong> reuse content from reports, contracts, and manuals in emails or slides.</li>
+<li><strong>Job seekers:</strong> extract your own resume text to paste into application forms.</li>
+<li><strong>Writers:</strong> rescue text from old PDFs when the original document is lost.</li>
+</ul>
+<h3>Tips for the best results</h3>
+<ul>
+<li><strong>Check for a text layer first:</strong> if you can select text with your mouse in a PDF viewer, extraction will work perfectly. If you can't select anything, it's a scanned image.</li>
+<li><strong>Fix line breaks:</strong> extracted text often has hard line breaks at the end of each visual line. Paste into a text editor and use find-and-replace to join paragraphs.</li>
+<li><strong>Watch for ligatures:</strong> some PDFs store "fi" and "fl" as single glyphs; the extractor usually handles these, but proofread proper nouns.</li>
+<li><strong>Split huge files:</strong> for books or reports over a few hundred pages, split into chapters first for faster, more reliable extraction.</li>
+</ul>
+<h3>Limitations to know</h3>
+<p>Tables may lose their column alignment, footnotes can land mid-sentence, and right-to-left scripts sometimes come out in the wrong order. Always proofread extracted text before publishing or submitting it. For legal or academic citations, double-check page numbers against the original PDF.</p></div>
 <div class="tutorial-box" style="background:#eff6ff;border:1px solid #bfdbfe;border-radius:10px;padding:14px 16px;margin:18px 0">📖 <strong>Step-by-step tutorial:</strong> <a href="../blog/how-to-extract-text-from-pdfs-online.html">How to Extract Text from PDFs Online for Free (2026 Guide)</a></div>
 <div class="related"><h2>Related tools</h2><div class="grid"><a class="tool-card" href="./pdf-merger.html"><div class="ticon">📄</div><h3>PDF Merger</h3><p>Combine multiple PDF files into one document, in any order you choose.</p></a><a class="tool-card" href="./pdf-splitter.html"><div class="ticon">✂️</div><h3>PDF Splitter</h3><p>Extract specific pages or page ranges from any PDF file.</p></a><a class="tool-card" href="./pdf-compressor.html"><div class="ticon">🗜️</div><h3>PDF Compressor</h3><p>Shrink PDF file size with object-stream rebuilding, right in your browser.</p></a></div></div>
 </div>

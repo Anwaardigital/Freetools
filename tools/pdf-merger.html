@@ -55,6 +55,38 @@
             "@type": "Answer",
             "text": "Absolutely. All processing happens locally in your browser. Your files are never uploaded to any server."
           }
+        },
+        {
+          "@type": "Question",
+          "name": "How do I control the order of the merged PDF?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The merged document follows the order in which you select the files, shown as a numbered list. The first file you select becomes the first pages of the output, the second file the next pages, and so on."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is there a limit on how many PDFs I can merge?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No — there is no artificial limit on the number of files or total size. The only practical constraint is your device's memory, since all processing happens in your browser."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Will merging change my documents' quality or layout?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. Pages are copied exactly as they are — fonts, images, formatting and layout are preserved, even when the source PDFs have different page sizes or orientations."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I merge PDFs with different page sizes or orientations?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. Each page keeps its original size and orientation in the merged file — nothing is scaled, rotated or cropped."
+          }
         }
       ]
     }
@@ -73,8 +105,9 @@
 <div class="tool-hero"><h1>📄 PDF Merger</h1><p>Combine multiple PDF files into one document and arrange them in any order you choose. Useful for joining contracts, reports or scanned pages into a single file. Free, unlimited, private — works entirely in your browser.</p></div>
 <div class="ad-slot"><!-- AdSense code goes here --></div>
 <div class="tool-box" id="tool-root" data-tool="pdf-merger"></div>
-<div class="howto"><h2>How to use</h2><ol><li>Open the tool — nothing to install, it runs in your browser.</li><li>Enter your input or upload your file.</li><li>Click the action button and download or copy the result.</li></ol></div>
-<div class="faq"><h2>FAQ</h2><details><summary>Is it really free?</summary><p>Yes — every tool on this site is 100% free with no limits, no signup and no watermarks.</p></details><details><summary>Is my data private?</summary><p>Absolutely. All processing happens locally in your browser. Your files are never uploaded to any server.</p></details></div>
+<div class="howto"><h2>How to use</h2><ol><li>Click the drop zone and select <strong>two or more PDFs in the order you want them merged</strong> — or drag and drop them in order. A numbered list shows each file with its size.</li><li>Check the numbered list carefully: file 1 becomes the first pages of the merged document, file 2 the next pages, and so on.</li><li>Click <strong>"Merge PDFs"</strong> — all pages are combined into one document, in that order, entirely in your browser.</li><li>Your merged file downloads automatically as <strong>merged.pdf</strong>, and the tool shows the total size of the new document.</li></ol></div>
+<div class="faq"><h2>FAQ</h2><details><summary>Is it really free?</summary><p>Yes — every tool on this site is 100% free with no limits, no signup and no watermarks.</p></details><details><summary>Is my data private?</summary><p>Absolutely. All processing happens locally in your browser. Your files are never uploaded to any server.</p></details><details><summary>How do I control the order of the merged PDF?</summary><p>The merged document follows the order in which you select the files, shown as a numbered list (1, 2, 3…). The first file you select becomes the first pages of the output, the second file the next pages, and so on. Select the files in the order you want them to appear — and double-check the list before clicking Merge PDFs.</p></details><details><summary>Is there a limit on how many PDFs I can merge?</summary><p>No — there is no artificial limit on the number of files or total size. The only practical constraint is your device's memory, since all processing happens in your browser. Very large merges (hundreds of pages) may take a while on older phones or computers, so be patient while the progress message shows.</p></details><details><summary>Will merging change my documents' quality or layout?</summary><p>No. Pages are copied exactly as they are — fonts, images, formatting, hyperlinks and bookmarks are preserved, even when the source PDFs have different page sizes or orientations. Merging rearranges nothing; it simply concatenates the pages into one file.</p></details><details><summary>Can I merge PDFs with different page sizes or orientations?</summary><p>Yes. Each page keeps its original size and orientation in the merged file. A mix of A4 and letter pages, or portrait and landscape pages, all work fine — nothing is scaled, rotated or cropped.</p></details></div>
+<div class="tool-guide"><h2>How PDF Merging Works (and When to Use It)</h2><p>Merging a PDF sounds simple — stick one document after another — but doing it cleanly takes real engineering. Each PDF carries its own fonts, image resources, page sizes and internal object tables, and a naive "glue the bytes together" approach would produce a broken file. This tool uses the open-source pdf-lib engine to properly load every source PDF, copy each page's content and resources into a brand-new document, and rebuild a valid internal structure. The pages land in the new file pixel-identical to the originals, with nothing re-rendered or degraded.</p><p>Because everything runs in your browser, your documents never travel to a server. The PDF engine itself is fetched from a CDN once (an internet connection is needed for that first load); after that, even large merges work fully offline. Your original files are never modified — merging always creates a new file, so you can experiment freely.</p><h3>Best use cases</h3><p>Merging is the go-to move whenever one complete document matters more than several scattered files. Classic examples: combining a contract with its signature pages and annexures into a single file for signing; collecting monthly invoices or receipts into one PDF for expense reports and tax filing; joining chapters of an e-book or thesis that were exported separately; and assembling scanned pages — a multi-page document scanned one page at a time — into one tidy file. It's also handy for application packets: CV, cover letter, certificates and portfolio in a single upload-friendly document.</p><h3>Tips for the best results</h3><p>The single most important thing is <strong>selection order</strong>: the tool merges files in exactly the order you pick them, so select (or drag) them deliberately — cover page first, appendices last. If a source PDF is bloated, shrink it first with the PDF Compressor; merging pre-compressed files gives you the smallest final document. Name your files clearly before selecting (e.g. "01-cover.pdf", "02-invoice.pdf") so the numbered list is easy to verify at a glance. And for very large merges, close other heavy browser tabs first — all processing happens in memory, and freeing it up keeps things fast.</p><h3>Common mistakes to avoid</h3><p>The biggest mistake is selecting files in the wrong order — there's no drag-to-reorder step in this version, so if the numbered list looks wrong, clear the selection and re-select in the right order. Another common trap: password-protected PDFs can't be opened by the browser engine, so remove the password in your PDF reader first. Finally, don't merge first and ask questions later on huge files — merging hundreds of heavy scanned pages can take a minute or two on a slow device, and that's normal; just let it finish.</p></div>
 <div class="tutorial-box" style="background:#eff6ff;border:1px solid #bfdbfe;border-radius:10px;padding:14px 16px;margin:18px 0">📖 <strong>Step-by-step tutorial:</strong> <a href="../blog/how-to-merge-pdfs-online.html">How to Merge PDFs Online for Free (2026 Guide)</a></div>
 <div class="related"><h2>Related tools</h2><div class="grid"><a class="tool-card" href="./pdf-splitter.html"><div class="ticon">✂️</div><h3>PDF Splitter</h3><p>Extract specific pages or page ranges from any PDF file.</p></a><a class="tool-card" href="./pdf-compressor.html"><div class="ticon">🗜️</div><h3>PDF Compressor</h3><p>Shrink PDF file size with object-stream rebuilding, right in your browser.</p></a><a class="tool-card" href="./pdf-to-text.html"><div class="ticon">📝</div><h3>PDF to Text</h3><p>Extract all text content from PDF files instantly.</p></a></div></div>
 </div>
