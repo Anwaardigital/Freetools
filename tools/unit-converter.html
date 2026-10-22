@@ -1,10 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<link rel="icon" type="image/png" sizes="192x192" href="https://anwaardigital.github.io/Freetools/freetools-icon-192.png">
-<link rel="icon" type="image/png" sizes="512x512" href="https://anwaardigital.github.io/Freetools/freetools-icon-512.png">
-<link rel="apple-touch-icon" href="https://anwaardigital.github.io/Freetools/freetools-icon-192.png">
-
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-M0NYM1FT9H"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-M0NYM1FT9H');
+</script>
 
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -14,7 +18,6 @@
 <meta property="og:title" content="Free Unit Converter — Length, Weight, Temp | Anwaar Digital">
 <meta property="og:description" content="Convert length, weight, temperature, volume, speed and data units with our free unit converter. Instant results. Try free now! Runs fully in your browser.">
 <meta property="og:url" content="https://anwaardigital.github.io/Freetools/tools/unit-converter.html">
-<meta property="og:image" content="https://anwaardigital.github.io/anwaar-icon-512.png">
 <meta name="twitter:card" content="summary">
 <link rel="canonical" href="https://anwaardigital.github.io/Freetools/tools/unit-converter.html">
 <link rel="stylesheet" href="../assets/style.css">
@@ -55,6 +58,38 @@
             "@type": "Answer",
             "text": "Absolutely. All processing happens locally in your browser. Your files are never uploaded to any server."
           }
+        },
+        {
+          "@type": "Question",
+          "name": "Which unit categories are supported?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Length, weight/mass, temperature, volume, speed, area, time, and digital data \u2014 covering metric (SI), imperial, and US customary units, plus specialty units like knots, acres, and bytes."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How accurate are the conversions?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Conversions use exact defined factors (1 inch is defined as exactly 2.54 cm), so results are as precise as your input value. Temperature uses the standard offset formulas between Celsius, Fahrenheit, and Kelvin."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can it convert between metric and imperial systems?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "That is its main job \u2014 kilograms to pounds, liters to gallons, Celsius to Fahrenheit, miles to kilometers \u2014 in either direction, instantly."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Why does temperature need a formula instead of a simple factor?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Because temperature scales start at different zero points. Converting degrees C to degrees F is not a multiplication but (C \u00d7 9/5) + 32. The tool applies the correct formula automatically, including the Kelvin offset of 273.15."
+          }
         }
       ]
     }
@@ -70,19 +105,37 @@
 
 <main class="wrap">
 <div class="crumbs"><a href="../index.html">Home</a> / Calculators / Unit Converter</div>
-<div class="tool-hero"><h1>📏 Unit Converter</h1><p>Convert length, weight, temperature, volume, speed and data units instantly. Useful for students, cooks and foreign measurements. Free, unlimited, private — works entirely in your browser.</p></div>
+<div class="tool-hero"><h1>📏 Unit Converter</h1><p>Convert length, weight, temperature, volume, speed and data units. Free, unlimited, private — works entirely in your browser.</p></div>
 <div class="ad-slot"><!-- AdSense code goes here --></div>
 <div class="tool-box" id="tool-root" data-tool="unit-converter"></div>
-<div class="howto"><h2>How to use</h2><ol><li>Open the tool — nothing to install, it runs in your browser.</li><li>Enter your input or upload your file.</li><li>Click the action button and download or copy the result.</li></ol></div>
-<div class="faq"><h2>FAQ</h2><details><summary>Is it really free?</summary><p>Yes — every tool on this site is 100% free with no limits, no signup and no watermarks.</p></details><details><summary>Is my data private?</summary><p>Absolutely. All processing happens locally in your browser. Your files are never uploaded to any server.</p></details></div>
-<div style="background:#f0f9ff;border:1px solid #bae6fd;border-radius:12px;padding:16px 20px;margin:24px 0"><h2 style="margin:0 0 8px;font-size:1.15em">📖 Step-by-step tutorial</h2><p style="margin:0">New to this tool? Read our <a href="../blog/how-to-unit-converter-online.html">step-by-step guide to converting units online</a> — with worked examples and practical tips.</p></div>
+<div class="howto"><h2>How to use</h2><ol><li>Pick a <strong>category</strong>: length, weight, temperature, volume, speed, area, time, or data.</li><li>Enter the <strong>value</strong> you want to convert in the input field.</li><li>Choose the <strong>from</strong> unit and the <strong>to</strong> unit from the dropdowns (for example miles to kilometers).</li><li>The result converts instantly as you type — tap the swap button to reverse the direction.</li></ol></div>
+<div class="faq"><h2>FAQ</h2><details><summary>Is it really free?</summary><p>Yes — every tool on this site is 100% free with no limits, no signup and no watermarks.</p></details><details><summary>Is my data private?</summary><p>Absolutely. All processing happens locally in your browser. Your files are never uploaded to any server.</p></details><details><summary>Which unit categories are supported?</summary><p>Length, weight/mass, temperature, volume, speed, area, time, and digital data — covering metric (SI), imperial, and US customary units, plus specialty units like knots, acres, and bytes.</p></details><details><summary>How accurate are the conversions?</summary><p>Conversions use exact defined factors (1 inch is defined as exactly 2.54 cm), so results are as precise as your input value. Temperature uses the standard offset formulas between Celsius, Fahrenheit, and Kelvin.</p></details><details><summary>Can it convert between metric and imperial systems?</summary><p>That is its main job — kilograms to pounds, liters to gallons, Celsius to Fahrenheit, miles to kilometers — in either direction, instantly.</p></details><details><summary>Why does temperature need a formula instead of a simple factor?</summary><p>Because temperature scales start at different zero points. Converting degrees C to degrees F is not a multiplication but (C × 9/5) + 32. The tool applies the correct formula automatically, including the Kelvin offset of 273.15.</p></details></div>
+<div class="tool-guide"><h2>Complete Guide to Unit Conversion</h2><p>Two measurement systems run the world: the <strong>metric system</strong> (meters, kilograms, liters), used by nearly every country and all of science, and the <strong>imperial/US customary system</strong> (feet, pounds, gallons), still standard in the United States and parts of the UK. Converting between them is a daily need for travelers, cooks, students, and engineers — and anyone reading an American recipe or a European car spec sheet.</p>
+<h3>Conversions you will actually use</h3>
+<ul>
+<li><strong>Travel:</strong> miles to kilometers (1 mile = 1.609 km), Fahrenheit to Celsius for weather, gallons to liters for fuel economy.</li>
+<li><strong>Cooking:</strong> cups to milliliters, ounces to grams, Fahrenheit to Celsius for oven temperatures (350°F = 177°C).</li>
+<li><strong>Health and fitness:</strong> pounds to kilograms, feet/inches to centimeters, miles to kilometers for running.</li>
+<li><strong>Tech:</strong> inches to centimeters for screen sizes, Mbps for internet speed, GB/MB for storage.</li>
+</ul>
+<h3>Why precision matters</h3>
+<p>In 1999, NASA lost the $125 million Mars Climate Orbiter because one team used metric newton-seconds while another used imperial pound-seconds — a unit mismatch that went unnoticed until the spacecraft burned up in the Martian atmosphere. The lesson: always label your units, and convert explicitly rather than guessing.</p>
+<p><strong>Quick mental tricks:</strong> Celsius to Fahrenheit is roughly double and add 30 (close enough for weather). Kilometers to miles is roughly multiply by 0.6. Kilograms to pounds is roughly double and add 10%. For anything where accuracy counts — medicine, engineering, baking — use the converter instead of approximations.</p>
+<h3>How the two systems evolved</h3>
+<p>The metric system was born in revolutionary France (1790s) from a simple idea: base everything on powers of ten. A meter was defined from the Earth itself, a kilogram from water, and every larger or smaller unit is just a prefix - milli, centi, kilo. The imperial system grew organically over centuries: a foot was literally a foot, an acre was what oxen could plow in a day. The US customary system descends from British units but diverged - a US gallon (3.785 L) is smaller than an imperial gallon (4.546 L), a classic trap for travelers.</p>
+<h3>Everyday conversion reference</h3>
+<ul>
+<li><strong>Length:</strong> 1 inch = 2.54 cm; 1 foot = 30.48 cm; 1 yard = 0.914 m; 1 mile = 1.609 km</li>
+<li><strong>Weight:</strong> 1 ounce = 28.35 g; 1 pound = 453.6 g; 1 stone = 6.35 kg</li>
+<li><strong>Volume:</strong> 1 fl oz = 29.57 ml; 1 cup = 236.6 ml; 1 pint = 473 ml</li>
+<li><strong>Temperature:</strong> 0C = 32F (freezing); 20C = 68F (room); 37C = 98.6F (body); 100C = 212F (boiling)</li>
+</ul></div>
 <div class="related"><h2>Related tools</h2><div class="grid"><a class="tool-card" href="./age-calculator.html"><div class="ticon">🎂</div><h3>Age Calculator</h3><p>Calculate exact age in years, months, days — plus total days lived.</p></a><a class="tool-card" href="./bmi-calculator.html"><div class="ticon">⚖️</div><h3>BMI Calculator</h3><p>Compute Body Mass Index and see your health category.</p></a><a class="tool-card" href="./loan-calculator.html"><div class="ticon">🏦</div><h3>Loan / EMI Calculator</h3><p>Calculate monthly loan payments, total interest and total payable.</p></a></div></div>
 </div>
-<div class="related-guides"><h2>Related guides</h2><div class="grid"><a class="tool-card" href="../blog/how-to-unit-converter-online.html"><h3>How to Convert Units Online for Free (2026 Guide) | Free Privacy Tools</h3><p>Convert length, weight, temperature, volume, speed and data units online for free. Step-by-step guide with worked examples — miles to km, Fahrenheit to Celsius and more.</p></a><a class="tool-card" href="../blog/how-to-age-calculator-online.html"><h3>How to Calculate Your Age Online for Free (2026 Guide) | Free Privacy Tools</h3><p>Calculate your exact age in years, months and days online for free. Step-by-step guide with worked examples, plus total days lived and a countdown to your next birthday.</p></a><a class="tool-card" href="../blog/how-to-bmi-calculator-online.html"><h3>How to Calculate Your BMI Online for Free (2026 Guide) | Free Privacy Tools</h3><p>Calculate your Body Mass Index online for free with a step-by-step guide. Learn the BMI formula, see worked examples, understand the weight categories, and know the limits of BMI.</p></a></div></div>
 </main>
 <footer class="site-footer"><div class="wrap">
 <div class="cols">
-<div><h4>🛡️ Free Privacy Tools</h4><p>50+ free online tools. No signup — everything runs in your browser.</p></div>
+<div><h4>🛡️ Free Privacy Tools</h4><p>50+ free online tools. No signup, no tracking — everything runs in your browser.</p></div>
 <div><h4>Popular</h4><a href="./image-compressor.html">Image Compressor</a><a href="./word-counter.html">Word Counter</a><a href="./password-generator.html">Password Generator</a><a href="./pdf-merger.html">PDF Merger</a><a href="./age-calculator.html">Age Calculator</a></div>
 <div><h4>Site</h4><a href="../index.html">Home</a><a href="../index.html#tools">All Tools</a><a href="../about.html">About</a><a href="../faq.html">FAQ</a><a href="../blog.html">Blog</a><a href="../contact.html">Contact</a><a href="../request.html">Request a Tool</a><a href="../privacy.html">Privacy Policy</a><a href="../terms.html">Terms of Service</a><a href="../disclaimer.html">Disclaimer</a></div>
 </div>
@@ -91,17 +144,4 @@
 <script src="../assets/app.js"></script>
 <script src="../assets/tools.js"></script>
 <script src="../assets/features.js"></script>
-
-<!-- Back to top button -->
-<button id="backToTop" aria-label="Back to top" title="Back to top"
-style="position:fixed;bottom:24px;right:24px;width:48px;height:48px;border-radius:50%;border:none;background:#2563eb;color:#ffffff;font-size:22px;line-height:1;cursor:pointer;opacity:0;visibility:hidden;transition:opacity .3s,visibility .3s,transform .2s;box-shadow:0 4px 12px rgba(0,0,0,.35);z-index:9999;padding:0;">&#8593;</button>
-<script>
-(function(){var b=document.getElementById('backToTop');if(!b)return;
-window.addEventListener('scroll',function(){var s=window.pageYOffset||document.documentElement.scrollTop;
-if(s>300){b.style.opacity='1';b.style.visibility='visible';}else{b.style.opacity='0';b.style.visibility='hidden';}},{passive:true});
-b.addEventListener('click',function(){window.scrollTo({top:0,behavior:'smooth'});});
-b.addEventListener('mouseenter',function(){b.style.transform='scale(1.12)';});
-b.addEventListener('mouseleave',function(){b.style.transform='scale(1)';});})();
-</script>
-
 </body></html>

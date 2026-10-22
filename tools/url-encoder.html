@@ -1,20 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<link rel="icon" type="image/png" sizes="192x192" href="https://anwaardigital.github.io/Freetools/freetools-icon-192.png">
-<link rel="icon" type="image/png" sizes="512x512" href="https://anwaardigital.github.io/Freetools/freetools-icon-512.png">
-<link rel="apple-touch-icon" href="https://anwaardigital.github.io/Freetools/freetools-icon-192.png">
-
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-M0NYM1FT9H"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-M0NYM1FT9H');
+</script>
 
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Free URL Encoder — Encode &amp; Decode URLs | Anwaar Digital</title>
-<meta name="description" content="Percent-encode URLs or decode them back to readable text with our free URL encoder. Safe links, instantly. Try free now! Unlimited use..">
+<meta name="description" content="Percent-encode URLs or decode them back to readable text with our free URL encoder. Safe links, instantly. Try free now! Unlimited use. No tracking, ever.">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Free URL Encoder — Encode &amp; Decode URLs | Anwaar Digital">
-<meta property="og:description" content="Percent-encode URLs or decode them back to readable text with our free URL encoder. Safe links, instantly. Try free now! Unlimited use..">
+<meta property="og:description" content="Percent-encode URLs or decode them back to readable text with our free URL encoder. Safe links, instantly. Try free now! Unlimited use. No tracking, ever.">
 <meta property="og:url" content="https://anwaardigital.github.io/Freetools/tools/url-encoder.html">
-<meta property="og:image" content="https://anwaardigital.github.io/anwaar-icon-512.png">
 <meta name="twitter:card" content="summary">
 <link rel="canonical" href="https://anwaardigital.github.io/Freetools/tools/url-encoder.html">
 <link rel="stylesheet" href="../assets/style.css">
@@ -26,7 +29,7 @@
       "@type": "WebApplication",
       "name": "URL Encoder / Decoder",
       "url": "https://anwaardigital.github.io/Freetools/tools/url-encoder.html",
-      "description": "Percent-encode URLs or decode them back to readable text with our free URL encoder. Safe links, instantly. Try free now! Unlimited use..",
+      "description": "Percent-encode URLs or decode them back to readable text with our free URL encoder. Safe links, instantly. Try free now! Unlimited use. No tracking, ever.",
       "applicationCategory": "DeveloperApplication",
       "operatingSystem": "Any",
       "isAccessibleForFree": true,
@@ -55,6 +58,38 @@
             "@type": "Answer",
             "text": "Absolutely. All processing happens locally in your browser. Your files are never uploaded to any server."
           }
+        },
+        {
+          "@type": "Question",
+          "name": "What is percent-encoding?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "A mechanism that represents special characters in URLs as a % followed by two hexadecimal digits \u2014 a space becomes %20, for example. It guarantees URLs contain only safe ASCII characters that every server and browser understands."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is the difference between encodeURI and encodeURIComponent?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "encodeURI is for whole URLs: it leaves structural characters (: / ? # &) untouched. encodeURIComponent is for individual values like query parameters: it encodes those structural characters too. Use component mode when encoding a value that sits inside a URL."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "When do I actually need to encode a URL?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Whenever it contains spaces, non-ASCII characters (Urdu, Arabic, emoji), or reserved characters inside a parameter value. Unencoded URLs break links, HTML forms, redirects, and API requests."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Does decoding handle plus signs (+) as spaces?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "In query strings, + traditionally represents a space (HTML form encoding). The decoder handles both %20 and + correctly when decoding query-string style input."
+          }
         }
       ]
     }
@@ -70,18 +105,36 @@
 
 <main class="wrap">
 <div class="crumbs"><a href="../index.html">Home</a> / Text Tools / URL Encoder / Decoder</div>
-<div class="tool-hero"><h1>🔗 URL Encoder / Decoder</h1><p>Percent-encode URLs for safe use in links, or decode them back to readable text. Useful for developers and marketers fixing broken links. Free, unlimited, private — works entirely in your browser.</p></div>
+<div class="tool-hero"><h1>🔗 URL Encoder / Decoder</h1><p>Percent-encode URLs or decode them back to readable text. Free, unlimited, private — works entirely in your browser.</p></div>
 <div class="ad-slot"><!-- AdSense code goes here --></div>
 <div class="tool-box" id="tool-root" data-tool="url-encoder"></div>
-<div class="howto"><h2>How to use</h2><ol><li>Open the tool — nothing to install, it runs in your browser.</li><li>Enter your input or upload your file.</li><li>Click the action button and download or copy the result.</li></ol></div>
-<div class="faq"><h2>FAQ</h2><details><summary>Is it really free?</summary><p>Yes — every tool on this site is 100% free with no limits, no signup and no watermarks.</p></details><details><summary>Is my data private?</summary><p>Absolutely. All processing happens locally in your browser. Your files are never uploaded to any server.</p></details></div>
+<div class="howto"><h2>How to use</h2><ol><li>Paste the <strong>URL or text</strong> you want to encode into the input box.</li><li>Choose <strong>Encode</strong> to percent-encode special characters, or <strong>Decode</strong> to reverse it.</li><li>Pick <strong>full URL</strong> mode (keeps : / ? # and &amp; intact) or <strong>component</strong> mode (encodes everything, for query values).</li><li>Copy the result — it is ready to paste into code, links, or API calls.</li></ol></div>
+<div class="faq"><h2>FAQ</h2><details><summary>Is it really free?</summary><p>Yes — every tool on this site is 100% free with no limits, no signup and no watermarks.</p></details><details><summary>Is my data private?</summary><p>Absolutely. All processing happens locally in your browser. Your files are never uploaded to any server.</p></details><details><summary>What is percent-encoding?</summary><p>A mechanism that represents special characters in URLs as a % followed by two hexadecimal digits — a space becomes %20, for example. It guarantees URLs contain only safe ASCII characters that every server and browser understands.</p></details><details><summary>What is the difference between encodeURI and encodeURIComponent?</summary><p>encodeURI is for whole URLs: it leaves structural characters (: / ? # &) untouched. encodeURIComponent is for individual values like query parameters: it encodes those structural characters too. Use component mode when encoding a value that sits inside a URL.</p></details><details><summary>When do I actually need to encode a URL?</summary><p>Whenever it contains spaces, non-ASCII characters (Urdu, Arabic, emoji), or reserved characters inside a parameter value. Unencoded URLs break links, HTML forms, redirects, and API requests.</p></details><details><summary>Does decoding handle plus signs (+) as spaces?</summary><p>In query strings, + traditionally represents a space (HTML form encoding). The decoder handles both %20 and + correctly when decoding query-string style input.</p></details></div>
+<div class="tool-guide"><h2>Complete Guide to URL Encoding</h2><p>URLs were designed in an ASCII-only era, but the modern web is full of spaces, Urdu text, emojis, and symbols. <strong>Percent-encoding</strong> bridges the gap: any unsafe character is replaced by a <code>%</code> followed by its two-digit hex code. A space becomes <code>%20</code>, so "hello world" becomes <code>hello%20world</code> — a URL every browser and server can handle.</p>
+<h3>The two modes, explained</h3>
+<p>Characters in a URL fall into two groups. <strong>Reserved characters</strong> (<code>: / ? # [ ] @ ! $ &amp; ' ( ) * + , ; =</code>) have structural meaning — they separate the protocol, host, path, and query. <strong>Unreserved characters</strong> (letters, digits, <code>- _ . ~</code>) are always safe. <strong>Full-URL mode</strong> (like JavaScript's <code>encodeURI</code>) encodes only the unsafe characters and leaves structure intact — use it for complete URLs. <strong>Component mode</strong> (like <code>encodeURIComponent</code>) encodes reserved characters as well — use it for a single query value such as <code>?q=hello world &amp; friends</code>, where the <code>&amp;</code> inside the value must not be mistaken for a parameter separator.</p>
+<h3>Classic bugs this prevents</h3>
+<ul>
+<li><strong>Double encoding:</strong> encoding an already-encoded string turns <code>%20</code> into <code>%2520</code>. Decode first if unsure.</li>
+<li><strong>Broken query strings:</strong> an unencoded <code>&amp;</code> in a search term splits it into two parameters.</li>
+<li><strong>Non-English URLs:</strong> browsers display non-Latin URLs nicely but transmit them percent-encoded — encode them yourself for APIs and redirects.</li>
+</ul>
+<p><strong>In code:</strong> JavaScript has <code>encodeURIComponent()</code> built in; Python has <code>urllib.parse.quote()</code>. But for quick one-off jobs — fixing a link, preparing a redirect, decoding a messy URL from an email — this tool is faster than opening a console.</p>
+<h3>Encoding non-English text</h3>
+<p>Unicode characters are first converted to UTF-8 bytes, then each byte is percent-encoded. The Urdu word اردو becomes a sequence like <code>%D8%A7%D8%B1%D8%AF%D9%88</code> — long, but completely safe to transmit. Modern browsers display the decoded form in the address bar while sending the encoded form over the wire, which is why internationalized URLs "just work" for users but still need proper encoding in code.</p>
+<h3>Where encoding matters most</h3>
+<ul>
+<li><strong>Share links:</strong> pre-filled WhatsApp or Twitter share URLs with message text must encode spaces and punctuation.</li>
+<li><strong>Redirect URLs:</strong> a <code>next</code> parameter containing its own query string must be fully component-encoded or it breaks.</li>
+<li><strong>API signatures:</strong> OAuth and payment gateways require exact canonical encoding — one wrong character invalidates the signature.</li>
+<li><strong>File downloads:</strong> filenames with spaces or accents in <code>Content-Disposition</code> headers need encoding to download correctly.</li>
+</ul></div>
 <div class="related"><h2>Related tools</h2><div class="grid"><a class="tool-card" href="./word-counter.html"><div class="ticon">🔢</div><h3>Word Counter</h3><p>Count words, characters, sentences and reading time in real time.</p></a><a class="tool-card" href="./character-counter.html"><div class="ticon">🔤</div><h3>Character Counter</h3><p>Live character, line and whitespace-free counts.</p></a><a class="tool-card" href="./case-converter.html"><div class="ticon">🔠</div><h3>Text Case Converter</h3><p>Convert text to UPPERCASE, lowercase, Title Case and more.</p></a></div></div>
 </div>
-<div class="related-guides"><h2>Related guides</h2><div class="grid"><a class="tool-card" href="../blog/how-to-url-encoder-online.html"><h3>How to URL-Encode Text Online for Free (2026 Guide) | Free Privacy Tools</h3><p>Percent-encode URLs and decode them back with a free browser tool. Step-by-step 2026 guide: examples, when encoding matters, and common mistakes.</p></a><a class="tool-card" href="../blog/how-to-count-words-online.html"><h3>How to Count Words Online for Free (2026 Guide) | Free Privacy Tools</h3><p>Count words, characters, sentences and reading time online for free. Complete 2026 guide to word counting for essays, SEO, social media and publishing — no signup needed.</p></a><a class="tool-card" href="../blog/how-to-character-counter-online.html"><h3>How to Count Characters Online for Free (2026 Guide) | Free Privacy Tools</h3><p>Count characters, spaces and lines in real time with our free character counter. Step-by-step guide — perfect for tweets, bios, essays, meta titles and SMS limits.</p></a></div></div>
 </main>
 <footer class="site-footer"><div class="wrap">
 <div class="cols">
-<div><h4>🛡️ Free Privacy Tools</h4><p>50+ free online tools. No signup — everything runs in your browser.</p></div>
+<div><h4>🛡️ Free Privacy Tools</h4><p>50+ free online tools. No signup, no tracking — everything runs in your browser.</p></div>
 <div><h4>Popular</h4><a href="./image-compressor.html">Image Compressor</a><a href="./word-counter.html">Word Counter</a><a href="./password-generator.html">Password Generator</a><a href="./pdf-merger.html">PDF Merger</a><a href="./age-calculator.html">Age Calculator</a></div>
 <div><h4>Site</h4><a href="../index.html">Home</a><a href="../index.html#tools">All Tools</a><a href="../about.html">About</a><a href="../faq.html">FAQ</a><a href="../blog.html">Blog</a><a href="../contact.html">Contact</a><a href="../request.html">Request a Tool</a><a href="../privacy.html">Privacy Policy</a><a href="../terms.html">Terms of Service</a><a href="../disclaimer.html">Disclaimer</a></div>
 </div>
@@ -90,17 +143,4 @@
 <script src="../assets/app.js"></script>
 <script src="../assets/tools.js"></script>
 <script src="../assets/features.js"></script>
-
-<!-- Back to top button -->
-<button id="backToTop" aria-label="Back to top" title="Back to top"
-style="position:fixed;bottom:24px;right:24px;width:48px;height:48px;border-radius:50%;border:none;background:#2563eb;color:#ffffff;font-size:22px;line-height:1;cursor:pointer;opacity:0;visibility:hidden;transition:opacity .3s,visibility .3s,transform .2s;box-shadow:0 4px 12px rgba(0,0,0,.35);z-index:9999;padding:0;">&#8593;</button>
-<script>
-(function(){var b=document.getElementById('backToTop');if(!b)return;
-window.addEventListener('scroll',function(){var s=window.pageYOffset||document.documentElement.scrollTop;
-if(s>300){b.style.opacity='1';b.style.visibility='visible';}else{b.style.opacity='0';b.style.visibility='hidden';}},{passive:true});
-b.addEventListener('click',function(){window.scrollTo({top:0,behavior:'smooth'});});
-b.addEventListener('mouseenter',function(){b.style.transform='scale(1.12)';});
-b.addEventListener('mouseleave',function(){b.style.transform='scale(1)';});})();
-</script>
-
 </body></html>
