@@ -55,6 +55,38 @@
             "@type": "Answer",
             "text": "Absolutely. All processing happens locally in your browser. Your files are never uploaded to any server."
           }
+        },
+        {
+          "@type": "Question",
+          "name": "What is Base64 encoding used for?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Base64 converts binary data into plain ASCII text so it can travel safely through systems that only handle text — email attachments (MIME), embedding images directly in HTML/CSS as data URIs, storing binary blobs in JSON, and passing tokens in URLs and HTTP headers."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is Base64 a form of encryption?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. Base64 is an encoding, not encryption — anyone can decode it instantly. Never use Base64 to 'protect' passwords or secrets. For real security, use proper encryption like AES or hashing like bcrypt or Argon2."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Why does my decoded text show strange characters?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The input was probably not valid Base64, or the original bytes were not UTF-8 text (for example, an encoded image). Check for missing padding characters (=) at the end, stray spaces or line breaks, and make sure you pasted the complete string."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I encode images or files, not just text?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. Use the file upload option to encode any file — images, PDFs, audio — into a Base64 string. This is exactly how developers create data URIs like data:image/png;base64,... for embedding small assets directly in web pages."
+          }
         }
       ]
     }
@@ -73,8 +105,19 @@
 <div class="tool-hero"><h1>🔐 Base64 Encoder / Decoder</h1><p>Encode text to Base64 or decode Base64 back to readable text. Useful for developers handling encoded data or API payloads. Free, unlimited, private — works entirely in your browser.</p></div>
 <div class="ad-slot"><!-- AdSense code goes here --></div>
 <div class="tool-box" id="tool-root" data-tool="base64"></div>
-<div class="howto"><h2>How to use</h2><ol><li>Open the tool — nothing to install, it runs in your browser.</li><li>Enter your input or upload your file.</li><li>Click the action button and download or copy the result.</li></ol></div>
-<div class="faq"><h2>FAQ</h2><details><summary>Is it really free?</summary><p>Yes — every tool on this site is 100% free with no limits, no signup and no watermarks.</p></details><details><summary>Is my data private?</summary><p>Absolutely. All processing happens locally in your browser. Your files are never uploaded to any server.</p></details></div>
+<div class="howto"><h2>How to use</h2><ol><li>Paste or type your text into the input box — or switch to file mode to encode an image or binary file.</li><li>Choose 'Encode' to convert text to Base64, or 'Decode' to convert Base64 back to readable text.</li><li>Click the convert button and the result appears instantly in the output box below.</li><li>Copy the result with one click, or download it as a .txt file for use in code, configs, or emails.</li></ol></div>
+<div class="faq"><h2>FAQ</h2><details><summary>Is it really free?</summary><p>Yes — every tool on this site is 100% free with no limits, no signup and no watermarks.</p></details><details><summary>Is my data private?</summary><p>Absolutely. All processing happens locally in your browser. Your files are never uploaded to any server.</p></details><details><summary>What is Base64 encoding used for?</summary><p>Base64 converts binary data into plain ASCII text so it can travel safely through systems that only handle text — email attachments (MIME), embedding images directly in HTML/CSS as data URIs, storing binary blobs in JSON, and passing tokens in URLs and HTTP headers.</p></details><details><summary>Is Base64 a form of encryption?</summary><p>No. Base64 is an encoding, not encryption — anyone can decode it instantly. Never use Base64 to 'protect' passwords or secrets. For real security, use proper encryption like AES or hashing like bcrypt or Argon2.</p></details><details><summary>Why does my decoded text show strange characters?</summary><p>The input was probably not valid Base64, or the original bytes were not UTF-8 text (for example, an encoded image). Check for missing padding characters (=) at the end, stray spaces or line breaks, and make sure you pasted the complete string.</p></details><details><summary>Can I encode images or files, not just text?</summary><p>Yes. Use the file upload option to encode any file — images, PDFs, audio — into a Base64 string. This is exactly how developers create data URIs like data:image/png;base64,... for embedding small assets directly in web pages.</p></details></div>
+<div class="tool-guide" style="margin:32px 0;padding:24px;background:#fafafa;border:1px solid #e5e7eb;border-radius:12px;line-height:1.75"><h2 style="margin-top:0">📘 Complete Guide to Base64 Encoding</h2><p>Base64 is one of those quiet workhorses of the internet: almost every developer uses it weekly, yet few could explain exactly how it works. This guide covers what Base64 is, why it exists, where you will encounter it, and the practical pitfalls to avoid — plus how to use this free tool effectively.</p>
+<h3>What Base64 actually does</h3>
+<p>Computers store everything as bytes (values 0–255), but many older text-based systems — email, URLs, JSON, XML, HTTP headers — can corrupt or reject raw binary bytes. Base64 solves this by mapping every 3 bytes of input to 4 characters drawn from a safe 64-character alphabet (A–Z, a–z, 0–9, +, /). Because 3 bytes become 4 characters, encoded output is always about 33% larger than the input. If the input length is not a multiple of 3, padding characters (=) are appended — that is why many Base64 strings end with one or two equals signs.</p>
+<h3>Where you will meet Base64 in the wild</h3>
+<p><strong>Data URIs:</strong> Small images embedded directly in HTML or CSS look like data:image/png;base64,iVBORw0... — no separate image request needed. <strong>Email:</strong> Attachments are Base64-encoded inside MIME messages. <strong>APIs and tokens:</strong> JWT tokens (the three dot-separated segments in modern web logins) are Base64URL-encoded JSON. <strong>Basic auth:</strong> The Authorization: Basic header is just Base64 of username:password — visible to anyone, which is why it must only travel over HTTPS. <strong>Config files:</strong> Kubernetes secrets, .env blobs, and CI pipelines routinely carry Base64 payloads.</p>
+<h3>Base64 vs Base64URL</h3>
+<p>Standard Base64 uses + and /, which have special meanings in URLs. The URL-safe variant swaps them for - and _ and often drops the = padding. If you are decoding a token from a URL and getting errors, try converting - back to +, _ back to /, and re-adding padding before decoding.</p>
+<h3>Common mistakes</h3>
+<p>Treating Base64 as encryption is the classic blunder — it provides zero secrecy. Another is encoding already-encoded data twice, producing unreadable output. Whitespace and line breaks inside the string (common when copying from emails or terminals) will break strict decoders; this tool strips them automatically. Finally, remember the 33% size overhead: Base64-encoding a 3 MB image gives you a 4 MB string, so it is only sensible for small assets.</p>
+<h3>Privacy note</h3>
+<p>Encoding and decoding happen entirely in your browser. Tokens, credentials, and file contents never leave your device — safe to use with sensitive strings you would never paste into a random website.</p></div>
 <div class="related"><h2>Related tools</h2><div class="grid"><a class="tool-card" href="./word-counter.html"><div class="ticon">🔢</div><h3>Word Counter</h3><p>Count words, characters, sentences and reading time in real time.</p></a><a class="tool-card" href="./character-counter.html"><div class="ticon">🔤</div><h3>Character Counter</h3><p>Live character, line and whitespace-free counts.</p></a><a class="tool-card" href="./case-converter.html"><div class="ticon">🔠</div><h3>Text Case Converter</h3><p>Convert text to UPPERCASE, lowercase, Title Case and more.</p></a></div></div>
 </div>
 <div class="related-guides"><h2>Related guides</h2><div class="grid"><a class="tool-card" href="../blog/how-to-base64-online.html"><h3>How to Encode and Decode Base64 Online for Free (2026 Guide) | Free Privacy Tools</h3><p>Encode text to Base64 or decode it back in seconds with a free browser tool. Step-by-step 2026 guide: real uses, examples and an important security warning.</p></a><a class="tool-card" href="../blog/how-to-count-words-online.html"><h3>How to Count Words Online for Free (2026 Guide) | Free Privacy Tools</h3><p>Count words, characters, sentences and reading time online for free. Complete 2026 guide to word counting for essays, SEO, social media and publishing — no signup needed.</p></a><a class="tool-card" href="../blog/how-to-character-counter-online.html"><h3>How to Count Characters Online for Free (2026 Guide) | Free Privacy Tools</h3><p>Count characters, spaces and lines in real time with our free character counter. Step-by-step guide — perfect for tweets, bios, essays, meta titles and SMS limits.</p></a></div></div>
