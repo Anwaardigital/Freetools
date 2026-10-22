@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<link rel="icon" type="image/png" sizes="192x192" href="https://anwaardigital.github.io/Freetools/freetools-icon-192.png">
+<link rel="icon" type="image/png" sizes="512x512" href="https://anwaardigital.github.io/Freetools/freetools-icon-512.png">
+<link rel="apple-touch-icon" href="https://anwaardigital.github.io/Freetools/freetools-icon-192.png">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Free AI Background Remover — Remove Photo Background Online | Anwaar Digital</title>
+<meta name="description" content="Remove any photo background with free AI — works on real photos, not just white backgrounds. 100% private, runs in your browser, no signup. Try free now!">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Free AI Background Remover — Remove Photo Background Online | Anwaar Digital">
+<meta property="og:description" content="Remove any photo background with free AI — works on real photos, not just white backgrounds. 100% private, runs in your browser, no signup. Try free now!">
+<meta property="og:url" content="https://anwaardigital.github.io/Freetools/tools/background-remover.html">
+<meta property="og:image" content="https://anwaardigital.github.io/anwaar-icon-512.png">
+<meta name="twitter:card" content="summary">
+<link rel="canonical" href="https://anwaardigital.github.io/Freetools/tools/background-remover.html">
+<link rel="stylesheet" href="../assets/style.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebApplication",
+      "name": "AI Background Remover",
+      "url": "https://anwaardigital.github.io/Freetools/tools/background-remover.html",
+      "description": "Remove any photo background with free AI — works on real photos, not just white backgrounds. 100% private, runs in your browser, no signup.",
+      "applicationCategory": "BusinessApplication",
+      "operatingSystem": "Any",
+      "isAccessibleForFree": true,
+      "browserRequirements": "Requires JavaScript",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      }
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Is it really free?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes — every tool on this site is 100% free with no limits, no signup and no watermarks."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is my data private?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Absolutely. All processing happens locally in your browser. Your files are never uploaded to any server."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Does it work on colored backgrounds, not just white?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes! This is a real AI background remover, not a simple color-key filter. It detects the subject (person, product, animal) using machine learning and removes any background — white, colored, outdoor scenes, busy rooms — whatever is behind the subject."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Why does it download something on first use?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The AI model (~40MB) downloads once from a CDN and is then cached in your browser. After the first use, it works instantly offline. The model runs 100% on your device — your photos never leave your browser."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What image formats are supported?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "JPG, PNG and WebP input. The result is always a PNG with transparency (alpha channel), so you can place the cut-out subject on any background."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What if the AI cuts off part of my subject?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "AI segmentation is very good but not perfect — fine hair, transparent objects (glasses, veils) and subjects blending into similar-colored backgrounds can confuse it. For best results use well-lit photos where the subject stands out from the background."
+          }
+        }
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<header class="site-header"><div class="wrap">
+<a class="logo" href="../index.html"><span class="shield">🛡️</span> Free Privacy Tools</a>
+<button class="nav-toggle" aria-label="Menu" aria-expanded="false">☰</button><nav class="nav"><a href="../index.html">Home</a><a href="../index.html#tools">All Tools</a><a href="../about.html">About</a><a href="../faq.html">FAQ</a><a href="../blog.html">Blog</a><a href="../contact.html">Contact</a><a href="../privacy.html">Privacy</a></nav>
+</div></header>
+
+<main class="wrap">
+<div class="crumbs"><a href="../index.html">Home</a> / Image Tools / Background Remover</div>
+<div class="tool-hero"><h1>✂️ AI Background Remover</h1><p>Remove any photo background with real AI — works on real photos with colored, busy or outdoor backgrounds. 100% private, runs entirely in your browser. Free, unlimited, no signup.</p></div>
+<div class="ad-slot"><!-- AdSense code goes here --></div>
+<div class="tool-box" id="tool-root" data-tool="background-remover">
+  <div id="bgremover-app" style="max-width:640px;margin:0 auto">
+    <div id="bg-drop" style="border:2px dashed #94a3b8;border-radius:12px;padding:36px 20px;text-align:center;cursor:pointer;background:#f8fafc">
+      <div style="font-size:40px">🖼️</div>
+      <p style="margin:8px 0;font-weight:600">Click to choose a photo or drag &amp; drop it here</p>
+      <p style="margin:0;font-size:13px;color:#64748b">JPG, PNG or WebP — processed 100% in your browser</p>
+      <input type="file" id="bg-file" accept="image/jpeg,image/png,image/webp" style="display:none">
+    </div>
+    <div id="bg-status" style="margin:14px 0;font-size:14px;min-height:22px;text-align:center;color:#475569"></div>
+    <div id="bg-progress" style="display:none;margin:14px 0">
+      <div style="background:#e2e8f0;border-radius:8px;height:10px;overflow:hidden"><div id="bg-bar" style="background:#0ea5e9;height:100%;width:0%;transition:width .3s"></div></div>
+      <p id="bg-progresstext" style="font-size:13px;color:#64748b;text-align:center;margin:6px 0 0"></p>
+    </div>
+    <div id="bg-result" style="display:none;text-align:center;margin-top:16px">
+      <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-bottom:12px">
+        <div><p style="font-size:13px;color:#64748b;margin:0 0 6px">Original</p><img id="bg-original" alt="Original photo" style="max-width:220px;max-height:220px;border-radius:8px;border:1px solid #e2e8f0"></div>
+        <div><p style="font-size:13px;color:#64748b;margin:0 0 6px">Background removed</p><img id="bg-output" alt="Background removed" style="max-width:220px;max-height:220px;border-radius:8px;border:1px solid #e2e8f0;background:repeating-conic-gradient(#e5e7eb 0 25%,#fff 0 50%) 0 0/20px 20px"></div>
+      </div>
+      <button id="bg-download" style="background:#0ea5e9;color:#fff;border:0;border-radius:20px;padding:10px 32px;font-weight:700;cursor:pointer;font-size:15px">⬇️ Download PNG (transparent)</button>
+      <button id="bg-again" style="background:transparent;color:#0ea5e9;border:1px solid #0ea5e9;border-radius:20px;padding:10px 24px;cursor:pointer;font-size:15px;margin-left:8px">Try another photo</button>
+    </div>
+  </div>
+</div>
+<div class="howto"><h2>How to use</h2><ol><li>Click the upload area (or drag &amp; drop) and choose a photo — JPG, PNG or WebP. On first use the AI model (~40MB) downloads once and is cached.</li><li>Wait while the AI analyzes your photo and separates the subject from the background — usually 5–20 seconds depending on your device.</li><li>Preview the result side by side with the original. The background is replaced with transparency (checkered pattern).</li><li>Click "Download PNG" to save the cut-out with a transparent background — ready to place on any design, slide or product listing.</li></ol></div>
+<div class="faq"><h2>FAQ</h2><details><summary>Is it really free?</summary><p>Yes — every tool on this site is 100% free with no limits, no signup and no watermarks.</p></details><details><summary>Is my data private?</summary><p>Absolutely. All processing happens locally in your browser. Your files are never uploaded to any server.</p></details><details><summary>Does it work on colored backgrounds, not just white?</summary><p>Yes! This is a real AI background remover, not a simple color-key filter. It detects the subject (person, product, animal) using machine learning and removes any background — white, colored, outdoor scenes, busy rooms.</p></details><details><summary>Why does it download something on first use?</summary><p>The AI model (~40MB) downloads once from a CDN and is then cached in your browser. After the first use it works instantly. The model runs 100% on your device — your photos never leave your browser.</p></details><details><summary>What image formats are supported?</summary><p>JPG, PNG and WebP input. The result is always a PNG with transparency, so you can place the cut-out subject on any background.</p></details><details><summary>What if the AI cuts off part of my subject?</summary><p>AI segmentation is very good but not perfect — fine hair, transparent objects and subjects blending into similar-colored backgrounds can confuse it. For best results use well-lit photos where the subject stands out from the background.</p></details></div>
+<div class="tool-guide"><h2>Complete Guide: AI Background Removal</h2>
+<h3>How it works</h3>
+<p>Unlike old "chroma key" tools that only erase one flat color (usually white), this tool uses a neural network trained on millions of photos to understand what a <em>subject</em> looks like — a person, a product, a pet — versus the background behind it. The model examines every pixel, predicts whether it belongs to the foreground or background, and produces a clean mask. The result is a PNG with a true alpha channel: fully transparent where the background was, fully opaque where the subject is, and smooth semi-transparent edges for hair and soft boundaries.</p>
+<h3>Real-world use cases</h3>
+<p><strong>Product photos for online stores:</strong> shoot products on any table, remove the messy background, and place them on clean white for a professional catalog look. <strong>Profile pictures &amp; ID photos:</strong> cut yourself out of a casual photo and drop yourself onto a plain background. <strong>Thumbnails &amp; social posts:</strong> YouTubers and marketers isolate subjects for eye-catching thumbnails. <strong>Presentations:</strong> remove distracting backgrounds from photos in slides. <strong>Memes &amp; stickers:</strong> cut out friends, pets or objects for WhatsApp stickers.</p>
+<h3>Tips for best results</h3>
+<p>Use well-lit photos where the subject is clearly separated from the background — the AI struggles most when subject and background share colors (e.g. a brown dog on a brown couch). Higher resolution helps: the model sees more detail. Avoid heavy motion blur. If the subject has wispy hair or fur, expect slightly soft edges — that's the AI being honest about uncertainty rather than drawing a harsh cut. For transparent objects like glasses or veils, no automatic tool is perfect; manual touch-up in a photo editor may still be needed.</p>
+<h3>Privacy note</h3>
+<p>Many "free" background removers upload your photos to their servers. This one doesn't: the AI model downloads to <em>your</em> device once, then every photo is processed locally in your browser. Your images never travel over the network. You can even disconnect from the internet after the first use and it keeps working.</p>
+<h3>Common mistakes</h3>
+<p>Don't expect miracles on very low-resolution images — if the photo is 200 pixels wide, the AI can't invent detail. Don't re-compress the PNG output as JPG (JPG has no transparency — the background comes back as white). And remember the first run downloads the model, so give it a minute on a slow connection; subsequent runs are much faster.</p>
+</div>
+<div class="related"><h2>Related tools</h2><div class="grid"><a class="tool-card" href="./image-compressor.html"><div class="ticon">🗜️</div><h3>Image Compressor</h3><p>Reduce image file size with adjustable quality.</p></a><a class="tool-card" href="./image-resizer.html"><div class="ticon">📐</div><h3>Image Resizer</h3><p>Resize images to exact dimensions.</p></a><a class="tool-card" href="./images-to-pdf.html"><div class="ticon">📄</div><h3>Images to PDF</h3><p>Combine multiple images into one PDF.</p></a></div></div>
+</main>
+<footer class="site-footer"><div class="wrap"><p>© 2026 Anwaar Digital — Free Privacy Tools. All tools run 100% in your browser.</p><p><a href="../privacy.html">Privacy Policy</a> · <a href="../about.html">About</a> · <a href="../contact.html">Contact</a></p></div></footer>
+<script type="importmap">{"imports":{"@imgly/background-removal":"https://cdn.jsdelivr.net/npm/@imgly/background-removal@1.5.5/+esm"}}</script>
+<script type="module">
+import { removeBackground } from "@imgly/background-removal";
+const drop = document.getElementById('bg-drop');
+const fileInput = document.getElementById('bg-file');
+const statusEl = document.getElementById('bg-status');
+const progressEl = document.getElementById('bg-progress');
+const barEl = document.getElementById('bg-bar');
+const progressText = document.getElementById('bg-progresstext');
+const resultEl = document.getElementById('bg-result');
+const origImg = document.getElementById('bg-original');
+const outImg = document.getElementById('bg-output');
+let resultBlob = null;
+drop.addEventListener('click', () => fileInput.click());
+drop.addEventListener('dragover', e => { e.preventDefault(); drop.style.borderColor = '#0ea5e9'; });
+drop.addEventListener('dragleave', () => { drop.style.borderColor = '#94a3b8'; });
+drop.addEventListener('drop', e => { e.preventDefault(); drop.style.borderColor = '#94a3b8'; if (e.dataTransfer.files[0]) handleFile(e.dataTransfer.files[0]); });
+fileInput.addEventListener('change', () => { if (fileInput.files[0]) handleFile(fileInput.files[0]); });
+document.getElementById('bg-again').addEventListener('click', () => { resultEl.style.display = 'none'; drop.style.display = 'block'; statusEl.textContent = ''; fileInput.value = ''; });
+document.getElementById('bg-download').addEventListener('click', () => {
+  if (!resultBlob) return;
+  const a = document.createElement('a');
+  a.href = URL.createObjectURL(resultBlob);
+  a.download = 'background-removed.png';
+  a.click();
+  setTimeout(() => URL.revokeObjectURL(a.href), 5000);
+});
+async function handleFile(file) {
+  if (!file.type.match(/^image\/(jpeg|png|webp)$/)) { statusEl.textContent = '⚠️ Please choose a JPG, PNG or WebP image.'; return; }
+  drop.style.display = 'none'; resultEl.style.display = 'none';
+  progressEl.style.display = 'block'; barEl.style.width = '5%';
+  progressText.textContent = 'Loading AI model (first time only, ~40MB)…';
+  statusEl.textContent = '⏳ Processing… please wait.';
+  origImg.src = URL.createObjectURL(file);
+  try {
+    const config = {
+      progress: (key, current, total) => {
+        const pct = total ? Math.round((current / total) * 100) : 0;
+        barEl.style.width = Math.max(5, pct) + '%';
+        progressText.textContent = key.includes('fetch') || key.includes('model') ? 'Downloading AI model… ' + pct + '%' : 'Removing background… ' + pct + '%';
+      }
+    };
+    barEl.style.width = '30%';
+    progressText.textContent = 'Analyzing image with AI…';
+    resultBlob = await removeBackground(file, config);
+    barEl.style.width = '100%';
+    outImg.src = URL.createObjectURL(resultBlob);
+    progressEl.style.display = 'none';
+    statusEl.textContent = '✅ Done! Background removed.';
+    resultEl.style.display = 'block';
+  } catch (err) {
+    progressEl.style.display = 'none';
+    statusEl.textContent = '❌ Something went wrong: ' + (err.message || 'processing failed') + '. Try a different photo.';
+    drop.style.display = 'block';
+  }
+}
+</script>
+<script src="../assets/app.js"></script>
+</body>
+</html>
