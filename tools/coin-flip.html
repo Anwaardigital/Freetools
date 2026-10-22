@@ -55,6 +55,38 @@
             "@type": "Answer",
             "text": "Absolutely. All processing happens locally in your browser. Your files are never uploaded to any server."
           }
+        },
+        {
+          "@type": "Question",
+          "name": "Is the coin flip truly random?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "It uses your browser's cryptographically secure random number generator (crypto.getRandomValues), the same source of randomness used for security keys — far better than a basic Math.random() and effectively unpredictable."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I use this to make decisions fairly?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Absolutely — that is what it is for. Settling debates, picking who goes first, choosing between two restaurants: a fair coin has no memory and no bias, which makes it the simplest impartial judge."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Do the odds change after several heads in a row?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No — this is the gambler's fallacy. Each flip is independent with a 50/50 chance. Five heads in a row does not make tails 'due'; the coin has no memory of past flips."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Why do the percentages drift from 50/50?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Short runs vary a lot — 7 heads out of 10 flips is completely normal. The percentages converge toward 50/50 only over hundreds or thousands of flips (the law of large numbers). The tally panel lets you watch this happen live."
+          }
         }
       ]
     }
@@ -73,8 +105,19 @@
 <div class="tool-hero"><h1>🪙 Coin Flip</h1><p>Flip a virtual coin — heads or tails — with live running stats. Useful for settling small decisions and games. Free, unlimited, private — works entirely in your browser.</p></div>
 <div class="ad-slot"><!-- AdSense code goes here --></div>
 <div class="tool-box" id="tool-root" data-tool="coin-flip"></div>
-<div class="howto"><h2>How to use</h2><ol><li>Open the tool — nothing to install, it runs in your browser.</li><li>Enter your input or upload your file.</li><li>Click the action button and download or copy the result.</li></ol></div>
-<div class="faq"><h2>FAQ</h2><details><summary>Is it really free?</summary><p>Yes — every tool on this site is 100% free with no limits, no signup and no watermarks.</p></details><details><summary>Is my data private?</summary><p>Absolutely. All processing happens locally in your browser. Your files are never uploaded to any server.</p></details></div>
+<div class="howto"><h2>How to use</h2><ol><li>Click the 'Flip Coin' button — or just press the spacebar — to flip.</li><li>Watch the animated coin spin and land on heads or tails.</li><li>Check the running tally showing total flips, heads count, tails count, and percentages.</li><li>Click 'Reset' anytime to clear the history and start a fresh session.</li></ol></div>
+<div class="faq"><h2>FAQ</h2><details><summary>Is it really free?</summary><p>Yes — every tool on this site is 100% free with no limits, no signup and no watermarks.</p></details><details><summary>Is my data private?</summary><p>Absolutely. All processing happens locally in your browser. Your files are never uploaded to any server.</p></details><details><summary>Is the coin flip truly random?</summary><p>It uses your browser's cryptographically secure random number generator (crypto.getRandomValues), the same source of randomness used for security keys — far better than a basic Math.random() and effectively unpredictable.</p></details><details><summary>Can I use this to make decisions fairly?</summary><p>Absolutely — that is what it is for. Settling debates, picking who goes first, choosing between two restaurants: a fair coin has no memory and no bias, which makes it the simplest impartial judge.</p></details><details><summary>Do the odds change after several heads in a row?</summary><p>No — this is the gambler's fallacy. Each flip is independent with a 50/50 chance. Five heads in a row does not make tails 'due'; the coin has no memory of past flips.</p></details><details><summary>Why do the percentages drift from 50/50?</summary><p>Short runs vary a lot — 7 heads out of 10 flips is completely normal. The percentages converge toward 50/50 only over hundreds or thousands of flips (the law of large numbers). The tally panel lets you watch this happen live.</p></details></div>
+<div class="tool-guide" style="margin:32px 0;padding:24px;background:#fafafa;border:1px solid #e5e7eb;border-radius:12px;line-height:1.75"><h2 style="margin-top:0">📘 The Humble Coin Flip: Fairness, Probability & Fun</h2><p>Few tools are simpler than a coin flip, and few are more useful for settling life's small disputes. But behind the simplicity sits genuinely interesting mathematics — and a few famous misconceptions. This guide covers fair decision-making, the probability behind streaks, and creative ways to use a virtual coin.</p>
+<h3>Why coin flips are fair</h3>
+<p>A fair coin has exactly two properties that matter: each side has equal probability (1/2), and each flip is independent of the last. That combination makes it the gold standard of impartiality — no arguments about technique, no "best of three" renegotiations. Courts have literally used coin flips to settle legal ties, from sports drafts to (in at least one documented case) a tied election. When both parties agree to the flip beforehand, the result carries a moral weight that arguing never achieves.</p>
+<h3>The gambler's fallacy</h3>
+<p>The most famous coin-flip trap: after four heads, most people feel tails is "due." It is not. The coin does not remember. The probability of heads on the next flip is still exactly 50% — always. Casinos profit enormously from this intuition failure (watch a roulette board's history display sometime). What <em>is</em> true: the probability of five heads <em>in a row from the start</em> is 1 in 32 — but once four heads have already happened, that history is sunk and the next flip stands alone.</p>
+<h3>Streaks are normal</h3>
+<p>In 100 flips, a run of 6+ heads or tails in a row is not just possible but <em>expected</em> — it would be suspicious if it never happened. Humans are terrible at intuiting randomness: when asked to invent a "random" sequence, people alternate too neatly (HTHTHT), while real randomness clumps. If your results look "streaky," that is evidence the flipper is working correctly, not broken.</p>
+<h3>Creative uses</h3>
+<p>Beyond decisions: use flips to randomise turn order in board games, assign chores, break ties in voting, generate binary sequences for simple experiments, or teach kids probability — have them predict, flip 50 times, and compare the tally to their gut feeling. Teachers: the live percentage display is a perfect classroom demo of the law of large numbers.</p>
+<h3>How this flipper works</h3>
+<p>Each flip draws from <code>crypto.getRandomValues()</code>, your browser's cryptographically secure RNG — the same entropy source behind HTTPS keys and password generators. The animation is just theatre; the outcome is decided by real randomness the moment you click. No servers, no tracking, no rigging — refresh the page and the history clears completely.</p></div>
 <div class="tut-box" style="background:#f0f9ff;border:1px solid #bae6fd;border-radius:12px;padding:14px 18px;margin:18px 0"><p style="margin:0">📖 <strong>Step-by-step tutorial:</strong> New to this tool? Read our <a href="../blog/how-to-coin-flip-online.html">complete guide to flipping a coin online</a> — with practical examples.</p></div>
 <div class="related"><h2>Related tools</h2><div class="grid"><a class="tool-card" href="./password-generator.html"><div class="ticon">🔑</div><h3>Password Generator</h3><p>Create strong cryptographically-random passwords.</p></a><a class="tool-card" href="./hash-generator.html"><div class="ticon">#️⃣</div><h3>Hash Generator</h3><p>Generate SHA-256 hashes of any text, locally.</p></a><a class="tool-card" href="./random-number.html"><div class="ticon">🎰</div><h3>Random Number Generator</h3><p>Secure random numbers in any range, with unique option.</p></a></div></div>
 </div>
