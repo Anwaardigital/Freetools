@@ -55,6 +55,38 @@
             "@type": "Answer",
             "text": "Absolutely. All processing happens locally in your browser. Your files are never uploaded to any server."
           }
+        },
+        {
+          "@type": "Question",
+          "name": "Does it handle leap years correctly?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. The calculation uses real calendar arithmetic, so leap years (like 2024 and 2028) and months of different lengths are all accounted for automatically."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I calculate how long until a future date?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Absolutely. Set the start date to today and the end date to your target (a wedding, exam, or product launch) to get an exact countdown in years, months, and days."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is the end date included in the count?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The result is the mathematical difference between the two dates. If you need an inclusive count (for example, a 10-day leave including both endpoints), add one day to the total."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What date format should I use?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Just use the built-in date picker — it follows your browser and device locale. Under the hood the tool works with the ISO format YYYY-MM-DD, which is unambiguous everywhere."
+          }
         }
       ]
     }
@@ -73,8 +105,20 @@
 <div class="tool-hero"><h1>📅 Date Duration Calculator</h1><p>Find the days, weeks and months between any two dates. Useful for planning projects and counting down to events. Free, unlimited, private — works entirely in your browser.</p></div>
 <div class="ad-slot"><!-- AdSense code goes here --></div>
 <div class="tool-box" id="tool-root" data-tool="date-duration"></div>
-<div class="howto"><h2>How to use</h2><ol><li>Open the tool — nothing to install, it runs in your browser.</li><li>Enter your input or upload your file.</li><li>Click the action button and download or copy the result.</li></ol></div>
-<div class="faq"><h2>FAQ</h2><details><summary>Is it really free?</summary><p>Yes — every tool on this site is 100% free with no limits, no signup and no watermarks.</p></details><details><summary>Is my data private?</summary><p>Absolutely. All processing happens locally in your browser. Your files are never uploaded to any server.</p></details></div>
+<div class="howto"><h2>How to use</h2><ol><li>Pick your start date using the date picker (for example, the day a project began).</li><li>Pick your end date — or leave it set to today to measure up to the current day.</li><li>The tool instantly shows the duration broken down into years, months, days, weeks, and total days.</li><li>Use the total-days figure for precise planning like contracts, subscriptions, or countdowns.</li></ol></div>
+<div class="faq"><h2>FAQ</h2><details><summary>Is it really free?</summary><p>Yes — every tool on this site is 100% free with no limits, no signup and no watermarks.</p></details><details><summary>Is my data private?</summary><p>Absolutely. All processing happens locally in your browser. Your files are never uploaded to any server.</p></details><details><summary>Does it handle leap years correctly?</summary><p>Yes. The calculation uses real calendar arithmetic, so leap years (like 2024 and 2028) and months of different lengths are all accounted for automatically.</p></details><details><summary>Can I calculate how long until a future date?</summary><p>Absolutely. Set the start date to today and the end date to your target (a wedding, exam, or product launch) to get an exact countdown in years, months, and days.</p></details><details><summary>Is the end date included in the count?</summary><p>The result is the mathematical difference between the two dates. If you need an inclusive count (for example, a 10-day leave including both endpoints), add one day to the total.</p></details><details><summary>What date format should I use?</summary><p>Just use the built-in date picker — it follows your browser and device locale. Under the hood the tool works with the ISO format YYYY-MM-DD, which is unambiguous everywhere.</p></details></div>
+<div class="tool-guide"><h2>Date Duration Calculator — Complete Guide</h2>
+<p>How many days until your visa expires? How long have you been at your job? What's the exact length of a contract from signing to renewal? Counting days on a calendar is slow and error-prone — especially across leap years and month boundaries. This date duration calculator does the calendar math for you in a single click, entirely in your browser.</p>
+<h3>What the tool calculates</h3>
+<p>Enter any two dates and get the precise duration between them, expressed several ways: full years, remaining months and days; total weeks; and the raw total-day count. The total-days number is the most useful for anything contractual — rental agreements, warranties, probation periods, and subscription billing all run on exact day counts, not on "about three months."</p>
+<h3>Everyday use cases</h3>
+<p><strong>Project planning:</strong> Measure sprint lengths, construction timelines, or campaign durations. <strong>HR and employment:</strong> Calculate tenure for experience letters, gratuity eligibility, or notice periods. <strong>Travel and immigration:</strong> Tourist visas often allow "90 days within 180" — count your days precisely to avoid overstays. <strong>Personal milestones:</strong> Anniversaries, sobriety counters, fitness streaks, and "days since" trackers. <strong>Education:</strong> Count school terms, exam preparation windows, and assignment deadlines.</p>
+<h3>How date math actually works</h3>
+<p>Calendars are irregular: months have 28–31 days and leap years add a February 29 every four years (with century exceptions). Doing this by hand means looking up each month's length. The calculator handles all of it — pick February 2024 as a start date and it correctly knows that month had 29 days, while February 2025 had 28.</p>
+<h3>Tips for accurate results</h3>
+<p>Double-check whether your use case needs an <em>inclusive</em> or <em>exclusive</em> count. A hotel stay from the 1st to the 5th is 4 nights (exclusive of checkout day) but 5 calendar days inclusive. Legal and HR documents usually specify which convention applies — when in doubt, state your assumption alongside the number. For countdowns to future events, re-run the calculation on the day itself, since "days remaining" shrinks daily.</p>
+<h3>Privacy note</h3>
+<p>Dates can be sensitive — medical timelines, legal deadlines, employment history. This calculator never uploads anything; both dates stay on your device.</p></div>
 <div class="related"><h2>Related tools</h2><div class="grid"><a class="tool-card" href="./age-calculator.html"><div class="ticon">🎂</div><h3>Age Calculator</h3><p>Calculate exact age in years, months, days — plus total days lived.</p></a><a class="tool-card" href="./bmi-calculator.html"><div class="ticon">⚖️</div><h3>BMI Calculator</h3><p>Compute Body Mass Index and see your health category.</p></a><a class="tool-card" href="./loan-calculator.html"><div class="ticon">🏦</div><h3>Loan / EMI Calculator</h3><p>Calculate monthly loan payments, total interest and total payable.</p></a></div></div>
 </div>
 <div class="related-guides"><h2>Related guides</h2><div class="grid"><a class="tool-card" href="../blog/how-to-date-duration-online.html"><h3>How to Calculate Date Duration Online for Free (2026 Guide) | Free Privacy Tools</h3><p>Find the exact number of days between any two dates with our free date duration calculator. Step-by-step guide with examples for projects, contracts, countdowns and anniversaries.</p></a><a class="tool-card" href="../blog/how-to-age-calculator-online.html"><h3>How to Calculate Your Age Online for Free (2026 Guide) | Free Privacy Tools</h3><p>Calculate your exact age in years, months and days online for free. Step-by-step guide with worked examples, plus total days lived and a countdown to your next birthday.</p></a><a class="tool-card" href="../blog/how-to-bmi-calculator-online.html"><h3>How to Calculate Your BMI Online for Free (2026 Guide) | Free Privacy Tools</h3><p>Calculate your Body Mass Index online for free with a step-by-step guide. Learn the BMI formula, see worked examples, understand the weight categories, and know the limits of BMI.</p></a></div></div>

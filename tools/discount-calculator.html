@@ -55,6 +55,38 @@
             "@type": "Answer",
             "text": "Absolutely. All processing happens locally in your browser. Your files are never uploaded to any server."
           }
+        },
+        {
+          "@type": "Question",
+          "name": "How is the final price calculated?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Final price = original price × (1 − discount ÷ 100). For example, an $80 item at 25% off: $80 × 0.75 = $60. The discount amount ($20) is shown separately so you can see exactly what you save."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How do I calculate two stacked discounts, like 20% + 10%?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Apply them sequentially, not by adding. First apply 20% to get the intermediate price, then apply 10% to that result. Note that 20% + 10% stacked equals a 28% total discount — not 30% — because the second discount applies to the already-reduced price."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Does the calculator include sales tax or VAT?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "If the tool shows a tax field, enter your local VAT/GST rate and it will be added to the discounted price. If not, multiply the final price by (1 + tax rate) yourself — for example, add 17% GST by multiplying by 1.17."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is the difference between discount amount and sale price?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The discount amount is the money you save (original − final). The sale price is what you actually pay at the register. Both numbers matter: the first tells you the deal's size, the second tells you the cost."
+          }
         }
       ]
     }
@@ -73,8 +105,18 @@
 <div class="tool-hero"><h1>🏷️ Discount Calculator</h1><p>See the final sale price and exactly how much you save on any discount. Useful for shoppers comparing deals. Free, unlimited, private — works entirely in your browser.</p></div>
 <div class="ad-slot"><!-- AdSense code goes here --></div>
 <div class="tool-box" id="tool-root" data-tool="discount-calculator"></div>
-<div class="howto"><h2>How to use</h2><ol><li>Open the tool — nothing to install, it runs in your browser.</li><li>Enter your input or upload your file.</li><li>Click the action button and download or copy the result.</li></ol></div>
-<div class="faq"><h2>FAQ</h2><details><summary>Is it really free?</summary><p>Yes — every tool on this site is 100% free with no limits, no signup and no watermarks.</p></details><details><summary>Is my data private?</summary><p>Absolutely. All processing happens locally in your browser. Your files are never uploaded to any server.</p></details></div>
+<div class="howto"><h2>How to use</h2><ol><li>Enter the original price of the item in the price field.</li><li>Enter the discount percentage (for example, type 25 for 25% off).</li><li>The tool instantly shows the discount amount (what you save) and the final sale price (what you pay).</li><li>If there's a tax or VAT field, enter your local rate to see the true total at checkout.</li></ol></div>
+<div class="faq"><h2>FAQ</h2><details><summary>Is it really free?</summary><p>Yes — every tool on this site is 100% free with no limits, no signup and no watermarks.</p></details><details><summary>Is my data private?</summary><p>Absolutely. All processing happens locally in your browser. Your files are never uploaded to any server.</p></details><details><summary>How is the final price calculated?</summary><p>Final price = original price × (1 − discount ÷ 100). For example, an $80 item at 25% off: $80 × 0.75 = $60. The discount amount ($20) is shown separately so you can see exactly what you save.</p></details><details><summary>How do I calculate two stacked discounts, like 20% + 10%?</summary><p>Apply them sequentially, not by adding. First apply 20% to get the intermediate price, then apply 10% to that result. Note that 20% + 10% stacked equals a 28% total discount — not 30% — because the second discount applies to the already-reduced price.</p></details><details><summary>Does the calculator include sales tax or VAT?</summary><p>If the tool shows a tax field, enter your local VAT/GST rate and it will be added to the discounted price. If not, multiply the final price by (1 + tax rate) yourself — for example, add 17% GST by multiplying by 1.17.</p></details><details><summary>What is the difference between discount amount and sale price?</summary><p>The discount amount is the money you save (original − final). The sale price is what you actually pay at the register. Both numbers matter: the first tells you the deal's size, the second tells you the cost.</p></details></div>
+<div class="tool-guide"><h2>Discount Calculator — Complete Guide</h2>
+<p>Sale signs are designed to make you feel like you're winning — but is 40% off actually a good deal? This discount calculator cuts through the marketing: enter any price and discount percentage to see exactly what you save and what you pay, instantly and privately in your browser.</p>
+<h3>The math behind every sale</h3>
+<p>Discount math is simple but easy to fumble mentally. A 30% discount on a $150 jacket means you pay 70%: $150 × 0.70 = $105, saving $45. The classic mental-math trap is stacked discounts: "extra 10% off already-reduced prices" does not mean 40% total. A $200 item at 30% off becomes $140; an extra 10% off takes it to $126 — a total saving of 37%, not 40%.</p>
+<h3>Spotting fake discounts</h3>
+<p>Retailers sometimes inflate the "original" price before a sale so the discount looks bigger. Protect yourself: check the item's price history with a price-tracker, compare the same product at two or three stores, and compute the <em>unit price</em> (price per 100g, per ml) for groceries and household goods — the biggest-looking discount isn't always the cheapest option.</p>
+<h3>Common discount formats decoded</h3>
+<p><strong>Percentage off:</strong> straightforward — use this calculator. <strong>Buy-one-get-one (BOGO):</strong> effectively 50% off each if you'd buy two anyway, worthless if the second item goes to waste. <strong>Fixed-amount off ($20 off $100):</strong> equals a 20% discount at exactly $100, but a smaller percentage on larger carts. <strong>Tiered discounts</strong> (10% off $50, 20% off $100): calculate each tier to find the real sweet spot — sometimes adding a small item unlocks a tier that saves more than the item costs.</p>
+<h3>Smart shopping tips</h3>
+<p>Set a target price <em>before</em> you shop and let the calculator tell you which discount actually reaches it. Factor in shipping — "free shipping over $75" can erase a discount if it tempts you to overspend. And remember taxes: a 25% discount in a 17%-VAT region still leaves you paying more than the sticker suggests. Run the numbers here first, then buy with confidence.</p></div>
 <div style="background:#f0f9ff;border:1px solid #bae6fd;border-radius:12px;padding:16px 20px;margin:24px 0"><h2 style="margin:0 0 8px;font-size:1.15em">📖 Step-by-step tutorial</h2><p style="margin:0">New to this tool? Read our <a href="../blog/how-to-discount-calculator-online.html">step-by-step guide to calculating discounts and sale prices online</a> — with worked examples and practical tips.</p></div>
 <div class="related"><h2>Related tools</h2><div class="grid"><a class="tool-card" href="./age-calculator.html"><div class="ticon">🎂</div><h3>Age Calculator</h3><p>Calculate exact age in years, months, days — plus total days lived.</p></a><a class="tool-card" href="./bmi-calculator.html"><div class="ticon">⚖️</div><h3>BMI Calculator</h3><p>Compute Body Mass Index and see your health category.</p></a><a class="tool-card" href="./loan-calculator.html"><div class="ticon">🏦</div><h3>Loan / EMI Calculator</h3><p>Calculate monthly loan payments, total interest and total payable.</p></a></div></div>
 </div>

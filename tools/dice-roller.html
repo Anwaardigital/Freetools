@@ -55,6 +55,38 @@
             "@type": "Answer",
             "text": "Absolutely. All processing happens locally in your browser. Your files are never uploaded to any server."
           }
+        },
+        {
+          "@type": "Question",
+          "name": "Are the rolls truly random and fair?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. Rolls use your browser's cryptographically secure random number generator (crypto.getRandomValues), the same class of randomness used for security tokens. Every face has an equal probability on every roll — no patterns, no memory of previous rolls."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I use this for Dungeons & Dragons?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Definitely. The tool covers every standard D&D die (d4, d6, d8, d10, d12, d20, d100). For advantage or disadvantage, roll twice and take the higher or lower result, exactly as the rules describe."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What do notations like 3d6 or 1d20 mean?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "It's tabletop shorthand: the number before 'd' is how many dice to roll, and the number after is the sides per die. So 3d6 means roll three six-sided dice and add them; 1d20 means roll a single twenty-sided die."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Does the tool save my roll history?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. Rolls are generated and displayed only — nothing is stored on your device or sent to any server. Refresh the page and the slate is clean."
+          }
         }
       ]
     }
@@ -73,8 +105,18 @@
 <div class="tool-hero"><h1>🎲 Dice Roller</h1><p>Roll any number of dice with any number of sides, instantly. Useful for board games, RPGs and classroom activities. Free, unlimited, private — works entirely in your browser.</p></div>
 <div class="ad-slot"><!-- AdSense code goes here --></div>
 <div class="tool-box" id="tool-root" data-tool="dice-roller"></div>
-<div class="howto"><h2>How to use</h2><ol><li>Open the tool — nothing to install, it runs in your browser.</li><li>Enter your input or upload your file.</li><li>Click the action button and download or copy the result.</li></ol></div>
-<div class="faq"><h2>FAQ</h2><details><summary>Is it really free?</summary><p>Yes — every tool on this site is 100% free with no limits, no signup and no watermarks.</p></details><details><summary>Is my data private?</summary><p>Absolutely. All processing happens locally in your browser. Your files are never uploaded to any server.</p></details></div>
+<div class="howto"><h2>How to use</h2><ol><li>Choose how many dice to roll (from 1 up to 6) using the dice-count control.</li><li>Select the die type: d4, d6, d8, d10, d12, d20, or d100 — the standard polyhedral dice used in tabletop games.</li><li>Click the Roll button. Each die's face value and the grand total appear instantly.</li><li>Roll again whenever you need; every roll is independent, so streaks are pure chance.</li></ol></div>
+<div class="faq"><h2>FAQ</h2><details><summary>Is it really free?</summary><p>Yes — every tool on this site is 100% free with no limits, no signup and no watermarks.</p></details><details><summary>Is my data private?</summary><p>Absolutely. All processing happens locally in your browser. Your files are never uploaded to any server.</p></details><details><summary>Are the rolls truly random and fair?</summary><p>Yes. Rolls use your browser's cryptographically secure random number generator (crypto.getRandomValues), the same class of randomness used for security tokens. Every face has an equal probability on every roll — no patterns, no memory of previous rolls.</p></details><details><summary>Can I use this for Dungeons & Dragons?</summary><p>Definitely. The tool covers every standard D&D die (d4, d6, d8, d10, d12, d20, d100). For advantage or disadvantage, roll twice and take the higher or lower result, exactly as the rules describe.</p></details><details><summary>What do notations like 3d6 or 1d20 mean?</summary><p>It's tabletop shorthand: the number before 'd' is how many dice to roll, and the number after is the sides per die. So 3d6 means roll three six-sided dice and add them; 1d20 means roll a single twenty-sided die.</p></details><details><summary>Does the tool save my roll history?</summary><p>No. Rolls are generated and displayed only — nothing is stored on your device or sent to any server. Refresh the page and the slate is clean.</p></details></div>
+<div class="tool-guide"><h2>Dice Roller — Complete Guide</h2>
+<p>No dice on hand? No problem. This virtual dice roller simulates up to six polyhedral dice — d4, d6, d8, d10, d12, d20, and d100 — with fair, unpredictable results generated by your browser's secure random number engine. It's perfect for tabletop RPGs, board games, classrooms, and any moment you need a genuinely random number.</p>
+<h3>Why digital dice are fair</h3>
+<p>Physical dice can be subtly biased by manufacturing defects, worn edges, or loaded weighting. A software roller using <em>crypto.getRandomValues()</em> has none of these flaws: each face of each die has mathematically equal probability on every single roll. The randomness source is the same one browsers use to generate encryption keys, so it's audited, standardized, and unpredictable.</p>
+<h3>Popular use cases</h3>
+<p><strong>Dungeons & Dragons and RPGs:</strong> Roll initiative (1d20), damage (like 2d6 for a greatsword), or percentile checks (1d100). <strong>Board games:</strong> Lost a die under the sofa mid-game? Roll here instead. <strong>Decision making:</strong> Assign options to numbers and let chance decide — dinner, movie night, or who goes first. <strong>Teaching probability:</strong> Roll 2d6 a hundred times and watch the totals cluster around 7, a perfect live demo of the bell curve. <strong>Game development:</strong> Prototype random mechanics before coding them.</p>
+<h3>Understanding the odds</h3>
+<p>A single d20 gives every number from 1 to 20 a flat 5% chance. But combined dice behave differently: 2d6 totals range from 2 to 12, with 7 the most likely (6 out of 36 combinations, about 16.7%) and 2 or 12 the rarest (about 2.8% each). Knowing this helps in games — a "roll 8 or higher on 2d6" succeeds roughly 42% of the time, not 50%.</p>
+<h3>Tips for game night</h3>
+<p>For advantage/disadvantage mechanics, roll the die twice and take the higher or lower — the tool makes re-rolling instant. When the whole table needs to see a roll, share your screen or read the total aloud. And remember the golden rule of randomness: a run of bad rolls means nothing — the dice have no memory, and your luck is mathematically guaranteed to be exactly average in the long run.</p></div>
 <div class="tut-box" style="background:#f0f9ff;border:1px solid #bae6fd;border-radius:12px;padding:14px 18px;margin:18px 0"><p style="margin:0">📖 <strong>Step-by-step tutorial:</strong> New to this tool? Read our <a href="../blog/how-to-dice-roller-online.html">complete guide to rolling dice online</a> — with practical examples.</p></div>
 <div class="related"><h2>Related tools</h2><div class="grid"><a class="tool-card" href="./password-generator.html"><div class="ticon">🔑</div><h3>Password Generator</h3><p>Create strong cryptographically-random passwords.</p></a><a class="tool-card" href="./hash-generator.html"><div class="ticon">#️⃣</div><h3>Hash Generator</h3><p>Generate SHA-256 hashes of any text, locally.</p></a><a class="tool-card" href="./random-number.html"><div class="ticon">🎰</div><h3>Random Number Generator</h3><p>Secure random numbers in any range, with unique option.</p></a></div></div>
 </div>

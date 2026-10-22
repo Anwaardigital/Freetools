@@ -55,6 +55,38 @@
             "@type": "Answer",
             "text": "Absolutely. All processing happens locally in your browser. Your files are never uploaded to any server."
           }
+        },
+        {
+          "@type": "Question",
+          "name": "What does minification actually remove?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Minification strips everything the browser does not need: comments, whitespace, line breaks, trailing semicolons, and redundant units (0px becomes 0). It can also shorten hex colors (#ffffff becomes #fff) and merge duplicate rules. Your styles render identically — only the file gets smaller."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How much smaller will my CSS get?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Typically 20–40% for hand-written CSS with comments and generous formatting. Heavily commented or spaced-out stylesheets can shrink by 50% or more. The tool shows your exact savings so you can verify."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is minified CSS still editable?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Technically yes, practically no — it becomes one long unreadable line. Always keep your original source file and treat the minified version as a build artifact. Edit the source, re-minify, redeploy."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Minify vs gzip — do I need both?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes, they stack. Minification removes unnecessary characters; gzip/Brotli compression (done by your server) compresses what remains. Together they typically cut CSS transfer size by 70–85%. Minify first, then let the server compress."
+          }
         }
       ]
     }
@@ -73,8 +105,19 @@
 <div class="tool-hero"><h1>📦 CSS Minifier</h1><p>Minify CSS to shrink file size, or beautify it for readability. Useful for developers optimizing stylesheets for faster loads. Free, unlimited, private — works entirely in your browser.</p></div>
 <div class="ad-slot"><!-- AdSense code goes here --></div>
 <div class="tool-box" id="tool-root" data-tool="css-minifier"></div>
-<div class="howto"><h2>How to use</h2><ol><li>Open the tool — nothing to install, it runs in your browser.</li><li>Enter your input or upload your file.</li><li>Click the action button and download or copy the result.</li></ol></div>
-<div class="faq"><h2>FAQ</h2><details><summary>Is it really free?</summary><p>Yes — every tool on this site is 100% free with no limits, no signup and no watermarks.</p></details><details><summary>Is my data private?</summary><p>Absolutely. All processing happens locally in your browser. Your files are never uploaded to any server.</p></details></div>
+<div class="howto"><h2>How to use</h2><ol><li>Paste your CSS code into the input box — or upload a .css file directly.</li><li>Toggle options: remove comments, strip unnecessary whitespace, and shorten color codes if you want maximum compression.</li><li>Click 'Minify CSS' and watch the output shrink — the tool shows original vs minified size and the percentage saved.</li><li>Copy the minified CSS or download it, then link it in your HTML in place of the original.</li></ol></div>
+<div class="faq"><h2>FAQ</h2><details><summary>Is it really free?</summary><p>Yes — every tool on this site is 100% free with no limits, no signup and no watermarks.</p></details><details><summary>Is my data private?</summary><p>Absolutely. All processing happens locally in your browser. Your files are never uploaded to any server.</p></details><details><summary>What does minification actually remove?</summary><p>Minification strips everything the browser does not need: comments, whitespace, line breaks, trailing semicolons, and redundant units (0px becomes 0). It can also shorten hex colors (#ffffff becomes #fff) and merge duplicate rules. Your styles render identically — only the file gets smaller.</p></details><details><summary>How much smaller will my CSS get?</summary><p>Typically 20–40% for hand-written CSS with comments and generous formatting. Heavily commented or spaced-out stylesheets can shrink by 50% or more. The tool shows your exact savings so you can verify.</p></details><details><summary>Is minified CSS still editable?</summary><p>Technically yes, practically no — it becomes one long unreadable line. Always keep your original source file and treat the minified version as a build artifact. Edit the source, re-minify, redeploy.</p></details><details><summary>Minify vs gzip — do I need both?</summary><p>Yes, they stack. Minification removes unnecessary characters; gzip/Brotli compression (done by your server) compresses what remains. Together they typically cut CSS transfer size by 70–85%. Minify first, then let the server compress.</p></details></div>
+<div class="tool-guide" style="margin:32px 0;padding:24px;background:#fafafa;border:1px solid #e5e7eb;border-radius:12px;line-height:1.75"><h2 style="margin-top:0">📘 Complete Guide to CSS Minification</h2><p>Every kilobyte of CSS delays your page's first paint — and unminified stylesheets ship with comments, indentation, and whitespace that exist purely for humans. Minification deletes all of it in milliseconds, for free, with zero visual change. This guide explains what happens under the hood, how minification fits into performance strategy, and the gotchas to avoid.</p>
+<h3>What minification changes (and what it does not)</h3>
+<p>A minifier is a safe, mechanical transform: it removes comments, collapses whitespace, drops the last semicolon in each rule block, strips units from zero values, shortens colors, and may merge adjacent identical selectors. It never reorders rules in ways that change the cascade, never renames your classes, and never alters a single rendered pixel. If your minified CSS looks different in the browser, the minifier has a bug — or your original CSS relied on something fragile like a missing semicolon that formatting was masking.</p>
+<h3>Where minification fits in web performance</h3>
+<p>CSS is render-blocking: browsers will not paint content until stylesheets download and parse. On a slow mobile connection, a 200 KB unminified stylesheet can cost a full second. Minification typically saves 20–40%, and combined with Brotli compression the total reduction reaches 70–85%. It is one of the highest-ROI optimisations in web development because it is fully automated — set it up once in your build and forget it. Other CSS performance wins to pair it with: removing unused CSS, splitting critical above-the-fold CSS inline, and deferring non-critical stylesheets.</p>
+<h3>Minify vs pretty-print vs source maps</h3>
+<p>Your workflow should keep three artifacts: the <strong>source</strong> (readable, commented, version-controlled), the <strong>minified build</strong> (what users download), and optionally a <strong>source map</strong> (.css.map) that lets browser devtools show you the original source while debugging the minified file. This tool produces the minified output; for ongoing projects, integrate minification into your build (Vite, webpack, and PostCSS all do it with one plugin) rather than minifying by hand each deploy.</p>
+<h3>Common gotchas</h3>
+<p><strong>Hacks and filters:</strong> ancient IE hacks can confuse naive minifiers — test in target browsers. <strong>Important comments:</strong> license headers (like /*! ... */) are conventionally preserved; check your minifier keeps them if legally required. <strong>Charset:</strong> if your CSS contains non-ASCII (content strings, font names), ensure the @charset "UTF-8" declaration survives as the very first bytes. <strong>Do not minify twice</strong> — it is idempotent but pointless, and double-processing occasionally mangles edge cases.</p>
+<h3>Privacy note</h3>
+<p>Your stylesheets may contain revealing class names or comments about unreleased features. Minification here runs 100% in your browser — your code never touches a server.</p></div>
 <div class="tut-box" style="background:#f0f9ff;border:1px solid #bae6fd;border-radius:12px;padding:14px 18px;margin:18px 0"><p style="margin:0">📖 <strong>Step-by-step tutorial:</strong> New to this tool? Read our <a href="../blog/how-to-css-minifier-online.html">complete guide to minifying CSS online</a> — with practical examples.</p></div>
 <div class="related"><h2>Related tools</h2><div class="grid"><a class="tool-card" href="./html-encoder.html"><div class="ticon">💻</div><h3>HTML Encoder</h3><p>Encode or decode HTML entities safely.</p></a><a class="tool-card" href="./js-minifier.html"><div class="ticon">⚡</div><h3>JS Minifier</h3><p>Basic JavaScript minifier for smaller files.</p></a><a class="tool-card" href="./uuid-generator.html"><div class="ticon">🆔</div><h3>UUID Generator</h3><p>Generate version-4 UUIDs in bulk.</p></a></div></div>
 </div>
