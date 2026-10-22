@@ -142,9 +142,8 @@
 <div class="related"><h2>Related tools</h2><div class="grid"><a class="tool-card" href="./image-compressor.html"><div class="ticon">🗜️</div><h3>Image Compressor</h3><p>Reduce image file size with adjustable quality.</p></a><a class="tool-card" href="./image-resizer.html"><div class="ticon">📐</div><h3>Image Resizer</h3><p>Resize images to exact dimensions.</p></a><a class="tool-card" href="./images-to-pdf.html"><div class="ticon">📄</div><h3>Images to PDF</h3><p>Combine multiple images into one PDF.</p></a></div></div>
 </main>
 <footer class="site-footer"><div class="wrap"><p>© 2026 Anwaar Digital — Free Privacy Tools. All tools run 100% in your browser.</p><p><a href="../privacy.html">Privacy Policy</a> · <a href="../about.html">About</a> · <a href="../contact.html">Contact</a></p></div></footer>
-<script type="importmap">{"imports":{"@imgly/background-removal":"https://cdn.jsdelivr.net/npm/@imgly/background-removal@1.5.5/+esm"}}</script>
 <script type="module">
-import { removeBackground } from "@imgly/background-removal";
+import { removeBackground } from "https://cdn.jsdelivr.net/npm/@imgly/background-removal@1.7.0/+esm";
 const drop = document.getElementById('bg-drop');
 const fileInput = document.getElementById('bg-file');
 const statusEl = document.getElementById('bg-status');
@@ -181,7 +180,11 @@ async function handleFile(file) {
       progress: (key, current, total) => {
         const pct = total ? Math.round((current / total) * 100) : 0;
         barEl.style.width = Math.max(5, pct) + '%';
-        progressText.textContent = key.includes('fetch') || key.includes('model') ? 'Downloading AI model… ' + pct + '%' : 'Removing background… ' + pct + '%';
+        if (key.indexOf('fetch:') === 0 || key.indexOf('model') >= 0) {
+          progressText.textContent = 'Downloading AI model… ' + pct + '% (one-time, ~40MB)';
+        } else {
+          progressText.textContent = 'Removing background… ' + pct + '%';
+        }
       }
     };
     barEl.style.width = '30%';
@@ -194,7 +197,11 @@ async function handleFile(file) {
     resultEl.style.display = 'block';
   } catch (err) {
     progressEl.style.display = 'none';
-    statusEl.textContent = '❌ Something went wrong: ' + (err.message || 'processing failed') + '. Try a different photo.';
+    let msg = err.message || 'processing failed';
+    if (msg.indexOf('fetch') >= 0 || msg.indexOf('Failed to fetch') >= 0) {
+      msg = 'Could not download the AI model. Check your internet connection and try again. (The ~40MB model downloads once, then works offline.)';
+    }
+    statusEl.textContent = '❌ ' + msg;
     drop.style.display = 'block';
   }
 }
