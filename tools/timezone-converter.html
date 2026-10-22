@@ -55,6 +55,38 @@
             "@type": "Answer",
             "text": "Absolutely. All processing happens locally in your browser. Your files are never uploaded to any server."
           }
+        },
+        {
+          "@type": "Question",
+          "name": "Does the converter handle daylight saving time automatically?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. It uses the IANA timezone database, so daylight saving transitions are applied correctly for the exact date you enter \u2014 including historical changes and announced future rule updates."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How many timezones are supported?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "All 400+ IANA timezones, from Pacific/Kiritimati (UTC+14) to Pacific/Midway (UTC\u221211) \u2014 including half-hour zones like Asia/Kolkata and 45-minute zones like Asia/Kathmandu."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Why does a recurring meeting shift for some attendees twice a year?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Because regions change clocks on different schedules: the US and Europe spring forward and fall back on different weekends, and many countries never observe DST at all. Always verify the UTC offset for the specific date, not just the city name."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I convert past or future dates, not just today?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. Enter any date and the converter applies the timezone rules in effect on that date, based on the IANA database \u2014 useful for checking old logs or planning far-ahead events."
+          }
         }
       ]
     }
@@ -73,11 +105,22 @@
 <div class="tool-hero"><h1>🌍 Time Zone Converter</h1><p>Convert date &amp; time between world time zones. Useful for scheduling meetings across countries. Free, unlimited, private — works entirely in your browser.</p></div>
 <div class="ad-slot"><!-- AdSense code goes here --></div>
 <div class="tool-box" id="tool-root" data-tool="timezone-converter"></div>
-<div class="howto"><h2>How to use</h2><ol><li>Open the tool — nothing to install, it runs in your browser.</li><li>Enter your input or upload your file.</li><li>Click the action button and download or copy the result.</li></ol></div>
-<div class="faq"><h2>FAQ</h2><details><summary>Is it really free?</summary><p>Yes — every tool on this site is 100% free with no limits, no signup and no watermarks.</p></details><details><summary>Is my data private?</summary><p>Absolutely. All processing happens locally in your browser. Your files are never uploaded to any server.</p></details></div>
+<div class="howto"><h2>How to use</h2><ol><li>Enter the date and time you want to convert, or click <strong>Now</strong> to use the current time.</li><li>Select the <strong>source timezone</strong> from the dropdown (for example America/New_York).</li><li>Select one or more <strong>target timezones</strong> (for example Asia/Karachi) to compare side by side.</li><li>Click <strong>Convert</strong> — each zone shows the equivalent local time with its UTC offset and DST status.</li></ol></div>
+<div class="faq"><h2>FAQ</h2><details><summary>Is it really free?</summary><p>Yes — every tool on this site is 100% free with no limits, no signup and no watermarks.</p></details><details><summary>Is my data private?</summary><p>Absolutely. All processing happens locally in your browser. Your files are never uploaded to any server.</p></details><details><summary>Does the converter handle daylight saving time automatically?</summary><p>Yes. It uses the IANA timezone database, so daylight saving transitions are applied correctly for the exact date you enter — including historical changes and announced future rule updates.</p></details><details><summary>How many timezones are supported?</summary><p>All 400+ IANA timezones, from Pacific/Kiritimati (UTC+14) to Pacific/Midway (UTC−11) — including half-hour zones like Asia/Kolkata and 45-minute zones like Asia/Kathmandu.</p></details><details><summary>Why does a recurring meeting shift for some attendees twice a year?</summary><p>Because regions change clocks on different schedules: the US and Europe spring forward and fall back on different weekends, and many countries never observe DST at all. Always verify the UTC offset for the specific date, not just the city name.</p></details><details><summary>Can I convert past or future dates, not just today?</summary><p>Yes. Enter any date and the converter applies the timezone rules in effect on that date, based on the IANA database — useful for checking old logs or planning far-ahead events.</p></details></div>
+<div class="tool-guide"><h2>Complete Guide to Timezones</h2><p>Timezones exist because the Earth rotates: noon in Karachi is morning in London and the previous evening in New York. To keep civil time roughly aligned with the sun, the world is divided into zones measured as offsets from Coordinated Universal Time (UTC). Our converter translates any moment between any of the 400+ IANA timezones instantly.</p>
+<p><strong>UTC is the anchor.</strong> Every timezone is defined as UTC plus or minus some offset, and that offset can change during the year where daylight saving time (DST) is observed. This is why "3 PM in New York" is ambiguous without a date: it is UTC−5 in winter (EST) but UTC−4 in summer (EDT). Storing and transmitting times in UTC, converting only for display, is the golden rule that prevents these bugs.</p>
+<h3>Real-world uses</h3>
+<ul>
+<li><strong>International meetings:</strong> find a slot that is humane for everyone — 9 AM in San Francisco is 9 PM in Karachi, so somebody is always compromising.</li>
+<li><strong>Travel planning:</strong> convert landing times to your home zone to beat jet lag confusion, and check whether your destination observes DST.</li>
+<li><strong>Broadcasts and events:</strong> announce webinars and match times with a timezone converter link so nobody misses out.</li>
+<li><strong>Log forensics:</strong> correlate server logs written in UTC with user reports given in local time.</li>
+</ul>
+<h3>Common pitfalls</h3>
+<p>The <strong>fall-back hour</strong> happens twice: when clocks go back, 1:30 AM occurs twice in one night — always clarify <em>which</em> 1:30 AM you mean. <strong>Abbreviations lie:</strong> "CST" can mean US Central, China, or Cuba Standard Time — prefer IANA names like America/Chicago. And remember that several regions (most of Asia and Africa) skip DST entirely, so their offset never changes.</p>
+<p><strong>Pro tip:</strong> when scheduling across zones, propose times in UTC ("1400 UTC") alongside local equivalents. It removes all ambiguity and is standard practice in aviation, tech, and international business.</p></div>
 <div class="related"><h2>Related tools</h2><div class="grid"><a class="tool-card" href="./age-calculator.html"><div class="ticon">🎂</div><h3>Age Calculator</h3><p>Calculate exact age in years, months, days — plus total days lived.</p></a><a class="tool-card" href="./bmi-calculator.html"><div class="ticon">⚖️</div><h3>BMI Calculator</h3><p>Compute Body Mass Index and see your health category.</p></a><a class="tool-card" href="./loan-calculator.html"><div class="ticon">🏦</div><h3>Loan / EMI Calculator</h3><p>Calculate monthly loan payments, total interest and total payable.</p></a></div></div>
 </div>
-<div class="related-guides"><h2>Related guides</h2><div class="grid"><a class="tool-card" href="../blog/how-to-timezone-converter-online.html"><h3>How to Convert Time Zones Online for Free (2026 Guide) | Free Privacy Tools</h3><p>Convert any date and time between time zones instantly with our free timezone converter. Step-by-step instructions, real examples, and tips for meetings, travel and deadlines.</p></a><a class="tool-card" href="../blog/how-to-age-calculator-online.html"><h3>How to Calculate Your Age Online for Free (2026 Guide) | Free Privacy Tools</h3><p>Calculate your exact age in years, months and days online for free. Step-by-step guide with worked examples, plus total days lived and a countdown to your next birthday.</p></a><a class="tool-card" href="../blog/how-to-bmi-calculator-online.html"><h3>How to Calculate Your BMI Online for Free (2026 Guide) | Free Privacy Tools</h3><p>Calculate your Body Mass Index online for free with a step-by-step guide. Learn the BMI formula, see worked examples, understand the weight categories, and know the limits of BMI.</p></a></div></div>
 </main>
 <footer class="site-footer"><div class="wrap">
 <div class="cols">
@@ -90,17 +133,4 @@
 <script src="../assets/app.js"></script>
 <script src="../assets/tools.js"></script>
 <script src="../assets/features.js"></script>
-
-<!-- Back to top button -->
-<button id="backToTop" aria-label="Back to top" title="Back to top"
-style="position:fixed;bottom:24px;right:24px;width:48px;height:48px;border-radius:50%;border:none;background:#2563eb;color:#ffffff;font-size:22px;line-height:1;cursor:pointer;opacity:0;visibility:hidden;transition:opacity .3s,visibility .3s,transform .2s;box-shadow:0 4px 12px rgba(0,0,0,.35);z-index:9999;padding:0;">&#8593;</button>
-<script>
-(function(){var b=document.getElementById('backToTop');if(!b)return;
-window.addEventListener('scroll',function(){var s=window.pageYOffset||document.documentElement.scrollTop;
-if(s>300){b.style.opacity='1';b.style.visibility='visible';}else{b.style.opacity='0';b.style.visibility='hidden';}},{passive:true});
-b.addEventListener('click',function(){window.scrollTo({top:0,behavior:'smooth'});});
-b.addEventListener('mouseenter',function(){b.style.transform='scale(1.12)';});
-b.addEventListener('mouseleave',function(){b.style.transform='scale(1)';});})();
-</script>
-
 </body></html>

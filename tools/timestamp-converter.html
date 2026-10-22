@@ -55,6 +55,38 @@
             "@type": "Answer",
             "text": "Absolutely. All processing happens locally in your browser. Your files are never uploaded to any server."
           }
+        },
+        {
+          "@type": "Question",
+          "name": "What exactly is a Unix timestamp?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "It is the number of seconds (or milliseconds) elapsed since January 1, 1970 00:00:00 UTC \u2014 known as the Unix epoch. It is the standard way computers store date and time values, because a single number is unambiguous and easy to compare or sort."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How do I know if my timestamp is in seconds or milliseconds?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Count the digits: 10 digits means seconds (for example 1761091200), 13 digits means milliseconds (for example 1761091200000). This tool auto-detects the format, but you can also switch manually if needed."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is the Year 2038 problem?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "On old 32-bit systems, signed Unix timestamps overflow on January 19, 2038. Modern 64-bit systems, databases, and JavaScript use 64-bit time, so any realistic date converts correctly here."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Do timestamps account for leap seconds and timezones?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Unix time deliberately ignores leap seconds \u2014 every day is exactly 86,400 seconds. Timezones only affect how the timestamp is displayed: the same timestamp shows the correct local time anywhere in the world once you pick the right zone."
+          }
         }
       ]
     }
@@ -73,11 +105,32 @@
 <div class="tool-hero"><h1>⏱️ Timestamp Converter</h1><p>Convert Unix timestamps to dates and back. Useful for developers debugging logs and APIs. Free, unlimited, private — works entirely in your browser.</p></div>
 <div class="ad-slot"><!-- AdSense code goes here --></div>
 <div class="tool-box" id="tool-root" data-tool="timestamp-converter"></div>
-<div class="howto"><h2>How to use</h2><ol><li>Open the tool — nothing to install, it runs in your browser.</li><li>Enter your input or upload your file.</li><li>Click the action button and download or copy the result.</li></ol></div>
-<div class="faq"><h2>FAQ</h2><details><summary>Is it really free?</summary><p>Yes — every tool on this site is 100% free with no limits, no signup and no watermarks.</p></details><details><summary>Is my data private?</summary><p>Absolutely. All processing happens locally in your browser. Your files are never uploaded to any server.</p></details></div>
+<div class="howto"><h2>How to use</h2><ol><li>Choose your direction: <strong>timestamp → date</strong> or <strong>date → timestamp</strong>.</li><li>Enter the Unix timestamp (10 digits = seconds, 13 digits = milliseconds) or pick a date and time.</li><li>Select the timezone for the human-readable result — it defaults to your local timezone.</li><li>Click <strong>Convert</strong> and copy the result for your code, logs, or database.</li></ol></div>
+<div class="faq"><h2>FAQ</h2><details><summary>Is it really free?</summary><p>Yes — every tool on this site is 100% free with no limits, no signup and no watermarks.</p></details><details><summary>Is my data private?</summary><p>Absolutely. All processing happens locally in your browser. Your files are never uploaded to any server.</p></details><details><summary>What exactly is a Unix timestamp?</summary><p>It is the number of seconds (or milliseconds) elapsed since January 1, 1970 00:00:00 UTC — known as the Unix epoch. It is the standard way computers store date and time values, because a single number is unambiguous and easy to compare or sort.</p></details><details><summary>How do I know if my timestamp is in seconds or milliseconds?</summary><p>Count the digits: 10 digits means seconds (for example 1761091200), 13 digits means milliseconds (for example 1761091200000). This tool auto-detects the format, but you can also switch manually if needed.</p></details><details><summary>What is the Year 2038 problem?</summary><p>On old 32-bit systems, signed Unix timestamps overflow on January 19, 2038. Modern 64-bit systems, databases, and JavaScript use 64-bit time, so any realistic date converts correctly here.</p></details><details><summary>Do timestamps account for leap seconds and timezones?</summary><p>Unix time deliberately ignores leap seconds — every day is exactly 86,400 seconds. Timezones only affect how the timestamp is displayed: the same timestamp shows the correct local time anywhere in the world once you pick the right zone.</p></details></div>
+<div class="tool-guide"><h2>Complete Guide to Unix Timestamps</h2><p>Almost every timestamp you encounter as a developer — in APIs, databases, log files, JWT tokens — is a Unix timestamp: a plain number counting seconds from the Unix epoch (midnight, January 1, 1970, UTC). It was chosen because comparing two moments becomes trivial integer math, with no timezones or formats to argue about.</p>
+<p><strong>The seconds-vs-milliseconds trap</strong> is the number-one timestamp bug in the wild. JavaScript's <code>Date.now()</code> returns <em>milliseconds</em> (13 digits), while most server APIs and databases use <em>seconds</em> (10 digits). Paste a millisecond value into code expecting seconds and you land in the year 56,000. This converter auto-detects the digit count so you always know which one you are holding.</p>
+<h3>Everyday uses</h3>
+<ul>
+<li><strong>Debugging logs:</strong> server logs often print raw epoch values — convert them to see exactly when an event happened in your timezone.</li>
+<li><strong>API work:</strong> REST APIs return <code>created_at</code> as epoch seconds; convert to verify token expiry or cache TTLs.</li>
+<li><strong>Databases:</strong> check what a stored integer date actually represents before running migrations.</li>
+<li><strong>Scheduling:</strong> convert a future date to a timestamp for cron jobs, reminders, or countdown timers.</li>
+</ul>
+<h3>Converting in code</h3>
+<p>In JavaScript: <code>new Date(1761091200 * 1000)</code> (multiply seconds by 1000). In Python: <code>datetime.fromtimestamp(1761091200, tz=timezone.utc)</code>. In PostgreSQL: <code>to_timestamp(1761091200)</code>. Going the other way: <code>Math.floor(Date.now() / 1000)</code> in JS, or <code>int(datetime.now(timezone.utc).timestamp())</code> in Python.</p>
+<p><strong>Best practice:</strong> always store timestamps in UTC and convert to local time only for display — exactly what this tool does when you pick a timezone. That single habit eliminates an entire class of timezone bugs, including daylight-saving surprises.</p>
+<h3>Negative timestamps and far-future dates</h3>
+<p>Timestamps are not limited to dates after 1970. Negative values represent moments <em>before</em> the epoch — for example, -86400 is December 31, 1969. Historians and archivists use negative timestamps for pre-1970 records, and the converter handles them correctly. Far-future dates work too: 64-bit timestamps remain valid for hundreds of millions of years, far beyond any practical need.</p>
+<h3>Common timestamp formats in the wild</h3>
+<ul>
+<li><strong>ISO 8601 strings</strong> ("2026-10-22T07:00:00Z") — human-readable, sortable, and unambiguous. Preferred for APIs.</li>
+<li><strong>Epoch seconds</strong> (1761091200) — compact; standard in Unix systems, PHP (<code>time()</code>), and most databases.</li>
+<li><strong>Epoch milliseconds</strong> (1761091200000) — JavaScript's native format via <code>Date.now()</code>.</li>
+<li><strong>RFC 2822</strong> ("Thu, 22 Oct 2026 07:00:00 GMT") — used in email headers and HTTP.</li>
+</ul>
+<p>When you receive a timestamp and are unsure of its format, paste it here first — the auto-detection will tell you whether you are looking at seconds or milliseconds before you write a single line of code.</p></div>
 <div class="related"><h2>Related tools</h2><div class="grid"><a class="tool-card" href="./html-encoder.html"><div class="ticon">💻</div><h3>HTML Encoder</h3><p>Encode or decode HTML entities safely.</p></a><a class="tool-card" href="./css-minifier.html"><div class="ticon">📦</div><h3>CSS Minifier</h3><p>Minify or beautify CSS stylesheets.</p></a><a class="tool-card" href="./js-minifier.html"><div class="ticon">⚡</div><h3>JS Minifier</h3><p>Basic JavaScript minifier for smaller files.</p></a></div></div>
 </div>
-<div class="related-guides"><h2>Related guides</h2><div class="grid"><a class="tool-card" href="../blog/how-to-timestamp-converter-online.html"><h3>How to Convert Unix Timestamps Online for Free (2026 Guide) | Free Privacy Tools</h3><p>Turn Unix timestamps into readable dates (and back) with our free timestamp converter. Auto-detects seconds vs milliseconds. Step-by-step guide with real examples.</p></a><a class="tool-card" href="../blog/how-to-html-encoder-online.html"><h3>How to Encode HTML Entities Online for Free (2026 Guide) | Free Privacy Tools</h3><p>Convert <, >, & and quotes into safe HTML entities for displaying code on web pages. Free 2026 step-by-step guide with a handy entity reference table.</p></a><a class="tool-card" href="../blog/how-to-css-minifier-online.html"><h3>How to Minify CSS Online for Free (2026 Guide) | Free Privacy Tools</h3><p>Learn how to minify CSS online for free to shrink stylesheets and speed up websites. Step-by-step guide with before/after examples, plus when to use the beautify option.</p></a></div></div>
 </main>
 <footer class="site-footer"><div class="wrap">
 <div class="cols">
@@ -90,17 +143,4 @@
 <script src="../assets/app.js"></script>
 <script src="../assets/tools.js"></script>
 <script src="../assets/features.js"></script>
-
-<!-- Back to top button -->
-<button id="backToTop" aria-label="Back to top" title="Back to top"
-style="position:fixed;bottom:24px;right:24px;width:48px;height:48px;border-radius:50%;border:none;background:#2563eb;color:#ffffff;font-size:22px;line-height:1;cursor:pointer;opacity:0;visibility:hidden;transition:opacity .3s,visibility .3s,transform .2s;box-shadow:0 4px 12px rgba(0,0,0,.35);z-index:9999;padding:0;">&#8593;</button>
-<script>
-(function(){var b=document.getElementById('backToTop');if(!b)return;
-window.addEventListener('scroll',function(){var s=window.pageYOffset||document.documentElement.scrollTop;
-if(s>300){b.style.opacity='1';b.style.visibility='visible';}else{b.style.opacity='0';b.style.visibility='hidden';}},{passive:true});
-b.addEventListener('click',function(){window.scrollTo({top:0,behavior:'smooth'});});
-b.addEventListener('mouseenter',function(){b.style.transform='scale(1.12)';});
-b.addEventListener('mouseleave',function(){b.style.transform='scale(1)';});})();
-</script>
-
 </body></html>

@@ -55,6 +55,38 @@
             "@type": "Answer",
             "text": "Absolutely. All processing happens locally in your browser. Your files are never uploaded to any server."
           }
+        },
+        {
+          "@type": "Question",
+          "name": "Does it keep the original order?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "By default, yes \u2014 the first occurrence of each item is kept and later duplicates are dropped, preserving your list's order. You can also choose to sort the result alphabetically instead."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is it case-sensitive?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "You decide. With case-sensitive mode, 'Apple' and 'apple' count as different items. Turn it off to treat them as duplicates \u2014 useful for cleaning email lists where casing shouldn't matter."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What counts as a duplicate line?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Exact line matches after trimming whitespace. Lines that differ by trailing spaces are treated as duplicates once trimmed. Empty lines can optionally be removed too."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I use it for comma-separated values?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "If your data is comma-separated rather than line-separated, first convert commas to line breaks (our Word Counter or a quick find-replace does this), dedupe here, then convert back if needed."
+          }
         }
       ]
     }
@@ -73,8 +105,31 @@
 <div class="tool-hero"><h1>🧹 Remove Duplicate Lines</h1><p>Delete duplicate lines from a list, and sort or clean up entries instantly. Useful for email lists and data cleaning. Free, unlimited, private — works entirely in your browser.</p></div>
 <div class="ad-slot"><!-- AdSense code goes here --></div>
 <div class="tool-box" id="tool-root" data-tool="remove-duplicates"></div>
-<div class="howto"><h2>How to use</h2><ol><li>Open the tool — nothing to install, it runs in your browser.</li><li>Enter your input or upload your file.</li><li>Click the action button and download or copy the result.</li></ol></div>
-<div class="faq"><h2>FAQ</h2><details><summary>Is it really free?</summary><p>Yes — every tool on this site is 100% free with no limits, no signup and no watermarks.</p></details><details><summary>Is my data private?</summary><p>Absolutely. All processing happens locally in your browser. Your files are never uploaded to any server.</p></details></div>
+<div class="howto"><h2>How to use</h2><ol><li>Paste your list into the text box — one item per line (emails, names, URLs, anything).</li><li>Choose whether matching should be <strong>case-sensitive</strong> and whether to <strong>keep the original order</strong>.</li><li>Click <strong>Remove Duplicates</strong> — the cleaned list appears instantly with a count of removed items.</li><li>Copy the result or download it as a .txt file.</li></ol></div>
+<div class="faq"><h2>FAQ</h2><details><summary>Is it really free?</summary><p>Yes — every tool on this site is 100% free with no limits, no signup and no watermarks.</p></details><details><summary>Is my data private?</summary><p>Absolutely. All processing happens locally in your browser. Your files are never uploaded to any server.</p></details><details><summary>Does it keep the original order?</summary><p>By default, yes — the first occurrence of each item is kept and later duplicates are dropped, preserving your list's order. You can also choose to sort the result alphabetically instead.</p></details><details><summary>Is it case-sensitive?</summary><p>You decide. With case-sensitive mode, 'Apple' and 'apple' count as different items. Turn it off to treat them as duplicates — useful for cleaning email lists where casing shouldn't matter.</p></details><details><summary>What counts as a duplicate line?</summary><p>Exact line matches after trimming whitespace. Lines that differ by trailing spaces are treated as duplicates once trimmed. Empty lines can optionally be removed too.</p></details><details><summary>Can I use it for comma-separated values?</summary><p>If your data is comma-separated rather than line-separated, first convert commas to line breaks (our Word Counter or a quick find-replace does this), dedupe here, then convert back if needed.</p></details></div>
+<div class="tool-guide" style="margin:24px 0"><h2>Remove Duplicates — Complete Guide</h2><p>Duplicate entries creep into every list: email subscribers who signed up twice, scraped URLs, survey responses, keyword lists. The <strong>Remove Duplicates</strong> tool cleans them in one click — paste, dedupe, done — with options that handle the tricky cases.</p>
+<h3>How it works</h3>
+<p>The tool splits your input into lines, trims whitespace, and keeps the first occurrence of each unique line while dropping later repeats. Everything runs in your browser, so even a list with your customers' emails never touches a server. It handles tens of thousands of lines comfortably.</p>
+<h3>Common use cases</h3>
+<ul>
+<li><strong>Email marketing:</strong> dedupe subscriber lists before importing to avoid double-sending and hurting deliverability.</li>
+<li><strong>SEO:</strong> clean keyword lists, backlink exports, and content inventories.</li>
+<li><strong>Data entry:</strong> merge lists from multiple spreadsheets and strip the overlaps.</li>
+<li><strong>Development:</strong> dedupe log lines, URLs, or test data quickly without writing a script.</li>
+<li><strong>Research:</strong> clean survey responses and citation lists.</li>
+</ul>
+<h3>Getting the options right</h3>
+<ul>
+<li><strong>Case sensitivity:</strong> emails and URLs are effectively case-insensitive — turn it off. Product SKUs or codes may be case-sensitive — leave it on.</li>
+<li><strong>Keep order vs. sort:</strong> keep order when sequence matters (ranked lists, timelines); sort when you want a tidy alphabetical reference.</li>
+<li><strong>Whitespace:</strong> invisible trailing spaces are a classic cause of "phantom" non-duplicates; the trim option neutralizes them.</li>
+<li><strong>Empty lines:</strong> remove them for a compact list, or keep them if blank lines separate meaningful groups.</li>
+</ul>
+<h3>Workflow tips</h3>
+<p>For spreadsheet work, copy a column, dedupe here, and paste back. For bullet-proof mailing lists, dedupe again after lowercasing everything. And always keep a backup of the original list before cleaning — deduplication is one-way.</p><h3>Near-duplicates need extra care</h3>
+<p>This tool catches exact matches. For near-duplicates — "Jon Smith" vs "John Smith", or URLs with and without trailing slashes — normalize first: lowercase everything, strip punctuation, or standardize formats. A two-pass approach (normalize, then dedupe) catches what a single pass misses.</p>
+<h3>Scale notes</h3>
+<p>Browser-based dedup handles tens of thousands of lines easily. For million-row datasets, use database DISTINCT queries or command-line tools like <code>sort -u</code>. The logic is identical; only the venue changes.</p></div>
 <div class="related"><h2>Related tools</h2><div class="grid"><a class="tool-card" href="./word-counter.html"><div class="ticon">🔢</div><h3>Word Counter</h3><p>Count words, characters, sentences and reading time in real time.</p></a><a class="tool-card" href="./character-counter.html"><div class="ticon">🔤</div><h3>Character Counter</h3><p>Live character, line and whitespace-free counts.</p></a><a class="tool-card" href="./case-converter.html"><div class="ticon">🔠</div><h3>Text Case Converter</h3><p>Convert text to UPPERCASE, lowercase, Title Case and more.</p></a></div></div>
 </div>
 <div class="related-guides"><h2>Related guides</h2><div class="grid"><a class="tool-card" href="../blog/how-to-remove-duplicates-online.html"><h3>How to Remove Duplicate Lines Online for Free (2026 Guide) | Free Privacy Tools</h3><p>Delete duplicate lines from any list instantly with our free duplicate remover. Step-by-step guide with sorting, case-sensitivity options and real examples.</p></a><a class="tool-card" href="../blog/how-to-count-words-online.html"><h3>How to Count Words Online for Free (2026 Guide) | Free Privacy Tools</h3><p>Count words, characters, sentences and reading time online for free. Complete 2026 guide to word counting for essays, SEO, social media and publishing — no signup needed.</p></a><a class="tool-card" href="../blog/how-to-character-counter-online.html"><h3>How to Count Characters Online for Free (2026 Guide) | Free Privacy Tools</h3><p>Count characters, spaces and lines in real time with our free character counter. Step-by-step guide — perfect for tweets, bios, essays, meta titles and SMS limits.</p></a></div></div>

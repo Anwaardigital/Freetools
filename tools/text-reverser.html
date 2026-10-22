@@ -55,6 +55,38 @@
             "@type": "Answer",
             "text": "Absolutely. All processing happens locally in your browser. Your files are never uploaded to any server."
           }
+        },
+        {
+          "@type": "Question",
+          "name": "What is the difference between the reversal modes?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Character mode flips every single character (\"hello\" becomes \"olleh\"). Word mode reverses the order of words but keeps each word intact (\"hello world\" becomes \"world hello\"). Line mode reverses the order of lines, which is handy for reordering lists."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Does it handle emojis and non-English text correctly?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. The tool is Unicode-aware, so emojis, accented characters, and right-to-left scripts like Arabic or Urdu are reversed as whole characters instead of being split into broken byte sequences."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I use it to create mirror-writing effects?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Character reversal gives you the classic mirror effect (\"mirror\" becomes \"rorrim\"). It is perfect for puzzles, riddles, secret notes, and playful social media posts."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is there a limit on how much text I can reverse?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No hard limit. The tool handles everything from a single word to entire documents instantly, because all processing happens locally in your browser."
+          }
         }
       ]
     }
@@ -73,11 +105,24 @@
 <div class="tool-hero"><h1>↩️ Text Reverser</h1><p>Reverse text, words or line order with one click. Useful for fun with text or quick encoding tricks. Free, unlimited, private — works entirely in your browser.</p></div>
 <div class="ad-slot"><!-- AdSense code goes here --></div>
 <div class="tool-box" id="tool-root" data-tool="text-reverser"></div>
-<div class="howto"><h2>How to use</h2><ol><li>Open the tool — nothing to install, it runs in your browser.</li><li>Enter your input or upload your file.</li><li>Click the action button and download or copy the result.</li></ol></div>
-<div class="faq"><h2>FAQ</h2><details><summary>Is it really free?</summary><p>Yes — every tool on this site is 100% free with no limits, no signup and no watermarks.</p></details><details><summary>Is my data private?</summary><p>Absolutely. All processing happens locally in your browser. Your files are never uploaded to any server.</p></details></div>
+<div class="howto"><h2>How to use</h2><ol><li>Type or paste your text into the input box at the top of the tool.</li><li>Choose a reversal mode: <strong>full text</strong> (character by character), <strong>word order</strong>, or <strong>line order</strong>.</li><li>Click the <strong>Reverse</strong> button — the result appears instantly below the input.</li><li>Copy the reversed text with one click, or download it as a .txt file for later use.</li></ol></div>
+<div class="faq"><h2>FAQ</h2><details><summary>Is it really free?</summary><p>Yes — every tool on this site is 100% free with no limits, no signup and no watermarks.</p></details><details><summary>Is my data private?</summary><p>Absolutely. All processing happens locally in your browser. Your files are never uploaded to any server.</p></details><details><summary>What is the difference between the reversal modes?</summary><p>Character mode flips every single character ("hello" becomes "olleh"). Word mode reverses the order of words but keeps each word intact ("hello world" becomes "world hello"). Line mode reverses the order of lines, which is handy for reordering lists.</p></details><details><summary>Does it handle emojis and non-English text correctly?</summary><p>Yes. The tool is Unicode-aware, so emojis, accented characters, and right-to-left scripts like Arabic or Urdu are reversed as whole characters instead of being split into broken byte sequences.</p></details><details><summary>Can I use it to create mirror-writing effects?</summary><p>Character reversal gives you the classic mirror effect ("mirror" becomes "rorrim"). It is perfect for puzzles, riddles, secret notes, and playful social media posts.</p></details><details><summary>Is there a limit on how much text I can reverse?</summary><p>No hard limit. The tool handles everything from a single word to entire documents instantly, because all processing happens locally in your browser.</p></details></div>
+<div class="tool-guide"><h2>Complete Guide to Reversing Text</h2><p>Reversing text sounds like a party trick, but it has a surprising number of practical uses. At its core, text reversal is a simple string operation: take a sequence of characters and output them in the opposite order. Our free text reverser does this instantly in your browser, with three distinct modes for different jobs.</p>
+<p><strong>Character reversal</strong> flips every character in the string. Writers use it to check for palindromes — words or phrases that read the same forwards and backwards, like "racecar", "madam", or the famous "A man, a plan, a canal: Panama". Puzzle creators use it to hide answers in plain sight, and developers use it to quickly test how their apps handle unusual string input.</p>
+<p><strong>Word-order reversal</strong> keeps each word intact but flips their sequence. This is useful for language learners studying sentence structure, for creating Yoda-style speech effects, and for quickly generating test data where word order matters but meaning does not.</p>
+<p><strong>Line-order reversal</strong> flips the order of lines while leaving each line untouched. Anyone who has ever needed a numbered list in reverse chronological order — changelogs, timelines, log files — knows how tedious this is to do by hand. One click does it here.</p>
+<h3>Fun and creative uses</h3>
+<ul>
+<li><strong>Spoiler protection:</strong> reverse a movie spoiler so only determined readers decode it.</li>
+<li><strong>Social media play:</strong> reversed text stands out in comments and bios.</li>
+<li><strong>Brain teasers:</strong> create "read it backwards" riddles for friends or students.</li>
+<li><strong>Testing right-to-left layouts:</strong> designers paste reversed strings to sanity-check RTL interfaces.</li>
+</ul>
+<h3>How it actually works</h3>
+<p>Naive reversal code can corrupt text containing emojis or combined characters (like é built from e plus an accent), because those are stored as multiple code units. A correct reverser works on <em>grapheme clusters</em> — what humans perceive as single characters — rather than raw bytes. This tool uses Unicode-aware reversal, so emojis and non-Latin scripts survive the flip intact. Everything runs locally with JavaScript string methods, which is why it handles even very long documents without breaking a sweat — and why your text never leaves your device.</p>
+<p><strong>Pro tip:</strong> combine the reverser with the <a href="./word-counter.html">Word Counter</a> to analyze palindromic phrases, or with the <a href="./case-converter.html">Case Converter</a> to stylize the output further.</p></div>
 <div class="related"><h2>Related tools</h2><div class="grid"><a class="tool-card" href="./word-counter.html"><div class="ticon">🔢</div><h3>Word Counter</h3><p>Count words, characters, sentences and reading time in real time.</p></a><a class="tool-card" href="./character-counter.html"><div class="ticon">🔤</div><h3>Character Counter</h3><p>Live character, line and whitespace-free counts.</p></a><a class="tool-card" href="./case-converter.html"><div class="ticon">🔠</div><h3>Text Case Converter</h3><p>Convert text to UPPERCASE, lowercase, Title Case and more.</p></a></div></div>
 </div>
-<div class="related-guides"><h2>Related guides</h2><div class="grid"><a class="tool-card" href="../blog/how-to-text-reverser-online.html"><h3>How to Reverse Text Online for Free (2026 Guide) | Free Privacy Tools</h3><p>Reverse text, words and lines instantly with our free text reverser. Step-by-step guide with fun examples, puzzles, coding uses and privacy-safe processing.</p></a><a class="tool-card" href="../blog/how-to-count-words-online.html"><h3>How to Count Words Online for Free (2026 Guide) | Free Privacy Tools</h3><p>Count words, characters, sentences and reading time online for free. Complete 2026 guide to word counting for essays, SEO, social media and publishing — no signup needed.</p></a><a class="tool-card" href="../blog/how-to-character-counter-online.html"><h3>How to Count Characters Online for Free (2026 Guide) | Free Privacy Tools</h3><p>Count characters, spaces and lines in real time with our free character counter. Step-by-step guide — perfect for tweets, bios, essays, meta titles and SMS limits.</p></a></div></div>
 </main>
 <footer class="site-footer"><div class="wrap">
 <div class="cols">
@@ -90,17 +135,4 @@
 <script src="../assets/app.js"></script>
 <script src="../assets/tools.js"></script>
 <script src="../assets/features.js"></script>
-
-<!-- Back to top button -->
-<button id="backToTop" aria-label="Back to top" title="Back to top"
-style="position:fixed;bottom:24px;right:24px;width:48px;height:48px;border-radius:50%;border:none;background:#2563eb;color:#ffffff;font-size:22px;line-height:1;cursor:pointer;opacity:0;visibility:hidden;transition:opacity .3s,visibility .3s,transform .2s;box-shadow:0 4px 12px rgba(0,0,0,.35);z-index:9999;padding:0;">&#8593;</button>
-<script>
-(function(){var b=document.getElementById('backToTop');if(!b)return;
-window.addEventListener('scroll',function(){var s=window.pageYOffset||document.documentElement.scrollTop;
-if(s>300){b.style.opacity='1';b.style.visibility='visible';}else{b.style.opacity='0';b.style.visibility='hidden';}},{passive:true});
-b.addEventListener('click',function(){window.scrollTo({top:0,behavior:'smooth'});});
-b.addEventListener('mouseenter',function(){b.style.transform='scale(1.12)';});
-b.addEventListener('mouseleave',function(){b.style.transform='scale(1)';});})();
-</script>
-
 </body></html>

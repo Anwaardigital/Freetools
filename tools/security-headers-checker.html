@@ -55,6 +55,38 @@
             "@type": "Answer",
             "text": "A few sites block cross-origin header checks. For a deeper scan, try securityheaders.com as well."
           }
+        },
+        {
+          "@type": "Question",
+          "name": "Why are some sites not checkable?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Some sites block cross-origin header reads, require JavaScript rendering, or sit behind aggressive bot protection. Very large corporate sites and those with strict CORS policies may refuse the check \u2014 try again later or test a staging copy."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is the single most important header?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Strict-Transport-Security (HSTS). It forces browsers to use HTTPS always, killing SSL-stripping attacks. One line, enormous protection \u2014 but test carefully, because misconfigured HSTS can lock visitors out."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Will adding headers break my site?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Rarely, but Content-Security-Policy is the exception \u2014 an overly strict CSP blocks your own scripts, fonts, or embeds. Deploy new headers in report-only mode first, watch the console, then enforce."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Do these headers replace a WAF or updates?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. Headers are one layer of defense-in-depth. They don't patch vulnerable software, stop DDoS, or replace a web application firewall \u2014 they harden the browser's behavior when visiting your already-secured site."
+          }
         }
       ]
     }
@@ -73,8 +105,32 @@
 <div class="tool-hero"><h1>🛡️ Security Headers Checker</h1><p>Check a website's HTTP security headers — HSTS, Content-Security-Policy, X-Frame-Options and more — with plain-language explanations. Useful for webmasters hardening their sites. Free, unlimited.</p></div>
 <div class="ad-slot"><!-- AdSense code goes here --></div>
 <div class="tool-box" id="tool-root" data-tool="security-headers-checker"></div>
-<div class="howto"><h2>How to use</h2><ol><li>Enter a website URL (e.g. example.com).</li><li>Click "Check Headers" — we fetch the response headers for you.</li><li>Green means the header is present, red means it is missing.</li></ol></div>
-<div class="faq"><h2>FAQ</h2><details><summary>Is it really free?</summary><p>Yes — every tool on this site is 100% free with no limits, no signup and no watermarks.</p></details><details><summary>Why are some sites not checkable?</summary><p>A few sites block cross-origin header checks. For a deeper scan, try <a href="https://securityheaders.com" target="_blank" rel="noopener">securityheaders.com</a> as well.</p></details></div>
+<div class="howto"><h2>How to use</h2><ol><li>Enter a website URL (e.g. example.com) — http:// or https:// both work.</li><li>Click <strong>Check Headers</strong> — we fetch the site's response headers for you.</li><li>Green means the header is present and well-configured; red means it's missing or weak.</li><li>Expand each result to read what the header does and how to add it on your server.</li></ol></div>
+<div class="faq"><h2>FAQ</h2><details><summary>Is it really free?</summary><p>Yes — every tool on this site is 100% free with no limits, no signup and no watermarks.</p></details><details><summary>Why are some sites not checkable?</summary><p>A few sites block cross-origin header checks. For a deeper scan, try <a href="https://securityheaders.com" target="_blank" rel="noopener">securityheaders.com</a> as well.</p></details><details><summary>Why are some sites not checkable?</summary><p>Some sites block cross-origin header reads, require JavaScript rendering, or sit behind aggressive bot protection. Very large corporate sites and those with strict CORS policies may refuse the check — try again later or test a staging copy.</p></details><details><summary>What is the single most important header?</summary><p>Strict-Transport-Security (HSTS). It forces browsers to use HTTPS always, killing SSL-stripping attacks. One line, enormous protection — but test carefully, because misconfigured HSTS can lock visitors out.</p></details><details><summary>Will adding headers break my site?</summary><p>Rarely, but Content-Security-Policy is the exception — an overly strict CSP blocks your own scripts, fonts, or embeds. Deploy new headers in report-only mode first, watch the console, then enforce.</p></details><details><summary>Do these headers replace a WAF or updates?</summary><p>No. Headers are one layer of defense-in-depth. They don't patch vulnerable software, stop DDoS, or replace a web application firewall — they harden the browser's behavior when visiting your already-secured site.</p></details></div>
+<div class="tool-guide" style="margin:24px 0"><h2>Security Headers Checker — Complete Guide</h2><p>HTTP security headers are invisible instructions your server sends with every page, telling browsers how to behave: enforce HTTPS, block clickjacking, stop MIME sniffing, and sandbox scripts. Most sites miss several. This <strong>Security Headers Checker</strong> grades any URL in seconds and explains each finding.</p>
+<h3>The essential headers</h3>
+<ul>
+<li><strong>Strict-Transport-Security (HSTS):</strong> forces HTTPS on all future visits. Include subdomains and preload for maximum effect.</li>
+<li><strong>Content-Security-Policy (CSP):</strong> whitelists where scripts, styles, and images may load from — the strongest XSS defense available.</li>
+<li><strong>X-Frame-Options / frame-ancestors:</strong> stops other sites embedding your pages in invisible iframes (clickjacking).</li>
+<li><strong>X-Content-Type-Options:</strong> <code>nosniff</code> prevents browsers from misinterpreting file types.</li>
+<li><strong>Referrer-Policy:</strong> controls how much of your URL leaks to other sites via the Referer header.</li>
+<li><strong>Permissions-Policy:</strong> disables browser features (camera, mic, geolocation) your site doesn't need.</li>
+</ul>
+<h3>How to read your grade</h3>
+<p>Green means present and correctly configured. Red means missing — each red row is a concrete hardening task, not abstract advice. Amber or warnings usually mean the header exists but with a weak value (like a short HSTS max-age). Fix reds first, then tune ambers.</p>
+<h3>Deployment tips</h3>
+<ul>
+<li><strong>Start with the easy wins:</strong> HSTS, X-Content-Type-Options, and Referrer-Policy are one-liners with near-zero breakage risk.</li>
+<li><strong>CSP needs staging:</strong> build your policy with <code>Content-Security-Policy-Report-Only</code> first, collect violation reports, then enforce.</li>
+<li><strong>Server config, not code:</strong> set headers in Nginx/Apache/Cloudflare once and they apply site-wide — cleaner than per-page meta tags.</li>
+<li><strong>Recheck after changes:</strong> run this tool again after each deployment to confirm the headers actually shipped.</li>
+</ul>
+<h3>Beyond headers</h3>
+<p>Headers complement — never replace — patching, WAFs, and secure coding. Think of them as seatbelts: essential, but you still need brakes. Pair a clean header report with HTTPS everywhere, updated software, and regular backups for a genuinely hardened site.</p><h3>Scoring context</h3>
+<p>A missing header is not a vulnerability by itself — it's a missing seatbelt. Your risk depends on what your site does: a static blog needs fewer headers than a banking app handling sessions and payments. Prioritize based on your threat model, but treat HSTS and X-Content-Type-Options as universal.</p>
+<h3>Keep improving</h3>
+<p>Re-run this check after every major deployment and quarterly as routine hygiene. Headers can silently vanish during migrations, CDN changes, or framework upgrades — a two-minute check catches regressions before attackers do.</p></div>
 <div class="related"><h2>Related tools</h2><div class="grid"><a class="tool-card" href="./ip-lookup.html"><div class="ticon">🌐</div><h3>IP Lookup</h3><p>Look up any IP address or domain — city, country, ISP.</p></a><a class="tool-card" href="./phishing-url-checker.html"><div class="ticon">🎣</div><h3>Phishing URL Checker</h3><p>Analyze a URL for phishing risk with client-side heuristics.</p></a><a class="tool-card" href="./password-strength-checker.html"><div class="ticon">💪</div><h3>Password Strength Checker</h3><p>Score your password live with crack-time estimates.</p></a></div></div>
 </div>
 <div class="related-guides"><h2>Related guides</h2><div class="grid"><a class="tool-card" href="../blog/how-to-security-headers-checker-online.html"><h3>How to Check Website Security Headers Online for Free (2026 Guide) | Free Privacy Tools</h3><p>Audit any website's HTTP security headers — HSTS, CSP, X-Frame-Options and more — with a free checker. Step-by-step 2026 guide for owners and the curious.</p></a><a class="tool-card" href="../blog/how-to-ip-lookup-online.html"><h3>How to Look Up an IP Address Online for Free (2026 Guide) | Free Privacy Tools</h3><p>Find the approximate location, ISP and timezone of any IP or domain with a free IP lookup tool. Step-by-step 2026 guide with honest accuracy notes.</p></a><a class="tool-card" href="../blog/how-to-phishing-url-checker-online.html"><h3>How to Check a URL for Phishing Risk Online for Free (2026 Guide) | Free Privacy Tools</h3><p>Screen suspicious links with a free phishing URL checker. Step-by-step 2026 guide: heuristic checks, reading the risk score, and what to do when a link looks dangerous.</p></a></div></div>
