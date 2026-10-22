@@ -56,6 +56,39 @@
             "text": "Absolutely. All processing happens locally in your browser. Your files are never uploaded to any server."
           }
         }
+      ,
+        {
+          "@type": "Question",
+          "name": "Will compression make my images look blurry?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "It depends on the quality setting. At 80\u201385% quality, most photos are visually identical to the original while being 50\u201370% smaller. Heavy compression (below 60%) can introduce visible artifacts, especially in smooth gradients and fine text \u2014 always preview before downloading."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Which format gives the smallest file size?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "WebP usually wins, often 25\u201335% smaller than an equivalent-quality JPEG. PNG is best for graphics with sharp edges and transparency but is larger for photos. If your audience uses modern browsers, converting to WebP at 80% quality is the sweet spot."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is there a limit on image size or number of images?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No \u2014 the tool is free with no limits, and because everything runs in your browser, large images never need to be uploaded anywhere. Very large images (50+ megapixels) may take a few seconds to process depending on your device."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Does compression remove EXIF/metadata?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The compression process strips most metadata (camera settings, GPS location, thumbnails) since it re-encodes the pixels. This is actually a privacy bonus \u2014 compressed images won't leak your location \u2014 but keep an original copy if you need the metadata."
+          }
+        }
       ]
     }
   ]
@@ -73,9 +106,24 @@
 <div class="tool-hero"><h1>🗜️ Image Compressor</h1><p>Reduce image file size with an adjustable quality slider — JPG and WebP output. Ideal for bloggers and sellers who need fast-loading pages. Free, unlimited, private — works entirely in your browser.</p></div>
 <div class="ad-slot"><!-- AdSense code goes here --></div>
 <div class="tool-box" id="tool-root" data-tool="image-compressor"></div>
-<div class="howto"><h2>How to use</h2><ol><li>Open the tool — nothing to install, it runs in your browser.</li><li>Enter your input or upload your file.</li><li>Click the action button and download or copy the result.</li></ol></div>
-<div class="faq"><h2>FAQ</h2><details><summary>Is it really free?</summary><p>Yes — every tool on this site is 100% free with no limits, no signup and no watermarks.</p></details><details><summary>Is my data private?</summary><p>Absolutely. All processing happens locally in your browser. Your files are never uploaded to any server.</p></details></div>
-<div class="related"><h2>Related tools</h2><div class="grid"><a class="tool-card" href="./image-resizer.html"><div class="ticon">📐</div><h3>Image Resizer</h3><p>Resize images to exact pixel dimensions with aspect-ratio lock.</p></a><a class="tool-card" href="./image-converter.html"><div class="ticon">🔄</div><h3>Image Converter</h3><p>Convert images between PNG, JPG, WebP and BMP formats.</p></a><a class="tool-card" href="./background-remover.html"><div class="ticon">🧽</div><h3>Background Remover</h3><p>Remove white or light backgrounds from logos and product photos.</p></a></div></div>
+<div class="howto"><h2>How to use</h2><ol><li>Click the upload area or drag and drop your image (JPG, PNG or WebP) into the tool.</li><li>Move the quality slider to choose your compression level — lower values mean smaller files, higher values keep more detail.</li><li>Preview the compressed result side by side with the original and check the new file size.</li><li>Click Download to save the compressed image, ready to upload to your website or share.</li></ol></div>
+<div class="faq"><h2>FAQ</h2><details><summary>Is it really free?</summary><p>Yes — every tool on this site is 100% free with no limits, no signup and no watermarks.</p></details><details><summary>Is my data private?</summary><p>Absolutely. All processing happens locally in your browser. Your files are never uploaded to any server.</p></details><details><summary>Will compression make my images look blurry?</summary><p>It depends on the quality setting. At 80–85% quality, most photos are visually identical to the original while being 50–70% smaller. Heavy compression (below 60%) can introduce visible artifacts, especially in smooth gradients and fine text — always preview before downloading.</p></details><details><summary>Which format gives the smallest file size?</summary><p>WebP usually wins, often 25–35% smaller than an equivalent-quality JPEG. PNG is best for graphics with sharp edges and transparency but is larger for photos. If your audience uses modern browsers, converting to WebP at 80% quality is the sweet spot.</p></details><details><summary>Is there a limit on image size or number of images?</summary><p>No — the tool is free with no limits, and because everything runs in your browser, large images never need to be uploaded anywhere. Very large images (50+ megapixels) may take a few seconds to process depending on your device.</p></details><details><summary>Does compression remove EXIF/metadata?</summary><p>The compression process strips most metadata (camera settings, GPS location, thumbnails) since it re-encodes the pixels. This is actually a privacy bonus — compressed images won&#x27;t leak your location — but keep an original copy if you need the metadata.</p></details></div>
+<div class="tool-guide"><h2>Image Compressor — Complete Guide</h2>
+<p>Large images are the number one cause of slow websites. A single uncompressed photo from a modern phone can be 5–8 MB; a page with three of those takes seconds to load on mobile data, and visitors leave. The Image Compressor shrinks your files dramatically while keeping them looking sharp — all without uploading anything to a server.</p>
+<h3>How it works</h3>
+<p>JPEG and WebP use <strong>lossy compression</strong>: they discard visual information your eyes barely notice, like subtle color variations in busy textures. The quality slider controls how aggressive this is. PNG uses lossless compression, so the tool optimizes its encoding instead. Because processing happens locally with the Canvas API, your originals never leave your device — compress sensitive photos with total confidence.</p>
+<h3>Choosing the right settings</h3>
+<ul>
+<li><strong>Website hero images:</strong> JPEG or WebP at 75–85% quality. Aim for under 200 KB per image.</li>
+<li><strong>Blog post photos:</strong> WebP at 70–80% is usually perfect; JPEG at 75% if you need maximum compatibility.</li>
+<li><strong>Thumbnails and avatars:</strong> you can go down to 60–70% — at small display sizes, artifacts are invisible.</li>
+<li><strong>Images with text or logos:</strong> keep quality at 85%+ or use PNG, since compression artifacts show up fastest around sharp edges.</li>
+</ul>
+<h3>Workflow tips</h3>
+<p>Always compress a <em>copy</em> — keep your originals archived. Compress before resizing: shrinking a 4000px photo to 1200px first, then compressing, gives far better results than compressing the full-size file. For the absolute smallest files, convert to WebP (see our Image Converter) after compressing. If you batch-process many images, do them one at a time and spot-check each result at 100% zoom.</p>
+<h3>Why file size matters</h3>
+<p>Google uses page speed as a ranking factor, and Core Web Vitals penalize slow-loading pages. Halving your image weight can cut load times by seconds on 4G connections. Smaller images also save your visitors' mobile data and your hosting bandwidth — a genuine win for everyone, achieved in seconds with this free tool.</p></div>
+<div class="related"><h2>Related tools</h2><div class="grid"><a class="tool-card" href="./image-resizer.html"><div class="ticon">📐</div><h3>Image Resizer</h3><p>Resize images to exact pixel dimensions with aspect-ratio lock.</p></a><a class="tool-card" href="./image-converter.html"><div class="ticon">🔄</div><h3>Image Converter</h3><p>Convert images between PNG, JPG, WebP and BMP formats.</p></a></div></div>
 </div>
 <div class="related-guides"><h2>Related guides</h2><div class="grid"><a class="tool-card" href="../blog/image-compression-guide.html"><h3>Image Compression Guide: Shrink Photos Without Losing Quality (2026) | Free Privacy Tools</h3><p>Compress images without visible quality loss. Complete 2026 guide: JPG vs WebP vs PNG, quality settings, resizing before compressing, and free browser tools — no signup.</p></a><a class="tool-card" href="../blog/how-to-resize-images-online.html"><h3>How to Resize Images Online for Free (2026 Guide) | Free Privacy Tools</h3><p>Learn how to resize images online for free. Set exact pixel dimensions with or without aspect-ratio lock — in your browser, no signup, no uploads.</p></a><a class="tool-card" href="../blog/how-to-convert-images-online.html"><h3>How to Convert Images Online for Free (2026 Guide) | Free Privacy Tools</h3><p>Learn how to convert images online for free. Change between PNG, JPG, WebP and BMP in your browser — no signup, no uploads, with a plain-English format guide.</p></a></div></div>
 </main>

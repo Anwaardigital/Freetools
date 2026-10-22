@@ -56,6 +56,39 @@
             "text": "Absolutely. All processing happens locally in your browser. Your files are never uploaded to any server."
           }
         }
+      ,
+        {
+          "@type": "Question",
+          "name": "What does HTML encoding actually do?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "HTML encoding converts special characters like <, >, &, \" and ' into HTML entities such as &lt;, &gt;, &amp;, &quot; and &#39;. This stops the browser from treating your text as markup, which is essential when displaying user input or code samples on a web page."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "When should I encode instead of decode?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Encode when you want to display code or raw text safely inside HTML \u2014 for example showing <div> as visible text in a tutorial. Decode when you have entity-encoded text (like &amp;) and want the original characters back for editing or processing."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Does this protect against XSS attacks?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Encoding user input before inserting it into HTML is one of the standard defenses against cross-site scripting (XSS). However, proper XSS protection also depends on context (HTML body, attributes, JavaScript) \u2014 encoding alone is not a complete security solution for untrusted data."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Which characters get encoded?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The tool encodes the five characters that are significant in HTML: ampersand (&), less-than (<), greater-than (>), double quote (\") and single quote ('). Named entities are used where standard (&amp;, &lt;, &gt;, &quot;) and numeric entities elsewhere."
+          }
+        }
       ]
     }
   ]
@@ -73,8 +106,23 @@
 <div class="tool-hero"><h1>💻 HTML Encoder</h1><p>Encode or decode HTML entities safely. Useful for developers displaying code or user input on web pages. Free, unlimited, private — works entirely in your browser.</p></div>
 <div class="ad-slot"><!-- AdSense code goes here --></div>
 <div class="tool-box" id="tool-root" data-tool="html-encoder"></div>
-<div class="howto"><h2>How to use</h2><ol><li>Open the tool — nothing to install, it runs in your browser.</li><li>Enter your input or upload your file.</li><li>Click the action button and download or copy the result.</li></ol></div>
-<div class="faq"><h2>FAQ</h2><details><summary>Is it really free?</summary><p>Yes — every tool on this site is 100% free with no limits, no signup and no watermarks.</p></details><details><summary>Is my data private?</summary><p>Absolutely. All processing happens locally in your browser. Your files are never uploaded to any server.</p></details></div>
+<div class="howto"><h2>How to use</h2><ol><li>Paste or type your raw HTML code into the input box — anything with &lt;, &gt;, &amp; or quotes.</li><li>Choose Encode to convert special characters into safe HTML entities (e.g. &lt; becomes &amp;lt;), or Decode to convert entities back to plain characters.</li><li>Click the Encode or Decode button to process your text instantly in your browser.</li><li>Copy the result with one click, or download it as a .txt file to use in your project.</li></ol></div>
+<div class="faq"><h2>FAQ</h2><details><summary>Is it really free?</summary><p>Yes — every tool on this site is 100% free with no limits, no signup and no watermarks.</p></details><details><summary>Is my data private?</summary><p>Absolutely. All processing happens locally in your browser. Your files are never uploaded to any server.</p></details><details><summary>What does HTML encoding actually do?</summary><p>HTML encoding converts special characters like &lt;, &gt;, &amp;, &quot; and &#x27; into HTML entities such as &amp;lt;, &amp;gt;, &amp;amp;, &amp;quot; and &amp;#39;. This stops the browser from treating your text as markup, which is essential when displaying user input or code samples on a web page.</p></details><details><summary>When should I encode instead of decode?</summary><p>Encode when you want to display code or raw text safely inside HTML — for example showing &lt;div&gt; as visible text in a tutorial. Decode when you have entity-encoded text (like &amp;amp;) and want the original characters back for editing or processing.</p></details><details><summary>Does this protect against XSS attacks?</summary><p>Encoding user input before inserting it into HTML is one of the standard defenses against cross-site scripting (XSS). However, proper XSS protection also depends on context (HTML body, attributes, JavaScript) — encoding alone is not a complete security solution for untrusted data.</p></details><details><summary>Which characters get encoded?</summary><p>The tool encodes the five characters that are significant in HTML: ampersand (&amp;), less-than (&lt;), greater-than (&gt;), double quote (&quot;) and single quote (&#x27;). Named entities are used where standard (&amp;amp;, &amp;lt;, &amp;gt;, &amp;quot;) and numeric entities elsewhere.</p></details></div>
+<div class="tool-guide"><h2>HTML Encoder — Complete Guide</h2>
+<p>Displaying raw code or user-generated text on a web page sounds simple, but one misplaced <code>&lt;</code> can break your entire layout — or worse, open a security hole. The HTML Encoder converts special characters into <strong>HTML entities</strong>, the safe textual representations browsers display literally instead of interpreting as markup.</p>
+<h3>How it works</h3>
+<p>When you click Encode, every significant character is replaced: <code>&amp;</code> becomes <code>&amp;amp;</code>, <code>&lt;</code> becomes <code>&amp;lt;</code>, <code>&gt;</code> becomes <code>&amp;gt;</code>, and quotes become <code>&amp;quot;</code> or <code>&#39;</code>. The ampersand is always encoded first, because encoding it last would double-encode the entities you just created. Decoding reverses the process, turning entities back into their original characters.</p>
+<h3>Common use cases</h3>
+<ul>
+<li><strong>Blogging and tutorials:</strong> show HTML, CSS or JavaScript snippets as readable text inside <code>&lt;pre&gt;</code> or <code>&lt;code&gt;</code> blocks without the browser executing them.</li>
+<li><strong>Comment systems and forums:</strong> encode user-submitted content before rendering so a comment containing <code>&lt;script&gt;</code> appears as harmless text.</li>
+<li><strong>Email templates:</strong> many email clients mangle raw angle brackets; entities survive the trip intact.</li>
+<li><strong>CMS content migration:</strong> decode entities when moving content between systems that store text differently.</li>
+</ul>
+<h3>Tips for best results</h3>
+<p>Encode once, at the point of output — encoding already-encoded text produces visible garbage like <code>&amp;amp;lt;</code>. If you are building a site with a framework, check whether it auto-escapes output (React, Vue and most templating engines do); manual encoding is mainly needed for vanilla HTML/JS or legacy systems. For large documents, encode in chunks so you can spot-check the output, and always test the rendered page in a real browser rather than trusting the raw source view.</p>
+<h3>Encoding vs. escaping in JavaScript</h3>
+<p>Note that HTML entity encoding is different from JavaScript string escaping or URL encoding — each targets a different parser. Use this tool for HTML contexts; for URLs use the URL Encoder, and for JavaScript strings rely on <code>JSON.stringify</code> or your framework's built-in escaping. Mixing them up is a classic source of double-encoding bugs.</p></div>
 <div class="related"><h2>Related tools</h2><div class="grid"><a class="tool-card" href="./css-minifier.html"><div class="ticon">📦</div><h3>CSS Minifier</h3><p>Minify or beautify CSS stylesheets.</p></a><a class="tool-card" href="./js-minifier.html"><div class="ticon">⚡</div><h3>JS Minifier</h3><p>Basic JavaScript minifier for smaller files.</p></a><a class="tool-card" href="./uuid-generator.html"><div class="ticon">🆔</div><h3>UUID Generator</h3><p>Generate version-4 UUIDs in bulk.</p></a></div></div>
 </div>
 <div class="related-guides"><h2>Related guides</h2><div class="grid"><a class="tool-card" href="../blog/how-to-html-encoder-online.html"><h3>How to Encode HTML Entities Online for Free (2026 Guide) | Free Privacy Tools</h3><p>Convert <, >, & and quotes into safe HTML entities for displaying code on web pages. Free 2026 step-by-step guide with a handy entity reference table.</p></a><a class="tool-card" href="../blog/how-to-css-minifier-online.html"><h3>How to Minify CSS Online for Free (2026 Guide) | Free Privacy Tools</h3><p>Learn how to minify CSS online for free to shrink stylesheets and speed up websites. Step-by-step guide with before/after examples, plus when to use the beautify option.</p></a><a class="tool-card" href="../blog/how-to-js-minifier-online.html"><h3>How to Minify JavaScript Online for Free (2026 Guide) | Free Privacy Tools</h3><p>Learn how to minify JavaScript online for free. Step-by-step guide to stripping comments and whitespace from JS, with honest advice on when a basic minifier is enough.</p></a></div></div>
