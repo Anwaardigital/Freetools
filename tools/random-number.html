@@ -55,6 +55,38 @@
             "@type": "Answer",
             "text": "Absolutely. All processing happens locally in your browser. Your files are never uploaded to any server."
           }
+        },
+        {
+          "@type": "Question",
+          "name": "Is it truly random?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "It uses your browser's cryptographically secure RNG (crypto.getRandomValues), which is unpredictable and uniformly distributed \u2014 far better than basic Math.random(). It's excellent for games, draws, and sampling, though not certified for cryptography or lotteries."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I generate numbers without duplicates?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes \u2014 enable the 'unique numbers' option. The tool will keep drawing until it fills your requested count with distinct values. Note the count can't exceed the size of the range."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How do I pick a random winner from a list?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Number your entries from 1 to N, set the range to 1\u2013N, and generate one number. For transparency in public draws, screen-record the generation or use a seeded, verifiable method."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I use this for passwords or security tokens?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "For casual purposes it's fine, but for real security use a dedicated password generator with a larger character set. Random digits alone have limited entropy \u2014 each digit adds only ~3.3 bits."
+          }
         }
       ]
     }
@@ -73,8 +105,30 @@
 <div class="tool-hero"><h1>🎰 Random Number Generator</h1><p>Generate secure random numbers in any range, with an option for unique values. Useful for raffles, games and contests. Free, unlimited, private — works entirely in your browser.</p></div>
 <div class="ad-slot"><!-- AdSense code goes here --></div>
 <div class="tool-box" id="tool-root" data-tool="random-number"></div>
-<div class="howto"><h2>How to use</h2><ol><li>Open the tool — nothing to install, it runs in your browser.</li><li>Enter your input or upload your file.</li><li>Click the action button and download or copy the result.</li></ol></div>
-<div class="faq"><h2>FAQ</h2><details><summary>Is it really free?</summary><p>Yes — every tool on this site is 100% free with no limits, no signup and no watermarks.</p></details><details><summary>Is my data private?</summary><p>Absolutely. All processing happens locally in your browser. Your files are never uploaded to any server.</p></details></div>
+<div class="howto"><h2>How to use</h2><ol><li>Enter the <strong>minimum</strong> and <strong>maximum</strong> values for your range (e.g. 1 to 100).</li><li>Choose how many numbers to generate, and whether duplicates are allowed.</li><li>Click <strong>Generate</strong> — your random numbers appear instantly.</li><li>Click any number to copy it, or generate again for a fresh set.</li></ol></div>
+<div class="faq"><h2>FAQ</h2><details><summary>Is it really free?</summary><p>Yes — every tool on this site is 100% free with no limits, no signup and no watermarks.</p></details><details><summary>Is my data private?</summary><p>Absolutely. All processing happens locally in your browser. Your files are never uploaded to any server.</p></details><details><summary>Is it truly random?</summary><p>It uses your browser's cryptographically secure RNG (crypto.getRandomValues), which is unpredictable and uniformly distributed — far better than basic Math.random(). It's excellent for games, draws, and sampling, though not certified for cryptography or lotteries.</p></details><details><summary>Can I generate numbers without duplicates?</summary><p>Yes — enable the 'unique numbers' option. The tool will keep drawing until it fills your requested count with distinct values. Note the count can't exceed the size of the range.</p></details><details><summary>How do I pick a random winner from a list?</summary><p>Number your entries from 1 to N, set the range to 1–N, and generate one number. For transparency in public draws, screen-record the generation or use a seeded, verifiable method.</p></details><details><summary>Can I use this for passwords or security tokens?</summary><p>For casual purposes it's fine, but for real security use a dedicated password generator with a larger character set. Random digits alone have limited entropy — each digit adds only ~3.3 bits.</p></details></div>
+<div class="tool-guide" style="margin:24px 0"><h2>Random Number Generator — Complete Guide</h2><p>From classroom raffles to game dice to statistical sampling, <strong>random numbers</strong> are a tiny tool with an enormous range of jobs. This generator produces uniformly distributed integers in any range you set, using your browser's secure random source.</p>
+<h3>How the randomness works</h3>
+<p>Instead of the predictable pseudo-random function many toys use, this tool draws from <code>crypto.getRandomValues()</code> — the same secure source browsers use for cryptographic keys. Every integer in your range has exactly equal probability, and the sequence can't be feasibly predicted. For fairness-critical uses (prize draws, clinical randomization), that uniformity is what matters.</p>
+<h3>Everyday use cases</h3>
+<ul>
+<li><strong>Games:</strong> digital dice (1–6), card draws, loot rolls, or "pick a random player to start."</li>
+<li><strong>Giveaways:</strong> assign each entrant a number and draw winners transparently.</li>
+<li><strong>Teaching:</strong> generate random problems, pick students for questions, or demonstrate probability live.</li>
+<li><strong>Sampling:</strong> auditors and researchers use random numbers to select unbiased samples from numbered lists.</li>
+<li><strong>Decisions:</strong> when you're truly stuck between numbered options, let chance break the tie.</li>
+</ul>
+<h3>Understanding the options</h3>
+<ul>
+<li><strong>Range:</strong> min and max are both inclusive. 1–10 can produce 1 and 10.</li>
+<li><strong>Count:</strong> generate one number or a whole batch at once.</li>
+<li><strong>Allow duplicates:</strong> on (like dice rolls — repeats expected) or off (like lottery balls — each number once).</li>
+</ul>
+<h3>Fairness tips for public draws</h3>
+<p>If money or reputation is on the line, document the process: publish the entrant list with numbers beforehand, set the range publicly, and screen-record the generation. For high-stakes lotteries, use regulated drawing systems — a browser tool is great for classrooms and clubs, not casinos.</p><h3>Random vs. pseudo-random</h3>
+<p>True randomness comes from unpredictable physical processes; computers approximate it with algorithms seeded by system entropy (mouse movements, timing jitter). For everyday uses the difference is irrelevant, but it's why you should never build your own "random" function for security — always use the platform's secure generator, as this tool does.</p>
+<h3>Seeding and reproducibility</h3>
+<p>Scientists sometimes need the <em>same</em> "random" sequence twice — for that they use seeded generators. This tool is unseeded by design: every click is fresh and unpredictable, which is what games and draws want.</p></div>
 <div class="tut-box" style="background:#f0f9ff;border:1px solid #bae6fd;border-radius:12px;padding:14px 18px;margin:18px 0"><p style="margin:0">📖 <strong>Step-by-step tutorial:</strong> New to this tool? Read our <a href="../blog/how-to-random-number-online.html">complete guide to generating random numbers online</a> — with practical examples.</p></div>
 <div class="related"><h2>Related tools</h2><div class="grid"><a class="tool-card" href="./password-generator.html"><div class="ticon">🔑</div><h3>Password Generator</h3><p>Create strong cryptographically-random passwords.</p></a><a class="tool-card" href="./hash-generator.html"><div class="ticon">#️⃣</div><h3>Hash Generator</h3><p>Generate SHA-256 hashes of any text, locally.</p></a><a class="tool-card" href="./coin-flip.html"><div class="ticon">🪙</div><h3>Coin Flip</h3><p>Flip a virtual coin — heads or tails with live stats.</p></a></div></div>
 </div>

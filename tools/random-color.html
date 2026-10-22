@@ -55,6 +55,38 @@
             "@type": "Answer",
             "text": "Absolutely. All processing happens locally in your browser. Your files are never uploaded to any server."
           }
+        },
+        {
+          "@type": "Question",
+          "name": "How is the randomness generated?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Colors are picked using your browser's cryptographically secure random number generator (crypto.getRandomValues), so every one of the 16.7 million possible colors has an equal chance \u2014 no patterns, no repeats bias."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What do HEX, RGB, and HSL mean?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "HEX (#FF5733) is the web standard for CSS. RGB (255, 87, 51) gives red/green/blue channel values. HSL (11\u00b0, 100%, 60%) describes hue, saturation, and lightness \u2014 designers often prefer HSL for tweaking shades."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I get only certain kinds of colors?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Use the filters: pastels for soft UI backgrounds, vivid for bold accents, dark for moody themes. Filtering narrows the random range instead of picking from all 16.7 million colors."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How do I check if two colors work together?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Generate a few candidates, then check their contrast ratio for text readability (4.5:1 minimum for body text per WCAG). Complementary colors sit opposite on the color wheel; analogous neighbors feel calmer."
+          }
         }
       ]
     }
@@ -73,8 +105,33 @@
 <div class="tool-hero"><h1>🖌️ Random Color Palette</h1><p>Generate beautiful random color palettes with one click — click any color to copy. Useful for designers looking for fresh color ideas. Free, unlimited, private — works entirely in your browser.</p></div>
 <div class="ad-slot"><!-- AdSense code goes here --></div>
 <div class="tool-box" id="tool-root" data-tool="random-color"></div>
-<div class="howto"><h2>How to use</h2><ol><li>Open the tool — nothing to install, it runs in your browser.</li><li>Enter your input or upload your file.</li><li>Click the action button and download or copy the result.</li></ol></div>
-<div class="faq"><h2>FAQ</h2><details><summary>Is it really free?</summary><p>Yes — every tool on this site is 100% free with no limits, no signup and no watermarks.</p></details><details><summary>Is my data private?</summary><p>Absolutely. All processing happens locally in your browser. Your files are never uploaded to any server.</p></details></div>
+<div class="howto"><h2>How to use</h2><ol><li>Click <strong>Generate</strong> (or press the button repeatedly) to roll a new random color.</li><li>See the color preview fill the screen along with its HEX, RGB, and HSL values.</li><li>Click any value to copy it straight to your clipboard for use in CSS or design tools.</li><li>Lock colors you like and keep generating to build a palette, then export the list.</li></ol></div>
+<div class="faq"><h2>FAQ</h2><details><summary>Is it really free?</summary><p>Yes — every tool on this site is 100% free with no limits, no signup and no watermarks.</p></details><details><summary>Is my data private?</summary><p>Absolutely. All processing happens locally in your browser. Your files are never uploaded to any server.</p></details><details><summary>How is the randomness generated?</summary><p>Colors are picked using your browser's cryptographically secure random number generator (crypto.getRandomValues), so every one of the 16.7 million possible colors has an equal chance — no patterns, no repeats bias.</p></details><details><summary>What do HEX, RGB, and HSL mean?</summary><p>HEX (#FF5733) is the web standard for CSS. RGB (255, 87, 51) gives red/green/blue channel values. HSL (11°, 100%, 60%) describes hue, saturation, and lightness — designers often prefer HSL for tweaking shades.</p></details><details><summary>Can I get only certain kinds of colors?</summary><p>Use the filters: pastels for soft UI backgrounds, vivid for bold accents, dark for moody themes. Filtering narrows the random range instead of picking from all 16.7 million colors.</p></details><details><summary>How do I check if two colors work together?</summary><p>Generate a few candidates, then check their contrast ratio for text readability (4.5:1 minimum for body text per WCAG). Complementary colors sit opposite on the color wheel; analogous neighbors feel calmer.</p></details></div>
+<div class="tool-guide" style="margin:24px 0"><h2>Random Color Generator — Complete Guide</h2><p>Staring at a blank canvas not knowing which color to pick is a universal designer problem. A <strong>Random Color Generator</strong> breaks the block: one click gives you a genuinely random color with copy-ready codes, and constraints like "pastels only" keep the chaos useful.</p>
+<h3>Understanding color codes</h3>
+<ul>
+<li><strong>HEX (#3A86FF):</strong> six hexadecimal digits — the lingua franca of web CSS. Copy-paste straight into stylesheets, Figma, or Canva.</li>
+<li><strong>RGB (58, 134, 255):</strong> how much red, green, and blue light to mix. The foundation of every screen color.</li>
+<li><strong>HSL (217°, 100%, 62%):</strong> hue (position on the wheel), saturation (intensity), lightness. Easiest model for humans to adjust — want it darker? Lower the L.</li>
+</ul>
+<h3>Practical use cases</h3>
+<ul>
+<li><strong>Web design:</strong> discover accent colors for buttons, links, and highlights that you wouldn't have picked deliberately.</li>
+<li><strong>Branding exploration:</strong> generate dozens of candidates fast, shortlist the interesting ones, then refine.</li>
+<li><strong>Data visualization:</strong> build distinct palettes for charts where every series needs its own recognizable color.</li>
+<li><strong>Creative coding &amp; games:</strong> randomize particle effects, avatars, or generative art with uniform randomness.</li>
+<li><strong>CSS gradients:</strong> grab two random colors and drop them into a linear-gradient for instant backgrounds.</li>
+</ul>
+<h3>Working with random colors like a pro</h3>
+<ul>
+<li><strong>Constrain the range:</strong> unlimited randomness often yields muddy browns. Pastel, vivid, or dark filters produce usable results far more often.</li>
+<li><strong>Check contrast:</strong> beautiful means nothing if text is unreadable. Aim for WCAG AA contrast (4.5:1) for body text.</li>
+<li><strong>Build palettes:</strong> lock one color you love, then generate companions. Tools like coolors-style lock-and-roll workflows were invented for exactly this.</li>
+<li><strong>Note the codes:</strong> copy HEX values into your design system immediately — "that nice blue from earlier" is otherwise lost forever.</li>
+</ul><h3>Color psychology quick reference</h3>
+<p>Blues signal trust and calm (banks, healthcare); reds create urgency and appetite (sales, food); greens suggest growth and eco-friendliness; purples feel creative and premium; yellows grab attention but tire the eyes in large areas. Use random generation for discovery, then apply psychology for the final pick.</p>
+<h3>Accessibility reminder</h3>
+<p>About 1 in 12 men has some color-vision deficiency. Never rely on color alone to convey meaning — pair it with labels, icons, or patterns, and test palettes with a color-blindness simulator before shipping.</p></div>
 <div class="tutorial-promo" style="margin:1.5rem 0;padding:1rem 1.25rem;border:1px solid #e5e7eb;border-radius:10px;background:#f8fafc"><p style="margin:0">📖 <strong>Step-by-step tutorial:</strong> <a href="../blog/how-to-random-color-online.html">How to Generate Random Color Palettes Online for Free (2026 Guide)</a></p></div>
 <div class="related"><h2>Related tools</h2><div class="grid"><a class="tool-card" href="./color-picker.html"><div class="ticon">🎨</div><h3>Color Picker</h3><p>Pick colors and get instant HEX + RGB values.</p></a><a class="tool-card" href="./hex-to-rgb.html"><div class="ticon">🌈</div><h3>HEX to RGB Converter</h3><p>Convert HEX colors to RGB and back.</p></a><a class="tool-card" href="./gradient-generator.html"><div class="ticon">🌅</div><h3>Gradient Generator</h3><p>Design CSS gradients with live preview and copy-ready code.</p></a></div></div>
 </div>

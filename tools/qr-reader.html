@@ -55,6 +55,38 @@
             "@type": "Answer",
             "text": "Absolutely. All processing happens locally in your browser. Your files are never uploaded to any server."
           }
+        },
+        {
+          "@type": "Question",
+          "name": "The QR code won't scan \u2014 what can I try?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Use a sharper, straight-on photo with even lighting. Crop tightly around the code, make sure the white quiet-zone margin is visible, and avoid glare or shadows. Blurry or tilted photos are the #1 cause of failures."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can it read barcodes too?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No \u2014 this tool decodes QR codes only (the square 2D kind). Traditional 1D barcodes like UPC/EAN product codes need a dedicated barcode scanner."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is my uploaded image sent to a server?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. Decoding happens with a JavaScript library running entirely in your browser. Your image never leaves your device."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Why does the decoded link look suspicious?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Trust your eyes: if the URL has misspellings, odd domains, or URL shorteners you didn't expect, don't open it. QR codes can hide phishing links \u2014 when in doubt, type the official address manually instead."
+          }
         }
       ]
     }
@@ -73,8 +105,27 @@
 <div class="tool-hero"><h1>📷 QR Code Reader</h1><p>Scan and decode QR codes from uploaded images to reveal the link or text inside. Useful when you have a QR screenshot but no scanner app handy. Free, unlimited, private — works entirely in your browser.</p></div>
 <div class="ad-slot"><!-- AdSense code goes here --></div>
 <div class="tool-box" id="tool-root" data-tool="qr-reader"></div>
-<div class="howto"><h2>How to use</h2><ol><li>Open the tool — nothing to install, it runs in your browser.</li><li>Enter your input or upload your file.</li><li>Click the action button and download or copy the result.</li></ol></div>
-<div class="faq"><h2>FAQ</h2><details><summary>Is it really free?</summary><p>Yes — every tool on this site is 100% free with no limits, no signup and no watermarks.</p></details><details><summary>Is my data private?</summary><p>Absolutely. All processing happens locally in your browser. Your files are never uploaded to any server.</p></details></div>
+<div class="howto"><h2>How to use</h2><ol><li>Click <strong>Choose Image</strong> (or drag and drop) to load a photo or screenshot containing a QR code.</li><li>The tool scans the image automatically — no need to align anything manually.</li><li>Read the decoded text or URL shown in the result box.</li><li>Before opening any link, check that the URL looks legitimate — preview first, then visit.</li></ol></div>
+<div class="faq"><h2>FAQ</h2><details><summary>Is it really free?</summary><p>Yes — every tool on this site is 100% free with no limits, no signup and no watermarks.</p></details><details><summary>Is my data private?</summary><p>Absolutely. All processing happens locally in your browser. Your files are never uploaded to any server.</p></details><details><summary>The QR code won't scan — what can I try?</summary><p>Use a sharper, straight-on photo with even lighting. Crop tightly around the code, make sure the white quiet-zone margin is visible, and avoid glare or shadows. Blurry or tilted photos are the #1 cause of failures.</p></details><details><summary>Can it read barcodes too?</summary><p>No — this tool decodes QR codes only (the square 2D kind). Traditional 1D barcodes like UPC/EAN product codes need a dedicated barcode scanner.</p></details><details><summary>Is my uploaded image sent to a server?</summary><p>No. Decoding happens with a JavaScript library running entirely in your browser. Your image never leaves your device.</p></details><details><summary>Why does the decoded link look suspicious?</summary><p>Trust your eyes: if the URL has misspellings, odd domains, or URL shorteners you didn't expect, don't open it. QR codes can hide phishing links — when in doubt, type the official address manually instead.</p></details></div>
+<div class="tool-guide" style="margin:24px 0"><h2>QR Code Reader — Complete Guide</h2><p>Not every device has a built-in QR scanner — and sometimes you need to decode a code from a screenshot, a saved photo, or a document on your computer. This <strong>QR Code Reader</strong> decodes any QR code image right in your browser, with zero uploads.</p>
+<h3>How it works</h3>
+<p>When you load an image, a JavaScript decoding library scans it for the QR finder patterns (those three big squares in the corners), corrects for rotation and perspective, reads the data modules, and applies error correction to recover the payload — even if part of the code is smudged or damaged.</p>
+<h3>When to use it</h3>
+<ul>
+<li><strong>Desktop decoding:</strong> your phone camera can't scan your own computer screen conveniently — screenshot it and decode here.</li>
+<li><strong>Saved codes:</strong> decode QR codes from old photos, PDFs, or chat screenshots.</li>
+<li><strong>Verification:</strong> check what a QR code actually contains before sharing or printing it.</li>
+<li><strong>Research:</strong> extract URLs from presentation slides or posters you photographed.</li>
+</ul>
+<h3>Tips for reliable decoding</h3>
+<ul>
+<li><strong>Feed it a clean image:</strong> crop close to the code, keep it upright, and ensure good contrast.</li>
+<li><strong>Mind the resolution:</strong> tiny thumbnails may not contain enough pixels per module — use the original image when possible.</li>
+<li><strong>One code at a time:</strong> if an image has several QR codes, crop each one separately for best results.</li>
+</ul>
+<h3>Safety first</h3>
+<p>A decoded URL is just text until you visit it. Attackers use QR codes to hide phishing links ("quishing") because you can't preview the destination by hovering like with a normal link. Always read the decoded address carefully: check the domain spelling, beware of shorteners, and never enter passwords on a page you reached through an unexpected code.</p><h3>QR code anatomy in 30 seconds</h3>
+<p>Those three large squares are finder patterns — they let scanners locate the code at any angle. The smaller square is the alignment pattern for distortion correction. The remaining grid holds data plus error-correction codewords, which is why a code with a logo stamped in the middle can still scan: up to 30% damage is recoverable at the highest correction level.</p></div>
 <div class="tutorial-box" style="background:#eff6ff;border:1px solid #bfdbfe;border-radius:10px;padding:14px 16px;margin:18px 0">📖 <strong>Step-by-step tutorial:</strong> <a href="../blog/how-to-scan-qr-codes-online.html">How to Scan QR Codes Online for Free (2026 Guide)</a></div>
 <div class="related"><h2>Related tools</h2><div class="grid"><a class="tool-card" href="./image-compressor.html"><div class="ticon">🗜️</div><h3>Image Compressor</h3><p>Reduce image file size with adjustable quality — JPG and WebP output.</p></a><a class="tool-card" href="./image-resizer.html"><div class="ticon">📐</div><h3>Image Resizer</h3><p>Resize images to exact pixel dimensions with aspect-ratio lock.</p></a><a class="tool-card" href="./image-converter.html"><div class="ticon">🔄</div><h3>Image Converter</h3><p>Convert images between PNG, JPG, WebP and BMP formats.</p></a></div></div>
 </div>

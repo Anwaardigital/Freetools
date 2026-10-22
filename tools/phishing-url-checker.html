@@ -55,6 +55,38 @@
             "@type": "Answer",
             "text": "No. This is a first-pass heuristic check only — it cannot guarantee a site is legitimate. When in doubt, never enter passwords or payment details."
           }
+        },
+        {
+          "@type": "Question",
+          "name": "Is a \"Safe\" result a guarantee?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. This is a first-pass heuristic check only \u2014 it cannot guarantee a site is legitimate. When in doubt, never enter passwords or payment details."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What tricks do phishing links use?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Common tricks include lookalike characters (paypa1.com), extra subdomains (secure.paypal.evil.com), URL shorteners hiding the destination, IP addresses instead of domain names, and urgent language pressuring you to act fast."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I check shortened URLs like bit.ly links?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes \u2014 paste the shortened link and the tool will flag the hidden destination as a risk factor. For extra safety, use a URL expander to reveal the real address before deciding to visit it."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What should I do if a link is flagged as risky?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Don't click it. If it claims to be from your bank or a service you use, open that service's official site or app yourself by typing the address manually. Report phishing emails to your email provider and, for financial scams, to your local cybercrime authority."
+          }
         }
       ]
     }
@@ -73,8 +105,28 @@
 <div class="tool-hero"><h1>🎣 Phishing URL Checker</h1><p>Analyze a URL for phishing risk with client-side heuristics — suspicious TLDs, IP hosts, URL shorteners and more. A useful first-pass check before clicking unknown links. Free, unlimited, private.</p></div>
 <div class="ad-slot"><!-- AdSense code goes here --></div>
 <div class="tool-box" id="tool-root" data-tool="phishing-url-checker"></div>
-<div class="howto"><h2>How to use</h2><ol><li>Paste the suspicious URL into the box.</li><li>Click "Check URL" to run the heuristic analysis.</li><li>Read the risk score and each individual check.</li></ol></div>
-<div class="faq"><h2>FAQ</h2><details><summary>Is it really free?</summary><p>Yes — every tool on this site is 100% free with no limits, no signup and no watermarks.</p></details><details><summary>Is a "Safe" result a guarantee?</summary><p>No. This is a first-pass heuristic check only — it cannot guarantee a site is legitimate. When in doubt, never enter passwords or payment details.</p></details></div>
+<div class="howto"><h2>How to use</h2><ol><li>Paste the suspicious URL into the box — include the full address, starting with http.</li><li>Click <strong>Check URL</strong> to run the heuristic analysis in your browser.</li><li>Read the risk score and each individual check (lookalike characters, IP address, suspicious TLD, etc.).</li><li>If anything looks risky, do NOT visit the link — verify the sender through an official channel instead.</li></ol></div>
+<div class="faq"><h2>FAQ</h2><details><summary>Is it really free?</summary><p>Yes — every tool on this site is 100% free with no limits, no signup and no watermarks.</p></details><details><summary>Is a "Safe" result a guarantee?</summary><p>No. This is a first-pass heuristic check only — it cannot guarantee a site is legitimate. When in doubt, never enter passwords or payment details.</p></details><details><summary>Is a "Safe" result a guarantee?</summary><p>No. This is a first-pass heuristic check only — it cannot guarantee a site is legitimate. When in doubt, never enter passwords or payment details.</p></details><details><summary>What tricks do phishing links use?</summary><p>Common tricks include lookalike characters (paypa1.com), extra subdomains (secure.paypal.evil.com), URL shorteners hiding the destination, IP addresses instead of domain names, and urgent language pressuring you to act fast.</p></details><details><summary>Can I check shortened URLs like bit.ly links?</summary><p>Yes — paste the shortened link and the tool will flag the hidden destination as a risk factor. For extra safety, use a URL expander to reveal the real address before deciding to visit it.</p></details><details><summary>What should I do if a link is flagged as risky?</summary><p>Don't click it. If it claims to be from your bank or a service you use, open that service's official site or app yourself by typing the address manually. Report phishing emails to your email provider and, for financial scams, to your local cybercrime authority.</p></details></div>
+<div class="tool-guide" style="margin:24px 0"><h2>Phishing URL Checker — Complete Guide</h2><p>Phishing is the most common way accounts get stolen: a fake login page that looks exactly like your bank, email, or social media. A <strong>Phishing URL Checker</strong> gives you a fast first opinion on any suspicious link before you risk clicking it.</p>
+<h3>How the check works</h3>
+<p>The tool runs a set of heuristic tests entirely in your browser — nothing is sent anywhere. It looks for red flags that real phishers rely on: IP addresses used instead of domain names, lookalike Unicode characters, excessive subdomains, suspicious top-level domains, mismatched brand names, URL shorteners, and dangerous patterns like "@" tricks or punycode. Each failed check raises the risk score.</p>
+<h3>Reading the result</h3>
+<ul>
+<li><strong>Low risk:</strong> no obvious tricks found — still stay alert, since new phishing domains appear every hour.</li>
+<li><strong>Medium risk:</strong> one or two suspicious traits. Treat the link as guilty until proven innocent.</li>
+<li><strong>High risk:</strong> multiple phishing hallmarks. Do not visit, do not enter any credentials.</li>
+</ul>
+<h3>Real-world scenarios</h3>
+<ul>
+<li><strong>"Your account will be suspended" emails:</strong> paste the link before clicking. Legitimate companies never ask you to log in from an email link under threat.</li>
+<li><strong>Package delivery SMS:</strong> scammers impersonate couriers with "pay a small fee" links. Check the URL, then track your parcel on the courier's real site.</li>
+<li><strong>Social media DMs:</strong> "Is this you in this video?" links from friends whose accounts were hijacked. Verify with the friend first.</li>
+</ul>
+<h3>Limitations</h3>
+<p>Heuristics can't catch everything — a freshly registered clean-looking domain can still host a phishing page, and a legitimate site can trip a heuristic. This tool is a safety net, not a verdict. Your best defenses remain: type addresses manually, use a password manager (it won't autofill on fake domains), and enable two-factor authentication everywhere.</p><h3>Why phishing works</h3>
+<p>Phishing exploits trust and urgency, not technical brilliance. Attackers impersonate brands you already trust, manufacture deadlines ("verify within 24 hours"), and rely on the fact that most people skim links instead of reading them. Knowing the playbook — authority, scarcity, fear — makes the tricks visible before you click.</p>
+<h3>Beyond the link check</h3>
+<p>Pair this tool with good habits: hover to preview links on desktop, long-press on mobile, and check the sender's actual address — not just the display name. Keep your browser updated, since modern browsers block many known phishing domains automatically.</p></div>
 <div class="related"><h2>Related tools</h2><div class="grid"><a class="tool-card" href="./security-headers-checker.html"><div class="ticon">🛡️</div><h3>Security Headers Checker</h3><p>Check a website's security headers and learn what they mean.</p></a><a class="tool-card" href="./ip-lookup.html"><div class="ticon">🌐</div><h3>IP Lookup</h3><p>Look up any IP address or domain — city, country, ISP.</p></a><a class="tool-card" href="./password-strength-checker.html"><div class="ticon">💪</div><h3>Password Strength Checker</h3><p>Score your password live with crack-time estimates.</p></a></div></div>
 </div>
 <div class="related-guides"><h2>Related guides</h2><div class="grid"><a class="tool-card" href="../blog/how-to-phishing-url-checker-online.html"><h3>How to Check a URL for Phishing Risk Online for Free (2026 Guide) | Free Privacy Tools</h3><p>Screen suspicious links with a free phishing URL checker. Step-by-step 2026 guide: heuristic checks, reading the risk score, and what to do when a link looks dangerous.</p></a><a class="tool-card" href="../blog/how-to-security-headers-checker-online.html"><h3>How to Check Website Security Headers Online for Free (2026 Guide) | Free Privacy Tools</h3><p>Audit any website's HTTP security headers — HSTS, CSP, X-Frame-Options and more — with a free checker. Step-by-step 2026 guide for owners and the curious.</p></a><a class="tool-card" href="../blog/how-to-ip-lookup-online.html"><h3>How to Look Up an IP Address Online for Free (2026 Guide) | Free Privacy Tools</h3><p>Find the approximate location, ISP and timezone of any IP or domain with a free IP lookup tool. Step-by-step 2026 guide with honest accuracy notes.</p></a></div></div>

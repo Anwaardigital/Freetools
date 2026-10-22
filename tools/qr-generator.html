@@ -55,6 +55,38 @@
             "@type": "Answer",
             "text": "Absolutely. All processing happens locally in your browser. Your files are never uploaded to any server."
           }
+        },
+        {
+          "@type": "Question",
+          "name": "Do the QR codes expire?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. The QR codes generated here encode your data directly \u2014 there is no tracking server and no expiry. They work forever, offline, as long as the encoded link itself stays valid."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What can I put in a QR code?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "URLs, plain text, Wi-Fi network credentials (SSID + password), contact cards (vCard), email addresses, phone numbers, and SMS messages. Keep content under ~300 characters for the most reliable scanning."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Will it scan if printed very small?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Use a high error-correction level and test with your phone before mass printing. As a rule, keep the code at least 2 \u00d7 2 cm, with quiet-zone (white margin) intact and good contrast \u2014 never invert to white-on-black."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is my data tracked or stored?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. The QR is generated with a JavaScript library entirely in your browser. We never see, log, or store what you encode \u2014 unlike many online generators that monetize your data."
+          }
         }
       ]
     }
@@ -73,8 +105,28 @@
 <div class="tool-hero"><h1>🔳 QR Code Generator</h1><p>Create custom QR codes from any text or URL, in small to print-ready sizes. Useful for sharing links, Wi-Fi details or contact info. Free, unlimited, private — works entirely in your browser.</p></div>
 <div class="ad-slot"><!-- AdSense code goes here --></div>
 <div class="tool-box" id="tool-root" data-tool="qr-generator"></div>
-<div class="howto"><h2>How to use</h2><ol><li>Open the tool — nothing to install, it runs in your browser.</li><li>Enter your input or upload your file.</li><li>Click the action button and download or copy the result.</li></ol></div>
-<div class="faq"><h2>FAQ</h2><details><summary>Is it really free?</summary><p>Yes — every tool on this site is 100% free with no limits, no signup and no watermarks.</p></details><details><summary>Is my data private?</summary><p>Absolutely. All processing happens locally in your browser. Your files are never uploaded to any server.</p></details></div>
+<div class="howto"><h2>How to use</h2><ol><li>Type or paste your content — a URL, Wi-Fi details, plain text, or contact card.</li><li>Choose the QR type (link, text, Wi-Fi, vCard) so scanners interpret it correctly.</li><li>Watch the QR code update live; adjust error-correction level if it will be printed small.</li><li>Click <strong>Download PNG</strong> to save a high-resolution image for print or sharing.</li></ol></div>
+<div class="faq"><h2>FAQ</h2><details><summary>Is it really free?</summary><p>Yes — every tool on this site is 100% free with no limits, no signup and no watermarks.</p></details><details><summary>Is my data private?</summary><p>Absolutely. All processing happens locally in your browser. Your files are never uploaded to any server.</p></details><details><summary>Do the QR codes expire?</summary><p>No. The QR codes generated here encode your data directly — there is no tracking server and no expiry. They work forever, offline, as long as the encoded link itself stays valid.</p></details><details><summary>What can I put in a QR code?</summary><p>URLs, plain text, Wi-Fi network credentials (SSID + password), contact cards (vCard), email addresses, phone numbers, and SMS messages. Keep content under ~300 characters for the most reliable scanning.</p></details><details><summary>Will it scan if printed very small?</summary><p>Use a high error-correction level and test with your phone before mass printing. As a rule, keep the code at least 2 × 2 cm, with quiet-zone (white margin) intact and good contrast — never invert to white-on-black.</p></details><details><summary>Is my data tracked or stored?</summary><p>No. The QR is generated with a JavaScript library entirely in your browser. We never see, log, or store what you encode — unlike many online generators that monetize your data.</p></details></div>
+<div class="tool-guide" style="margin:24px 0"><h2>QR Code Generator — Complete Guide</h2><p>QR codes bridge the physical and digital worlds: one scan connects a poster to a website, a business card to a contact, or a café table to the Wi-Fi. This <strong>QR Code Generator</strong> creates them instantly, privately, and free — with no accounts, watermarks, or tracking.</p>
+<h3>What QR codes can hold</h3>
+<ul>
+<li><strong>URLs:</strong> link to websites, menus, videos, or app downloads. Use short URLs for denser, easier-to-scan codes.</li>
+<li><strong>Wi-Fi:</strong> encode SSID, password, and encryption type so guests join with one scan — no more dictating passwords.</li>
+<li><strong>vCard contacts:</strong> share your name, phone, and email; scanners offer to save you directly to the address book.</li>
+<li><strong>Plain text &amp; more:</strong> event details, discount codes, email drafts, or SMS messages.</li>
+</ul>
+<h3>Design tips that actually matter</h3>
+<ul>
+<li><strong>Contrast is king:</strong> black on white scans best. Fancy colors look nice but fail in poor lighting.</li>
+<li><strong>Keep the quiet zone:</strong> the white margin around the code is part of the standard — don't crop it.</li>
+<li><strong>Size for distance:</strong> a code scanned from 1 meter away should be at least 10 cm wide. Test with a real phone.</li>
+<li><strong>Error correction:</strong> higher levels survive damage and logos, but make the code denser. Medium is the sweet spot for print.</li>
+</ul>
+<h3>Smart use cases</h3>
+<p>Restaurants put menu QR codes on tables; real-estate agents link yard signs to virtual tours; teachers share assignment links on handouts; freelancers add portfolio QR codes to invoices. Because these codes are static and offline, they keep working for years — perfect for anything printed.</p>
+<h3>Security note</h3>
+<p>Only scan QR codes you trust — attackers stick malicious codes over legitimate ones (a practice called "quishing"). Preview the URL your camera shows before opening it, and never enter sensitive data on a page you reached via a random sticker.</p><h3>Dynamic vs. static codes</h3>
+<p>The codes made here are <strong>static</strong>: the data lives inside the code itself, so they never expire and need no internet. <strong>Dynamic</strong> codes (offered by paid services) point to a redirect server you can update later — handy for campaigns, but they stop working if you stop paying. For permanent uses like business cards and signage, static is the right choice.</p></div>
 <div class="related"><h2>Related tools</h2><div class="grid"><a class="tool-card" href="./image-compressor.html"><div class="ticon">🗜️</div><h3>Image Compressor</h3><p>Reduce image file size with adjustable quality — JPG and WebP output.</p></a><a class="tool-card" href="./image-resizer.html"><div class="ticon">📐</div><h3>Image Resizer</h3><p>Resize images to exact pixel dimensions with aspect-ratio lock.</p></a><a class="tool-card" href="./image-converter.html"><div class="ticon">🔄</div><h3>Image Converter</h3><p>Convert images between PNG, JPG, WebP and BMP formats.</p></a></div></div>
 </div>
 <div class="related-guides"><h2>Related guides</h2><div class="grid"><a class="tool-card" href="../blog/image-compression-guide.html"><h3>Image Compression Guide: Shrink Photos Without Losing Quality (2026) | Free Privacy Tools</h3><p>Compress images without visible quality loss. Complete 2026 guide: JPG vs WebP vs PNG, quality settings, resizing before compressing, and free browser tools — no signup.</p></a><a class="tool-card" href="../blog/how-to-resize-images-online.html"><h3>How to Resize Images Online for Free (2026 Guide) | Free Privacy Tools</h3><p>Learn how to resize images online for free. Set exact pixel dimensions with or without aspect-ratio lock — in your browser, no signup, no uploads.</p></a><a class="tool-card" href="../blog/how-to-convert-images-online.html"><h3>How to Convert Images Online for Free (2026 Guide) | Free Privacy Tools</h3><p>Learn how to convert images online for free. Change between PNG, JPG, WebP and BMP in your browser — no signup, no uploads, with a plain-English format guide.</p></a></div></div>
