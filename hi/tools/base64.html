@@ -1,0 +1,834 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<link rel="icon" type="image/png" sizes="192x192" href="https://anwaardigital.com/Freetools/freetools-icon-192.png">
+<link rel="icon" type="image/png" sizes="512x512" href="https://anwaardigital.com/Freetools/freetools-icon-512.png">
+<link rel="apple-touch-icon" href="https://anwaardigital.com/Freetools/freetools-icon-192.png">
+
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Base64 एनकोडर / डिकोडर | मुफ़्त प्राइवेसी टूल्स</title>
+<meta name="description" content="टेक्स्ट को Base64 में एनकोड करें या Base64 को वापस पढ़ने योग्य टेक्स्ट में डिकोड करें। मुफ़्त, निजी।">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Base64 एनकोडर / डिकोडर | मुफ़्त प्राइवेसी टूल्स">
+<meta property="og:description" content="टेक्स्ट को Base64 में एनकोड करें या Base64 को वापस पढ़ने योग्य टेक्स्ट में डिकोड करें। मुफ़्त, निजी।">
+<meta property="og:url" content="https://anwaardigital.com/Freetools/hi/tools/base64.html">
+<meta property="og:image" content="https://anwaardigital.com/anwaar-icon-512.png">
+<meta name="twitter:card" content="summary">
+<link rel="canonical" href="https://anwaardigital.com/Freetools/hi/tools/base64.html">
+<link rel="alternate" hreflang="hi" href="https://anwaardigital.com/Freetools/hi/tools/base64.html">
+<link rel="alternate" hreflang="ar" href="https://anwaardigital.com/Freetools/ar/tools/base64.html">
+<link rel="alternate" hreflang="en" href="https://anwaardigital.com/Freetools/tools/base64.html">
+<link rel="alternate" hreflang="x-default" href="https://anwaardigital.com/Freetools/tools/base64.html">
+<link rel="stylesheet" href="../../assets/style.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebApplication",
+      "name": "Base64 एनकोडर / डिकोडर",
+      "url": "https://anwaardigital.com/Freetools/hi/tools/base64.html",
+      "description": "टेक्स्ट को Base64 में एनकोड करें या Base64 को वापस पढ़ने योग्य टेक्स्ट में डिकोड करें। मुफ़्त, निजी।",
+      "inLanguage": "hi",
+      "applicationCategory": "DeveloperApplication",
+      "operatingSystem": "Any",
+      "isAccessibleForFree": true,
+      "browserRequirements": "Requires JavaScript",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      }
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "क्या यह सच में मुफ़्त है?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "हाँ — इस साइट का हर टूल 100% मुफ़्त है, बिना किसी सीमा, बिना साइनअप और बिना वॉटरमार्क के।"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "क्या मेरा डेटा निजी है?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "बिल्कुल। सारी प्रोसेसिंग आपके ब्राउज़र में स्थानीय रूप से होती है। आपकी फ़ाइलें कभी किसी सर्वर पर अपलोड नहीं होतीं।"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Base64 एनकोडिंग किस काम आती है?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Base64 बाइनरी डेटा को सादे ASCII टेक्स्ट में बदल देता है ताकि वह उन सिस्टम से सुरक्षित गुज़र सके जो सिर्फ़ टेक्स्ट संभालते हैं — ईमेल अटैचमेंट (MIME), HTML/CSS में डेटा URI के रूप में सीधे इमेज एम्बेड करना, JSON में बाइनरी ब्लॉब स्टोर करना, और URL व HTTP हेडर में टोकन भेजना।"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "क्या Base64 एक तरह का एन्क्रिप्शन है?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "नहीं। Base64 एक एनकोडिंग है, एन्क्रिप्शन नहीं — इसे कोई भी तुरंत डिकोड कर सकता है। पासवर्ड या सीक्रेट 'सुरक्षित' करने के लिए कभी Base64 इस्तेमाल न करें। असली सुरक्षा के लिए AES जैसा सही एन्क्रिप्शन या bcrypt या Argon2 जैसी हैशिंग इस्तेमाल करें।"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "मेरा डिकोड किया टेक्स्ट अजीब अक्षर क्यों दिखाता है?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "शायद इनपुट मान्य Base64 नहीं था, या मूल बाइट UTF-8 टेक्स्ट नहीं थे (उदाहरण के लिए, एनकोड की गई इमेज)। अंत में गुम पैडिंग अक्षरों (=) की जाँच करें, आवारा स्पेस या लाइन ब्रेक देखें, और पक्का करें कि आपने पूरी स्ट्रिंग पेस्ट की है।"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "क्या मैं सिर्फ़ टेक्स्ट नहीं, इमेज या फ़ाइलें एनकोड कर सकता हूँ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "हाँ। किसी भी फ़ाइल — इमेज, PDF, ऑडियो — को Base64 स्ट्रिंग में एनकोड करने के लिए फ़ाइल अपलोड विकल्प इस्तेमाल करें। डेवलपर इसी तरह data:image/png;base64,... जैसे डेटा URI बनाते हैं ताकि छोटे एसेट सीधे वेब पेज में एम्बेड हो जाएँ।"
+          }
+        }
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<header class="site-header"><div class="wrap">
+<a class="logo" href="../index.html"><img class="shield" src="../../freetools-icon-192.png" alt=""> मुफ़्त प्राइवेसी टूल्स</a>
+<button class="nav-toggle" aria-label="मेनू" aria-expanded="false">☰</button><nav class="nav"><a href="../index.html">होम</a><a href="../index.html#tools">सभी टूल</a><a href="../about.html">हमारे बारे में</a><a href="../faq.html">अक्सर पूछे जाने वाले प्रश्न</a><a href="../blog.html">ब्लॉग</a><a href="../contact.html">संपर्क करें</a><a href="../privacy.html">प्राइवेसी</a></nav>
+</div></header>
+
+<main class="wrap">
+<div class="crumbs"><a href="../index.html">होम</a> / टेक्स्ट टूल / Base64 एनकोडर / डिकोडर</div>
+<div class="tool-hero"><h1><svg class="hero-icon" aria-hidden="true"><use href="../../assets/tool-icons.svg#icon-base64"/></svg>Base64 एनकोडर / डिकोडर</h1><p>टेक्स्ट को Base64 में एनकोड करें या Base64 को वापस पढ़ने योग्य टेक्स्ट में डिकोड करें। एनकोडेड डेटा या API पेलोड संभालने वाले डेवलपर के लिए उपयोगी। मुफ़्त, असीमित, निजी — पूरी तरह आपके ब्राउज़र में चलता है।</p></div>
+<div class="ad-slot"><!-- AdSense code goes here --></div>
+<div class="tool-box" id="tool-root" data-tool="base64"></div>
+<div class="howto"><h2>उपयोग कैसे करें</h2><ol><li>इनपुट बॉक्स में अपना टेक्स्ट पेस्ट करें या टाइप करें — या इमेज या बाइनरी फ़ाइल एनकोड करने के लिए फ़ाइल मोड पर जाएँ।</li><li>'एनकोड' चुनें टेक्स्ट को Base64 में बदलने के लिए, या 'डिकोड' Base64 को वापस पढ़ने योग्य टेक्स्ट में बदलने के लिए।</li><li>कन्वर्ट बटन पर क्लिक करें और परिणाम तुरंत नीचे आउटपुट बॉक्स में आ जाएगा।</li><li>परिणाम को एक क्लिक में कॉपी करें, या कोड, कॉन्फ़िग या ईमेल में इस्तेमाल के लिए .txt फ़ाइल के रूप में डाउनलोड करें।</li></ol></div>
+<div class="faq"><h2>अक्सर पूछे जाने वाले प्रश्न</h2><details><summary>क्या यह सच में मुफ़्त है?</summary><p>हाँ — इस साइट का हर टूल 100% मुफ़्त है, बिना किसी सीमा, बिना साइनअप और बिना वॉटरमार्क के।</p></details><details><summary>क्या मेरा डेटा निजी है?</summary><p>बिल्कुल। सारी प्रोसेसिंग आपके ब्राउज़र में स्थानीय रूप से होती है। आपकी फ़ाइलें कभी किसी सर्वर पर अपलोड नहीं होतीं।</p></details><details><summary>Base64 एनकोडिंग किस काम आती है?</summary><p>Base64 बाइनरी डेटा को सादे ASCII टेक्स्ट में बदल देता है ताकि वह उन सिस्टम से सुरक्षित गुज़र सके जो सिर्फ़ टेक्स्ट संभालते हैं — ईमेल अटैचमेंट (MIME), HTML/CSS में डेटा URI के रूप में सीधे इमेज एम्बेड करना, JSON में बाइनरी ब्लॉब स्टोर करना, और URL व HTTP हेडर में टोकन भेजना।</p></details><details><summary>क्या Base64 एक तरह का एन्क्रिप्शन है?</summary><p>नहीं। Base64 एक एनकोडिंग है, एन्क्रिप्शन नहीं — इसे कोई भी तुरंत डिकोड कर सकता है। पासवर्ड या सीक्रेट 'सुरक्षित' करने के लिए कभी Base64 इस्तेमाल न करें। असली सुरक्षा के लिए AES जैसा सही एन्क्रिप्शन या bcrypt या Argon2 जैसी हैशिंग इस्तेमाल करें।</p></details><details><summary>मेरा डिकोड किया टेक्स्ट अजीब अक्षर क्यों दिखाता है?</summary><p>शायद इनपुट मान्य Base64 नहीं था, या मूल बाइट UTF-8 टेक्स्ट नहीं थे (उदाहरण के लिए, एनकोड की गई इमेज)। अंत में गुम पैडिंग अक्षरों (=) की जाँच करें, आवारा स्पेस या लाइन ब्रेक देखें, और पक्का करें कि आपने पूरी स्ट्रिंग पेस्ट की है।</p></details><details><summary>क्या मैं सिर्फ़ टेक्स्ट नहीं, इमेज या फ़ाइलें एनकोड कर सकता हूँ?</summary><p>हाँ। किसी भी फ़ाइल — इमेज, PDF, ऑडियो — को Base64 स्ट्रिंग में एनकोड करने के लिए फ़ाइल अपलोड विकल्प इस्तेमाल करें। डेवलपर इसी तरह data:image/png;base64,... जैसे डेटा URI बनाते हैं ताकि छोटे एसेट सीधे वेब पेज में एम्बेड हो जाएँ।</p></details></div><div class="tool-guide" style="margin:32px 0;padding:24px;background:#fafafa;border:1px solid #e5e7eb;border-radius:12px;line-height:1.75"><h2>Base64 एनकोडिंग की पूरी गाइड</h2><p>Base64 इंटरनेट का एक चुपचाप काम करने वाला वर्कहॉर्स है: लगभग हर डेवलपर इसे हफ़्ते में इस्तेमाल करता है, फिर भी कम ही लोग ठीक से समझा सकते हैं कि यह कैसे काम करता है। यह गाइड बताती है कि Base64 क्या है, यह क्यों है, आप इससे कहाँ मिलेंगे, और किन व्यावहारिक गलतियों से बचना है — साथ ही इस मुफ़्त टूल का असरदार इस्तेमाल कैसे करें।</p><h3>Base64 असल में क्या करता है</h3><p>कंप्यूटर सब कुछ बाइट के रूप में स्टोर करते हैं (मान 0–255), लेकिन कई पुराने टेक्स्ट-आधारित सिस्टम — ईमेल, URL, JSON, XML, HTTP हेडर — कच्चे बाइनरी बाइट को बिगाड़ सकते हैं या अस्वीकार कर सकते हैं। Base64 इसे हल करता है: इनपुट के हर 3 बाइट को सुरक्षित 64-अक्षर वाले वर्णमाला (A–Z, a–z, 0–9, +, /) के 4 अक्षरों में मैप करके। चूँकि 3 बाइट 4 अक्षर बन जाते हैं, एनकोडेड आउटपुट हमेशा इनपुट से लगभग 33% बड़ा होता है। अगर इनपुट की लंबाई 3 का गुणक नहीं है, तो पैडिंग अक्षर (=) जोड़ दिए जाते हैं — इसीलिए कई Base64 स्ट्रिंग एक या दो बराबर चिह्नों पर ख़त्म होती हैं।</p><h3>आप Base64 से कहाँ-कहाँ मिलेंगे</h3><p><strong>डेटा URI:</strong> HTML या CSS में सीधे एम्बेड की गई छोटी इमेज data:image/png;base64,iVBORw0... जैसी दिखती हैं — अलग इमेज रिक्वेस्ट की ज़रूरत नहीं। <strong>ईमेल:</strong> अटैचमेंट MIME मैसेज के अंदर Base64-एनकोड किए जाते हैं। <strong>API और टोकन:</strong> JWT टोकन (आधुनिक वेब लॉगिन में तीन बिंदुओं से अलग किए गए खंड) Base64URL-एनकोडेड JSON होते हैं। <strong>बेसिक ऑथ:</strong> Authorization: Basic हेडर सिर्फ़ username:password का Base64 है — किसी को भी दिख जाता है, इसीलिए यह सिर्फ़ HTTPS पर ही जाना चाहिए। <strong>कॉन्फ़िग फ़ाइलें:</strong> Kubernetes सीक्रेट, .env ब्लॉब और CI पाइपलाइन नियमित रूप से Base64 पेलोड रखती हैं।</p><h3>Base64 बनाम Base64URL</h3><p>मानक Base64 में + और / इस्तेमाल होते हैं, जिनके URL में ख़ास मतलब होते हैं। URL-सुरक्षित वेरिएंट में उनकी जगह - और _ आ जाते हैं और अक्सर = पैडिंग हटा दी जाती है। अगर आप URL से आए टोकन को डिकोड करते समय त्रुटियाँ पा रहे हैं, तो डिकोड करने से पहले - को वापस + में, _ को वापस / में बदलकर देखें और पैडिंग फिर से जोड़ें।</p><h3>आम गलतियाँ</h3><p>Base64 को एन्क्रिप्शन समझना क्लासिक भूल है — यह शून्य गोपनीयता देता है। दूसरी है पहले से एनकोडेड डेटा को दो बार एनकोड करना, जिससे अपठनीय आउटपुट बनता है। स्ट्रिंग के अंदर व्हाइटस्पेस और लाइन ब्रेक (ईमेल या टर्मिनल से कॉपी करते समय आम) सख़्त डिकोडर को तोड़ देंगे; यह टूल उन्हें अपने आप हटा देता है। अंत में, 33% साइज़ ओवरहेड याद रखें: 3 MB इमेज को Base64-एनकोड करने पर 4 MB स्ट्रिंग बनती है, इसलिए यह सिर्फ़ छोटे एसेट के लिए समझदारी है।</p><h3>प्राइवेसी नोट</h3><p>एनकोडिंग और डिकोडिंग पूरी तरह आपके ब्राउज़र में होती है। टोकन, क्रेडेंशियल और फ़ाइल सामग्री कभी आपके डिवाइस से बाहर नहीं जाती — उन संवेदनशील स्ट्रिंग के लिए भी सुरक्षित जिन्हें आप किसी अजनबी वेबसाइट पर कभी पेस्ट नहीं करेंगे।</p></div><div class="related"><h2>संबंधित टूल</h2><div class="grid"><a class="tool-card" href="./word-counter.html"><div class="ticon"><svg aria-hidden="true"><use href="../../assets/tool-icons.svg#icon-word-counter"/></svg></div><h3>शब्द काउंटर</h3><p>शब्द, अक्षर, वाक्य और पढ़ने का समय रीयल टाइम में गिनें।</p></a><a class="tool-card" href="./character-counter.html"><div class="ticon"><svg aria-hidden="true"><use href="../../assets/tool-icons.svg#icon-character-counter"/></svg></div><h3>अक्षर काउंटर</h3><p>लाइव अक्षर, लाइन और बिना स्पेस वाली गिनती।</p></a><a class="tool-card" href="./case-converter.html"><div class="ticon"><svg aria-hidden="true"><use href="../../assets/tool-icons.svg#icon-case-converter"/></svg></div><h3>टेक्स्ट केस कन्वर्टर</h3><p>टेक्स्ट को UPPERCASE, lowercase, Title Case और ज़्यादा में बदलें।</p></a></div></div>
+</div>
+<div class="related-guides"><h2>संबंधित गाइड</h2><div class="grid"><a class="tool-card" href="../blog/how-to-base64-online.html"><h3>ऑनलाइन मुफ़्त में Base64 एनकोड और डिकोड कैसे करें (2026 गाइड) | मुफ़्त प्राइवेसी टूल्स</h3><p>मुफ़्त ब्राउज़र टूल से सेकंडों में टेक्स्ट को Base64 में एनकोड करें या वापस डिकोड करें। 2026 की चरण-दर-चरण गाइड: असली उपयोग, उदाहरण और एक ज़रूरी सुरक्षा चेतावनी।</p></a><a class="tool-card" href="../blog/how-to-count-words-online.html"><h3>ऑनलाइन मुफ़्त में शब्द कैसे गिनें (2026 गाइड) | मुफ़्त प्राइवेसी टूल्स</h3><p>ऑनलाइन मुफ़्त में शब्द, अक्षर, वाक्य और पढ़ने का समय गिनें। निबंध, SEO, सोशल मीडिया और प्रकाशन के लिए शब्द गिनने की पूरी 2026 गाइड — बिना साइनअप।</p></a><a class="tool-card" href="../blog/how-to-character-counter-online.html"><h3>ऑनलाइन मुफ़्त में अक्षर कैसे गिनें (2026 गाइड) | मुफ़्त प्राइवेसी टूल्स</h3><p>हमारे मुफ़्त अक्षर काउंटर से रीयल टाइम में अक्षर, स्पेस और लाइन गिनें। चरण-दर-चरण गाइड — ट्वीट, बायो, निबंध, मेटा टाइटल और SMS सीमा के लिए परफ़ेक्ट।</p></a></div></div>
+</main>
+<footer class="site-footer"><div class="wrap">
+<div class="cols">
+<div><h4><img class="shield" src="../../freetools-icon-192.png" alt="" style="width:22px;height:22px;vertical-align:-4px;margin-right:6px"> मुफ़्त प्राइवेसी टूल्स</h4><p>63 मुफ़्त ऑनलाइन टूल। बिना साइनअप — सब कुछ आपके ब्राउज़र में चलता है।</p></div>
+<div><h4>लोकप्रिय</h4><a href="./image-compressor.html">इमेज कंप्रेसर</a><a href="./word-counter.html">शब्द काउंटर</a><a href="./password-generator.html">पासवर्ड जनरेटर</a><a href="./pdf-merger.html">PDF मर्जर</a><a href="./age-calculator.html">आयु कैलकुलेटर</a></div>
+<div><h4>साइट</h4><a href="../index.html">होम</a><a href="../index.html#tools">सभी टूल</a><a href="../about.html">हमारे बारे में</a><a href="../faq.html">अक्सर पूछे जाने वाले प्रश्न</a><a href="../blog.html">ब्लॉग</a><a href="../contact.html">संपर्क करें</a><a href="../request.html">टूल का अनुरोध करें</a><a href="../privacy.html">प्राइवेसी</a><a href="../terms.html">उपयोग की शर्तें</a><a href="../disclaimer.html">अस्वीकरण</a></div>
+</div>
+<div class="foot-note">© 2026 मुफ़्त प्राइवेसी टूल्स — सभी टूल 100% आपके ब्राउज़र में चलते हैं।<br>द्वारा विकसित <a href="https://anwaardigital.com/" target="_blank" rel="noopener" style="color:#fbbf24;font-weight:700">Malik Anwaar</a></div>
+</div></footer>
+<script src="../../assets/app.js"></script>
+<script src="../../assets/tools.js"></script>
+<script src="../../assets/features.js"></script>
+
+<script>
+/* HI pages: Hindi language menu (العربية current + English link), dark-mode
+   label, tool action labels, useBadge, cookie banner. muft63.js and i18n9.js
+   are NOT loaded on HI pages, so the featured carousel is built here too
+   (same logic as the site's own muft63.js carousel). */
+(function () {
+  'use strict';
+  var HI = {
+    darkLabel: 'डार्क मोड', lightLabel: 'लाइट मोड', darkTitle: 'डार्क मोड बदलें',
+    waChat: 'व्हाट्सऐप पर चैट करें', favAction: 'पसंदीदा', rateAction: 'इस टूल को रेट करें',
+    shareAction: 'साझा करें', shareOn: '{name} पर साझा करें', rateYour: 'आपकी रेटिंग: {n}/5',
+    useBadge: 'इस डिवाइस पर {n} टूल उपयोग', openBtn: 'खोलें', allCat: 'सभी'
+  };
+  function lsGet(k, d) { try { var v = localStorage.getItem(k); return v === null ? d : JSON.parse(v); } catch (e) { return d; } }
+  function onReady(fn) { if (document.readyState !== 'loading') fn(); else document.addEventListener('DOMContentLoaded', fn); }
+  function enCounterpart() {
+    var p = window.location.pathname;
+    if (p.indexOf('/hi/tools/') !== -1) return '../../tools/' + p.split('/hi/tools/')[1];
+    return '../index.html';
+  }
+  function arCounterpart() {
+    var p = window.location.pathname;
+    if (p.indexOf('/hi/tools/') !== -1) return '../ar/tools/' + p.split('/hi/tools/')[1];
+    return '../index.html';
+  }
+  function injectStyles() {
+    if (document.getElementById('lang9StyleHi')) return;
+    var st = document.createElement('style'); st.id = 'lang9StyleHi';
+    st.textContent = '.lang9-wrap{position:relative;display:inline-flex;align-items:center}' +
+      '.lang9-btn{cursor:pointer;border:1px solid var(--border,#dbe2ea);background:var(--card,#fff);color:var(--ink,#0f172a);border-radius:999px;padding:7px 14px;font-size:14px;font-weight:700;line-height:1}' +
+      '.lang9-menu{position:absolute;top:calc(100% + 6px);inset-inline-end:0;min-width:170px;margin:0;padding:6px 0;list-style:none;background:var(--card,#fff);border:1px solid var(--border,#dbe2ea);border-radius:12px;box-shadow:0 8px 24px rgba(0,0,0,.15);z-index:100;display:none}' +
+      '.lang9-menu.open{display:block}' +
+      '.lang9-menu button{display:block;width:100%;text-align:start;background:none;border:0;cursor:pointer;padding:9px 14px;font-size:14px;color:var(--ink,#0f172a)}' +
+      '.lang9-menu button:hover{background:var(--bg,#f1f5f9)}' +
+      '.lang9-menu button.on{font-weight:800}' +
+      '.lang9-menu a{display:block;text-decoration:none;padding:9px 14px;font-size:14px;color:var(--ink,#0f172a)}' +
+      '.lang9-menu a:hover{background:var(--bg,#f1f5f9)}';
+    document.head.appendChild(st);
+  }
+  function buildSwitcher() {
+    if (document.getElementById('lang9Wrap')) return;
+    var headerWrap = document.querySelector('.site-header .wrap');
+    if (!headerWrap) return;
+    injectStyles();
+    var wrap = document.createElement('span');
+    wrap.className = 'lang9-wrap'; wrap.id = 'lang9Wrap';
+    var btn = document.createElement('button');
+    btn.type = 'button'; btn.id = 'langBtn9'; btn.className = 'lang9-btn';
+    btn.setAttribute('aria-haspopup', 'listbox'); btn.setAttribute('aria-expanded', 'false');
+    btn.setAttribute('aria-label', 'भाषा'); btn.textContent = 'हिन्दी';
+    var menu = document.createElement('ul');
+    menu.className = 'lang9-menu'; menu.id = 'langMenu9'; menu.setAttribute('role', 'listbox');
+    var li1 = document.createElement('li');
+    var cur = document.createElement('button');
+    cur.type = 'button'; cur.className = 'on'; cur.textContent = 'हिन्दी';
+    cur.setAttribute('role', 'option');
+    cur.addEventListener('click', function () { menu.classList.remove('open'); btn.setAttribute('aria-expanded', 'false'); });
+    li1.appendChild(cur); menu.appendChild(li1);
+    var li2 = document.createElement('li');
+    var a = document.createElement('a');
+    a.href = enCounterpart(); a.textContent = 'English'; a.setAttribute('role', 'option');
+    li2.appendChild(a); menu.appendChild(li2);
+    var li3 = document.createElement('li');
+    var b = document.createElement('a');
+    b.href = arCounterpart(); b.textContent = 'العربية'; b.setAttribute('role', 'option');
+    li3.appendChild(b); menu.appendChild(li3);
+    btn.addEventListener('click', function (e) {
+      e.stopPropagation();
+      var open = menu.classList.toggle('open');
+      btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+    });
+    document.addEventListener('click', function (e) {
+      if (!wrap.contains(e.target)) { menu.classList.remove('open'); btn.setAttribute('aria-expanded', 'false'); }
+    });
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape') { menu.classList.remove('open'); btn.setAttribute('aria-expanded', 'false'); }
+    });
+    wrap.appendChild(btn); wrap.appendChild(menu);
+    var navToggle = headerWrap.querySelector('.nav-toggle');
+    if (navToggle) headerWrap.insertBefore(wrap, navToggle);
+    else headerWrap.appendChild(wrap);
+  }
+  var FEATURED = ['background-remover', 'qr-generator', 'image-compressor', 'password-generator',
+    'pdf-merger', 'word-counter', 'link-shortener', 'age-calculator',
+    'color-picker', 'images-to-pdf'];
+  function featCardHi(slug) {
+    var src = document.querySelector('.tool-card[href="tools/' + slug + '.html"]');
+    if (!src) return null;
+    var ticonEl = src.querySelector('.ticon'); var iconHtml = ticonEl ? ticonEl.innerHTML : '';
+    var name = src.querySelector('h3').textContent;
+    var desc = src.querySelector('p').textContent;
+    var card = document.createElement('div');
+    card.className = 'feat-card'; card.setAttribute('data-slug', slug);
+    var ic = document.createElement('div'); ic.className = 'feat-icon'; ic.innerHTML = iconHtml;
+    var h = document.createElement('h3'); h.textContent = name;
+    var p = document.createElement('p'); p.textContent = desc;
+    var open = document.createElement('a'); open.className = 'feat-open'; open.href = 'tools/' + slug + '.html';
+    var osp = document.createElement('span'); osp.textContent = HI.openBtn;
+    open.appendChild(osp); open.appendChild(document.createTextNode(' ›'));
+    card.appendChild(ic); card.appendChild(h); card.appendChild(p); card.appendChild(open);
+    card.addEventListener('click', function () { location.href = 'tools/' + slug + '.html'; });
+    return card;
+  }
+  function initCarouselHi() {
+    var car = document.getElementById('featCarousel');
+    if (!car) return;
+    FEATURED.forEach(function (s) { var c = featCardHi(s); if (c) car.appendChild(c); });
+    FEATURED.forEach(function (s) { var c = featCardHi(s); if (c) car.appendChild(c); });
+    var SPEED = 40, paused = false, resumeT = null, last = 0;
+    function tick(now) {
+      if (!paused && !document.hidden) {
+        if (last) {
+          car.scrollLeft += (now - last) / 1000 * SPEED;
+          var half = car.scrollWidth / 2;
+          if (half > 0 && car.scrollLeft >= half - 4) car.scrollLeft -= half;
+        }
+        last = now;
+      } else { last = 0; }
+      if (window.requestAnimationFrame) window.requestAnimationFrame(tick);
+    }
+    function pause() { paused = true; }
+    function resume() { paused = false; }
+    function scheduleResume(ms) { clearTimeout(resumeT); resumeT = setTimeout(resume, ms); }
+    car.addEventListener('pointerenter', function (e) { if (e.pointerType === 'mouse') pause(); });
+    car.addEventListener('pointerleave', function (e) { if (e.pointerType === 'mouse') resume(); });
+    car.addEventListener('touchstart', pause, { passive: true });
+    car.addEventListener('touchend', function () { scheduleResume(2500); });
+    document.addEventListener('visibilitychange', function () { if (!document.hidden) resume(); });
+    var pv = document.getElementById('carPrev'), nx = document.getElementById('carNext');
+    if (pv) pv.addEventListener('click', function () { pause(); car.scrollBy({ left: -280, behavior: 'smooth' }); scheduleResume(4000); });
+    if (nx) nx.addEventListener('click', function () { pause(); car.scrollBy({ left: 280, behavior: 'smooth' }); scheduleResume(4000); });
+    if (window.requestAnimationFrame) window.requestAnimationFrame(tick);
+  }
+/* HI widget dictionary: English strings rendered by shared assets/tools.js
+   (and the rating thanks message from features.js) -> Arabic.
+   Applied ONLY to #tool-root (plus .tool-hero .rate-msg) by the inline HI
+   block on AR tool pages. Shared assets are never modified. Select option
+   values are preserved (value attribute set to the original English text)
+   so tools whose logic compares select values keep working. */
+var WIDGET_HI = [
+['Click to choose files (or drag & drop here)', 'फ़ाइलें चुनने के लिए क्लिक करें (या यहाँ ड्रैग करके छोड़ें)'],
+['Copied!', 'कॉपी हो गया!'],
+['Error: ', 'त्रुटि: '],
+['Error loading tool: ', 'टूल लोड करने में त्रुटि: '],
+['Could not load PDF engine (internet needed once).', 'PDF इंजन लोड नहीं हो सका (एक बार इंटरनेट ज़रूरी है)।'],
+['Could not load QR engine (internet needed once).', 'QR इंजन लोड नहीं हो सका (एक बार इंटरनेट ज़रूरी है)।'],
+['Could not load QR reader (internet needed once).', 'QR रीडर लोड नहीं हो सका (एक बार इंटरनेट ज़रूरी है)।'],
+['Select 2+ PDF files to merge (in order)', 'मर्ज करने के लिए 2 या ज़्यादा PDF फ़ाइलें चुनें (क्रम में)'],
+['Merge PDFs', 'PDF मर्ज करें'],
+['Please select at least 2 PDF files.', 'कृपया कम से कम 2 PDF फ़ाइलें चुनें।'],
+['Merging...', 'मर्ज हो रहा है...'],
+['Done! merged.pdf downloaded (', 'हो गया! merged.pdf डाउनलोड हो गया ('],
+['Done! split.pdf downloaded.', 'हो गया! split.pdf डाउनलोड हो गया।'],
+['Done! images.pdf downloaded (', 'हो गया! images.pdf डाउनलोड हो गया ('],
+['Done! ', 'हो गया! '],
+['Select a PDF file', 'PDF फ़ाइल चुनें'],
+['Pages to extract', 'निकालने वाले पृष्ठ'],
+['e.g. 1-3, 5, 7-9', 'जैसे 1-3, 5, 7-9'],
+['Split / Extract Pages', 'पृष्ठ अलग करें / निकालें'],
+['Select a PDF first.', 'पहले PDF चुनें।'],
+['Working...', 'काम हो रहा है...'],
+['No valid pages. This PDF has ', 'कोई मान्य पृष्ठ नहीं। इस PDF में हैं '],
+[' pages).', ' पृष्ठ)।'],
+[' pages.', ' पृष्ठ।'],
+['Select a PDF to compress', 'कंप्रेस करने के लिए PDF चुनें'],
+['Compress PDF', 'PDF कंप्रेस करें'],
+['Compressing...', 'कंप्रेस हो रहा है...'],
+['Saved ', 'बचाए '],
+['% smaller).', '% छोटा)।'],
+['File was already optimized.', 'फ़ाइल पहले से ही ऑप्टिमाइज़ थी।'],
+[' compressed.pdf downloaded.', ' compressed.pdf डाउनलोड हो गया।'],
+['Extracted text will appear here...', 'निकाला गया टेक्स्ट यहाँ दिखेगा...'],
+['Extracting text...', 'पाठ निकाला जा रहा है...'],
+['--- Page ', '--- पृष्ठ '],
+['Copy Text', 'टेक्स्ट कॉपी करें'],
+['Download .txt', '.txt डाउनलोड करें'],
+['Select images (JPG/PNG) — in page order', 'तस्वीरें चुनें (JPG/PNG) — पृष्ठों के क्रम में'],
+['Create PDF', 'PDF बनाएँ'],
+['Select at least one image.', 'कम से कम एक तस्वीर चुनें।'],
+['Creating PDF...', 'PDF बन रहा है...'],
+['Rebuilds the PDF with object streams to shrink file size. Best on PDFs with lots of metadata/structure.', 'PDF को ऑब्जेक्ट स्ट्रीम के साथ दोबारा बनाकर फ़ाइल का साइज़ घटाता है। ज़्यादा मेटाडेटा/संरचना वाले PDF पर सबसे अच्छा काम करता है।'],
+['Select an image', 'तस्वीर चुनें'],
+['Original: ', 'मूल: '],
+['Quality (1-100)', 'क्वालिटी (1-100)'],
+['Compress & Download JPG', 'कंप्रेस करके JPG डाउनलोड करें'],
+['Compress & Download WebP', 'कंप्रेस करके WebP डाउनलोड करें'],
+['Width (px)', 'चौड़ाई (px)'],
+['Height (px)', 'ऊँचाई (px)'],
+[' Keep aspect ratio', ' आस्पेक्ट रेशियो बनाए रखें'],
+['Resize & Download', 'रिसाइज़ करके डाउनलोड करें'],
+['Convert to', 'इसमें बदलें'],
+['Convert & Download', 'बदलकर डाउनलोड करें'],
+['Removes solid white / light backgrounds (great for logos & product shots). For complex photos use a dedicated AI tool.', 'सॉलिड सफ़ेद / हल्के बैकग्राउंड हटाता है (लोगो और प्रोडक्ट फ़ोटो के लिए बढ़िया)। जटिल फ़ोटो के लिए कोई खास AI टूल इस्तेमाल करें।'],
+['Tolerance (0-150)', 'टॉलरेंस (0-150)'],
+['Remove Background', 'बैकग्राउंड हटाएँ'],
+['Download PNG', 'PNG डाउनलोड करें'],
+['Crop & Download', 'क्रॉप करके डाउनलोड करें'],
+['Rotate 90°', '90° घुमाएँ'],
+['Rotate 180°', '180° घुमाएँ'],
+['Flip Horizontal', 'हॉरिज़ॉन्टल फ़्लिप करें'],
+['Flip Vertical', 'वर्टिकल फ़्लिप करें'],
+['Download', 'डाउनलोड करें'],
+['Filter', 'फ़िल्टर'],
+['Grayscale', 'ग्रेस्केल'],
+['Sepia', 'सेपिया'],
+['Invert', 'इन्वर्ट'],
+['High Contrast', 'हाई कंट्रास्ट'],
+['Blur', 'ब्लर'],
+['Vintage', 'विंटेज'],
+['Apply Filter', 'फ़िल्टर लगाएँ'],
+['Reset', 'रीसेट करें'],
+['Upload the PNGs to your site root as favicon-16.png etc., or convert to .ico with any converter.', 'PNG फ़ाइलों को अपनी साइट के रूट में favicon-16.png आदि नाम से अपलोड करें, या किसी भी कन्वर्टर से .ico में बदलें।'],
+['Generate Favicons', 'फ़ेविकॉन बनाएँ'],
+['Text / URL', 'टेक्स्ट / URL'],
+['Size (px)', 'साइज़ (px)'],
+['Generate QR Code', 'QR कोड बनाएँ'],
+['Select an image containing a QR code', 'QR कोड वाली तस्वीर चुनें'],
+['Reading...', 'पढ़ा जा रहा है...'],
+['QR content:', 'QR सामग्री:'],
+['Copy', 'कॉपी करें'],
+['No QR code found in this image.', 'इस तस्वीर में कोई QR कोड नहीं मिला।'],
+['Paste or type your text here...', 'अपना टेक्स्ट यहाँ पेस्ट करें या टाइप करें...'],
+['Result...', 'परिणाम...'],
+['Copy Result', 'परिणाम कॉपी करें'],
+['Type or paste text...', 'टेक्स्ट टाइप करें या पेस्ट करें...'],
+['Words', 'शब्द'],
+['Characters', 'अक्षर'],
+['No spaces', 'बिना स्पेस'],
+['Sentences', 'वाक्य'],
+['Paragraphs', 'पैराग्राफ़'],
+['Reading time', 'पढ़ने का समय'],
+[' min', ' मिनट'],
+[' characters  •  ', ' अक्षर  • '],
+[' without spaces  •  ', ' बिना स्पेस के  • '],
+[' lines', ' पंक्तियाँ'],
+['Type text...', 'टेक्स्ट टाइप करें...'],
+['UPPERCASE', 'बड़े अक्षर'],
+['lowercase', 'छोटे अक्षर'],
+['Title Case', 'टाइटल केस'],
+['Sentence case', 'वाक्य केस'],
+['aLtErNaTiNg', 'एकांतर केस'],
+['Case sensitive', 'केस सेंसिटिव'],
+['Trim whitespace', 'खाली जगह हटाएँ'],
+['Paste lines (one per line)...', 'लाइनें पेस्ट करें (हर लाइन अलग)...'],
+['Remove Duplicates', 'डुप्लिकेट हटाएँ'],
+['Sort A-Z', 'A-Z क्रम में लगाएँ'],
+['Reverse Lines', 'लाइनें उल्टा करें'],
+['Generated text...', 'बनाया गया टेक्स्ट...'],
+['Generate', 'बनाएँ'],
+['Reverse Text', 'टेक्स्ट उल्टा करें'],
+['Reverse Words', 'शब्द उल्टा करें'],
+['Flip Lines', 'लाइनें पलटें'],
+['Paste messy text...', 'बिखरा हुआ टेक्स्ट पेस्ट करें...'],
+['Clean Up', 'साफ़ करें'],
+['Remove ALL Spaces', 'सभी स्पेस हटाएँ'],
+['Single Line', 'एक लाइन'],
+['Type or paste...', 'टाइप करें या पेस्ट करें...'],
+['Encode → Base64', 'Base64 में एनकोड करें'],
+['Decode Base64 →', 'Base64 से डिकोड करें'],
+['Error: invalid Base64', 'त्रुटि: अमान्य Base64'],
+['Type or paste URL/text...', 'URL/टेक्स्ट टाइप करें या पेस्ट करें...'],
+['Encode URL', 'URL एनकोड करें'],
+['Decode URL', 'URL डिकोड करें'],
+['Error: invalid encoding', 'त्रुटि: अमान्य एनकोडिंग'],
+['Paste JSON here...', 'JSON यहाँ पेस्ट करें...'],
+['Format / Beautify', 'फ़ॉर्मेट / सुंदर बनाएँ'],
+['Invalid JSON: ', 'अमान्य JSON: '],
+['Minify', 'मिनिफ़ाई करें'],
+['Validate', 'जाँचें'],
+['Valid JSON ✓', 'मान्य JSON ✓'],
+['Calculate', 'गणना करें'],
+['Your birth date', 'आपकी जन्म तिथि'],
+['Calculate Age', 'आयु निकालें'],
+['Pick a date.', 'तारीख चुनें।'],
+['Pick a date & time.', 'तारीख और समय चुनें।'],
+['Pick both dates.', 'दोनों तारीखें चुनें।'],
+[' days total • next birthday in ', ' दिन कुल • अगला जन्मदिन '],
+[' years, ', ' वर्ष, '],
+[' months, ', ' महीने, '],
+[' weeks • ', ' सप्ताह • '],
+[' months • ', ' महीने • '],
+[' years', ' वर्ष'],
+[' days', ' दिन'],
+['Weight (kg)', 'वज़न (kg)'],
+['Height (cm)', 'ऊँचाई (cm)'],
+['Calculate BMI', 'BMI निकालें'],
+['BMI: ', 'BMI: '],
+['Category: ', 'श्रेणी: '],
+['Underweight', 'कम वज़न'],
+['Normal weight', 'सामान्य वज़न'],
+['Overweight', 'अधिक वज़न'],
+['Obese', 'मोटापा'],
+['Loan amount', 'लोन राशि'],
+['Interest % / year', 'ब्याज % / वर्ष'],
+['Years', 'वर्ष'],
+['Calculate EMI', 'EMI निकालें'],
+['Monthly payment: ', 'मासिक भुगतान: '],
+['Total payable: ', 'कुल देय राशि: '],
+[' • Total interest: ', ' • कुल ब्याज: '],
+['Mode', 'मोड'],
+['What is X% of Y?', 'Y का X% कितना है?'],
+['X is what % of Y?', 'Y का X कितने % है?'],
+['Increase X by Y%', 'X में Y% बढ़ाएँ'],
+['Decrease X by Y%', 'X में Y% घटाएँ'],
+['Bill amount', 'बिल राशि'],
+['Tip %', 'टिप %'],
+['People', 'लोग'],
+['Tip: ', 'टिप: '],
+[' • Total: ', ' • कुल: '],
+['Per person: ', 'प्रति व्यक्ति: '],
+['Original price', 'मूल कीमत'],
+['Discount %', 'छूट %'],
+['You pay: ', 'आप भुगतान करते हैं: '],
+['You save: ', 'आप बचाते हैं: '],
+['Amount', 'राशि'],
+['From', 'से'],
+['To', 'तक'],
+['Uses indicative static rates. For exact transfers check your bank.', 'संकेतात्मक स्थिर दरों का उपयोग करता है। सटीक ट्रांसफ़र के लिए अपना बैंक जाँचें।'],
+['Convert', 'बदलें'],
+['Category', 'श्रेणी'],
+['Value', 'मान'],
+['Length', 'लंबाई'],
+['Weight', 'वज़न'],
+['Temperature', 'तापमान'],
+['Volume', 'आयतन'],
+['Speed', 'गति'],
+['Data', 'डेटा'],
+['Celsius', 'सेल्सियस'],
+['Fahrenheit', 'फ़ारेनहाइट'],
+['Kelvin', 'केल्विन'],
+['Date & time', 'तारीख और समय'],
+['From zone', 'से क्षेत्र'],
+['To zone', 'तक क्षेत्र'],
+['Start date', 'शुरुआती तारीख'],
+['End date', 'अंतिम तारीख'],
+['Uppercase', 'बड़े अक्षर'],
+['Lowercase', 'छोटे अक्षर'],
+['Digits', 'अंक'],
+['Symbols', 'चिह्न'],
+['Generate Password', 'पासवर्ड बनाएँ'],
+['Select at least one character set.', 'कम से कम एक अक्षर समूह चुनें।'],
+['Type text to hash...', 'हैश करने के लिए टेक्स्ट टाइप करें...'],
+['Generate Hashes', 'हैश बनाएँ'],
+['Simple checksum:', 'सरल चेकसम:'],
+['Hashes are computed locally in your browser — your text never leaves your device.', 'हैश आपके ब्राउज़र में स्थानीय रूप से बनते हैं — आपका टेक्स्ट कभी आपके डिवाइस से बाहर नहीं जाता।'],
+['Min', 'न्यूनतम'],
+['Max', 'अधिकतम'],
+['Count', 'संख्या'],
+[' Unique numbers', ' अनोखे नंबर'],
+['Range too small for ', 'के लिए रेंज बहुत छोटी है '],
+[' unique numbers.', ' अनोखे नंबर।'],
+['Flip Coin', 'सिक्का उछालें'],
+['HEADS!', 'चित!'],
+['TAILS!', 'पट!'],
+['  —  Heads: ', ' —  चित: '],
+[' • Tails: ', ' • पट: '],
+['Heads', 'चित'],
+['Tails', 'पट'],
+['Dice', 'पासा'],
+['Sides', 'फलक'],
+['Roll', 'फेंकें'],
+['Pick a color', 'रंग चुनें'],
+['Copy HEX', 'HEX कॉपी करें'],
+['HEX → RGB', 'HEX → RGB'],
+['HEX to RGB', 'HEX से RGB'],
+['Invalid HEX.', 'अमान्य HEX।'],
+['RGB to HEX', 'RGB से HEX'],
+['Generate Palette', 'पैलेट बनाएँ'],
+['Click any color to copy its HEX code.', 'किसी भी रंग पर क्लिक करके उसका HEX कोड कॉपी करें।'],
+['Color 1', 'रंग 1'],
+['Color 2', 'रंग 2'],
+['Angle', 'कोण'],
+['Copy CSS', 'CSS कॉपी करें'],
+['Sample Text', 'नमूना टेक्स्ट'],
+['Contrast ratio: ', 'कंट्रास्ट अनुपात: '],
+['WCAG AA (normal text): ', 'WCAG AA (सामान्य टेक्स्ट): '],
+['PASS', 'पास'],
+['FAIL', 'फ़ेल'],
+['Text color', 'टेक्स्ट रंग'],
+['Background', 'बैकग्राउंड'],
+['Paste HTML...', 'HTML पेस्ट करें...'],
+['Encode HTML', 'HTML एनकोड करें'],
+['Decode HTML', 'HTML डिकोड करें'],
+['Paste CSS...', 'CSS पेस्ट करें...'],
+['Minify CSS', 'CSS मिनिफ़ाई करें'],
+['Beautify CSS', 'CSS सुंदर बनाएँ'],
+['Paste JavaScript...', 'JavaScript पेस्ट करें...'],
+['Minify JS (basic)', 'JS मिनिफ़ाई करें (बेसिक)'],
+['Basic whitespace/comment minifier. For production builds use Terser or esbuild.', 'बेसिक व्हाइटस्पेस/कमेंट मिनिफ़ायर। प्रोडक्शन बिल्ड के लिए Terser या esbuild इस्तेमाल करें।'],
+['How many', 'कितने'],
+['Generate UUIDs', 'UUID बनाएँ'],
+['Copy All', 'सभी कॉपी करें'],
+['Unix timestamp → date', 'Unix टाइमस्टैम्प → तारीख'],
+['e.g. 1728566400', 'जैसे 1728566400'],
+['To Date', 'तारीख में बदलें'],
+['Invalid timestamp.', 'अमान्य टाइमस्टैम्प।'],
+['Local:', 'स्थानीय:'],
+['Date → timestamp', 'तारीख → टाइमस्टैम्प'],
+['To Timestamp', 'टाइमस्टैम्प में बदलें'],
+['Seconds:', 'सेकंड:'],
+['Milliseconds:', 'मिलीसेकंड:'],
+['Current Timestamp', 'वर्तमान टाइमस्टैम्प'],
+['Now (seconds):', 'अभी (सेकंड में):'],
+['Long URL', 'लंबा URL'],
+['Shorten Link', 'लिंक छोटा करें'],
+['Please paste a URL first.', 'कृपया पहले URL पेस्ट करें।'],
+['Shortening...', 'छोटा हो रहा है...'],
+['Could not reach the shortening service. Check your internet and try again.', 'छोटा करने वाली सेवा तक नहीं पहुँच सके। अपना इंटरनेट जाँचें और फिर से कोशिश करें।'],
+['Your short link:', 'आपका छोटा लिंक:'],
+['Copy Link', 'लिंक कॉपी करें'],
+['Note: uses the free da.gd / is.gd service over HTTPS.', 'नोट: मुफ़्त da.gd / is.gd सेवा HTTPS पर इस्तेमाल होती है।'],
+['Type your password...', 'अपना पासवर्ड टाइप करें...'],
+['Show', 'दिखाएँ'],
+['Hide', 'छिपाएँ'],
+['Password', 'पासवर्ड'],
+['How to improve', 'कैसे सुधारें'],
+['less than a second', 'एक सेकंड से भी कम'],
+[' seconds', ' सेकंड'],
+[' minutes', ' मिनट'],
+[' hours', ' घंटे'],
+['Weak', 'कमज़ोर'],
+['Fair', 'ठीक-ठाक'],
+['Good', 'अच्छा'],
+['Strong', 'मज़बूत'],
+['centuries', 'शताब्दियाँ'],
+[' — ', ' — '],
+['Estimated time to crack: ', 'क्रैक होने का अनुमानित समय: '],
+[' (10 billion guesses/sec).', ' (10 अरब अनुमान/सेकंड)।'],
+['Make it at least 12 characters long (16+ is better).', 'कम से कम 12 अक्षरों का बनाएँ (16+ बेहतर है)।'],
+['Add uppercase letters.', 'बड़े अक्षर जोड़ें।'],
+['Add lowercase letters.', 'छोटे अक्षर जोड़ें।'],
+['Add numbers.', 'अंक जोड़ें।'],
+['Add symbols like !@#$%.', '!@#$% जैसे चिह्न जोड़ें।'],
+['Avoid repeating the same character 3+ times.', 'एक ही अक्षर 3 या ज़्यादा बार दोहराने से बचें।'],
+['Avoid common patterns and dictionary words.', 'आम पैटर्न और डिक्शनरी शब्दों से बचें।'],
+['Great! This looks like a strong password. Use a unique one per site.', 'बहुत बढ़िया! यह मज़बूत पासवर्ड लगता है। हर साइट के लिए अलग पासवर्ड इस्तेमाल करें।'],
+['Checked 100% locally in your browser — your password is never sent anywhere.', '100% आपके ब्राउज़र में स्थानीय रूप से जाँचा गया — आपका पासवर्ड कभी कहीं नहीं भेजा जाता।'],
+['IP address or domain — e.g. 8.8.8.8', 'IP पता या डोमेन — जैसे 8.8.8.8'],
+['IP or domain', 'IP या डोमेन'],
+['IP address', 'IP पता'],
+['City', 'शहर'],
+['Region', 'क्षेत्र'],
+['Country', 'देश'],
+['ISP / Org', 'ISP / संगठन'],
+['Timezone', 'समय क्षेत्र'],
+['Latitude / Longitude', 'अक्षांश / देशांतर'],
+['Looking up…', 'खोजा जा रहा है…'],
+['Lookup failed: ', 'खोज विफल रही: '],
+['Could not reach the lookup service. Check your internet and try again.', 'खोज सेवा तक नहीं पहुँच सके। अपना इंटरनेट जाँचें और फिर से कोशिश करें।'],
+['Look Up', 'खोजें'],
+['Enter an IP address or domain first.', 'पहले IP पता या डोमेन डालें।'],
+['My IP', 'मेरा IP'],
+['Uses the free ipapi.co geolocation API. Locations are approximate (ISP level).', 'मुफ़्त ipapi.co जियोलोकेशन API इस्तेमाल होती है। स्थान अनुमानित होते हैं (ISP स्तर पर)।'],
+['Website URL', 'वेबसाइट URL'],
+['Strict-Transport-Security (HSTS)', 'Strict-Transport-Security (HSTS)'],
+['Forces browsers to use HTTPS only. Protects against protocol-downgrade attacks.', 'ब्राउज़र को सिर्फ़ HTTPS इस्तेमाल करने पर मजबूर करता है। प्रोटोकॉल डाउनग्रेड हमलों से बचाता है।'],
+['Content-Security-Policy (CSP)', 'Content-Security-Policy (CSP)'],
+['Controls which scripts, styles and resources may load. Key defense against XSS attacks.', 'नियंत्रित करता है कि कौन सी स्क्रिप्ट, स्टाइल और रिसोर्स लोड हो सकते हैं। XSS हमलों के ख़िलाफ़ मुख्य बचाव।'],
+['X-Frame-Options', 'X-Frame-Options'],
+['Prevents the page being embedded in iframes — stops clickjacking attacks.', 'पेज को iframe में एम्बेड होने से रोकता है — क्लिकजैकिंग हमलों को रोकता है।'],
+['X-Content-Type-Options', 'X-Content-Type-Options'],
+['Stops browsers "sniffing" file types — set to nosniff.', 'ब्राउज़र को फ़ाइल टाइप का अनुमान लगाने से रोकता है — nosniff पर सेट करें।'],
+['Referrer-Policy', 'Referrer-Policy'],
+['Controls how much referrer info is sent when users click away.', 'नियंत्रित करता है कि उपयोगकर्ता के कहीं और क्लिक करने पर कितनी रेफ़रर जानकारी भेजी जाए।'],
+['Permissions-Policy', 'Permissions-Policy'],
+['Restricts powerful browser features (camera, mic, geolocation).', 'शक्तिशाली ब्राउज़र सुविधाओं (कैमरा, माइक, जियोलोकेशन) पर पाबंदी लगाता है।'],
+['Pass: ', 'पास: '],
+['Fail: ', 'फ़ेल: '],
+['Score: ', 'स्कोर: '],
+[' security headers present.', ' सुरक्षा हेडर मौजूद हैं।'],
+['For a deeper automated scan, also try securityheaders.com.', 'गहरी ऑटोमेटेड जाँच के लिए securityheaders.com भी आज़माएँ।'],
+['Check Headers', 'हेडर जाँचें'],
+['Enter a website URL first.', 'पहले वेबसाइट URL डालें।'],
+['Fetching headers…', 'हेडर लाए जा रहे हैं…'],
+['No headers returned. The site may block this check — try securityheaders.com instead.', 'कोई हेडर वापस नहीं आया। साइट इस जाँच को ब्लॉक कर सकती है — इसके बजाय securityheaders.com आज़माएँ।'],
+['Could not reach the header service. Check your internet and try again.', 'हेडर सेवा तक नहीं पहुँच सके। अपना इंटरनेट जाँचें और फिर से कोशिश करें।'],
+['Header fetch uses the free hackertarget.com API. Explanations are educational — this is a defensive learning tool.', 'हेडर लाने के लिए मुफ़्त hackertarget.com API इस्तेमाल होती है। व्याख्याएँ शिक्षाप्रद हैं — यह एक रक्षात्मक सीखने का टूल है।'],
+['URL to analyze', 'विश्लेषण के लिए URL'],
+['Paste the suspicious URL here…', 'संदिग्ध URL यहाँ पेस्ट करें…'],
+['Check URL', 'URL जाँचें'],
+['That does not look like a valid URL.', 'यह मान्य URL नहीं लगता।'],
+['Uses HTTPS (encrypted connection).', 'HTTPS इस्तेमाल करता है (एन्क्रिप्टेड कनेक्शन)।'],
+['No HTTPS — data is sent unencrypted.', 'HTTPS नहीं है — डेटा बिना एन्क्रिप्शन के भेजा जाता है।'],
+['Host is a raw IP address instead of a domain name.', 'होस्ट डोमेन नाम के बजाय सीधा IP पता है।'],
+['Host is a domain name, not a raw IP.', 'होस्ट डोमेन नाम है, सीधा IP नहीं।'],
+['Many subdomains (', 'कई सबडोमेन ('],
+[' parts) — a common phishing trick.', ' भाग) — यह एक आम फ़िशिंग चाल है।'],
+['Subdomain depth looks normal.', 'सबडोमेन की गहराई सामान्य लगती है।'],
+['Uses a top-level domain often abused by scammers.', 'ऐसा टॉप-लेवल डोमेन इस्तेमाल करता है जिसका स्कैमर अक्सर दुरुपयोग करते हैं।'],
+['Top-level domain is not on the high-risk list.', 'टॉप-लेवल डोमेन ज़्यादा जोखिम वाली सूची में नहीं है।'],
+['Contains "@" — everything before it can be fake.', '@ शामिल है — इससे पहले का सब कुछ नकली हो सकता है।'],
+['No "@" trick in the URL.', 'URL में @ वाली कोई चाल नहीं है।'],
+['Brand-like words combined with hyphens (e.g. "paypal-secure-login").', 'हाइफ़न के साथ ब्रांड जैसे शब्द (जैसे “paypal-secure-login”)।'],
+['No brand-imitating hyphen pattern detected.', 'ब्रांड की नकल वाला कोई हाइफ़न पैटर्न नहीं मिला।'],
+['URL shortener hides the real destination.', 'URL शॉर्टनर असली मंज़िल छिपाता है।'],
+['Not a known URL shortener.', 'यह कोई जाना-पहचाना URL शॉर्टनर नहीं है।'],
+['Very long URL (', 'बहुत लंबा URL ('],
+[' chars) — can hide the true domain.', ' अक्षर) — असली डोमेन छिपा सकता है।'],
+['URL length looks normal.', 'URL की लंबाई सामान्य लगती है।'],
+['Contains non-Latin characters — possible homograph attack.', 'गैर-लैटिन अक्षर शामिल हैं — होमोग्राफ़ हमले की संभावना।'],
+['No suspicious non-Latin characters.', 'कोई संदिग्ध गैर-लैटिन अक्षर नहीं हैं।'],
+['Numbers mixed into a sensitive-looking domain.', 'संवेदनशील लगने वाले डोमेन में अंक मिले हुए हैं।'],
+['Looks Safe', 'सुरक्षित लगता है'],
+['Suspicious', 'संदिग्ध'],
+['Dangerous', 'खतरनाक'],
+['Warning: ', 'चेतावनी: '],
+[' risk)', ' जोखिम)'],
+[' risk', ' जोखिम'],
+['Type', 'प्रकार'],
+['Width', 'चौड़ाई'],
+['Height', 'ऊँचाई'],
+['https://example.com or any text', 'https://example.com या कोई भी टेक्स्ट'],
+['Disclaimer: this is a first-pass heuristic check only and cannot guarantee a site is legitimate. When in doubt, never enter passwords or payment details.', 'अस्वीकरण: यह सिर्फ़ पहली नज़र की अनुमानित जाँच है और यह गारंटी नहीं दे सकती कि कोई साइट असली है। शक हो तो कभी पासवर्ड या भुगतान विवरण न डालें।'],
+['Analysis runs 100% locally in your browser — the URL is never sent anywhere.', 'विश्लेषण 100% आपके ब्राउज़र में स्थानीय रूप से चलता है — URL कभी कहीं नहीं भेजा जाता।'],
+['Thanks! You rated this tool ', 'धन्यवाद! इस टूल को आपकी रेटिंग: '],
+['Your rating: ', 'आपकी रेटिंग: '],
+['Add to favorites', 'पसंदीदा में जोड़ें'],
+['Toggle dark mode', 'डार्क मोड बदलें'],
+];
+/* Single words that also appear inside composite result strings (so they
+   need fragment replacement, not just exact-node replacement). */
+var WIDGET_FRAG_WORDS = { 'Weak': 1, 'Fair': 1, 'Good': 1, 'Strong': 1,
+  'centuries': 1, 'Underweight': 1, 'Overweight': 1, 'Obese': 1,
+  'Suspicious': 1, 'Dangerous': 1, 'Heads': 1, 'Tails': 1 };
+
+/* ---- HI widget translation (tools.js output) ---- */
+(function () {
+  var EXACT = {};
+  WIDGET_HI.forEach(function (p) { if (p[0] !== p[1]) EXACT[p[0]] = p[1]; });
+  var PAIRS = WIDGET_HI.filter(function (p) { return p[0] !== p[1]; });
+  PAIRS.sort(function (a, b) { return b[0].length - a[0].length; });
+  function isFrag(en) {
+    if (WIDGET_FRAG_WORDS[en]) return true;
+    return /[^A-Za-z]/.test(en);
+  }
+  function translateString(v) {
+    if (EXACT[v] !== undefined) return EXACT[v];
+    var t = v, changed = false;
+    for (var i = 0; i < PAIRS.length; i++) {
+      var en = PAIRS[i][0];
+      if (!isFrag(en)) continue;
+      if (t.indexOf(en) !== -1) { t = t.split(en).join(PAIRS[i][1]); changed = true; }
+    }
+    return changed ? t : v;
+  }
+  function translateNode(node) {
+    var v = node.nodeValue;
+    var tr = v.trim();
+    if (tr && EXACT[tr] !== undefined) { node.nodeValue = v.replace(tr, EXACT[tr]); return; }
+    if (!v || v.indexOf(' ') === -1 && !EXACT[v]) {
+      if (EXACT[v] !== undefined) node.nodeValue = EXACT[v];
+      return;
+    }
+    /* Skip the QR-reader echo node (user data, not UI text). */
+    var par = node.parentNode;
+    if (par && par.className && par.className.indexOf('big') !== -1) {
+      var prev = par.previousElementSibling;
+      if (prev && (prev.textContent.indexOf('QR content') !== -1 || prev.textContent.indexOf('QR सामग्री') !== -1)) return;
+    }
+    /* Skip link text (URLs) and textarea default text (user-editable samples). */
+    if (par && par.tagName === 'A') return;
+    if (par && par.tagName === 'TEXTAREA') return;
+    /* Preserve select-option values so value-compared tools keep working. */
+    if (par && par.tagName === 'OPTION' && EXACT[v] !== undefined && !par.hasAttribute('value')) {
+      par.setAttribute('value', v);
+    }
+    var nv = translateString(v);
+    if (nv !== v) node.nodeValue = nv;
+  }
+  function translateAttrs(el) {
+    var ph = el.getAttribute && el.getAttribute('placeholder');
+    if (ph && EXACT[ph] !== undefined) el.setAttribute('placeholder', EXACT[ph]);
+    var ti = el.getAttribute && el.getAttribute('title');
+    if (ti && EXACT[ti] !== undefined) el.setAttribute('title', EXACT[ti]);
+    var al = el.getAttribute && el.getAttribute('aria-label');
+    if (al && EXACT[al] !== undefined) el.setAttribute('aria-label', EXACT[al]);
+  }
+  function translateTree(root) {
+    if (!root) return;
+    var walker = document.createTreeWalker(root, NodeFilter.SHOW_TEXT, null, false);
+    var nodes = [], n;
+    while ((n = walker.nextNode())) nodes.push(n);
+    nodes.forEach(translateNode);
+    var els = root.querySelectorAll ? root.querySelectorAll('input,textarea,select,button,a') : [];
+    for (var i = 0; i < els.length; i++) translateAttrs(els[i]);
+    translateAttrs(root);
+  }
+  function translateHeroRate() {
+    var rm = document.querySelector('.tool-hero .rate-msg');
+    if (!rm) return;
+    var walker = document.createTreeWalker(rm, NodeFilter.SHOW_TEXT, null, false);
+    var nodes = [], n;
+    while ((n = walker.nextNode())) nodes.push(n);
+    nodes.forEach(function (tn) {
+      var nv = translateString(tn.nodeValue);
+      if (nv !== tn.nodeValue) tn.nodeValue = nv;
+    });
+  }
+  function translatePdfTextValue() {
+    var root = document.getElementById('tool-root');
+    if (!root || root.getAttribute('data-tool') !== 'pdf-to-text') return;
+    var ta = root.querySelector('textarea');
+    if (!ta) return;
+    var v = ta.value;
+    if (!v) return;
+    var nv = v.split('Extracting text...').join('पाठ निकाला जा रहा है...')
+      .split('Error: ').join('त्रुटि: ')
+      .split('--- Page ').join('--- पृष्ठ ');
+    if (nv !== v) ta.value = nv;
+  }
+  var busy = false;
+  function runAll() {
+    if (busy) return; busy = true;
+    try {
+      translateTree(document.getElementById('tool-root'));
+      translateHeroRate();
+      translatePdfTextValue();
+    } catch (e) {}
+    busy = false;
+  }
+  function initWidgetHi() {
+    runAll();
+    var root = document.getElementById('tool-root');
+    if (root && window.MutationObserver) {
+      var mo = new MutationObserver(function () { runAll(); });
+      mo.observe(root, { childList: true, subtree: true, characterData: true });
+    }
+    var rm = document.querySelector('.tool-hero .rate-msg');
+    if (rm && window.MutationObserver) {
+      var mo2 = new MutationObserver(function () { translateHeroRate(); });
+      mo2.observe(rm, { childList: true, subtree: true, characterData: true });
+    }
+    /* pdf-to-text writes system text into a textarea value (no DOM
+       mutation fires), so poll that one readonly output only. */
+    var rootEl = document.getElementById('tool-root');
+    if (rootEl && rootEl.getAttribute('data-tool') === 'pdf-to-text') {
+      setInterval(translatePdfTextValue, 800);
+    }
+  }
+  window.__initWidgetHi = initWidgetHi;
+})();
+
+  onReady(function () {
+    buildSwitcher();
+    var dark = document.getElementById('darkToggle');
+    if (dark) {
+      var setLabel = function () { dark.textContent = document.body.classList.contains('dark') ? HI.lightLabel : HI.darkLabel; };
+      dark.title = HI.darkTitle; dark.setAttribute('aria-label', HI.darkTitle);
+      setLabel();
+      dark.addEventListener('click', function () { setTimeout(setLabel, 0); });
+    }
+    var badge = document.getElementById('useBadge');
+    if (badge) badge.textContent = HI.useBadge.replace('{n}', lsGet('fpt_usage', 0));
+    var chips = document.querySelectorAll('#catChips .chip');
+    if (chips.length && chips[0].textContent === 'All') chips[0].textContent = HI.allCat;
+    document.querySelectorAll('.tool-actions .action-label').forEach(function (lab) {
+      var t = lab.textContent;
+      if (t === 'Favorite') lab.textContent = HI.favAction;
+      else if (t === 'Rate this tool') lab.textContent = HI.rateAction;
+      else if (t === 'Share') lab.textContent = HI.shareAction;
+    });
+    var star = document.querySelector('.tool-hero .fav-star');
+    if (star) { star.title = HI.favAction; star.setAttribute('aria-label', HI.favAction); }
+    document.querySelectorAll('.tool-hero .share-btn').forEach(function (a) {
+      var t = a.getAttribute('title') || a.getAttribute('aria-label') || '';
+      var m = /Share on (.+)$/.exec(t);
+      if (m) { var nt = HI.shareOn.replace('{name}', m[1]); a.title = nt; a.setAttribute('aria-label', nt); }
+    });
+    var rateMsg = document.querySelector('.tool-hero .rate-msg');
+    var rootEl = document.getElementById('tool-root');
+    if (rateMsg && rootEl) {
+      var ratings = lsGet('fpt_ratings', {});
+      var my = ratings[rootEl.getAttribute('data-tool')] || 0;
+      if (my) rateMsg.textContent = HI.rateYour.replace('{n}', my);
+    }
+    document.querySelectorAll('.fav-star').forEach(function (s) { s.title = HI.favAction; s.setAttribute('aria-label', HI.favAction); });
+    var wa = document.getElementById('wa-float-btn');
+    if (wa) { wa.title = HI.waChat; wa.setAttribute('aria-label', HI.waChat); }
+    var ban = document.getElementById('adCookieBanner');
+    if (ban) {
+      var sp = ban.querySelector('span');
+      if (sp) sp.textContent = 'हम विज़िट को समझने और अपनी साइट को बेहतर बनाने के लिए एनालिटिक्स कुकीज़ (Google Analytics) का उपयोग करते हैं। एनालिटिक्स कुकीज़ की अनुमति देने के लिए स्वीकार करें या अस्वीकार करें।';
+      var acc = document.getElementById('adCookieAccept'); if (acc) acc.textContent = 'स्वीकार करें';
+      var dec = document.getElementById('adCookieDecline'); if (dec) dec.textContent = 'अस्वीकार करें';
+    }
+    initCarouselHi();
+    if (window.__initWidgetHi) window.__initWidgetHi();
+  });
+})();
+</script>
+
+
+<!-- Back to top button -->
+<button id="backToTop" aria-label="ऊपर जाएँ" title="ऊपर जाएँ"
+style="position:fixed;bottom:24px;right:24px;width:48px;height:48px;border-radius:50%;border:none;background:#2563eb;color:#ffffff;font-size:22px;line-height:1;cursor:pointer;opacity:0;visibility:hidden;transition:opacity .3s,visibility .3s,transform .2s;box-shadow:0 4px 12px rgba(0,0,0,.35);z-index:9999;padding:0;">&#8593;</button>
+<script>
+(function(){var b=document.getElementById('backToTop');if(!b)return;
+window.addEventListener('scroll',function(){var s=window.pageYOffset||document.documentElement.scrollTop;
+if(s>300){b.style.opacity='1';b.style.visibility='visible';}else{b.style.opacity='0';b.style.visibility='hidden';}},{passive:true});
+b.addEventListener('click',function(){window.scrollTo({top:0,behavior:'smooth'});});
+b.addEventListener('mouseenter',function(){b.style.transform='scale(1.12)';});
+b.addEventListener('mouseleave',function(){b.style.transform='scale(1)';});})();
+</script>
+
+</body></html>
