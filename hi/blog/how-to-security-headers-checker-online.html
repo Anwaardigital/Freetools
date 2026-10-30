@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<link rel="icon" type="image/png" sizes="192x192" href="https://anwaardigital.com/Freetools/freetools-icon-192.png">
+<link rel="icon" type="image/png" sizes="512x512" href="https://anwaardigital.com/Freetools/freetools-icon-512.png">
+<link rel="apple-touch-icon" href="https://anwaardigital.com/Freetools/freetools-icon-192.png">
+
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ऑनलाइन मुफ़्त में वेबसाइट सिक्योरिटी हेडर कैसे जाँचें (2026 गाइड)</title>
+<meta name="description" content="किसी भी वेबसाइट के HTTP सिक्योरिटी हेडर का ऑडिट करें — HSTS, CSP, X-Frame-Options और अन्य — मुफ़्त चेकर से। साइट मालिकों और रुचि रखने वालों के लिए चरण-दर-चरण 2026 गाइड।">
+<meta property="og:type" content="article">
+<meta property="og:title" content="ऑनलाइन मुफ़्त में वेबसाइट सिक्योरिटी हेडर कैसे जाँचें (2026 गाइड)">
+<meta property="og:description" content="किसी भी वेबसाइट के HTTP सिक्योरिटी हेडर का ऑडिट करें — HSTS, CSP, X-Frame-Options और अन्य — मुफ़्त चेकर से, चरण-दर-चरण।">
+<meta property="og:url" content="https://anwaardigital.com/Freetools/hi/blog/how-to-security-headers-checker-online.html">
+<link rel="canonical" href="https://anwaardigital.com/Freetools/hi/blog/how-to-security-headers-checker-online.html">
+<link rel="alternate" hreflang="hi" href="https://anwaardigital.com/Freetools/hi/blog/how-to-security-headers-checker-online.html">
+<link rel="alternate" hreflang="ar" href="https://anwaardigital.com/Freetools/ar/blog/how-to-security-headers-checker-online.html">
+<link rel="alternate" hreflang="en" href="https://anwaardigital.com/Freetools/blog/how-to-security-headers-checker-online.html">
+<link rel="alternate" hreflang="x-default" href="https://anwaardigital.com/Freetools/blog/how-to-security-headers-checker-online.html">
+<meta property="og:image" content="https://anwaardigital.com/anwaar-icon-512.png">
+<meta name="twitter:card" content="summary">
+<link rel="stylesheet" href="../../assets/style.css">
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@type": "Article", "headline": "ऑनलाइन मुफ़्त में वेबसाइट सिक्योरिटी हेडर कैसे जाँचें (2026 गाइड)", "author": {"@type": "Person", "name": "Malik Muhammad Anwaar"}, "publisher": {"@type": "Organization", "name": "Anwaar Digital"}, "datePublished": "2026-10-15", "mainEntityOfPage": "https://anwaardigital.com/Freetools/hi/blog/how-to-security-headers-checker-online.html", "inLanguage": "hi"}
+</script>
+</head>
+<body>
+<header class="site-header"><div class="wrap">
+<a class="logo" href="../index.html"><img class="shield" src="../../freetools-icon-192.png" alt=""> मुफ़्त प्राइवेसी टूल्स</a>
+<button class="nav-toggle" aria-label="मेनू" aria-expanded="false">☰</button><nav class="nav"><a href="../index.html">मुख्य पृष्ठ</a><a href="../index.html#tools">सभी टूल्स</a><a href="../about.html">हमारे बारे में</a><a href="../faq.html">अक्सर पूछे जाने वाले प्रश्न</a><a href="../blog.html">ब्लॉग</a><a href="../contact.html">संपर्क करें</a><a href="../privacy.html">गोपनीयता</a></nav>
+</div></header>
+
+<main class="wrap">
+<div class="crumbs"><a href="../index.html">मुख्य पृष्ठ</a> / <a href="../blog.html">ब्लॉग</a> / वेबसाइट सिक्योरिटी हेडर जाँचना</div>
+
+<article class="article">
+<div class="meta">गाइड • 7 मिनट पढ़ें • अक्टूबर 2026 में अपडेट किया गया</div>
+<h1>ऑनलाइन मुफ़्त में वेबसाइट सिक्योरिटी हेडर कैसे जाँचें (2026 गाइड)</h1>
+<p>जब आपका ब्राउज़र कोई वेबसाइट लोड करता है, तो दिखने वाला पेज बातचीत का सिर्फ़ आधा हिस्सा है। पर्दे के पीछे, सर्वर <strong>HTTP सिक्योरिटी हेडर</strong> भी भेजता है — अदृश्य निर्देश जो ब्राउज़र को बताते हैं कि कैसे व्यवहार करना है: सिर्फ़ एन्क्रिप्टेड कनेक्शन इस्तेमाल करें, इस पेज को दूसरी साइटों द्वारा फ़्रेम न करने दें, अनपेक्षित स्क्रिप्ट स्रोतों को ब्लॉक करें। ये किसी भी साइट मालिक द्वारा लगाए जा सकने वाले सबसे सस्ते, सबसे प्रभावी बचावों में से एक हैं, और आगंतुकों के लिए पूरी तरह अदृश्य हैं। यह गाइड दिखाती है कि हमारे मुफ़्त <a href="../tools/security-headers-checker.html">सिक्योरिटी हेडर चेकर</a> से किसी भी साइट के हेडर का ऑडिट कैसे करें, हर हेडर का सरल हिंदी में क्या मतलब है, और परिणामों के साथ क्या करना है।</p>
+
+<h2>सिक्योरिटी हेडर क्या हैं?</h2>
+<p>हर वेब रिस्पॉन्स में हेडर होते हैं — पेज सामग्री से पहले भेजी गई छोटी key/value मेटाडेटा लाइनें। ज़्यादातर साधारण होती हैं (कंटेंट टाइप, कैशिंग)। सिक्योरिटी हेडर वह उपसमूह है जो उस साइट के लिए ब्राउज़र के व्यवहार को <strong>मज़बूत बनाता है</strong>। इन्हें भेजने में कुछ ख़र्च नहीं होता, उपयोगकर्ता की कोई कार्रवाई नहीं चाहिए, और ये हमलों की पूरी श्रेणियों को कम करते हैं: जासूसी, क्लिकजैकिंग, क्रॉस-साइट स्क्रिप्टिंग, और कंटेंट-टाइप भ्रम। हेडर से वंचित साइट ज़रूरी नहीं कि "हैक" हो गई हो — लेकिन वह मुफ़्त सुरक्षा को मेज़ पर छोड़ रही है।</p>
+
+<h2>चरण 1: वेबसाइट का URL डालें</h2>
+<p><a href="../tools/security-headers-checker.html">सिक्योरिटी हेडर चेकर</a> खोलें और कोई वेबसाइट पता टाइप करें — टेस्ट के लिए <code>example.com</code> ठीक चलेगा। आप कोई भी सार्वजनिक साइट जाँच सकते हैं: अपनी, अपने नियोक्ता की, या जिसकी आपको बस उत्सुकता हो। हेडर जाँचना एक सामान्य, हानिरहित निदान है — आप सिर्फ़ वही सार्वजनिक रिस्पॉन्स हेडर पढ़ रहे हैं जो कोई भी ब्राउज़र प्राप्त करता है।</p>
+
+<h2>चरण 2: जाँच चलाएँ</h2>
+<p><strong>Check Headers</strong> पर क्लिक करें। टूल साइट के रिस्पॉन्स हेडर लाता है और महत्वपूर्ण सिक्योरिटी हेडर का मूल्यांकन करता है। सेकंडों में आपको प्रति-हेडर रिपोर्ट मिल जाती है।</p>
+<p><strong>एक चेतावनी:</strong> कुछ साइटें क्रॉस-ओरिजिन हेडर जाँच को ब्लॉक करती हैं, इसलिए कभी-कभी किसी साइट को ब्राउज़र-आधारित टूल से स्कैन नहीं किया जा सकता। ऐसा होने पर टूल आपको बता देगा — और गहरी स्कैन के लिए आप प्रसिद्ध securityheaders.com सेवा भी आज़मा सकते हैं।</p>
+
+<h2>चरण 3: परिणाम पढ़ें — हरा मतलब मौजूद, लाल मतलब ग़ायब</h2>
+<p>हर हेडर को एक सरल फ़ैसला मिलता है: <strong style="color:#16a34a">हरा</strong> मतलब हेडर मौजूद है, <strong style="color:#dc2626">लाल</strong> मतलब यह ग़ायब है। लाल देखकर घबराएँ नहीं — रिपोर्ट को उल्लंघन अलर्ट नहीं, काम की सूची समझें। नीचे बताया गया है कि हर हेडर असल में क्या करता है।</p>
+
+<h2>हेडर-दर-हेडर, सरल भाषा में</h2>
+<h3>Strict-Transport-Security (HSTS)</h3>
+<p>ब्राउज़र को बताता है: "इस साइट से सिर्फ़ HTTPS पर ही बात करो, भले ही कोई कनेक्शन को डाउनग्रेड करने की कोशिश करे।" यह sslstrip-शैली के हमलों को हराता है जो चुपचाप एन्क्रिप्शन हटाने की कोशिश करते हैं। लॉगिन या भुगतान संभालने वाली किसी भी साइट को इसे भेजना चाहिए।</p>
+<h3>Content-Security-Policy (CSP)</h3>
+<p>एक व्हाइटलिस्ट जो घोषित करती है कि पेज स्क्रिप्ट, स्टाइल और अन्य संसाधन कहाँ से लोड कर सकता है। यह क्रॉस-साइट स्क्रिप्टिंग (XSS) के ख़िलाफ़ उपलब्ध सबसे मज़बूत शमन है: भले ही हमलावर स्क्रिप्ट टैग इंजेक्ट कर दे, ब्राउज़र उसे चलाने से इनकार कर देता है जब तक स्रोत अनुमत न हो। यह सही ढंग से कॉन्फ़िगर करने में सबसे पेचीदा हेडर भी है, इसीलिए कई साइटों में यह नहीं होता।</p>
+<h3>X-Frame-Options</h3>
+<p>नियंत्रित करता है कि पेज को किसी दूसरी साइट पर फ़्रेम या iframe में एम्बेड किया जा सकता है या नहीं। <code>DENY</code> या <code>SAMEORIGIN</code> पर सेट होने पर यह <strong>क्लिकजैकिंग</strong> को ब्लॉक करता है — ऐसे हमले जो क्लिक हाइजैक करने के लिए किसी वैध पेज के ऊपर (या नीचे) अदृश्य दुर्भावनापूर्ण पेज की परत चढ़ाते हैं। (आधुनिक साइटें इसके बजाय CSP का <code>frame-ancestors</code> निर्देश इस्तेमाल कर सकती हैं, जो इसे पीछे छोड़ देता है।)</p>
+<h3>X-Content-Type-Options</h3>
+<p><code>nosniff</code> मान के साथ, यह ब्राउज़रों को किसी फ़ाइल के घोषित कंटेंट टाइप पर दोबारा अंदाज़ा लगाने से रोकता है। इसके बिना, ब्राउज़र किसी अपलोड की गई फ़ाइल को "सूँघ" सकता है, तय कर सकता है कि यह असल में HTML/JavaScript है, और उसे चला सकता है — फ़ाइल अपलोड के ज़रिए हमलों का एक क्लासिक रास्ता।</p>
+<h3>Referrer-Policy</h3>
+<p>नियंत्रित करता है कि दूर जाने पर पेज के URL का कितना हिस्सा HTTP Referer के रूप में भेजा जाता है। एक सख़्त नीति (जैसे <code>strict-origin-when-cross-origin</code> या <code>no-referrer</code>) आंतरिक URL, क्वेरी स्ट्रिंग में सत्र टोकन, या निजी पथ को तीसरे पक्ष की साइटों तक लीक होने से रोकती है।</p>
+
+<h2>अगर यह आपकी साइट है: ग़ायब हेडर के साथ क्या करें</h2>
+<ol>
+<li><strong>HSTS और X-Content-Type-Options को प्राथमिकता दें</strong> — ये लगभग हर सर्वर और वेब फ़्रेमवर्क पर एक लाइन के जोड़ हैं।</li>
+<li><strong>X-Frame-Options जोड़ें</strong> (या CSP <code>frame-ancestors</code>) जब तक आपके पास फ़्रेमिंग की अनुमति देने का कोई विशिष्ट कारण न हो।</li>
+<li><strong>Content-Security-Policy की सावधानी से योजना बनाएँ।</strong> अपने पेज वैध रूप से क्या लोड करते हैं, यह जानने के लिए रिपोर्ट-ओनली नीति से शुरू करें, फिर लागू करें। ग़लत कॉन्फ़िगर की गई CSP आपकी साइट को दिखने वाले रूप में तोड़ देती है, इसलिए पहले स्टेजिंग में टेस्ट करें।</li>
+<li><strong>हर बदलाव के बाद फिर से स्कैन करें</strong> — चेकर से पुष्टि करें कि हेडर असल में भेजे जा रहे हैं।</li>
+</ol>
+<p>हेडर सर्वर या एप्लिकेशन स्तर पर सेट किए जाते हैं (वेब सर्वर कॉन्फ़िग, फ़्रेमवर्क मिडलवेयर, या CDN के एज नियम) — सटीक चरण आपके स्टैक पर निर्भर करते हैं, लेकिन हर बड़ा प्लेटफ़ॉर्म इन्हें दस्तावेज़ करता है।</p>
+
+<h2>अगर यह किसी और की साइट है: लाल का मतलब कैसे समझें</h2>
+<p>जिस साइट पर आप सिर्फ़ जाते हैं, उस पर ग़ायब हेडर ध्यान देने योग्य है, घबराने योग्य नहीं। सिक्योरिटी हेडर गहराई में बचाव हैं: उनकी अनुपस्थिति का मतलब यह नहीं है कि साइट समझौता कर ली गई है या वहाँ आपका डेटा उजागर है। इसका मतलब है कि साइट के संचालकों ने मुफ़्त सुरक्षा की एक परत सक्षम नहीं की है। जिन साइटों पर आप संवेदनशील जानकारी डालते हैं, उनके लिए आप उन प्रतिस्पर्धियों को उचित रूप से पसंद कर सकते हैं जो हार्डनिंग को गंभीरता से लेते हैं — लेकिन लाल पंक्ति को ग़लत काम का सबूत न समझें।</p>
+
+<h2>हेडर जाँच क्या नहीं बता सकती</h2>
+<p>यहाँ भी ईमानदारी मायने रखती है। हेडर स्कैन <em>कॉन्फ़िगरेशन</em> जाँचता है, <em>कमज़ोरियों</em> को नहीं: यह SQL इंजेक्शन, टूटी ऑथेंटिकेशन, लीक हुए सीक्रेट, या पुराना सॉफ़्टवेयर नहीं ढूँढ सकता। कोई साइट हेडर में पूरी तरह पास हो सकती है और फिर भी अंदर से असुरक्षित हो सकती है — और कुछ हेडर से वंचित साइट अन्यथा अच्छी तरह इंजीनियर की गई हो सकती है। इसे ऐसे समझें जैसे जाँचना कि घर में डेडबोल्ट हैं या नहीं: उपयोगी जानकारी, पूरी सुरक्षा ऑडिट नहीं।</p>
+
+<h2>अक्सर पूछे जाने वाले प्रश्न</h2>
+<h3>क्या किसी वेबसाइट के हेडर जाँचना कानूनी है?</h3>
+<p>हाँ। आप साइट का सार्वजनिक होमपेज माँग रहे हैं और हर ब्राउज़र को मिलने वाला स्टैंडर्ड रिस्पॉन्स मेटाडेटा पढ़ रहे हैं। यह पेज सोर्स देखने जैसी ही श्रेणी की गतिविधि है।</p>
+<h3>कुछ साइटों को क्यों नहीं जाँचा जा सकता?</h3>
+<p>कुछ साइटें क्रॉस-ओरिजिन अनुरोधों को ब्लॉक करती हैं, जो ब्राउज़र-आधारित टूल्स को उनके हेडर पढ़ने से रोकता है। उनके लिए, securityheaders.com जैसा सर्वर-साइड स्कैनर आमतौर पर काम करता है।</p>
+<h3>क्या सिक्योरिटी हेडर वेबसाइट को धीमा करते हैं?</h3>
+<p>कोई मापने योग्य प्रभाव नहीं — ये रिस्पॉन्स में कुछ अतिरिक्त बाइट हैं। इन्हें छोड़ने का कोई प्रदर्शन कारण नहीं है।</p>
+<h3>क्या हेडर जोड़ने से मेरी साइट टूट जाएगी?</h3>
+<p>ज़्यादातर हेडर सीधे जोड़ना सुरक्षित है। Content-Security-Policy अपवाद है: पहले इसे रिपोर्ट-ओनली मोड में टेस्ट करें, क्योंकि ज़रूरत से ज़्यादा सख़्त नीति वैध स्क्रिप्ट को ब्लॉक करती है और कार्यक्षमता तोड़ देती है।</p>
+
+<p><strong>अभी किसी साइट का ऑडिट करें:</strong> <a href="../tools/security-headers-checker.html">मुफ़्त सिक्योरिटी हेडर चेकर</a> · <a href="../tools/ip-lookup.html">मुफ़्त IP लुकअप</a> · <a href="../tools/phishing-url-checker.html">मुफ़्त फ़िशिंग URL चेकर</a></p>
+</article>
+</main>
+
+<footer class="site-footer"><div class="wrap">
+<div class="cols">
+<div><h4><img class="shield" src="../../freetools-icon-192.png" alt="" style="width:22px;height:22px;vertical-align:-4px;margin-right:6px"> मुफ़्त प्राइवेसी टूल्स</h4><p>63 मुफ़्त ऑनलाइन टूल्स। बिना साइनअप के — सब कुछ आपके ब्राउज़र में चलता है।</p></div>
+<div><h4>लोकप्रिय</h4><a href="../tools/image-compressor.html">इमेज कंप्रेसर</a><a href="../tools/word-counter.html">वर्ड काउंटर</a><a href="../tools/password-generator.html">पासवर्ड जनरेटर</a><a href="../tools/pdf-merger.html">PDF मर्जर</a><a href="../tools/age-calculator.html">आयु कैलकुलेटर</a></div>
+<div><h4>साइट</h4><a href="../index.html">मुख्य पृष्ठ</a><a href="../index.html#tools">सभी टूल्स</a><a href="../about.html">हमारे बारे में</a><a href="../faq.html">अक्सर पूछे जाने वाले प्रश्न</a><a href="../blog.html">ब्लॉग</a><a href="../contact.html">संपर्क करें</a><a href="../request.html">टूल का अनुरोध करें</a><a href="../privacy.html">गोपनीयता नीति</a><a href="../terms.html">उपयोग की शर्तें</a><a href="../disclaimer.html">अस्वीकरण</a></div>
+<div><h4>यूट्यूब</h4><a href="https://www.youtube.com/@ajoobaJahan" target="_blank" rel="noopener">AjoobaJahan</a><a href="https://www.youtube.com/@TareekhKayRaaz-y9h" target="_blank" rel="noopener">Tareekh Kay Raaz</a><a href="https://www.youtube.com/@TarkariKahanian" target="_blank" rel="noopener">Tarkari Kahanian</a><a href="https://www.youtube.com/@QatalFiles" target="_blank" rel="noopener">Qatal Files</a></div>
+</div>
+<div class="foot-note">© 2026 मुफ़्त प्राइवेसी टूल्स — सभी टूल्स 100% आपके ब्राउज़र में चलते हैं।<br>द्वारा विकसित <a href="https://anwaardigital.com/" target="_blank" rel="noopener" style="color:#fbbf24;font-weight:700">Malik Muhammad Anwaar</a><br>आधिकारिक ईमेल: <a href="mailto:contact@anwaardigital.com" style="color:#fbbf24;font-weight:700">contact@anwaardigital.com</a><br><div style="display:flex;flex-wrap:nowrap;gap:10px;justify-content:center;align-items:center;margin-top:10px"><a href="https://fazier.com" target="_blank" rel="dofollow"><img src="https://fazier.com/api/v1//public/badges/launch_badges.svg?badge_type=featured&theme=light" alt="Featured on Fazier" style="max-height:26px;max-width:46%;width:auto;height:auto"></a><a href="https://smollaunch.com" target="_blank" rel="noopener"><img src="https://smollaunch.com/badges/featured.svg" alt="Anwaar Free Tools — Featured on Smol Launch" loading="lazy" style="max-width:50%;max-height:38px;width:auto;height:auto" /></a></div></div>
+</div></footer>
+
+<script src="../../assets/app.js"></script>
+<script src="../../assets/features.js"></script>
+<script>
+/* HI pages: Hindi language menu (हिन्दी current + English + العربية links), dark-mode
+   label, tool action labels, useBadge, cookie banner. site carousel script and site language script
+   are NOT loaded on HI pages, so the featured carousel is built here too
+   (same logic as the site's own site carousel script carousel). */
+(function () {
+  'use strict';
+  var HI = {
+    darkLabel: 'डार्क मोड', lightLabel: 'लाइट मोड', darkTitle: 'डार्क मोड बदलें',
+    waChat: 'व्हाट्सऐप पर चैट करें', favAction: 'पसंदीदा', rateAction: 'इस टूल को रेट करें',
+    shareAction: 'शेयर करें', shareOn: '{name} पर शेयर करें', rateYour: 'आपकी रेटिंग: {n}/5',
+    useBadge: 'इस डिवाइस पर {n} टूल उपयोग', openBtn: 'खोलें', allCat: 'सभी'
+  };
+  function lsGet(k, d) { try { var v = localStorage.getItem(k); return v === null ? d : JSON.parse(v); } catch (e) { return d; } }
+  function onReady(fn) { if (document.readyState !== 'loading') fn(); else document.addEventListener('DOMContentLoaded', fn); }
+  function enCounterpart() {
+    var p = window.location.pathname;
+    var m = p.match(/^(.*\/Freetools\/)hi\/(tools\/[^\/]+\.html|blog\/[^\/]+\.html|index\.html)$/);
+    if (m) return m[1] + m[2];
+    if (p.indexOf('/hi/tools/') !== -1) return '../../tools/' + p.split('/hi/tools/')[1];
+    if (p.indexOf('/hi/blog/') !== -1) return '../../blog/' + p.split('/hi/blog/')[1];
+    return '../index.html';
+  }
+  function arCounterpart() {
+    var p = window.location.pathname;
+    var m = p.match(/^(.*\/Freetools\/)hi\/(tools\/[^\/]+\.html|blog\/[^\/]+\.html|index\.html)$/);
+    if (m) return m[1] + 'ar/' + m[2];
+    if (p.indexOf('/hi/tools/') !== -1) return '../../ar/tools/' + p.split('/hi/tools/')[1];
+    if (p.indexOf('/hi/blog/') !== -1) return '../../ar/blog/' + p.split('/hi/blog/')[1];
+    return '../index.html';
+  }
+  function injectStyles() {
+    if (document.getElementById('lang9StyleHi')) return;
+    var st = document.createElement('style'); st.id = 'lang9StyleHi';
+    st.textContent = '.lang9-wrap{position:relative;display:inline-flex;align-items:center}' +
+      '.lang9-btn{cursor:pointer;border:1px solid var(--border,#dbe2ea);background:var(--card,#fff);color:var(--ink,#0f172a);border-radius:999px;padding:7px 14px;font-size:14px;font-weight:700;line-height:1}' +
+      '.lang9-menu{position:absolute;top:calc(100% + 6px);inset-inline-end:0;min-width:170px;margin:0;padding:6px 0;list-style:none;background:var(--card,#fff);border:1px solid var(--border,#dbe2ea);border-radius:12px;box-shadow:0 8px 24px rgba(0,0,0,.15);z-index:100;display:none}' +
+      '.lang9-menu.open{display:block}' +
+      '.lang9-menu button{display:block;width:100%;text-align:start;background:none;border:0;cursor:pointer;padding:9px 14px;font-size:14px;color:var(--ink,#0f172a)}' +
+      '.lang9-menu button:hover{background:var(--bg,#f1f5f9)}' +
+      '.lang9-menu button.on{font-weight:800}' +
+      '.lang9-menu a{display:block;text-decoration:none;padding:9px 14px;font-size:14px;color:var(--ink,#0f172a)}' +
+      '.lang9-menu a:hover{background:var(--bg,#f1f5f9)}';
+    document.head.appendChild(st);
+  }
+  function buildSwitcher() {
+    if (document.getElementById('lang9Wrap')) return;
+    var headerWrap = document.querySelector('.site-header .wrap');
+    if (!headerWrap) return;
+    injectStyles();
+    var wrap = document.createElement('span');
+    wrap.className = 'lang9-wrap'; wrap.id = 'lang9Wrap';
+    var btn = document.createElement('button');
+    btn.type = 'button'; btn.id = 'langBtn9'; btn.className = 'lang9-btn';
+    btn.setAttribute('aria-haspopup', 'listbox'); btn.setAttribute('aria-expanded', 'false');
+    btn.setAttribute('aria-label', 'भाषा'); btn.textContent = 'हिन्दी';
+    var menu = document.createElement('ul');
+    menu.className = 'lang9-menu'; menu.id = 'langMenu9'; menu.setAttribute('role', 'listbox');
+    var li1 = document.createElement('li');
+    var cur = document.createElement('button');
+    cur.type = 'button'; cur.className = 'on'; cur.textContent = 'हिन्दी';
+    cur.setAttribute('role', 'option');
+    cur.addEventListener('click', function () { menu.classList.remove('open'); btn.setAttribute('aria-expanded', 'false'); });
+    li1.appendChild(cur); menu.appendChild(li1);
+    var li2 = document.createElement('li');
+    var a = document.createElement('a');
+    a.href = enCounterpart(); a.textContent = 'English'; a.setAttribute('role', 'option');
+    li2.appendChild(a); menu.appendChild(li2);
+    var li3 = document.createElement('li');
+    var a3 = document.createElement('a');
+    a3.href = arCounterpart(); a3.textContent = 'العربية'; a3.setAttribute('role', 'option');
+    li3.appendChild(a3); menu.appendChild(li3);
+    btn.addEventListener('click', function (e) {
+      e.stopPropagation();
+      var open = menu.classList.toggle('open');
+      btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+    });
+    document.addEventListener('click', function (e) {
+      if (!wrap.contains(e.target)) { menu.classList.remove('open'); btn.setAttribute('aria-expanded', 'false'); }
+    });
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape') { menu.classList.remove('open'); btn.setAttribute('aria-expanded', 'false'); }
+    });
+    wrap.appendChild(btn); wrap.appendChild(menu);
+    var navToggle = headerWrap.querySelector('.nav-toggle');
+    if (navToggle) headerWrap.insertBefore(wrap, navToggle);
+    else headerWrap.appendChild(wrap);
+  }
+  var FEATURED = ['background-remover', 'qr-generator', 'image-compressor', 'password-generator',
+    'pdf-merger', 'word-counter', 'link-shortener', 'age-calculator',
+    'color-picker', 'images-to-pdf'];
+  function featCardHi(slug) {
+    var src = document.querySelector('.tool-card[href="tools/' + slug + '.html"]');
+    if (!src) return null;
+    var ticonEl = src.querySelector('.ticon'); var iconHtml = ticonEl ? ticonEl.innerHTML : '';
+    var name = src.querySelector('h3').textContent;
+    var desc = src.querySelector('p').textContent;
+    var card = document.createElement('div');
+    card.className = 'feat-card'; card.setAttribute('data-slug', slug);
+    var ic = document.createElement('div'); ic.className = 'feat-icon'; ic.innerHTML = iconHtml;
+    var h = document.createElement('h3'); h.textContent = name;
+    var p = document.createElement('p'); p.textContent = desc;
+    var open = document.createElement('a'); open.className = 'feat-open'; open.href = 'tools/' + slug + '.html';
+    var osp = document.createElement('span'); osp.textContent = HI.openBtn;
+    open.appendChild(osp); open.appendChild(document.createTextNode(' ›'));
+    card.appendChild(ic); card.appendChild(h); card.appendChild(p); card.appendChild(open);
+    card.addEventListener('click', function () { location.href = 'tools/' + slug + '.html'; });
+    return card;
+  }
+  function initCarouselHi() {
+    var car = document.getElementById('featCarousel');
+    if (!car) return;
+    FEATURED.forEach(function (s) { var c = featCardHi(s); if (c) car.appendChild(c); });
+    FEATURED.forEach(function (s) { var c = featCardHi(s); if (c) car.appendChild(c); });
+    var SPEED = 40, paused = false, resumeT = null, last = 0;
+    function tick(now) {
+      if (!paused && !document.hidden) {
+        if (last) {
+          car.scrollLeft += (now - last) / 1000 * SPEED;
+          var half = car.scrollWidth / 2;
+          if (half > 0 && car.scrollLeft >= half - 4) car.scrollLeft -= half;
+        }
+        last = now;
+      } else { last = 0; }
+      if (window.requestAnimationFrame) window.requestAnimationFrame(tick);
+    }
+    function pause() { paused = true; }
+    function resume() { paused = false; }
+    function scheduleResume(ms) { clearTimeout(resumeT); resumeT = setTimeout(resume, ms); }
+    car.addEventListener('pointerenter', function (e) { if (e.pointerType === 'mouse') pause(); });
+    car.addEventListener('pointerleave', function (e) { if (e.pointerType === 'mouse') resume(); });
+    car.addEventListener('touchstart', pause, { passive: true });
+    car.addEventListener('touchend', function () { scheduleResume(2500); });
+    document.addEventListener('visibilitychange', function () { if (!document.hidden) resume(); });
+    var pv = document.getElementById('carPrev'), nx = document.getElementById('carNext');
+    if (pv) pv.addEventListener('click', function () { pause(); car.scrollBy({ left: -280, behavior: 'smooth' }); scheduleResume(4000); });
+    if (nx) nx.addEventListener('click', function () { pause(); car.scrollBy({ left: 280, behavior: 'smooth' }); scheduleResume(4000); });
+    if (window.requestAnimationFrame) window.requestAnimationFrame(tick);
+  }
+  onReady(function () {
+    buildSwitcher();
+    var dark = document.getElementById('darkToggle');
+    if (dark) {
+      var setLabel = function () { dark.textContent = document.body.classList.contains('dark') ? HI.lightLabel : HI.darkLabel; };
+      dark.title = HI.darkTitle; dark.setAttribute('aria-label', HI.darkTitle);
+      setLabel();
+      dark.addEventListener('click', function () { setTimeout(setLabel, 0); });
+    }
+    var badge = document.getElementById('useBadge');
+    if (badge) badge.textContent = HI.useBadge.replace('{n}', lsGet('fpt_usage', 0));
+    var chips = document.querySelectorAll('#catChips .chip');
+    if (chips.length && chips[0].textContent === 'All') chips[0].textContent = HI.allCat;
+    document.querySelectorAll('.tool-actions .action-label').forEach(function (lab) {
+      var t = lab.textContent;
+      if (t === 'Favorite') lab.textContent = HI.favAction;
+      else if (t === 'Rate this tool') lab.textContent = HI.rateAction;
+      else if (t === 'Share') lab.textContent = HI.shareAction;
+    });
+    var star = document.querySelector('.tool-hero .fav-star');
+    if (star) { star.title = HI.favAction; star.setAttribute('aria-label', HI.favAction); }
+    document.querySelectorAll('.tool-hero .share-btn').forEach(function (a) {
+      var t = a.getAttribute('title') || a.getAttribute('aria-label') || '';
+      var m = /Share on (.+)$/.exec(t);
+      if (m) { var nt = HI.shareOn.replace('{name}', m[1]); a.title = nt; a.setAttribute('aria-label', nt); }
+    });
+    var rateMsg = document.querySelector('.tool-hero .rate-msg');
+    var rootEl = document.getElementById('tool-root');
+    if (rateMsg && rootEl) {
+      var ratings = lsGet('fpt_ratings', {});
+      var my = ratings[rootEl.getAttribute('data-tool')] || 0;
+      if (my) rateMsg.textContent = HI.rateYour.replace('{n}', my);
+    }
+    document.querySelectorAll('.fav-star').forEach(function (s) { s.title = HI.favAction; s.setAttribute('aria-label', HI.favAction); });
+    var wa = document.getElementById('wa-float-btn');
+    if (wa) { wa.title = HI.waChat; wa.setAttribute('aria-label', HI.waChat); }
+    var ban = document.getElementById('adCookieBanner');
+    if (ban) {
+      var sp = ban.querySelector('span');
+      if (sp) sp.textContent = 'हम विज़िट समझने और अपनी साइट सुधारने के लिए एनालिटिक्स कुकीज़ (Google Analytics) का उपयोग करते हैं। एनालिटिक्स कुकीज़ की अनुमति देने के लिए स्वीकार करें या अस्वीकार करें।';
+      var acc = document.getElementById('adCookieAccept'); if (acc) acc.textContent = 'स्वीकार करें';
+      var dec = document.getElementById('adCookieDecline'); if (dec) dec.textContent = 'अस्वीकार करें';
+    }
+    initCarouselHi();
+  });
+})();
+</script>
+
+<!-- Back to top button -->
+<button id="backToTop" aria-label="ऊपर जाएँ" title="ऊपर जाएँ"
+style="position:fixed;bottom:24px;right:24px;width:48px;height:48px;border-radius:50%;border:none;background:#2563eb;color:#ffffff;font-size:22px;line-height:1;cursor:pointer;opacity:0;visibility:hidden;transition:opacity .3s,visibility .3s,transform .2s;box-shadow:0 4px 12px rgba(0,0,0,.35);z-index:9999;padding:0;">&#8593;</button>
+<script>
+(function(){var b=document.getElementById('backToTop');if(!b)return;
+window.addEventListener('scroll',function(){var s=window.pageYOffset||document.documentElement.scrollTop;
+if(s>300){b.style.opacity='1';b.style.visibility='visible';}else{b.style.opacity='0';b.style.visibility='hidden';}},{passive:true});
+b.addEventListener('click',function(){window.scrollTo({top:0,behavior:'smooth'});});
+b.addEventListener('mouseenter',function(){b.style.transform='scale(1.12)';});
+b.addEventListener('mouseleave',function(){b.style.transform='scale(1)';});})();
+</script>
+
+</body></html>
