@@ -167,7 +167,7 @@ en: {
   noResults: 'No tools found. Try another keyword.',
   nlTitle: 'Newsletter', nlText: 'Get notified when we add new free tools. No spam, ever.',
   nlPh: 'Your email address', nlBtn: 'Subscribe', nlDone: 'Email saved on this device — email updates are coming soon!',
-  ytTitle: 'Our YouTube Channels', ytSub: 'Learn, laugh and explore — subscribe for new videos every week', ytSubscribe: 'Subscribe',
+  ytTitle: 'Our YouTube Channels', ytSub: 'Learn, laugh and explore — subscribe for new videos every week', ytSubscribe: 'Subscribe', webTitle: 'Our Websites', webSub: 'More from Anwaar Digital — apps, guides and security resources', webVisit: 'Visit', webDescMain: '28+ Android apps, Windows software & free downloads', webDescHub: '57 guides, security tools, glossary & FAQ',
   footTag: '63 free online tools. No signup — everything runs in your browser.',
   footPopular: 'Popular', footSite: 'Site', footReq: 'Request a Tool', footPrivacy: 'Privacy Policy', footYouTube: 'YouTube',
   langLabel: 'Language', darkToggle: 'Toggle dark mode', darkLabel: 'Dark mode', lightLabel: 'Light mode', waChat: 'Chat on WhatsApp',
@@ -195,7 +195,7 @@ ur: {
   noResults: 'کوئی ٹول نہیں ملا۔ کوئی اور لفظ آزمائیں۔',
   nlTitle: 'نیوزلیٹر', nlText: 'جب ہم نئے مفت ٹولز شامل کریں تو اطلاع پائیں۔ کوئی سپام نہیں۔',
   nlPh: 'آپ کا ای میل ایڈریس', nlBtn: 'سبسکرائب کریں', nlDone: 'ای میل اس ڈیوائس پر محفوظ ہو گئی — ای میل اپڈیٹس جلد آ رہی ہیں!',
-  ytTitle: 'ہمارے یوٹیوب چینلز', ytSub: 'سیکھیں، ہنسیں اور دریافت کریں — ہر ہفتے نئی ویڈیوز کے لیے سبسکرائب کریں', ytSubscribe: 'سبسکرائب',
+  ytTitle: 'ہمارے یوٹیوب چینلز', ytSub: 'سیکھیں، ہنسیں اور دریافت کریں — ہر ہفتے نئی ویڈیوز کے لیے سبسکرائب کریں', ytSubscribe: 'سبسکرائب', webTitle: 'ہماری ویب سائٹس', webSub: 'انوار ڈیجیٹل کی طرف سے — ایپس، گائیڈز اور سیکیورٹی وسائل', webVisit: 'وزٹ کریں', webDescMain: '28 سے زیادہ Android apps، Windows software اور مفت ڈاؤن لوڈز', webDescHub: '57 guides، security tools، glossary اور FAQ',
   footTag: '63 مفت آن لائن ٹولز۔ کوئی سائن اپ نہیں — سب کچھ آپ کے براؤزر میں چلتا ہے۔',
   footPopular: 'مقبول', footSite: 'سائٹ', footReq: 'ٹول کی درخواست', footPrivacy: 'پرائیویسی پالیسی', footYouTube: 'یوٹیوب',
   langLabel: 'زبان', darkToggle: 'ڈارک موڈ بدلیں', darkLabel: 'ڈارک موڈ', lightLabel: 'لائٹ موڈ', waChat: 'واٹس ایپ پر چیٹ کریں',
@@ -223,7 +223,7 @@ tr: {
   noResults: 'Araç bulunamadı. Başka bir kelime deneyin.',
   nlTitle: 'Bülten', nlText: 'Yeni ücretsiz araçlar eklediğimizde haber alın. Asla spam yok.',
   nlPh: 'E-posta adresiniz', nlBtn: 'Abone ol', nlDone: 'E-posta bu cihaza kaydedildi — e-posta güncellemeleri yakında geliyor!',
-  ytTitle: 'YouTube Kanallarımız', ytSub: 'Öğrenin, gülün ve keşfedin — her hafta yeni videolar için abone olun', ytSubscribe: 'Abone ol',
+  ytTitle: 'YouTube Kanallarımız', ytSub: 'Öğrenin, gülün ve keşfedin — her hafta yeni videolar için abone olun', ytSubscribe: 'Abone ol', webTitle: 'Web Sitelerimiz', webSub: 'Anwaar Digital\'den daha fazlası — uygulamalar, rehberler ve güvenlik kaynakları', webVisit: 'Ziyaret Et', webDescMain: '28+ Android uygulaması, Windows yazılımı ve ücretsiz indirmeler', webDescHub: '57 rehber, güvenlik araçları, sözlük ve SSS',
   footTag: '63 ücretsiz çevrimiçi araç. Kayıt yok — her şey tarayıcınızda çalışır.',
   footPopular: 'Popüler', footSite: 'Site', footReq: 'Araç Talebi', footPrivacy: 'Gizlilik Politikası', footYouTube: 'YouTube',
   langLabel: 'Dil', darkToggle: 'Karanlık modu değiştir', darkLabel: 'Karanlık mod', lightLabel: 'Açık mod', waChat: 'WhatsApp ile sohbet et',
@@ -251,7 +251,7 @@ ar: {
   noResults: 'لم يتم العثور على أدوات. جرب كلمة أخرى.',
   nlTitle: 'النشرة البريدية', nlText: 'احصل على إشعار عند إضافة أدوات مجانية جديدة. دون إزعاج أبدا.',
   nlPh: 'عنوان بريدك الإلكتروني', nlBtn: 'اشترك', nlDone: 'تم حفظ البريد على هذا الجهاز — تحديثات البريد قادمة قريبا!',
-  ytTitle: 'قنواتنا على يوتيوب', ytSub: 'تعلم واضحك واكتشف — اشترك لمقاطع جديدة كل أسبوع', ytSubscribe: 'اشترك',
+  ytTitle: 'قنواتنا على يوتيوب', ytSub: 'تعلم واضحك واكتشف — اشترك لمقاطع جديدة كل أسبوع', ytSubscribe: 'اشترك', webTitle: 'مواقعنا', webSub: 'المزيد من أنوار ديجيتال — تطبيقات وأدلة وموارد أمنية', webVisit: 'زيارة', webDescMain: 'أكثر من 28 تطبيق أندرويد وبرامج ويندوز وتنزيلات مجانية', webDescHub: '57 دليلاً وأدوات أمنية وقاموس وأسئلة شائعة',
   footTag: '63 أداة مجانية على الإنترنت. دون تسجيل — كل شيء يعمل في متصفحك.',
   footPopular: 'الشائعة', footSite: 'الموقع', footReq: 'طلب أداة', footPrivacy: 'سياسة الخصوصية', footYouTube: 'يوتيوب',
   langLabel: 'اللغة', darkToggle: 'تبديل الوضع الداكن', darkLabel: 'الوضع الداكن', lightLabel: 'الوضع الفاتح', waChat: 'دردشة على واتساب',
@@ -279,7 +279,7 @@ fa: {
   noResults: 'ابزاری یافت نشد. کلمه دیگری را امتحان کنید.',
   nlTitle: 'خبرنامه', nlText: 'وقتی ابزارهای رایگان جدید اضافه می کنیم با خبر شوید. هرگز هرزنامه نیست.',
   nlPh: 'آدرس ایمیل شما', nlBtn: 'عضویت', nlDone: 'ایمیل در این دستگاه ذخیره شد — به روز رسانی های ایمیلی به زودی می آیند!',
-  ytTitle: 'کانال های یوتیوب ما', ytSub: 'یاد بگیرید، بخندید و کاوش کنید — برای ویدیوهای جدید هر هفته عضو شوید', ytSubscribe: 'عضویت',
+  ytTitle: 'کانال های یوتیوب ما', ytSub: 'یاد بگیرید، بخندید و کاوش کنید — برای ویدیوهای جدید هر هفته عضو شوید', ytSubscribe: 'عضویت', webTitle: 'وب‌سایت‌های ما', webSub: 'بیشتر از انوار دیجیتال — اپلیکیشن‌ها، راهنماها و منابع امنیتی', webVisit: 'بازدید', webDescMain: 'بیش از 28 اپ اندروید، نرم‌افزار ویندوز و دانلودهای رایگان', webDescHub: '57 راهنما، ابزارهای امنیتی، واژه‌نامه و سؤالات متداول',
   footTag: '63 ابزار رایگان آنلاین. بدون ثبت نام — همه چیز در مرورگر شما اجرا می شود.',
   footPopular: 'محبوب', footSite: 'سایت', footReq: 'درخواست ابزار', footPrivacy: 'سیاست حریم خصوصی', footYouTube: 'یوتیوب',
   langLabel: 'زبان', darkToggle: 'تغییر حالت تیره', darkLabel: 'حالت تیره', lightLabel: 'حالت روشن', waChat: 'گفتگو در واتساپ',
@@ -307,7 +307,7 @@ es: {
   noResults: 'No se encontraron herramientas. Prueba otra palabra.',
   nlTitle: 'Boletín', nlText: 'Recibe un aviso cuando añadamos herramientas gratis nuevas. Nunca spam.',
   nlPh: 'Tu correo electrónico', nlBtn: 'Suscribirse', nlDone: 'Correo guardado en este dispositivo — ¡las novedades por correo llegarán pronto!',
-  ytTitle: 'Nuestros canales de YouTube', ytSub: 'Aprende, ríe y explora — suscríbete para vídeos nuevos cada semana', ytSubscribe: 'Suscribirse',
+  ytTitle: 'Nuestros canales de YouTube', ytSub: 'Aprende, ríe y explora — suscríbete para vídeos nuevos cada semana', ytSubscribe: 'Suscribirse', webTitle: 'Nuestros sitios web', webSub: 'Más de Anwaar Digital — aplicaciones, guías y recursos de seguridad', webVisit: 'Visitar', webDescMain: 'Más de 28 apps Android, software Windows y descargas gratuitas', webDescHub: '57 guías, herramientas de seguridad, glosario y preguntas frecuentes',
   footTag: '63 herramientas gratis en línea. Sin registro — todo funciona en tu navegador.',
   footPopular: 'Populares', footSite: 'Sitio', footReq: 'Solicitar una herramienta', footPrivacy: 'Política de privacidad', footYouTube: 'YouTube',
   langLabel: 'Idioma', darkToggle: 'Cambiar modo oscuro', darkLabel: 'Modo oscuro', lightLabel: 'Modo claro', waChat: 'Chatea en WhatsApp',
@@ -335,7 +335,7 @@ it: {
   noResults: 'Nessuno strumento trovato. Prova un’altra parola.',
   nlTitle: 'Newsletter', nlText: 'Ricevi un avviso quando aggiungiamo nuovi strumenti gratuiti. Mai spam.',
   nlPh: 'Il tuo indirizzo email', nlBtn: 'Iscriviti', nlDone: 'Email salvata su questo dispositivo — gli aggiornamenti via email arriveranno presto!',
-  ytTitle: 'I nostri canali YouTube', ytSub: 'Impara, ridi ed esplora — iscriviti per nuovi video ogni settimana', ytSubscribe: 'Iscriviti',
+  ytTitle: 'I nostri canali YouTube', ytSub: 'Impara, ridi ed esplora — iscriviti per nuovi video ogni settimana', ytSubscribe: 'Iscriviti', webTitle: 'I nostri siti web', webSub: 'Altro da Anwaar Digital — app, guide e risorse di sicurezza', webVisit: 'Visita', webDescMain: 'Oltre 28 app Android, software Windows e download gratuiti', webDescHub: '57 guide, strumenti di sicurezza, glossario e FAQ',
   footTag: '63 strumenti gratuiti online. Senza registrazione — tutto funziona nel tuo browser.',
   footPopular: 'Popolari', footSite: 'Sito', footReq: 'Richiedi uno strumento', footPrivacy: 'Informativa sulla privacy', footYouTube: 'YouTube',
   langLabel: 'Lingua', darkToggle: 'Cambia modalità scura', darkLabel: 'Modalità scura', lightLabel: 'Modalità chiara', waChat: 'Chatta su WhatsApp',
@@ -363,7 +363,7 @@ de: {
   noResults: 'Keine Tools gefunden. Versuch ein anderes Wort.',
   nlTitle: 'Newsletter', nlText: 'Erhalte eine Nachricht, wenn wir neue kostenlose Tools hinzufügen. Nie Spam.',
   nlPh: 'Deine E-Mail-Adresse', nlBtn: 'Abonnieren', nlDone: 'E-Mail auf diesem Gerät gespeichert — E-Mail-Updates kommen bald!',
-  ytTitle: 'Unsere YouTube-Kanäle', ytSub: 'Lernen, lachen und entdecken — abonniere für neue Videos jede Woche', ytSubscribe: 'Abonnieren',
+  ytTitle: 'Unsere YouTube-Kanäle', ytSub: 'Lernen, lachen und entdecken — abonniere für neue Videos jede Woche', ytSubscribe: 'Abonnieren', webTitle: 'Unsere Webseiten', webSub: 'Mehr von Anwaar Digital — Apps, Anleitungen und Sicherheitsressourcen', webVisit: 'Besuchen', webDescMain: 'Über 28 Android-Apps, Windows-Software und kostenlose Downloads', webDescHub: '57 Anleitungen, Sicherheitstools, Glossar und FAQ',
   footTag: '63 kostenlose Online-Tools. Keine Anmeldung — alles läuft in deinem Browser.',
   footPopular: 'Beliebt', footSite: 'Website', footReq: 'Tool vorschlagen', footPrivacy: 'Datenschutzerklärung', footYouTube: 'YouTube',
   langLabel: 'Sprache', darkToggle: 'Dunkelmodus umschalten', darkLabel: 'Dunkelmodus', lightLabel: 'Hellmodus', waChat: 'Auf WhatsApp chatten',
@@ -391,7 +391,7 @@ nl: {
   noResults: 'Geen tools gevonden. Probeer een ander woord.',
   nlTitle: 'Nieuwsbrief', nlText: 'Krijg bericht als we nieuwe gratis tools toevoegen. Nooit spam.',
   nlPh: 'Je e-mailadres', nlBtn: 'Abonneren', nlDone: 'E-mail opgeslagen op dit apparaat — e-mailupdates komen binnenkort!',
-  ytTitle: 'Onze YouTube-kanalen', ytSub: 'Leer, lach en ontdek — abonneer voor elke week nieuwe videos', ytSubscribe: 'Abonneren',
+  ytTitle: 'Onze YouTube-kanalen', ytSub: 'Leer, lach en ontdek — abonneer voor elke week nieuwe videos', ytSubscribe: 'Abonneren', webTitle: 'Onze websites', webSub: 'Meer van Anwaar Digital — apps, handleidingen en beveiligingsbronnen', webVisit: 'Bezoeken', webDescMain: '28+ Android-apps, Windows-software en gratis downloads', webDescHub: '57 handleidingen, beveiligingstools, woordenlijst en veelgestelde vragen',
   footTag: '63 gratis online tools. Geen aanmelding — alles draait in je browser.',
   footPopular: 'Populair', footSite: 'Site', footReq: 'Vraag een tool aan', footPrivacy: 'Privacybeleid', footYouTube: 'YouTube',
   langLabel: 'Taal', darkToggle: 'Donkere modus wisselen', darkLabel: 'Donkere modus', lightLabel: 'Lichte modus', waChat: 'Chat op WhatsApp',
@@ -1204,11 +1204,11 @@ function injectStyles() {
   var st = document.createElement('style');
   st.id = 'lang9Style';
   st.textContent = '.lang9-wrap{position:relative;display:inline-flex;align-items:center}' +
-    '.lang9-btn{cursor:pointer;border:1px solid var(--border,#dbe2ea);background:var(--card,#fff);border-radius:999px;padding:7px 14px;font-size:14px;font-weight:700;line-height:1}' +
+    '.lang9-btn{cursor:pointer;border:1px solid var(--border,#dbe2ea);background:var(--card,#fff);color:var(--ink,#0f172a);border-radius:999px;padding:7px 14px;font-size:14px;font-weight:700;line-height:1}' +
     '.lang9-menu{position:absolute;top:calc(100% + 6px);inset-inline-end:0;min-width:170px;margin:0;padding:6px 0;list-style:none;background:var(--card,#fff);border:1px solid var(--border,#dbe2ea);border-radius:12px;box-shadow:0 8px 24px rgba(0,0,0,.15);z-index:100;display:none}' +
     '.lang9-menu.open{display:block}' +
-    '.lang9-menu button{display:block;width:100%;text-align:start;background:none;border:0;cursor:pointer;padding:9px 14px;font-size:14px}' +
-    '.lang9-menu button:hover{background:#f1f5f9}' +
+    '.lang9-menu button{display:block;width:100%;text-align:start;background:none;border:0;cursor:pointer;padding:9px 14px;font-size:14px;color:var(--ink,#0f172a)}' +
+    '.lang9-menu button:hover{background:var(--bg,#f1f5f9)}' +
     '.lang9-menu button.on{font-weight:800}';
   document.head.appendChild(st);
 }

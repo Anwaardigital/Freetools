@@ -101,12 +101,17 @@ canvas.preview{max-width:100%;border:1px solid var(--border);border-radius:10px;
   .nav.open{display:flex}
   .nav a{padding:10px 12px;font-size:15px}
   html[dir=rtl] .nav-toggle{margin-left:0;margin-right:auto}
+  .site-header .wrap{gap:10px;padding:12px 14px}
+  .site-header .logo{font-size:0}
+  .site-header .lang9-btn{padding:6px 10px;font-size:12px}
+  .site-header .dark-toggle{padding:6px 10px;font-size:12px}
 }
 
 /* ============ FEATURES UPDATE: dark mode, favorites, ratings, chips, share ============ */
 
 /* Dark mode */
 body.dark{--bg:#0f172a;--card:#1e293b;--border:#334155;--ink:#f1f5f9;--muted:#94a3b8;--shadow:0 4px 18px rgba(0,0,0,.45)}
+body.dark .site-header,body.dark .site-footer,body.dark .nav{background:#0f172a}
 body.dark input[type=text],body.dark input[type=number],body.dark input[type=date],body.dark input[type=time],body.dark input[type=color],body.dark select,body.dark textarea{background:#0f172a;color:#f1f5f9;border-color:#334155}
 body.dark .result{background:#052e16;border-color:#166534;color:#f1f5f9}
 body.dark .howto,body.dark .faq details{background:#1e293b;border-color:#334155}
@@ -188,7 +193,7 @@ body.dark .share-btn{background:#1e293b;border-color:#334155}
 .yt-grid{grid-template-columns:repeat(auto-fit,minmax(240px,1fr))}
 .yt-card{display:flex;gap:14px;align-items:flex-start;background:var(--card);border:1px solid var(--border);border-radius:16px;padding:18px;box-shadow:var(--shadow);transition:transform .15s,box-shadow .15s;color:var(--ink)}
 .yt-card:hover{transform:translateY(-4px);box-shadow:0 12px 30px rgba(15,23,42,.14);text-decoration:none}
-.yt-icon{font-size:34px;flex:0 0 auto;line-height:1}
+.yt-icon{font-size:34px;flex:0 0 auto;line-height:1;width:64px;height:64px;overflow:hidden;border-radius:50%;display:inline-flex;align-items:center;justify-content:center}
 .yt-card h3{margin:0 0 2px;font-size:16px}
 .yt-handle{margin:0 0 6px;font-size:12px;color:var(--muted)}
 .yt-card .yt-desc{margin:0;font-size:13px;color:var(--muted)}
