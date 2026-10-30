@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-M0NYM1FT9H"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-M0NYM1FT9H');
+</script>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>مختبر التعابير المنتظمة | أدوات الخصوصية المجانية</title>
+<meta name="description" content="اختبر التعابير المنتظمة مع تمييز مباشر للمطابقات ومجموعات الالتقاط. مجاني.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="مختبر التعابير المنتظمة | أدوات الخصوصية المجانية">
+<meta property="og:description" content="اختبر التعابير المنتظمة مع تمييز مباشر للمطابقات ومجموعات الالتقاط. مجاني.">
+<meta property="og:url" content="https://anwaardigital.com/Freetools/ar/tools/regex-tester.html">
+<meta name="twitter:card" content="summary">
+<link rel="canonical" href="https://anwaardigital.com/Freetools/ar/tools/regex-tester.html">
+<link rel="alternate" hreflang="ar" href="https://anwaardigital.com/Freetools/ar/tools/regex-tester.html">
+<link rel="alternate" hreflang="en" href="https://anwaardigital.com/Freetools/tools/regex-tester.html">
+<link rel="alternate" hreflang="x-default" href="https://anwaardigital.com/Freetools/tools/regex-tester.html">
+<link rel="stylesheet" href="../../assets/style.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebApplication",
+      "name": "مختبر التعابير المنتظمة",
+      "url": "https://anwaardigital.com/Freetools/ar/tools/regex-tester.html",
+      "description": "اختبر التعابير المنتظمة مع تمييز مباشر للمطابقات ومجموعات الالتقاط. مجاني.",
+      "inLanguage": "ar",
+      "applicationCategory": "UtilitiesApplication",
+      "operatingSystem": "Any",
+      "isAccessibleForFree": true,
+      "browserRequirements": "Requires JavaScript",
+      "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        { "@type": "Question", "name": "Is it really free?", "acceptedAnswer": { "@type": "Answer", "text": "Yes — every tool on this site is 100% free with no limits, no signup and no watermarks." } },
+        { "@type": "Question", "name": "Is my data private?", "acceptedAnswer": { "@type": "Answer", "text": "Absolutely. All processing happens locally in your browser. Your pattern and test text are never uploaded to any server." } },
+        { "@type": "Question", "name": "Which regex flavor is this?", "acceptedAnswer": { "@type": "Answer", "text": "JavaScript regular expressions, the same engine used in browsers and Node.js. Most common syntax works the same in Python, PHP and other languages." } }
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<header class="site-header"><div class="wrap">
+<a class="logo" href="../index.html"><img class="shield" src="../../freetools-icon-192.png" alt=""> أدوات الخصوصية المجانية</a>
+<button class="nav-toggle" aria-label="Menu" aria-expanded="false">☰</button><nav class="nav"><a href="../index.html">الرئيسية</a><a href="../index.html#tools">كل الأدوات</a><a href="../../about.html">حول الموقع</a><a href="../../faq.html">الأسئلة الشائعة</a><a href="../../blog.html">المدونة</a><a href="../../contact.html">تواصل معنا</a><a href="../../privacy.html">الخصوصية</a></nav>
+</div></header>
+
+<main class="wrap">
+<div class="crumbs"><a href="../index.html">الرئيسية</a> / أدوات المطورين / مختبر التعابير المنتظمة</div>
+<div class="tool-hero"><h1><svg class="hero-icon" aria-hidden="true"><use href="../../assets/tool-icons.svg#icon-regex-tester"/></svg> مختبر التعابير المنتظمة</h1><p>اختبر التعابير المنتظمة مع تمييز مباشر للمطابقات ومجموعات الالتقاط. مجاني.</p></div>
+<div class="ad-slot"><!-- AdSense code goes here --></div>
+<div class="tool-box" id="tool-root" data-tool="regex-tester">
+<div class="field"><label for="rx-pat">Regular Expression (without / slashes)</label><input id="rx-pat" type="text" placeholder="\b[\w.-]+@[\w.-]+\.\w{2,}\b" value="\b[\w.-]+@[\w.-]+\.\w{2,}\b"></div>
+<div class="field"><label>Flags</label><div class="btn-row">
+<label style="display:inline-flex;gap:6px;align-items:center"><input type="checkbox" id="rx-g" checked> g (global)</label>
+<label style="display:inline-flex;gap:6px;align-items:center"><input type="checkbox" id="rx-i"> i (case-insensitive)</label>
+<label style="display:inline-flex;gap:6px;align-items:center"><input type="checkbox" id="rx-m"> m (multiline)</label>
+</div></div>
+<div class="field"><label for="rx-text">Test Text</label><textarea id="rx-text" rows="6">Contact us at hello@example.com or support@anwaardigital.com. Call 555-1234. Visit https://anwaardigital.com/ for more info.</textarea></div>
+<div class="btn-row"><button class="btn" type="button" id="rx-run">Test Regex</button><button class="btn" type="button" id="rx-sample">Load Email Example</button></div>
+<div class="result" id="rx-out"></div>
+<div class="field"><label>Matches (capture groups shown per match)</label><div id="rx-groups" style="white-space:pre-wrap"></div></div>
+</div>
+<script>
+(function(){
+function esc(s){return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');}
+function run(){
+  var pat=document.getElementById('rx-pat').value;
+  var flags=(document.getElementById('rx-g').checked?'g':'')+(document.getElementById('rx-i').checked?'i':'')+(document.getElementById('rx-m').checked?'m':'');
+  var text=document.getElementById('rx-text').value;
+  var out=document.getElementById('rx-out');
+  var grp=document.getElementById('rx-groups');
+  var re;
+  try{re=new RegExp(pat,flags);}catch(e){out.innerHTML='Error: Invalid regex: '+esc(e.message);grp.textContent='';return;}
+  var html='',list=[],m,last=0,count=0;
+  if(flags.indexOf('g')===-1){
+    m=re.exec(text);
+    if(m){html=esc(text.slice(0,m.index))+'<mark>'+esc(m[0])+'</mark>'+esc(text.slice(m.index+m[0].length));list.push(m);}
+  } else {
+    re.lastIndex=0;
+    while((m=re.exec(text))!==null){
+      html+=esc(text.slice(last,m.index))+'<mark>'+esc(m[0])+'</mark>';
+      last=m.index+m[0].length;list.push(m);count++;
+      if(m[0]===''){re.lastIndex++;}
+      if(count>500)break;
+    }
+    html+=esc(text.slice(last));
+  }
+  if(list.length===0){out.innerHTML='No matches found.';grp.textContent='';return;}
+  out.innerHTML='<strong>'+list.length+' match'+(list.length>1?'es':'')+' found.</strong><br><div style="white-space:pre-wrap">'+html+'</div>';
+  var lines=[];
+  list.forEach(function(mm,i){
+    var parts=['Match '+(i+1)+': "'+mm[0]+'" at index '+mm.index];
+    for(var j=1;j<mm.length;j++){parts.push('  Group '+j+': '+(mm[j]===undefined?'(not matched)':'"'+mm[j]+'"'));}
+    lines.push(parts.join('\n'));
+  });
+  grp.textContent=lines.join('\n\n');
+}
+document.getElementById('rx-run').addEventListener('click',run);
+document.getElementById('rx-sample').addEventListener('click',function(){
+  document.getElementById('rx-pat').value='\\b[\\w.-]+@[\\w.-]+\\.\\w{2,}\\b';
+  document.getElementById('rx-g').checked=true;
+  document.getElementById('rx-text').value='Contact us at hello@example.com or support@anwaardigital.com. Call 555-1234.';
+  run();
+});
+run();
+})();
+</script>
+<div class="howto"><h2>How to use</h2><ol><li>Type your <strong>regular expression</strong> (without surrounding / slashes).</li><li>Pick flags: <strong>g</strong> finds all matches, <strong>i</strong> ignores case, <strong>m</strong> treats each line separately.</li><li>Paste your <strong>test text</strong> and click <strong>Test Regex</strong>.</li><li>Matches are <strong>highlighted</strong> and capture groups are listed below.</li></ol></div>
+<div class="faq"><h2>FAQ</h2><details><summary>Is it really free?</summary><p>Yes — every tool on this site is 100% free with no limits, no signup and no watermarks.</p></details><details><summary>Is my data private?</summary><p>Absolutely. All processing happens locally in your browser. Your pattern and test text are never uploaded to any server.</p></details><details><summary>Which regex flavor is this?</summary><p>JavaScript regular expressions, the same engine used in browsers and Node.js. Most common syntax works the same in Python, PHP and other languages.</p></details></div>
+<div class="tool-guide"><h2>Complete Guide to Regular Expressions</h2><p>Regular expressions (regex) are patterns for finding and validating text: email addresses, phone numbers, URLs, dates, or anything with a shape. A few building blocks cover most jobs: <strong>\d</strong> matches a digit, <strong>\w</strong> a word character, <strong>.</strong> any character, <strong>+</strong> means "one or more", <strong>*</strong> means "zero or more", and <strong>\b</strong> marks a word boundary. Parentheses <strong>(...)</strong> capture groups you can reuse or extract.</p><p>Two habits save hours: test against real examples, including the ones that should <em>not</em> match, and keep patterns as simple as the job allows. A pattern that matches too much is usually worse than one that matches too little. This tester runs entirely in your browser — your patterns and test data never leave your device.</p></div>
+<div class="related"><h2>أدوات ذات صلة</h2><div class="grid"><a class="tool-card" href="./json-formatter.html"><div class="ticon"><svg aria-hidden="true"><use href="../../assets/tool-icons.svg#icon-json-formatter"/></svg></div><h3>منسق JSON</h3><p>جمل بيانات JSON وصغرها وتحقق منها برسائل خطأ واضحة. مجاني وخاص.</p></a><a class="tool-card" href="./html-encoder.html"><div class="ticon"><svg aria-hidden="true"><use href="../../assets/tool-icons.svg#icon-html-encoder"/></svg></div><h3>مرمز HTML</h3><p>رمز كيانات HTML أو أعد فك ترميزها بأمان لمقاطع الشيفرة أو مدخلات المستخدم. مجاني.</p></a><a class="tool-card" href="./meta-tag-generator.html"><div class="ticon"><svg aria-hidden="true"><use href="../../assets/tool-icons.svg#icon-meta-tag-generator"/></svg></div><h3>مولد وسوم Meta</h3><p>أنشئ وسوم Meta لتحسين محركات البحث وOpen Graph وبطاقات تويتر بنقرة واحدة. مجاني.</p></a></div></div>
+</div>
+</main>
+<footer class="site-footer"><div class="wrap">
+<div class="cols">
+<div><h4><img class="shield" src="../../freetools-icon-192.png" alt="" style="width:22px;height:22px;vertical-align:-4px;margin-right:6px"> أدوات الخصوصية المجانية</h4><p>63 free online tools. No signup, no tracking — everything runs in your browser.</p></div>
+<div><h4>الشائعة</h4><a href="./image-compressor.html">ضغط الصور</a><a href="./word-counter.html">عداد الكلمات</a><a href="./password-generator.html">مولد كلمات المرور</a><a href="./pdf-merger.html">دمج PDF</a><a href="./age-calculator.html">حاسبة العمر</a></div>
+<div><h4>الموقع</h4><a href="../index.html">الرئيسية</a><a href="../index.html#tools">كل الأدوات</a><a href="../../about.html">حول الموقع</a><a href="../../faq.html">الأسئلة الشائعة</a><a href="../../blog.html">المدونة</a><a href="../../contact.html">تواصل معنا</a><a href="../../request.html">طلب أداة</a><a href="../../privacy.html">الخصوصية</a><a href="../../terms.html">شروط الاستخدام</a><a href="../../disclaimer.html">إخلاء المسؤولية</a></div>
+</div>
+<div class="foot-note">© 2026 أدوات الخصوصية المجانية — جميع الأدوات تعمل 100% في متصفحك.<br>طُوّر بواسطة <a href="https://anwaardigital.com/" target="_blank" rel="noopener" style="color:#fbbf24;font-weight:700">Malik Anwaar</a></div>
+</div></footer>
+<script src="../../assets/app.js"></script>
+<script src="../../assets/tools.js"></script>
+<script src="../../assets/features.js"></script>
+
+<script>
+/* AR pages: Arabic language menu (العربية current + English link), dark-mode
+   label, tool action labels, useBadge, cookie banner. muft63.js and i18n9.js
+   are NOT loaded on AR pages, so the featured carousel is built here too
+   (same logic as the site's own muft63.js carousel). */
+(function () {
+  'use strict';
+  var AR = {
+    darkLabel: 'الوضع الداكن', lightLabel: 'الوضع الفاتح', darkTitle: 'تبديل الوضع الداكن',
+    waChat: 'دردشة على واتساب', favAction: 'مفضلة', rateAction: 'قيم هذه الأداة',
+    shareAction: 'مشاركة', shareOn: 'مشاركة على {name}', rateYour: 'تقييمك: {n}/5',
+    useBadge: '{n} استخدام أداة على هذا الجهاز', openBtn: 'افتح', allCat: 'الكل'
+  };
+  function lsGet(k, d) { try { var v = localStorage.getItem(k); return v === null ? d : JSON.parse(v); } catch (e) { return d; } }
+  function onReady(fn) { if (document.readyState !== 'loading') fn(); else document.addEventListener('DOMContentLoaded', fn); }
+  function enCounterpart() {
+    var p = window.location.pathname;
+    var m = p.match(/^(.*\/Freetools\/)ar\/(tools\/[^\/]+\.html|index\.html)$/);
+    if (m) return m[1] + m[2];
+    if (p.indexOf('/ar/tools/') !== -1) return '../../tools/' + p.split('/ar/tools/')[1];
+    return '../index.html';
+  }
+  function injectStyles() {
+    if (document.getElementById('lang9StyleAr')) return;
+    var st = document.createElement('style'); st.id = 'lang9StyleAr';
+    st.textContent = '.lang9-wrap{position:relative;display:inline-flex;align-items:center}' +
+      '.lang9-btn{cursor:pointer;border:1px solid var(--border,#dbe2ea);background:var(--card,#fff);color:var(--ink,#0f172a);border-radius:999px;padding:7px 14px;font-size:14px;font-weight:700;line-height:1}' +
+      '.lang9-menu{position:absolute;top:calc(100% + 6px);inset-inline-end:0;min-width:170px;margin:0;padding:6px 0;list-style:none;background:var(--card,#fff);border:1px solid var(--border,#dbe2ea);border-radius:12px;box-shadow:0 8px 24px rgba(0,0,0,.15);z-index:100;display:none}' +
+      '.lang9-menu.open{display:block}' +
+      '.lang9-menu button{display:block;width:100%;text-align:start;background:none;border:0;cursor:pointer;padding:9px 14px;font-size:14px;color:var(--ink,#0f172a)}' +
+      '.lang9-menu button:hover{background:var(--bg,#f1f5f9)}' +
+      '.lang9-menu button.on{font-weight:800}' +
+      '.lang9-menu a{display:block;text-decoration:none;padding:9px 14px;font-size:14px;color:var(--ink,#0f172a)}' +
+      '.lang9-menu a:hover{background:var(--bg,#f1f5f9)}';
+    document.head.appendChild(st);
+  }
+  function buildSwitcher() {
+    if (document.getElementById('lang9Wrap')) return;
+    var headerWrap = document.querySelector('.site-header .wrap');
+    if (!headerWrap) return;
+    injectStyles();
+    var wrap = document.createElement('span');
+    wrap.className = 'lang9-wrap'; wrap.id = 'lang9Wrap';
+    var btn = document.createElement('button');
+    btn.type = 'button'; btn.id = 'langBtn9'; btn.className = 'lang9-btn';
+    btn.setAttribute('aria-haspopup', 'listbox'); btn.setAttribute('aria-expanded', 'false');
+    btn.setAttribute('aria-label', 'اللغة'); btn.textContent = 'العربية';
+    var menu = document.createElement('ul');
+    menu.className = 'lang9-menu'; menu.id = 'langMenu9'; menu.setAttribute('role', 'listbox');
+    var li1 = document.createElement('li');
+    var cur = document.createElement('button');
+    cur.type = 'button'; cur.className = 'on'; cur.textContent = 'العربية';
+    cur.setAttribute('role', 'option');
+    cur.addEventListener('click', function () { menu.classList.remove('open'); btn.setAttribute('aria-expanded', 'false'); });
+    li1.appendChild(cur); menu.appendChild(li1);
+    var li2 = document.createElement('li');
+    var a = document.createElement('a');
+    a.href = enCounterpart(); a.textContent = 'English'; a.setAttribute('role', 'option');
+    li2.appendChild(a); menu.appendChild(li2);
+    btn.addEventListener('click', function (e) {
+      e.stopPropagation();
+      var open = menu.classList.toggle('open');
+      btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+    });
+    document.addEventListener('click', function (e) {
+      if (!wrap.contains(e.target)) { menu.classList.remove('open'); btn.setAttribute('aria-expanded', 'false'); }
+    });
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape') { menu.classList.remove('open'); btn.setAttribute('aria-expanded', 'false'); }
+    });
+    wrap.appendChild(btn); wrap.appendChild(menu);
+    var navToggle = headerWrap.querySelector('.nav-toggle');
+    if (navToggle) headerWrap.insertBefore(wrap, navToggle);
+    else headerWrap.appendChild(wrap);
+  }
+  var FEATURED = ['background-remover', 'qr-generator', 'image-compressor', 'password-generator',
+    'pdf-merger', 'word-counter', 'link-shortener', 'age-calculator',
+    'color-picker', 'images-to-pdf'];
+  function featCardAr(slug) {
+    var src = document.querySelector('.tool-card[href="tools/' + slug + '.html"]');
+    if (!src) return null;
+    var ticonEl = src.querySelector('.ticon'); var iconHtml = ticonEl ? ticonEl.innerHTML : '';
+    var name = src.querySelector('h3').textContent;
+    var desc = src.querySelector('p').textContent;
+    var card = document.createElement('div');
+    card.className = 'feat-card'; card.setAttribute('data-slug', slug);
+    var ic = document.createElement('div'); ic.className = 'feat-icon'; ic.innerHTML = iconHtml;
+    var h = document.createElement('h3'); h.textContent = name;
+    var p = document.createElement('p'); p.textContent = desc;
+    var open = document.createElement('a'); open.className = 'feat-open'; open.href = 'tools/' + slug + '.html';
+    var osp = document.createElement('span'); osp.textContent = AR.openBtn;
+    open.appendChild(osp); open.appendChild(document.createTextNode(' ›'));
+    card.appendChild(ic); card.appendChild(h); card.appendChild(p); card.appendChild(open);
+    card.addEventListener('click', function () { location.href = 'tools/' + slug + '.html'; });
+    return card;
+  }
+  function initCarouselAr() {
+    var car = document.getElementById('featCarousel');
+    if (!car) return;
+    FEATURED.forEach(function (s) { var c = featCardAr(s); if (c) car.appendChild(c); });
+    FEATURED.forEach(function (s) { var c = featCardAr(s); if (c) car.appendChild(c); });
+    var SPEED = 40, paused = false, resumeT = null, last = 0;
+    function tick(now) {
+      if (!paused && !document.hidden) {
+        if (last) {
+          car.scrollLeft += (now - last) / 1000 * SPEED;
+          var half = car.scrollWidth / 2;
+          if (half > 0 && car.scrollLeft >= half - 4) car.scrollLeft -= half;
+        }
+        last = now;
+      } else { last = 0; }
+      if (window.requestAnimationFrame) window.requestAnimationFrame(tick);
+    }
+    function pause() { paused = true; }
+    function resume() { paused = false; }
+    function scheduleResume(ms) { clearTimeout(resumeT); resumeT = setTimeout(resume, ms); }
+    car.addEventListener('pointerenter', function (e) { if (e.pointerType === 'mouse') pause(); });
+    car.addEventListener('pointerleave', function (e) { if (e.pointerType === 'mouse') resume(); });
+    car.addEventListener('touchstart', pause, { passive: true });
+    car.addEventListener('touchend', function () { scheduleResume(2500); });
+    document.addEventListener('visibilitychange', function () { if (!document.hidden) resume(); });
+    var pv = document.getElementById('carPrev'), nx = document.getElementById('carNext');
+    if (pv) pv.addEventListener('click', function () { pause(); car.scrollBy({ left: -280, behavior: 'smooth' }); scheduleResume(4000); });
+    if (nx) nx.addEventListener('click', function () { pause(); car.scrollBy({ left: 280, behavior: 'smooth' }); scheduleResume(4000); });
+    if (window.requestAnimationFrame) window.requestAnimationFrame(tick);
+  }
+  onReady(function () {
+    buildSwitcher();
+    var dark = document.getElementById('darkToggle');
+    if (dark) {
+      var setLabel = function () { dark.textContent = document.body.classList.contains('dark') ? AR.lightLabel : AR.darkLabel; };
+      dark.title = AR.darkTitle; dark.setAttribute('aria-label', AR.darkTitle);
+      setLabel();
+      dark.addEventListener('click', function () { setTimeout(setLabel, 0); });
+    }
+    var badge = document.getElementById('useBadge');
+    if (badge) badge.textContent = AR.useBadge.replace('{n}', lsGet('fpt_usage', 0));
+    var chips = document.querySelectorAll('#catChips .chip');
+    if (chips.length && chips[0].textContent === 'All') chips[0].textContent = AR.allCat;
+    document.querySelectorAll('.tool-actions .action-label').forEach(function (lab) {
+      var t = lab.textContent;
+      if (t === 'Favorite') lab.textContent = AR.favAction;
+      else if (t === 'Rate this tool') lab.textContent = AR.rateAction;
+      else if (t === 'Share') lab.textContent = AR.shareAction;
+    });
+    var star = document.querySelector('.tool-hero .fav-star');
+    if (star) { star.title = AR.favAction; star.setAttribute('aria-label', AR.favAction); }
+    document.querySelectorAll('.tool-hero .share-btn').forEach(function (a) {
+      var t = a.getAttribute('title') || a.getAttribute('aria-label') || '';
+      var m = /Share on (.+)$/.exec(t);
+      if (m) { var nt = AR.shareOn.replace('{name}', m[1]); a.title = nt; a.setAttribute('aria-label', nt); }
+    });
+    var rateMsg = document.querySelector('.tool-hero .rate-msg');
+    var rootEl = document.getElementById('tool-root');
+    if (rateMsg && rootEl) {
+      var ratings = lsGet('fpt_ratings', {});
+      var my = ratings[rootEl.getAttribute('data-tool')] || 0;
+      if (my) rateMsg.textContent = AR.rateYour.replace('{n}', my);
+    }
+    document.querySelectorAll('.fav-star').forEach(function (s) { s.title = AR.favAction; s.setAttribute('aria-label', AR.favAction); });
+    var wa = document.getElementById('wa-float-btn');
+    if (wa) { wa.title = AR.waChat; wa.setAttribute('aria-label', AR.waChat); }
+    var ban = document.getElementById('adCookieBanner');
+    if (ban) {
+      var sp = ban.querySelector('span');
+      if (sp) sp.textContent = 'نستخدم ملفات تعريف الارتباط للتحليلات (Google Analytics) لفهم الزيارات وتحسين موقعنا. اقبل للسماح بملفات تعريف ارتباط التحليلات أو ارفض.';
+      var acc = document.getElementById('adCookieAccept'); if (acc) acc.textContent = 'قبول';
+      var dec = document.getElementById('adCookieDecline'); if (dec) dec.textContent = 'رفض';
+    }
+    initCarouselAr();
+  });
+})();
+</script>
+
+</body></html>

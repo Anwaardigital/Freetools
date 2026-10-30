@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<link rel="icon" type="image/png" sizes="192x192" href="https://anwaardigital.com/Freetools/freetools-icon-192.png">
+<link rel="icon" type="image/png" sizes="512x512" href="https://anwaardigital.com/Freetools/freetools-icon-512.png">
+<link rel="apple-touch-icon" href="https://anwaardigital.com/Freetools/freetools-icon-192.png">
+
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>محول الطوابع الزمنية | أدوات الخصوصية المجانية</title>
+<meta name="description" content="حول طوابع Unix الزمنية إلى تواريخ مقروءة وبالعكس لتصحيح السجلات وواجهات API. مجاني.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="محول الطوابع الزمنية | أدوات الخصوصية المجانية">
+<meta property="og:description" content="حول طوابع Unix الزمنية إلى تواريخ مقروءة وبالعكس لتصحيح السجلات وواجهات API. مجاني.">
+<meta property="og:url" content="https://anwaardigital.com/Freetools/ar/tools/timestamp-converter.html">
+<meta property="og:image" content="https://anwaardigital.com/anwaar-icon-512.png">
+<meta name="twitter:card" content="summary">
+<link rel="canonical" href="https://anwaardigital.com/Freetools/ar/tools/timestamp-converter.html">
+<link rel="alternate" hreflang="ar" href="https://anwaardigital.com/Freetools/ar/tools/timestamp-converter.html">
+<link rel="alternate" hreflang="en" href="https://anwaardigital.com/Freetools/tools/timestamp-converter.html">
+<link rel="alternate" hreflang="x-default" href="https://anwaardigital.com/Freetools/tools/timestamp-converter.html">
+<link rel="stylesheet" href="../../assets/style.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebApplication",
+      "name": "محول الطوابع الزمنية",
+      "url": "https://anwaardigital.com/Freetools/ar/tools/timestamp-converter.html",
+      "description": "حول طوابع Unix الزمنية إلى تواريخ مقروءة وبالعكس لتصحيح السجلات وواجهات API. مجاني.",
+      "inLanguage": "ar",
+      "applicationCategory": "DeveloperApplication",
+      "operatingSystem": "Any",
+      "isAccessibleForFree": true,
+      "browserRequirements": "Requires JavaScript",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      }
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Is it really free?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes — every tool on this site is 100% free with no limits, no signup and no watermarks."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is my data private?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Absolutely. All processing happens locally in your browser. Your files are never uploaded to any server."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What exactly is a Unix timestamp?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "It is the number of seconds (or milliseconds) elapsed since January 1, 1970 00:00:00 UTC \u2014 known as the Unix epoch. It is the standard way computers store date and time values, because a single number is unambiguous and easy to compare or sort."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How do I know if my timestamp is in seconds or milliseconds?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Count the digits: 10 digits means seconds (for example 1761091200), 13 digits means milliseconds (for example 1761091200000). This tool auto-detects the format, but you can also switch manually if needed."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is the Year 2038 problem?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "On old 32-bit systems, signed Unix timestamps overflow on January 19, 2038. Modern 64-bit systems, databases, and JavaScript use 64-bit time, so any realistic date converts correctly here."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Do timestamps account for leap seconds and timezones?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Unix time deliberately ignores leap seconds \u2014 every day is exactly 86,400 seconds. Timezones only affect how the timestamp is displayed: the same timestamp shows the correct local time anywhere in the world once you pick the right zone."
+          }
+        }
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<header class="site-header"><div class="wrap">
+<a class="logo" href="../index.html"><img class="shield" src="../../freetools-icon-192.png" alt=""> أدوات الخصوصية المجانية</a>
+<button class="nav-toggle" aria-label="Menu" aria-expanded="false">☰</button><nav class="nav"><a href="../index.html">الرئيسية</a><a href="../index.html#tools">كل الأدوات</a><a href="../../about.html">حول الموقع</a><a href="../../faq.html">الأسئلة الشائعة</a><a href="../../blog.html">المدونة</a><a href="../../contact.html">تواصل معنا</a><a href="../../privacy.html">الخصوصية</a></nav>
+</div></header>
+
+<main class="wrap">
+<div class="crumbs"><a href="../index.html">الرئيسية</a> / أدوات المطورين / محول الطوابع الزمنية</div>
+<div class="tool-hero"><h1><svg class="hero-icon" aria-hidden="true"><use href="../../assets/tool-icons.svg#icon-timestamp-converter"/></svg> محول الطوابع الزمنية</h1><p>حول طوابع Unix الزمنية إلى تواريخ مقروءة وبالعكس لتصحيح السجلات وواجهات API. مجاني.</p></div>
+<div class="ad-slot"><!-- AdSense code goes here --></div>
+<div class="tool-box" id="tool-root" data-tool="timestamp-converter"></div>
+<div class="howto"><h2>How to use</h2><ol><li>Choose your direction: <strong>timestamp → date</strong> or <strong>date → timestamp</strong>.</li><li>Enter the Unix timestamp (10 digits = seconds, 13 digits = milliseconds) or pick a date and time.</li><li>Select the timezone for the human-readable result — it defaults to your local timezone.</li><li>Click <strong>Convert</strong> and copy the result for your code, logs, or database.</li></ol></div>
+<div class="faq"><h2>FAQ</h2><details><summary>Is it really free?</summary><p>Yes — every tool on this site is 100% free with no limits, no signup and no watermarks.</p></details><details><summary>Is my data private?</summary><p>Absolutely. All processing happens locally in your browser. Your files are never uploaded to any server.</p></details><details><summary>What exactly is a Unix timestamp?</summary><p>It is the number of seconds (or milliseconds) elapsed since January 1, 1970 00:00:00 UTC — known as the Unix epoch. It is the standard way computers store date and time values, because a single number is unambiguous and easy to compare or sort.</p></details><details><summary>How do I know if my timestamp is in seconds or milliseconds?</summary><p>Count the digits: 10 digits means seconds (for example 1761091200), 13 digits means milliseconds (for example 1761091200000). This tool auto-detects the format, but you can also switch manually if needed.</p></details><details><summary>What is the Year 2038 problem?</summary><p>On old 32-bit systems, signed Unix timestamps overflow on January 19, 2038. Modern 64-bit systems, databases, and JavaScript use 64-bit time, so any realistic date converts correctly here.</p></details><details><summary>Do timestamps account for leap seconds and timezones?</summary><p>Unix time deliberately ignores leap seconds — every day is exactly 86,400 seconds. Timezones only affect how the timestamp is displayed: the same timestamp shows the correct local time anywhere in the world once you pick the right zone.</p></details></div>
+<div class="tool-guide"><h2>Complete Guide to Unix Timestamps</h2><p>Almost every timestamp you encounter as a developer — in APIs, databases, log files, JWT tokens — is a Unix timestamp: a plain number counting seconds from the Unix epoch (midnight, January 1, 1970, UTC). It was chosen because comparing two moments becomes trivial integer math, with no timezones or formats to argue about.</p>
+<p><strong>The seconds-vs-milliseconds trap</strong> is the number-one timestamp bug in the wild. JavaScript's <code>Date.now()</code> returns <em>milliseconds</em> (13 digits), while most server APIs and databases use <em>seconds</em> (10 digits). Paste a millisecond value into code expecting seconds and you land in the year 56,000. This converter auto-detects the digit count so you always know which one you are holding.</p>
+<h3>Everyday uses</h3>
+<ul>
+<li><strong>Debugging logs:</strong> server logs often print raw epoch values — convert them to see exactly when an event happened in your timezone.</li>
+<li><strong>API work:</strong> REST APIs return <code>created_at</code> as epoch seconds; convert to verify token expiry or cache TTLs.</li>
+<li><strong>Databases:</strong> check what a stored integer date actually represents before running migrations.</li>
+<li><strong>Scheduling:</strong> convert a future date to a timestamp for cron jobs, reminders, or countdown timers.</li>
+</ul>
+<h3>Converting in code</h3>
+<p>In JavaScript: <code>new Date(1761091200 * 1000)</code> (multiply seconds by 1000). In Python: <code>datetime.fromtimestamp(1761091200, tz=timezone.utc)</code>. In PostgreSQL: <code>to_timestamp(1761091200)</code>. Going the other way: <code>Math.floor(Date.now() / 1000)</code> in JS, or <code>int(datetime.now(timezone.utc).timestamp())</code> in Python.</p>
+<p><strong>Best practice:</strong> always store timestamps in UTC and convert to local time only for display — exactly what this tool does when you pick a timezone. That single habit eliminates an entire class of timezone bugs, including daylight-saving surprises.</p>
+<h3>Negative timestamps and far-future dates</h3>
+<p>Timestamps are not limited to dates after 1970. Negative values represent moments <em>before</em> the epoch — for example, -86400 is December 31, 1969. Historians and archivists use negative timestamps for pre-1970 records, and the converter handles them correctly. Far-future dates work too: 64-bit timestamps remain valid for hundreds of millions of years, far beyond any practical need.</p>
+<h3>Common timestamp formats in the wild</h3>
+<ul>
+<li><strong>ISO 8601 strings</strong> ("2026-10-22T07:00:00Z") — human-readable, sortable, and unambiguous. Preferred for APIs.</li>
+<li><strong>Epoch seconds</strong> (1761091200) — compact; standard in Unix systems, PHP (<code>time()</code>), and most databases.</li>
+<li><strong>Epoch milliseconds</strong> (1761091200000) — JavaScript's native format via <code>Date.now()</code>.</li>
+<li><strong>RFC 2822</strong> ("Thu, 22 Oct 2026 07:00:00 GMT") — used in email headers and HTTP.</li>
+</ul>
+<p>When you receive a timestamp and are unsure of its format, paste it here first — the auto-detection will tell you whether you are looking at seconds or milliseconds before you write a single line of code.</p></div>
+<div class="related"><h2>أدوات ذات صلة</h2><div class="grid"><a class="tool-card" href="./html-encoder.html"><div class="ticon"><svg aria-hidden="true"><use href="../../assets/tool-icons.svg#icon-html-encoder"/></svg></div><h3>مرمز HTML</h3><p>رمز كيانات HTML أو أعد فك ترميزها بأمان لمقاطع الشيفرة أو مدخلات المستخدم. مجاني.</p></a><a class="tool-card" href="./css-minifier.html"><div class="ticon"><svg aria-hidden="true"><use href="../../assets/tool-icons.svg#icon-css-minifier"/></svg></div><h3>مصغر CSS</h3><p>صغر شيفرة CSS لتقليل حجم الملف، أو جملها لسهولة القراءة. مجاني.</p></a><a class="tool-card" href="./js-minifier.html"><div class="ticon"><svg aria-hidden="true"><use href="../../assets/tool-icons.svg#icon-js-minifier"/></svg></div><h3>مصغر JavaScript</h3><p>صغر ملفات JavaScript بمصغر أساسي لملفات أصغر وتحميل أسرع. مجاني.</p></a></div></div>
+</div>
+</main>
+<footer class="site-footer"><div class="wrap">
+<div class="cols">
+<div><h4><img class="shield" src="../../freetools-icon-192.png" alt="" style="width:22px;height:22px;vertical-align:-4px;margin-right:6px"> أدوات الخصوصية المجانية</h4><p>63 أداة مجانية على الإنترنت. دون تسجيل — كل شيء يعمل في متصفحك.</p></div>
+<div><h4>الشائعة</h4><a href="./image-compressor.html">ضغط الصور</a><a href="./word-counter.html">عداد الكلمات</a><a href="./password-generator.html">مولد كلمات المرور</a><a href="./pdf-merger.html">دمج PDF</a><a href="./age-calculator.html">حاسبة العمر</a></div>
+<div><h4>الموقع</h4><a href="../index.html">الرئيسية</a><a href="../index.html#tools">كل الأدوات</a><a href="../../about.html">حول الموقع</a><a href="../../faq.html">الأسئلة الشائعة</a><a href="../../blog.html">المدونة</a><a href="../../contact.html">تواصل معنا</a><a href="../../request.html">طلب أداة</a><a href="../../privacy.html">الخصوصية</a><a href="../../terms.html">شروط الاستخدام</a><a href="../../disclaimer.html">إخلاء المسؤولية</a></div>
+</div>
+<div class="foot-note">© 2026 أدوات الخصوصية المجانية — جميع الأدوات تعمل 100% في متصفحك.<br>طُوّر بواسطة <a href="https://anwaardigital.com/" target="_blank" rel="noopener" style="color:#fbbf24;font-weight:700">Malik Anwaar</a></div>
+</div></footer>
+<script src="../../assets/app.js"></script>
+<script src="../../assets/tools.js"></script>
+<script src="../../assets/features.js"></script>
+
+<script>
+/* AR pages: Arabic language menu (العربية current + English link), dark-mode
+   label, tool action labels, useBadge, cookie banner. muft63.js and i18n9.js
+   are NOT loaded on AR pages, so the featured carousel is built here too
+   (same logic as the site's own muft63.js carousel). */
+(function () {
+  'use strict';
+  var AR = {
+    darkLabel: 'الوضع الداكن', lightLabel: 'الوضع الفاتح', darkTitle: 'تبديل الوضع الداكن',
+    waChat: 'دردشة على واتساب', favAction: 'مفضلة', rateAction: 'قيم هذه الأداة',
+    shareAction: 'مشاركة', shareOn: 'مشاركة على {name}', rateYour: 'تقييمك: {n}/5',
+    useBadge: '{n} استخدام أداة على هذا الجهاز', openBtn: 'افتح', allCat: 'الكل'
+  };
+  function lsGet(k, d) { try { var v = localStorage.getItem(k); return v === null ? d : JSON.parse(v); } catch (e) { return d; } }
+  function onReady(fn) { if (document.readyState !== 'loading') fn(); else document.addEventListener('DOMContentLoaded', fn); }
+  function enCounterpart() {
+    var p = window.location.pathname;
+    var m = p.match(/^(.*\/Freetools\/)ar\/(tools\/[^\/]+\.html|index\.html)$/);
+    if (m) return m[1] + m[2];
+    if (p.indexOf('/ar/tools/') !== -1) return '../../tools/' + p.split('/ar/tools/')[1];
+    return '../index.html';
+  }
+  function injectStyles() {
+    if (document.getElementById('lang9StyleAr')) return;
+    var st = document.createElement('style'); st.id = 'lang9StyleAr';
+    st.textContent = '.lang9-wrap{position:relative;display:inline-flex;align-items:center}' +
+      '.lang9-btn{cursor:pointer;border:1px solid var(--border,#dbe2ea);background:var(--card,#fff);color:var(--ink,#0f172a);border-radius:999px;padding:7px 14px;font-size:14px;font-weight:700;line-height:1}' +
+      '.lang9-menu{position:absolute;top:calc(100% + 6px);inset-inline-end:0;min-width:170px;margin:0;padding:6px 0;list-style:none;background:var(--card,#fff);border:1px solid var(--border,#dbe2ea);border-radius:12px;box-shadow:0 8px 24px rgba(0,0,0,.15);z-index:100;display:none}' +
+      '.lang9-menu.open{display:block}' +
+      '.lang9-menu button{display:block;width:100%;text-align:start;background:none;border:0;cursor:pointer;padding:9px 14px;font-size:14px;color:var(--ink,#0f172a)}' +
+      '.lang9-menu button:hover{background:var(--bg,#f1f5f9)}' +
+      '.lang9-menu button.on{font-weight:800}' +
+      '.lang9-menu a{display:block;text-decoration:none;padding:9px 14px;font-size:14px;color:var(--ink,#0f172a)}' +
+      '.lang9-menu a:hover{background:var(--bg,#f1f5f9)}';
+    document.head.appendChild(st);
+  }
+  function buildSwitcher() {
+    if (document.getElementById('lang9Wrap')) return;
+    var headerWrap = document.querySelector('.site-header .wrap');
+    if (!headerWrap) return;
+    injectStyles();
+    var wrap = document.createElement('span');
+    wrap.className = 'lang9-wrap'; wrap.id = 'lang9Wrap';
+    var btn = document.createElement('button');
+    btn.type = 'button'; btn.id = 'langBtn9'; btn.className = 'lang9-btn';
+    btn.setAttribute('aria-haspopup', 'listbox'); btn.setAttribute('aria-expanded', 'false');
+    btn.setAttribute('aria-label', 'اللغة'); btn.textContent = 'العربية';
+    var menu = document.createElement('ul');
+    menu.className = 'lang9-menu'; menu.id = 'langMenu9'; menu.setAttribute('role', 'listbox');
+    var li1 = document.createElement('li');
+    var cur = document.createElement('button');
+    cur.type = 'button'; cur.className = 'on'; cur.textContent = 'العربية';
+    cur.setAttribute('role', 'option');
+    cur.addEventListener('click', function () { menu.classList.remove('open'); btn.setAttribute('aria-expanded', 'false'); });
+    li1.appendChild(cur); menu.appendChild(li1);
+    var li2 = document.createElement('li');
+    var a = document.createElement('a');
+    a.href = enCounterpart(); a.textContent = 'English'; a.setAttribute('role', 'option');
+    li2.appendChild(a); menu.appendChild(li2);
+    btn.addEventListener('click', function (e) {
+      e.stopPropagation();
+      var open = menu.classList.toggle('open');
+      btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+    });
+    document.addEventListener('click', function (e) {
+      if (!wrap.contains(e.target)) { menu.classList.remove('open'); btn.setAttribute('aria-expanded', 'false'); }
+    });
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape') { menu.classList.remove('open'); btn.setAttribute('aria-expanded', 'false'); }
+    });
+    wrap.appendChild(btn); wrap.appendChild(menu);
+    var navToggle = headerWrap.querySelector('.nav-toggle');
+    if (navToggle) headerWrap.insertBefore(wrap, navToggle);
+    else headerWrap.appendChild(wrap);
+  }
+  var FEATURED = ['background-remover', 'qr-generator', 'image-compressor', 'password-generator',
+    'pdf-merger', 'word-counter', 'link-shortener', 'age-calculator',
+    'color-picker', 'images-to-pdf'];
+  function featCardAr(slug) {
+    var src = document.querySelector('.tool-card[href="tools/' + slug + '.html"]');
+    if (!src) return null;
+    var ticonEl = src.querySelector('.ticon'); var iconHtml = ticonEl ? ticonEl.innerHTML : '';
+    var name = src.querySelector('h3').textContent;
+    var desc = src.querySelector('p').textContent;
+    var card = document.createElement('div');
+    card.className = 'feat-card'; card.setAttribute('data-slug', slug);
+    var ic = document.createElement('div'); ic.className = 'feat-icon'; ic.innerHTML = iconHtml;
+    var h = document.createElement('h3'); h.textContent = name;
+    var p = document.createElement('p'); p.textContent = desc;
+    var open = document.createElement('a'); open.className = 'feat-open'; open.href = 'tools/' + slug + '.html';
+    var osp = document.createElement('span'); osp.textContent = AR.openBtn;
+    open.appendChild(osp); open.appendChild(document.createTextNode(' ›'));
+    card.appendChild(ic); card.appendChild(h); card.appendChild(p); card.appendChild(open);
+    card.addEventListener('click', function () { location.href = 'tools/' + slug + '.html'; });
+    return card;
+  }
+  function initCarouselAr() {
+    var car = document.getElementById('featCarousel');
+    if (!car) return;
+    FEATURED.forEach(function (s) { var c = featCardAr(s); if (c) car.appendChild(c); });
+    FEATURED.forEach(function (s) { var c = featCardAr(s); if (c) car.appendChild(c); });
+    var SPEED = 40, paused = false, resumeT = null, last = 0;
+    function tick(now) {
+      if (!paused && !document.hidden) {
+        if (last) {
+          car.scrollLeft += (now - last) / 1000 * SPEED;
+          var half = car.scrollWidth / 2;
+          if (half > 0 && car.scrollLeft >= half - 4) car.scrollLeft -= half;
+        }
+        last = now;
+      } else { last = 0; }
+      if (window.requestAnimationFrame) window.requestAnimationFrame(tick);
+    }
+    function pause() { paused = true; }
+    function resume() { paused = false; }
+    function scheduleResume(ms) { clearTimeout(resumeT); resumeT = setTimeout(resume, ms); }
+    car.addEventListener('pointerenter', function (e) { if (e.pointerType === 'mouse') pause(); });
+    car.addEventListener('pointerleave', function (e) { if (e.pointerType === 'mouse') resume(); });
+    car.addEventListener('touchstart', pause, { passive: true });
+    car.addEventListener('touchend', function () { scheduleResume(2500); });
+    document.addEventListener('visibilitychange', function () { if (!document.hidden) resume(); });
+    var pv = document.getElementById('carPrev'), nx = document.getElementById('carNext');
+    if (pv) pv.addEventListener('click', function () { pause(); car.scrollBy({ left: -280, behavior: 'smooth' }); scheduleResume(4000); });
+    if (nx) nx.addEventListener('click', function () { pause(); car.scrollBy({ left: 280, behavior: 'smooth' }); scheduleResume(4000); });
+    if (window.requestAnimationFrame) window.requestAnimationFrame(tick);
+  }
+  onReady(function () {
+    buildSwitcher();
+    var dark = document.getElementById('darkToggle');
+    if (dark) {
+      var setLabel = function () { dark.textContent = document.body.classList.contains('dark') ? AR.lightLabel : AR.darkLabel; };
+      dark.title = AR.darkTitle; dark.setAttribute('aria-label', AR.darkTitle);
+      setLabel();
+      dark.addEventListener('click', function () { setTimeout(setLabel, 0); });
+    }
+    var badge = document.getElementById('useBadge');
+    if (badge) badge.textContent = AR.useBadge.replace('{n}', lsGet('fpt_usage', 0));
+    var chips = document.querySelectorAll('#catChips .chip');
+    if (chips.length && chips[0].textContent === 'All') chips[0].textContent = AR.allCat;
+    document.querySelectorAll('.tool-actions .action-label').forEach(function (lab) {
+      var t = lab.textContent;
+      if (t === 'Favorite') lab.textContent = AR.favAction;
+      else if (t === 'Rate this tool') lab.textContent = AR.rateAction;
+      else if (t === 'Share') lab.textContent = AR.shareAction;
+    });
+    var star = document.querySelector('.tool-hero .fav-star');
+    if (star) { star.title = AR.favAction; star.setAttribute('aria-label', AR.favAction); }
+    document.querySelectorAll('.tool-hero .share-btn').forEach(function (a) {
+      var t = a.getAttribute('title') || a.getAttribute('aria-label') || '';
+      var m = /Share on (.+)$/.exec(t);
+      if (m) { var nt = AR.shareOn.replace('{name}', m[1]); a.title = nt; a.setAttribute('aria-label', nt); }
+    });
+    var rateMsg = document.querySelector('.tool-hero .rate-msg');
+    var rootEl = document.getElementById('tool-root');
+    if (rateMsg && rootEl) {
+      var ratings = lsGet('fpt_ratings', {});
+      var my = ratings[rootEl.getAttribute('data-tool')] || 0;
+      if (my) rateMsg.textContent = AR.rateYour.replace('{n}', my);
+    }
+    document.querySelectorAll('.fav-star').forEach(function (s) { s.title = AR.favAction; s.setAttribute('aria-label', AR.favAction); });
+    var wa = document.getElementById('wa-float-btn');
+    if (wa) { wa.title = AR.waChat; wa.setAttribute('aria-label', AR.waChat); }
+    var ban = document.getElementById('adCookieBanner');
+    if (ban) {
+      var sp = ban.querySelector('span');
+      if (sp) sp.textContent = 'نستخدم ملفات تعريف الارتباط للتحليلات (Google Analytics) لفهم الزيارات وتحسين موقعنا. اقبل للسماح بملفات تعريف ارتباط التحليلات أو ارفض.';
+      var acc = document.getElementById('adCookieAccept'); if (acc) acc.textContent = 'قبول';
+      var dec = document.getElementById('adCookieDecline'); if (dec) dec.textContent = 'رفض';
+    }
+    initCarouselAr();
+  });
+})();
+</script>
+
+</body></html>

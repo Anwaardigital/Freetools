@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-M0NYM1FT9H"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-M0NYM1FT9H');
+</script>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>مولد الفواتير | أدوات الخصوصية المجانية</title>
+<meta name="description" content="أنشئ فواتير احترافية في ثوان: أضف البنود والضريبة والخصم، ثم اطبع أو نزل. مجاني.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="مولد الفواتير | أدوات الخصوصية المجانية">
+<meta property="og:description" content="أنشئ فواتير احترافية في ثوان: أضف البنود والضريبة والخصم، ثم اطبع أو نزل. مجاني.">
+<meta property="og:url" content="https://anwaardigital.com/Freetools/ar/tools/invoice-generator.html">
+<meta name="twitter:card" content="summary">
+<link rel="canonical" href="https://anwaardigital.com/Freetools/ar/tools/invoice-generator.html">
+<link rel="alternate" hreflang="ar" href="https://anwaardigital.com/Freetools/ar/tools/invoice-generator.html">
+<link rel="alternate" hreflang="en" href="https://anwaardigital.com/Freetools/tools/invoice-generator.html">
+<link rel="alternate" hreflang="x-default" href="https://anwaardigital.com/Freetools/tools/invoice-generator.html">
+<link rel="stylesheet" href="../../assets/style.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebApplication",
+      "name": "مولد الفواتير",
+      "url": "https://anwaardigital.com/Freetools/ar/tools/invoice-generator.html",
+      "description": "أنشئ فواتير احترافية في ثوان: أضف البنود والضريبة والخصم، ثم اطبع أو نزل. مجاني.",
+      "inLanguage": "ar",
+      "applicationCategory": "UtilitiesApplication",
+      "operatingSystem": "Any",
+      "isAccessibleForFree": true,
+      "browserRequirements": "Requires JavaScript",
+      "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        { "@type": "Question", "name": "Is it really free?", "acceptedAnswer": { "@type": "Answer", "text": "Yes — every tool on this site is 100% free with no limits, no signup and no watermarks." } },
+        { "@type": "Question", "name": "Is my data private?", "acceptedAnswer": { "@type": "Answer", "text": "Absolutely. All processing happens locally in your browser. Your invoice details are never uploaded to any server." } },
+        { "@type": "Question", "name": "Can I print or save the invoice?", "acceptedAnswer": { "@type": "Answer", "text": "Yes — use the Print button to print or save as PDF from your browser's print dialog, or Download HTML to keep an editable copy." } }
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<header class="site-header"><div class="wrap">
+<a class="logo" href="../index.html"><img class="shield" src="../../freetools-icon-192.png" alt=""> أدوات الخصوصية المجانية</a>
+<button class="nav-toggle" aria-label="Menu" aria-expanded="false">☰</button><nav class="nav"><a href="../index.html">الرئيسية</a><a href="../index.html#tools">كل الأدوات</a><a href="../../about.html">حول الموقع</a><a href="../../faq.html">الأسئلة الشائعة</a><a href="../../blog.html">المدونة</a><a href="../../contact.html">تواصل معنا</a><a href="../../privacy.html">الخصوصية</a></nav>
+</div></header>
+
+<main class="wrap">
+<div class="crumbs"><a href="../index.html">الرئيسية</a> / أدوات الأعمال / مولد الفواتير</div>
+<div class="tool-hero"><h1><svg class="hero-icon" aria-hidden="true"><use href="../../assets/tool-icons.svg#icon-invoice-generator"/></svg> مولد الفواتير</h1><p>أنشئ فواتير احترافية في ثوان: أضف البنود والضريبة والخصم، ثم اطبع أو نزل. مجاني.</p></div>
+<div class="ad-slot"><!-- AdSense code goes here --></div>
+<div class="tool-box" id="tool-root" data-tool="invoice-generator">
+<div class="field"><label for="inv-from">From (your name / business)</label><input id="inv-from" type="text" placeholder="Your Business Name"></div>
+<div class="field"><label for="inv-to">Bill To (client name)</label><input id="inv-to" type="text" placeholder="Client Name"></div>
+<div class="field"><label for="inv-no">Invoice Number</label><input id="inv-no" type="text" value="INV-001"></div>
+<div class="field"><label for="inv-date">Date</label><input id="inv-date" type="date"></div>
+<div class="field"><label for="inv-cur">Currency</label><select id="inv-cur"><option value="USD">USD ($)</option><option value="EUR">EUR (€)</option><option value="GBP">GBP (£)</option><option value="PKR">PKR (Rs)</option></select></div>
+<div class="field"><label>Items</label><div id="inv-items"></div>
+<div class="btn-row"><button class="btn" type="button" id="inv-add">+ Add Item</button></div></div>
+<div class="field"><label for="inv-tax">Tax (%)</label><input id="inv-tax" type="number" value="0" min="0" max="100" step="0.5"></div>
+<div class="field"><label for="inv-disc">Discount (%)</label><input id="inv-disc" type="number" value="0" min="0" max="100" step="0.5"></div>
+<div class="btn-row"><button class="btn" type="button" id="inv-build">Build Invoice</button><button class="btn" type="button" id="inv-print">Print / Save PDF</button><button class="btn" type="button" id="inv-dl">Download HTML</button></div>
+<div class="result" id="inv-preview" style="text-align:left"></div>
+</div>
+<script>
+(function(){
+var SYM={USD:'$',EUR:'€',GBP:'£',PKR:'Rs '};
+function esc(s){return String(s==null?'':s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');}
+function money(n,cur){return SYM[cur]+Number(n).toFixed(2);}
+function addRow(desc,qty,price){
+  var wrap=document.getElementById('inv-items');
+  var row=document.createElement('div');
+  row.className='btn-row';row.style.marginBottom='6px';
+  row.innerHTML='<input type="text" class="inv-desc" placeholder="Description" value="'+esc(desc||'')+'" style="flex:2">'
+    +'<input type="number" class="inv-qty" placeholder="Qty" value="'+(qty==null?1:qty)+'" min="0" step="1" style="flex:1">'
+    +'<input type="number" class="inv-price" placeholder="Price" value="'+(price==null?'':price)+'" min="0" step="0.01" style="flex:1">'
+    +'<button class="btn" type="button">Remove</button>';
+  row.querySelector('button').addEventListener('click',function(){row.remove();});
+  wrap.appendChild(row);
+}
+function build(){
+  var cur=document.getElementById('inv-cur').value;
+  var rows=document.querySelectorAll('#inv-items .btn-row');
+  var items=[],sub=0;
+  rows.forEach(function(r){
+    var d=r.querySelector('.inv-desc').value.trim();
+    var q=parseFloat(r.querySelector('.inv-qty').value)||0;
+    var p=parseFloat(r.querySelector('.inv-price').value)||0;
+    if(!d&&q===0&&p===0)return;
+    var amt=q*p;sub+=amt;
+    items.push({d:d||'(no description)',q:q,p:p,amt:amt});
+  });
+  var taxPct=parseFloat(document.getElementById('inv-tax').value)||0;
+  var discPct=parseFloat(document.getElementById('inv-disc').value)||0;
+  var disc=sub*discPct/100;
+  var tax=(sub-disc)*taxPct/100;
+  var total=sub-disc+tax;
+  var rowsHtml=items.length?items.map(function(it){
+    return '<tr><td>'+esc(it.d)+'</td><td>'+it.q+'</td><td>'+money(it.p,cur)+'</td><td>'+money(it.amt,cur)+'</td></tr>';
+  }).join(''):'<tr><td colspan="4">No items — click “+ Add Item”.</td></tr>';
+  var html='<h3>INVOICE '+esc(document.getElementById('inv-no').value)+'</h3>'
+    +'<p><strong>From:</strong> '+esc(document.getElementById('inv-from').value||'—')+'<br>'
+    +'<strong>Bill To:</strong> '+esc(document.getElementById('inv-to').value||'—')+'<br>'
+    +'<strong>Date:</strong> '+esc(document.getElementById('inv-date').value||'—')+'</p>'
+    +'<table style="width:100%;border-collapse:collapse"><thead><tr><th style="text-align:left;border-bottom:1px solid #ccc">Description</th><th style="border-bottom:1px solid #ccc">Qty</th><th style="border-bottom:1px solid #ccc">Price</th><th style="border-bottom:1px solid #ccc">Amount</th></tr></thead><tbody>'+rowsHtml+'</tbody></table>'
+    +'<p style="text-align:right">Subtotal: '+money(sub,cur)+'<br>Discount ('+discPct+'%): −'+money(disc,cur)+'<br>Tax ('+taxPct+'%): '+money(tax,cur)+'<br><strong>Total: '+money(total,cur)+'</strong></p>';
+  var prev=document.getElementById('inv-preview');
+  prev.innerHTML=html;
+  prev.dataset.html='<!DOCTYPE html><html><head><meta charset="UTF-8"><title>Invoice '+esc(document.getElementById('inv-no').value)+'</title></head><body style="font-family:sans-serif;max-width:700px;margin:40px auto">'+html+'</body></html>';
+  return html;
+}
+document.getElementById('inv-add').addEventListener('click',function(){addRow('',1,'');});
+document.getElementById('inv-build').addEventListener('click',build);
+document.getElementById('inv-print').addEventListener('click',function(){
+  build();
+  var w=window.open('','_blank');
+  w.document.write(document.getElementById('inv-preview').dataset.html||'');
+  w.document.close();w.focus();w.print();
+});
+document.getElementById('inv-dl').addEventListener('click',function(){
+  build();
+  var blob=new Blob([document.getElementById('inv-preview').dataset.html||''],{type:'text/html'});
+  var a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download='invoice.html';
+  document.body.appendChild(a);a.click();
+  setTimeout(function(){URL.revokeObjectURL(a.href);a.remove();},4000);
+});
+document.getElementById('inv-date').value=new Date().toISOString().slice(0,10);
+addRow('Website design',1,250);
+addRow('Monthly maintenance',1,50);
+build();
+})();
+</script>
+<div class="howto"><h2>How to use</h2><ol><li>Enter your <strong>business and client names</strong>, invoice number and date.</li><li>Add items with <strong>quantity and price</strong> — click “+ Add Item” for more rows.</li><li>Set <strong>tax and discount</strong> percentages if needed.</li><li>Click <strong>Build Invoice</strong>, then <strong>Print / Save PDF</strong> or <strong>Download HTML</strong>.</li></ol></div>
+<div class="faq"><h2>FAQ</h2><details><summary>Is it really free?</summary><p>Yes — every tool on this site is 100% free with no limits, no signup and no watermarks.</p></details><details><summary>Is my data private?</summary><p>Absolutely. All processing happens locally in your browser. Your invoice details are never uploaded to any server.</p></details><details><summary>Can I print or save the invoice?</summary><p>Yes — use the Print button to print or save as PDF from your browser's print dialog, or Download HTML to keep an editable copy.</p></details></div>
+<div class="tool-guide"><h2>Complete Guide to Invoicing</h2><p>A good invoice gets you paid faster: it states who is billing, who owes, what was delivered, and exactly how much is due. Always include an <strong>invoice number</strong> (for your records and your client's), a <strong>date</strong>, an itemized list with quantities and prices, and any <strong>tax or discount</strong> shown separately so the total is easy to verify. Vague invoices get questioned; itemized ones get paid.</p><p>Freelancers in the US, UK and EU use the same basics, with local differences: EU invoices often need a VAT number and VAT rate, while US invoices usually show sales tax only where it applies. This generator keeps your data on your device — nothing is stored online — and produces a clean invoice you can print, save as PDF, or email as HTML.</p></div>
+<div class="related"><h2>أدوات ذات صلة</h2><div class="grid"><a class="tool-card" href="./vat-calculator.html"><div class="ticon"><svg aria-hidden="true"><use href="../../assets/tool-icons.svg#icon-vat-calculator"/></svg></div><h3>حاسبة ضريبة القيمة المضافة</h3><p>أضف ضريبة القيمة المضافة أو أزلها لدول الاتحاد الأوروبي وبريطانيا بالمعدلات القياسية. مجاني.</p></a><a class="tool-card" href="./mortgage-calculator.html"><div class="ticon"><svg aria-hidden="true"><use href="../../assets/tool-icons.svg#icon-mortgage-calculator"/></svg></div><h3>حاسبة الرهن العقاري</h3><p>احسب دفعتك الشهرية للرهن العقاري وإجمالي الفائدة والتكلفة الكلية فورا. مجاني.</p></a><a class="tool-card" href="./percentage-calculator.html"><div class="ticon"><svg aria-hidden="true"><use href="../../assets/tool-icons.svg#icon-percentage-calculator"/></svg></div><h3>حاسبة النسبة المئوية</h3><p>حل أي مسألة نسبة مئوية: النسبة أو التغير أو الزيادة أو النقصان. مجاني وفوري.</p></a></div></div>
+</div>
+</main>
+<footer class="site-footer"><div class="wrap">
+<div class="cols">
+<div><h4><img class="shield" src="../../freetools-icon-192.png" alt="" style="width:22px;height:22px;vertical-align:-4px;margin-right:6px"> أدوات الخصوصية المجانية</h4><p>63 free online tools. No signup, no tracking — everything runs in your browser.</p></div>
+<div><h4>الشائعة</h4><a href="./image-compressor.html">ضغط الصور</a><a href="./word-counter.html">عداد الكلمات</a><a href="./password-generator.html">مولد كلمات المرور</a><a href="./pdf-merger.html">دمج PDF</a><a href="./age-calculator.html">حاسبة العمر</a></div>
+<div><h4>الموقع</h4><a href="../index.html">الرئيسية</a><a href="../index.html#tools">كل الأدوات</a><a href="../../about.html">حول الموقع</a><a href="../../faq.html">الأسئلة الشائعة</a><a href="../../blog.html">المدونة</a><a href="../../contact.html">تواصل معنا</a><a href="../../request.html">طلب أداة</a><a href="../../privacy.html">الخصوصية</a><a href="../../terms.html">شروط الاستخدام</a><a href="../../disclaimer.html">إخلاء المسؤولية</a></div>
+</div>
+<div class="foot-note">© 2026 أدوات الخصوصية المجانية — جميع الأدوات تعمل 100% في متصفحك.<br>طُوّر بواسطة <a href="https://anwaardigital.com/" target="_blank" rel="noopener" style="color:#fbbf24;font-weight:700">Malik Anwaar</a></div>
+</div></footer>
+<script src="../../assets/app.js"></script>
+<script src="../../assets/tools.js"></script>
+<script src="../../assets/features.js"></script>
+
+<script>
+/* AR pages: Arabic language menu (العربية current + English link), dark-mode
+   label, tool action labels, useBadge, cookie banner. muft63.js and i18n9.js
+   are NOT loaded on AR pages, so the featured carousel is built here too
+   (same logic as the site's own muft63.js carousel). */
+(function () {
+  'use strict';
+  var AR = {
+    darkLabel: 'الوضع الداكن', lightLabel: 'الوضع الفاتح', darkTitle: 'تبديل الوضع الداكن',
+    waChat: 'دردشة على واتساب', favAction: 'مفضلة', rateAction: 'قيم هذه الأداة',
+    shareAction: 'مشاركة', shareOn: 'مشاركة على {name}', rateYour: 'تقييمك: {n}/5',
+    useBadge: '{n} استخدام أداة على هذا الجهاز', openBtn: 'افتح', allCat: 'الكل'
+  };
+  function lsGet(k, d) { try { var v = localStorage.getItem(k); return v === null ? d : JSON.parse(v); } catch (e) { return d; } }
+  function onReady(fn) { if (document.readyState !== 'loading') fn(); else document.addEventListener('DOMContentLoaded', fn); }
+  function enCounterpart() {
+    var p = window.location.pathname;
+    var m = p.match(/^(.*\/Freetools\/)ar\/(tools\/[^\/]+\.html|index\.html)$/);
+    if (m) return m[1] + m[2];
+    if (p.indexOf('/ar/tools/') !== -1) return '../../tools/' + p.split('/ar/tools/')[1];
+    return '../index.html';
+  }
+  function injectStyles() {
+    if (document.getElementById('lang9StyleAr')) return;
+    var st = document.createElement('style'); st.id = 'lang9StyleAr';
+    st.textContent = '.lang9-wrap{position:relative;display:inline-flex;align-items:center}' +
+      '.lang9-btn{cursor:pointer;border:1px solid var(--border,#dbe2ea);background:var(--card,#fff);color:var(--ink,#0f172a);border-radius:999px;padding:7px 14px;font-size:14px;font-weight:700;line-height:1}' +
+      '.lang9-menu{position:absolute;top:calc(100% + 6px);inset-inline-end:0;min-width:170px;margin:0;padding:6px 0;list-style:none;background:var(--card,#fff);border:1px solid var(--border,#dbe2ea);border-radius:12px;box-shadow:0 8px 24px rgba(0,0,0,.15);z-index:100;display:none}' +
+      '.lang9-menu.open{display:block}' +
+      '.lang9-menu button{display:block;width:100%;text-align:start;background:none;border:0;cursor:pointer;padding:9px 14px;font-size:14px;color:var(--ink,#0f172a)}' +
+      '.lang9-menu button:hover{background:var(--bg,#f1f5f9)}' +
+      '.lang9-menu button.on{font-weight:800}' +
+      '.lang9-menu a{display:block;text-decoration:none;padding:9px 14px;font-size:14px;color:var(--ink,#0f172a)}' +
+      '.lang9-menu a:hover{background:var(--bg,#f1f5f9)}';
+    document.head.appendChild(st);
+  }
+  function buildSwitcher() {
+    if (document.getElementById('lang9Wrap')) return;
+    var headerWrap = document.querySelector('.site-header .wrap');
+    if (!headerWrap) return;
+    injectStyles();
+    var wrap = document.createElement('span');
+    wrap.className = 'lang9-wrap'; wrap.id = 'lang9Wrap';
+    var btn = document.createElement('button');
+    btn.type = 'button'; btn.id = 'langBtn9'; btn.className = 'lang9-btn';
+    btn.setAttribute('aria-haspopup', 'listbox'); btn.setAttribute('aria-expanded', 'false');
+    btn.setAttribute('aria-label', 'اللغة'); btn.textContent = 'العربية';
+    var menu = document.createElement('ul');
+    menu.className = 'lang9-menu'; menu.id = 'langMenu9'; menu.setAttribute('role', 'listbox');
+    var li1 = document.createElement('li');
+    var cur = document.createElement('button');
+    cur.type = 'button'; cur.className = 'on'; cur.textContent = 'العربية';
+    cur.setAttribute('role', 'option');
+    cur.addEventListener('click', function () { menu.classList.remove('open'); btn.setAttribute('aria-expanded', 'false'); });
+    li1.appendChild(cur); menu.appendChild(li1);
+    var li2 = document.createElement('li');
+    var a = document.createElement('a');
+    a.href = enCounterpart(); a.textContent = 'English'; a.setAttribute('role', 'option');
+    li2.appendChild(a); menu.appendChild(li2);
+    btn.addEventListener('click', function (e) {
+      e.stopPropagation();
+      var open = menu.classList.toggle('open');
+      btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+    });
+    document.addEventListener('click', function (e) {
+      if (!wrap.contains(e.target)) { menu.classList.remove('open'); btn.setAttribute('aria-expanded', 'false'); }
+    });
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape') { menu.classList.remove('open'); btn.setAttribute('aria-expanded', 'false'); }
+    });
+    wrap.appendChild(btn); wrap.appendChild(menu);
+    var navToggle = headerWrap.querySelector('.nav-toggle');
+    if (navToggle) headerWrap.insertBefore(wrap, navToggle);
+    else headerWrap.appendChild(wrap);
+  }
+  var FEATURED = ['background-remover', 'qr-generator', 'image-compressor', 'password-generator',
+    'pdf-merger', 'word-counter', 'link-shortener', 'age-calculator',
+    'color-picker', 'images-to-pdf'];
+  function featCardAr(slug) {
+    var src = document.querySelector('.tool-card[href="tools/' + slug + '.html"]');
+    if (!src) return null;
+    var ticonEl = src.querySelector('.ticon'); var iconHtml = ticonEl ? ticonEl.innerHTML : '';
+    var name = src.querySelector('h3').textContent;
+    var desc = src.querySelector('p').textContent;
+    var card = document.createElement('div');
+    card.className = 'feat-card'; card.setAttribute('data-slug', slug);
+    var ic = document.createElement('div'); ic.className = 'feat-icon'; ic.innerHTML = iconHtml;
+    var h = document.createElement('h3'); h.textContent = name;
+    var p = document.createElement('p'); p.textContent = desc;
+    var open = document.createElement('a'); open.className = 'feat-open'; open.href = 'tools/' + slug + '.html';
+    var osp = document.createElement('span'); osp.textContent = AR.openBtn;
+    open.appendChild(osp); open.appendChild(document.createTextNode(' ›'));
+    card.appendChild(ic); card.appendChild(h); card.appendChild(p); card.appendChild(open);
+    card.addEventListener('click', function () { location.href = 'tools/' + slug + '.html'; });
+    return card;
+  }
+  function initCarouselAr() {
+    var car = document.getElementById('featCarousel');
+    if (!car) return;
+    FEATURED.forEach(function (s) { var c = featCardAr(s); if (c) car.appendChild(c); });
+    FEATURED.forEach(function (s) { var c = featCardAr(s); if (c) car.appendChild(c); });
+    var SPEED = 40, paused = false, resumeT = null, last = 0;
+    function tick(now) {
+      if (!paused && !document.hidden) {
+        if (last) {
+          car.scrollLeft += (now - last) / 1000 * SPEED;
+          var half = car.scrollWidth / 2;
+          if (half > 0 && car.scrollLeft >= half - 4) car.scrollLeft -= half;
+        }
+        last = now;
+      } else { last = 0; }
+      if (window.requestAnimationFrame) window.requestAnimationFrame(tick);
+    }
+    function pause() { paused = true; }
+    function resume() { paused = false; }
+    function scheduleResume(ms) { clearTimeout(resumeT); resumeT = setTimeout(resume, ms); }
+    car.addEventListener('pointerenter', function (e) { if (e.pointerType === 'mouse') pause(); });
+    car.addEventListener('pointerleave', function (e) { if (e.pointerType === 'mouse') resume(); });
+    car.addEventListener('touchstart', pause, { passive: true });
+    car.addEventListener('touchend', function () { scheduleResume(2500); });
+    document.addEventListener('visibilitychange', function () { if (!document.hidden) resume(); });
+    var pv = document.getElementById('carPrev'), nx = document.getElementById('carNext');
+    if (pv) pv.addEventListener('click', function () { pause(); car.scrollBy({ left: -280, behavior: 'smooth' }); scheduleResume(4000); });
+    if (nx) nx.addEventListener('click', function () { pause(); car.scrollBy({ left: 280, behavior: 'smooth' }); scheduleResume(4000); });
+    if (window.requestAnimationFrame) window.requestAnimationFrame(tick);
+  }
+  onReady(function () {
+    buildSwitcher();
+    var dark = document.getElementById('darkToggle');
+    if (dark) {
+      var setLabel = function () { dark.textContent = document.body.classList.contains('dark') ? AR.lightLabel : AR.darkLabel; };
+      dark.title = AR.darkTitle; dark.setAttribute('aria-label', AR.darkTitle);
+      setLabel();
+      dark.addEventListener('click', function () { setTimeout(setLabel, 0); });
+    }
+    var badge = document.getElementById('useBadge');
+    if (badge) badge.textContent = AR.useBadge.replace('{n}', lsGet('fpt_usage', 0));
+    var chips = document.querySelectorAll('#catChips .chip');
+    if (chips.length && chips[0].textContent === 'All') chips[0].textContent = AR.allCat;
+    document.querySelectorAll('.tool-actions .action-label').forEach(function (lab) {
+      var t = lab.textContent;
+      if (t === 'Favorite') lab.textContent = AR.favAction;
+      else if (t === 'Rate this tool') lab.textContent = AR.rateAction;
+      else if (t === 'Share') lab.textContent = AR.shareAction;
+    });
+    var star = document.querySelector('.tool-hero .fav-star');
+    if (star) { star.title = AR.favAction; star.setAttribute('aria-label', AR.favAction); }
+    document.querySelectorAll('.tool-hero .share-btn').forEach(function (a) {
+      var t = a.getAttribute('title') || a.getAttribute('aria-label') || '';
+      var m = /Share on (.+)$/.exec(t);
+      if (m) { var nt = AR.shareOn.replace('{name}', m[1]); a.title = nt; a.setAttribute('aria-label', nt); }
+    });
+    var rateMsg = document.querySelector('.tool-hero .rate-msg');
+    var rootEl = document.getElementById('tool-root');
+    if (rateMsg && rootEl) {
+      var ratings = lsGet('fpt_ratings', {});
+      var my = ratings[rootEl.getAttribute('data-tool')] || 0;
+      if (my) rateMsg.textContent = AR.rateYour.replace('{n}', my);
+    }
+    document.querySelectorAll('.fav-star').forEach(function (s) { s.title = AR.favAction; s.setAttribute('aria-label', AR.favAction); });
+    var wa = document.getElementById('wa-float-btn');
+    if (wa) { wa.title = AR.waChat; wa.setAttribute('aria-label', AR.waChat); }
+    var ban = document.getElementById('adCookieBanner');
+    if (ban) {
+      var sp = ban.querySelector('span');
+      if (sp) sp.textContent = 'نستخدم ملفات تعريف الارتباط للتحليلات (Google Analytics) لفهم الزيارات وتحسين موقعنا. اقبل للسماح بملفات تعريف ارتباط التحليلات أو ارفض.';
+      var acc = document.getElementById('adCookieAccept'); if (acc) acc.textContent = 'قبول';
+      var dec = document.getElementById('adCookieDecline'); if (dec) dec.textContent = 'رفض';
+    }
+    initCarouselAr();
+  });
+})();
+</script>
+
+</body></html>

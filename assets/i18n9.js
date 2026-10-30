@@ -1192,6 +1192,10 @@ function applyLang(lang) {
 
 function setLang(lang) {
   if (!LANG_CODES[lang]) lang = 'en';
+  if (lang === 'ar') {
+    var u = arCounterpartUrl();
+    if (u) { window.location.href = u; return; }
+  }
   lsSet('fpt_lang', lang);
   applyLang(lang);
 }
@@ -1209,8 +1213,21 @@ function injectStyles() {
     '.lang9-menu.open{display:block}' +
     '.lang9-menu button{display:block;width:100%;text-align:start;background:none;border:0;cursor:pointer;padding:9px 14px;font-size:14px;color:var(--ink,#0f172a)}' +
     '.lang9-menu button:hover{background:var(--bg,#f1f5f9)}' +
+    '.lang9-menu a{display:block;text-decoration:none;padding:9px 14px;font-size:14px;color:var(--ink,#0f172a)}' +
+    '.lang9-menu a:hover{background:var(--bg,#f1f5f9)}' +
     '.lang9-menu button.on{font-weight:800}';
   document.head.appendChild(st);
+}
+
+/* AR counterpart URL for EN pages that have a real Arabic version
+   (homepage + tool pages). Returns null for all other pages, where the
+   legacy JS language switch keeps working. */
+function arCounterpartUrl() {
+  var p = window.location.pathname;
+  var m = p.match(/^(.*\/Freetools\/)(?:tools\/([^\/]+\.html)|index\.html)?$/);
+  if (!m) return null;
+  if (m[2]) return m[1] + 'ar/tools/' + m[2];
+  return m[1] + 'ar/index.html';
 }
 
 function buildSwitcher() {
@@ -1236,6 +1253,16 @@ function buildSwitcher() {
   menu.setAttribute('role', 'listbox');
   LANGS.forEach(function (l) {
     var li = document.createElement('li');
+    var arUrl = (l.code === 'ar') ? arCounterpartUrl() : null;
+    if (arUrl) {
+      var a = document.createElement('a');
+      a.href = arUrl;
+      a.textContent = l.name;
+      a.setAttribute('role', 'option');
+      li.appendChild(a);
+      menu.appendChild(li);
+      return;
+    }
     var b = document.createElement('button');
     b.type = 'button';
     b.textContent = l.name;

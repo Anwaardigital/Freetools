@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-M0NYM1FT9H"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-M0NYM1FT9H');
+</script>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>محرر Markdown | أدوات الخصوصية المجانية</title>
+<meta name="description" content="اكتب Markdown وشاهد معاينة HTML مباشرة فورا. انسخ HTML أو نزل ملفك. مجاني.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="محرر Markdown | أدوات الخصوصية المجانية">
+<meta property="og:description" content="اكتب Markdown وشاهد معاينة HTML مباشرة فورا. انسخ HTML أو نزل ملفك. مجاني.">
+<meta property="og:url" content="https://anwaardigital.com/Freetools/ar/tools/markdown-editor.html">
+<meta name="twitter:card" content="summary">
+<link rel="canonical" href="https://anwaardigital.com/Freetools/ar/tools/markdown-editor.html">
+<link rel="alternate" hreflang="ar" href="https://anwaardigital.com/Freetools/ar/tools/markdown-editor.html">
+<link rel="alternate" hreflang="en" href="https://anwaardigital.com/Freetools/tools/markdown-editor.html">
+<link rel="alternate" hreflang="x-default" href="https://anwaardigital.com/Freetools/tools/markdown-editor.html">
+<link rel="stylesheet" href="../../assets/style.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebApplication",
+      "name": "محرر Markdown",
+      "url": "https://anwaardigital.com/Freetools/ar/tools/markdown-editor.html",
+      "description": "اكتب Markdown وشاهد معاينة HTML مباشرة فورا. انسخ HTML أو نزل ملفك. مجاني.",
+      "inLanguage": "ar",
+      "applicationCategory": "UtilitiesApplication",
+      "operatingSystem": "Any",
+      "isAccessibleForFree": true,
+      "browserRequirements": "Requires JavaScript",
+      "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        { "@type": "Question", "name": "Is it really free?", "acceptedAnswer": { "@type": "Answer", "text": "Yes — every tool on this site is 100% free with no limits, no signup and no watermarks." } },
+        { "@type": "Question", "name": "Is my data private?", "acceptedAnswer": { "@type": "Answer", "text": "Absolutely. All processing happens locally in your browser. Your text is never uploaded to any server." } },
+        { "@type": "Question", "name": "What Markdown is supported?", "acceptedAnswer": { "@type": "Answer", "text": "Headings, bold, italic, inline code, code blocks, links, images, lists, blockquotes and horizontal rules — the most commonly used Markdown." } }
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<header class="site-header"><div class="wrap">
+<a class="logo" href="../index.html"><img class="shield" src="../../freetools-icon-192.png" alt=""> أدوات الخصوصية المجانية</a>
+<button class="nav-toggle" aria-label="Menu" aria-expanded="false">☰</button><nav class="nav"><a href="../index.html">الرئيسية</a><a href="../index.html#tools">كل الأدوات</a><a href="../../about.html">حول الموقع</a><a href="../../faq.html">الأسئلة الشائعة</a><a href="../../blog.html">المدونة</a><a href="../../contact.html">تواصل معنا</a><a href="../../privacy.html">الخصوصية</a></nav>
+</div></header>
+
+<main class="wrap">
+<div class="crumbs"><a href="../index.html">الرئيسية</a> / أدوات النصوص / محرر Markdown</div>
+<div class="tool-hero"><h1><svg class="hero-icon" aria-hidden="true"><use href="../../assets/tool-icons.svg#icon-markdown-editor"/></svg> محرر Markdown</h1><p>اكتب Markdown وشاهد معاينة HTML مباشرة فورا. انسخ HTML أو نزل ملفك. مجاني.</p></div>
+<div class="ad-slot"><!-- AdSense code goes here --></div>
+<div class="tool-box" id="tool-root" data-tool="markdown-editor">
+<div class="field"><label for="md-in">Markdown Input</label><textarea id="md-in" rows="12"># Hello, Markdown!
+
+Write **bold**, *italic* and `code` here.
+
+- Item one
+- Item two
+
+> A blockquote for emphasis.
+
+[Visit Anwaar Digital](https://anwaardigital.com/)</textarea></div>
+<div class="btn-row"><button class="btn" type="button" id="md-copy-html">Copy HTML</button><button class="btn" type="button" id="md-dl">Download .md</button><button class="btn" type="button" id="md-clear">Clear</button></div>
+<div class="field"><label>Live Preview</label><div id="md-out" class="result" style="text-align:left"></div></div>
+<div class="result" id="md-msg"></div>
+</div>
+<script>
+(function(){
+function esc(s){return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');}
+function inline(s){
+  s=esc(s);
+  s=s.replace(/`([^`]+)`/g,'<code>$1</code>');
+  s=s.replace(/!\[([^\]]*)\]\(([^)]+)\)/g,'<img alt="$1" src="$2">');
+  s=s.replace(/\[([^\]]+)\]\(([^)]+)\)/g,'<a href="$2" target="_blank" rel="noopener">$1</a>');
+  s=s.replace(/\*\*([^*]+)\*\*/g,'<strong>$1</strong>');
+  s=s.replace(/(^|[^*])\*([^*\n]+)\*/g,'$1<em>$2</em>');
+  return s;
+}
+function render(src){
+  var lines=src.replace(/\r\n/g,'\n').split('\n');
+  var html=[],i=0,inCode=false,codeBuf=[];
+  function flushCode(){if(codeBuf.length){html.push('<pre><code>'+esc(codeBuf.join('\n'))+'</code></pre>');codeBuf=[];}}
+  while(i<lines.length){
+    var line=lines[i];
+    if(line.trim().indexOf('```')===0){if(inCode){flushCode();inCode=false;}else{inCode=true;}i++;continue;}
+    if(inCode){codeBuf.push(line);i++;continue;}
+    var hm=line.match(/^(#{1,6})\s+(.*)$/);
+    if(hm){html.push('<h'+hm[1].length+'>'+inline(hm[2])+'</h'+hm[1].length+'>');i++;continue;}
+    if(/^(\*\*\*|---|___)\s*$/.test(line)){html.push('<hr>');i++;continue;}
+    if(/^>\s?/.test(line)){var q=[];while(i<lines.length&&/^>\s?/.test(lines[i])){q.push(lines[i].replace(/^>\s?/,''));i++;}html.push('<blockquote>'+q.map(inline).join('<br>')+'</blockquote>');continue;}
+    if(/^\s*[-*+]\s+/.test(line)){var items=[];while(i<lines.length&&/^\s*[-*+]\s+/.test(lines[i])){items.push('<li>'+inline(lines[i].replace(/^\s*[-*+]\s+/,''))+'</li>');i++;}html.push('<ul>'+items.join('')+'</ul>');continue;}
+    if(/^\s*\d+\.\s+/.test(line)){var oitems=[];while(i<lines.length&&/^\s*\d+\.\s+/.test(lines[i])){oitems.push('<li>'+inline(lines[i].replace(/^\s*\d+\.\s+/,''))+'</li>');i++;}html.push('<ol>'+oitems.join('')+'</ol>');continue;}
+    if(line.trim()===''){i++;continue;}
+    var para=[];while(i<lines.length&&lines[i].trim()!==''&&!/^(#{1,6}\s|```|>\s?|\s*[-*+]\s+|\s*\d+\.\s+)/.test(lines[i])){para.push(lines[i]);i++;}
+    html.push('<p>'+para.map(inline).join('<br>')+'</p>');
+  }
+  flushCode();
+  return html.join('\n');
+}
+function update(){document.getElementById('md-out').innerHTML=render(document.getElementById('md-in').value);}
+document.getElementById('md-in').addEventListener('input',update);
+document.getElementById('md-copy-html').addEventListener('click',function(){
+  var ta=document.createElement('textarea');ta.value=document.getElementById('md-out').innerHTML;
+  document.body.appendChild(ta);ta.select();
+  try{document.execCommand('copy');document.getElementById('md-msg').textContent='HTML copied to clipboard.';}
+  catch(e){document.getElementById('md-msg').textContent='Copy failed — select the preview HTML manually.';}
+  ta.remove();
+});
+document.getElementById('md-dl').addEventListener('click',function(){
+  var blob=new Blob([document.getElementById('md-in').value],{type:'text/markdown'});
+  var a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download='document.md';
+  document.body.appendChild(a);a.click();
+  setTimeout(function(){URL.revokeObjectURL(a.href);a.remove();},4000);
+});
+document.getElementById('md-clear').addEventListener('click',function(){document.getElementById('md-in').value='';update();});
+update();
+})();
+</script>
+<div class="howto"><h2>How to use</h2><ol><li>Type or paste <strong>Markdown</strong> in the left editor.</li><li>Watch the <strong>live preview</strong> update as you type.</li><li>Click <strong>Copy HTML</strong> to paste formatted output elsewhere, or <strong>Download .md</strong> to save your file.</li></ol></div>
+<div class="faq"><h2>FAQ</h2><details><summary>Is it really free?</summary><p>Yes — every tool on this site is 100% free with no limits, no signup and no watermarks.</p></details><details><summary>Is my data private?</summary><p>Absolutely. All processing happens locally in your browser. Your text is never uploaded to any server.</p></details><details><summary>What Markdown is supported?</summary><p>Headings, bold, italic, inline code, code blocks, links, images, lists, blockquotes and horizontal rules — the most commonly used Markdown.</p></details></div>
+<div class="tool-guide"><h2>Complete Guide to Markdown</h2><p>Markdown is the plain-text way to write formatted documents: README files, blog posts, notes and documentation all use it. Headings use <strong>#</strong> symbols, <strong>**bold**</strong> and <strong>*italic*</strong> add emphasis, backticks mark <code>code</code>, and dashes make lists. Because it is plain text, Markdown files work everywhere, last forever, and convert cleanly to HTML, PDF or Word.</p><p>This editor converts your Markdown to HTML instantly, in your browser — nothing is uploaded. Use it to draft GitHub READMEs, blog posts or notes, then copy the HTML straight into your site or download the .md file for later.</p></div>
+<div class="related"><h2>أدوات ذات صلة</h2><div class="grid"><a class="tool-card" href="./word-counter.html"><div class="ticon"><svg aria-hidden="true"><use href="../../assets/tool-icons.svg#icon-word-counter"/></svg></div><h3>عداد الكلمات</h3><p>عد الكلمات والحروف والجمل ووقت القراءة في الوقت الحقيقي أثناء الكتابة. مجاني.</p></a><a class="tool-card" href="./html-encoder.html"><div class="ticon"><svg aria-hidden="true"><use href="../../assets/tool-icons.svg#icon-html-encoder"/></svg></div><h3>مرمز HTML</h3><p>رمز كيانات HTML أو أعد فك ترميزها بأمان لمقاطع الشيفرة أو مدخلات المستخدم. مجاني.</p></a><a class="tool-card" href="./case-converter.html"><div class="ticon"><svg aria-hidden="true"><use href="../../assets/tool-icons.svg#icon-case-converter"/></svg></div><h3>محول حالة النص</h3><p>حول النص إلى أحرف كبيرة وصغيرة وحالة العناوين وغيرها بنقرة واحدة. مجاني.</p></a></div></div>
+</div>
+</main>
+<footer class="site-footer"><div class="wrap">
+<div class="cols">
+<div><h4><img class="shield" src="../../freetools-icon-192.png" alt="" style="width:22px;height:22px;vertical-align:-4px;margin-right:6px"> أدوات الخصوصية المجانية</h4><p>63 free online tools. No signup, no tracking — everything runs in your browser.</p></div>
+<div><h4>الشائعة</h4><a href="./image-compressor.html">ضغط الصور</a><a href="./word-counter.html">عداد الكلمات</a><a href="./password-generator.html">مولد كلمات المرور</a><a href="./pdf-merger.html">دمج PDF</a><a href="./age-calculator.html">حاسبة العمر</a></div>
+<div><h4>الموقع</h4><a href="../index.html">الرئيسية</a><a href="../index.html#tools">كل الأدوات</a><a href="../../about.html">حول الموقع</a><a href="../../faq.html">الأسئلة الشائعة</a><a href="../../blog.html">المدونة</a><a href="../../contact.html">تواصل معنا</a><a href="../../request.html">طلب أداة</a><a href="../../privacy.html">الخصوصية</a><a href="../../terms.html">شروط الاستخدام</a><a href="../../disclaimer.html">إخلاء المسؤولية</a></div>
+</div>
+<div class="foot-note">© 2026 أدوات الخصوصية المجانية — جميع الأدوات تعمل 100% في متصفحك.<br>طُوّر بواسطة <a href="https://anwaardigital.com/" target="_blank" rel="noopener" style="color:#fbbf24;font-weight:700">Malik Anwaar</a></div>
+</div></footer>
+<script src="../../assets/app.js"></script>
+<script src="../../assets/tools.js"></script>
+<script src="../../assets/features.js"></script>
+
+<script>
+/* AR pages: Arabic language menu (العربية current + English link), dark-mode
+   label, tool action labels, useBadge, cookie banner. muft63.js and i18n9.js
+   are NOT loaded on AR pages, so the featured carousel is built here too
+   (same logic as the site's own muft63.js carousel). */
+(function () {
+  'use strict';
+  var AR = {
+    darkLabel: 'الوضع الداكن', lightLabel: 'الوضع الفاتح', darkTitle: 'تبديل الوضع الداكن',
+    waChat: 'دردشة على واتساب', favAction: 'مفضلة', rateAction: 'قيم هذه الأداة',
+    shareAction: 'مشاركة', shareOn: 'مشاركة على {name}', rateYour: 'تقييمك: {n}/5',
+    useBadge: '{n} استخدام أداة على هذا الجهاز', openBtn: 'افتح', allCat: 'الكل'
+  };
+  function lsGet(k, d) { try { var v = localStorage.getItem(k); return v === null ? d : JSON.parse(v); } catch (e) { return d; } }
+  function onReady(fn) { if (document.readyState !== 'loading') fn(); else document.addEventListener('DOMContentLoaded', fn); }
+  function enCounterpart() {
+    var p = window.location.pathname;
+    var m = p.match(/^(.*\/Freetools\/)ar\/(tools\/[^\/]+\.html|index\.html)$/);
+    if (m) return m[1] + m[2];
+    if (p.indexOf('/ar/tools/') !== -1) return '../../tools/' + p.split('/ar/tools/')[1];
+    return '../index.html';
+  }
+  function injectStyles() {
+    if (document.getElementById('lang9StyleAr')) return;
+    var st = document.createElement('style'); st.id = 'lang9StyleAr';
+    st.textContent = '.lang9-wrap{position:relative;display:inline-flex;align-items:center}' +
+      '.lang9-btn{cursor:pointer;border:1px solid var(--border,#dbe2ea);background:var(--card,#fff);color:var(--ink,#0f172a);border-radius:999px;padding:7px 14px;font-size:14px;font-weight:700;line-height:1}' +
+      '.lang9-menu{position:absolute;top:calc(100% + 6px);inset-inline-end:0;min-width:170px;margin:0;padding:6px 0;list-style:none;background:var(--card,#fff);border:1px solid var(--border,#dbe2ea);border-radius:12px;box-shadow:0 8px 24px rgba(0,0,0,.15);z-index:100;display:none}' +
+      '.lang9-menu.open{display:block}' +
+      '.lang9-menu button{display:block;width:100%;text-align:start;background:none;border:0;cursor:pointer;padding:9px 14px;font-size:14px;color:var(--ink,#0f172a)}' +
+      '.lang9-menu button:hover{background:var(--bg,#f1f5f9)}' +
+      '.lang9-menu button.on{font-weight:800}' +
+      '.lang9-menu a{display:block;text-decoration:none;padding:9px 14px;font-size:14px;color:var(--ink,#0f172a)}' +
+      '.lang9-menu a:hover{background:var(--bg,#f1f5f9)}';
+    document.head.appendChild(st);
+  }
+  function buildSwitcher() {
+    if (document.getElementById('lang9Wrap')) return;
+    var headerWrap = document.querySelector('.site-header .wrap');
+    if (!headerWrap) return;
+    injectStyles();
+    var wrap = document.createElement('span');
+    wrap.className = 'lang9-wrap'; wrap.id = 'lang9Wrap';
+    var btn = document.createElement('button');
+    btn.type = 'button'; btn.id = 'langBtn9'; btn.className = 'lang9-btn';
+    btn.setAttribute('aria-haspopup', 'listbox'); btn.setAttribute('aria-expanded', 'false');
+    btn.setAttribute('aria-label', 'اللغة'); btn.textContent = 'العربية';
+    var menu = document.createElement('ul');
+    menu.className = 'lang9-menu'; menu.id = 'langMenu9'; menu.setAttribute('role', 'listbox');
+    var li1 = document.createElement('li');
+    var cur = document.createElement('button');
+    cur.type = 'button'; cur.className = 'on'; cur.textContent = 'العربية';
+    cur.setAttribute('role', 'option');
+    cur.addEventListener('click', function () { menu.classList.remove('open'); btn.setAttribute('aria-expanded', 'false'); });
+    li1.appendChild(cur); menu.appendChild(li1);
+    var li2 = document.createElement('li');
+    var a = document.createElement('a');
+    a.href = enCounterpart(); a.textContent = 'English'; a.setAttribute('role', 'option');
+    li2.appendChild(a); menu.appendChild(li2);
+    btn.addEventListener('click', function (e) {
+      e.stopPropagation();
+      var open = menu.classList.toggle('open');
+      btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+    });
+    document.addEventListener('click', function (e) {
+      if (!wrap.contains(e.target)) { menu.classList.remove('open'); btn.setAttribute('aria-expanded', 'false'); }
+    });
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape') { menu.classList.remove('open'); btn.setAttribute('aria-expanded', 'false'); }
+    });
+    wrap.appendChild(btn); wrap.appendChild(menu);
+    var navToggle = headerWrap.querySelector('.nav-toggle');
+    if (navToggle) headerWrap.insertBefore(wrap, navToggle);
+    else headerWrap.appendChild(wrap);
+  }
+  var FEATURED = ['background-remover', 'qr-generator', 'image-compressor', 'password-generator',
+    'pdf-merger', 'word-counter', 'link-shortener', 'age-calculator',
+    'color-picker', 'images-to-pdf'];
+  function featCardAr(slug) {
+    var src = document.querySelector('.tool-card[href="tools/' + slug + '.html"]');
+    if (!src) return null;
+    var ticonEl = src.querySelector('.ticon'); var iconHtml = ticonEl ? ticonEl.innerHTML : '';
+    var name = src.querySelector('h3').textContent;
+    var desc = src.querySelector('p').textContent;
+    var card = document.createElement('div');
+    card.className = 'feat-card'; card.setAttribute('data-slug', slug);
+    var ic = document.createElement('div'); ic.className = 'feat-icon'; ic.innerHTML = iconHtml;
+    var h = document.createElement('h3'); h.textContent = name;
+    var p = document.createElement('p'); p.textContent = desc;
+    var open = document.createElement('a'); open.className = 'feat-open'; open.href = 'tools/' + slug + '.html';
+    var osp = document.createElement('span'); osp.textContent = AR.openBtn;
+    open.appendChild(osp); open.appendChild(document.createTextNode(' ›'));
+    card.appendChild(ic); card.appendChild(h); card.appendChild(p); card.appendChild(open);
+    card.addEventListener('click', function () { location.href = 'tools/' + slug + '.html'; });
+    return card;
+  }
+  function initCarouselAr() {
+    var car = document.getElementById('featCarousel');
+    if (!car) return;
+    FEATURED.forEach(function (s) { var c = featCardAr(s); if (c) car.appendChild(c); });
+    FEATURED.forEach(function (s) { var c = featCardAr(s); if (c) car.appendChild(c); });
+    var SPEED = 40, paused = false, resumeT = null, last = 0;
+    function tick(now) {
+      if (!paused && !document.hidden) {
+        if (last) {
+          car.scrollLeft += (now - last) / 1000 * SPEED;
+          var half = car.scrollWidth / 2;
+          if (half > 0 && car.scrollLeft >= half - 4) car.scrollLeft -= half;
+        }
+        last = now;
+      } else { last = 0; }
+      if (window.requestAnimationFrame) window.requestAnimationFrame(tick);
+    }
+    function pause() { paused = true; }
+    function resume() { paused = false; }
+    function scheduleResume(ms) { clearTimeout(resumeT); resumeT = setTimeout(resume, ms); }
+    car.addEventListener('pointerenter', function (e) { if (e.pointerType === 'mouse') pause(); });
+    car.addEventListener('pointerleave', function (e) { if (e.pointerType === 'mouse') resume(); });
+    car.addEventListener('touchstart', pause, { passive: true });
+    car.addEventListener('touchend', function () { scheduleResume(2500); });
+    document.addEventListener('visibilitychange', function () { if (!document.hidden) resume(); });
+    var pv = document.getElementById('carPrev'), nx = document.getElementById('carNext');
+    if (pv) pv.addEventListener('click', function () { pause(); car.scrollBy({ left: -280, behavior: 'smooth' }); scheduleResume(4000); });
+    if (nx) nx.addEventListener('click', function () { pause(); car.scrollBy({ left: 280, behavior: 'smooth' }); scheduleResume(4000); });
+    if (window.requestAnimationFrame) window.requestAnimationFrame(tick);
+  }
+  onReady(function () {
+    buildSwitcher();
+    var dark = document.getElementById('darkToggle');
+    if (dark) {
+      var setLabel = function () { dark.textContent = document.body.classList.contains('dark') ? AR.lightLabel : AR.darkLabel; };
+      dark.title = AR.darkTitle; dark.setAttribute('aria-label', AR.darkTitle);
+      setLabel();
+      dark.addEventListener('click', function () { setTimeout(setLabel, 0); });
+    }
+    var badge = document.getElementById('useBadge');
+    if (badge) badge.textContent = AR.useBadge.replace('{n}', lsGet('fpt_usage', 0));
+    var chips = document.querySelectorAll('#catChips .chip');
+    if (chips.length && chips[0].textContent === 'All') chips[0].textContent = AR.allCat;
+    document.querySelectorAll('.tool-actions .action-label').forEach(function (lab) {
+      var t = lab.textContent;
+      if (t === 'Favorite') lab.textContent = AR.favAction;
+      else if (t === 'Rate this tool') lab.textContent = AR.rateAction;
+      else if (t === 'Share') lab.textContent = AR.shareAction;
+    });
+    var star = document.querySelector('.tool-hero .fav-star');
+    if (star) { star.title = AR.favAction; star.setAttribute('aria-label', AR.favAction); }
+    document.querySelectorAll('.tool-hero .share-btn').forEach(function (a) {
+      var t = a.getAttribute('title') || a.getAttribute('aria-label') || '';
+      var m = /Share on (.+)$/.exec(t);
+      if (m) { var nt = AR.shareOn.replace('{name}', m[1]); a.title = nt; a.setAttribute('aria-label', nt); }
+    });
+    var rateMsg = document.querySelector('.tool-hero .rate-msg');
+    var rootEl = document.getElementById('tool-root');
+    if (rateMsg && rootEl) {
+      var ratings = lsGet('fpt_ratings', {});
+      var my = ratings[rootEl.getAttribute('data-tool')] || 0;
+      if (my) rateMsg.textContent = AR.rateYour.replace('{n}', my);
+    }
+    document.querySelectorAll('.fav-star').forEach(function (s) { s.title = AR.favAction; s.setAttribute('aria-label', AR.favAction); });
+    var wa = document.getElementById('wa-float-btn');
+    if (wa) { wa.title = AR.waChat; wa.setAttribute('aria-label', AR.waChat); }
+    var ban = document.getElementById('adCookieBanner');
+    if (ban) {
+      var sp = ban.querySelector('span');
+      if (sp) sp.textContent = 'نستخدم ملفات تعريف الارتباط للتحليلات (Google Analytics) لفهم الزيارات وتحسين موقعنا. اقبل للسماح بملفات تعريف ارتباط التحليلات أو ارفض.';
+      var acc = document.getElementById('adCookieAccept'); if (acc) acc.textContent = 'قبول';
+      var dec = document.getElementById('adCookieDecline'); if (dec) dec.textContent = 'رفض';
+    }
+    initCarouselAr();
+  });
+})();
+</script>
+
+</body></html>

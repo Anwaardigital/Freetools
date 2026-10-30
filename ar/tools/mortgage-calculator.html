@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-M0NYM1FT9H"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-M0NYM1FT9H');
+</script>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>حاسبة الرهن العقاري | أدوات الخصوصية المجانية</title>
+<meta name="description" content="احسب دفعتك الشهرية للرهن العقاري وإجمالي الفائدة والتكلفة الكلية فورا. مجاني.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="حاسبة الرهن العقاري | أدوات الخصوصية المجانية">
+<meta property="og:description" content="احسب دفعتك الشهرية للرهن العقاري وإجمالي الفائدة والتكلفة الكلية فورا. مجاني.">
+<meta property="og:url" content="https://anwaardigital.com/Freetools/ar/tools/mortgage-calculator.html">
+<meta name="twitter:card" content="summary">
+<link rel="canonical" href="https://anwaardigital.com/Freetools/ar/tools/mortgage-calculator.html">
+<link rel="alternate" hreflang="ar" href="https://anwaardigital.com/Freetools/ar/tools/mortgage-calculator.html">
+<link rel="alternate" hreflang="en" href="https://anwaardigital.com/Freetools/tools/mortgage-calculator.html">
+<link rel="alternate" hreflang="x-default" href="https://anwaardigital.com/Freetools/tools/mortgage-calculator.html">
+<link rel="stylesheet" href="../../assets/style.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebApplication",
+      "name": "حاسبة الرهن العقاري",
+      "url": "https://anwaardigital.com/Freetools/ar/tools/mortgage-calculator.html",
+      "description": "احسب دفعتك الشهرية للرهن العقاري وإجمالي الفائدة والتكلفة الكلية فورا. مجاني.",
+      "inLanguage": "ar",
+      "applicationCategory": "UtilitiesApplication",
+      "operatingSystem": "Any",
+      "isAccessibleForFree": true,
+      "browserRequirements": "Requires JavaScript",
+      "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        { "@type": "Question", "name": "Is it really free?", "acceptedAnswer": { "@type": "Answer", "text": "Yes — every tool on this site is 100% free with no limits, no signup and no watermarks." } },
+        { "@type": "Question", "name": "Is my data private?", "acceptedAnswer": { "@type": "Answer", "text": "Absolutely. All processing happens locally in your browser. Your numbers are never uploaded to any server." } },
+        { "@type": "Question", "name": "Does this include taxes and insurance?", "acceptedAnswer": { "@type": "Answer", "text": "No — this calculates principal and interest only. Property tax, insurance (PITI) and HOA fees are extra and vary by location." } }
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<header class="site-header"><div class="wrap">
+<a class="logo" href="../index.html"><img class="shield" src="../../freetools-icon-192.png" alt=""> أدوات الخصوصية المجانية</a>
+<button class="nav-toggle" aria-label="Menu" aria-expanded="false">☰</button><nav class="nav"><a href="../index.html">الرئيسية</a><a href="../index.html#tools">كل الأدوات</a><a href="../../about.html">حول الموقع</a><a href="../../faq.html">الأسئلة الشائعة</a><a href="../../blog.html">المدونة</a><a href="../../contact.html">تواصل معنا</a><a href="../../privacy.html">الخصوصية</a></nav>
+</div></header>
+
+<main class="wrap">
+<div class="crumbs"><a href="../index.html">الرئيسية</a> / أدوات الأعمال / حاسبة الرهن العقاري</div>
+<div class="tool-hero"><h1><svg class="hero-icon" aria-hidden="true"><use href="../../assets/tool-icons.svg#icon-mortgage-calculator"/></svg> حاسبة الرهن العقاري</h1><p>احسب دفعتك الشهرية للرهن العقاري وإجمالي الفائدة والتكلفة الكلية فورا. مجاني.</p></div>
+<div class="ad-slot"><!-- AdSense code goes here --></div>
+<div class="tool-box" id="tool-root" data-tool="mortgage-calculator">
+<div class="field"><label for="mo-home">Home Price</label><input id="mo-home" type="number" value="300000" min="0" step="1000"></div>
+<div class="field"><label for="mo-down">Down Payment</label><input id="mo-down" type="number" value="60000" min="0" step="1000"></div>
+<div class="field"><label for="mo-rate">Annual Interest Rate (%)</label><input id="mo-rate" type="number" value="6" min="0" max="30" step="0.125"></div>
+<div class="field"><label for="mo-years">Loan Term (years)</label><select id="mo-years"><option value="30" selected>30 years</option><option value="20">20 years</option><option value="15">15 years</option><option value="10">10 years</option></select></div>
+<div class="btn-row"><button class="btn" type="button" id="mo-calc">Calculate</button></div>
+<div class="result" id="mo-out"></div>
+<p style="font-size:0.9em">Principal &amp; interest only. Property tax, homeowner's insurance, PMI and HOA fees are not included — your real monthly bill will be higher.</p>
+</div>
+<script>
+(function(){
+function fmt(n){return '$'+Number(n).toLocaleString('en-US',{minimumFractionDigits:2,maximumFractionDigits:2});}
+function calc(){
+  var home=parseFloat(document.getElementById('mo-home').value)||0;
+  var down=parseFloat(document.getElementById('mo-down').value)||0;
+  var rate=parseFloat(document.getElementById('mo-rate').value)||0;
+  var years=parseInt(document.getElementById('mo-years').value,10)||30;
+  var out=document.getElementById('mo-out');
+  var P=home-down;
+  if(P<=0){out.textContent='Down payment must be less than the home price.';return;}
+  var n=years*12;
+  var m;
+  if(rate===0){m=P/n;}
+  else{
+    var r=rate/100/12;
+    m=P*r*Math.pow(1+r,n)/(Math.pow(1+r,n)-1);
+  }
+  var total=m*n;
+  out.innerHTML='<strong>Loan amount:</strong> '+fmt(P)+'<br>'
+    +'<strong>Monthly payment (P&amp;I):</strong> '+fmt(m)+'<br>'
+    +'<strong>Total of '+n+' payments:</strong> '+fmt(total)+'<br>'
+    +'<strong>Total interest:</strong> '+fmt(total-P)+'<br>'
+    +'<strong>Interest share:</strong> '+((total-P)/total*100).toFixed(1)+'% of all payments';
+}
+document.getElementById('mo-calc').addEventListener('click',calc);
+['mo-home','mo-down','mo-rate','mo-years'].forEach(function(id){
+  document.getElementById(id).addEventListener('input',calc);
+  document.getElementById(id).addEventListener('change',calc);
+});
+calc();
+})();
+</script>
+<div class="howto"><h2>How to use</h2><ol><li>Enter the <strong>home price</strong> and your <strong>down payment</strong>.</li><li>Enter the <strong>annual interest rate</strong> and pick a <strong>loan term</strong>.</li><li>See your <strong>monthly payment</strong>, total interest and total cost instantly.</li></ol></div>
+<div class="faq"><h2>FAQ</h2><details><summary>Is it really free?</summary><p>Yes — every tool on this site is 100% free with no limits, no signup and no watermarks.</p></details><details><summary>Is my data private?</summary><p>Absolutely. All processing happens locally in your browser. Your numbers are never uploaded to any server.</p></details><details><summary>Does this include taxes and insurance?</summary><p>No — this calculates principal and interest only. Property tax, insurance (PITI) and HOA fees are extra and vary by location.</p></details></div>
+<div class="tool-guide"><h2>Complete Guide to Mortgages</h2><p>A mortgage payment has two parts: <strong>principal</strong> (paying down what you borrowed) and <strong>interest</strong> (the lender's charge). Early payments are mostly interest; later ones are mostly principal. The formula is M = P × r(1+r)^n ÷ ((1+r)^n − 1), where P is the loan amount, r the monthly rate and n the number of payments.</p><p>Two choices change everything: a <strong>larger down payment</strong> shrinks the loan (and can remove PMI, the extra insurance on small down payments), and a <strong>shorter term</strong> (15 vs 30 years) raises the monthly payment but can save tens of thousands in interest. Example: a $240,000 loan at 6% costs about $1,439/month over 30 years but about $2,026/month over 15 years — while total interest falls from roughly $278,000 to $125,000. This calculator covers principal and interest only; add local tax, insurance and HOA fees for your true monthly bill.</p></div>
+<div class="related"><h2>أدوات ذات صلة</h2><div class="grid"><a class="tool-card" href="./loan-calculator.html"><div class="ticon"><svg aria-hidden="true"><use href="../../assets/tool-icons.svg#icon-loan-calculator"/></svg></div><h3>حاسبة القروض والأقساط</h3><p>احسب دفعات القرض الشهرية وإجمالي الفائدة والمبلغ الإجمالي المستحق. مجاني.</p></a><a class="tool-card" href="./invoice-generator.html"><div class="ticon"><svg aria-hidden="true"><use href="../../assets/tool-icons.svg#icon-invoice-generator"/></svg></div><h3>مولد الفواتير</h3><p>أنشئ فواتير احترافية في ثوان: أضف البنود والضريبة والخصم، ثم اطبع أو نزل. مجاني.</p></a><a class="tool-card" href="./percentage-calculator.html"><div class="ticon"><svg aria-hidden="true"><use href="../../assets/tool-icons.svg#icon-percentage-calculator"/></svg></div><h3>حاسبة النسبة المئوية</h3><p>حل أي مسألة نسبة مئوية: النسبة أو التغير أو الزيادة أو النقصان. مجاني وفوري.</p></a></div></div>
+</div>
+</main>
+<footer class="site-footer"><div class="wrap">
+<div class="cols">
+<div><h4><img class="shield" src="../../freetools-icon-192.png" alt="" style="width:22px;height:22px;vertical-align:-4px;margin-right:6px"> أدوات الخصوصية المجانية</h4><p>63 free online tools. No signup, no tracking — everything runs in your browser.</p></div>
+<div><h4>الشائعة</h4><a href="./image-compressor.html">ضغط الصور</a><a href="./word-counter.html">عداد الكلمات</a><a href="./password-generator.html">مولد كلمات المرور</a><a href="./pdf-merger.html">دمج PDF</a><a href="./age-calculator.html">حاسبة العمر</a></div>
+<div><h4>الموقع</h4><a href="../index.html">الرئيسية</a><a href="../index.html#tools">كل الأدوات</a><a href="../../about.html">حول الموقع</a><a href="../../faq.html">الأسئلة الشائعة</a><a href="../../blog.html">المدونة</a><a href="../../contact.html">تواصل معنا</a><a href="../../request.html">طلب أداة</a><a href="../../privacy.html">الخصوصية</a><a href="../../terms.html">شروط الاستخدام</a><a href="../../disclaimer.html">إخلاء المسؤولية</a></div>
+</div>
+<div class="foot-note">© 2026 أدوات الخصوصية المجانية — جميع الأدوات تعمل 100% في متصفحك.<br>طُوّر بواسطة <a href="https://anwaardigital.com/" target="_blank" rel="noopener" style="color:#fbbf24;font-weight:700">Malik Anwaar</a></div>
+</div></footer>
+<script src="../../assets/app.js"></script>
+<script src="../../assets/tools.js"></script>
+<script src="../../assets/features.js"></script>
+
+<script>
+/* AR pages: Arabic language menu (العربية current + English link), dark-mode
+   label, tool action labels, useBadge, cookie banner. muft63.js and i18n9.js
+   are NOT loaded on AR pages, so the featured carousel is built here too
+   (same logic as the site's own muft63.js carousel). */
+(function () {
+  'use strict';
+  var AR = {
+    darkLabel: 'الوضع الداكن', lightLabel: 'الوضع الفاتح', darkTitle: 'تبديل الوضع الداكن',
+    waChat: 'دردشة على واتساب', favAction: 'مفضلة', rateAction: 'قيم هذه الأداة',
+    shareAction: 'مشاركة', shareOn: 'مشاركة على {name}', rateYour: 'تقييمك: {n}/5',
+    useBadge: '{n} استخدام أداة على هذا الجهاز', openBtn: 'افتح', allCat: 'الكل'
+  };
+  function lsGet(k, d) { try { var v = localStorage.getItem(k); return v === null ? d : JSON.parse(v); } catch (e) { return d; } }
+  function onReady(fn) { if (document.readyState !== 'loading') fn(); else document.addEventListener('DOMContentLoaded', fn); }
+  function enCounterpart() {
+    var p = window.location.pathname;
+    var m = p.match(/^(.*\/Freetools\/)ar\/(tools\/[^\/]+\.html|index\.html)$/);
+    if (m) return m[1] + m[2];
+    if (p.indexOf('/ar/tools/') !== -1) return '../../tools/' + p.split('/ar/tools/')[1];
+    return '../index.html';
+  }
+  function injectStyles() {
+    if (document.getElementById('lang9StyleAr')) return;
+    var st = document.createElement('style'); st.id = 'lang9StyleAr';
+    st.textContent = '.lang9-wrap{position:relative;display:inline-flex;align-items:center}' +
+      '.lang9-btn{cursor:pointer;border:1px solid var(--border,#dbe2ea);background:var(--card,#fff);color:var(--ink,#0f172a);border-radius:999px;padding:7px 14px;font-size:14px;font-weight:700;line-height:1}' +
+      '.lang9-menu{position:absolute;top:calc(100% + 6px);inset-inline-end:0;min-width:170px;margin:0;padding:6px 0;list-style:none;background:var(--card,#fff);border:1px solid var(--border,#dbe2ea);border-radius:12px;box-shadow:0 8px 24px rgba(0,0,0,.15);z-index:100;display:none}' +
+      '.lang9-menu.open{display:block}' +
+      '.lang9-menu button{display:block;width:100%;text-align:start;background:none;border:0;cursor:pointer;padding:9px 14px;font-size:14px;color:var(--ink,#0f172a)}' +
+      '.lang9-menu button:hover{background:var(--bg,#f1f5f9)}' +
+      '.lang9-menu button.on{font-weight:800}' +
+      '.lang9-menu a{display:block;text-decoration:none;padding:9px 14px;font-size:14px;color:var(--ink,#0f172a)}' +
+      '.lang9-menu a:hover{background:var(--bg,#f1f5f9)}';
+    document.head.appendChild(st);
+  }
+  function buildSwitcher() {
+    if (document.getElementById('lang9Wrap')) return;
+    var headerWrap = document.querySelector('.site-header .wrap');
+    if (!headerWrap) return;
+    injectStyles();
+    var wrap = document.createElement('span');
+    wrap.className = 'lang9-wrap'; wrap.id = 'lang9Wrap';
+    var btn = document.createElement('button');
+    btn.type = 'button'; btn.id = 'langBtn9'; btn.className = 'lang9-btn';
+    btn.setAttribute('aria-haspopup', 'listbox'); btn.setAttribute('aria-expanded', 'false');
+    btn.setAttribute('aria-label', 'اللغة'); btn.textContent = 'العربية';
+    var menu = document.createElement('ul');
+    menu.className = 'lang9-menu'; menu.id = 'langMenu9'; menu.setAttribute('role', 'listbox');
+    var li1 = document.createElement('li');
+    var cur = document.createElement('button');
+    cur.type = 'button'; cur.className = 'on'; cur.textContent = 'العربية';
+    cur.setAttribute('role', 'option');
+    cur.addEventListener('click', function () { menu.classList.remove('open'); btn.setAttribute('aria-expanded', 'false'); });
+    li1.appendChild(cur); menu.appendChild(li1);
+    var li2 = document.createElement('li');
+    var a = document.createElement('a');
+    a.href = enCounterpart(); a.textContent = 'English'; a.setAttribute('role', 'option');
+    li2.appendChild(a); menu.appendChild(li2);
+    btn.addEventListener('click', function (e) {
+      e.stopPropagation();
+      var open = menu.classList.toggle('open');
+      btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+    });
+    document.addEventListener('click', function (e) {
+      if (!wrap.contains(e.target)) { menu.classList.remove('open'); btn.setAttribute('aria-expanded', 'false'); }
+    });
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape') { menu.classList.remove('open'); btn.setAttribute('aria-expanded', 'false'); }
+    });
+    wrap.appendChild(btn); wrap.appendChild(menu);
+    var navToggle = headerWrap.querySelector('.nav-toggle');
+    if (navToggle) headerWrap.insertBefore(wrap, navToggle);
+    else headerWrap.appendChild(wrap);
+  }
+  var FEATURED = ['background-remover', 'qr-generator', 'image-compressor', 'password-generator',
+    'pdf-merger', 'word-counter', 'link-shortener', 'age-calculator',
+    'color-picker', 'images-to-pdf'];
+  function featCardAr(slug) {
+    var src = document.querySelector('.tool-card[href="tools/' + slug + '.html"]');
+    if (!src) return null;
+    var ticonEl = src.querySelector('.ticon'); var iconHtml = ticonEl ? ticonEl.innerHTML : '';
+    var name = src.querySelector('h3').textContent;
+    var desc = src.querySelector('p').textContent;
+    var card = document.createElement('div');
+    card.className = 'feat-card'; card.setAttribute('data-slug', slug);
+    var ic = document.createElement('div'); ic.className = 'feat-icon'; ic.innerHTML = iconHtml;
+    var h = document.createElement('h3'); h.textContent = name;
+    var p = document.createElement('p'); p.textContent = desc;
+    var open = document.createElement('a'); open.className = 'feat-open'; open.href = 'tools/' + slug + '.html';
+    var osp = document.createElement('span'); osp.textContent = AR.openBtn;
+    open.appendChild(osp); open.appendChild(document.createTextNode(' ›'));
+    card.appendChild(ic); card.appendChild(h); card.appendChild(p); card.appendChild(open);
+    card.addEventListener('click', function () { location.href = 'tools/' + slug + '.html'; });
+    return card;
+  }
+  function initCarouselAr() {
+    var car = document.getElementById('featCarousel');
+    if (!car) return;
+    FEATURED.forEach(function (s) { var c = featCardAr(s); if (c) car.appendChild(c); });
+    FEATURED.forEach(function (s) { var c = featCardAr(s); if (c) car.appendChild(c); });
+    var SPEED = 40, paused = false, resumeT = null, last = 0;
+    function tick(now) {
+      if (!paused && !document.hidden) {
+        if (last) {
+          car.scrollLeft += (now - last) / 1000 * SPEED;
+          var half = car.scrollWidth / 2;
+          if (half > 0 && car.scrollLeft >= half - 4) car.scrollLeft -= half;
+        }
+        last = now;
+      } else { last = 0; }
+      if (window.requestAnimationFrame) window.requestAnimationFrame(tick);
+    }
+    function pause() { paused = true; }
+    function resume() { paused = false; }
+    function scheduleResume(ms) { clearTimeout(resumeT); resumeT = setTimeout(resume, ms); }
+    car.addEventListener('pointerenter', function (e) { if (e.pointerType === 'mouse') pause(); });
+    car.addEventListener('pointerleave', function (e) { if (e.pointerType === 'mouse') resume(); });
+    car.addEventListener('touchstart', pause, { passive: true });
+    car.addEventListener('touchend', function () { scheduleResume(2500); });
+    document.addEventListener('visibilitychange', function () { if (!document.hidden) resume(); });
+    var pv = document.getElementById('carPrev'), nx = document.getElementById('carNext');
+    if (pv) pv.addEventListener('click', function () { pause(); car.scrollBy({ left: -280, behavior: 'smooth' }); scheduleResume(4000); });
+    if (nx) nx.addEventListener('click', function () { pause(); car.scrollBy({ left: 280, behavior: 'smooth' }); scheduleResume(4000); });
+    if (window.requestAnimationFrame) window.requestAnimationFrame(tick);
+  }
+  onReady(function () {
+    buildSwitcher();
+    var dark = document.getElementById('darkToggle');
+    if (dark) {
+      var setLabel = function () { dark.textContent = document.body.classList.contains('dark') ? AR.lightLabel : AR.darkLabel; };
+      dark.title = AR.darkTitle; dark.setAttribute('aria-label', AR.darkTitle);
+      setLabel();
+      dark.addEventListener('click', function () { setTimeout(setLabel, 0); });
+    }
+    var badge = document.getElementById('useBadge');
+    if (badge) badge.textContent = AR.useBadge.replace('{n}', lsGet('fpt_usage', 0));
+    var chips = document.querySelectorAll('#catChips .chip');
+    if (chips.length && chips[0].textContent === 'All') chips[0].textContent = AR.allCat;
+    document.querySelectorAll('.tool-actions .action-label').forEach(function (lab) {
+      var t = lab.textContent;
+      if (t === 'Favorite') lab.textContent = AR.favAction;
+      else if (t === 'Rate this tool') lab.textContent = AR.rateAction;
+      else if (t === 'Share') lab.textContent = AR.shareAction;
+    });
+    var star = document.querySelector('.tool-hero .fav-star');
+    if (star) { star.title = AR.favAction; star.setAttribute('aria-label', AR.favAction); }
+    document.querySelectorAll('.tool-hero .share-btn').forEach(function (a) {
+      var t = a.getAttribute('title') || a.getAttribute('aria-label') || '';
+      var m = /Share on (.+)$/.exec(t);
+      if (m) { var nt = AR.shareOn.replace('{name}', m[1]); a.title = nt; a.setAttribute('aria-label', nt); }
+    });
+    var rateMsg = document.querySelector('.tool-hero .rate-msg');
+    var rootEl = document.getElementById('tool-root');
+    if (rateMsg && rootEl) {
+      var ratings = lsGet('fpt_ratings', {});
+      var my = ratings[rootEl.getAttribute('data-tool')] || 0;
+      if (my) rateMsg.textContent = AR.rateYour.replace('{n}', my);
+    }
+    document.querySelectorAll('.fav-star').forEach(function (s) { s.title = AR.favAction; s.setAttribute('aria-label', AR.favAction); });
+    var wa = document.getElementById('wa-float-btn');
+    if (wa) { wa.title = AR.waChat; wa.setAttribute('aria-label', AR.waChat); }
+    var ban = document.getElementById('adCookieBanner');
+    if (ban) {
+      var sp = ban.querySelector('span');
+      if (sp) sp.textContent = 'نستخدم ملفات تعريف الارتباط للتحليلات (Google Analytics) لفهم الزيارات وتحسين موقعنا. اقبل للسماح بملفات تعريف ارتباط التحليلات أو ارفض.';
+      var acc = document.getElementById('adCookieAccept'); if (acc) acc.textContent = 'قبول';
+      var dec = document.getElementById('adCookieDecline'); if (dec) dec.textContent = 'رفض';
+    }
+    initCarouselAr();
+  });
+})();
+</script>
+
+</body></html>
