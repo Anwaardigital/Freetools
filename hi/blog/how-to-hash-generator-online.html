@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<link rel="icon" type="image/png" sizes="192x192" href="https://anwaardigital.com/Freetools/freetools-icon-192.png">
+<link rel="icon" type="image/png" sizes="512x512" href="https://anwaardigital.com/Freetools/freetools-icon-512.png">
+<link rel="apple-touch-icon" href="https://anwaardigital.com/Freetools/freetools-icon-192.png">
+
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ऑनलाइन मुफ़्त SHA-256 हैश कैसे बनाएँ (2026 गाइड)</title>
+<meta name="description" content="अपने ब्राउज़र में मुफ़्त हैश जनरेटर से किसी भी टेक्स्ट के SHA-256 हैश बनाएँ। चरण-दर-चरण 2026 गाइड: डाउनलोड सत्यापित करना, चेकसम और हैशिंग की सीमाएँ।">
+<meta property="og:type" content="article">
+<meta property="og:title" content="ऑनलाइन मुफ़्त SHA-256 हैश कैसे बनाएँ (2026 गाइड)">
+<meta property="og:description" content="अपने ब्राउज़र में किसी भी टेक्स्ट के SHA-256 हैश बनाएँ। डाउनलोड सत्यापित करने, चेकसम और हैशिंग की ईमानदार सीमाओं की चरण-दर-चरण गाइड।">
+<meta property="og:url" content="https://anwaardigital.com/Freetools/hi/blog/how-to-hash-generator-online.html">
+<link rel="canonical" href="https://anwaardigital.com/Freetools/hi/blog/how-to-hash-generator-online.html">
+<link rel="alternate" hreflang="hi" href="https://anwaardigital.com/Freetools/hi/blog/how-to-hash-generator-online.html">
+<link rel="alternate" hreflang="ar" href="https://anwaardigital.com/Freetools/ar/blog/how-to-hash-generator-online.html">
+<link rel="alternate" hreflang="en" href="https://anwaardigital.com/Freetools/blog/how-to-hash-generator-online.html">
+<link rel="alternate" hreflang="x-default" href="https://anwaardigital.com/Freetools/blog/how-to-hash-generator-online.html"><meta property="og:image" content="https://anwaardigital.com/anwaar-icon-512.png">
+<meta name="twitter:card" content="summary">
+<link rel="stylesheet" href="../../assets/style.css">
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@type": "Article", "headline": "ऑनलाइन मुफ़्त SHA-256 हैश कैसे बनाएँ (2026 गाइड)", "author": {"@type": "Person", "name": "Malik Muhammad Anwaar"}, "publisher": {"@type": "Organization", "name": "Anwaar Digital"}, "datePublished": "2026-10-15", "mainEntityOfPage": "https://anwaardigital.com/Freetools/hi/blog/how-to-hash-generator-online.html", "inLanguage": "hi"}
+</script>
+</head>
+<body>
+<header class="site-header"><div class="wrap">
+<a class="logo" href="../index.html"><img class="shield" src="../../freetools-icon-192.png" alt=""> फ्री प्राइवेसी टूल्स</a>
+<button class="nav-toggle" aria-label="मेनू" aria-expanded="false">☰</button><nav class="nav"><a href="../index.html">होम</a><a href="../index.html#tools">सभी टूल्स</a><a href="../about.html">हमारे बारे में</a><a href="../faq.html">अक्सर पूछे जाने वाले प्रश्न</a><a href="../blog.html">ब्लॉग</a><a href="../contact.html">संपर्क करें</a><a href="../privacy.html">प्राइवेसी</a></nav>
+</div></header>
+
+<main class="wrap">
+<div class="crumbs"><a href="../index.html">होम</a> / <a href="../blog.html">ब्लॉग</a> / ऑनलाइन SHA-256 Hash कैसे बनाएँ</div>
+
+<article class="article">
+<div class="meta">गाइड • 6 मिनट पढ़ें • अक्तूबर 2026 में अपडेट किया गया</div>
+<h1>ऑनलाइन मुफ़्त SHA-256 Hash कैसे बनाएँ (2026 गाइड)</h1>
+<p>आप कैसे जानते हैं कि डाउनलोड की गई फ़ाइल ठीक वही है जो उसके प्रकाशक ने जारी की थी — रास्ते में भ्रष्ट नहीं हुई, छेड़छाड़ नहीं की गई? मानक उत्तर एक <strong>hash</strong> है: डेटा से गणना किया गया निश्चित-लंबाई वाला फ़िंगरप्रिंट। एक बाइट भी बदलें, और फ़िंगरप्रिंट पूरी तरह बदल जाता है। इस गाइड में, आप सीखेंगे कि सेकंडों में किसी भी टेक्स्ट के SHA-256 hash बनाने के लिए हमारे मुफ़्त <a href="../tools/hash-generator.html">Hash जनरेटर</a> का उपयोग कैसे करें, वे hash किसके लिए अच्छे हैं, और — उतना ही महत्वपूर्ण — वे क्या नहीं कर सकते।</p>
+
+<h2>Hash वास्तव में क्या है?</h2>
+<p>Hash फ़ंक्शन किसी भी आकार के इनपुट को लेता है और निश्चित आकार का आउटपुट देता है जो यादृच्छिक दिखता है। SHA-256, वह एल्गोरिथ्म जिसका हमारा टूल उपयोग करता है, हमेशा 256-बिट मान देता है, जिसे 64 हेक्साडेसिमल अक्षरों (0–9 और a–f) के रूप में दिखाया जाता है। तीन गुण इसे उपयोगी बनाते हैं:</p>
+<ul>
+<li><strong>नियतात्मक:</strong> एक ही इनपुट हमेशा एक ही hash देता है।</li>
+<li><strong>एक-तरफ़ा:</strong> आप hash से इनपुट को फिर से नहीं बना सकते।</li>
+<li><strong>एवलांच प्रभाव:</strong> इनपुट का एक अक्षर बदलने से पूरी तरह अलग hash बनता है।</li>
+</ul>
+<p>इसे डेटा के फ़िंगरप्रिंट की तरह सोचें: संक्षिप्त, व्यावहारिक उद्देश्यों के लिए अनोखा, और अकेले मूल के बारे में कुछ भी प्रकट नहीं करता।</p>
+
+<h2>चरण 1: Hash जनरेटर खोलें</h2>
+<p>किसी भी ब्राउज़र में <a href="../tools/hash-generator.html">Hash जनरेटर</a> खोलें। कोई साइनअप नहीं, कोई इंस्टॉलेशन नहीं। आपको टेक्स्ट इनपुट क्षेत्र और जनरेट बटन दिखेगा।</p>
+
+<h2>चरण 2: अपना टेक्स्ट डालें</h2>
+<p>जिस टेक्स्ट का hash बनाना है उसे इनपुट बॉक्स में टाइप या पेस्ट करें। यह कुछ भी हो सकता है — वाक्य, कॉन्फ़िगरेशन स्निपेट, लाइसेंस कुंजी जिसका आप फ़िंगरप्रिंट बनाना चाहते हैं। सब कुछ स्थानीय रूप से आपके ब्राउज़र में प्रोसेस होता है; आपका टेक्स्ट कभी किसी सर्वर पर अपलोड नहीं होता।</p>
+<p><strong>सटीकता चेतावनी:</strong> हैशिंग बाइट-सटीक है। अतिरिक्त स्पेस, अलग लाइन एंडिंग, या अदृश्य अक्षर पूरी तरह अलग hash देता है। Hash की तुलना करते समय, सुनिश्चित करें कि दोनों पक्षों ने ठीक वही बाइट hash किए हैं।</p>
+
+<h2>चरण 3: Hash बनाएँ और कॉपी करें</h2>
+<p>जनरेट बटन पर क्लिक करें। तुरंत, आपको 64-अक्षर वाली हेक्साडेसिमल स्ट्रिंग मिलेगी — कुछ ऐसी <code>9f86d081884c7d659a2feaa0c55ad015a3bf4f1b2b0b822cd15d6c15b0f00a08</code> (यह "test" शब्द का SHA-256 है)। इसे कहीं और पेस्ट करने के लिए कॉपी बटन से कॉपी करें।</p>
+
+<h2>उपयोग मामला 1: सत्यापित करें कि डाउनलोड से छेड़छाड़ नहीं हुई है</h2>
+<p>यह क्लासिक उपयोग है। सॉफ़्टवेयर प्रकाशक अक्सर डाउनलोड लिंक के बगल में अपने इंस्टॉलर का SHA-256 hash प्रकाशित करते हैं। डाउनलोड करने के बाद, आप फ़ाइल का hash बनाते हैं और तुलना करते हैं: अगर आपका hash प्रकाशित hash से अक्षर-दर-अक्षर मेल खाता है, तो फ़ाइल अक्षुण्ण और प्रामाणिक है (यह मानते हुए कि आप उस पेज पर भरोसा करते हैं जिसने hash प्रकाशित किया है)। अगर यह अलग है, तो उसे न चलाएँ — आधिकारिक स्रोत से फिर डाउनलोड करें।</p>
+<p>हमारा ब्राउज़र टूल टेक्स्ट का hash बनाता है; फ़ाइलों का hash बनाने के लिए, आपके ऑपरेटिंग सिस्टम में अंतर्निहित कमांड हैं (जैसे Windows पर certutil या macOS/Linux पर shasum)। तुलना का सिद्धांत समान है।</p>
+
+<h2>उपयोग मामला 2: जाँचें कि दो टेक्स्ट समान हैं या नहीं</h2>
+<p>लंबे टेक्स्ट की आँख से तुलना अविश्वसनीय है। इसके बजाय दोनों का hash बनाएँ और 64-अक्षर वाले आउटपुट की तुलना करें — समान hash का अर्थ समान सामग्री है (सभी व्यावहारिक उद्देश्यों के लिए), और कितना भी छोटा अंतर तुरंत दिख जाता है। यह जाँचने के लिए उपयोगी है कि पेस्ट किया गया कॉन्फ़िगरेशन, कॉपी की गई कुंजी, या दस्तावेज़ ड्राफ़्ट मूल से ठीक मेल खाता है।</p>
+
+<h2>उपयोग मामला 3: संग्रहीत किए बिना डेटा का फ़िंगरप्रिंट बनाएँ</h2>
+<p>क्योंकि hash एक-तरफ़ा है, आप संवेदनशील टेक्स्ट को उजागर किए बिना उसका फ़िंगरप्रिंट संग्रहीत या साझा कर सकते हैं। उदाहरण के लिए, आप आज hash रिकॉर्ड कर सकते हैं और बाद में साबित कर सकते हैं कि दस्तावेज़ तब से नहीं बदला है — कोई भी दस्तावेज़ को फिर से hash करके मिलान की पुष्टि कर सकता है, लेकिन अकेला hash उसकी सामग्री के बारे में कुछ भी प्रकट नहीं करता।</p>
+
+<h2>हैशिंग क्या नहीं है: ईमानदार सीमाएँ</h2>
+<p>Hash को व्यापक रूप से ग़लत समझा जाता है, इसलिए सीमाओं के बारे में स्पष्ट रहें:</p>
+<ul>
+<li><strong>Hash एन्क्रिप्शन नहीं है।</strong> एन्क्रिप्शन कुंजी से उलटा जा सकता है; हैशिंग डिज़ाइन से एक-तरफ़ा है। आप SHA-256 hash को "डिक्रिप्ट" नहीं कर सकते।</li>
+<li><strong>हैशिंग अनुमानित डेटा को नहीं छिपाता।</strong> कोई भी "password123" का hash बना सकता है और वही परिणाम पा सकता है जो आपको मिला। Hash सिर्फ उस डेटा को छिपाता है जो शुरुआत से अप्रत्याशित है।</li>
+<li><strong>पासवर्ड को कच्चे SHA-256 के रूप में संग्रहीत न करें।</strong> उचित पासवर्ड भंडारण विशेष धीमे, सॉल्टेड एल्गोरिथ्म (जैसे bcrypt या Argon2) का उपयोग करता है ठीक इसलिए क्योंकि SHA-256 जैसे तेज़ hash को जल्दी ब्रूट-फ़ोर्स किया जा सकता है। अगर आप लॉगिन सिस्टम बना रहे हैं, तो समर्पित पासवर्ड-हैशिंग लाइब्रेरी का उपयोग करें — कभी सादा SHA-256 नहीं।</li>
+<li><strong>मेल खाता hash अखंडता साबित करता है, भरोसा नहीं।</strong> यह पुष्टि करता है कि डेटा hash द्वारा वर्णित चीज़ से मेल खाता है — यह कुछ नहीं कहता कि स्रोत स्वयं भरोसेमंद है या नहीं।</li>
+</ul>
+
+<h2>SHA-256 क्यों, MD5 या SHA-1 क्यों नहीं?</h2>
+<p>पुराने hash फ़ंक्शन MD5 और SHA-1 सुरक्षा उद्देश्यों के लिए टूटे माने जाते हैं क्योंकि शोधकर्ताओं ने उनके विरुद्ध व्यावहारिक कोलिज़न हमले प्रदर्शित किए हैं (दो अलग इनपुट बनाना जिनका एक ही hash हो)। SHA-256 का कोई ऐसा व्यावहारिक हमला नहीं है और यह अखंडता जाँच के लिए मानक विकल्प बना हुआ है। जब आप प्रकाशक को MD5 और SHA-256 दोनों चेकसम देते देखें, तो हमेशा SHA-256 वाले से तुलना करें।</p>
+
+<h2>अक्सर पूछे जाने वाले प्रश्न</h2>
+<h3>क्या Hash जनरेटर निजी है?</h3>
+<p>हाँ। सभी हैशिंग स्थानीय रूप से आपके ब्राउज़र में JavaScript के माध्यम से होती है — आपका इनपुट कभी आपके डिवाइस से बाहर नहीं जाता।</p>
+<h3>क्या दो अलग टेक्स्ट का एक ही SHA-256 hash हो सकता है?</h3>
+<p>सिद्धांत में, हाँ (संभावित इनपुट 256-बिट आउटपुट से ज़्यादा हैं), लेकिन किसी ने कभी कोलिज़न नहीं पाया है, और ऐसा करना कम्प्यूटेशनल रूप से असंभव माना जाता है। हर वास्तविक उद्देश्य के लिए, SHA-256 hash को अनोखा मानें।</p>
+<h3>एक ही टेक्स्ट फिर से टाइप करने पर मेरा hash क्यों बदल गया?</h3>
+<p>लगभग निश्चित रूप से अदृश्य अंतर: पीछे का स्पेस, अलग लाइन ब्रेक, या सीधे उद्धरणों के बजाय स्मार्ट उद्धरण। हैशिंग बाइट-सटीक है — फिर से टाइप करने के बजाय मूल को कॉपी करें।</p>
+<h3>क्या मैं इस टूल से फ़ाइल का hash बना सकता हूँ?</h3>
+<p>यह टूल आपके द्वारा पेस्ट किए गए टेक्स्ट का hash बनाता है। फ़ाइलों के लिए, अपने OS की अंतर्निहित चेकसम उपयोगिताओं का उपयोग करें, फिर उसी तरह बनाए गए hash से तुलना करें।</p>
+
+<p><strong>अभी आज़माएँ:</strong> <a href="../tools/hash-generator.html">मुफ़्त Hash जनरेटर</a> · <a href="../tools/password-strength-checker.html">मुफ़्त पासवर्ड स्ट्रेंथ चेकर</a></p>
+</article>
+</main>
+
+<footer class="site-footer"><div class="wrap">
+<div class="cols">
+<div><h4><img class="shield" src="../../freetools-icon-192.png" alt="" style="width:22px;height:22px;vertical-align:-4px;margin-right:6px"> फ्री प्राइवेसी टूल्स</h4><p>63 मुफ़्त ऑनलाइन टूल्स। कोई साइनअप नहीं — सब कुछ आपके ब्राउज़र में चलता है।</p></div>
+<div><h4>लोकप्रिय</h4><a href="../tools/image-compressor.html">इमेज कंप्रेसर</a><a href="../tools/word-counter.html">शब्द काउंटर</a><a href="../tools/password-generator.html">पासवर्ड जनरेटर</a><a href="../tools/pdf-merger.html">PDF मर्जर</a><a href="../tools/age-calculator.html">आयु कैलकुलेटर</a></div>
+<div><h4>साइट</h4><a href="../index.html">होम</a><a href="../index.html#tools">सभी टूल्स</a><a href="../about.html">हमारे बारे में</a><a href="../faq.html">अक्सर पूछे जाने वाले प्रश्न</a><a href="../blog.html">ब्लॉग</a><a href="../contact.html">संपर्क करें</a><a href="../request.html">टूल का अनुरोध करें</a><a href="../privacy.html">प्राइवेसी नीति</a><a href="../terms.html">उपयोग की शर्तें</a><a href="../disclaimer.html">अस्वीकरण</a></div>
+</div>
+<div class="foot-note">© 2026 फ्री प्राइवेसी टूल्स — सभी टूल्स 100% आपके ब्राउज़र में चलते हैं।<br>द्वारा विकसित <a href="https://anwaardigital.com/" target="_blank" rel="noopener" style="color:#fbbf24;font-weight:700">Malik Anwaar</a></div>
+</div></footer>
+<script src="../../assets/app.js"></script>
+<script src="../../assets/features.js"></script>
+
+<script>
+/* HI pages: Hindi language menu (हिन्दी current + English + العربية links), dark-mode
+   label, tool action labels, useBadge, cookie banner. The site carousel script
+   and the i18n script are NOT loaded on HI pages, so the featured carousel
+   is built here too (same logic as the site's own carousel). */
+(function () {
+  'use strict';
+  var HI = {
+    darkLabel: 'डार्क मोड', lightLabel: 'लाइट मोड', darkTitle: 'डार्क मोड बदलें',
+    waChat: 'WhatsApp पर चैट करें', favAction: 'पसंदीदा', rateAction: 'इस टूल को रेट करें',
+    shareAction: 'शेयर करें', shareOn: '{name} पर शेयर करें', rateYour: 'आपकी रेटिंग: {n}/5',
+    useBadge: 'इस डिवाइस पर {n} टूल उपयोग', openBtn: 'खोलें', allCat: 'सभी'
+  };
+  function lsGet(k, d) { try { var v = localStorage.getItem(k); return v === null ? d : JSON.parse(v); } catch (e) { return d; } }
+  function onReady(fn) { if (document.readyState !== 'loading') fn(); else document.addEventListener('DOMContentLoaded', fn); }
+  function enCounterpart() {
+    var p = window.location.pathname;
+    var m = p.match(/^(.*\/Freetools\/)hi\/(tools\/[^\/]+\.html|blog\/[^\/]+\.html|index\.html)$/);
+    if (m) return m[1] + m[2];
+    if (p.indexOf('/hi/tools/') !== -1) return '../../tools/' + p.split('/hi/tools/')[1];
+    if (p.indexOf('/hi/blog/') !== -1) return '../../blog/' + p.split('/hi/blog/')[1];
+    return '../index.html';
+  }
+  function arCounterpart() {
+    var p = window.location.pathname;
+    var m = p.match(/^(.*\/Freetools\/)hi\/(tools\/[^\/]+\.html|blog\/[^\/]+\.html|index\.html)$/);
+    if (m) return m[1] + 'ar/' + m[2];
+    if (p.indexOf('/hi/tools/') !== -1) return '../../ar/tools/' + p.split('/hi/tools/')[1];
+    if (p.indexOf('/hi/blog/') !== -1) return '../../ar/blog/' + p.split('/hi/blog/')[1];
+    return '../index.html';
+  }
+  function injectStyles() {
+    if (document.getElementById('lang9StyleHi')) return;
+    var st = document.createElement('style'); st.id = 'lang9StyleHi';
+    st.textContent = '.lang9-wrap{position:relative;display:inline-flex;align-items:center}' +
+      '.lang9-btn{cursor:pointer;border:1px solid var(--border,#dbe2ea);background:var(--card,#fff);color:var(--ink,#0f172a);border-radius:999px;padding:7px 14px;font-size:14px;font-weight:700;line-height:1}' +
+      '.lang9-menu{position:absolute;top:calc(100% + 6px);inset-inline-end:0;min-width:170px;margin:0;padding:6px 0;list-style:none;background:var(--card,#fff);border:1px solid var(--border,#dbe2ea);border-radius:12px;box-shadow:0 8px 24px rgba(0,0,0,.15);z-index:100;display:none}' +
+      '.lang9-menu.open{display:block}' +
+      '.lang9-menu button{display:block;width:100%;text-align:start;background:none;border:0;cursor:pointer;padding:9px 14px;font-size:14px;color:var(--ink,#0f172a)}' +
+      '.lang9-menu button:hover{background:var(--bg,#f1f5f9)}' +
+      '.lang9-menu button.on{font-weight:800}' +
+      '.lang9-menu a{display:block;text-decoration:none;padding:9px 14px;font-size:14px;color:var(--ink,#0f172a)}' +
+      '.lang9-menu a:hover{background:var(--bg,#f1f5f9)}';
+    document.head.appendChild(st);
+  }
+  function buildSwitcher() {
+    if (document.getElementById('lang9Wrap')) return;
+    var headerWrap = document.querySelector('.site-header .wrap');
+    if (!headerWrap) return;
+    injectStyles();
+    var wrap = document.createElement('span');
+    wrap.className = 'lang9-wrap'; wrap.id = 'lang9Wrap';
+    var btn = document.createElement('button');
+    btn.type = 'button'; btn.id = 'langBtn9'; btn.className = 'lang9-btn';
+    btn.setAttribute('aria-haspopup', 'listbox'); btn.setAttribute('aria-expanded', 'false');
+    btn.setAttribute('aria-label', 'भाषा'); btn.textContent = 'हिन्दी';
+    var menu = document.createElement('ul');
+    menu.className = 'lang9-menu'; menu.id = 'langMenu9'; menu.setAttribute('role', 'listbox');
+    var li1 = document.createElement('li');
+    var cur = document.createElement('button');
+    cur.type = 'button'; cur.className = 'on'; cur.textContent = 'हिन्दी';
+    cur.setAttribute('role', 'option');
+    cur.addEventListener('click', function () { menu.classList.remove('open'); btn.setAttribute('aria-expanded', 'false'); });
+    li1.appendChild(cur); menu.appendChild(li1);
+    var li2 = document.createElement('li');
+    var a = document.createElement('a');
+    a.href = enCounterpart(); a.textContent = 'English'; a.setAttribute('role', 'option');
+    li2.appendChild(a); menu.appendChild(li2);
+    var li3 = document.createElement('li');
+    var a3 = document.createElement('a');
+    a3.href = arCounterpart(); a3.textContent = 'العربية'; a3.setAttribute('role', 'option');
+    li3.appendChild(a3); menu.appendChild(li3);
+    btn.addEventListener('click', function (e) {
+      e.stopPropagation();
+      var open = menu.classList.toggle('open');
+      btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+    });
+    document.addEventListener('click', function (e) {
+      if (!wrap.contains(e.target)) { menu.classList.remove('open'); btn.setAttribute('aria-expanded', 'false'); }
+    });
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape') { menu.classList.remove('open'); btn.setAttribute('aria-expanded', 'false'); }
+    });
+    wrap.appendChild(btn); wrap.appendChild(menu);
+    var navToggle = headerWrap.querySelector('.nav-toggle');
+    if (navToggle) headerWrap.insertBefore(wrap, navToggle);
+    else headerWrap.appendChild(wrap);
+  }
+  var FEATURED = ['background-remover', 'qr-generator', 'image-compressor', 'password-generator',
+    'pdf-merger', 'word-counter', 'link-shortener', 'age-calculator',
+    'color-picker', 'images-to-pdf'];
+  function featCardHi(slug) {
+    var src = document.querySelector('.tool-card[href="tools/' + slug + '.html"]');
+    if (!src) return null;
+    var ticonEl = src.querySelector('.ticon'); var iconHtml = ticonEl ? ticonEl.innerHTML : '';
+    var name = src.querySelector('h3').textContent;
+    var desc = src.querySelector('p').textContent;
+    var card = document.createElement('div');
+    card.className = 'feat-card'; card.setAttribute('data-slug', slug);
+    var ic = document.createElement('div'); ic.className = 'feat-icon'; ic.innerHTML = iconHtml;
+    var h = document.createElement('h3'); h.textContent = name;
+    var p = document.createElement('p'); p.textContent = desc;
+    var open = document.createElement('a'); open.className = 'feat-open'; open.href = 'tools/' + slug + '.html';
+    var osp = document.createElement('span'); osp.textContent = HI.openBtn;
+    open.appendChild(osp); open.appendChild(document.createTextNode(' ›'));
+    card.appendChild(ic); card.appendChild(h); card.appendChild(p); card.appendChild(open);
+    card.addEventListener('click', function () { location.href = 'tools/' + slug + '.html'; });
+    return card;
+  }
+  function initCarouselHi() {
+    var car = document.getElementById('featCarousel');
+    if (!car) return;
+    FEATURED.forEach(function (s) { var c = featCardHi(s); if (c) car.appendChild(c); });
+    FEATURED.forEach(function (s) { var c = featCardHi(s); if (c) car.appendChild(c); });
+    var SPEED = 40, paused = false, resumeT = null, last = 0;
+    function tick(now) {
+      if (!paused && !document.hidden) {
+        if (last) {
+          car.scrollLeft += (now - last) / 1000 * SPEED;
+          var half = car.scrollWidth / 2;
+          if (half > 0 && car.scrollLeft >= half - 4) car.scrollLeft -= half;
+        }
+        last = now;
+      } else { last = 0; }
+      if (window.requestAnimationFrame) window.requestAnimationFrame(tick);
+    }
+    function pause() { paused = true; }
+    function resume() { paused = false; }
+    function scheduleResume(ms) { clearTimeout(resumeT); resumeT = setTimeout(resume, ms); }
+    car.addEventListener('pointerenter', function (e) { if (e.pointerType === 'mouse') pause(); });
+    car.addEventListener('pointerleave', function (e) { if (e.pointerType === 'mouse') resume(); });
+    car.addEventListener('touchstart', pause, { passive: true });
+    car.addEventListener('touchend', function () { scheduleResume(2500); });
+    document.addEventListener('visibilitychange', function () { if (!document.hidden) resume(); });
+    var pv = document.getElementById('carPrev'), nx = document.getElementById('carNext');
+    if (pv) pv.addEventListener('click', function () { pause(); car.scrollBy({ left: -280, behavior: 'smooth' }); scheduleResume(4000); });
+    if (nx) nx.addEventListener('click', function () { pause(); car.scrollBy({ left: 280, behavior: 'smooth' }); scheduleResume(4000); });
+    if (window.requestAnimationFrame) window.requestAnimationFrame(tick);
+  }
+  onReady(function () {
+    buildSwitcher();
+    var dark = document.getElementById('darkToggle');
+    if (dark) {
+      var setLabel = function () { dark.textContent = document.body.classList.contains('dark') ? HI.lightLabel : HI.darkLabel; };
+      dark.title = HI.darkTitle; dark.setAttribute('aria-label', HI.darkTitle);
+      setLabel();
+      dark.addEventListener('click', function () { setTimeout(setLabel, 0); });
+    }
+    var badge = document.getElementById('useBadge');
+    if (badge) badge.textContent = HI.useBadge.replace('{n}', lsGet('fpt_usage', 0));
+    var chips = document.querySelectorAll('#catChips .chip');
+    if (chips.length && chips[0].textContent === 'All') chips[0].textContent = HI.allCat;
+    document.querySelectorAll('.tool-actions .action-label').forEach(function (lab) {
+      var t = lab.textContent;
+      if (t === 'Favorite') lab.textContent = HI.favAction;
+      else if (t === 'Rate this tool') lab.textContent = HI.rateAction;
+      else if (t === 'Share') lab.textContent = HI.shareAction;
+    });
+    var star = document.querySelector('.tool-hero .fav-star');
+    if (star) { star.title = HI.favAction; star.setAttribute('aria-label', HI.favAction); }
+    document.querySelectorAll('.tool-hero .share-btn').forEach(function (a) {
+      var t = a.getAttribute('title') || a.getAttribute('aria-label') || '';
+      var m = /Share on (.+)$/.exec(t);
+      if (m) { var nt = HI.shareOn.replace('{name}', m[1]); a.title = nt; a.setAttribute('aria-label', nt); }
+    });
+    var rateMsg = document.querySelector('.tool-hero .rate-msg');
+    var rootEl = document.getElementById('tool-root');
+    if (rateMsg && rootEl) {
+      var ratings = lsGet('fpt_ratings', {});
+      var my = ratings[rootEl.getAttribute('data-tool')] || 0;
+      if (my) rateMsg.textContent = HI.rateYour.replace('{n}', my);
+    }
+    document.querySelectorAll('.fav-star').forEach(function (s) { s.title = HI.favAction; s.setAttribute('aria-label', HI.favAction); });
+    var wa = document.getElementById('wa-float-btn');
+    if (wa) { wa.title = HI.waChat; wa.setAttribute('aria-label', HI.waChat); }
+    var ban = document.getElementById('adCookieBanner');
+    if (ban) {
+      var sp = ban.querySelector('span');
+      if (sp) sp.textContent = 'हम विज़िट समझने और अपनी साइट सुधारने के लिए एनालिटिक्स कुकीज़ (Google Analytics) का उपयोग करते हैं। एनालिटिक्स कुकीज़ की अनुमति देने के लिए स्वीकार करें या अस्वीकार करें।';
+      var acc = document.getElementById('adCookieAccept'); if (acc) acc.textContent = 'स्वीकार करें';
+      var dec = document.getElementById('adCookieDecline'); if (dec) dec.textContent = 'अस्वीकार करें';
+    }
+    initCarouselHi();
+  });
+})();
+</script>
+
+
+<!-- ऊपर जाएँ बटन -->
+<button id="backToTop" aria-label="ऊपर जाएँ" title="ऊपर जाएँ"
+style="position:fixed;bottom:24px;right:24px;width:48px;height:48px;border-radius:50%;border:none;background:#2563eb;color:#ffffff;font-size:22px;line-height:1;cursor:pointer;opacity:0;visibility:hidden;transition:opacity .3s,visibility .3s,transform .2s;box-shadow:0 4px 12px rgba(0,0,0,.35);z-index:9999;padding:0;">&#8593;</button>
+<script>
+(function(){var b=document.getElementById('backToTop');if(!b)return;
+window.addEventListener('scroll',function(){var s=window.pageYOffset||document.documentElement.scrollTop;
+if(s>300){b.style.opacity='1';b.style.visibility='visible';}else{b.style.opacity='0';b.style.visibility='hidden';}},{passive:true});
+b.addEventListener('click',function(){window.scrollTo({top:0,behavior:'smooth'});});
+b.addEventListener('mouseenter',function(){b.style.transform='scale(1.12)';});
+b.addEventListener('mouseleave',function(){b.style.transform='scale(1)';});})();
+</script>
+
+</body></html>
