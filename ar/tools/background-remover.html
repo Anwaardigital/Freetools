@@ -44,50 +44,50 @@
       "mainEntity": [
         {
           "@type": "Question",
-          "name": "Is it really free?",
+          "name": "هل هي مجانية فعلًا؟",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Yes — every tool on this site is 100% free with no limits, no signup and no watermarks."
+            "text": "نعم — كل أداة على هذا الموقع مجانية 100% دون حدود ودون تسجيل ودون علامات مائية."
           }
         },
         {
           "@type": "Question",
-          "name": "Is my data private?",
+          "name": "هل بياناتي خاصة؟",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Absolutely. All processing happens locally in your browser. Your files are never uploaded to any server."
+            "text": "بالتأكيد. تتم كل المعالجة محليًا في متصفحك. لا تُرفع ملفاتك أبدًا إلى أي خادم."
           }
         },
         {
           "@type": "Question",
-          "name": "Does it work on colored backgrounds, not just white?",
+          "name": "هل يعمل على خلفيات ملونة لا البيضاء فقط؟",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Yes! This is a real AI background remover, not a simple color-key filter. It detects the subject (person, product, animal) using machine learning and removes any background — white, colored, outdoor scenes, busy rooms — whatever is behind the subject."
+            "text": "نعم! فهذا مزيل خلفيات ذكاء اصطناعي حقيقي، لا مرشح مفتاح لون بسيط. وهو يكتشف الموضوع (شخص أو منتج أو حيوان) باستخدام تعلم الآلة ويزيل أي خلفية — بيضاء أو ملونة أو مشاهد خارجية أو غرف مزدحمة."
           }
         },
         {
           "@type": "Question",
-          "name": "Why does it download something on first use?",
+          "name": "لماذا ينزّل شيئًا عند أول استخدام؟",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "The AI model (~40MB) downloads once from a CDN and is then cached in your browser. After the first use, it works instantly offline. The model runs 100% on your device — your photos never leave your browser."
+            "text": "يُنزَّل نموذج الذكاء الاصطناعي (~40 ميغابايت) مرة واحدة من CDN ثم يُحفظ مؤقتًا في متصفحك. وبعد أول استخدام يعمل فورًا. ويعمل النموذج 100% على جهازك — فصورك لا تغادر متصفحك أبدًا."
           }
         },
         {
           "@type": "Question",
-          "name": "What image formats are supported?",
+          "name": "أي صيغ صور مدعومة؟",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "JPG, PNG and WebP input. The result is always a PNG with transparency (alpha channel), so you can place the cut-out subject on any background."
+            "text": "إدخال JPG وPNG وWebP. والنتيجة دائمًا PNG بشفافية، حتى تضع الموضوع المقصوص على أي خلفية."
           }
         },
         {
           "@type": "Question",
-          "name": "What if the AI cuts off part of my subject?",
+          "name": "ماذا إذا قطع الذكاء الاصطناعي جزءًا من موضوعي؟",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "AI segmentation is very good but not perfect — fine hair, transparent objects (glasses, veils) and subjects blending into similar-colored backgrounds can confuse it. For best results use well-lit photos where the subject stands out from the background."
+            "text": "تجزئة الذكاء الاصطناعي جيدة جدًا لكنها ليست مثالية — فالشعر الدقيق والأشياء الشفافة والمواضيع المندمجة في خلفيات مشابهة اللون قد تربكه. ولأفضل النتائج استخدم صورًا مضيئة جيدًا يبرز فيها الموضوع عن الخلفية."
           }
         }
       ]
@@ -99,7 +99,7 @@
 <body>
 <header class="site-header"><div class="wrap">
 <a class="logo" href="../index.html"><img class="shield" src="../../freetools-icon-192.png" alt=""> أدوات الخصوصية المجانية</a>
-<button class="nav-toggle" aria-label="Menu" aria-expanded="false">☰</button><nav class="nav"><a href="../index.html">الرئيسية</a><a href="../index.html#tools">كل الأدوات</a><a href="../../about.html">حول الموقع</a><a href="../../faq.html">الأسئلة الشائعة</a><a href="../../blog.html">المدونة</a><a href="../../contact.html">تواصل معنا</a><a href="../../privacy.html">الخصوصية</a></nav>
+<button class="nav-toggle" aria-label="القائمة" aria-expanded="false">☰</button><nav class="nav"><a href="../index.html">الرئيسية</a><a href="../index.html#tools">كل الأدوات</a><a href="../about.html">حول الموقع</a><a href="../faq.html">الأسئلة الشائعة</a><a href="../blog.html">المدونة</a><a href="../contact.html">تواصل معنا</a><a href="../privacy.html">الخصوصية</a></nav>
 </div></header>
 
 <main class="wrap">
@@ -110,8 +110,8 @@
   <div id="bgremover-app" style="max-width:640px;margin:0 auto">
     <div id="bg-drop" style="border:2px dashed #94a3b8;border-radius:12px;padding:36px 20px;text-align:center;cursor:pointer;background:#f8fafc">
       <div><svg aria-hidden="true" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#64748b" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="9" cy="9" r="2"/><path d="M21 15l-5-5L5 21"/></svg></div>
-      <p style="margin:8px 0;font-weight:600">Click to choose a photo or drag &amp; drop it here</p>
-      <p style="margin:0;font-size:13px;color:#64748b">JPG, PNG or WebP — processed 100% in your browser</p>
+      <p style="margin:8px 0;font-weight:600">انقر لاختيار صورة أو اسحبها وأفلتها هنا</p>
+      <p style="margin:0;font-size:13px;color:#64748b">JPG أو PNG أو WebP — تُعالج 100% في متصفحك</p>
       <input type="file" id="bg-file" accept="image/jpeg,image/png,image/webp" style="display:none">
     </div>
     <div id="bg-status" style="margin:14px 0;font-size:14px;min-height:22px;text-align:center;color:#475569"></div>
@@ -121,31 +121,18 @@
     </div>
     <div id="bg-result" style="display:none;text-align:center;margin-top:16px">
       <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-bottom:12px">
-        <div><p style="font-size:13px;color:#64748b;margin:0 0 6px">Original</p><img id="bg-original" alt="Original photo" style="max-width:220px;max-height:220px;border-radius:8px;border:1px solid #e2e8f0"></div>
-        <div><p style="font-size:13px;color:#64748b;margin:0 0 6px">Background removed</p><img id="bg-output" alt="Background removed" style="max-width:220px;max-height:220px;border-radius:8px;border:1px solid #e2e8f0;background:repeating-conic-gradient(#e5e7eb 0 25%,#fff 0 50%) 0 0/20px 20px"></div>
+        <div><p style="font-size:13px;color:#64748b;margin:0 0 6px">الأصلية</p><img id="bg-original" alt="الصورة الأصلية" style="max-width:220px;max-height:220px;border-radius:8px;border:1px solid #e2e8f0"></div>
+        <div><p style="font-size:13px;color:#64748b;margin:0 0 6px">بعد إزالة الخلفية</p><img id="bg-output" alt="بعد إزالة الخلفية" style="max-width:220px;max-height:220px;border-radius:8px;border:1px solid #e2e8f0;background:repeating-conic-gradient(#e5e7eb 0 25%,#fff 0 50%) 0 0/20px 20px"></div>
       </div>
-      <button id="bg-download" style="background:#0ea5e9;color:#fff;border:0;border-radius:20px;padding:10px 32px;font-weight:700;cursor:pointer;font-size:15px">Download PNG (transparent)</button>
-      <button id="bg-again" style="background:transparent;color:#0ea5e9;border:1px solid #0ea5e9;border-radius:20px;padding:10px 24px;cursor:pointer;font-size:15px;margin-left:8px">Try another photo</button>
+      <button id="bg-download" style="background:#0ea5e9;color:#fff;border:0;border-radius:20px;padding:10px 32px;font-weight:700;cursor:pointer;font-size:15px">تنزيل PNG (شفافة)</button>
+      <button id="bg-again" style="background:transparent;color:#0ea5e9;border:1px solid #0ea5e9;border-radius:20px;padding:10px 24px;cursor:pointer;font-size:15px;margin-left:8px">جرّب صورة أخرى</button>
     </div>
   </div>
 </div>
-<div class="howto"><h2>How to use</h2><ol><li>Click the upload area (or drag &amp; drop) and choose a photo — JPG, PNG or WebP. On first use the AI model (~40MB) downloads once and is cached.</li><li>Wait while the AI analyzes your photo and separates the subject from the background — usually 5–20 seconds depending on your device.</li><li>Preview the result side by side with the original. The background is replaced with transparency (checkered pattern).</li><li>Click "Download PNG" to save the cut-out with a transparent background — ready to place on any design, slide or product listing.</li></ol></div>
-<div class="faq"><h2>FAQ</h2><details><summary>Is it really free?</summary><p>Yes — every tool on this site is 100% free with no limits, no signup and no watermarks.</p></details><details><summary>Is my data private?</summary><p>Absolutely. All processing happens locally in your browser. Your files are never uploaded to any server.</p></details><details><summary>Does it work on colored backgrounds, not just white?</summary><p>Yes! This is a real AI background remover, not a simple color-key filter. It detects the subject (person, product, animal) using machine learning and removes any background — white, colored, outdoor scenes, busy rooms.</p></details><details><summary>Why does it download something on first use?</summary><p>The AI model (~40MB) downloads once from a CDN and is then cached in your browser. After the first use it works instantly. The model runs 100% on your device — your photos never leave your browser.</p></details><details><summary>What image formats are supported?</summary><p>JPG, PNG and WebP input. The result is always a PNG with transparency, so you can place the cut-out subject on any background.</p></details><details><summary>What if the AI cuts off part of my subject?</summary><p>AI segmentation is very good but not perfect — fine hair, transparent objects and subjects blending into similar-colored backgrounds can confuse it. For best results use well-lit photos where the subject stands out from the background.</p></details></div>
-<div class="tool-guide"><h2>Complete Guide: AI Background Removal</h2>
-<h3>How it works</h3>
-<p>Unlike old "chroma key" tools that only erase one flat color (usually white), this tool uses a neural network trained on millions of photos to understand what a <em>subject</em> looks like — a person, a product, a pet — versus the background behind it. The model examines every pixel, predicts whether it belongs to the foreground or background, and produces a clean mask. The result is a PNG with a true alpha channel: fully transparent where the background was, fully opaque where the subject is, and smooth semi-transparent edges for hair and soft boundaries.</p>
-<h3>Real-world use cases</h3>
-<p><strong>Product photos for online stores:</strong> shoot products on any table, remove the messy background, and place them on clean white for a professional catalog look. <strong>Profile pictures &amp; ID photos:</strong> cut yourself out of a casual photo and drop yourself onto a plain background. <strong>Thumbnails &amp; social posts:</strong> YouTubers and marketers isolate subjects for eye-catching thumbnails. <strong>Presentations:</strong> remove distracting backgrounds from photos in slides. <strong>Memes &amp; stickers:</strong> cut out friends, pets or objects for WhatsApp stickers.</p>
-<h3>Tips for best results</h3>
-<p>Use well-lit photos where the subject is clearly separated from the background — the AI struggles most when subject and background share colors (e.g. a brown dog on a brown couch). Higher resolution helps: the model sees more detail. Avoid heavy motion blur. If the subject has wispy hair or fur, expect slightly soft edges — that's the AI being honest about uncertainty rather than drawing a harsh cut. For transparent objects like glasses or veils, no automatic tool is perfect; manual touch-up in a photo editor may still be needed.</p>
-<h3>Privacy note</h3>
-<p>Many "free" background removers upload your photos to their servers. This one doesn't: the AI model downloads to <em>your</em> device once, then every photo is processed locally in your browser. Your images never travel over the network. You can even disconnect from the internet after the first use and it keeps working.</p>
-<h3>Common mistakes</h3>
-<p>Don't expect miracles on very low-resolution images — if the photo is 200 pixels wide, the AI can't invent detail. Don't re-compress the PNG output as JPG (JPG has no transparency — the background comes back as white). And remember the first run downloads the model, so give it a minute on a slow connection; subsequent runs are much faster.</p>
-</div>
-<div class="related"><h2>أدوات ذات صلة</h2><div class="grid"><a class="tool-card" href="./image-compressor.html"><div class="ticon"><svg aria-hidden="true"><use href="../../assets/tool-icons.svg#icon-image-compressor"/></svg></div><h3>ضغط الصور</h3><p>قلل حجم الصور بمزلاج جودة قابل للتعديل، بمخرجات JPG وWebP. مجاني.</p></a><a class="tool-card" href="./image-resizer.html"><div class="ticon"><svg aria-hidden="true"><use href="../../assets/tool-icons.svg#icon-image-resizer"/></svg></div><h3>تغيير حجم الصور</h3><p>غير حجم الصور إلى أبعاد بكسل دقيقة مع قفل نسبة العرض إلى الارتفاع. مجاني وخاص.</p></a><a class="tool-card" href="./images-to-pdf.html"><div class="ticon"><svg aria-hidden="true"><use href="../../assets/tool-icons.svg#icon-images-to-pdf"/></svg></div><h3>صور إلى PDF</h3><p>حول صور JPG وPNG إلى مستند PDF واحد، صورة في كل صفحة. مجاني.</p></a></div></div>
+<div class="howto"><h2>كيفية الاستخدام</h2><ol><li>انقر على منطقة الرفع (أو اسحب وأفلت) واختر صورة — JPG أو PNG أو WebP. عند أول استخدام يُنزَّل نموذج الذكاء الاصطناعي (~40 ميغابايت) مرة واحدة ويُحفظ مؤقتًا.</li><li>انتظر بينما يحلّل الذكاء الاصطناعي صورتك ويفصل الموضوع عن الخلفية — عادة 5–20 ثانية حسب جهازك.</li><li>عاين النتيجة جنبًا إلى جنب مع الأصلية. وتُستبدل الخلفية بالشفافية (نمط مربعات).</li><li>انقر على «تنزيل PNG» لحفظ القصاصة بخلفية شفافة — جاهزة للوضع على أي تصميم أو شريحة أو قائمة منتجات.</li></ol></div>
+<div class="faq"><h2>الأسئلة الشائعة</h2><details><summary>هل هي مجانية فعلًا؟</summary><p>نعم — كل أداة على هذا الموقع مجانية 100% دون حدود ودون تسجيل ودون علامات مائية.</p></details><details><summary>هل بياناتي خاصة؟</summary><p>بالتأكيد. تتم كل المعالجة محليًا في متصفحك. لا تُرفع ملفاتك أبدًا إلى أي خادم.</p></details><details><summary>هل يعمل على خلفيات ملونة لا البيضاء فقط؟</summary><p>نعم! فهذا مزيل خلفيات ذكاء اصطناعي حقيقي، لا مرشح مفتاح لون بسيط. وهو يكتشف الموضوع (شخص أو منتج أو حيوان) باستخدام تعلم الآلة ويزيل أي خلفية — بيضاء أو ملونة أو مشاهد خارجية أو غرف مزدحمة.</p></details><details><summary>لماذا ينزّل شيئًا عند أول استخدام؟</summary><p>يُنزَّل نموذج الذكاء الاصطناعي (~40 ميغابايت) مرة واحدة من CDN ثم يُحفظ مؤقتًا في متصفحك. وبعد أول استخدام يعمل فورًا. ويعمل النموذج 100% على جهازك — فصورك لا تغادر متصفحك أبدًا.</p></details><details><summary>أي صيغ صور مدعومة؟</summary><p>إدخال JPG وPNG وWebP. والنتيجة دائمًا PNG بشفافية، حتى تضع الموضوع المقصوص على أي خلفية.</p></details><details><summary>ماذا إذا قطع الذكاء الاصطناعي جزءًا من موضوعي؟</summary><p>تجزئة الذكاء الاصطناعي جيدة جدًا لكنها ليست مثالية — فالشعر الدقيق والأشياء الشفافة والمواضيع المندمجة في خلفيات مشابهة اللون قد تربكه. ولأفضل النتائج استخدم صورًا مضيئة جيدًا يبرز فيها الموضوع عن الخلفية.</p></details></div><div class="tool-guide"><h2>الدليل الكامل: إزالة الخلفية بالذكاء الاصطناعي</h2><h3>كيف يعمل</h3><p>على عكس أدوات «مفتاح التلوين» القديمة التي تمحو لونًا مسطحًا واحدًا فقط (عادة الأبيض)، تستخدم هذه الأداة شبكة عصبية مدرّبة على ملايين الصور لفهم ما يبدو عليه <em>الموضوع</em> — شخص أو منتج أو حيوان — مقابل الخلفية خلفه. ويفحص النموذج كل بكسل ويتوقع ما إذا كان ينتمي إلى المقدمة أو الخلفية وينتج قناعًا نظيفًا. والنتيجة PNG بقناة ألفا حقيقية: شفافة بالكامل حيث كانت الخلفية ومعتمة بالكامل حيث الموضوع وحواف شبه شفافة ناعمة للشعر والحدود الناعمة.</p><h3>حالات استخدام واقعية</h3><p><strong>صور منتجات للمتاجر عبر الإنترنت:</strong> صوّر المنتجات على أي طاولة وأزل الخلفية الفوضوية وضعها على أبيض نظيف لمظهر كتالوج احترافي. <strong>الصور الشخصية وصور الهوية:</strong> اقطع نفسك من صورة عادية وأسقط نفسك على خلفية عادية. <strong>المصغرات والمنشورات الاجتماعية:</strong> يعزل صانعو YouTube والمسوقون المواضيع لمصغرات لافتة. <strong>العروض التقديمية:</strong> أزل الخلفيات المشتتة من الصور في الشرائح. <strong>الميمات والملصقات:</strong> اقطع الأصدقاء أو الحيوانات الأليفة أو الأشياء لملصقات WhatsApp.</p><h3>نصائح لأفضل النتائج</h3><p>استخدم صورًا مضيئة جيدًا حيث ينفصل الموضوع بوضوح عن الخلفية — فالذكاء الاصطناعي يعاني أكثر عندما يشترك الموضوع والخلفية في الألوان (مثلًا كلب بني على أريكة بنية). وتساعد الدقة الأعلى: فالنموذج يرى تفاصيل أكثر. وتجنب ضبابية الحركة الثقيلة. وإذا كان للموضوع شعر أو فرو خفيف، توقع حوافًا ناعمة قليلًا — فذلك الذكاء الاصطناعي صادق بشأن عدم اليقين بدلًا من رسم قطع قاسٍ. وللأشياء الشفافة مثل النظارات أو الأوشحة، لا أداة تلقائية مثالية؛ وقد يظل اللمس اليدوي في محرر صور مطلوبًا.</p><h3>ملاحظة خصوصية</h3><p>كثير من مزيلات الخلفيات «المجانية» ترفع صورك إلى خوادمها. وهذا لا يفعل: فالنموذج يُنزَّل إلى جهازك <em>الخاص</em> مرة واحدة، ثم تُعالج كل صورة محليًا في متصفحك. ولا تسافر صورك أبدًا عبر الشبكة. ويمكنك حتى قطع الاتصال بالإنترنت بعد أول استخدام وسيستمر في العمل.</p><h3>أخطاء شائعة</h3><p>لا تتوقع معجزات على صور منخفضة الدقة جدًا — فإذا كانت الصورة بعرض 200 بكسل، لا يستطيع الذكاء الاصطناعي اختراع تفاصيل. ولا تعيد ضغط مخرج PNG كـ JPG (فـ JPG ليست فيه شفافية — فالخلفية تعود بيضاء). وتذكر أن التشغيل الأول ينزّل النموذج، لذا امنحه دقيقة على اتصال بطيء؛ والتشغيلات اللاحقة أسرع بكثير.</p></div><div class="related"><h2>أدوات ذات صلة</h2><div class="grid"><a class="tool-card" href="./image-compressor.html"><div class="ticon"><svg aria-hidden="true"><use href="../../assets/tool-icons.svg#icon-image-compressor"/></svg></div><h3>ضغط الصور</h3><p>قلل حجم الصور بمزلاج جودة قابل للتعديل، بمخرجات JPG وWebP. مجاني.</p></a><a class="tool-card" href="./image-resizer.html"><div class="ticon"><svg aria-hidden="true"><use href="../../assets/tool-icons.svg#icon-image-resizer"/></svg></div><h3>تغيير حجم الصور</h3><p>غير حجم الصور إلى أبعاد بكسل دقيقة مع قفل نسبة العرض إلى الارتفاع. مجاني وخاص.</p></a><a class="tool-card" href="./images-to-pdf.html"><div class="ticon"><svg aria-hidden="true"><use href="../../assets/tool-icons.svg#icon-images-to-pdf"/></svg></div><h3>صور إلى PDF</h3><p>حول صور JPG وPNG إلى مستند PDF واحد، صورة في كل صفحة. مجاني.</p></a></div></div>
 </main>
-<footer class="site-footer"><div class="wrap"><p>© 2026 Anwaar Digital — Free Privacy Tools. All tools run 100% in your browser.</p><p><a href="../../privacy.html">Privacy Policy</a> · <a href="../../about.html">About</a> · <a href="../../contact.html">Contact</a></p></div></footer>
+<footer class="site-footer"><div class="wrap"><p>© 2026 Anwaar Digital — أدوات الخصوصية المجانية. كل الأدوات تعمل 100% في متصفحك.</p><p><a href="../privacy.html">سياسة الخصوصية</a> · <a href="../about.html">حول</a> · <a href="../contact.html">تواصل</a></p></div></footer>
 <script type="module">
 import { removeBackground } from "https://cdn.jsdelivr.net/npm/@imgly/background-removal@1.7.0/+esm";
 const drop = document.getElementById('bg-drop');
@@ -173,11 +160,11 @@ document.getElementById('bg-download').addEventListener('click', () => {
   setTimeout(() => URL.revokeObjectURL(a.href), 5000);
 });
 async function handleFile(file) {
-  if (!file.type.match(/^image\/(jpeg|png|webp)$/)) { statusEl.textContent = 'Please choose a JPG, PNG or WebP image.'; return; }
+  if (!file.type.match(/^image\/(jpeg|png|webp)$/)) { statusEl.textContent = 'يرجى اختيار صورة JPG أو PNG أو WebP.'; return; }
   drop.style.display = 'none'; resultEl.style.display = 'none';
   progressEl.style.display = 'block'; barEl.style.width = '5%';
-  progressText.textContent = 'Loading AI model (first time only, ~40MB)…';
-  statusEl.textContent = 'Processing… please wait.';
+  progressText.textContent = 'جارٍ تحميل نموذج الذكاء الاصطناعي (أول مرة فقط، ~40 ميغابايت)…';
+  statusEl.textContent = 'جارٍ المعالجة… يرجى الانتظار.';
   origImg.src = URL.createObjectURL(file);
   try {
     const config = {
@@ -185,27 +172,27 @@ async function handleFile(file) {
         const pct = total ? Math.round((current / total) * 100) : 0;
         barEl.style.width = Math.max(5, pct) + '%';
         if (key.indexOf('fetch:') === 0 || key.indexOf('model') >= 0) {
-          progressText.textContent = 'Downloading AI model… ' + pct + '% (one-time, ~40MB)';
+          progressText.textContent = 'جارٍ تنزيل نموذج الذكاء الاصطناعي… ' + pct + '% (مرة واحدة، ~40 ميغابايت)';
         } else {
-          progressText.textContent = 'Removing background… ' + pct + '%';
+          progressText.textContent = 'جارٍ إزالة الخلفية… ' + pct + '%';
         }
       }
     };
     barEl.style.width = '30%';
-    progressText.textContent = 'Analyzing image with AI…';
+    progressText.textContent = 'جارٍ تحليل الصورة بالذكاء الاصطناعي…';
     resultBlob = await removeBackground(file, config);
     barEl.style.width = '100%';
     outImg.src = URL.createObjectURL(resultBlob);
     progressEl.style.display = 'none';
-    statusEl.textContent = 'Done! Background removed.';
+    statusEl.textContent = 'تم! أُزيلت الخلفية.';
     resultEl.style.display = 'block';
   } catch (err) {
     progressEl.style.display = 'none';
-    let msg = err.message || 'processing failed';
+    let msg = err.message || 'فشلت المعالجة';
     if (msg.indexOf('fetch') >= 0 || msg.indexOf('Failed to fetch') >= 0) {
-      msg = 'Could not download the AI model. Check your internet connection and try again. (The ~40MB model downloads once, then works offline.)';
+      msg = 'تعذر تنزيل نموذج الذكاء الاصطناعي. تحقق من اتصالك بالإنترنت وحاول مجددًا. (يُنزَّل النموذج ~40 ميغابايت مرة واحدة، ثم يعمل دون اتصال.)';
     }
-    statusEl.textContent = 'Error: ' + msg;
+    statusEl.textContent = 'خطأ: ' + msg;
     drop.style.display = 'block';
   }
 }
@@ -338,6 +325,515 @@ async function handleFile(file) {
     if (nx) nx.addEventListener('click', function () { pause(); car.scrollBy({ left: 280, behavior: 'smooth' }); scheduleResume(4000); });
     if (window.requestAnimationFrame) window.requestAnimationFrame(tick);
   }
+/* AR widget dictionary: English strings rendered by shared assets/tools.js
+   (and the rating thanks message from features.js) -> Arabic.
+   Applied ONLY to #tool-root (plus .tool-hero .rate-msg) by the inline AR
+   block on AR tool pages. Shared assets are never modified. Select option
+   values are preserved (value attribute set to the original English text)
+   so tools whose logic compares select values keep working. */
+var WIDGET_AR = [
+['Click to choose files (or drag & drop here)', 'انقر لاختيار الملفات (أو اسحبها وأفلتها هنا)'],
+['Copied!', 'تم النسخ!'],
+['Error: ', 'خطأ: '],
+['Error loading tool: ', 'خطأ في تحميل الأداة: '],
+['Could not load PDF engine (internet needed once).', 'تعذّر تحميل محرك PDF (يلزم الاتصال بالإنترنت مرة واحدة).'],
+['Could not load QR engine (internet needed once).', 'تعذّر تحميل محرك QR (يلزم الاتصال بالإنترنت مرة واحدة).'],
+['Could not load QR reader (internet needed once).', 'تعذّر تحميل قارئ QR (يلزم الاتصال بالإنترنت مرة واحدة).'],
+['Select 2+ PDF files to merge (in order)', 'اختر ملفي PDF أو أكثر للدمج (بالترتيب)'],
+['Merge PDFs', 'دمج ملفات PDF'],
+['Please select at least 2 PDF files.', 'يرجى اختيار ملفي PDF على الأقل.'],
+['Merging...', 'جارٍ الدمج...'],
+['Done! merged.pdf downloaded (', 'تم! تم تنزيل merged.pdf ('],
+['Done! split.pdf downloaded.', 'تم! تم تنزيل split.pdf.'],
+['Done! images.pdf downloaded (', 'تم! تم تنزيل images.pdf ('],
+['Done! ', 'تم! '],
+['Select a PDF file', 'اختر ملف PDF'],
+['Pages to extract', 'الصفحات المطلوب استخراجها'],
+['e.g. 1-3, 5, 7-9', 'مثال: 1-3، 5، 7-9'],
+['Split / Extract Pages', 'تقسيم / استخراج الصفحات'],
+['Select a PDF first.', 'اختر ملف PDF أولًا.'],
+['Working...', 'جارٍ العمل...'],
+['No valid pages. This PDF has ', 'لا توجد صفحات صالحة. يحتوي ملف PDF هذا على '],
+[' pages).', ' صفحة).'],
+[' pages.', ' صفحة.'],
+['Select a PDF to compress', 'اختر ملف PDF لضغطه'],
+['Compress PDF', 'ضغط PDF'],
+['Compressing...', 'جارٍ الضغط...'],
+['Saved ', 'تم توفير '],
+['% smaller).', '% أصغر).'],
+['File was already optimized.', 'الملف محسّن أصلًا.'],
+[' compressed.pdf downloaded.', ' تم تنزيل compressed.pdf.'],
+['Extracted text will appear here...', 'سيظهر النص المستخرج هنا...'],
+['Extracting text...', 'جارٍ استخراج النص...'],
+['--- Page ', '--- صفحة '],
+['Copy Text', 'نسخ النص'],
+['Download .txt', 'تنزيل .txt'],
+['Select images (JPG/PNG) — in page order', 'اختر الصور (JPG/PNG) — بترتيب الصفحات'],
+['Create PDF', 'إنشاء PDF'],
+['Select at least one image.', 'اختر صورة واحدة على الأقل.'],
+['Creating PDF...', 'جارٍ إنشاء PDF...'],
+['Rebuilds the PDF with object streams to shrink file size. Best on PDFs with lots of metadata/structure.', 'يعيد بناء PDF باستخدام تدفقات الكائنات لتقليل حجم الملف. الأفضل لملفات PDF التي تحتوي على الكثير من البيانات الوصفية والبنية.'],
+['Select an image', 'اختر صورة'],
+['Original: ', 'الأصلي: '],
+['Quality (1-100)', 'الجودة (1-100)'],
+['Compress & Download JPG', 'ضغط وتنزيل JPG'],
+['Compress & Download WebP', 'ضغط وتنزيل WebP'],
+['Width (px)', 'العرض (بكسل)'],
+['Height (px)', 'الارتفاع (بكسل)'],
+[' Keep aspect ratio', ' الحفاظ على نسبة العرض إلى الارتفاع'],
+['Resize & Download', 'تغيير الحجم وتنزيل'],
+['Convert to', 'التحويل إلى'],
+['Convert & Download', 'تحويل وتنزيل'],
+['Removes solid white / light backgrounds (great for logos & product shots). For complex photos use a dedicated AI tool.', 'يزيل الخلفيات البيضاء / الفاتحة الصلبة (ممتاز للشعارات وصور المنتجات). للصور المعقدة استخدم أداة ذكاء اصطناعي مخصصة.'],
+['Tolerance (0-150)', 'التحمل (0-150)'],
+['Remove Background', 'إزالة الخلفية'],
+['Download PNG', 'تنزيل PNG'],
+['Crop & Download', 'قص وتنزيل'],
+['Rotate 90°', 'تدوير 90°'],
+['Rotate 180°', 'تدوير 180°'],
+['Flip Horizontal', 'قلب أفقي'],
+['Flip Vertical', 'قلب عمودي'],
+['Download', 'تنزيل'],
+['Filter', 'المرشح'],
+['Grayscale', 'تدرج الرمادي'],
+['Sepia', 'سيبيا'],
+['Invert', 'عكس الألوان'],
+['High Contrast', 'تباين عالٍ'],
+['Blur', 'تمويه'],
+['Vintage', 'كلاسيكي'],
+['Apply Filter', 'تطبيق المرشح'],
+['Reset', 'إعادة تعيين'],
+['Upload the PNGs to your site root as favicon-16.png etc., or convert to .ico with any converter.', 'ارفع ملفات PNG إلى جذر موقعك بأسماء favicon-16.png وما شابه، أو حوّلها إلى .ico بأي محوّل.'],
+['Generate Favicons', 'إنشاء أيقونات المفضلة'],
+['Text / URL', 'النص / الرابط'],
+['Size (px)', 'الحجم (بكسل)'],
+['Generate QR Code', 'إنشاء رمز QR'],
+['Select an image containing a QR code', 'اختر صورة تحتوي على رمز QR'],
+['Reading...', 'جارٍ القراءة...'],
+['QR content:', 'محتوى QR:'],
+['Copy', 'نسخ'],
+['No QR code found in this image.', 'لم يتم العثور على رمز QR في هذه الصورة.'],
+['Paste or type your text here...', 'الصق نصك أو اكتبه هنا...'],
+['Result...', 'النتيجة...'],
+['Copy Result', 'نسخ النتيجة'],
+['Type or paste text...', 'اكتب نصًا أو الصقه...'],
+['Words', 'الكلمات'],
+['Characters', 'الأحرف'],
+['No spaces', 'دون مسافات'],
+['Sentences', 'الجمل'],
+['Paragraphs', 'الفقرات'],
+['Reading time', 'وقت القراءة'],
+[' min', ' دقيقة'],
+[' characters  •  ', ' حرفًا  •  '],
+[' without spaces  •  ', ' دون مسافات  •  '],
+[' lines', ' سطرًا'],
+['Type text...', 'اكتب نصًا...'],
+['UPPERCASE', 'أحرف كبيرة'],
+['lowercase', 'أحرف صغيرة'],
+['Title Case', 'حالة العنوان'],
+['Sentence case', 'حالة الجملة'],
+['aLtErNaTiNg', 'متناوب'],
+['Case sensitive', 'حساس لحالة الأحرف'],
+['Trim whitespace', 'إزالة المسافات الزائدة'],
+['Paste lines (one per line)...', 'الصق الأسطر (سطرًا في كل سطر)...'],
+['Remove Duplicates', 'إزالة التكرارات'],
+['Sort A-Z', 'ترتيب أ-ي'],
+['Reverse Lines', 'عكس الأسطر'],
+['Generated text...', 'النص المُنشأ...'],
+['Generate', 'إنشاء'],
+['Reverse Text', 'عكس النص'],
+['Reverse Words', 'عكس الكلمات'],
+['Flip Lines', 'قلب الأسطر'],
+['Paste messy text...', 'الصق النص الفوضوي...'],
+['Clean Up', 'تنظيف'],
+['Remove ALL Spaces', 'إزالة كل المسافات'],
+['Single Line', 'سطر واحد'],
+['Type or paste...', 'اكتب أو الصق...'],
+['Encode → Base64', 'ترميز إلى Base64'],
+['Decode Base64 →', 'فك ترميز Base64'],
+['Error: invalid Base64', 'خطأ: Base64 غير صالح'],
+['Type or paste URL/text...', 'اكتب رابطًا أو نصًا أو الصقه...'],
+['Encode URL', 'ترميز الرابط'],
+['Decode URL', 'فك ترميز الرابط'],
+['Error: invalid encoding', 'خطأ: ترميز غير صالح'],
+['Paste JSON here...', 'الصق JSON هنا...'],
+['Format / Beautify', 'تنسيق / تجميل'],
+['Invalid JSON: ', 'JSON غير صالح: '],
+['Minify', 'تصغير'],
+['Validate', 'تحقق'],
+['Valid JSON ✓', 'JSON صالح ✓'],
+['Calculate', 'احسب'],
+['Your birth date', 'تاريخ ميلادك'],
+['Calculate Age', 'احسب العمر'],
+['Pick a date.', 'اختر تاريخًا.'],
+['Pick a date & time.', 'اختر تاريخًا ووقتًا.'],
+['Pick both dates.', 'اختر التاريخين.'],
+[' days total • next birthday in ', ' يومًا إجمالًا • عيد الميلاد القادم بعد '],
+[' years, ', ' سنة، '],
+[' months, ', ' شهرًا، '],
+[' weeks • ', ' أسبوعًا • '],
+[' months • ', ' شهرًا • '],
+[' years', ' سنة'],
+[' days', ' يومًا'],
+['Weight (kg)', 'الوزن (كجم)'],
+['Height (cm)', 'الطول (سم)'],
+['Calculate BMI', 'احسب مؤشر كتلة الجسم'],
+['BMI: ', 'مؤشر كتلة الجسم: '],
+['Category: ', 'الفئة: '],
+['Underweight', 'نقص الوزن'],
+['Normal weight', 'وزن طبيعي'],
+['Overweight', 'زيادة الوزن'],
+['Obese', 'سمنة'],
+['Loan amount', 'مبلغ القرض'],
+['Interest % / year', 'الفائدة % / سنة'],
+['Years', 'السنوات'],
+['Calculate EMI', 'احسب القسط الشهري'],
+['Monthly payment: ', 'الدفعة الشهرية: '],
+['Total payable: ', 'إجمالي المبلغ المستحق: '],
+[' • Total interest: ', ' • إجمالي الفائدة: '],
+['Mode', 'الوضع'],
+['What is X% of Y?', 'كم يساوي X% من Y؟'],
+['X is what % of Y?', 'X يمثل كم % من Y؟'],
+['Increase X by Y%', 'زيادة X بنسبة Y%'],
+['Decrease X by Y%', 'تقليل X بنسبة Y%'],
+['Bill amount', 'مبلغ الفاتورة'],
+['Tip %', 'نسبة الإكرامية %'],
+['People', 'عدد الأشخاص'],
+['Tip: ', 'الإكرامية: '],
+[' • Total: ', ' • الإجمالي: '],
+['Per person: ', 'للشخص الواحد: '],
+['Original price', 'السعر الأصلي'],
+['Discount %', 'نسبة الخصم %'],
+['You pay: ', 'تدفع: '],
+['You save: ', 'توفّر: '],
+['Amount', 'المبلغ'],
+['From', 'من'],
+['To', 'إلى'],
+['Uses indicative static rates. For exact transfers check your bank.', 'يستخدم أسعارًا إرشادية ثابتة. للتحويلات الدقيقة راجع مصرفك.'],
+['Convert', 'حوّل'],
+['Category', 'الفئة'],
+['Value', 'القيمة'],
+['Length', 'الطول'],
+['Weight', 'الوزن'],
+['Temperature', 'درجة الحرارة'],
+['Volume', 'الحجم'],
+['Speed', 'السرعة'],
+['Data', 'البيانات'],
+['Celsius', 'مئوية'],
+['Fahrenheit', 'فهرنهايت'],
+['Kelvin', 'كلفن'],
+['Date & time', 'التاريخ والوقت'],
+['From zone', 'النطاق الزمني المصدر'],
+['To zone', 'النطاق الزمني الهدف'],
+['Start date', 'تاريخ البدء'],
+['End date', 'تاريخ الانتهاء'],
+['Uppercase', 'أحرف كبيرة'],
+['Lowercase', 'أحرف صغيرة'],
+['Digits', 'أرقام'],
+['Symbols', 'رموز'],
+['Generate Password', 'إنشاء كلمة مرور'],
+['Select at least one character set.', 'اختر مجموعة أحرف واحدة على الأقل.'],
+['Type text to hash...', 'اكتب نصًا لتجزئته...'],
+['Generate Hashes', 'إنشاء التجزئات'],
+['Simple checksum:', 'مجموع تحقق بسيط:'],
+['Hashes are computed locally in your browser — your text never leaves your device.', 'تُحسب التجزئات محليًا في متصفحك — لا يغادر نصك جهازك أبدًا.'],
+['Min', 'الأدنى'],
+['Max', 'الأقصى'],
+['Count', 'العدد'],
+[' Unique numbers', ' أرقام فريدة'],
+['Range too small for ', 'النطاق صغير جدًا لـ '],
+[' unique numbers.', ' رقم فريد.'],
+['Flip Coin', 'اقلب العملة'],
+['HEADS!', 'صورة!'],
+['TAILS!', 'كتابة!'],
+['  —  Heads: ', '  —  صورة: '],
+[' • Tails: ', ' • كتابة: '],
+['Heads', 'صورة'],
+['Tails', 'كتابة'],
+['Dice', 'النرد'],
+['Sides', 'الأوجه'],
+['Roll', 'ارمِ'],
+['Pick a color', 'اختر لونًا'],
+['Copy HEX', 'نسخ HEX'],
+['HEX → RGB', 'HEX إلى RGB'],
+['HEX to RGB', 'HEX إلى RGB'],
+['Invalid HEX.', 'HEX غير صالح.'],
+['RGB to HEX', 'RGB إلى HEX'],
+['Generate Palette', 'إنشاء لوحة ألوان'],
+['Click any color to copy its HEX code.', 'انقر على أي لون لنسخ رمز HEX الخاص به.'],
+['Color 1', 'اللون 1'],
+['Color 2', 'اللون 2'],
+['Angle', 'الزاوية'],
+['Copy CSS', 'نسخ CSS'],
+['Sample Text', 'نص تجريبي'],
+['Contrast ratio: ', 'نسبة التباين: '],
+['WCAG AA (normal text): ', 'WCAG AA (النص العادي): '],
+['PASS', 'ناجح'],
+['FAIL', 'راسب'],
+['Text color', 'لون النص'],
+['Background', 'الخلفية'],
+['Paste HTML...', 'الصق HTML...'],
+['Encode HTML', 'ترميز HTML'],
+['Decode HTML', 'فك ترميز HTML'],
+['Paste CSS...', 'الصق CSS...'],
+['Minify CSS', 'تصغير CSS'],
+['Beautify CSS', 'تجميل CSS'],
+['Paste JavaScript...', 'الصق JavaScript...'],
+['Minify JS (basic)', 'تصغير JS (أساسي)'],
+['Basic whitespace/comment minifier. For production builds use Terser or esbuild.', 'مصغّر أساسي للمسافات والتعليقات. لإصدارات الإنتاج استخدم Terser أو esbuild.'],
+['How many', 'كم عددها'],
+['Generate UUIDs', 'إنشاء UUIDs'],
+['Copy All', 'نسخ الكل'],
+['Unix timestamp → date', 'طابع Unix الزمني إلى تاريخ'],
+['e.g. 1728566400', 'مثال: 1728566400'],
+['To Date', 'إلى تاريخ'],
+['Invalid timestamp.', 'طابع زمني غير صالح.'],
+['Local:', 'المحلي:'],
+['Date → timestamp', 'تاريخ إلى طابع زمني'],
+['To Timestamp', 'إلى طابع زمني'],
+['Seconds:', 'الثواني:'],
+['Milliseconds:', 'أجزاء الألف من الثانية:'],
+['Current Timestamp', 'الطابع الزمني الحالي'],
+['Now (seconds):', 'الآن (بالثواني):'],
+['Long URL', 'الرابط الطويل'],
+['Shorten Link', 'اختصر الرابط'],
+['Please paste a URL first.', 'يرجى لصق رابط أولًا.'],
+['Shortening...', 'جارٍ الاختصار...'],
+['Could not reach the shortening service. Check your internet and try again.', 'تعذّر الوصول إلى خدمة الاختصار. تحقق من اتصالك وحاول مجددًا.'],
+['Your short link:', 'رابطك المختصر:'],
+['Copy Link', 'نسخ الرابط'],
+['Note: uses the free da.gd / is.gd service over HTTPS.', 'ملاحظة: يستخدم خدمة da.gd / is.gd المجانية عبر HTTPS.'],
+['Type your password...', 'اكتب كلمة مرورك...'],
+['Show', 'إظهار'],
+['Hide', 'إخفاء'],
+['Password', 'كلمة المرور'],
+['How to improve', 'كيفية التحسين'],
+['less than a second', 'أقل من ثانية'],
+[' seconds', ' ثانية'],
+[' minutes', ' دقيقة'],
+[' hours', ' ساعة'],
+['Weak', 'ضعيفة'],
+['Fair', 'مقبولة'],
+['Good', 'جيدة'],
+['Strong', 'قوية'],
+['centuries', 'قرون'],
+[' — ', ' — '],
+['Estimated time to crack: ', 'الوقت المقدر للاختراق: '],
+[' (10 billion guesses/sec).', ' (10 مليارات تخمين/ثانية).'],
+['Make it at least 12 characters long (16+ is better).', 'اجعلها 12 حرفًا على الأقل (16+ أفضل).'],
+['Add uppercase letters.', 'أضف أحرفًا كبيرة.'],
+['Add lowercase letters.', 'أضف أحرفًا صغيرة.'],
+['Add numbers.', 'أضف أرقامًا.'],
+['Add symbols like !@#$%.', 'أضف رموزًا مثل !@#$%.'],
+['Avoid repeating the same character 3+ times.', 'تجنب تكرار الحرف نفسه 3 مرات أو أكثر.'],
+['Avoid common patterns and dictionary words.', 'تجنب الأنماط الشائعة وكلمات القاموس.'],
+['Great! This looks like a strong password. Use a unique one per site.', 'ممتاز! تبدو كلمة مرور قوية. استخدم كلمة مختلفة لكل موقع.'],
+['Checked 100% locally in your browser — your password is never sent anywhere.', 'يُفحص محليًا 100% في متصفحك — لا تُرسل كلمة مرورك إلى أي مكان أبدًا.'],
+['IP address or domain — e.g. 8.8.8.8', 'عنوان IP أو نطاق — مثال: 8.8.8.8'],
+['IP or domain', 'IP أو نطاق'],
+['IP address', 'عنوان IP'],
+['City', 'المدينة'],
+['Region', 'المنطقة'],
+['Country', 'الدولة'],
+['ISP / Org', 'مزود الخدمة / المؤسسة'],
+['Timezone', 'النطاق الزمني'],
+['Latitude / Longitude', 'خط العرض / خط الطول'],
+['Looking up…', 'جارٍ البحث…'],
+['Lookup failed: ', 'فشل البحث: '],
+['Could not reach the lookup service. Check your internet and try again.', 'تعذّر الوصول إلى خدمة البحث. تحقق من اتصالك وحاول مجددًا.'],
+['Look Up', 'بحث'],
+['Enter an IP address or domain first.', 'أدخل عنوان IP أو نطاقًا أولًا.'],
+['My IP', 'IP الخاص بي'],
+['Uses the free ipapi.co geolocation API. Locations are approximate (ISP level).', 'يستخدم واجهة ipapi.co المجانية لتحديد الموقع الجغرافي. المواقع تقريبية (على مستوى مزود الخدمة).'],
+['Website URL', 'رابط الموقع'],
+['Strict-Transport-Security (HSTS)', 'Strict-Transport-Security (HSTS)'],
+['Forces browsers to use HTTPS only. Protects against protocol-downgrade attacks.', 'يجبر المتصفحات على استخدام HTTPS فقط. يحمي من هجمات خفض مستوى البروتوكول.'],
+['Content-Security-Policy (CSP)', 'Content-Security-Policy (CSP)'],
+['Controls which scripts, styles and resources may load. Key defense against XSS attacks.', 'يتحكم في النصوص والأنماط والموارد المسموح تحميلها. دفاع أساسي ضد هجمات XSS.'],
+['X-Frame-Options', 'X-Frame-Options'],
+['Prevents the page being embedded in iframes — stops clickjacking attacks.', 'يمنع تضمين الصفحة في إطارات — يوقف هجمات clickjacking.'],
+['X-Content-Type-Options', 'X-Content-Type-Options'],
+['Stops browsers "sniffing" file types — set to nosniff.', 'يمنع المتصفحات من "تخمين" أنواع الملفات — اضبطه على nosniff.'],
+['Referrer-Policy', 'Referrer-Policy'],
+['Controls how much referrer info is sent when users click away.', 'يتحكم في مقدار معلومات الإحالة المُرسلة عند نقر المستخدم بعيدًا.'],
+['Permissions-Policy', 'Permissions-Policy'],
+['Restricts powerful browser features (camera, mic, geolocation).', 'يقيّد ميزات المتصفح القوية (الكاميرا، الميكروفون، تحديد الموقع).'],
+['Pass: ', 'نجاح: '],
+['Fail: ', 'فشل: '],
+['Score: ', 'النتيجة: '],
+[' security headers present.', ' تذييلة أمان موجودة.'],
+['For a deeper automated scan, also try securityheaders.com.', 'لفحص آلي أعمق، جرّب أيضًا securityheaders.com.'],
+['Check Headers', 'فحص التذييلات'],
+['Enter a website URL first.', 'أدخل رابط موقع أولًا.'],
+['Fetching headers…', 'جارٍ جلب التذييلات…'],
+['No headers returned. The site may block this check — try securityheaders.com instead.', 'لم تُرجع أي تذييلات. قد يحظر الموقع هذا الفحص — جرّب securityheaders.com بدلًا من ذلك.'],
+['Could not reach the header service. Check your internet and try again.', 'تعذّر الوصول إلى خدمة التذييلات. تحقق من اتصالك وحاول مجددًا.'],
+['Header fetch uses the free hackertarget.com API. Explanations are educational — this is a defensive learning tool.', 'يستخدم جلب التذييلات واجهة hackertarget.com المجانية. الشروحات تعليمية — هذه أداة تعلم دفاعية.'],
+['URL to analyze', 'الرابط المطلوب تحليله'],
+['Paste the suspicious URL here…', 'الصق الرابط المشبوه هنا…'],
+['Check URL', 'فحص الرابط'],
+['That does not look like a valid URL.', 'هذا لا يبدو رابطًا صالحًا.'],
+['Uses HTTPS (encrypted connection).', 'يستخدم HTTPS (اتصال مشفّر).'],
+['No HTTPS — data is sent unencrypted.', 'لا يوجد HTTPS — تُرسل البيانات دون تشفير.'],
+['Host is a raw IP address instead of a domain name.', 'المضيف عنوان IP خام بدلًا من اسم نطاق.'],
+['Host is a domain name, not a raw IP.', 'المضيف اسم نطاق، وليس عنوان IP خام.'],
+['Many subdomains (', 'نطاقات فرعية كثيرة ('],
+[' parts) — a common phishing trick.', ' جزء) — خدعة تصيّد شائعة.'],
+['Subdomain depth looks normal.', 'عمق النطاقات الفرعية يبدو طبيعيًا.'],
+['Uses a top-level domain often abused by scammers.', 'يستخدم نطاقًا علويًا كثيرًا ما يسيء المحتالون استخدامه.'],
+['Top-level domain is not on the high-risk list.', 'النطاق العلوي ليس في قائمة النطاقات عالية الخطورة.'],
+['Contains "@" — everything before it can be fake.', 'يحتوي على "@" — كل ما قبله قد يكون مزيفًا.'],
+['No "@" trick in the URL.', 'لا توجد خدعة "@" في الرابط.'],
+['Brand-like words combined with hyphens (e.g. "paypal-secure-login").', 'كلمات مشابهة لعلامات تجارية مع شرطات (مثل "paypal-secure-login").'],
+['No brand-imitating hyphen pattern detected.', 'لم يُكتشف نمط شرطات مقلّد لعلامة تجارية.'],
+['URL shortener hides the real destination.', 'مختصر الروابط يخفي الوجهة الحقيقية.'],
+['Not a known URL shortener.', 'ليس مختصر روابط معروفًا.'],
+['Very long URL (', 'رابط طويل جدًا ('],
+[' chars) — can hide the true domain.', ' حرفًا) — قد يخفي النطاق الحقيقي.'],
+['URL length looks normal.', 'طول الرابط يبدو طبيعيًا.'],
+['Contains non-Latin characters — possible homograph attack.', 'يحتوي على أحرف غير لاتينية — هجوم تشابه أحرف محتمل.'],
+['No suspicious non-Latin characters.', 'لا توجد أحرف غير لاتينية مشبوهة.'],
+['Numbers mixed into a sensitive-looking domain.', 'أرقام مخلوطة في نطاق يبدو حساسًا.'],
+['Looks Safe', 'يبدو آمنًا'],
+['Suspicious', 'مشبوه'],
+['Dangerous', 'خطير'],
+['Warning: ', 'تحذير: '],
+[' risk)', ' مخاطرة)'],
+[' risk', ' مخاطرة'],
+['Type', 'النوع'],
+['Width', 'العرض'],
+['Height', 'الارتفاع'],
+['https://example.com or any text', 'https://example.com أو أي نص'],
+['Disclaimer: this is a first-pass heuristic check only and cannot guarantee a site is legitimate. When in doubt, never enter passwords or payment details.', 'إخلاء مسؤولية: هذا فحص استدلالي أولي فقط ولا يضمن أن الموقع شرعي. عند الشك، لا تدخل أبدًا كلمات مرور أو بيانات دفع.'],
+['Analysis runs 100% locally in your browser — the URL is never sent anywhere.', 'يعمل التحليل محليًا 100% في متصفحك — لا يُرسل الرابط إلى أي مكان أبدًا.'],
+['Thanks! You rated this tool ', 'شكرًا! قيّمت هذه الأداة بـ '],
+['Your rating: ', 'تقييمك: '],
+['Add to favorites', 'أضف إلى المفضلة'],
+['Toggle dark mode', 'تبديل الوضع الداكن']
+];
+/* Single words that also appear inside composite result strings (so they
+   need fragment replacement, not just exact-node replacement). */
+var WIDGET_FRAG_WORDS = { 'Weak': 1, 'Fair': 1, 'Good': 1, 'Strong': 1,
+  'centuries': 1, 'Underweight': 1, 'Overweight': 1, 'Obese': 1,
+  'Suspicious': 1, 'Dangerous': 1, 'Heads': 1, 'Tails': 1 };
+
+/* ---- AR widget translation (tools.js output) ---- */
+(function () {
+  var EXACT = {};
+  WIDGET_AR.forEach(function (p) { if (p[0] !== p[1]) EXACT[p[0]] = p[1]; });
+  var PAIRS = WIDGET_AR.filter(function (p) { return p[0] !== p[1]; });
+  PAIRS.sort(function (a, b) { return b[0].length - a[0].length; });
+  function isFrag(en) {
+    if (WIDGET_FRAG_WORDS[en]) return true;
+    return /[^A-Za-z]/.test(en);
+  }
+  function translateString(v) {
+    if (EXACT[v] !== undefined) return EXACT[v];
+    var t = v, changed = false;
+    for (var i = 0; i < PAIRS.length; i++) {
+      var en = PAIRS[i][0];
+      if (!isFrag(en)) continue;
+      if (t.indexOf(en) !== -1) { t = t.split(en).join(PAIRS[i][1]); changed = true; }
+    }
+    return changed ? t : v;
+  }
+  function translateNode(node) {
+    var v = node.nodeValue;
+    var tr = v.trim();
+    if (tr && EXACT[tr] !== undefined) { node.nodeValue = v.replace(tr, EXACT[tr]); return; }
+    if (!v || v.indexOf(' ') === -1 && !EXACT[v]) {
+      if (EXACT[v] !== undefined) node.nodeValue = EXACT[v];
+      return;
+    }
+    /* Skip the QR-reader echo node (user data, not UI text). */
+    var par = node.parentNode;
+    if (par && par.className && par.className.indexOf('big') !== -1) {
+      var prev = par.previousElementSibling;
+      if (prev && (prev.textContent.indexOf('QR content') !== -1 || prev.textContent.indexOf('محتوى') !== -1)) return;
+    }
+    /* Skip link text (URLs) and textarea default text (user-editable samples). */
+    if (par && par.tagName === 'A') return;
+    if (par && par.tagName === 'TEXTAREA') return;
+    /* Preserve select-option values so value-compared tools keep working. */
+    if (par && par.tagName === 'OPTION' && EXACT[v] !== undefined && !par.hasAttribute('value')) {
+      par.setAttribute('value', v);
+    }
+    var nv = translateString(v);
+    if (nv !== v) node.nodeValue = nv;
+  }
+  function translateAttrs(el) {
+    var ph = el.getAttribute && el.getAttribute('placeholder');
+    if (ph && EXACT[ph] !== undefined) el.setAttribute('placeholder', EXACT[ph]);
+    var ti = el.getAttribute && el.getAttribute('title');
+    if (ti && EXACT[ti] !== undefined) el.setAttribute('title', EXACT[ti]);
+    var al = el.getAttribute && el.getAttribute('aria-label');
+    if (al && EXACT[al] !== undefined) el.setAttribute('aria-label', EXACT[al]);
+  }
+  function translateTree(root) {
+    if (!root) return;
+    var walker = document.createTreeWalker(root, NodeFilter.SHOW_TEXT, null, false);
+    var nodes = [], n;
+    while ((n = walker.nextNode())) nodes.push(n);
+    nodes.forEach(translateNode);
+    var els = root.querySelectorAll ? root.querySelectorAll('input,textarea,select,button,a') : [];
+    for (var i = 0; i < els.length; i++) translateAttrs(els[i]);
+    translateAttrs(root);
+  }
+  function translateHeroRate() {
+    var rm = document.querySelector('.tool-hero .rate-msg');
+    if (!rm) return;
+    var walker = document.createTreeWalker(rm, NodeFilter.SHOW_TEXT, null, false);
+    var nodes = [], n;
+    while ((n = walker.nextNode())) nodes.push(n);
+    nodes.forEach(function (tn) {
+      var nv = translateString(tn.nodeValue);
+      if (nv !== tn.nodeValue) tn.nodeValue = nv;
+    });
+  }
+  function translatePdfTextValue() {
+    var root = document.getElementById('tool-root');
+    if (!root || root.getAttribute('data-tool') !== 'pdf-to-text') return;
+    var ta = root.querySelector('textarea');
+    if (!ta) return;
+    var v = ta.value;
+    if (!v) return;
+    var nv = v.split('Extracting text...').join('جارٍ استخراج النص...')
+      .split('Error: ').join('خطأ: ')
+      .split('--- Page ').join('--- صفحة ');
+    if (nv !== v) ta.value = nv;
+  }
+  var busy = false;
+  function runAll() {
+    if (busy) return; busy = true;
+    try {
+      translateTree(document.getElementById('tool-root'));
+      translateHeroRate();
+      translatePdfTextValue();
+    } catch (e) {}
+    busy = false;
+  }
+  function initWidgetAr() {
+    runAll();
+    var root = document.getElementById('tool-root');
+    if (root && window.MutationObserver) {
+      var mo = new MutationObserver(function () { runAll(); });
+      mo.observe(root, { childList: true, subtree: true, characterData: true });
+    }
+    var rm = document.querySelector('.tool-hero .rate-msg');
+    if (rm && window.MutationObserver) {
+      var mo2 = new MutationObserver(function () { translateHeroRate(); });
+      mo2.observe(rm, { childList: true, subtree: true, characterData: true });
+    }
+    /* pdf-to-text writes system text into a textarea value (no DOM
+       mutation fires), so poll that one readonly output only. */
+    var rootEl = document.getElementById('tool-root');
+    if (rootEl && rootEl.getAttribute('data-tool') === 'pdf-to-text') {
+      setInterval(translatePdfTextValue, 800);
+    }
+  }
+  window.__initWidgetAr = initWidgetAr;
+})();
+
   onReady(function () {
     buildSwitcher();
     var dark = document.getElementById('darkToggle');
@@ -382,6 +878,7 @@ async function handleFile(file) {
       var dec = document.getElementById('adCookieDecline'); if (dec) dec.textContent = 'رفض';
     }
     initCarouselAr();
+    if (window.__initWidgetAr) window.__initWidgetAr();
   });
 })();
 </script>
