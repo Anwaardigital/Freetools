@@ -46,50 +46,50 @@
       "mainEntity": [
         {
           "@type": "Question",
-          "name": "Is it really free?",
+          "name": "هل هي مجانية فعلًا؟",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Yes — every tool on this site is 100% free with no limits, no signup and no watermarks."
+            "text": "نعم — كل أداة على هذا الموقع مجانية 100% دون حدود ودون تسجيل ودون علامات مائية."
           }
         },
         {
           "@type": "Question",
-          "name": "Is my data private?",
+          "name": "هل بياناتي خاصة؟",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Absolutely. All processing happens locally in your browser. Your files are never uploaded to any server."
+            "text": "بالتأكيد. تتم كل المعالجة محليًا في متصفحك. لا تُرفع ملفاتك أبدًا إلى أي خادم."
           }
         },
         {
           "@type": "Question",
-          "name": "What exactly is a Unix timestamp?",
+          "name": "ما هو طابع Unix الزمني بالضبط؟",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "It is the number of seconds (or milliseconds) elapsed since January 1, 1970 00:00:00 UTC \u2014 known as the Unix epoch. It is the standard way computers store date and time values, because a single number is unambiguous and easy to compare or sort."
+            "text": "إنه عدد الثواني (أو أجزاء الثانية) المنقضية منذ 1 يناير 1970 00:00:00 UTC — المعروفة بعصر Unix. وهي الطريقة القياسية التي تخزن بها الحاسبات قيم التاريخ والوقت، لأن رقمًا واحدًا لا لبس فيه وسهل المقارنة أو الفرز."
           }
         },
         {
           "@type": "Question",
-          "name": "How do I know if my timestamp is in seconds or milliseconds?",
+          "name": "كيف أعرف ما إذا كان طابعي الزمني بالثواني أم بأجزاء الثانية؟",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Count the digits: 10 digits means seconds (for example 1761091200), 13 digits means milliseconds (for example 1761091200000). This tool auto-detects the format, but you can also switch manually if needed."
+            "text": "عدّ الأرقام: 10 أرقام تعني ثوانٍ (مثلًا 1761091200)، و13 رقمًا تعني أجزاء من الثانية (مثلًا 1761091200000). وتكتشف هذه الأداة الصيغة تلقائيًا، لكن يمكنك أيضًا التبديل يدويًا عند الحاجة."
           }
         },
         {
           "@type": "Question",
-          "name": "What is the Year 2038 problem?",
+          "name": "ما مشكلة عام 2038؟",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "On old 32-bit systems, signed Unix timestamps overflow on January 19, 2038. Modern 64-bit systems, databases, and JavaScript use 64-bit time, so any realistic date converts correctly here."
+            "text": "في الأنظمة القديمة 32 بت، تفيض طوابع Unix الموقعة في 19 يناير 2038. وتستخدم الأنظمة الحديثة 64 بت وقواعد البيانات وJavaScript زمن 64 بت، لذا يتحول أي تاريخ واقعي بشكل صحيح هنا."
           }
         },
         {
           "@type": "Question",
-          "name": "Do timestamps account for leap seconds and timezones?",
+          "name": "هل تراعي الطوابع الزمنية الثواني الكبيسة والمناطق الزمنية؟",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Unix time deliberately ignores leap seconds \u2014 every day is exactly 86,400 seconds. Timezones only affect how the timestamp is displayed: the same timestamp shows the correct local time anywhere in the world once you pick the right zone."
+            "text": "يتجاهل زمن Unix الثواني الكبيسة عمدًا — فكل يوم فيه 86,400 ثانية بالضبط. وتؤثر المناطق الزمنية فقط في كيفية عرض الطابع الزمني: فالطابع نفسه يعرض الوقت المحلي الصحيح في أي مكان في العالم بمجرد اختيار المنطقة الصحيحة."
           }
         }
       ]
@@ -101,7 +101,7 @@
 <body>
 <header class="site-header"><div class="wrap">
 <a class="logo" href="../index.html"><img class="shield" src="../../freetools-icon-192.png" alt=""> أدوات الخصوصية المجانية</a>
-<button class="nav-toggle" aria-label="Menu" aria-expanded="false">☰</button><nav class="nav"><a href="../index.html">الرئيسية</a><a href="../index.html#tools">كل الأدوات</a><a href="../../about.html">حول الموقع</a><a href="../../faq.html">الأسئلة الشائعة</a><a href="../../blog.html">المدونة</a><a href="../../contact.html">تواصل معنا</a><a href="../../privacy.html">الخصوصية</a></nav>
+<button class="nav-toggle" aria-label="القائمة" aria-expanded="false">☰</button><nav class="nav"><a href="../index.html">الرئيسية</a><a href="../index.html#tools">كل الأدوات</a><a href="../about.html">حول الموقع</a><a href="../faq.html">الأسئلة الشائعة</a><a href="../blog.html">المدونة</a><a href="../contact.html">تواصل معنا</a><a href="../privacy.html">الخصوصية</a></nav>
 </div></header>
 
 <main class="wrap">
@@ -109,38 +109,15 @@
 <div class="tool-hero"><h1><svg class="hero-icon" aria-hidden="true"><use href="../../assets/tool-icons.svg#icon-timestamp-converter"/></svg> محول الطوابع الزمنية</h1><p>حول طوابع Unix الزمنية إلى تواريخ مقروءة وبالعكس لتصحيح السجلات وواجهات API. مجاني.</p></div>
 <div class="ad-slot"><!-- AdSense code goes here --></div>
 <div class="tool-box" id="tool-root" data-tool="timestamp-converter"></div>
-<div class="howto"><h2>How to use</h2><ol><li>Choose your direction: <strong>timestamp → date</strong> or <strong>date → timestamp</strong>.</li><li>Enter the Unix timestamp (10 digits = seconds, 13 digits = milliseconds) or pick a date and time.</li><li>Select the timezone for the human-readable result — it defaults to your local timezone.</li><li>Click <strong>Convert</strong> and copy the result for your code, logs, or database.</li></ol></div>
-<div class="faq"><h2>FAQ</h2><details><summary>Is it really free?</summary><p>Yes — every tool on this site is 100% free with no limits, no signup and no watermarks.</p></details><details><summary>Is my data private?</summary><p>Absolutely. All processing happens locally in your browser. Your files are never uploaded to any server.</p></details><details><summary>What exactly is a Unix timestamp?</summary><p>It is the number of seconds (or milliseconds) elapsed since January 1, 1970 00:00:00 UTC — known as the Unix epoch. It is the standard way computers store date and time values, because a single number is unambiguous and easy to compare or sort.</p></details><details><summary>How do I know if my timestamp is in seconds or milliseconds?</summary><p>Count the digits: 10 digits means seconds (for example 1761091200), 13 digits means milliseconds (for example 1761091200000). This tool auto-detects the format, but you can also switch manually if needed.</p></details><details><summary>What is the Year 2038 problem?</summary><p>On old 32-bit systems, signed Unix timestamps overflow on January 19, 2038. Modern 64-bit systems, databases, and JavaScript use 64-bit time, so any realistic date converts correctly here.</p></details><details><summary>Do timestamps account for leap seconds and timezones?</summary><p>Unix time deliberately ignores leap seconds — every day is exactly 86,400 seconds. Timezones only affect how the timestamp is displayed: the same timestamp shows the correct local time anywhere in the world once you pick the right zone.</p></details></div>
-<div class="tool-guide"><h2>Complete Guide to Unix Timestamps</h2><p>Almost every timestamp you encounter as a developer — in APIs, databases, log files, JWT tokens — is a Unix timestamp: a plain number counting seconds from the Unix epoch (midnight, January 1, 1970, UTC). It was chosen because comparing two moments becomes trivial integer math, with no timezones or formats to argue about.</p>
-<p><strong>The seconds-vs-milliseconds trap</strong> is the number-one timestamp bug in the wild. JavaScript's <code>Date.now()</code> returns <em>milliseconds</em> (13 digits), while most server APIs and databases use <em>seconds</em> (10 digits). Paste a millisecond value into code expecting seconds and you land in the year 56,000. This converter auto-detects the digit count so you always know which one you are holding.</p>
-<h3>Everyday uses</h3>
-<ul>
-<li><strong>Debugging logs:</strong> server logs often print raw epoch values — convert them to see exactly when an event happened in your timezone.</li>
-<li><strong>API work:</strong> REST APIs return <code>created_at</code> as epoch seconds; convert to verify token expiry or cache TTLs.</li>
-<li><strong>Databases:</strong> check what a stored integer date actually represents before running migrations.</li>
-<li><strong>Scheduling:</strong> convert a future date to a timestamp for cron jobs, reminders, or countdown timers.</li>
-</ul>
-<h3>Converting in code</h3>
-<p>In JavaScript: <code>new Date(1761091200 * 1000)</code> (multiply seconds by 1000). In Python: <code>datetime.fromtimestamp(1761091200, tz=timezone.utc)</code>. In PostgreSQL: <code>to_timestamp(1761091200)</code>. Going the other way: <code>Math.floor(Date.now() / 1000)</code> in JS, or <code>int(datetime.now(timezone.utc).timestamp())</code> in Python.</p>
-<p><strong>Best practice:</strong> always store timestamps in UTC and convert to local time only for display — exactly what this tool does when you pick a timezone. That single habit eliminates an entire class of timezone bugs, including daylight-saving surprises.</p>
-<h3>Negative timestamps and far-future dates</h3>
-<p>Timestamps are not limited to dates after 1970. Negative values represent moments <em>before</em> the epoch — for example, -86400 is December 31, 1969. Historians and archivists use negative timestamps for pre-1970 records, and the converter handles them correctly. Far-future dates work too: 64-bit timestamps remain valid for hundreds of millions of years, far beyond any practical need.</p>
-<h3>Common timestamp formats in the wild</h3>
-<ul>
-<li><strong>ISO 8601 strings</strong> ("2026-10-22T07:00:00Z") — human-readable, sortable, and unambiguous. Preferred for APIs.</li>
-<li><strong>Epoch seconds</strong> (1761091200) — compact; standard in Unix systems, PHP (<code>time()</code>), and most databases.</li>
-<li><strong>Epoch milliseconds</strong> (1761091200000) — JavaScript's native format via <code>Date.now()</code>.</li>
-<li><strong>RFC 2822</strong> ("Thu, 22 Oct 2026 07:00:00 GMT") — used in email headers and HTTP.</li>
-</ul>
-<p>When you receive a timestamp and are unsure of its format, paste it here first — the auto-detection will tell you whether you are looking at seconds or milliseconds before you write a single line of code.</p></div>
-<div class="related"><h2>أدوات ذات صلة</h2><div class="grid"><a class="tool-card" href="./html-encoder.html"><div class="ticon"><svg aria-hidden="true"><use href="../../assets/tool-icons.svg#icon-html-encoder"/></svg></div><h3>مرمز HTML</h3><p>رمز كيانات HTML أو أعد فك ترميزها بأمان لمقاطع الشيفرة أو مدخلات المستخدم. مجاني.</p></a><a class="tool-card" href="./css-minifier.html"><div class="ticon"><svg aria-hidden="true"><use href="../../assets/tool-icons.svg#icon-css-minifier"/></svg></div><h3>مصغر CSS</h3><p>صغر شيفرة CSS لتقليل حجم الملف، أو جملها لسهولة القراءة. مجاني.</p></a><a class="tool-card" href="./js-minifier.html"><div class="ticon"><svg aria-hidden="true"><use href="../../assets/tool-icons.svg#icon-js-minifier"/></svg></div><h3>مصغر JavaScript</h3><p>صغر ملفات JavaScript بمصغر أساسي لملفات أصغر وتحميل أسرع. مجاني.</p></a></div></div>
+<div class="howto"><h2>كيفية الاستخدام</h2><ol><li>اختر اتجاهك: <strong>طابع زمني ← تاريخ</strong> أو <strong>تاريخ ← طابع زمني</strong>.</li><li>أدخل طابع Unix الزمني (10 أرقام = ثوانٍ، 13 رقمًا = أجزاء من الثانية) أو اختر تاريخًا ووقتًا.</li><li>اختر المنطقة الزمنية للنتيجة المقروءة — فهي افتراضيًا منطقتك الزمنية المحلية.</li><li>انقر على <strong>تحويل</strong> وانسخ النتيجة لشيفرتك أو سجلاتك أو قاعدة بياناتك.</li></ol></div>
+<div class="faq"><h2>الأسئلة الشائعة</h2><details><summary>هل هي مجانية فعلًا؟</summary><p>نعم — كل أداة على هذا الموقع مجانية 100% دون حدود ودون تسجيل ودون علامات مائية.</p></details><details><summary>هل بياناتي خاصة؟</summary><p>بالتأكيد. تتم كل المعالجة محليًا في متصفحك. لا تُرفع ملفاتك أبدًا إلى أي خادم.</p></details><details><summary>ما هو طابع Unix الزمني بالضبط؟</summary><p>إنه عدد الثواني (أو أجزاء الثانية) المنقضية منذ 1 يناير 1970 00:00:00 UTC — المعروفة بعصر Unix. وهي الطريقة القياسية التي تخزن بها الحاسبات قيم التاريخ والوقت، لأن رقمًا واحدًا لا لبس فيه وسهل المقارنة أو الفرز.</p></details><details><summary>كيف أعرف ما إذا كان طابعي الزمني بالثواني أم بأجزاء الثانية؟</summary><p>عدّ الأرقام: 10 أرقام تعني ثوانٍ (مثلًا 1761091200)، و13 رقمًا تعني أجزاء من الثانية (مثلًا 1761091200000). وتكتشف هذه الأداة الصيغة تلقائيًا، لكن يمكنك أيضًا التبديل يدويًا عند الحاجة.</p></details><details><summary>ما مشكلة عام 2038؟</summary><p>في الأنظمة القديمة 32 بت، تفيض طوابع Unix الموقعة في 19 يناير 2038. وتستخدم الأنظمة الحديثة 64 بت وقواعد البيانات وJavaScript زمن 64 بت، لذا يتحول أي تاريخ واقعي بشكل صحيح هنا.</p></details><details><summary>هل تراعي الطوابع الزمنية الثواني الكبيسة والمناطق الزمنية؟</summary><p>يتجاهل زمن Unix الثواني الكبيسة عمدًا — فكل يوم فيه 86,400 ثانية بالضبط. وتؤثر المناطق الزمنية فقط في كيفية عرض الطابع الزمني: فالطابع نفسه يعرض الوقت المحلي الصحيح في أي مكان في العالم بمجرد اختيار المنطقة الصحيحة.</p></details></div><div class="tool-guide"><h2>الدليل الكامل لطوابع Unix الزمنية</h2><p>كل طابع زمني تقريبًا تصادفه كمطور — في واجهات API وقواعد البيانات وملفات السجلات ورموز JWT — هو طابع Unix زمني: رقم عادي يحسب الثواني من عصر Unix (منتصف الليل، 1 يناير 1970، UTC). وقد اختير لأن مقارنة لحظتين تصبح رياضيات أعداد صحيحة تافهة، دون مناطق زمنية أو صيغ للجدل حولها.</p><p><strong>فخ الثواني مقابل أجزاء الثانية</strong> هو خطأ الطوابع الزمنية الأول في الواقع. <code>Date.now()</code> في JavaScript تعيد <em>أجزاء الثانية</em> (13 رقمًا)، بينما تستخدم معظم واجهات API للخوادم وقواعد البيانات <em>الثواني</em> (10 أرقام). الصق قيمة أجزاء ثانية في شيفرة تتوقع ثوانٍ وستصل إلى عام 56,000. ويكتشف هذا المحوّل عدد الأرقام تلقائيًا حتى تعرف دائمًا أيهما تحمل.</p><h3>استخدامات يومية</h3><ul><li><strong>تصحيح السجلات:</strong> غالبًا ما تطبع سجلات الخوادم قيم عصر خام — حوّلها لترى بالضبط متى حدث أمر ما في منطقتك الزمنية.</li><li><strong>عمل API:</strong> تعيد واجهات REST <code>created_at</code> كثوانٍ عصر؛ حوّل للتحقق من انتهاء الرمز أو مدة التخزين المؤقت.</li><li><strong>قواعد البيانات:</strong> تحقق مما تمثله فعليًا قيمة تاريخ عدد صحيح مخزنة قبل تشغيل عمليات الترحيل.</li><li><strong>الجدولة:</strong> حوّل تاريخًا مستقبليًا إلى طابع زمني لمهام cron أو التذكيرات أو مؤقتات العد التنازلي.</li></ul><h3>التحويل في الشيفرة</h3><p>في JavaScript: <code>new Date(1761091200 * 1000)</code> (اضرب الثواني في 1000). وفي Python: <code>datetime.fromtimestamp(1761091200, tz=timezone.utc)</code>. وفي PostgreSQL: <code>to_timestamp(1761091200)</code>. وبالاتجاه الآخر: <code>Math.floor(Date.now() / 1000)</code> في JS، أو <code>int(datetime.now(timezone.utc).timestamp())</code> في Python.</p><p><strong>أفضل ممارسة:</strong> خزّن الطوابع الزمنية دائمًا بـ UTC وحوّل إلى الوقت المحلي للعرض فقط — وهذا بالضبط ما تفعله هذه الأداة عندما تختار منطقة زمنية. وتلك العادة الواحدة تقضي على فئة كاملة من أخطاء المناطق الزمنية، بما فيها مفاجآت التوقيت الصيفي.</p><h3>الطوابع الزمنية السالبة والتواريخ البعيدة</h3><p>لا تقتصر الطوابع الزمنية على التواريخ بعد 1970. فالقيم السالبة تمثل لحظات <em>قبل</em> العصر — مثلًا، -86400 هو 31 ديسمبر 1969. ويستخدم المؤرخون وأمناء المحفوظات الطوابع الزمنية السالبة لسجلات ما قبل 1970، ويتعامل المحوّل معها بشكل صحيح. وتعمل التواريخ البعيدة أيضًا: فطوابع 64 بت تبقى صالحة لمئات ملايين السنين، أبعد بكثير من أي حاجة عملية.</p><h3>صيغ الطوابع الزمنية الشائعة في الواقع</h3><ul><li><strong>سلاسل ISO 8601</strong> ("2026-10-22T07:00:00Z") — مقروءة وقابلة للفرز ولا لبس فيها. مفضلة لواجهات API.</li><li><strong>ثواني العصر</strong> (1761091200) — مدمجة؛ قياسية في أنظمة Unix وPHP (<code>time()</code>) ومعظم قواعد البيانات.</li><li><strong>أجزاء ثانية العصر</strong> (1761091200000) — الصيغة الأصلية لـ JavaScript عبر <code>Date.now()</code>.</li><li><strong>RFC 2822</strong> ("Thu, 22 Oct 2026 07:00:00 GMT") — مستخدم في ترويسات البريد وHTTP.</li></ul><p>عندما تتلقى طابعًا زمنيًا ولا تكون متأكدًا من صيغته، الصقه هنا أولًا — فسيخبرك الاكتشاف التلقائي ما إذا كنت تنظر إلى ثوانٍ أم أجزاء ثانية قبل أن تكتب سطر شيفرة واحدًا.</p></div><div class="related"><h2>أدوات ذات صلة</h2><div class="grid"><a class="tool-card" href="./html-encoder.html"><div class="ticon"><svg aria-hidden="true"><use href="../../assets/tool-icons.svg#icon-html-encoder"/></svg></div><h3>مرمز HTML</h3><p>رمز كيانات HTML أو أعد فك ترميزها بأمان لمقاطع الشيفرة أو مدخلات المستخدم. مجاني.</p></a><a class="tool-card" href="./css-minifier.html"><div class="ticon"><svg aria-hidden="true"><use href="../../assets/tool-icons.svg#icon-css-minifier"/></svg></div><h3>مصغر CSS</h3><p>صغر شيفرة CSS لتقليل حجم الملف، أو جملها لسهولة القراءة. مجاني.</p></a><a class="tool-card" href="./js-minifier.html"><div class="ticon"><svg aria-hidden="true"><use href="../../assets/tool-icons.svg#icon-js-minifier"/></svg></div><h3>مصغر JavaScript</h3><p>صغر ملفات JavaScript بمصغر أساسي لملفات أصغر وتحميل أسرع. مجاني.</p></a></div></div>
 </div>
 </main>
 <footer class="site-footer"><div class="wrap">
 <div class="cols">
 <div><h4><img class="shield" src="../../freetools-icon-192.png" alt="" style="width:22px;height:22px;vertical-align:-4px;margin-right:6px"> أدوات الخصوصية المجانية</h4><p>63 أداة مجانية على الإنترنت. دون تسجيل — كل شيء يعمل في متصفحك.</p></div>
 <div><h4>الشائعة</h4><a href="./image-compressor.html">ضغط الصور</a><a href="./word-counter.html">عداد الكلمات</a><a href="./password-generator.html">مولد كلمات المرور</a><a href="./pdf-merger.html">دمج PDF</a><a href="./age-calculator.html">حاسبة العمر</a></div>
-<div><h4>الموقع</h4><a href="../index.html">الرئيسية</a><a href="../index.html#tools">كل الأدوات</a><a href="../../about.html">حول الموقع</a><a href="../../faq.html">الأسئلة الشائعة</a><a href="../../blog.html">المدونة</a><a href="../../contact.html">تواصل معنا</a><a href="../../request.html">طلب أداة</a><a href="../../privacy.html">الخصوصية</a><a href="../../terms.html">شروط الاستخدام</a><a href="../../disclaimer.html">إخلاء المسؤولية</a></div>
+<div><h4>الموقع</h4><a href="../index.html">الرئيسية</a><a href="../index.html#tools">كل الأدوات</a><a href="../about.html">حول الموقع</a><a href="../faq.html">الأسئلة الشائعة</a><a href="../blog.html">المدونة</a><a href="../contact.html">تواصل معنا</a><a href="../request.html">طلب أداة</a><a href="../privacy.html">الخصوصية</a><a href="../terms.html">شروط الاستخدام</a><a href="../disclaimer.html">إخلاء المسؤولية</a></div>
 </div>
 <div class="foot-note">© 2026 أدوات الخصوصية المجانية — جميع الأدوات تعمل 100% في متصفحك.<br>طُوّر بواسطة <a href="https://anwaardigital.com/" target="_blank" rel="noopener" style="color:#fbbf24;font-weight:700">Malik Anwaar</a></div>
 </div></footer>
@@ -274,6 +251,515 @@
     if (nx) nx.addEventListener('click', function () { pause(); car.scrollBy({ left: 280, behavior: 'smooth' }); scheduleResume(4000); });
     if (window.requestAnimationFrame) window.requestAnimationFrame(tick);
   }
+/* AR widget dictionary: English strings rendered by shared assets/tools.js
+   (and the rating thanks message from features.js) -> Arabic.
+   Applied ONLY to #tool-root (plus .tool-hero .rate-msg) by the inline AR
+   block on AR tool pages. Shared assets are never modified. Select option
+   values are preserved (value attribute set to the original English text)
+   so tools whose logic compares select values keep working. */
+var WIDGET_AR = [
+['Click to choose files (or drag & drop here)', 'انقر لاختيار الملفات (أو اسحبها وأفلتها هنا)'],
+['Copied!', 'تم النسخ!'],
+['Error: ', 'خطأ: '],
+['Error loading tool: ', 'خطأ في تحميل الأداة: '],
+['Could not load PDF engine (internet needed once).', 'تعذّر تحميل محرك PDF (يلزم الاتصال بالإنترنت مرة واحدة).'],
+['Could not load QR engine (internet needed once).', 'تعذّر تحميل محرك QR (يلزم الاتصال بالإنترنت مرة واحدة).'],
+['Could not load QR reader (internet needed once).', 'تعذّر تحميل قارئ QR (يلزم الاتصال بالإنترنت مرة واحدة).'],
+['Select 2+ PDF files to merge (in order)', 'اختر ملفي PDF أو أكثر للدمج (بالترتيب)'],
+['Merge PDFs', 'دمج ملفات PDF'],
+['Please select at least 2 PDF files.', 'يرجى اختيار ملفي PDF على الأقل.'],
+['Merging...', 'جارٍ الدمج...'],
+['Done! merged.pdf downloaded (', 'تم! تم تنزيل merged.pdf ('],
+['Done! split.pdf downloaded.', 'تم! تم تنزيل split.pdf.'],
+['Done! images.pdf downloaded (', 'تم! تم تنزيل images.pdf ('],
+['Done! ', 'تم! '],
+['Select a PDF file', 'اختر ملف PDF'],
+['Pages to extract', 'الصفحات المطلوب استخراجها'],
+['e.g. 1-3, 5, 7-9', 'مثال: 1-3، 5، 7-9'],
+['Split / Extract Pages', 'تقسيم / استخراج الصفحات'],
+['Select a PDF first.', 'اختر ملف PDF أولًا.'],
+['Working...', 'جارٍ العمل...'],
+['No valid pages. This PDF has ', 'لا توجد صفحات صالحة. يحتوي ملف PDF هذا على '],
+[' pages).', ' صفحة).'],
+[' pages.', ' صفحة.'],
+['Select a PDF to compress', 'اختر ملف PDF لضغطه'],
+['Compress PDF', 'ضغط PDF'],
+['Compressing...', 'جارٍ الضغط...'],
+['Saved ', 'تم توفير '],
+['% smaller).', '% أصغر).'],
+['File was already optimized.', 'الملف محسّن أصلًا.'],
+[' compressed.pdf downloaded.', ' تم تنزيل compressed.pdf.'],
+['Extracted text will appear here...', 'سيظهر النص المستخرج هنا...'],
+['Extracting text...', 'جارٍ استخراج النص...'],
+['--- Page ', '--- صفحة '],
+['Copy Text', 'نسخ النص'],
+['Download .txt', 'تنزيل .txt'],
+['Select images (JPG/PNG) — in page order', 'اختر الصور (JPG/PNG) — بترتيب الصفحات'],
+['Create PDF', 'إنشاء PDF'],
+['Select at least one image.', 'اختر صورة واحدة على الأقل.'],
+['Creating PDF...', 'جارٍ إنشاء PDF...'],
+['Rebuilds the PDF with object streams to shrink file size. Best on PDFs with lots of metadata/structure.', 'يعيد بناء PDF باستخدام تدفقات الكائنات لتقليل حجم الملف. الأفضل لملفات PDF التي تحتوي على الكثير من البيانات الوصفية والبنية.'],
+['Select an image', 'اختر صورة'],
+['Original: ', 'الأصلي: '],
+['Quality (1-100)', 'الجودة (1-100)'],
+['Compress & Download JPG', 'ضغط وتنزيل JPG'],
+['Compress & Download WebP', 'ضغط وتنزيل WebP'],
+['Width (px)', 'العرض (بكسل)'],
+['Height (px)', 'الارتفاع (بكسل)'],
+[' Keep aspect ratio', ' الحفاظ على نسبة العرض إلى الارتفاع'],
+['Resize & Download', 'تغيير الحجم وتنزيل'],
+['Convert to', 'التحويل إلى'],
+['Convert & Download', 'تحويل وتنزيل'],
+['Removes solid white / light backgrounds (great for logos & product shots). For complex photos use a dedicated AI tool.', 'يزيل الخلفيات البيضاء / الفاتحة الصلبة (ممتاز للشعارات وصور المنتجات). للصور المعقدة استخدم أداة ذكاء اصطناعي مخصصة.'],
+['Tolerance (0-150)', 'التحمل (0-150)'],
+['Remove Background', 'إزالة الخلفية'],
+['Download PNG', 'تنزيل PNG'],
+['Crop & Download', 'قص وتنزيل'],
+['Rotate 90°', 'تدوير 90°'],
+['Rotate 180°', 'تدوير 180°'],
+['Flip Horizontal', 'قلب أفقي'],
+['Flip Vertical', 'قلب عمودي'],
+['Download', 'تنزيل'],
+['Filter', 'المرشح'],
+['Grayscale', 'تدرج الرمادي'],
+['Sepia', 'سيبيا'],
+['Invert', 'عكس الألوان'],
+['High Contrast', 'تباين عالٍ'],
+['Blur', 'تمويه'],
+['Vintage', 'كلاسيكي'],
+['Apply Filter', 'تطبيق المرشح'],
+['Reset', 'إعادة تعيين'],
+['Upload the PNGs to your site root as favicon-16.png etc., or convert to .ico with any converter.', 'ارفع ملفات PNG إلى جذر موقعك بأسماء favicon-16.png وما شابه، أو حوّلها إلى .ico بأي محوّل.'],
+['Generate Favicons', 'إنشاء أيقونات المفضلة'],
+['Text / URL', 'النص / الرابط'],
+['Size (px)', 'الحجم (بكسل)'],
+['Generate QR Code', 'إنشاء رمز QR'],
+['Select an image containing a QR code', 'اختر صورة تحتوي على رمز QR'],
+['Reading...', 'جارٍ القراءة...'],
+['QR content:', 'محتوى QR:'],
+['Copy', 'نسخ'],
+['No QR code found in this image.', 'لم يتم العثور على رمز QR في هذه الصورة.'],
+['Paste or type your text here...', 'الصق نصك أو اكتبه هنا...'],
+['Result...', 'النتيجة...'],
+['Copy Result', 'نسخ النتيجة'],
+['Type or paste text...', 'اكتب نصًا أو الصقه...'],
+['Words', 'الكلمات'],
+['Characters', 'الأحرف'],
+['No spaces', 'دون مسافات'],
+['Sentences', 'الجمل'],
+['Paragraphs', 'الفقرات'],
+['Reading time', 'وقت القراءة'],
+[' min', ' دقيقة'],
+[' characters  •  ', ' حرفًا  •  '],
+[' without spaces  •  ', ' دون مسافات  •  '],
+[' lines', ' سطرًا'],
+['Type text...', 'اكتب نصًا...'],
+['UPPERCASE', 'أحرف كبيرة'],
+['lowercase', 'أحرف صغيرة'],
+['Title Case', 'حالة العنوان'],
+['Sentence case', 'حالة الجملة'],
+['aLtErNaTiNg', 'متناوب'],
+['Case sensitive', 'حساس لحالة الأحرف'],
+['Trim whitespace', 'إزالة المسافات الزائدة'],
+['Paste lines (one per line)...', 'الصق الأسطر (سطرًا في كل سطر)...'],
+['Remove Duplicates', 'إزالة التكرارات'],
+['Sort A-Z', 'ترتيب أ-ي'],
+['Reverse Lines', 'عكس الأسطر'],
+['Generated text...', 'النص المُنشأ...'],
+['Generate', 'إنشاء'],
+['Reverse Text', 'عكس النص'],
+['Reverse Words', 'عكس الكلمات'],
+['Flip Lines', 'قلب الأسطر'],
+['Paste messy text...', 'الصق النص الفوضوي...'],
+['Clean Up', 'تنظيف'],
+['Remove ALL Spaces', 'إزالة كل المسافات'],
+['Single Line', 'سطر واحد'],
+['Type or paste...', 'اكتب أو الصق...'],
+['Encode → Base64', 'ترميز إلى Base64'],
+['Decode Base64 →', 'فك ترميز Base64'],
+['Error: invalid Base64', 'خطأ: Base64 غير صالح'],
+['Type or paste URL/text...', 'اكتب رابطًا أو نصًا أو الصقه...'],
+['Encode URL', 'ترميز الرابط'],
+['Decode URL', 'فك ترميز الرابط'],
+['Error: invalid encoding', 'خطأ: ترميز غير صالح'],
+['Paste JSON here...', 'الصق JSON هنا...'],
+['Format / Beautify', 'تنسيق / تجميل'],
+['Invalid JSON: ', 'JSON غير صالح: '],
+['Minify', 'تصغير'],
+['Validate', 'تحقق'],
+['Valid JSON ✓', 'JSON صالح ✓'],
+['Calculate', 'احسب'],
+['Your birth date', 'تاريخ ميلادك'],
+['Calculate Age', 'احسب العمر'],
+['Pick a date.', 'اختر تاريخًا.'],
+['Pick a date & time.', 'اختر تاريخًا ووقتًا.'],
+['Pick both dates.', 'اختر التاريخين.'],
+[' days total • next birthday in ', ' يومًا إجمالًا • عيد الميلاد القادم بعد '],
+[' years, ', ' سنة، '],
+[' months, ', ' شهرًا، '],
+[' weeks • ', ' أسبوعًا • '],
+[' months • ', ' شهرًا • '],
+[' years', ' سنة'],
+[' days', ' يومًا'],
+['Weight (kg)', 'الوزن (كجم)'],
+['Height (cm)', 'الطول (سم)'],
+['Calculate BMI', 'احسب مؤشر كتلة الجسم'],
+['BMI: ', 'مؤشر كتلة الجسم: '],
+['Category: ', 'الفئة: '],
+['Underweight', 'نقص الوزن'],
+['Normal weight', 'وزن طبيعي'],
+['Overweight', 'زيادة الوزن'],
+['Obese', 'سمنة'],
+['Loan amount', 'مبلغ القرض'],
+['Interest % / year', 'الفائدة % / سنة'],
+['Years', 'السنوات'],
+['Calculate EMI', 'احسب القسط الشهري'],
+['Monthly payment: ', 'الدفعة الشهرية: '],
+['Total payable: ', 'إجمالي المبلغ المستحق: '],
+[' • Total interest: ', ' • إجمالي الفائدة: '],
+['Mode', 'الوضع'],
+['What is X% of Y?', 'كم يساوي X% من Y؟'],
+['X is what % of Y?', 'X يمثل كم % من Y؟'],
+['Increase X by Y%', 'زيادة X بنسبة Y%'],
+['Decrease X by Y%', 'تقليل X بنسبة Y%'],
+['Bill amount', 'مبلغ الفاتورة'],
+['Tip %', 'نسبة الإكرامية %'],
+['People', 'عدد الأشخاص'],
+['Tip: ', 'الإكرامية: '],
+[' • Total: ', ' • الإجمالي: '],
+['Per person: ', 'للشخص الواحد: '],
+['Original price', 'السعر الأصلي'],
+['Discount %', 'نسبة الخصم %'],
+['You pay: ', 'تدفع: '],
+['You save: ', 'توفّر: '],
+['Amount', 'المبلغ'],
+['From', 'من'],
+['To', 'إلى'],
+['Uses indicative static rates. For exact transfers check your bank.', 'يستخدم أسعارًا إرشادية ثابتة. للتحويلات الدقيقة راجع مصرفك.'],
+['Convert', 'حوّل'],
+['Category', 'الفئة'],
+['Value', 'القيمة'],
+['Length', 'الطول'],
+['Weight', 'الوزن'],
+['Temperature', 'درجة الحرارة'],
+['Volume', 'الحجم'],
+['Speed', 'السرعة'],
+['Data', 'البيانات'],
+['Celsius', 'مئوية'],
+['Fahrenheit', 'فهرنهايت'],
+['Kelvin', 'كلفن'],
+['Date & time', 'التاريخ والوقت'],
+['From zone', 'النطاق الزمني المصدر'],
+['To zone', 'النطاق الزمني الهدف'],
+['Start date', 'تاريخ البدء'],
+['End date', 'تاريخ الانتهاء'],
+['Uppercase', 'أحرف كبيرة'],
+['Lowercase', 'أحرف صغيرة'],
+['Digits', 'أرقام'],
+['Symbols', 'رموز'],
+['Generate Password', 'إنشاء كلمة مرور'],
+['Select at least one character set.', 'اختر مجموعة أحرف واحدة على الأقل.'],
+['Type text to hash...', 'اكتب نصًا لتجزئته...'],
+['Generate Hashes', 'إنشاء التجزئات'],
+['Simple checksum:', 'مجموع تحقق بسيط:'],
+['Hashes are computed locally in your browser — your text never leaves your device.', 'تُحسب التجزئات محليًا في متصفحك — لا يغادر نصك جهازك أبدًا.'],
+['Min', 'الأدنى'],
+['Max', 'الأقصى'],
+['Count', 'العدد'],
+[' Unique numbers', ' أرقام فريدة'],
+['Range too small for ', 'النطاق صغير جدًا لـ '],
+[' unique numbers.', ' رقم فريد.'],
+['Flip Coin', 'اقلب العملة'],
+['HEADS!', 'صورة!'],
+['TAILS!', 'كتابة!'],
+['  —  Heads: ', '  —  صورة: '],
+[' • Tails: ', ' • كتابة: '],
+['Heads', 'صورة'],
+['Tails', 'كتابة'],
+['Dice', 'النرد'],
+['Sides', 'الأوجه'],
+['Roll', 'ارمِ'],
+['Pick a color', 'اختر لونًا'],
+['Copy HEX', 'نسخ HEX'],
+['HEX → RGB', 'HEX إلى RGB'],
+['HEX to RGB', 'HEX إلى RGB'],
+['Invalid HEX.', 'HEX غير صالح.'],
+['RGB to HEX', 'RGB إلى HEX'],
+['Generate Palette', 'إنشاء لوحة ألوان'],
+['Click any color to copy its HEX code.', 'انقر على أي لون لنسخ رمز HEX الخاص به.'],
+['Color 1', 'اللون 1'],
+['Color 2', 'اللون 2'],
+['Angle', 'الزاوية'],
+['Copy CSS', 'نسخ CSS'],
+['Sample Text', 'نص تجريبي'],
+['Contrast ratio: ', 'نسبة التباين: '],
+['WCAG AA (normal text): ', 'WCAG AA (النص العادي): '],
+['PASS', 'ناجح'],
+['FAIL', 'راسب'],
+['Text color', 'لون النص'],
+['Background', 'الخلفية'],
+['Paste HTML...', 'الصق HTML...'],
+['Encode HTML', 'ترميز HTML'],
+['Decode HTML', 'فك ترميز HTML'],
+['Paste CSS...', 'الصق CSS...'],
+['Minify CSS', 'تصغير CSS'],
+['Beautify CSS', 'تجميل CSS'],
+['Paste JavaScript...', 'الصق JavaScript...'],
+['Minify JS (basic)', 'تصغير JS (أساسي)'],
+['Basic whitespace/comment minifier. For production builds use Terser or esbuild.', 'مصغّر أساسي للمسافات والتعليقات. لإصدارات الإنتاج استخدم Terser أو esbuild.'],
+['How many', 'كم عددها'],
+['Generate UUIDs', 'إنشاء UUIDs'],
+['Copy All', 'نسخ الكل'],
+['Unix timestamp → date', 'طابع Unix الزمني إلى تاريخ'],
+['e.g. 1728566400', 'مثال: 1728566400'],
+['To Date', 'إلى تاريخ'],
+['Invalid timestamp.', 'طابع زمني غير صالح.'],
+['Local:', 'المحلي:'],
+['Date → timestamp', 'تاريخ إلى طابع زمني'],
+['To Timestamp', 'إلى طابع زمني'],
+['Seconds:', 'الثواني:'],
+['Milliseconds:', 'أجزاء الألف من الثانية:'],
+['Current Timestamp', 'الطابع الزمني الحالي'],
+['Now (seconds):', 'الآن (بالثواني):'],
+['Long URL', 'الرابط الطويل'],
+['Shorten Link', 'اختصر الرابط'],
+['Please paste a URL first.', 'يرجى لصق رابط أولًا.'],
+['Shortening...', 'جارٍ الاختصار...'],
+['Could not reach the shortening service. Check your internet and try again.', 'تعذّر الوصول إلى خدمة الاختصار. تحقق من اتصالك وحاول مجددًا.'],
+['Your short link:', 'رابطك المختصر:'],
+['Copy Link', 'نسخ الرابط'],
+['Note: uses the free da.gd / is.gd service over HTTPS.', 'ملاحظة: يستخدم خدمة da.gd / is.gd المجانية عبر HTTPS.'],
+['Type your password...', 'اكتب كلمة مرورك...'],
+['Show', 'إظهار'],
+['Hide', 'إخفاء'],
+['Password', 'كلمة المرور'],
+['How to improve', 'كيفية التحسين'],
+['less than a second', 'أقل من ثانية'],
+[' seconds', ' ثانية'],
+[' minutes', ' دقيقة'],
+[' hours', ' ساعة'],
+['Weak', 'ضعيفة'],
+['Fair', 'مقبولة'],
+['Good', 'جيدة'],
+['Strong', 'قوية'],
+['centuries', 'قرون'],
+[' — ', ' — '],
+['Estimated time to crack: ', 'الوقت المقدر للاختراق: '],
+[' (10 billion guesses/sec).', ' (10 مليارات تخمين/ثانية).'],
+['Make it at least 12 characters long (16+ is better).', 'اجعلها 12 حرفًا على الأقل (16+ أفضل).'],
+['Add uppercase letters.', 'أضف أحرفًا كبيرة.'],
+['Add lowercase letters.', 'أضف أحرفًا صغيرة.'],
+['Add numbers.', 'أضف أرقامًا.'],
+['Add symbols like !@#$%.', 'أضف رموزًا مثل !@#$%.'],
+['Avoid repeating the same character 3+ times.', 'تجنب تكرار الحرف نفسه 3 مرات أو أكثر.'],
+['Avoid common patterns and dictionary words.', 'تجنب الأنماط الشائعة وكلمات القاموس.'],
+['Great! This looks like a strong password. Use a unique one per site.', 'ممتاز! تبدو كلمة مرور قوية. استخدم كلمة مختلفة لكل موقع.'],
+['Checked 100% locally in your browser — your password is never sent anywhere.', 'يُفحص محليًا 100% في متصفحك — لا تُرسل كلمة مرورك إلى أي مكان أبدًا.'],
+['IP address or domain — e.g. 8.8.8.8', 'عنوان IP أو نطاق — مثال: 8.8.8.8'],
+['IP or domain', 'IP أو نطاق'],
+['IP address', 'عنوان IP'],
+['City', 'المدينة'],
+['Region', 'المنطقة'],
+['Country', 'الدولة'],
+['ISP / Org', 'مزود الخدمة / المؤسسة'],
+['Timezone', 'النطاق الزمني'],
+['Latitude / Longitude', 'خط العرض / خط الطول'],
+['Looking up…', 'جارٍ البحث…'],
+['Lookup failed: ', 'فشل البحث: '],
+['Could not reach the lookup service. Check your internet and try again.', 'تعذّر الوصول إلى خدمة البحث. تحقق من اتصالك وحاول مجددًا.'],
+['Look Up', 'بحث'],
+['Enter an IP address or domain first.', 'أدخل عنوان IP أو نطاقًا أولًا.'],
+['My IP', 'IP الخاص بي'],
+['Uses the free ipapi.co geolocation API. Locations are approximate (ISP level).', 'يستخدم واجهة ipapi.co المجانية لتحديد الموقع الجغرافي. المواقع تقريبية (على مستوى مزود الخدمة).'],
+['Website URL', 'رابط الموقع'],
+['Strict-Transport-Security (HSTS)', 'Strict-Transport-Security (HSTS)'],
+['Forces browsers to use HTTPS only. Protects against protocol-downgrade attacks.', 'يجبر المتصفحات على استخدام HTTPS فقط. يحمي من هجمات خفض مستوى البروتوكول.'],
+['Content-Security-Policy (CSP)', 'Content-Security-Policy (CSP)'],
+['Controls which scripts, styles and resources may load. Key defense against XSS attacks.', 'يتحكم في النصوص والأنماط والموارد المسموح تحميلها. دفاع أساسي ضد هجمات XSS.'],
+['X-Frame-Options', 'X-Frame-Options'],
+['Prevents the page being embedded in iframes — stops clickjacking attacks.', 'يمنع تضمين الصفحة في إطارات — يوقف هجمات clickjacking.'],
+['X-Content-Type-Options', 'X-Content-Type-Options'],
+['Stops browsers "sniffing" file types — set to nosniff.', 'يمنع المتصفحات من "تخمين" أنواع الملفات — اضبطه على nosniff.'],
+['Referrer-Policy', 'Referrer-Policy'],
+['Controls how much referrer info is sent when users click away.', 'يتحكم في مقدار معلومات الإحالة المُرسلة عند نقر المستخدم بعيدًا.'],
+['Permissions-Policy', 'Permissions-Policy'],
+['Restricts powerful browser features (camera, mic, geolocation).', 'يقيّد ميزات المتصفح القوية (الكاميرا، الميكروفون، تحديد الموقع).'],
+['Pass: ', 'نجاح: '],
+['Fail: ', 'فشل: '],
+['Score: ', 'النتيجة: '],
+[' security headers present.', ' تذييلة أمان موجودة.'],
+['For a deeper automated scan, also try securityheaders.com.', 'لفحص آلي أعمق، جرّب أيضًا securityheaders.com.'],
+['Check Headers', 'فحص التذييلات'],
+['Enter a website URL first.', 'أدخل رابط موقع أولًا.'],
+['Fetching headers…', 'جارٍ جلب التذييلات…'],
+['No headers returned. The site may block this check — try securityheaders.com instead.', 'لم تُرجع أي تذييلات. قد يحظر الموقع هذا الفحص — جرّب securityheaders.com بدلًا من ذلك.'],
+['Could not reach the header service. Check your internet and try again.', 'تعذّر الوصول إلى خدمة التذييلات. تحقق من اتصالك وحاول مجددًا.'],
+['Header fetch uses the free hackertarget.com API. Explanations are educational — this is a defensive learning tool.', 'يستخدم جلب التذييلات واجهة hackertarget.com المجانية. الشروحات تعليمية — هذه أداة تعلم دفاعية.'],
+['URL to analyze', 'الرابط المطلوب تحليله'],
+['Paste the suspicious URL here…', 'الصق الرابط المشبوه هنا…'],
+['Check URL', 'فحص الرابط'],
+['That does not look like a valid URL.', 'هذا لا يبدو رابطًا صالحًا.'],
+['Uses HTTPS (encrypted connection).', 'يستخدم HTTPS (اتصال مشفّر).'],
+['No HTTPS — data is sent unencrypted.', 'لا يوجد HTTPS — تُرسل البيانات دون تشفير.'],
+['Host is a raw IP address instead of a domain name.', 'المضيف عنوان IP خام بدلًا من اسم نطاق.'],
+['Host is a domain name, not a raw IP.', 'المضيف اسم نطاق، وليس عنوان IP خام.'],
+['Many subdomains (', 'نطاقات فرعية كثيرة ('],
+[' parts) — a common phishing trick.', ' جزء) — خدعة تصيّد شائعة.'],
+['Subdomain depth looks normal.', 'عمق النطاقات الفرعية يبدو طبيعيًا.'],
+['Uses a top-level domain often abused by scammers.', 'يستخدم نطاقًا علويًا كثيرًا ما يسيء المحتالون استخدامه.'],
+['Top-level domain is not on the high-risk list.', 'النطاق العلوي ليس في قائمة النطاقات عالية الخطورة.'],
+['Contains "@" — everything before it can be fake.', 'يحتوي على "@" — كل ما قبله قد يكون مزيفًا.'],
+['No "@" trick in the URL.', 'لا توجد خدعة "@" في الرابط.'],
+['Brand-like words combined with hyphens (e.g. "paypal-secure-login").', 'كلمات مشابهة لعلامات تجارية مع شرطات (مثل "paypal-secure-login").'],
+['No brand-imitating hyphen pattern detected.', 'لم يُكتشف نمط شرطات مقلّد لعلامة تجارية.'],
+['URL shortener hides the real destination.', 'مختصر الروابط يخفي الوجهة الحقيقية.'],
+['Not a known URL shortener.', 'ليس مختصر روابط معروفًا.'],
+['Very long URL (', 'رابط طويل جدًا ('],
+[' chars) — can hide the true domain.', ' حرفًا) — قد يخفي النطاق الحقيقي.'],
+['URL length looks normal.', 'طول الرابط يبدو طبيعيًا.'],
+['Contains non-Latin characters — possible homograph attack.', 'يحتوي على أحرف غير لاتينية — هجوم تشابه أحرف محتمل.'],
+['No suspicious non-Latin characters.', 'لا توجد أحرف غير لاتينية مشبوهة.'],
+['Numbers mixed into a sensitive-looking domain.', 'أرقام مخلوطة في نطاق يبدو حساسًا.'],
+['Looks Safe', 'يبدو آمنًا'],
+['Suspicious', 'مشبوه'],
+['Dangerous', 'خطير'],
+['Warning: ', 'تحذير: '],
+[' risk)', ' مخاطرة)'],
+[' risk', ' مخاطرة'],
+['Type', 'النوع'],
+['Width', 'العرض'],
+['Height', 'الارتفاع'],
+['https://example.com or any text', 'https://example.com أو أي نص'],
+['Disclaimer: this is a first-pass heuristic check only and cannot guarantee a site is legitimate. When in doubt, never enter passwords or payment details.', 'إخلاء مسؤولية: هذا فحص استدلالي أولي فقط ولا يضمن أن الموقع شرعي. عند الشك، لا تدخل أبدًا كلمات مرور أو بيانات دفع.'],
+['Analysis runs 100% locally in your browser — the URL is never sent anywhere.', 'يعمل التحليل محليًا 100% في متصفحك — لا يُرسل الرابط إلى أي مكان أبدًا.'],
+['Thanks! You rated this tool ', 'شكرًا! قيّمت هذه الأداة بـ '],
+['Your rating: ', 'تقييمك: '],
+['Add to favorites', 'أضف إلى المفضلة'],
+['Toggle dark mode', 'تبديل الوضع الداكن']
+];
+/* Single words that also appear inside composite result strings (so they
+   need fragment replacement, not just exact-node replacement). */
+var WIDGET_FRAG_WORDS = { 'Weak': 1, 'Fair': 1, 'Good': 1, 'Strong': 1,
+  'centuries': 1, 'Underweight': 1, 'Overweight': 1, 'Obese': 1,
+  'Suspicious': 1, 'Dangerous': 1, 'Heads': 1, 'Tails': 1 };
+
+/* ---- AR widget translation (tools.js output) ---- */
+(function () {
+  var EXACT = {};
+  WIDGET_AR.forEach(function (p) { if (p[0] !== p[1]) EXACT[p[0]] = p[1]; });
+  var PAIRS = WIDGET_AR.filter(function (p) { return p[0] !== p[1]; });
+  PAIRS.sort(function (a, b) { return b[0].length - a[0].length; });
+  function isFrag(en) {
+    if (WIDGET_FRAG_WORDS[en]) return true;
+    return /[^A-Za-z]/.test(en);
+  }
+  function translateString(v) {
+    if (EXACT[v] !== undefined) return EXACT[v];
+    var t = v, changed = false;
+    for (var i = 0; i < PAIRS.length; i++) {
+      var en = PAIRS[i][0];
+      if (!isFrag(en)) continue;
+      if (t.indexOf(en) !== -1) { t = t.split(en).join(PAIRS[i][1]); changed = true; }
+    }
+    return changed ? t : v;
+  }
+  function translateNode(node) {
+    var v = node.nodeValue;
+    var tr = v.trim();
+    if (tr && EXACT[tr] !== undefined) { node.nodeValue = v.replace(tr, EXACT[tr]); return; }
+    if (!v || v.indexOf(' ') === -1 && !EXACT[v]) {
+      if (EXACT[v] !== undefined) node.nodeValue = EXACT[v];
+      return;
+    }
+    /* Skip the QR-reader echo node (user data, not UI text). */
+    var par = node.parentNode;
+    if (par && par.className && par.className.indexOf('big') !== -1) {
+      var prev = par.previousElementSibling;
+      if (prev && (prev.textContent.indexOf('QR content') !== -1 || prev.textContent.indexOf('محتوى') !== -1)) return;
+    }
+    /* Skip link text (URLs) and textarea default text (user-editable samples). */
+    if (par && par.tagName === 'A') return;
+    if (par && par.tagName === 'TEXTAREA') return;
+    /* Preserve select-option values so value-compared tools keep working. */
+    if (par && par.tagName === 'OPTION' && EXACT[v] !== undefined && !par.hasAttribute('value')) {
+      par.setAttribute('value', v);
+    }
+    var nv = translateString(v);
+    if (nv !== v) node.nodeValue = nv;
+  }
+  function translateAttrs(el) {
+    var ph = el.getAttribute && el.getAttribute('placeholder');
+    if (ph && EXACT[ph] !== undefined) el.setAttribute('placeholder', EXACT[ph]);
+    var ti = el.getAttribute && el.getAttribute('title');
+    if (ti && EXACT[ti] !== undefined) el.setAttribute('title', EXACT[ti]);
+    var al = el.getAttribute && el.getAttribute('aria-label');
+    if (al && EXACT[al] !== undefined) el.setAttribute('aria-label', EXACT[al]);
+  }
+  function translateTree(root) {
+    if (!root) return;
+    var walker = document.createTreeWalker(root, NodeFilter.SHOW_TEXT, null, false);
+    var nodes = [], n;
+    while ((n = walker.nextNode())) nodes.push(n);
+    nodes.forEach(translateNode);
+    var els = root.querySelectorAll ? root.querySelectorAll('input,textarea,select,button,a') : [];
+    for (var i = 0; i < els.length; i++) translateAttrs(els[i]);
+    translateAttrs(root);
+  }
+  function translateHeroRate() {
+    var rm = document.querySelector('.tool-hero .rate-msg');
+    if (!rm) return;
+    var walker = document.createTreeWalker(rm, NodeFilter.SHOW_TEXT, null, false);
+    var nodes = [], n;
+    while ((n = walker.nextNode())) nodes.push(n);
+    nodes.forEach(function (tn) {
+      var nv = translateString(tn.nodeValue);
+      if (nv !== tn.nodeValue) tn.nodeValue = nv;
+    });
+  }
+  function translatePdfTextValue() {
+    var root = document.getElementById('tool-root');
+    if (!root || root.getAttribute('data-tool') !== 'pdf-to-text') return;
+    var ta = root.querySelector('textarea');
+    if (!ta) return;
+    var v = ta.value;
+    if (!v) return;
+    var nv = v.split('Extracting text...').join('جارٍ استخراج النص...')
+      .split('Error: ').join('خطأ: ')
+      .split('--- Page ').join('--- صفحة ');
+    if (nv !== v) ta.value = nv;
+  }
+  var busy = false;
+  function runAll() {
+    if (busy) return; busy = true;
+    try {
+      translateTree(document.getElementById('tool-root'));
+      translateHeroRate();
+      translatePdfTextValue();
+    } catch (e) {}
+    busy = false;
+  }
+  function initWidgetAr() {
+    runAll();
+    var root = document.getElementById('tool-root');
+    if (root && window.MutationObserver) {
+      var mo = new MutationObserver(function () { runAll(); });
+      mo.observe(root, { childList: true, subtree: true, characterData: true });
+    }
+    var rm = document.querySelector('.tool-hero .rate-msg');
+    if (rm && window.MutationObserver) {
+      var mo2 = new MutationObserver(function () { translateHeroRate(); });
+      mo2.observe(rm, { childList: true, subtree: true, characterData: true });
+    }
+    /* pdf-to-text writes system text into a textarea value (no DOM
+       mutation fires), so poll that one readonly output only. */
+    var rootEl = document.getElementById('tool-root');
+    if (rootEl && rootEl.getAttribute('data-tool') === 'pdf-to-text') {
+      setInterval(translatePdfTextValue, 800);
+    }
+  }
+  window.__initWidgetAr = initWidgetAr;
+})();
+
   onReady(function () {
     buildSwitcher();
     var dark = document.getElementById('darkToggle');
@@ -318,6 +804,7 @@
       var dec = document.getElementById('adCookieDecline'); if (dec) dec.textContent = 'رفض';
     }
     initCarouselAr();
+    if (window.__initWidgetAr) window.__initWidgetAr();
   });
 })();
 </script>

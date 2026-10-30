@@ -46,50 +46,50 @@
       "mainEntity": [
         {
           "@type": "Question",
-          "name": "Is it really free?",
+          "name": "هل هي مجانية فعلًا؟",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Yes — every tool on this site is 100% free with no limits, no signup and no watermarks."
+            "text": "نعم — كل أداة على هذا الموقع مجانية 100% دون حدود ودون تسجيل ودون علامات مائية."
           }
         },
         {
           "@type": "Question",
-          "name": "Is my data private?",
+          "name": "هل بياناتي خاصة؟",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Absolutely. All processing happens locally in your browser. Your files are never uploaded to any server."
+            "text": "بالتأكيد. تتم كل المعالجة محليًا في متصفحك. لا تُرفع ملفاتك أبدًا إلى أي خادم."
           }
         },
         {
           "@type": "Question",
-          "name": "What exactly counts as whitespace?",
+          "name": "ما الذي يُحسب بالضبط كمسافة بيضاء؟",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Spaces, tabs, newlines, carriage returns, and Unicode spaces such as non-breaking spaces (U+00A0), thin spaces, and zero-width spaces. The tool can target each category independently."
+            "text": "المسافات وعلامات الجدولة والأسطر الجديدة وإرجاعات الأسطر ومسافات Unicode مثل المسافات غير الفاصلة (U+00A0) والمسافات الرفيعة ومسافات العرض الصفري. ويمكن للأداة استهداف كل فئة بشكل مستقل."
           }
         },
         {
           "@type": "Question",
-          "name": "What is the difference between removing and normalizing whitespace?",
+          "name": "ما الفرق بين إزالة المسافات وتوحيدها؟",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Removing deletes it entirely (\"hello   world\" becomes \"helloworld\"). Normalizing collapses each run into a single space (\"hello   world\" becomes \"hello world\"). Choose removal for compact data, normalization for readable text."
+            "text": "الإزالة تحذفها بالكامل («hello   world» تصبح «helloworld»). والتوحيد يدمج كل سلسلة في مسافة واحدة («hello   world» تصبح «hello world»). اختر الإزالة للبيانات المدمجة، والتوحيد للنصوص المقروءة."
           }
         },
         {
           "@type": "Question",
-          "name": "Will it remove my line breaks?",
+          "name": "هل سيزيل فواصل أسطري؟",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Only if you enable the newline toggle. By default you can clean up spaces and tabs while keeping your paragraph structure completely intact."
+            "text": "فقط إذا فعّلت مفتاح الأسطر الجديدة. افتراضيًا يمكنك تنظيف المسافات وعلامات الجدولة مع الحفاظ على بنية فقراتك سليمة تمامًا."
           }
         },
         {
           "@type": "Question",
-          "name": "Is it safe to use on source code?",
+          "name": "هل استخدامه آمن على الشيفرة المصدرية؟",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "For whitespace-insensitive languages it is fine, but be cautious: Python depends on indentation, and string literals in any language must keep their inner spacing. Prefer \"collapse\" mode over \"remove all\" for code."
+            "text": "للغات غير الحساسة للمسافات لا بأس، لكن كن حذرًا: Python تعتمد على المسافة البادئة، ويجب أن تحتفظ السلاسل النصية في أي لغة بمسافاتها الداخلية. فضّل وضع «الدمج» على وضع «إزالة الكل» للشيفرة."
           }
         }
       ]
@@ -101,7 +101,7 @@
 <body>
 <header class="site-header"><div class="wrap">
 <a class="logo" href="../index.html"><img class="shield" src="../../freetools-icon-192.png" alt=""> أدوات الخصوصية المجانية</a>
-<button class="nav-toggle" aria-label="Menu" aria-expanded="false">☰</button><nav class="nav"><a href="../index.html">الرئيسية</a><a href="../index.html#tools">كل الأدوات</a><a href="../../about.html">حول الموقع</a><a href="../../faq.html">الأسئلة الشائعة</a><a href="../../blog.html">المدونة</a><a href="../../contact.html">تواصل معنا</a><a href="../../privacy.html">الخصوصية</a></nav>
+<button class="nav-toggle" aria-label="القائمة" aria-expanded="false">☰</button><nav class="nav"><a href="../index.html">الرئيسية</a><a href="../index.html#tools">كل الأدوات</a><a href="../about.html">حول الموقع</a><a href="../faq.html">الأسئلة الشائعة</a><a href="../blog.html">المدونة</a><a href="../contact.html">تواصل معنا</a><a href="../privacy.html">الخصوصية</a></nav>
 </div></header>
 
 <main class="wrap">
@@ -109,37 +109,15 @@
 <div class="tool-hero"><h1><svg class="hero-icon" aria-hidden="true"><use href="../../assets/tool-icons.svg#icon-whitespace-remover"/></svg> مزيل الفراغات</h1><p>نظف المسافات الزائدة والأسطر الفارغة والتنسيق الفوضوي من النص الملصوق. مجاني.</p></div>
 <div class="ad-slot"><!-- AdSense code goes here --></div>
 <div class="tool-box" id="tool-root" data-tool="whitespace-remover"></div>
-<div class="howto"><h2>How to use</h2><ol><li>Paste your text into the input area — messy formatting is welcome.</li><li>Choose a <strong>cleaning mode</strong>: remove all whitespace, collapse multiples into one, or trim edges only.</li><li>Toggle <strong>tabs</strong>, <strong>newlines</strong>, and <strong>non-breaking spaces</strong> separately for fine control.</li><li>Copy the cleaned text or download it — line breaks are kept or removed exactly per your settings.</li></ol></div>
-<div class="faq"><h2>FAQ</h2><details><summary>Is it really free?</summary><p>Yes — every tool on this site is 100% free with no limits, no signup and no watermarks.</p></details><details><summary>Is my data private?</summary><p>Absolutely. All processing happens locally in your browser. Your files are never uploaded to any server.</p></details><details><summary>What exactly counts as whitespace?</summary><p>Spaces, tabs, newlines, carriage returns, and Unicode spaces such as non-breaking spaces (U+00A0), thin spaces, and zero-width spaces. The tool can target each category independently.</p></details><details><summary>What is the difference between removing and normalizing whitespace?</summary><p>Removing deletes it entirely ("hello   world" becomes "helloworld"). Normalizing collapses each run into a single space ("hello   world" becomes "hello world"). Choose removal for compact data, normalization for readable text.</p></details><details><summary>Will it remove my line breaks?</summary><p>Only if you enable the newline toggle. By default you can clean up spaces and tabs while keeping your paragraph structure completely intact.</p></details><details><summary>Is it safe to use on source code?</summary><p>For whitespace-insensitive languages it is fine, but be cautious: Python depends on indentation, and string literals in any language must keep their inner spacing. Prefer "collapse" mode over "remove all" for code.</p></details></div>
-<div class="tool-guide"><h2>Complete Guide to Cleaning Whitespace</h2><p>Stray whitespace is the invisible gremlin of digital text. Copy a paragraph from a PDF and you get random line breaks mid-sentence. Paste from a web page and non-breaking spaces sneak in. Import a spreadsheet and trailing spaces break your lookups. This tool hunts down every category of whitespace and removes or normalizes it exactly the way you specify.</p>
-<h3>The invisible characters</h3>
-<ul>
-<li><strong>Regular space (U+0020):</strong> the ordinary one. Multiples often come from justified text or sloppy typing.</li>
-<li><strong>Non-breaking space (U+00A0):</strong> looks identical but prevents line wraps — and silently breaks string comparisons and CSV imports.</li>
-<li><strong>Tab (U+0009):</strong> alignment leftover from code or tables; inconsistent width across editors.</li>
-<li><strong>Zero-width space (U+200B):</strong> completely invisible, yet it splits words for search and word counts. Common in copied web text.</li>
-<li><strong>Carriage return (U+000D):</strong> Windows-style line endings versus Unix line endings cause phantom blank lines.</li>
-</ul>
-<h3>Typical cleanup workflows</h3>
-<p><strong>PDF to document:</strong> collapse newlines into spaces, then normalize multiple spaces — paragraphs reassemble themselves. <strong>Spreadsheet prep:</strong> trim leading and trailing spaces so values match in lookups. <strong>Web scraping:</strong> strip all whitespace from extracted prices or IDs before parsing numbers. <strong>Code tidying:</strong> collapse runs of blank lines and trailing spaces without touching indentation.</p>
-<p>Under the hood, the tool uses Unicode-aware patterns covering even the zero-width characters that basic whitespace matchers miss. Because everything runs locally, you can safely clean confidential documents — nothing is ever uploaded.</p>
-<h3>Choosing the right mode</h3>
-<ul>
-<li><strong>Remove all:</strong> maximum compaction. Best for machine-readable strings like tokens, hashes, or minified data where no spaces are needed at all.</li>
-<li><strong>Collapse multiples:</strong> the safest general cleanup. "Hello&nbsp;&nbsp;&nbsp;&nbsp;world" becomes "Hello world" — readable, with accidental gaps gone.</li>
-<li><strong>Trim edges:</strong> removes leading and trailing whitespace only. Ideal before comparing strings, validating form input, or importing CSV data.</li>
-</ul>
-<h3>Real examples of whitespace damage</h3>
-<p>A trailing space in an email address ("user@example.com ") causes "invalid email" errors that users cannot see. A non-breaking space pasted from Word into a password field causes login failures with no visible cause. Extra blank lines in a CSV shift rows and corrupt imports. In each case the fix takes seconds here: paste, choose the mode, copy the clean result. For developers, the same invisible characters break JSON parsing and regex matches — cleaning input before processing is a habit worth building.</p>
-<p><strong>Pro tip:</strong> if you are preparing text for the <a href="./word-counter.html">عداد الكلمات</a>, run it through the whitespace remover first. Stray line breaks from PDFs inflate paragraph counts and skew reading-time estimates.</p></div>
-<div class="related"><h2>أدوات ذات صلة</h2><div class="grid"><a class="tool-card" href="./word-counter.html"><div class="ticon"><svg aria-hidden="true"><use href="../../assets/tool-icons.svg#icon-word-counter"/></svg></div><h3>عداد الكلمات</h3><p>عد الكلمات والحروف والجمل ووقت القراءة في الوقت الحقيقي أثناء الكتابة. مجاني.</p></a><a class="tool-card" href="./character-counter.html"><div class="ticon"><svg aria-hidden="true"><use href="../../assets/tool-icons.svg#icon-character-counter"/></svg></div><h3>عداد الحروف</h3><p>احصل على عدد مباشر للحروف والأسطر ودون فراغات لأي نص تكتبه أو تلصقه. مجاني.</p></a><a class="tool-card" href="./case-converter.html"><div class="ticon"><svg aria-hidden="true"><use href="../../assets/tool-icons.svg#icon-case-converter"/></svg></div><h3>محول حالة النص</h3><p>حول النص إلى أحرف كبيرة وصغيرة وحالة العناوين وغيرها بنقرة واحدة. مجاني.</p></a></div></div>
+<div class="howto"><h2>كيفية الاستخدام</h2><ol><li>الصق نصك في منطقة الإدخال — التنسيق الفوضوي مرحب به.</li><li>اختر <strong>وضع التنظيف</strong>: إزالة كل المسافات أو دمج المتعددات في واحدة أو إزالة الحواف فقط.</li><li>بدّل <strong>علامات الجدولة</strong> و<strong>الأسطر الجديدة</strong> و<strong>المسافات غير الفاصلة</strong> بشكل منفصل للتحكم الدقيق.</li><li>انسخ النص المنظف أو نزّله — تُحفظ فواصل الأسطر أو تُزال بالضبط وفق إعداداتك.</li></ol></div>
+<div class="faq"><h2>الأسئلة الشائعة</h2><details><summary>هل هي مجانية فعلًا؟</summary><p>نعم — كل أداة على هذا الموقع مجانية 100% دون حدود ودون تسجيل ودون علامات مائية.</p></details><details><summary>هل بياناتي خاصة؟</summary><p>بالتأكيد. تتم كل المعالجة محليًا في متصفحك. لا تُرفع ملفاتك أبدًا إلى أي خادم.</p></details><details><summary>ما الذي يُحسب بالضبط كمسافة بيضاء؟</summary><p>المسافات وعلامات الجدولة والأسطر الجديدة وإرجاعات الأسطر ومسافات Unicode مثل المسافات غير الفاصلة (U+00A0) والمسافات الرفيعة ومسافات العرض الصفري. ويمكن للأداة استهداف كل فئة بشكل مستقل.</p></details><details><summary>ما الفرق بين إزالة المسافات وتوحيدها؟</summary><p>الإزالة تحذفها بالكامل («hello   world» تصبح «helloworld»). والتوحيد يدمج كل سلسلة في مسافة واحدة («hello   world» تصبح «hello world»). اختر الإزالة للبيانات المدمجة، والتوحيد للنصوص المقروءة.</p></details><details><summary>هل سيزيل فواصل أسطري؟</summary><p>فقط إذا فعّلت مفتاح الأسطر الجديدة. افتراضيًا يمكنك تنظيف المسافات وعلامات الجدولة مع الحفاظ على بنية فقراتك سليمة تمامًا.</p></details><details><summary>هل استخدامه آمن على الشيفرة المصدرية؟</summary><p>للغات غير الحساسة للمسافات لا بأس، لكن كن حذرًا: Python تعتمد على المسافة البادئة، ويجب أن تحتفظ السلاسل النصية في أي لغة بمسافاتها الداخلية. فضّل وضع «الدمج» على وضع «إزالة الكل» للشيفرة.</p></details></div><div class="tool-guide"><h2>الدليل الكامل لتنظيف المسافات</h2><p>المسافات الشاردة هي العفريت غير المرئي للنصوص الرقمية. انسخ فقرة من PDF وستحصل على فواصل أسطر عشوائية في منتصف الجمل. والصق من صفحة ويب فتتسلل مسافات غير فاصلة. واستورد جدول بيانات فتكسر المسافات الزائدة عمليات البحث لديك. تطارد هذه الأداة كل فئة من المسافات وتزيلها أو توحّدها بالطريقة التي تحددها بالضبط.</p><h3>الأحرف غير المرئية</h3><ul><li><strong>المسافة العادية (U+0020):</strong> العادية. غالبًا ما تأتي المتعددات من نص مبرر أو كتابة مهملة.</li><li><strong>المسافة غير الفاصلة (U+00A0):</strong> تبدو مطابقة لكنها تمنع التفاف الأسطر — وتكسر بصمت مقارنات السلاسل وواردات CSV.</li><li><strong>علامة الجدولة (U+0009):</strong> بقايا محاذاة من شيفرة أو جداول؛ وعرضها غير متسق عبر المحررين.</li><li><strong>مسافة العرض الصفري (U+200B):</strong> غير مرئية تمامًا، لكنها تقسّم الكلمات للبحث وعدّ الكلمات. شائعة في النصوص المنسوخة من الويب.</li><li><strong>إرجاع الأسطر (U+000D):</strong> نهايات أسطر بنمط Windows مقابل نمط Unix تسبب أسطرًا فارغة وهمية.</li></ul><h3>سير عمل تنظيف نموذجية</h3><p><strong>من PDF إلى مستند:</strong> ادمج الأسطر الجديدة في مسافات، ثم وحّد المسافات المتعددة — فتُعاد تجميع الفقرات بنفسها. <strong>تحضير جداول البيانات:</strong> أزل المسافات البادئة والزائدة حتى تتطابق القيم في عمليات البحث. <strong>كشط الويب:</strong> جرّد كل المسافات من الأسعار أو المعرفات المستخرجة قبل تحليل الأرقام. <strong>ترتيب الشيفرة:</strong> ادمج سلاسل الأسطر الفارغة والمسافات الزائدة دون المساس بالمسافة البادئة.</p><p>تستخدم الأداة داخليًا أنماطًا تدرك Unicode وتغطي حتى أحرف العرض الصفري التي تفوتها مطابقات المسافات الأساسية. ولأن كل شيء يعمل محليًا، يمكنك تنظيف المستندات السرية بأمان — فلا يُرفع شيء أبدًا.</p><h3>اختيار الوضع الصحيح</h3><ul><li><strong>إزالة الكل:</strong> أقصى دمج. الأفضل للسلاسل المقروءة آليًا مثل الرموز أو التجزئات أو البيانات المصغرة حيث لا حاجة لأي مسافات على الإطلاق.</li><li><strong>دمج المتعددات:</strong> أنظف تنظيف عام. «مرحبًا&nbsp;&nbsp;&nbsp;&nbsp;بالعالم» تصبح «مرحبًا بالعالم» — مقروءة، مع اختفاء الفجوات العرضية.</li><li><strong>إزالة الحواف:</strong> يزيل المسافات البادئة والزائدة فقط. مثالي قبل مقارنة السلاسل أو التحقق من إدخالات النماذج أو استيراد بيانات CSV.</li></ul><h3>أمثلة حقيقية لأضرار المسافات</h3><p>مسافة زائدة في عنوان بريد («user@example.com ») تسبب أخطاء «بريد غير صالح» لا يستطيع المستخدمون رؤيتها. ومسافة غير فاصلة ملصوقة من Word إلى حقل كلمة مرور تسبب فشل تسجيل دخول دون سبب مرئي. والأسطر الفارغة الإضافية في CSV تُزيح الصفوف وتفسد الواردات. وفي كل حالة يستغرق الإصلاح ثوانٍ هنا: الصق، واختر الوضع، وانسخ النتيجة النظيفة. وللمطورين، تكسر الأحرف غير المرئية نفسها تحليل JSON ومطابقات regex — فتنظيف الإدخال قبل المعالجة عادة تستحق البناء.</p><p><strong>نصيحة احترافية:</strong> إذا كنت تحضّر نصًا لـ <a href="./word-counter.html">عداد الكلمات</a>، مرّره أولًا عبر مزيل المسافات. فواصل الأسطر الشاردة من ملفات PDF تضخّم أعداد الفقرات وتشوّه تقديرات وقت القراءة.</p></div><div class="related"><h2>أدوات ذات صلة</h2><div class="grid"><a class="tool-card" href="./word-counter.html"><div class="ticon"><svg aria-hidden="true"><use href="../../assets/tool-icons.svg#icon-word-counter"/></svg></div><h3>عداد الكلمات</h3><p>عد الكلمات والحروف والجمل ووقت القراءة في الوقت الحقيقي أثناء الكتابة. مجاني.</p></a><a class="tool-card" href="./character-counter.html"><div class="ticon"><svg aria-hidden="true"><use href="../../assets/tool-icons.svg#icon-character-counter"/></svg></div><h3>عداد الحروف</h3><p>احصل على عدد مباشر للحروف والأسطر ودون فراغات لأي نص تكتبه أو تلصقه. مجاني.</p></a><a class="tool-card" href="./case-converter.html"><div class="ticon"><svg aria-hidden="true"><use href="../../assets/tool-icons.svg#icon-case-converter"/></svg></div><h3>محول حالة النص</h3><p>حول النص إلى أحرف كبيرة وصغيرة وحالة العناوين وغيرها بنقرة واحدة. مجاني.</p></a></div></div>
 </div>
 </main>
 <footer class="site-footer"><div class="wrap">
 <div class="cols">
 <div><h4><img class="shield" src="../../freetools-icon-192.png" alt="" style="width:22px;height:22px;vertical-align:-4px;margin-right:6px"> أدوات الخصوصية المجانية</h4><p>63 أداة مجانية على الإنترنت. دون تسجيل — كل شيء يعمل في متصفحك.</p></div>
 <div><h4>الشائعة</h4><a href="./image-compressor.html">ضغط الصور</a><a href="./word-counter.html">عداد الكلمات</a><a href="./password-generator.html">مولد كلمات المرور</a><a href="./pdf-merger.html">دمج PDF</a><a href="./age-calculator.html">حاسبة العمر</a></div>
-<div><h4>الموقع</h4><a href="../index.html">الرئيسية</a><a href="../index.html#tools">كل الأدوات</a><a href="../../about.html">حول الموقع</a><a href="../../faq.html">الأسئلة الشائعة</a><a href="../../blog.html">المدونة</a><a href="../../contact.html">تواصل معنا</a><a href="../../request.html">طلب أداة</a><a href="../../privacy.html">الخصوصية</a><a href="../../terms.html">شروط الاستخدام</a><a href="../../disclaimer.html">إخلاء المسؤولية</a></div>
+<div><h4>الموقع</h4><a href="../index.html">الرئيسية</a><a href="../index.html#tools">كل الأدوات</a><a href="../about.html">حول الموقع</a><a href="../faq.html">الأسئلة الشائعة</a><a href="../blog.html">المدونة</a><a href="../contact.html">تواصل معنا</a><a href="../request.html">طلب أداة</a><a href="../privacy.html">الخصوصية</a><a href="../terms.html">شروط الاستخدام</a><a href="../disclaimer.html">إخلاء المسؤولية</a></div>
 </div>
 <div class="foot-note">© 2026 أدوات الخصوصية المجانية — جميع الأدوات تعمل 100% في متصفحك.<br>طُوّر بواسطة <a href="https://anwaardigital.com/" target="_blank" rel="noopener" style="color:#fbbf24;font-weight:700">Malik Anwaar</a></div>
 </div></footer>
@@ -273,6 +251,515 @@
     if (nx) nx.addEventListener('click', function () { pause(); car.scrollBy({ left: 280, behavior: 'smooth' }); scheduleResume(4000); });
     if (window.requestAnimationFrame) window.requestAnimationFrame(tick);
   }
+/* AR widget dictionary: English strings rendered by shared assets/tools.js
+   (and the rating thanks message from features.js) -> Arabic.
+   Applied ONLY to #tool-root (plus .tool-hero .rate-msg) by the inline AR
+   block on AR tool pages. Shared assets are never modified. Select option
+   values are preserved (value attribute set to the original English text)
+   so tools whose logic compares select values keep working. */
+var WIDGET_AR = [
+['Click to choose files (or drag & drop here)', 'انقر لاختيار الملفات (أو اسحبها وأفلتها هنا)'],
+['Copied!', 'تم النسخ!'],
+['Error: ', 'خطأ: '],
+['Error loading tool: ', 'خطأ في تحميل الأداة: '],
+['Could not load PDF engine (internet needed once).', 'تعذّر تحميل محرك PDF (يلزم الاتصال بالإنترنت مرة واحدة).'],
+['Could not load QR engine (internet needed once).', 'تعذّر تحميل محرك QR (يلزم الاتصال بالإنترنت مرة واحدة).'],
+['Could not load QR reader (internet needed once).', 'تعذّر تحميل قارئ QR (يلزم الاتصال بالإنترنت مرة واحدة).'],
+['Select 2+ PDF files to merge (in order)', 'اختر ملفي PDF أو أكثر للدمج (بالترتيب)'],
+['Merge PDFs', 'دمج ملفات PDF'],
+['Please select at least 2 PDF files.', 'يرجى اختيار ملفي PDF على الأقل.'],
+['Merging...', 'جارٍ الدمج...'],
+['Done! merged.pdf downloaded (', 'تم! تم تنزيل merged.pdf ('],
+['Done! split.pdf downloaded.', 'تم! تم تنزيل split.pdf.'],
+['Done! images.pdf downloaded (', 'تم! تم تنزيل images.pdf ('],
+['Done! ', 'تم! '],
+['Select a PDF file', 'اختر ملف PDF'],
+['Pages to extract', 'الصفحات المطلوب استخراجها'],
+['e.g. 1-3, 5, 7-9', 'مثال: 1-3، 5، 7-9'],
+['Split / Extract Pages', 'تقسيم / استخراج الصفحات'],
+['Select a PDF first.', 'اختر ملف PDF أولًا.'],
+['Working...', 'جارٍ العمل...'],
+['No valid pages. This PDF has ', 'لا توجد صفحات صالحة. يحتوي ملف PDF هذا على '],
+[' pages).', ' صفحة).'],
+[' pages.', ' صفحة.'],
+['Select a PDF to compress', 'اختر ملف PDF لضغطه'],
+['Compress PDF', 'ضغط PDF'],
+['Compressing...', 'جارٍ الضغط...'],
+['Saved ', 'تم توفير '],
+['% smaller).', '% أصغر).'],
+['File was already optimized.', 'الملف محسّن أصلًا.'],
+[' compressed.pdf downloaded.', ' تم تنزيل compressed.pdf.'],
+['Extracted text will appear here...', 'سيظهر النص المستخرج هنا...'],
+['Extracting text...', 'جارٍ استخراج النص...'],
+['--- Page ', '--- صفحة '],
+['Copy Text', 'نسخ النص'],
+['Download .txt', 'تنزيل .txt'],
+['Select images (JPG/PNG) — in page order', 'اختر الصور (JPG/PNG) — بترتيب الصفحات'],
+['Create PDF', 'إنشاء PDF'],
+['Select at least one image.', 'اختر صورة واحدة على الأقل.'],
+['Creating PDF...', 'جارٍ إنشاء PDF...'],
+['Rebuilds the PDF with object streams to shrink file size. Best on PDFs with lots of metadata/structure.', 'يعيد بناء PDF باستخدام تدفقات الكائنات لتقليل حجم الملف. الأفضل لملفات PDF التي تحتوي على الكثير من البيانات الوصفية والبنية.'],
+['Select an image', 'اختر صورة'],
+['Original: ', 'الأصلي: '],
+['Quality (1-100)', 'الجودة (1-100)'],
+['Compress & Download JPG', 'ضغط وتنزيل JPG'],
+['Compress & Download WebP', 'ضغط وتنزيل WebP'],
+['Width (px)', 'العرض (بكسل)'],
+['Height (px)', 'الارتفاع (بكسل)'],
+[' Keep aspect ratio', ' الحفاظ على نسبة العرض إلى الارتفاع'],
+['Resize & Download', 'تغيير الحجم وتنزيل'],
+['Convert to', 'التحويل إلى'],
+['Convert & Download', 'تحويل وتنزيل'],
+['Removes solid white / light backgrounds (great for logos & product shots). For complex photos use a dedicated AI tool.', 'يزيل الخلفيات البيضاء / الفاتحة الصلبة (ممتاز للشعارات وصور المنتجات). للصور المعقدة استخدم أداة ذكاء اصطناعي مخصصة.'],
+['Tolerance (0-150)', 'التحمل (0-150)'],
+['Remove Background', 'إزالة الخلفية'],
+['Download PNG', 'تنزيل PNG'],
+['Crop & Download', 'قص وتنزيل'],
+['Rotate 90°', 'تدوير 90°'],
+['Rotate 180°', 'تدوير 180°'],
+['Flip Horizontal', 'قلب أفقي'],
+['Flip Vertical', 'قلب عمودي'],
+['Download', 'تنزيل'],
+['Filter', 'المرشح'],
+['Grayscale', 'تدرج الرمادي'],
+['Sepia', 'سيبيا'],
+['Invert', 'عكس الألوان'],
+['High Contrast', 'تباين عالٍ'],
+['Blur', 'تمويه'],
+['Vintage', 'كلاسيكي'],
+['Apply Filter', 'تطبيق المرشح'],
+['Reset', 'إعادة تعيين'],
+['Upload the PNGs to your site root as favicon-16.png etc., or convert to .ico with any converter.', 'ارفع ملفات PNG إلى جذر موقعك بأسماء favicon-16.png وما شابه، أو حوّلها إلى .ico بأي محوّل.'],
+['Generate Favicons', 'إنشاء أيقونات المفضلة'],
+['Text / URL', 'النص / الرابط'],
+['Size (px)', 'الحجم (بكسل)'],
+['Generate QR Code', 'إنشاء رمز QR'],
+['Select an image containing a QR code', 'اختر صورة تحتوي على رمز QR'],
+['Reading...', 'جارٍ القراءة...'],
+['QR content:', 'محتوى QR:'],
+['Copy', 'نسخ'],
+['No QR code found in this image.', 'لم يتم العثور على رمز QR في هذه الصورة.'],
+['Paste or type your text here...', 'الصق نصك أو اكتبه هنا...'],
+['Result...', 'النتيجة...'],
+['Copy Result', 'نسخ النتيجة'],
+['Type or paste text...', 'اكتب نصًا أو الصقه...'],
+['Words', 'الكلمات'],
+['Characters', 'الأحرف'],
+['No spaces', 'دون مسافات'],
+['Sentences', 'الجمل'],
+['Paragraphs', 'الفقرات'],
+['Reading time', 'وقت القراءة'],
+[' min', ' دقيقة'],
+[' characters  •  ', ' حرفًا  •  '],
+[' without spaces  •  ', ' دون مسافات  •  '],
+[' lines', ' سطرًا'],
+['Type text...', 'اكتب نصًا...'],
+['UPPERCASE', 'أحرف كبيرة'],
+['lowercase', 'أحرف صغيرة'],
+['Title Case', 'حالة العنوان'],
+['Sentence case', 'حالة الجملة'],
+['aLtErNaTiNg', 'متناوب'],
+['Case sensitive', 'حساس لحالة الأحرف'],
+['Trim whitespace', 'إزالة المسافات الزائدة'],
+['Paste lines (one per line)...', 'الصق الأسطر (سطرًا في كل سطر)...'],
+['Remove Duplicates', 'إزالة التكرارات'],
+['Sort A-Z', 'ترتيب أ-ي'],
+['Reverse Lines', 'عكس الأسطر'],
+['Generated text...', 'النص المُنشأ...'],
+['Generate', 'إنشاء'],
+['Reverse Text', 'عكس النص'],
+['Reverse Words', 'عكس الكلمات'],
+['Flip Lines', 'قلب الأسطر'],
+['Paste messy text...', 'الصق النص الفوضوي...'],
+['Clean Up', 'تنظيف'],
+['Remove ALL Spaces', 'إزالة كل المسافات'],
+['Single Line', 'سطر واحد'],
+['Type or paste...', 'اكتب أو الصق...'],
+['Encode → Base64', 'ترميز إلى Base64'],
+['Decode Base64 →', 'فك ترميز Base64'],
+['Error: invalid Base64', 'خطأ: Base64 غير صالح'],
+['Type or paste URL/text...', 'اكتب رابطًا أو نصًا أو الصقه...'],
+['Encode URL', 'ترميز الرابط'],
+['Decode URL', 'فك ترميز الرابط'],
+['Error: invalid encoding', 'خطأ: ترميز غير صالح'],
+['Paste JSON here...', 'الصق JSON هنا...'],
+['Format / Beautify', 'تنسيق / تجميل'],
+['Invalid JSON: ', 'JSON غير صالح: '],
+['Minify', 'تصغير'],
+['Validate', 'تحقق'],
+['Valid JSON ✓', 'JSON صالح ✓'],
+['Calculate', 'احسب'],
+['Your birth date', 'تاريخ ميلادك'],
+['Calculate Age', 'احسب العمر'],
+['Pick a date.', 'اختر تاريخًا.'],
+['Pick a date & time.', 'اختر تاريخًا ووقتًا.'],
+['Pick both dates.', 'اختر التاريخين.'],
+[' days total • next birthday in ', ' يومًا إجمالًا • عيد الميلاد القادم بعد '],
+[' years, ', ' سنة، '],
+[' months, ', ' شهرًا، '],
+[' weeks • ', ' أسبوعًا • '],
+[' months • ', ' شهرًا • '],
+[' years', ' سنة'],
+[' days', ' يومًا'],
+['Weight (kg)', 'الوزن (كجم)'],
+['Height (cm)', 'الطول (سم)'],
+['Calculate BMI', 'احسب مؤشر كتلة الجسم'],
+['BMI: ', 'مؤشر كتلة الجسم: '],
+['Category: ', 'الفئة: '],
+['Underweight', 'نقص الوزن'],
+['Normal weight', 'وزن طبيعي'],
+['Overweight', 'زيادة الوزن'],
+['Obese', 'سمنة'],
+['Loan amount', 'مبلغ القرض'],
+['Interest % / year', 'الفائدة % / سنة'],
+['Years', 'السنوات'],
+['Calculate EMI', 'احسب القسط الشهري'],
+['Monthly payment: ', 'الدفعة الشهرية: '],
+['Total payable: ', 'إجمالي المبلغ المستحق: '],
+[' • Total interest: ', ' • إجمالي الفائدة: '],
+['Mode', 'الوضع'],
+['What is X% of Y?', 'كم يساوي X% من Y؟'],
+['X is what % of Y?', 'X يمثل كم % من Y؟'],
+['Increase X by Y%', 'زيادة X بنسبة Y%'],
+['Decrease X by Y%', 'تقليل X بنسبة Y%'],
+['Bill amount', 'مبلغ الفاتورة'],
+['Tip %', 'نسبة الإكرامية %'],
+['People', 'عدد الأشخاص'],
+['Tip: ', 'الإكرامية: '],
+[' • Total: ', ' • الإجمالي: '],
+['Per person: ', 'للشخص الواحد: '],
+['Original price', 'السعر الأصلي'],
+['Discount %', 'نسبة الخصم %'],
+['You pay: ', 'تدفع: '],
+['You save: ', 'توفّر: '],
+['Amount', 'المبلغ'],
+['From', 'من'],
+['To', 'إلى'],
+['Uses indicative static rates. For exact transfers check your bank.', 'يستخدم أسعارًا إرشادية ثابتة. للتحويلات الدقيقة راجع مصرفك.'],
+['Convert', 'حوّل'],
+['Category', 'الفئة'],
+['Value', 'القيمة'],
+['Length', 'الطول'],
+['Weight', 'الوزن'],
+['Temperature', 'درجة الحرارة'],
+['Volume', 'الحجم'],
+['Speed', 'السرعة'],
+['Data', 'البيانات'],
+['Celsius', 'مئوية'],
+['Fahrenheit', 'فهرنهايت'],
+['Kelvin', 'كلفن'],
+['Date & time', 'التاريخ والوقت'],
+['From zone', 'النطاق الزمني المصدر'],
+['To zone', 'النطاق الزمني الهدف'],
+['Start date', 'تاريخ البدء'],
+['End date', 'تاريخ الانتهاء'],
+['Uppercase', 'أحرف كبيرة'],
+['Lowercase', 'أحرف صغيرة'],
+['Digits', 'أرقام'],
+['Symbols', 'رموز'],
+['Generate Password', 'إنشاء كلمة مرور'],
+['Select at least one character set.', 'اختر مجموعة أحرف واحدة على الأقل.'],
+['Type text to hash...', 'اكتب نصًا لتجزئته...'],
+['Generate Hashes', 'إنشاء التجزئات'],
+['Simple checksum:', 'مجموع تحقق بسيط:'],
+['Hashes are computed locally in your browser — your text never leaves your device.', 'تُحسب التجزئات محليًا في متصفحك — لا يغادر نصك جهازك أبدًا.'],
+['Min', 'الأدنى'],
+['Max', 'الأقصى'],
+['Count', 'العدد'],
+[' Unique numbers', ' أرقام فريدة'],
+['Range too small for ', 'النطاق صغير جدًا لـ '],
+[' unique numbers.', ' رقم فريد.'],
+['Flip Coin', 'اقلب العملة'],
+['HEADS!', 'صورة!'],
+['TAILS!', 'كتابة!'],
+['  —  Heads: ', '  —  صورة: '],
+[' • Tails: ', ' • كتابة: '],
+['Heads', 'صورة'],
+['Tails', 'كتابة'],
+['Dice', 'النرد'],
+['Sides', 'الأوجه'],
+['Roll', 'ارمِ'],
+['Pick a color', 'اختر لونًا'],
+['Copy HEX', 'نسخ HEX'],
+['HEX → RGB', 'HEX إلى RGB'],
+['HEX to RGB', 'HEX إلى RGB'],
+['Invalid HEX.', 'HEX غير صالح.'],
+['RGB to HEX', 'RGB إلى HEX'],
+['Generate Palette', 'إنشاء لوحة ألوان'],
+['Click any color to copy its HEX code.', 'انقر على أي لون لنسخ رمز HEX الخاص به.'],
+['Color 1', 'اللون 1'],
+['Color 2', 'اللون 2'],
+['Angle', 'الزاوية'],
+['Copy CSS', 'نسخ CSS'],
+['Sample Text', 'نص تجريبي'],
+['Contrast ratio: ', 'نسبة التباين: '],
+['WCAG AA (normal text): ', 'WCAG AA (النص العادي): '],
+['PASS', 'ناجح'],
+['FAIL', 'راسب'],
+['Text color', 'لون النص'],
+['Background', 'الخلفية'],
+['Paste HTML...', 'الصق HTML...'],
+['Encode HTML', 'ترميز HTML'],
+['Decode HTML', 'فك ترميز HTML'],
+['Paste CSS...', 'الصق CSS...'],
+['Minify CSS', 'تصغير CSS'],
+['Beautify CSS', 'تجميل CSS'],
+['Paste JavaScript...', 'الصق JavaScript...'],
+['Minify JS (basic)', 'تصغير JS (أساسي)'],
+['Basic whitespace/comment minifier. For production builds use Terser or esbuild.', 'مصغّر أساسي للمسافات والتعليقات. لإصدارات الإنتاج استخدم Terser أو esbuild.'],
+['How many', 'كم عددها'],
+['Generate UUIDs', 'إنشاء UUIDs'],
+['Copy All', 'نسخ الكل'],
+['Unix timestamp → date', 'طابع Unix الزمني إلى تاريخ'],
+['e.g. 1728566400', 'مثال: 1728566400'],
+['To Date', 'إلى تاريخ'],
+['Invalid timestamp.', 'طابع زمني غير صالح.'],
+['Local:', 'المحلي:'],
+['Date → timestamp', 'تاريخ إلى طابع زمني'],
+['To Timestamp', 'إلى طابع زمني'],
+['Seconds:', 'الثواني:'],
+['Milliseconds:', 'أجزاء الألف من الثانية:'],
+['Current Timestamp', 'الطابع الزمني الحالي'],
+['Now (seconds):', 'الآن (بالثواني):'],
+['Long URL', 'الرابط الطويل'],
+['Shorten Link', 'اختصر الرابط'],
+['Please paste a URL first.', 'يرجى لصق رابط أولًا.'],
+['Shortening...', 'جارٍ الاختصار...'],
+['Could not reach the shortening service. Check your internet and try again.', 'تعذّر الوصول إلى خدمة الاختصار. تحقق من اتصالك وحاول مجددًا.'],
+['Your short link:', 'رابطك المختصر:'],
+['Copy Link', 'نسخ الرابط'],
+['Note: uses the free da.gd / is.gd service over HTTPS.', 'ملاحظة: يستخدم خدمة da.gd / is.gd المجانية عبر HTTPS.'],
+['Type your password...', 'اكتب كلمة مرورك...'],
+['Show', 'إظهار'],
+['Hide', 'إخفاء'],
+['Password', 'كلمة المرور'],
+['How to improve', 'كيفية التحسين'],
+['less than a second', 'أقل من ثانية'],
+[' seconds', ' ثانية'],
+[' minutes', ' دقيقة'],
+[' hours', ' ساعة'],
+['Weak', 'ضعيفة'],
+['Fair', 'مقبولة'],
+['Good', 'جيدة'],
+['Strong', 'قوية'],
+['centuries', 'قرون'],
+[' — ', ' — '],
+['Estimated time to crack: ', 'الوقت المقدر للاختراق: '],
+[' (10 billion guesses/sec).', ' (10 مليارات تخمين/ثانية).'],
+['Make it at least 12 characters long (16+ is better).', 'اجعلها 12 حرفًا على الأقل (16+ أفضل).'],
+['Add uppercase letters.', 'أضف أحرفًا كبيرة.'],
+['Add lowercase letters.', 'أضف أحرفًا صغيرة.'],
+['Add numbers.', 'أضف أرقامًا.'],
+['Add symbols like !@#$%.', 'أضف رموزًا مثل !@#$%.'],
+['Avoid repeating the same character 3+ times.', 'تجنب تكرار الحرف نفسه 3 مرات أو أكثر.'],
+['Avoid common patterns and dictionary words.', 'تجنب الأنماط الشائعة وكلمات القاموس.'],
+['Great! This looks like a strong password. Use a unique one per site.', 'ممتاز! تبدو كلمة مرور قوية. استخدم كلمة مختلفة لكل موقع.'],
+['Checked 100% locally in your browser — your password is never sent anywhere.', 'يُفحص محليًا 100% في متصفحك — لا تُرسل كلمة مرورك إلى أي مكان أبدًا.'],
+['IP address or domain — e.g. 8.8.8.8', 'عنوان IP أو نطاق — مثال: 8.8.8.8'],
+['IP or domain', 'IP أو نطاق'],
+['IP address', 'عنوان IP'],
+['City', 'المدينة'],
+['Region', 'المنطقة'],
+['Country', 'الدولة'],
+['ISP / Org', 'مزود الخدمة / المؤسسة'],
+['Timezone', 'النطاق الزمني'],
+['Latitude / Longitude', 'خط العرض / خط الطول'],
+['Looking up…', 'جارٍ البحث…'],
+['Lookup failed: ', 'فشل البحث: '],
+['Could not reach the lookup service. Check your internet and try again.', 'تعذّر الوصول إلى خدمة البحث. تحقق من اتصالك وحاول مجددًا.'],
+['Look Up', 'بحث'],
+['Enter an IP address or domain first.', 'أدخل عنوان IP أو نطاقًا أولًا.'],
+['My IP', 'IP الخاص بي'],
+['Uses the free ipapi.co geolocation API. Locations are approximate (ISP level).', 'يستخدم واجهة ipapi.co المجانية لتحديد الموقع الجغرافي. المواقع تقريبية (على مستوى مزود الخدمة).'],
+['Website URL', 'رابط الموقع'],
+['Strict-Transport-Security (HSTS)', 'Strict-Transport-Security (HSTS)'],
+['Forces browsers to use HTTPS only. Protects against protocol-downgrade attacks.', 'يجبر المتصفحات على استخدام HTTPS فقط. يحمي من هجمات خفض مستوى البروتوكول.'],
+['Content-Security-Policy (CSP)', 'Content-Security-Policy (CSP)'],
+['Controls which scripts, styles and resources may load. Key defense against XSS attacks.', 'يتحكم في النصوص والأنماط والموارد المسموح تحميلها. دفاع أساسي ضد هجمات XSS.'],
+['X-Frame-Options', 'X-Frame-Options'],
+['Prevents the page being embedded in iframes — stops clickjacking attacks.', 'يمنع تضمين الصفحة في إطارات — يوقف هجمات clickjacking.'],
+['X-Content-Type-Options', 'X-Content-Type-Options'],
+['Stops browsers "sniffing" file types — set to nosniff.', 'يمنع المتصفحات من "تخمين" أنواع الملفات — اضبطه على nosniff.'],
+['Referrer-Policy', 'Referrer-Policy'],
+['Controls how much referrer info is sent when users click away.', 'يتحكم في مقدار معلومات الإحالة المُرسلة عند نقر المستخدم بعيدًا.'],
+['Permissions-Policy', 'Permissions-Policy'],
+['Restricts powerful browser features (camera, mic, geolocation).', 'يقيّد ميزات المتصفح القوية (الكاميرا، الميكروفون، تحديد الموقع).'],
+['Pass: ', 'نجاح: '],
+['Fail: ', 'فشل: '],
+['Score: ', 'النتيجة: '],
+[' security headers present.', ' تذييلة أمان موجودة.'],
+['For a deeper automated scan, also try securityheaders.com.', 'لفحص آلي أعمق، جرّب أيضًا securityheaders.com.'],
+['Check Headers', 'فحص التذييلات'],
+['Enter a website URL first.', 'أدخل رابط موقع أولًا.'],
+['Fetching headers…', 'جارٍ جلب التذييلات…'],
+['No headers returned. The site may block this check — try securityheaders.com instead.', 'لم تُرجع أي تذييلات. قد يحظر الموقع هذا الفحص — جرّب securityheaders.com بدلًا من ذلك.'],
+['Could not reach the header service. Check your internet and try again.', 'تعذّر الوصول إلى خدمة التذييلات. تحقق من اتصالك وحاول مجددًا.'],
+['Header fetch uses the free hackertarget.com API. Explanations are educational — this is a defensive learning tool.', 'يستخدم جلب التذييلات واجهة hackertarget.com المجانية. الشروحات تعليمية — هذه أداة تعلم دفاعية.'],
+['URL to analyze', 'الرابط المطلوب تحليله'],
+['Paste the suspicious URL here…', 'الصق الرابط المشبوه هنا…'],
+['Check URL', 'فحص الرابط'],
+['That does not look like a valid URL.', 'هذا لا يبدو رابطًا صالحًا.'],
+['Uses HTTPS (encrypted connection).', 'يستخدم HTTPS (اتصال مشفّر).'],
+['No HTTPS — data is sent unencrypted.', 'لا يوجد HTTPS — تُرسل البيانات دون تشفير.'],
+['Host is a raw IP address instead of a domain name.', 'المضيف عنوان IP خام بدلًا من اسم نطاق.'],
+['Host is a domain name, not a raw IP.', 'المضيف اسم نطاق، وليس عنوان IP خام.'],
+['Many subdomains (', 'نطاقات فرعية كثيرة ('],
+[' parts) — a common phishing trick.', ' جزء) — خدعة تصيّد شائعة.'],
+['Subdomain depth looks normal.', 'عمق النطاقات الفرعية يبدو طبيعيًا.'],
+['Uses a top-level domain often abused by scammers.', 'يستخدم نطاقًا علويًا كثيرًا ما يسيء المحتالون استخدامه.'],
+['Top-level domain is not on the high-risk list.', 'النطاق العلوي ليس في قائمة النطاقات عالية الخطورة.'],
+['Contains "@" — everything before it can be fake.', 'يحتوي على "@" — كل ما قبله قد يكون مزيفًا.'],
+['No "@" trick in the URL.', 'لا توجد خدعة "@" في الرابط.'],
+['Brand-like words combined with hyphens (e.g. "paypal-secure-login").', 'كلمات مشابهة لعلامات تجارية مع شرطات (مثل "paypal-secure-login").'],
+['No brand-imitating hyphen pattern detected.', 'لم يُكتشف نمط شرطات مقلّد لعلامة تجارية.'],
+['URL shortener hides the real destination.', 'مختصر الروابط يخفي الوجهة الحقيقية.'],
+['Not a known URL shortener.', 'ليس مختصر روابط معروفًا.'],
+['Very long URL (', 'رابط طويل جدًا ('],
+[' chars) — can hide the true domain.', ' حرفًا) — قد يخفي النطاق الحقيقي.'],
+['URL length looks normal.', 'طول الرابط يبدو طبيعيًا.'],
+['Contains non-Latin characters — possible homograph attack.', 'يحتوي على أحرف غير لاتينية — هجوم تشابه أحرف محتمل.'],
+['No suspicious non-Latin characters.', 'لا توجد أحرف غير لاتينية مشبوهة.'],
+['Numbers mixed into a sensitive-looking domain.', 'أرقام مخلوطة في نطاق يبدو حساسًا.'],
+['Looks Safe', 'يبدو آمنًا'],
+['Suspicious', 'مشبوه'],
+['Dangerous', 'خطير'],
+['Warning: ', 'تحذير: '],
+[' risk)', ' مخاطرة)'],
+[' risk', ' مخاطرة'],
+['Type', 'النوع'],
+['Width', 'العرض'],
+['Height', 'الارتفاع'],
+['https://example.com or any text', 'https://example.com أو أي نص'],
+['Disclaimer: this is a first-pass heuristic check only and cannot guarantee a site is legitimate. When in doubt, never enter passwords or payment details.', 'إخلاء مسؤولية: هذا فحص استدلالي أولي فقط ولا يضمن أن الموقع شرعي. عند الشك، لا تدخل أبدًا كلمات مرور أو بيانات دفع.'],
+['Analysis runs 100% locally in your browser — the URL is never sent anywhere.', 'يعمل التحليل محليًا 100% في متصفحك — لا يُرسل الرابط إلى أي مكان أبدًا.'],
+['Thanks! You rated this tool ', 'شكرًا! قيّمت هذه الأداة بـ '],
+['Your rating: ', 'تقييمك: '],
+['Add to favorites', 'أضف إلى المفضلة'],
+['Toggle dark mode', 'تبديل الوضع الداكن']
+];
+/* Single words that also appear inside composite result strings (so they
+   need fragment replacement, not just exact-node replacement). */
+var WIDGET_FRAG_WORDS = { 'Weak': 1, 'Fair': 1, 'Good': 1, 'Strong': 1,
+  'centuries': 1, 'Underweight': 1, 'Overweight': 1, 'Obese': 1,
+  'Suspicious': 1, 'Dangerous': 1, 'Heads': 1, 'Tails': 1 };
+
+/* ---- AR widget translation (tools.js output) ---- */
+(function () {
+  var EXACT = {};
+  WIDGET_AR.forEach(function (p) { if (p[0] !== p[1]) EXACT[p[0]] = p[1]; });
+  var PAIRS = WIDGET_AR.filter(function (p) { return p[0] !== p[1]; });
+  PAIRS.sort(function (a, b) { return b[0].length - a[0].length; });
+  function isFrag(en) {
+    if (WIDGET_FRAG_WORDS[en]) return true;
+    return /[^A-Za-z]/.test(en);
+  }
+  function translateString(v) {
+    if (EXACT[v] !== undefined) return EXACT[v];
+    var t = v, changed = false;
+    for (var i = 0; i < PAIRS.length; i++) {
+      var en = PAIRS[i][0];
+      if (!isFrag(en)) continue;
+      if (t.indexOf(en) !== -1) { t = t.split(en).join(PAIRS[i][1]); changed = true; }
+    }
+    return changed ? t : v;
+  }
+  function translateNode(node) {
+    var v = node.nodeValue;
+    var tr = v.trim();
+    if (tr && EXACT[tr] !== undefined) { node.nodeValue = v.replace(tr, EXACT[tr]); return; }
+    if (!v || v.indexOf(' ') === -1 && !EXACT[v]) {
+      if (EXACT[v] !== undefined) node.nodeValue = EXACT[v];
+      return;
+    }
+    /* Skip the QR-reader echo node (user data, not UI text). */
+    var par = node.parentNode;
+    if (par && par.className && par.className.indexOf('big') !== -1) {
+      var prev = par.previousElementSibling;
+      if (prev && (prev.textContent.indexOf('QR content') !== -1 || prev.textContent.indexOf('محتوى') !== -1)) return;
+    }
+    /* Skip link text (URLs) and textarea default text (user-editable samples). */
+    if (par && par.tagName === 'A') return;
+    if (par && par.tagName === 'TEXTAREA') return;
+    /* Preserve select-option values so value-compared tools keep working. */
+    if (par && par.tagName === 'OPTION' && EXACT[v] !== undefined && !par.hasAttribute('value')) {
+      par.setAttribute('value', v);
+    }
+    var nv = translateString(v);
+    if (nv !== v) node.nodeValue = nv;
+  }
+  function translateAttrs(el) {
+    var ph = el.getAttribute && el.getAttribute('placeholder');
+    if (ph && EXACT[ph] !== undefined) el.setAttribute('placeholder', EXACT[ph]);
+    var ti = el.getAttribute && el.getAttribute('title');
+    if (ti && EXACT[ti] !== undefined) el.setAttribute('title', EXACT[ti]);
+    var al = el.getAttribute && el.getAttribute('aria-label');
+    if (al && EXACT[al] !== undefined) el.setAttribute('aria-label', EXACT[al]);
+  }
+  function translateTree(root) {
+    if (!root) return;
+    var walker = document.createTreeWalker(root, NodeFilter.SHOW_TEXT, null, false);
+    var nodes = [], n;
+    while ((n = walker.nextNode())) nodes.push(n);
+    nodes.forEach(translateNode);
+    var els = root.querySelectorAll ? root.querySelectorAll('input,textarea,select,button,a') : [];
+    for (var i = 0; i < els.length; i++) translateAttrs(els[i]);
+    translateAttrs(root);
+  }
+  function translateHeroRate() {
+    var rm = document.querySelector('.tool-hero .rate-msg');
+    if (!rm) return;
+    var walker = document.createTreeWalker(rm, NodeFilter.SHOW_TEXT, null, false);
+    var nodes = [], n;
+    while ((n = walker.nextNode())) nodes.push(n);
+    nodes.forEach(function (tn) {
+      var nv = translateString(tn.nodeValue);
+      if (nv !== tn.nodeValue) tn.nodeValue = nv;
+    });
+  }
+  function translatePdfTextValue() {
+    var root = document.getElementById('tool-root');
+    if (!root || root.getAttribute('data-tool') !== 'pdf-to-text') return;
+    var ta = root.querySelector('textarea');
+    if (!ta) return;
+    var v = ta.value;
+    if (!v) return;
+    var nv = v.split('Extracting text...').join('جارٍ استخراج النص...')
+      .split('Error: ').join('خطأ: ')
+      .split('--- Page ').join('--- صفحة ');
+    if (nv !== v) ta.value = nv;
+  }
+  var busy = false;
+  function runAll() {
+    if (busy) return; busy = true;
+    try {
+      translateTree(document.getElementById('tool-root'));
+      translateHeroRate();
+      translatePdfTextValue();
+    } catch (e) {}
+    busy = false;
+  }
+  function initWidgetAr() {
+    runAll();
+    var root = document.getElementById('tool-root');
+    if (root && window.MutationObserver) {
+      var mo = new MutationObserver(function () { runAll(); });
+      mo.observe(root, { childList: true, subtree: true, characterData: true });
+    }
+    var rm = document.querySelector('.tool-hero .rate-msg');
+    if (rm && window.MutationObserver) {
+      var mo2 = new MutationObserver(function () { translateHeroRate(); });
+      mo2.observe(rm, { childList: true, subtree: true, characterData: true });
+    }
+    /* pdf-to-text writes system text into a textarea value (no DOM
+       mutation fires), so poll that one readonly output only. */
+    var rootEl = document.getElementById('tool-root');
+    if (rootEl && rootEl.getAttribute('data-tool') === 'pdf-to-text') {
+      setInterval(translatePdfTextValue, 800);
+    }
+  }
+  window.__initWidgetAr = initWidgetAr;
+})();
+
   onReady(function () {
     buildSwitcher();
     var dark = document.getElementById('darkToggle');
@@ -317,6 +804,7 @@
       var dec = document.getElementById('adCookieDecline'); if (dec) dec.textContent = 'رفض';
     }
     initCarouselAr();
+    if (window.__initWidgetAr) window.__initWidgetAr();
   });
 })();
 </script>
