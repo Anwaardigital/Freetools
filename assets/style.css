@@ -105,6 +105,7 @@ canvas.preview{max-width:100%;border:1px solid var(--border);border-radius:10px;
   .site-header .logo{font-size:0}
   .site-header .lang9-btn{padding:6px 10px;font-size:12px}
   .site-header .dark-toggle{padding:6px 10px;font-size:12px}
+  .site-header .lang9-menu{inset-inline-start:0;inset-inline-end:auto}
 }
 
 /* ============ FEATURES UPDATE: dark mode, favorites, ratings, chips, share ============ */
