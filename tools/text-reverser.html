@@ -96,13 +96,13 @@
 </head>
 <body>
 <header class="site-header"><div class="wrap">
-<a class="logo" href="../index.html"><span class="shield">🛡️</span> Free Privacy Tools</a>
+<a class="logo" href="../index.html"><img class="shield" src="../freetools-icon-192.png" alt=""> Free Privacy Tools</a>
 <button class="nav-toggle" aria-label="Menu" aria-expanded="false">☰</button><nav class="nav"><a href="../index.html">Home</a><a href="../index.html#tools">All Tools</a><a href="../about.html">About</a><a href="../faq.html">FAQ</a><a href="../blog.html">Blog</a><a href="../contact.html">Contact</a><a href="../privacy.html">Privacy</a></nav>
 </div></header>
 
 <main class="wrap">
 <div class="crumbs"><a href="../index.html">Home</a> / Text Tools / Text Reverser</div>
-<div class="tool-hero"><h1>↩️ Text Reverser</h1><p>Reverse text, words or line order with one click. Useful for fun with text or quick encoding tricks. Free, unlimited, private — works entirely in your browser.</p></div>
+<div class="tool-hero"><h1><svg class="hero-icon" aria-hidden="true"><use href="../assets/tool-icons.svg#icon-text-reverser"/></svg> Text Reverser</h1><p>Reverse text, words or line order with one click. Useful for fun with text or quick encoding tricks. Free, unlimited, private — works entirely in your browser.</p></div>
 <div class="ad-slot"><!-- AdSense code goes here --></div>
 <div class="tool-box" id="tool-root" data-tool="text-reverser"></div>
 <div class="howto"><h2>How to use</h2><ol><li>Type or paste your text into the input box at the top of the tool.</li><li>Choose a reversal mode: <strong>full text</strong> (character by character), <strong>word order</strong>, or <strong>line order</strong>.</li><li>Click the <strong>Reverse</strong> button — the result appears instantly below the input.</li><li>Copy the reversed text with one click, or download it as a .txt file for later use.</li></ol></div>
@@ -121,18 +121,19 @@
 <h3>How it actually works</h3>
 <p>Naive reversal code can corrupt text containing emojis or combined characters (like é built from e plus an accent), because those are stored as multiple code units. A correct reverser works on <em>grapheme clusters</em> — what humans perceive as single characters — rather than raw bytes. This tool uses Unicode-aware reversal, so emojis and non-Latin scripts survive the flip intact. Everything runs locally with JavaScript string methods, which is why it handles even very long documents without breaking a sweat — and why your text never leaves your device.</p>
 <p><strong>Pro tip:</strong> combine the reverser with the <a href="./word-counter.html">Word Counter</a> to analyze palindromic phrases, or with the <a href="./case-converter.html">Case Converter</a> to stylize the output further.</p></div>
-<div class="related"><h2>Related tools</h2><div class="grid"><a class="tool-card" href="./word-counter.html"><div class="ticon">🔢</div><h3>Word Counter</h3><p>Count words, characters, sentences and reading time in real time.</p></a><a class="tool-card" href="./character-counter.html"><div class="ticon">🔤</div><h3>Character Counter</h3><p>Live character, line and whitespace-free counts.</p></a><a class="tool-card" href="./case-converter.html"><div class="ticon">🔠</div><h3>Text Case Converter</h3><p>Convert text to UPPERCASE, lowercase, Title Case and more.</p></a></div></div>
+<div class="related"><h2>Related tools</h2><div class="grid"><a class="tool-card" href="./word-counter.html"><div class="ticon"><svg aria-hidden="true"><use href="../assets/tool-icons.svg#icon-word-counter"/></svg></div><h3>Word Counter</h3><p>Count words, characters, sentences and reading time in real time.</p></a><a class="tool-card" href="./character-counter.html"><div class="ticon"><svg aria-hidden="true"><use href="../assets/tool-icons.svg#icon-character-counter"/></svg></div><h3>Character Counter</h3><p>Live character, line and whitespace-free counts.</p></a><a class="tool-card" href="./case-converter.html"><div class="ticon"><svg aria-hidden="true"><use href="../assets/tool-icons.svg#icon-case-converter"/></svg></div><h3>Text Case Converter</h3><p>Convert text to UPPERCASE, lowercase, Title Case and more.</p></a></div></div>
 </div>
 </main>
 <footer class="site-footer"><div class="wrap">
 <div class="cols">
-<div><h4>🛡️ Free Privacy Tools</h4><p>63 free online tools. No signup — everything runs in your browser.</p></div>
+<div><h4><img class="shield" src="../freetools-icon-192.png" alt="" style="width:22px;height:22px;vertical-align:-4px;margin-right:6px"> Free Privacy Tools</h4><p>63 free online tools. No signup — everything runs in your browser.</p></div>
 <div><h4>Popular</h4><a href="./image-compressor.html">Image Compressor</a><a href="./word-counter.html">Word Counter</a><a href="./password-generator.html">Password Generator</a><a href="./pdf-merger.html">PDF Merger</a><a href="./age-calculator.html">Age Calculator</a></div>
 <div><h4>Site</h4><a href="../index.html">Home</a><a href="../index.html#tools">All Tools</a><a href="../about.html">About</a><a href="../faq.html">FAQ</a><a href="../blog.html">Blog</a><a href="../contact.html">Contact</a><a href="../request.html">Request a Tool</a><a href="../privacy.html">Privacy Policy</a><a href="../terms.html">Terms of Service</a><a href="../disclaimer.html">Disclaimer</a></div>
 </div>
-<div class="foot-note">© 2026 Free Privacy Tools — All tools run 100% in your browser.<br>Developed by <a href="https://anwaardigital.com/" target="_blank" rel="noopener" style="color:#fbbf24;font-weight:700">Malik Anwaar</a> ❤️</div>
+<div class="foot-note">© 2026 Free Privacy Tools — All tools run 100% in your browser.<br>Developed by <a href="https://anwaardigital.com/" target="_blank" rel="noopener" style="color:#fbbf24;font-weight:700">Malik Anwaar</a></div>
 </div></footer>
 <script src="../assets/app.js"></script>
 <script src="../assets/tools.js"></script>
 <script src="../assets/features.js"></script>
+<script src="../assets/i18n9.js"></script>
 </body></html>

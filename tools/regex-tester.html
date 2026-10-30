@@ -50,13 +50,13 @@
 </head>
 <body>
 <header class="site-header"><div class="wrap">
-<a class="logo" href="../index.html"><span class="shield">🛡️</span> Free Privacy Tools</a>
+<a class="logo" href="../index.html"><img class="shield" src="../freetools-icon-192.png" alt=""> Free Privacy Tools</a>
 <button class="nav-toggle" aria-label="Menu" aria-expanded="false">☰</button><nav class="nav"><a href="../index.html">Home</a><a href="../index.html#tools">All Tools</a><a href="../about.html">About</a><a href="../faq.html">FAQ</a><a href="../blog.html">Blog</a><a href="../contact.html">Contact</a><a href="../privacy.html">Privacy</a></nav>
 </div></header>
 
 <main class="wrap">
 <div class="crumbs"><a href="../index.html">Home</a> / Developer Tools / Regex Tester</div>
-<div class="tool-hero"><h1>🔎 Regex Tester</h1><p>Test regular expressions with live match highlighting and capture groups. Free, unlimited, private — works entirely in your browser.</p></div>
+<div class="tool-hero"><h1><svg class="hero-icon" aria-hidden="true"><use href="../assets/tool-icons.svg#icon-regex-tester"/></svg> Regex Tester</h1><p>Test regular expressions with live match highlighting and capture groups. Free, unlimited, private — works entirely in your browser.</p></div>
 <div class="ad-slot"><!-- AdSense code goes here --></div>
 <div class="tool-box" id="tool-root" data-tool="regex-tester">
 <div class="field"><label for="rx-pat">Regular Expression (without / slashes)</label><input id="rx-pat" type="text" placeholder="\b[\w.-]+@[\w.-]+\.\w{2,}\b" value="\b[\w.-]+@[\w.-]+\.\w{2,}\b"></div>
@@ -80,7 +80,7 @@ function run(){
   var out=document.getElementById('rx-out');
   var grp=document.getElementById('rx-groups');
   var re;
-  try{re=new RegExp(pat,flags);}catch(e){out.innerHTML='❌ Invalid regex: '+esc(e.message);grp.textContent='';return;}
+  try{re=new RegExp(pat,flags);}catch(e){out.innerHTML='Error: Invalid regex: '+esc(e.message);grp.textContent='';return;}
   var html='',list=[],m,last=0,count=0;
   if(flags.indexOf('g')===-1){
     m=re.exec(text);
@@ -118,18 +118,19 @@ run();
 <div class="howto"><h2>How to use</h2><ol><li>Type your <strong>regular expression</strong> (without surrounding / slashes).</li><li>Pick flags: <strong>g</strong> finds all matches, <strong>i</strong> ignores case, <strong>m</strong> treats each line separately.</li><li>Paste your <strong>test text</strong> and click <strong>Test Regex</strong>.</li><li>Matches are <strong>highlighted</strong> and capture groups are listed below.</li></ol></div>
 <div class="faq"><h2>FAQ</h2><details><summary>Is it really free?</summary><p>Yes — every tool on this site is 100% free with no limits, no signup and no watermarks.</p></details><details><summary>Is my data private?</summary><p>Absolutely. All processing happens locally in your browser. Your pattern and test text are never uploaded to any server.</p></details><details><summary>Which regex flavor is this?</summary><p>JavaScript regular expressions, the same engine used in browsers and Node.js. Most common syntax works the same in Python, PHP and other languages.</p></details></div>
 <div class="tool-guide"><h2>Complete Guide to Regular Expressions</h2><p>Regular expressions (regex) are patterns for finding and validating text: email addresses, phone numbers, URLs, dates, or anything with a shape. A few building blocks cover most jobs: <strong>\d</strong> matches a digit, <strong>\w</strong> a word character, <strong>.</strong> any character, <strong>+</strong> means "one or more", <strong>*</strong> means "zero or more", and <strong>\b</strong> marks a word boundary. Parentheses <strong>(...)</strong> capture groups you can reuse or extract.</p><p>Two habits save hours: test against real examples, including the ones that should <em>not</em> match, and keep patterns as simple as the job allows. A pattern that matches too much is usually worse than one that matches too little. This tester runs entirely in your browser — your patterns and test data never leave your device.</p></div>
-<div class="related"><h2>Related tools</h2><div class="grid"><a class="tool-card" href="./json-formatter.html"><div class="ticon">🧾</div><h3>JSON Formatter</h3><p>Beautify, minify and validate JSON data.</p></a><a class="tool-card" href="./html-encoder.html"><div class="ticon">💻</div><h3>HTML Encoder</h3><p>Encode or decode HTML entities safely.</p></a><a class="tool-card" href="./meta-tag-generator.html"><div class="ticon">🏷️</div><h3>Meta Tag Generator</h3><p>Generate SEO and social meta tags.</p></a></div></div>
+<div class="related"><h2>Related tools</h2><div class="grid"><a class="tool-card" href="./json-formatter.html"><div class="ticon"><svg aria-hidden="true"><use href="../assets/tool-icons.svg#icon-json-formatter"/></svg></div><h3>JSON Formatter</h3><p>Beautify, minify and validate JSON data.</p></a><a class="tool-card" href="./html-encoder.html"><div class="ticon"><svg aria-hidden="true"><use href="../assets/tool-icons.svg#icon-html-encoder"/></svg></div><h3>HTML Encoder</h3><p>Encode or decode HTML entities safely.</p></a><a class="tool-card" href="./meta-tag-generator.html"><div class="ticon"><svg aria-hidden="true"><use href="../assets/tool-icons.svg#icon-meta-tag-generator"/></svg></div><h3>Meta Tag Generator</h3><p>Generate SEO and social meta tags.</p></a></div></div>
 </div>
 </main>
 <footer class="site-footer"><div class="wrap">
 <div class="cols">
-<div><h4>🛡️ Free Privacy Tools</h4><p>63 free online tools. No signup, no tracking — everything runs in your browser.</p></div>
+<div><h4><img class="shield" src="../freetools-icon-192.png" alt="" style="width:22px;height:22px;vertical-align:-4px;margin-right:6px"> Free Privacy Tools</h4><p>63 free online tools. No signup, no tracking — everything runs in your browser.</p></div>
 <div><h4>Popular</h4><a href="./image-compressor.html">Image Compressor</a><a href="./word-counter.html">Word Counter</a><a href="./password-generator.html">Password Generator</a><a href="./pdf-merger.html">PDF Merger</a><a href="./age-calculator.html">Age Calculator</a></div>
 <div><h4>Site</h4><a href="../index.html">Home</a><a href="../index.html#tools">All Tools</a><a href="../about.html">About</a><a href="../faq.html">FAQ</a><a href="../blog.html">Blog</a><a href="../contact.html">Contact</a><a href="../request.html">Request a Tool</a><a href="../privacy.html">Privacy Policy</a><a href="../terms.html">Terms of Service</a><a href="../disclaimer.html">Disclaimer</a></div>
 </div>
-<div class="foot-note">© 2026 Free Privacy Tools — All tools run 100% in your browser.<br>Developed by <a href="https://anwaardigital.com/" target="_blank" rel="noopener" style="color:#fbbf24;font-weight:700">Malik Anwaar</a> ❤️</div>
+<div class="foot-note">© 2026 Free Privacy Tools — All tools run 100% in your browser.<br>Developed by <a href="https://anwaardigital.com/" target="_blank" rel="noopener" style="color:#fbbf24;font-weight:700">Malik Anwaar</a></div>
 </div></footer>
 <script src="../assets/app.js"></script>
 <script src="../assets/tools.js"></script>
 <script src="../assets/features.js"></script>
+<script src="../assets/i18n9.js"></script>
 </body></html>

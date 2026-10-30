@@ -94,18 +94,18 @@
 </head>
 <body>
 <header class="site-header"><div class="wrap">
-<a class="logo" href="../index.html"><span class="shield">🛡️</span> Free Privacy Tools</a>
+<a class="logo" href="../index.html"><img class="shield" src="../freetools-icon-192.png" alt=""> Free Privacy Tools</a>
 <button class="nav-toggle" aria-label="Menu" aria-expanded="false">☰</button><nav class="nav"><a href="../index.html">Home</a><a href="../index.html#tools">All Tools</a><a href="../about.html">About</a><a href="../faq.html">FAQ</a><a href="../blog.html">Blog</a><a href="../contact.html">Contact</a><a href="../privacy.html">Privacy</a></nav>
 </div></header>
 
 <main class="wrap">
 <div class="crumbs"><a href="../index.html">Home</a> / Image Tools / Background Remover</div>
-<div class="tool-hero"><h1>✂️ AI Background Remover</h1><p>Remove any photo background with real AI — works on real photos with colored, busy or outdoor backgrounds. 100% private, runs entirely in your browser. Free, unlimited, no signup.</p></div>
+<div class="tool-hero"><h1><svg class="hero-icon" aria-hidden="true"><use href="../assets/tool-icons.svg#icon-background-remover"/></svg> AI Background Remover</h1><p>Remove any photo background with real AI — works on real photos with colored, busy or outdoor backgrounds. 100% private, runs entirely in your browser. Free, unlimited, no signup.</p></div>
 <div class="ad-slot"><!-- AdSense code goes here --></div>
 <div class="tool-box" id="tool-root" data-tool="background-remover">
   <div id="bgremover-app" style="max-width:640px;margin:0 auto">
     <div id="bg-drop" style="border:2px dashed #94a3b8;border-radius:12px;padding:36px 20px;text-align:center;cursor:pointer;background:#f8fafc">
-      <div style="font-size:40px">🖼️</div>
+      <div><svg aria-hidden="true" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#64748b" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="9" cy="9" r="2"/><path d="M21 15l-5-5L5 21"/></svg></div>
       <p style="margin:8px 0;font-weight:600">Click to choose a photo or drag &amp; drop it here</p>
       <p style="margin:0;font-size:13px;color:#64748b">JPG, PNG or WebP — processed 100% in your browser</p>
       <input type="file" id="bg-file" accept="image/jpeg,image/png,image/webp" style="display:none">
@@ -120,7 +120,7 @@
         <div><p style="font-size:13px;color:#64748b;margin:0 0 6px">Original</p><img id="bg-original" alt="Original photo" style="max-width:220px;max-height:220px;border-radius:8px;border:1px solid #e2e8f0"></div>
         <div><p style="font-size:13px;color:#64748b;margin:0 0 6px">Background removed</p><img id="bg-output" alt="Background removed" style="max-width:220px;max-height:220px;border-radius:8px;border:1px solid #e2e8f0;background:repeating-conic-gradient(#e5e7eb 0 25%,#fff 0 50%) 0 0/20px 20px"></div>
       </div>
-      <button id="bg-download" style="background:#0ea5e9;color:#fff;border:0;border-radius:20px;padding:10px 32px;font-weight:700;cursor:pointer;font-size:15px">⬇️ Download PNG (transparent)</button>
+      <button id="bg-download" style="background:#0ea5e9;color:#fff;border:0;border-radius:20px;padding:10px 32px;font-weight:700;cursor:pointer;font-size:15px">Download PNG (transparent)</button>
       <button id="bg-again" style="background:transparent;color:#0ea5e9;border:1px solid #0ea5e9;border-radius:20px;padding:10px 24px;cursor:pointer;font-size:15px;margin-left:8px">Try another photo</button>
     </div>
   </div>
@@ -139,7 +139,7 @@
 <h3>Common mistakes</h3>
 <p>Don't expect miracles on very low-resolution images — if the photo is 200 pixels wide, the AI can't invent detail. Don't re-compress the PNG output as JPG (JPG has no transparency — the background comes back as white). And remember the first run downloads the model, so give it a minute on a slow connection; subsequent runs are much faster.</p>
 </div>
-<div class="related"><h2>Related tools</h2><div class="grid"><a class="tool-card" href="./image-compressor.html"><div class="ticon">🗜️</div><h3>Image Compressor</h3><p>Reduce image file size with adjustable quality.</p></a><a class="tool-card" href="./image-resizer.html"><div class="ticon">📐</div><h3>Image Resizer</h3><p>Resize images to exact dimensions.</p></a><a class="tool-card" href="./images-to-pdf.html"><div class="ticon">📄</div><h3>Images to PDF</h3><p>Combine multiple images into one PDF.</p></a></div></div>
+<div class="related"><h2>Related tools</h2><div class="grid"><a class="tool-card" href="./image-compressor.html"><div class="ticon"><svg aria-hidden="true"><use href="../assets/tool-icons.svg#icon-image-compressor"/></svg></div><h3>Image Compressor</h3><p>Reduce image file size with adjustable quality.</p></a><a class="tool-card" href="./image-resizer.html"><div class="ticon"><svg aria-hidden="true"><use href="../assets/tool-icons.svg#icon-image-resizer"/></svg></div><h3>Image Resizer</h3><p>Resize images to exact dimensions.</p></a><a class="tool-card" href="./images-to-pdf.html"><div class="ticon"><svg aria-hidden="true"><use href="../assets/tool-icons.svg#icon-images-to-pdf"/></svg></div><h3>Images to PDF</h3><p>Combine multiple images into one PDF.</p></a></div></div>
 </main>
 <footer class="site-footer"><div class="wrap"><p>© 2026 Anwaar Digital — Free Privacy Tools. All tools run 100% in your browser.</p><p><a href="../privacy.html">Privacy Policy</a> · <a href="../about.html">About</a> · <a href="../contact.html">Contact</a></p></div></footer>
 <script type="module">
@@ -169,11 +169,11 @@ document.getElementById('bg-download').addEventListener('click', () => {
   setTimeout(() => URL.revokeObjectURL(a.href), 5000);
 });
 async function handleFile(file) {
-  if (!file.type.match(/^image\/(jpeg|png|webp)$/)) { statusEl.textContent = '⚠️ Please choose a JPG, PNG or WebP image.'; return; }
+  if (!file.type.match(/^image\/(jpeg|png|webp)$/)) { statusEl.textContent = 'Please choose a JPG, PNG or WebP image.'; return; }
   drop.style.display = 'none'; resultEl.style.display = 'none';
   progressEl.style.display = 'block'; barEl.style.width = '5%';
   progressText.textContent = 'Loading AI model (first time only, ~40MB)…';
-  statusEl.textContent = '⏳ Processing… please wait.';
+  statusEl.textContent = 'Processing… please wait.';
   origImg.src = URL.createObjectURL(file);
   try {
     const config = {
@@ -193,7 +193,7 @@ async function handleFile(file) {
     barEl.style.width = '100%';
     outImg.src = URL.createObjectURL(resultBlob);
     progressEl.style.display = 'none';
-    statusEl.textContent = '✅ Done! Background removed.';
+    statusEl.textContent = 'Done! Background removed.';
     resultEl.style.display = 'block';
   } catch (err) {
     progressEl.style.display = 'none';
@@ -201,11 +201,12 @@ async function handleFile(file) {
     if (msg.indexOf('fetch') >= 0 || msg.indexOf('Failed to fetch') >= 0) {
       msg = 'Could not download the AI model. Check your internet connection and try again. (The ~40MB model downloads once, then works offline.)';
     }
-    statusEl.textContent = '❌ ' + msg;
+    statusEl.textContent = 'Error: ' + msg;
     drop.style.display = 'block';
   }
 }
 </script>
 <script src="../assets/app.js"></script>
+<script src="../assets/i18n9.js"></script>
 </body>
 </html>

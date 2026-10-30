@@ -1004,13 +1004,13 @@ reg('random-number', function (root) {
 
 reg('coin-flip', function (root) {
   var out = resultBox(true); out.style.fontSize = '64px'; out.style.textAlign = 'center';
-  var coin = h('div', null, '🪙'); out.appendChild(coin);
+  var coin = h('div', null, '?'); coin.style.cssText = 'font-size:48px;font-weight:800;text-align:center';; out.appendChild(coin);
   var hist = h('p', { style: 'text-align:center;color:#64748b' });
   var hh = 0, tt = 0;
   root.appendChild(h('div', { style: 'text-align:center' }, btn('Flip Coin', '', function () {
     var heads = Math.random() < .5;
     if (heads) hh++; else tt++;
-    coin.textContent = heads ? '👑' : '🔄';
+    coin.textContent = heads ? 'Heads' : 'Tails';
     coin.style.transform = 'rotateY(720deg)'; coin.style.transition = 'transform .6s';
     setTimeout(function () { coin.style.transform = ''; }, 650);
     out.querySelector('div:last-child, .lbl') || null;
@@ -1023,10 +1023,10 @@ reg('dice-roller', function (root) {
   var n = numInput(1, 1, 10, 1), sides = numInput(6, 2, 100, 1);
   root.appendChild(h('div', { class: 'row' }, field('Dice', n), field('Sides', sides)));
   var out = resultBox(true); out.style.fontSize = '48px'; out.style.textAlign = 'center';
-  root.appendChild(h('div', { style: 'text-align:center' }, btn('🎲 Roll', '', function () {
+  root.appendChild(h('div', { style: 'text-align:center' }, btn('Roll', '', function () {
     var r = [];
     for (var i = 0; i < +n.value; i++) r.push(randInt(1, +sides.value));
-    out.textContent = '🎲 ' + r.join('  •  ') + '   = ' + r.reduce(function (a, b) { return a + b; }, 0);
+    out.textContent = r.join('  •  ') + '   = ' + r.reduce(function (a, b) { return a + b; }, 0);
   })));
   root.appendChild(out);
 });
@@ -1380,7 +1380,7 @@ reg('security-headers-checker', function (root) {
       Object.keys(found).forEach(function (k) { if (k.toLowerCase() === key) { val = found[k]; rawKey = k; } });
       var ok = val !== null; if (ok) present++;
       var row = h('div', { style: 'padding:10px;border:1px solid ' + (ok ? '#bbf7d0' : '#fecaca') + ';border-radius:8px;margin-bottom:8px;background:' + (ok ? '#f0fdf4' : '#fef2f2') + ';' });
-      row.appendChild(h('div', { style: 'font-weight:bold;' }, (ok ? '✅ ' : '❌ ') + hd[1]));
+      row.appendChild(h('div', { style: 'font-weight:bold;' }, (ok ? 'Pass: ' : 'Fail: ') + hd[1]));
       row.appendChild(h('div', { style: 'font-size:13px;color:#475569;margin-top:4px;' }, hd[2]));
       if (ok) row.appendChild(h('code', { style: 'font-size:12px;word-break:break-all;display:block;margin-top:6px;color:#166534;' }, rawKey + ': ' + String(val).slice(0, 220)));
       out.appendChild(row);
@@ -1466,7 +1466,7 @@ reg('phishing-url-checker', function (root) {
     out.appendChild(head);
     r.findings.forEach(function (f) {
       var row = h('div', { style: 'padding:8px 10px;border-bottom:1px solid #e2e8f0;font-size:14px;' });
-      row.appendChild(h('span', { style: 'font-weight:bold;color:' + (f.ok ? '#16a34a' : '#dc2626') + ';' }, f.ok ? '✅ ' : '⚠️ '));
+      row.appendChild(h('span', { style: 'font-weight:bold;color:' + (f.ok ? '#16a34a' : '#dc2626') + ';' }, f.ok ? 'Pass: ' : 'Warning: '));
       row.appendChild(document.createTextNode(f.text + (f.pts ? ' (+' + f.pts + ' risk)' : '')));
       out.appendChild(row);
     });

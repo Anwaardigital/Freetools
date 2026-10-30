@@ -991,13 +991,13 @@ reg('random-number', function (root) {
 
 reg('coin-flip', function (root) {
   var out = resultBox(true); out.style.fontSize = '64px'; out.style.textAlign = 'center';
-  var coin = h('div', null, '🪙'); out.appendChild(coin);
+  var coin = h('div', null, '?'); coin.style.cssText = 'font-size:48px;font-weight:800;text-align:center';; out.appendChild(coin);
   var hist = h('p', { style: 'text-align:center;color:#64748b' });
   var hh = 0, tt = 0;
   root.appendChild(h('div', { style: 'text-align:center' }, btn('Flip Coin', '', function () {
     var heads = Math.random() < .5;
     if (heads) hh++; else tt++;
-    coin.textContent = heads ? '👑' : '🔄';
+    coin.textContent = heads ? 'Heads' : 'Tails';
     coin.style.transform = 'rotateY(720deg)'; coin.style.transition = 'transform .6s';
     setTimeout(function () { coin.style.transform = ''; }, 650);
     out.querySelector('div:last-child, .lbl') || null;
@@ -1010,10 +1010,10 @@ reg('dice-roller', function (root) {
   var n = numInput(1, 1, 10, 1), sides = numInput(6, 2, 100, 1);
   root.appendChild(h('div', { class: 'row' }, field('Dice', n), field('Sides', sides)));
   var out = resultBox(true); out.style.fontSize = '48px'; out.style.textAlign = 'center';
-  root.appendChild(h('div', { style: 'text-align:center' }, btn('🎲 Roll', '', function () {
+  root.appendChild(h('div', { style: 'text-align:center' }, btn('Roll', '', function () {
     var r = [];
     for (var i = 0; i < +n.value; i++) r.push(randInt(1, +sides.value));
-    out.textContent = '🎲 ' + r.join('  •  ') + '   = ' + r.reduce(function (a, b) { return a + b; }, 0);
+    out.textContent = r.join('  •  ') + '   = ' + r.reduce(function (a, b) { return a + b; }, 0);
   })));
   root.appendChild(out);
 });

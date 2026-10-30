@@ -13,17 +13,19 @@ function onReady(fn) { if (document.readyState !== 'loading') fn(); else documen
 /* ---------- 1. DARK MODE ---------- */
 onReady(function () {
   if (lsGet('fpt_dark', false)) document.body.classList.add('dark');
-  var b = el('button', 'dark-toggle', '🌙');
+  var b = el('button', 'dark-toggle', 'Dark');
   b.id = 'darkToggle';
   b.title = 'Toggle dark mode';
   b.setAttribute('aria-label', 'Toggle dark mode');
   b.addEventListener('click', function () {
     var dark = document.body.classList.toggle('dark');
     lsSet('fpt_dark', dark);
-    b.textContent = dark ? '☀️' : '🌙';
+    if (window.FPT_I18N9) window.FPT_I18N9.apply();
+    else b.textContent = dark ? 'Light' : 'Dark';
   });
-  if (document.body.classList.contains('dark')) b.textContent = '☀️';
-  document.body.appendChild(b);
+  if (document.body.classList.contains('dark')) b.textContent = 'Light';
+  var hdr = document.querySelector('.site-header .wrap');
+  if (hdr) hdr.appendChild(b); else document.body.appendChild(b);
 });
 
 /* ---------- favorites store ---------- */
@@ -102,13 +104,13 @@ onReady(function () {
   var shareWrap = el('span', 'action-item share-row');
   var pageUrl = location.href, pageTitle = document.title;
   var links = [
-    ['WhatsApp', 'https://wa.me/?text=' + encodeURIComponent(pageTitle + ' ' + pageUrl), '📱'],
-    ['X', 'https://twitter.com/intent/tweet?text=' + encodeURIComponent(pageTitle) + '&url=' + encodeURIComponent(pageUrl), '𝕏'],
-    ['Facebook', 'https://www.facebook.com/sharer/sharer.php?u=' + encodeURIComponent(pageUrl), '📘']
+    ['WhatsApp', 'https://wa.me/?text=' + encodeURIComponent(pageTitle + ' ' + pageUrl), 'WhatsApp'],
+    ['X', 'https://twitter.com/intent/tweet?text=' + encodeURIComponent(pageTitle) + '&url=' + encodeURIComponent(pageUrl), 'X'],
+    ['Facebook', 'https://www.facebook.com/sharer/sharer.php?u=' + encodeURIComponent(pageUrl), 'Facebook']
   ];
   links.forEach(function (l) {
     var a = el('a', 'share-btn', l[2]);
-    a.href = l[0]; a.target = '_blank'; a.rel = 'noopener'; a.title = 'Share on ' + l[0];
+    a.href = l[1]; a.target = '_blank'; a.rel = 'noopener'; a.title = 'Share on ' + l[0];
     a.setAttribute('aria-label', 'Share on ' + l[0]);
     shareWrap.appendChild(a);
   });
@@ -159,7 +161,7 @@ onReady(function () {
   var badge = document.getElementById('useBadge');
   if (badge) {
     var n = lsGet('fpt_usage', 0);
-    badge.textContent = '🔥 ' + n + ' tool uses on this device';
+    badge.textContent = n + ' tool uses on this device';
   }
 
   /* favorite stars on cards */
