@@ -1,0 +1,862 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<link rel="icon" type="image/png" sizes="192x192" href="https://anwaardigital.com/Freetools/freetools-icon-192.png">
+<link rel="icon" type="image/png" sizes="512x512" href="https://anwaardigital.com/Freetools/freetools-icon-512.png">
+<link rel="apple-touch-icon" href="https://anwaardigital.com/Freetools/freetools-icon-192.png">
+
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>IP Sorgulama | Ücretsiz Gizlilik Araçları</title>
+<meta name="description" content="Herhangi bir IP adresini veya alan adını sorgulayarak şehrini, ülkesini, sağlayıcısını ve saat dilimini görün. Ücretsiz.">>
+<meta property="og:type" content="website">
+<meta property="og:title" content="IP Sorgulama | Ücretsiz Gizlilik Araçları">
+<meta property="og:description" content="Herhangi bir IP adresini veya alan adını sorgulayarak şehrini, ülkesini, sağlayıcısını ve saat dilimini görün. Ücretsiz.">
+<meta property="og:url" content="https://anwaardigital.com/Freetools/tr/tools/ip-lookup.html">
+<meta property="og:image" content="https://anwaardigital.com/anwaar-icon-512.png">
+<meta name="twitter:card" content="summary">
+<link rel="canonical" href="https://anwaardigital.com/Freetools/tr/tools/ip-lookup.html">
+<link rel="alternate" hreflang="tr" href="https://anwaardigital.com/Freetools/tr/tools/ip-lookup.html">
+<link rel="alternate" hreflang="ar" href="https://anwaardigital.com/Freetools/ar/tools/ip-lookup.html">
+<link rel="alternate" hreflang="hi" href="https://anwaardigital.com/Freetools/hi/tools/ip-lookup.html">
+<link rel="alternate" hreflang="ur" href="https://anwaardigital.com/Freetools/ur/tools/ip-lookup.html">
+<link rel="alternate" hreflang="en" href="https://anwaardigital.com/Freetools/tools/ip-lookup.html">
+<link rel="alternate" hreflang="x-default" href="https://anwaardigital.com/Freetools/tools/ip-lookup.html">
+<link rel="stylesheet" href="../../assets/style.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebApplication",
+      "name": "IP Sorgulama",
+      "url": "https://anwaardigital.com/Freetools/tr/tools/ip-lookup.html",
+      "description": "Herhangi bir IP adresini veya alan adını sorgulayarak şehrini, ülkesini, sağlayıcısını ve saat dilimini görün. Ücretsiz.",
+      "inLanguage": "tr",
+      "applicationCategory": "SecurityApplication",
+      "operatingSystem": "Any",
+      "isAccessibleForFree": true,
+      "browserRequirements": "Requires JavaScript",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      }
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Bu gerçekten ücretsiz mi?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Evet — bu sitedeki her araç %100 ücretsizdir; limitsiz, kayıtsız ve filigransızdır."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Konum doğru mu?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Hayır. IP coğrafi konumu, internet sağlayıcınızın sunucusunun yaklaşık konumunu gösterir — genellikle şehre kadar ve bazen yalnızca bölgeye kadar doğrudur."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Gösterilen konum ne kadar doğru?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Ülke düzeyinde veri çok doğrudur (%99+). Şehir düzeyinde doğruluk değişir — genellikle kentsel alanlarda 25–50 kilometre içinde doğrudur ama GPS konumunuz yerine kayıtlı internet sağlayıcının konumunu gösterir. Mobil ve VPN bağlantıları sık sık uzak bir şehrin coğrafi konumunu gösterir."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Neden yerimden farklı bir şehir gösteriyor?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "IP coğrafi konumu, gerçek konumunuz yerine internet sağlayıcınızın trafiğinizi yönlendirdiği yeri yansıtır. VPN'ler, kurumsal ağlar ve mobil şirketler genellikle diğer şehirlerdeki merkezlerden çıkar. Bu normaldir ve arıza anlamına gelmez."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "IPv4 ile IPv6 arasındaki fark nedir?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "IPv4 adresleri 192.0.2.1 gibi görünür (dört sayı grubu) — bu, artık büyük ölçüde tükenmiş klasik formattır. IPv6 adresleri 2001:db8::1 gibi görünür (sekiz hex grubu) — bu, çok daha fazla adrese sahip modern alternatiftir. Araç her iki formatı da işler."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Biri IP'mden tam adresimi öğrenebilir mi?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Hayır. IP coğrafi konumu sokak adresi veya tam konum gösteremez — yalnızca internet sağlayıcı kayıtlarına dayalı yaklaşık bölge. Tam adresiniz IP adresinizde kodlanmaz, ve bu araç yalnızca genel coğrafi konum veritabanlarında olanı gösterir."
+          }
+        }
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<header class="site-header"><div class="wrap">
+<a class="logo" href="../index.html"><img class="shield" src="../../freetools-icon-192.png" alt=""> Ücretsiz Gizlilik Araçları</a>
+<button class="nav-toggle" aria-label="Menü" aria-expanded="false">☰</button><nav class="nav"><a href="../index.html">Ana Sayfa</a><a href="../index.html#tools">Tüm Araçlar</a><a href="../about.html">Hakkımızda</a><a href="../faq.html">Sık Sorulan Sorular</a><a href="../blog.html">Blog</a><a href="../contact.html">İletişim</a><a href="../privacy.html">Gizlilik</a></nav>
+</div></header>
+
+<main class="wrap">
+<div class="crumbs"><a href="../index.html">Ana Sayfa</a> / Güvenlik Araçları / IP Sorgulama</div>
+<div class="tool-hero"><h1><svg class="hero-icon" aria-hidden="true"><use href="../../assets/tool-icons.svg#icon-ip-lookup"/></svg> IP Sorgulama</h1><p>Herhangi bir IP adresini veya alan adını sorgulayarak şehrini, ülkesini, sağlayıcısını ve saat dilimini görün. Ücretsiz.</p></div>
+<div class="ad-slot"><!-- AdSense code goes here --></div>
+<div class="tool-box" id="tool-root" data-tool="ip-lookup"></div>
+<div class="howto"><h2>Nasıl Kullanılır</h2><ol><li>Sayfa yüklendiğinde genel IP adresiniz otomatik keşfedilir ve sorgulanır.</li><li>Farklı bir adresi denetlemek için giriş kutusuna herhangi bir IPv4 veya IPv6 adresi yazın veya yapıştırın.</li><li>Bu adresin coğrafi konumunu ve ağ ayrıntılarını getirmek için Ara düğmesine tıklayın.</li><li>Sonuçları inceleyin: ülke, şehir, internet sağlayıcı, saat dilimi ve ağ bilgileri aşağıda gösterilir.</li></ol></div>
+<div class="faq"><h2>Sık Sorulan Sorular</h2><details><summary>Bu gerçekten ücretsiz mi?</summary><p>Evet — bu sitedeki her araç %100 ücretsizdir; limitsiz, kayıtsız ve filigransızdır.</p></details><details><summary>Konum doğru mu?</summary><p>Hayır. IP coğrafi konumu, internet sağlayıcınızın sunucusunun yaklaşık konumunu gösterir — genellikle şehre kadar ve bazen yalnızca bölgeye kadar doğrudur.</p></details><details><summary>Gösterilen konum ne kadar doğru?</summary><p>Ülke düzeyinde veri çok doğrudur (%99+). Şehir düzeyinde doğruluk değişir — genellikle kentsel alanlarda 25–50 kilometre içinde doğrudur ama GPS konumunuz yerine kayıtlı internet sağlayıcının konumunu gösterir. Mobil ve VPN bağlantıları sık sık uzak bir şehrin coğrafi konumunu gösterir.</p></details><details><summary>Neden yerimden farklı bir şehir gösteriyor?</summary><p>IP coğrafi konumu, gerçek konumunuz yerine internet sağlayıcınızın trafiğinizi yönlendirdiği yeri yansıtır. VPN'ler, kurumsal ağlar ve mobil şirketler genellikle diğer şehirlerdeki merkezlerden çıkar. Bu normaldir ve arıza anlamına gelmez.</p></details><details><summary>IPv4 ile IPv6 arasındaki fark nedir?</summary><p>IPv4 adresleri 192.0.2.1 gibi görünür (dört sayı grubu) — bu, artık büyük ölçüde tükenmiş klasik formattır. IPv6 adresleri 2001:db8::1 gibi görünür (sekiz hex grubu) — bu, çok daha fazla adrese sahip modern alternatiftir. Araç her iki formatı da işler.</p></details><details><summary>Biri IP'mden tam adresimi öğrenebilir mi?</summary><p>Hayır. IP coğrafi konumu sokak adresi veya tam konum gösteremez — yalnızca internet sağlayıcı kayıtlarına dayalı yaklaşık bölge. Tam adresiniz IP adresinizde kodlanmaz, ve bu araç yalnızca genel coğrafi konum veritabanlarında olanı gösterir.</p></details></div><div class="tool-guide"><h2>IP Sorgulama — eksiksiz rehber</h2><p>İnternetteki her cihazın bir IP adresi vardır — bu, verinin size ulaşmasını sağlayan dönüş adresidir. IP Sorgulama aracı, genel internetin herhangi bir adres hakkında ne bildiğini gösterir: yaklaşık konumu, internet sağlayıcısı, saat dilimi ve ağ ayrıntıları. Bu sitenin çoğu aracının aksine, sorguların genel bir coğrafi konum API'sine sorduğunu unutmayın; çünkü bu veri yerel olarak hesaplanamaz.</p><h3>Nasıl çalışır</h3><p>Arama çalıştırıldığında araç IP adresini coğrafi konum veritabanı hizmetine gönderir; bu da onu adres bloklarının dünya çapında internet sağlayıcılarına ve bölgelere nasıl tahsis edildiği kaydıyla eşleştirir. Veritabanı ülke, bölge, şehir, enlem/boylam, internet sağlayıcı adı, saat dilimi ve bağlantı türü döndürür. IP'niz, tüm sitelerin genel adresinizi görmek için kullandığı aynı tür hizmetle otomatik keşfedilir.</p><h3>Sonuçlarınızı anlama</h3><ul><li><strong>IP adresi:</strong> İnternetin gördüğü gibi genel adresiniz. (Ve ev ağınızın 192.168.x.x gibi özel adresleri genel olarak görünmez.)</li><li><strong>Konum:</strong> Bu adres bloğu için kayıtlı internet sağlayıcının konumu — yaklaşık, GPS hassas değil.</li><li><strong>İnternet sağlayıcı / kuruluş:</strong> Bağlantıyı sağlayan şirket — bir adresin barındırma sağlayıcısına, VPN hizmetine veya konut internet sağlayıcısına ait olup olmadığını belirlemede yararlıdır.</li><li><strong>Saat dilimi:</strong> Konumdan türetilmiştir; bölgelerde zamanlama için yararlıdır.</li><li><strong>ASN:</strong> Ağ operatörünü tanımlayan otonom sistem numarası — ağ mühendislerinin kullandığı aynı tanımlayıcı.</li></ul><h3>Yaygın kullanımlar</h3><p><strong>VPN'inizi denetleyin:</strong> VPN'in çalıştığını, aramanın konumunuz yerine VPN sunucusunun konumunu gösterdiğini doğrulayarak emin olun. <strong>Coğrafi sorunları düzeltin:</strong> Bir site yanlış ülke veya para birimi gösterirse IP Sorgulama, sitenin sizi sandığı konumu gösterir. <strong>E-posta başlıklarını analiz edin:</strong> İddia edilen kaynağın gerçekle uyuşup uyuşmadığını görmek için şüpheli mesajlardan gönderenlerin IP'lerini sorgulayın. <strong>Geliştiriciler:</strong> Farklı bölgelerin adreslerini denetleyerek coğrafi konum özelliklerini test edin.</p><h3>Gizlilik notu</h3><p>Siteler her ziyarette IP'nizi kaydeder — ve bu arama aynı şekilde tersine çalışır. Bir sitenin çok fazla gösterdiğini düşünüyorsanız güvenilir bir VPN gerçek adresinizi gizler. Ve şunu da not edin: bu araç harici bir API'ye sorduğundan aradığınız IP o coğrafi konum hizmetine gönderilir (herhangi bir IP sorgulama aracı için normaldir). Geri kalan verileriniz ve dosyalarınız asla tarayıcınızdan çıkmaz.</p></div><div class="related"><h2>İlgili Araçlar</h2><div class="grid"><a class="tool-card" href="./security-headers-checker.html"><div class="ticon"><svg aria-hidden="true"><use href="../../assets/tool-icons.svg#icon-security-headers-checker"/></svg></div><h3>Güvenlik Başlığı Denetleyici</h3><p>Basit dil açıklamalarıyla herhangi bir sitenin HTTP güvenlik başlıklarını denetleyin. Ücretsiz.</p></a><a class="tool-card" href="./phishing-url-checker.html"><div class="ticon"><svg aria-hidden="true"><use href="../../assets/tool-icons.svg#icon-phishing-url-checker"/></svg></div><h3>Kimlik Avı Bağlantı Denetleyici</h3><p>Tıklamadan önce herhangi bir şüpheli bağlantının kimlik avı risk analizini yapın. Yalnızca ilk denetim. Ücretsiz.</p></a><a class="tool-card" href="./password-strength-checker.html"><div class="ticon"><svg aria-hidden="true"><use href="../../assets/tool-icons.svg#icon-password-strength-checker"/></svg></div><h3>Şifre Güç Denetleyici</h3><p>Kırma süresi tahminleri ve iyileştirme ipuçlarıyla şifrenizi hemen test edin. Gizli.</p></a></div></div>
+</div>
+<div class="related-guides"><h2>İlgili Rehberler</h2><div class="grid"><a class="tool-card" href="../blog/how-to-ip-lookup-online.html"><h3>Çevrimiçi ücretsiz IP adresi sorgulama yöntemi (2026 rehberi) | Ücretsiz Gizlilik Araçları</h3><p>Ücretsiz IP sorgulama aracıyla herhangi bir IP veya alan adının yaklaşık konumunu, sağlayıcısını ve saat dilimini öğrenin. Dürüst doğruluk notuyla adım adım 2026 rehberi.</p></a><a class="tool-card" href="../blog/how-to-security-headers-checker-online.html"><h3>Çevrimiçi ücretsiz web sitesi güvenlik başlığı denetleme yöntemi (2026 rehberi) | Ücretsiz Gizlilik Araçları</h3><p>Ücretsiz denetleyiciyle herhangi bir sitenin HTTP güvenlik başlıklarını — HSTS, CSP, X-Frame-Options vb. — inceleyin. Sahipler ve meraklılar için adım adım 2026 rehberi.</p></a><a class="tool-card" href="../blog/how-to-phishing-url-checker-online.html"><h3>Çevrimiçi ücretsiz kimlik avı riski için bağlantı denetleme yöntemi (2026 rehberi) | Ücretsiz Gizlilik Araçları</h3><p>Ücretsiz kimlik avı bağlantı denetleyiciyle şüpheli bağlantıları denetleyin. Adım adım 2026 rehberi: sezgisel denetimler, risk sonucunu okuma ve bağlantı tehlikeli göründüğünde ne yapmalı.</p></a></div></div>
+</main>
+<footer class="site-footer"><div class="wrap">
+<div class="cols">
+<div><h4><img class="shield" src="../../freetools-icon-192.png" alt="" style="width:22px;height:22px;vertical-align:-4px;margin-right:6px"> Ücretsiz Gizlilik Araçları</h4><p>63 ücretsiz çevrimiçi araç. Kayıt olmadan — her şey tarayıcınızda çalışır.</p></div>
+<div><h4>Popüler</h4><a href="./image-compressor.html">Görsel Sıkıştırıcı</a><a href="./word-counter.html">Kelime Sayacı</a><a href="./password-generator.html">Şifre Oluşturucu</a><a href="./pdf-merger.html">PDF Birleştirici</a><a href="./age-calculator.html">Yaş Hesaplayıcı</a></div>
+<div><h4>Site</h4><a href="../index.html">Ana Sayfa</a><a href="../index.html#tools">Tüm Araçlar</a><a href="../about.html">Hakkımızda</a><a href="../faq.html">Sık Sorulan Sorular</a><a href="../blog.html">Blog</a><a href="../contact.html">İletişim</a><a href="../request.html">Araç Talebi</a><a href="../privacy.html">Gizlilik</a><a href="../terms.html">Kullanım Şartları</a><a href="../disclaimer.html">Sorumluluk Reddi</a></div>
+</div>
+<div class="foot-note">© 2026 Ücretsiz Gizlilik Araçları — Tüm araçlar %100 tarayıcınızda çalışır.<br>Hazırlayan: <a href="https://anwaardigital.com/" target="_blank" rel="noopener" style="color:#fbbf24;font-weight:700">Malik Anwaar</a></div>
+</div></footer>
+<script src="../../assets/app.js"></script>
+<script src="../../assets/tools.js"></script>
+<script src="../../assets/features.js"></script>
+
+<script>
+/* TR pages: Turkish language menu (Türkçe current + English/Arabic/Hindi/Urdu links), dark-mode
+   label, tool action labels, useBadge, cookie banner. muft63.js and i18n9.js
+   are NOT loaded on TR pages, so the featured carousel is built here too
+   (same logic as the site's own muft63.js carousel). */
+(function () {
+  'use strict';
+  var TR = {
+    darkLabel: 'Koyu Mod', lightLabel: 'Açık Mod', darkTitle: 'Koyu modu değiştir',
+    waChat: 'WhatsApp ile sohbet edin', favAction: 'Favori', rateAction: 'Bu araca puan ver',
+    shareAction: 'Paylaş', shareOn: '{name} üzerinden paylaş', rateYour: 'Puanınız: {n}/5',
+    useBadge: 'Bu cihazda {n} araç kullanımı', openBtn: 'Aç', allCat: 'Tümü'
+  };
+  function lsGet(k, d) { try { var v = localStorage.getItem(k); return v === null ? d : JSON.parse(v); } catch (e) { return d; } }
+  function onReady(fn) { if (document.readyState !== 'loading') fn(); else document.addEventListener('DOMContentLoaded', fn); }
+  function enCounterpart() {
+    var p = window.location.pathname;
+    var m = p.match(/^(.*\/Freetools\/)tr\/((tools\/)?[^\/]+\.html)$/);
+    if (m) return m[1] + m[2];
+    if (p.indexOf('/tr/tools/') !== -1) return '../../tools/' + p.split('/tr/tools/')[1];
+    return '../index.html';
+  }
+  function arCounterpart() {
+    var p = window.location.pathname;
+    var m = p.match(/^(.*\/Freetools\/)tr\/((tools\/)?[^\/]+\.html)$/);
+    if (m) return m[1] + 'ar/' + m[2];
+    if (p.indexOf('/tr/tools/') !== -1) return '../../ar/tools/' + p.split('/tr/tools/')[1];
+    return '../../ar/index.html';
+  }
+  function hiCounterpart() {
+    var p = window.location.pathname;
+    var m = p.match(/^(.*\/Freetools\/)tr\/((tools\/)?[^\/]+\.html)$/);
+    if (m) return m[1] + 'hi/' + m[2];
+    if (p.indexOf('/tr/tools/') !== -1) return '../../hi/tools/' + p.split('/tr/tools/')[1];
+    return '../../hi/index.html';
+  }
+  function urCounterpart() {
+    var p = window.location.pathname;
+    var m = p.match(/^(.*\/Freetools\/)tr\/((tools\/)?[^\/]+\.html)$/);
+    if (m) return m[1] + 'ur/' + m[2];
+    if (p.indexOf('/tr/tools/') !== -1) return '../../ur/tools/' + p.split('/tr/tools/')[1];
+    return '../../ur/index.html';
+  }
+  function injectStyles() {
+    if (document.getElementById('lang9StyleTr')) return;
+    var st = document.createElement('style'); st.id = 'lang9StyleTr';
+    st.textContent = '.lang9-wrap{position:relative;display:inline-flex;align-items:center}' +
+      '.lang9-btn{cursor:pointer;border:1px solid var(--border,#dbe2ea);background:var(--card,#fff);color:var(--ink,#0f172a);border-radius:999px;padding:7px 14px;font-size:14px;font-weight:700;line-height:1}' +
+      '.lang9-menu{position:absolute;top:calc(100% + 6px);inset-inline-end:0;min-width:170px;margin:0;padding:6px 0;list-style:none;background:var(--card,#fff);border:1px solid var(--border,#dbe2ea);border-radius:12px;box-shadow:0 8px 24px rgba(0,0,0,.15);z-index:100;display:none}' +
+      '.lang9-menu.open{display:block}' +
+      '.lang9-menu button{display:block;width:100%;text-align:start;background:none;border:0;cursor:pointer;padding:9px 14px;font-size:14px;color:var(--ink,#0f172a)}' +
+      '.lang9-menu button:hover{background:var(--bg,#f1f5f9)}' +
+      '.lang9-menu button.on{font-weight:800}' +
+      '.lang9-menu a{display:block;text-decoration:none;padding:9px 14px;font-size:14px;color:var(--ink,#0f172a)}' +
+      '.lang9-menu a:hover{background:var(--bg,#f1f5f9)}';
+    document.head.appendChild(st);
+  }
+  function buildSwitcher() {
+    if (document.getElementById('lang9Wrap')) return;
+    var headerWrap = document.querySelector('.site-header .wrap');
+    if (!headerWrap) return;
+    injectStyles();
+    var wrap = document.createElement('span');
+    wrap.className = 'lang9-wrap'; wrap.id = 'lang9Wrap';
+    var btn = document.createElement('button');
+    btn.type = 'button'; btn.id = 'langBtn9'; btn.className = 'lang9-btn';
+    btn.setAttribute('aria-haspopup', 'listbox'); btn.setAttribute('aria-expanded', 'false');
+    btn.setAttribute('aria-label', 'Dil'); btn.textContent = 'Türkçe';
+    var menu = document.createElement('ul');
+    menu.className = 'lang9-menu'; menu.id = 'langMenu9'; menu.setAttribute('role', 'listbox');
+    var li1 = document.createElement('li');
+    var cur = document.createElement('button');
+    cur.type = 'button'; cur.className = 'on'; cur.textContent = 'Türkçe';
+    cur.setAttribute('role', 'option');
+    cur.addEventListener('click', function () { menu.classList.remove('open'); btn.setAttribute('aria-expanded', 'false'); });
+    li1.appendChild(cur); menu.appendChild(li1);
+    var li2 = document.createElement('li');
+    var a = document.createElement('a');
+    a.href = enCounterpart(); a.textContent = 'English'; a.setAttribute('role', 'option');
+    li2.appendChild(a); menu.appendChild(li2);
+    var li3 = document.createElement('li');
+    var b = document.createElement('a');
+    b.href = arCounterpart(); b.textContent = 'Arabic'; b.setAttribute('role', 'option');
+    li3.appendChild(b); menu.appendChild(li3);
+    var li4 = document.createElement('li');
+    var c = document.createElement('a');
+    c.href = hiCounterpart(); c.textContent = 'Hindi'; c.setAttribute('role', 'option');
+    li4.appendChild(c); menu.appendChild(li4);
+    var li5 = document.createElement('li');
+    var d = document.createElement('a');
+    d.href = urCounterpart(); d.textContent = 'Urdu'; d.setAttribute('role', 'option');
+    li5.appendChild(d); menu.appendChild(li5);
+    btn.addEventListener('click', function (e) {
+      e.stopPropagation();
+      var open = menu.classList.toggle('open');
+      btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+    });
+    document.addEventListener('click', function (e) {
+      if (!wrap.contains(e.target)) { menu.classList.remove('open'); btn.setAttribute('aria-expanded', 'false'); }
+    });
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape') { menu.classList.remove('open'); btn.setAttribute('aria-expanded', 'false'); }
+    });
+    wrap.appendChild(btn); wrap.appendChild(menu);
+    var navToggle = headerWrap.querySelector('.nav-toggle');
+    if (navToggle) headerWrap.insertBefore(wrap, navToggle);
+    else headerWrap.appendChild(wrap);
+  }
+  var FEATURED = ['background-remover', 'qr-generator', 'image-compressor', 'password-generator',
+    'pdf-merger', 'word-counter', 'link-shortener', 'age-calculator',
+    'color-picker', 'images-to-pdf'];
+  function featCardTr(slug) {
+    var src = document.querySelector('.tool-card[href="tools/' + slug + '.html"]');
+    if (!src) return null;
+    var ticonEl = src.querySelector('.ticon'); var iconHtml = ticonEl ? ticonEl.innerHTML : '';
+    var name = src.querySelector('h3').textContent;
+    var desc = src.querySelector('p').textContent;
+    var card = document.createElement('div');
+    card.className = 'feat-card'; card.setAttribute('data-slug', slug);
+    var ic = document.createElement('div'); ic.className = 'feat-icon'; ic.innerHTML = iconHtml;
+    var h = document.createElement('h3'); h.textContent = name;
+    var p = document.createElement('p'); p.textContent = desc;
+    var open = document.createElement('a'); open.className = 'feat-open'; open.href = 'tools/' + slug + '.html';
+    var osp = document.createElement('span'); osp.textContent = TR.openBtn;
+    open.appendChild(osp); open.appendChild(document.createTextNode(' ›'));
+    card.appendChild(ic); card.appendChild(h); card.appendChild(p); card.appendChild(open);
+    card.addEventListener('click', function () { location.href = 'tools/' + slug + '.html'; });
+    return card;
+  }
+  function initCarouselTr() {
+    var car = document.getElementById('featCarousel');
+    if (!car) return;
+    FEATURED.forEach(function (s) { var c = featCardTr(s); if (c) car.appendChild(c); });
+    FEATURED.forEach(function (s) { var c = featCardTr(s); if (c) car.appendChild(c); });
+    var SPEED = 40, paused = false, resumeT = null, last = 0;
+    function tick(now) {
+      if (!paused && !document.hidden) {
+        if (last) {
+          car.scrollLeft += (now - last) / 1000 * SPEED;
+          var half = car.scrollWidth / 2;
+          if (half > 0 && car.scrollLeft >= half - 4) car.scrollLeft -= half;
+        }
+        last = now;
+      } else { last = 0; }
+      if (window.requestAnimationFrame) window.requestAnimationFrame(tick);
+    }
+    function pause() { paused = true; }
+    function resume() { paused = false; }
+    function scheduleResume(ms) { clearTimeout(resumeT); resumeT = setTimeout(resume, ms); }
+    car.addEventListener('pointerenter', function (e) { if (e.pointerType === 'mouse') pause(); });
+    car.addEventListener('pointerleave', function (e) { if (e.pointerType === 'mouse') resume(); });
+    car.addEventListener('touchstart', pause, { passive: true });
+    car.addEventListener('touchend', function () { scheduleResume(2500); });
+    document.addEventListener('visibilitychange', function () { if (!document.hidden) resume(); });
+    var pv = document.getElementById('carPrev'), nx = document.getElementById('carNext');
+    if (pv) pv.addEventListener('click', function () { pause(); car.scrollBy({ left: -280, behavior: 'smooth' }); scheduleResume(4000); });
+    if (nx) nx.addEventListener('click', function () { pause(); car.scrollBy({ left: 280, behavior: 'smooth' }); scheduleResume(4000); });
+    if (window.requestAnimationFrame) window.requestAnimationFrame(tick);
+  }
+/* TR widget dictionary: English strings rendered by shared assets/tools.js
+   (and the rating thanks message from features.js) -> Turkish.
+   Applied ONLY to #tool-root (plus .tool-hero .rate-msg) by the inline TR
+   block on TR tool pages. Shared assets are never modified. Select option
+   values are preserved (value attribute set to the original English text)
+   so tools whose logic compares select values keep working. */
+var WIDGET_TR = [
+['Click to choose files (or drag & drop here)', 'Dosya seçmek için tıklayın (veya buraya sürükleyip bırakın)'],
+['Copied!', 'Kopyalandı!'],
+['Error: ', 'Hata: '],
+['Error loading tool: ', 'Araç yüklenirken hata: '],
+['Could not load PDF engine (internet needed once).', 'PDF motoru yüklenemedi (bir kez internet gerekir).'],
+['Could not load QR engine (internet needed once).', 'QR motoru yüklenemedi (bir kez internet gerekir).'],
+['Could not load QR reader (internet needed once).', 'QR okuyucu yüklenemedi (bir kez internet gerekir).'],
+['Select 2+ PDF files to merge (in order)', 'Birleştirmek için 2 veya daha fazla PDF dosyası seçin (sırayla)'],
+['Merge PDFs', 'PDF\'leri Birleştir'],
+['Please select at least 2 PDF files.', 'Lütfen en az 2 PDF dosyası seçin.'],
+['Merging...', 'Birleştiriliyor...'],
+['Done! merged.pdf downloaded (', 'Bitti! merged.pdf indirildi ('],
+['Done! split.pdf downloaded.', 'Bitti! split.pdf indirildi.'],
+['Done! images.pdf downloaded (', 'Bitti! images.pdf indirildi ('],
+['Done! ', 'Bitti! '],
+['Select a PDF file', 'Bir PDF dosyası seçin'],
+['Pages to extract', 'Çıkarılacak sayfalar'],
+['e.g. 1-3, 5, 7-9', 'örn. 1-3, 5, 7-9'],
+['Split / Extract Pages', 'Böl / Sayfaları Çıkar'],
+['Select a PDF first.', 'Önce bir PDF seçin.'],
+['Working...', 'Çalışılıyor...'],
+['No valid pages. This PDF has ', 'Geçerli sayfa yok. Bu PDF\'de '],
+[' pages).', ' sayfa var).'],
+[' pages.', ' sayfa.'],
+['Select a PDF to compress', 'Sıkıştırmak için bir PDF seçin'],
+['Compress PDF', 'PDF\'yi Sıkıştır'],
+['Compressing...', 'Sıkıştırılıyor...'],
+['Saved ', 'Tasarruf: '],
+['% smaller).', ' % daha küçük).'],
+['File was already optimized.', 'Dosya zaten optimize edilmişti.'],
+[' compressed.pdf downloaded.', ' compressed.pdf indirildi.'],
+['Extracted text will appear here...', 'Çıkarılan metin burada görünecek...'],
+['Extracting text...', 'Metin çıkarılıyor...'],
+['--- Page ', '--- Sayfa '],
+['Copy Text', 'Metni Kopyala'],
+['Download .txt', '.txt İndir'],
+['Select images (JPG/PNG) — in page order', 'Görsel seçin (JPG/PNG) — sayfa sırasına göre'],
+['Create PDF', 'PDF Oluştur'],
+['Select at least one image.', 'En az bir görsel seçin.'],
+['Creating PDF...', 'PDF oluşturuluyor...'],
+['Rebuilds the PDF with object streams to shrink file size. Best on PDFs with lots of metadata/structure.', 'Dosya boyutunu küçültmek için PDF\'yi nesne akışlarıyla yeniden oluşturur. Çok fazla meta veri/yapı içeren PDF\'lerde en iyisidir.'],
+['Select an image', 'Bir görsel seçin'],
+['Original: ', 'Orijinal: '],
+['Quality (1-100)', 'Kalite (1-100)'],
+['Compress & Download JPG', 'Sıkıştır ve JPG İndir'],
+['Compress & Download WebP', 'Sıkıştır ve WebP İndir'],
+['Width (px)', 'Genişlik (px)'],
+['Height (px)', 'Yükseklik (px)'],
+[' Keep aspect ratio', ' En boy oranını koru'],
+['Resize & Download', 'Yeniden Boyutlandır ve İndir'],
+['Convert to', 'Şuna dönüştür'],
+['Convert & Download', 'Dönüştür ve İndir'],
+['Removes solid white / light backgrounds (great for logos & product shots). For complex photos use a dedicated AI tool.', 'Katı beyaz / açık arka planları kaldırır (logolar ve ürün fotoğrafları için idealdir). Karmaşık fotoğraflar için özel bir yapay zekâ aracı kullanın.'],
+['Tolerance (0-150)', 'Tolerans (0-150)'],
+['Remove Background', 'Arka Planı Kaldır'],
+['Download PNG', 'PNG İndir'],
+['Crop & Download', 'Kırp ve İndir'],
+['Rotate 90°', '90° Döndür'],
+['Rotate 180°', '180° Döndür'],
+['Flip Horizontal', 'Yatay Çevir'],
+['Flip Vertical', 'Dikey Çevir'],
+['Download', 'İndir'],
+['Filter', 'Filtre'],
+['Grayscale', 'Gri Tonlama'],
+['Sepia', 'Sepya'],
+['Invert', 'Renkleri Ters Çevir'],
+['High Contrast', 'Yüksek Kontrast'],
+['Blur', 'Bulanıklaştır'],
+['Vintage', 'Vintage'],
+['Apply Filter', 'Filtreyi Uygula'],
+['Reset', 'Sıfırla'],
+['Upload the PNGs to your site root as favicon-16.png etc., or convert to .ico with any converter.', 'PNG\'leri sitenizin kök dizinine favicon-16.png vb. adlarla yükleyin veya herhangi bir dönüştürücüyle .ico\'ya çevirin.'],
+['Generate Favicons', 'Favicon\'lar Oluştur'],
+['Text / URL', 'Metin / URL'],
+['Size (px)', 'Boyut (px)'],
+['Generate QR Code', 'QR Kodu Oluştur'],
+['Select an image containing a QR code', 'QR kodu içeren bir görsel seçin'],
+['Reading...', 'Okunuyor...'],
+['QR content:', 'QR içeriği:'],
+['Copy', 'Kopyala'],
+['No QR code found in this image.', 'Bu görselde QR kodu bulunamadı.'],
+['Paste or type your text here...', 'Metninizi buraya yapıştırın veya yazın...'],
+['Result...', 'Sonuç...'],
+['Copy Result', 'Sonucu Kopyala'],
+['Type or paste text...', 'Metin yazın veya yapıştırın...'],
+['Words', 'Kelimeler'],
+['Characters', 'Karakterler'],
+['No spaces', 'Boşluksuz'],
+['Sentences', 'Cümleler'],
+['Paragraphs', 'Paragraflar'],
+['Reading time', 'Okuma süresi'],
+[' min', ' dk'],
+[' characters  •  ', ' karakter • '],
+[' without spaces  •  ', ' boşluksuz • '],
+[' lines', ' satır'],
+['Type text...', 'Metin yazın...'],
+['UPPERCASE', 'BÜYÜK HARF'],
+['lowercase', 'küçük harf'],
+['Title Case', 'Başlık Biçimi'],
+['Sentence case', 'Cümle biçimi'],
+['aLtErNaTiNg', 'DeĞiŞkEn'],
+['Case sensitive', 'Büyük/küçük harf duyarlı'],
+['Trim whitespace', 'Boşlukları kırp'],
+['Paste lines (one per line)...', 'Satırları yapıştırın (satır başına bir tane)...'],
+['Remove Duplicates', 'Yinelenenleri Kaldır'],
+['Sort A-Z', 'A-Z Sırala'],
+['Reverse Lines', 'Satırları Ters Çevir'],
+['Generated text...', 'Oluşturulan metin...'],
+['Generate', 'Oluştur'],
+['Reverse Text', 'Metni Ters Çevir'],
+['Reverse Words', 'Kelimeleri Ters Çevir'],
+['Flip Lines', 'Satırları Çevir'],
+['Paste messy text...', 'Dağınık metni yapıştırın...'],
+['Clean Up', 'Temizle'],
+['Remove ALL Spaces', 'TÜM Boşlukları Kaldır'],
+['Single Line', 'Tek Satır'],
+['Type or paste...', 'Yazın veya yapıştırın...'],
+['Encode → Base64', 'Base64\'e Kodla'],
+['Decode Base64 →', 'Base64\'ten Çöz'],
+['Error: invalid Base64', 'Hata: geçersiz Base64'],
+['Type or paste URL/text...', 'URL/metin yazın veya yapıştırın...'],
+['Encode URL', 'URL Kodla'],
+['Decode URL', 'URL Çöz'],
+['Error: invalid encoding', 'Hata: geçersiz kodlama'],
+['Paste JSON here...', 'JSON\'yi buraya yapıştırın...'],
+['Format / Beautify', 'Biçimlendir / Güzelleştir'],
+['Invalid JSON: ', 'Geçersiz JSON: '],
+['Minify', 'Küçült'],
+['Validate', 'Doğrula'],
+['Valid JSON ✓', 'Geçerli JSON ✓'],
+['Calculate', 'Hesapla'],
+['Your birth date', 'Doğum tarihiniz'],
+['Calculate Age', 'Yaş Hesapla'],
+['Pick a date.', 'Bir tarih seçin.'],
+['Pick a date & time.', 'Bir tarih ve saat seçin.'],
+['Pick both dates.', 'Her iki tarihi de seçin.'],
+[' days total • next birthday in ', ' gün toplam • sonraki doğum gününe '],
+[' years, ', ' yıl, '],
+[' months, ', ' ay, '],
+[' weeks • ', ' hafta • '],
+[' months • ', ' ay • '],
+[' years', ' yıl'],
+[' days', ' gün'],
+['Weight (kg)', 'Ağırlık (kg)'],
+['Height (cm)', 'Boy (cm)'],
+['Calculate BMI', 'BMI Hesapla'],
+['BMI: ', 'BMI: '],
+['Category: ', 'Kategori: '],
+['Underweight', 'Zayıf'],
+['Normal weight', 'Normal kilo'],
+['Overweight', 'Fazla kilo'],
+['Obese', 'Obez'],
+['Loan amount', 'Kredi tutarı'],
+['Interest % / year', 'Faiz % / yıl'],
+['Years', 'Yıl'],
+['Calculate EMI', 'EMI Hesapla'],
+['Monthly payment: ', 'Aylık ödeme: '],
+['Total payable: ', 'Toplam ödenecek: '],
+[' • Total interest: ', ' • Toplam faiz: '],
+['Mode', 'Mod'],
+['What is X% of Y?', 'Y\'nin %X\'i kaçtır?'],
+['X is what % of Y?', 'X, Y\'nin yüzde kaçıdır?'],
+['Increase X by Y%', 'X\'i %Y artır'],
+['Decrease X by Y%', 'X\'i %Y azalt'],
+['Bill amount', 'Hesap tutarı'],
+['Tip %', 'Bahşiş %'],
+['People', 'Kişi'],
+['Tip: ', 'Bahşiş: '],
+[' • Total: ', ' • Toplam: '],
+['Per person: ', 'Kişi başı: '],
+['Original price', 'Orijinal fiyat'],
+['Discount %', 'İndirim %'],
+['You pay: ', 'Ödersiniz: '],
+['You save: ', 'Tasarruf edersiniz: '],
+['Amount', 'Tutar'],
+['From', 'Kaynak'],
+['To', 'Hedef'],
+['Uses indicative static rates. For exact transfers check your bank.', 'Gösterge niteliğinde sabit kurlar kullanır. Kesin transferler için bankanızı kontrol edin.'],
+['Convert', 'Dönüştür'],
+['Category', 'Kategori'],
+['Value', 'Değer'],
+['Length', 'Uzunluk'],
+['Weight', 'Ağırlık'],
+['Temperature', 'Sıcaklık'],
+['Volume', 'Hacim'],
+['Speed', 'Hız'],
+['Data', 'Veri'],
+['Celsius', 'Santigrat'],
+['Fahrenheit', 'Fahrenheit'],
+['Kelvin', 'Kelvin'],
+['Date & time', 'Tarih ve saat'],
+['From zone', 'Kaynak bölge'],
+['To zone', 'Hedef bölge'],
+['Start date', 'Başlangıç tarihi'],
+['End date', 'Bitiş tarihi'],
+['Uppercase', 'Büyük harf'],
+['Lowercase', 'Küçük harf'],
+['Digits', 'Rakamlar'],
+['Symbols', 'Semboller'],
+['Generate Password', 'Şifre Oluştur'],
+['Select at least one character set.', 'En az bir karakter kümesi seçin.'],
+['Type text to hash...', 'Hash\'lemek için metin yazın...'],
+['Generate Hashes', 'Hash\'ler Oluştur'],
+['Simple checksum:', 'Basit sağlama toplamı:'],
+['Hashes are computed locally in your browser — your text never leaves your device.', 'Hash\'ler tarayıcınızda yerel olarak hesaplanır — metniniz cihazınızdan asla ayrılmaz.'],
+['Min', 'En az'],
+['Max', 'En çok'],
+['Count', 'Adet'],
+[' Unique numbers', ' benzersiz sayı'],
+['Range too small for ', 'Aralık çok küçük: '],
+[' unique numbers.', ' benzersiz sayı için.'],
+['Flip Coin', 'Yazı Tura At'],
+['HEADS!', 'YAZI!'],
+['TAILS!', 'TURA!'],
+['  —  Heads: ', ' — Yazı: '],
+[' • Tails: ', ' • Tura: '],
+['Heads', 'Yazı'],
+['Tails', 'Tura'],
+['Dice', 'Zar'],
+['Sides', 'Yüz'],
+['Roll', 'At'],
+['Pick a color', 'Bir renk seçin'],
+['Copy HEX', 'HEX\'i Kopyala'],
+['HEX → RGB', 'HEX → RGB'],
+['HEX to RGB', 'HEX\'ten RGB\'ye'],
+['Invalid HEX.', 'Geçersiz HEX.'],
+['RGB to HEX', 'RGB\'den HEX\'e'],
+['Generate Palette', 'Palet Oluştur'],
+['Click any color to copy its HEX code.', 'HEX kodunu kopyalamak için herhangi bir renge tıklayın.'],
+['Color 1', 'Renk 1'],
+['Color 2', 'Renk 2'],
+['Angle', 'Açı'],
+['Copy CSS', 'CSS\'yi Kopyala'],
+['Sample Text', 'Örnek Metin'],
+['Contrast ratio: ', 'Kontrast oranı: '],
+['WCAG AA (normal text): ', 'WCAG AA (normal metin): '],
+['PASS', 'GEÇTİ'],
+['FAIL', 'KALDI'],
+['Text color', 'Metin rengi'],
+['Background', 'Arka plan'],
+['Paste HTML...', 'HTML yapıştırın...'],
+['Encode HTML', 'HTML Kodla'],
+['Decode HTML', 'HTML Çöz'],
+['Paste CSS...', 'CSS yapıştırın...'],
+['Minify CSS', 'CSS Küçült'],
+['Beautify CSS', 'CSS Güzelleştir'],
+['Paste JavaScript...', 'JavaScript yapıştırın...'],
+['Minify JS (basic)', 'JS Küçült (temel)'],
+['Basic whitespace/comment minifier. For production builds use Terser or esbuild.', 'Temel boşluk/yorum küçültücü. Üretim derlemeleri için Terser veya esbuild kullanın.'],
+['How many', 'Kaç tane'],
+['Generate UUIDs', 'UUID\'ler Oluştur'],
+['Copy All', 'Tümünü Kopyala'],
+['Unix timestamp → date', 'Unix zaman damgası → tarih'],
+['e.g. 1728566400', 'örn. 1728566400'],
+['To Date', 'Tarihe Çevir'],
+['Invalid timestamp.', 'Geçersiz zaman damgası.'],
+['Local:', 'Yerel:'],
+['Date → timestamp', 'Tarih → zaman damgası'],
+['To Timestamp', 'Zaman Damgasına Çevir'],
+['Seconds:', 'Saniye:'],
+['Milliseconds:', 'Milisaniye:'],
+['Current Timestamp', 'Geçerli Zaman Damgası'],
+['Now (seconds):', 'Şimdi (saniye):'],
+['Long URL', 'Uzun URL'],
+['Shorten Link', 'Bağlantıyı Kısalt'],
+['Please paste a URL first.', 'Önce bir URL yapıştırın.'],
+['Shortening...', 'Kısaltılıyor...'],
+['Could not reach the shortening service. Check your internet and try again.', 'Kısaltma hizmetine ulaşılamadı. İnternetinizi kontrol edip yeniden deneyin.'],
+['Your short link:', 'Kısa bağlantınız:'],
+['Copy Link', 'Bağlantıyı Kopyala'],
+['Note: uses the free da.gd / is.gd service over HTTPS.', 'Not: HTTPS üzerinden ücretsiz da.gd / is.gd hizmetini kullanır.'],
+['Type your password...', 'Şifrenizi yazın...'],
+['Show', 'Göster'],
+['Hide', 'Gizle'],
+['Password', 'Şifre'],
+['How to improve', 'Nasıl iyileştirilir'],
+['less than a second', 'bir saniyeden az'],
+[' seconds', ' saniye'],
+[' minutes', ' dakika'],
+[' hours', ' saat'],
+['Weak', 'Zayıf'],
+['Fair', 'Orta'],
+['Good', 'İyi'],
+['Strong', 'Güçlü'],
+['centuries', 'yüzyıl'],
+[' — ', ' — '],
+['Estimated time to crack: ', 'Kırılma tahmini süresi: '],
+[' (10 billion guesses/sec).', ' (saniyede 10 milyar tahmin).'],
+['Make it at least 12 characters long (16+ is better).', 'En az 12 karakter uzunluğunda yapın (16+ daha iyidir).'],
+['Add uppercase letters.', 'Büyük harf ekleyin.'],
+['Add lowercase letters.', 'Küçük harf ekleyin.'],
+['Add numbers.', 'Rakam ekleyin.'],
+['Add symbols like !@#$%.', '!@#$% gibi semboller ekleyin.'],
+['Avoid repeating the same character 3+ times.', 'Aynı karakteri 3 veya daha fazla kez tekrarlamaktan kaçının.'],
+['Avoid common patterns and dictionary words.', 'Yaygın kalıplardan ve sözlük kelimelerinden kaçının.'],
+['Great! This looks like a strong password. Use a unique one per site.', 'Harika! Bu güçlü bir şifre gibi görünüyor. Her site için benzersiz bir şifre kullanın.'],
+['Checked 100% locally in your browser — your password is never sent anywhere.', '%100 tarayıcınızda yerel olarak kontrol edilir — şifreniz asla hiçbir yere gönderilmez.'],
+['IP address or domain — e.g. 8.8.8.8', 'IP adresi veya alan adı — örn. 8.8.8.8'],
+['IP or domain', 'IP veya alan adı'],
+['IP address', 'IP adresi'],
+['City', 'Şehir'],
+['Region', 'Bölge'],
+['Country', 'Ülke'],
+['ISP / Org', 'ISS / Kuruluş'],
+['Timezone', 'Saat dilimi'],
+['Latitude / Longitude', 'Enlem / Boylam'],
+['Looking up…', 'Aranıyor…'],
+['Lookup failed: ', 'Arama başarısız: '],
+['Could not reach the lookup service. Check your internet and try again.', 'Arama hizmetine ulaşılamadı. İnternetinizi kontrol edip yeniden deneyin.'],
+['Look Up', 'Ara'],
+['Enter an IP address or domain first.', 'Önce bir IP adresi veya alan adı girin.'],
+['My IP', 'IP\'m'],
+['Uses the free ipapi.co geolocation API. Locations are approximate (ISP level).', 'Ücretsiz ipapi.co coğrafi konum API\'sini kullanır. Konumlar yaklaşıktır (ISS düzeyinde).'],
+['Website URL', 'Web sitesi URL\'si'],
+['Strict-Transport-Security (HSTS)', 'Strict-Transport-Security (HSTS)'],
+['Forces browsers to use HTTPS only. Protects against protocol-downgrade attacks.', 'Tarayıcıları yalnızca HTTPS kullanmaya zorlar. Protokol düşürme saldırılarına karşı korur.'],
+['Content-Security-Policy (CSP)', 'Content-Security-Policy (CSP)'],
+['Controls which scripts, styles and resources may load. Key defense against XSS attacks.', 'Hangi komut dosyalarının, stillerin ve kaynakların yüklenebileceğini denetler. XSS saldırılarına karşı temel savunmadır.'],
+['X-Frame-Options', 'X-Frame-Options'],
+['Prevents the page being embedded in iframes — stops clickjacking attacks.', 'Sayfanın iframe\'lere gömülmesini engeller — tıklama korsanlığı saldırılarını durdurur.'],
+['X-Content-Type-Options', 'X-Content-Type-Options'],
+['Stops browsers "sniffing" file types — set to nosniff.', 'Tarayıcıların dosya türlerini "tahmin etmesini" engeller — nosniff olarak ayarlayın.'],
+['Referrer-Policy', 'Referrer-Policy'],
+['Controls how much referrer info is sent when users click away.', 'Kullanıcılar başka yere tıkladığında ne kadar yönlendiren bilgisi gönderileceğini denetler.'],
+['Permissions-Policy', 'Permissions-Policy'],
+['Restricts powerful browser features (camera, mic, geolocation).', 'Güçlü tarayıcı özelliklerini (kamera, mikrofon, coğrafi konum) kısıtlar.'],
+['Pass: ', 'Geçti: '],
+['Fail: ', 'Kaldı: '],
+['Score: ', 'Puan: '],
+[' security headers present.', ' güvenlik başlığı mevcut.'],
+['For a deeper automated scan, also try securityheaders.com.', 'Daha derin bir otomatik tarama için securityheaders.com\'u da deneyin.'],
+['Check Headers', 'Başlıkları Kontrol Et'],
+['Enter a website URL first.', 'Önce bir web sitesi URL\'si girin.'],
+['Fetching headers…', 'Başlıklar alınıyor…'],
+['No headers returned. The site may block this check — try securityheaders.com instead.', 'Başlık döndürülmedi. Site bu kontrolü engelliyor olabilir — bunun yerine securityheaders.com\'u deneyin.'],
+['Could not reach the header service. Check your internet and try again.', 'Başlık hizmetine ulaşılamadı. İnternetinizi kontrol edip yeniden deneyin.'],
+['Header fetch uses the free hackertarget.com API. Explanations are educational — this is a defensive learning tool.', 'Başlık alma, ücretsiz hackertarget.com API\'sini kullanır. Açıklamalar eğitimseldir — bu savunma amaçlı bir öğrenme aracıdır.'],
+['URL to analyze', 'Analiz edilecek URL'],
+['Paste the suspicious URL here…', 'Şüpheli URL\'yi buraya yapıştırın…'],
+['Check URL', 'URL\'yi Kontrol Et'],
+['That does not look like a valid URL.', 'Bu geçerli bir URL gibi görünmüyor.'],
+['Uses HTTPS (encrypted connection).', 'HTTPS kullanır (şifreli bağlantı).'],
+['No HTTPS — data is sent unencrypted.', 'HTTPS yok — veriler şifresiz gönderilir.'],
+['Host is a raw IP address instead of a domain name.', 'Ana bilgisayar, bir alan adı yerine ham bir IP adresidir.'],
+['Host is a domain name, not a raw IP.', 'Ana bilgisayar ham bir IP değil, bir alan adıdır.'],
+['Many subdomains (', 'Birçok alt alan adı ('],
+[' parts) — a common phishing trick.', ' bölüm) — yaygın bir kimlik avı hilesi.'],
+['Subdomain depth looks normal.', 'Alt alan adı derinliği normal görünüyor.'],
+['Uses a top-level domain often abused by scammers.', 'Dolandırıcılar tarafından sıkça kötüye kullanılan bir üst düzey alan adı kullanır.'],
+['Top-level domain is not on the high-risk list.', 'Üst düzey alan adı yüksek risk listesinde değil.'],
+['Contains "@" — everything before it can be fake.', '"@" içeriyor — öncesindeki her şey sahte olabilir.'],
+['No "@" trick in the URL.', 'URL\'de "@" hilesi yok.'],
+['Brand-like words combined with hyphens (e.g. "paypal-secure-login").', 'Tirelerle birleştirilmiş marka benzeri kelimeler (örn. "paypal-secure-login").'],
+['No brand-imitating hyphen pattern detected.', 'Marka taklidi tire kalıbı tespit edilmedi.'],
+['URL shortener hides the real destination.', 'URL kısaltıcı gerçek hedefi gizler.'],
+['Not a known URL shortener.', 'Bilinen bir URL kısaltıcı değil.'],
+['Very long URL (', 'Çok uzun URL ('],
+[' chars) — can hide the true domain.', ' karakter) — gerçek alan adını gizleyebilir.'],
+['URL length looks normal.', 'URL uzunluğu normal görünüyor.'],
+['Contains non-Latin characters — possible homograph attack.', 'Latin olmayan karakterler içeriyor — olası homograf saldırısı.'],
+['No suspicious non-Latin characters.', 'Şüpheli Latin olmayan karakter yok.'],
+['Numbers mixed into a sensitive-looking domain.', 'Hassas görünümlü bir alan adına karıştırılmış rakamlar.'],
+['Looks Safe', 'Güvenli Görünüyor'],
+['Suspicious', 'Şüpheli'],
+['Dangerous', 'Tehlikeli'],
+['Warning: ', 'Uyarı: '],
+[' risk)', ' risk)'],
+[' risk', ' risk'],
+['Type', 'Tür'],
+['Width', 'Genişlik'],
+['Height', 'Yükseklik'],
+['https://example.com or any text', 'https://example.com veya herhangi bir metin'],
+['Disclaimer: this is a first-pass heuristic check only and cannot guarantee a site is legitimate. When in doubt, never enter passwords or payment details.', 'Sorumluluk reddi: bu yalnızca ilk geçiş sezgisel bir kontroldür ve bir sitenin meşru olduğunu garanti edemez. Şüpheniz varsa asla şifre veya ödeme bilgisi girmeyin.'],
+['Analysis runs 100% locally in your browser — the URL is never sent anywhere.', 'Analiz %100 tarayıcınızda yerel olarak çalışır — URL asla hiçbir yere gönderilmez.'],
+['Thanks! You rated this tool ', 'Teşekkürler! Bu araca puan verdiniz '],
+['Your rating: ', 'Puanınız: '],
+['Add to favorites', 'Favorilere ekle'],
+['Toggle dark mode', 'Koyu modu değiştir']
+];
+/* Single words that also appear inside composite result strings (so they
+   need fragment replacement, not just exact-node replacement). */
+var WIDGET_FRAG_WORDS = { 'Weak': 1, 'Fair': 1, 'Good': 1, 'Strong': 1,
+  'centuries': 1, 'Underweight': 1, 'Overweight': 1, 'Obese': 1,
+  'Suspicious': 1, 'Dangerous': 1, 'Heads': 1, 'Tails': 1 };
+
+/* ---- TR widget translation (tools.js output) ---- */
+(function () {
+  var EXACT = {};
+  WIDGET_TR.forEach(function (p) { if (p[0] !== p[1]) EXACT[p[0]] = p[1]; });
+  var PAIRS = WIDGET_TR.filter(function (p) { return p[0] !== p[1]; });
+  PAIRS.sort(function (a, b) { return b[0].length - a[0].length; });
+  function isFrag(en) {
+    if (WIDGET_FRAG_WORDS[en]) return true;
+    return /[^A-Za-z]/.test(en);
+  }
+  function translateString(v) {
+    if (EXACT[v] !== undefined) return EXACT[v];
+    var t = v, changed = false;
+    for (var i = 0; i < PAIRS.length; i++) {
+      var en = PAIRS[i][0];
+      if (!isFrag(en)) continue;
+      if (t.indexOf(en) !== -1) { t = t.split(en).join(PAIRS[i][1]); changed = true; }
+    }
+    return changed ? t : v;
+  }
+  function translateNode(node) {
+    var v = node.nodeValue;
+    var tr = v.trim();
+    if (tr && EXACT[tr] !== undefined) { node.nodeValue = v.replace(tr, EXACT[tr]); return; }
+    if (!v || v.indexOf(' ') === -1 && !EXACT[v]) {
+      if (EXACT[v] !== undefined) node.nodeValue = EXACT[v];
+      return;
+    }
+    /* Skip the QR-reader echo node (user data, not UI text). */
+    var par = node.parentNode;
+    if (par && par.className && par.className.indexOf('big') !== -1) {
+      var prev = par.previousElementSibling;
+      if (prev && (prev.textContent.indexOf('QR content') !== -1 || prev.textContent.indexOf('içerik') !== -1)) return;
+    }
+    /* Skip link text (URLs) and textarea default text (user-editable samples). */
+    if (par && par.tagName === 'A') return;
+    if (par && par.tagName === 'TEXTAREA') return;
+    /* Preserve select-option values so value-compared tools keep working. */
+    if (par && par.tagName === 'OPTION' && EXACT[v] !== undefined && !par.hasAttribute('value')) {
+      par.setAttribute('value', v);
+    }
+    var nv = translateString(v);
+    if (nv !== v) node.nodeValue = nv;
+  }
+  function translateAttrs(el) {
+    var ph = el.getAttribute && el.getAttribute('placeholder');
+    if (ph && EXACT[ph] !== undefined) el.setAttribute('placeholder', EXACT[ph]);
+    var ti = el.getAttribute && el.getAttribute('title');
+    if (ti && EXACT[ti] !== undefined) el.setAttribute('title', EXACT[ti]);
+    var al = el.getAttribute && el.getAttribute('aria-label');
+    if (al && EXACT[al] !== undefined) el.setAttribute('aria-label', EXACT[al]);
+  }
+  function translateTree(root) {
+    if (!root) return;
+    var walker = document.createTreeWalker(root, NodeFilter.SHOW_TEXT, null, false);
+    var nodes = [], n;
+    while ((n = walker.nextNode())) nodes.push(n);
+    nodes.forEach(translateNode);
+    var els = root.querySelectorAll ? root.querySelectorAll('input,textarea,select,button,a') : [];
+    for (var i = 0; i < els.length; i++) translateAttrs(els[i]);
+    translateAttrs(root);
+  }
+  function translateHeroRate() {
+    var rm = document.querySelector('.tool-hero .rate-msg');
+    if (!rm) return;
+    var walker = document.createTreeWalker(rm, NodeFilter.SHOW_TEXT, null, false);
+    var nodes = [], n;
+    while ((n = walker.nextNode())) nodes.push(n);
+    nodes.forEach(function (tn) {
+      var nv = translateString(tn.nodeValue);
+      if (nv !== tn.nodeValue) tn.nodeValue = nv;
+    });
+  }
+  function translatePdfTextValue() {
+    var root = document.getElementById('tool-root');
+    if (!root || root.getAttribute('data-tool') !== 'pdf-to-text') return;
+    var ta = root.querySelector('textarea');
+    if (!ta) return;
+    var v = ta.value;
+    if (!v) return;
+    var nv = v.split('Extracting text...').join('Metin çıkarılıyor...')
+      .split('Error: ').join('Hata: ')
+      .split('--- Page ').join('--- Sayfa ');
+    if (nv !== v) ta.value = nv;
+  }
+  var busy = false;
+  function runAll() {
+    if (busy) return; busy = true;
+    try {
+      translateTree(document.getElementById('tool-root'));
+      translateHeroRate();
+      translatePdfTextValue();
+    } catch (e) {}
+    busy = false;
+  }
+  function initWidgetTr() {
+    runAll();
+    var root = document.getElementById('tool-root');
+    if (root && window.MutationObserver) {
+      var mo = new MutationObserver(function () { runAll(); });
+      mo.observe(root, { childList: true, subtree: true, characterData: true });
+    }
+    var rm = document.querySelector('.tool-hero .rate-msg');
+    if (rm && window.MutationObserver) {
+      var mo2 = new MutationObserver(function () { translateHeroRate(); });
+      mo2.observe(rm, { childList: true, subtree: true, characterData: true });
+    }
+    /* pdf-to-text writes system text into a textarea value (no DOM
+       mutation fires), so poll that one readonly output only. */
+    var rootEl = document.getElementById('tool-root');
+    if (rootEl && rootEl.getAttribute('data-tool') === 'pdf-to-text') {
+      setInterval(translatePdfTextValue, 800);
+    }
+  }
+  window.__initWidgetTr = initWidgetTr;
+})();
+
+  onReady(function () {
+    buildSwitcher();
+    var dark = document.getElementById('darkToggle');
+    if (dark) {
+      var setLabel = function () { dark.textContent = document.body.classList.contains('dark') ? TR.lightLabel : TR.darkLabel; };
+      dark.title = TR.darkTitle; dark.setAttribute('aria-label', TR.darkTitle);
+      setLabel();
+      dark.addEventListener('click', function () { setTimeout(setLabel, 0); });
+    }
+    var badge = document.getElementById('useBadge');
+    if (badge) badge.textContent = TR.useBadge.replace('{n}', lsGet('fpt_usage', 0));
+    var chips = document.querySelectorAll('#catChips .chip');
+    if (chips.length && chips[0].textContent === 'All') chips[0].textContent = TR.allCat;
+    document.querySelectorAll('.tool-actions .action-label').forEach(function (lab) {
+      var t = lab.textContent;
+      if (t === 'Favorite') lab.textContent = TR.favAction;
+      else if (t === 'Rate this tool') lab.textContent = TR.rateAction;
+      else if (t === 'Share') lab.textContent = TR.shareAction;
+    });
+    var star = document.querySelector('.tool-hero .fav-star');
+    if (star) { star.title = TR.favAction; star.setAttribute('aria-label', TR.favAction); }
+    document.querySelectorAll('.tool-hero .share-btn').forEach(function (a) {
+      var t = a.getAttribute('title') || a.getAttribute('aria-label') || '';
+      var m = /Share on (.+)$/.exec(t);
+      if (m) { var nt = TR.shareOn.replace('{name}', m[1]); a.title = nt; a.setAttribute('aria-label', nt); }
+    });
+    var rateMsg = document.querySelector('.tool-hero .rate-msg');
+    var rootEl = document.getElementById('tool-root');
+    if (rateMsg && rootEl) {
+      var ratings = lsGet('fpt_ratings', {});
+      var my = ratings[rootEl.getAttribute('data-tool')] || 0;
+      if (my) rateMsg.textContent = TR.rateYour.replace('{n}', my);
+    }
+    document.querySelectorAll('.fav-star').forEach(function (s) { s.title = TR.favAction; s.setAttribute('aria-label', TR.favAction); });
+    var wa = document.getElementById('wa-float-btn');
+    if (wa) { wa.title = TR.waChat; wa.setAttribute('aria-label', TR.waChat); }
+    var ban = document.getElementById('adCookieBanner');
+    if (ban) {
+      var sp = ban.querySelector('span');
+      if (sp) sp.textContent = 'Ziyaretleri anlamak ve sitemizi iyileştirmek için analiz (Google Analytics) çerezleri kullanıyoruz. Analitik çerezlere izin vermek için kabul edin veya reddedin.';
+      var acc = document.getElementById('adCookieAccept'); if (acc) acc.textContent = 'Kabul et';
+      var dec = document.getElementById('adCookieDecline'); if (dec) dec.textContent = 'Reddet';
+    }
+    initCarouselTr();
+    if (window.__initWidgetTr) window.__initWidgetTr();
+  });
+})();
+</script>
+
+
+<!-- Back to top button -->
+<button id="backToTop" aria-label="Yukarı dön" title="Yukarı dön"
+style="position:fixed;bottom:24px;right:24px;width:48px;height:48px;border-radius:50%;border:none;background:#2563eb;color:#ffffff;font-size:22px;line-height:1;cursor:pointer;opacity:0;visibility:hidden;transition:opacity .3s,visibility .3s,transform .2s;box-shadow:0 4px 12px rgba(0,0,0,.35);z-index:9999;padding:0;">&#8593;</button>
+<script>
+(function(){var b=document.getElementById('backToTop');if(!b)return;
+window.addEventListener('scroll',function(){var s=window.pageYOffset||document.documentElement.scrollTop;
+if(s>300){b.style.opacity='1';b.style.visibility='visible';}else{b.style.opacity='0';b.style.visibility='hidden';}},{passive:true});
+b.addEventListener('click',function(){window.scrollTo({top:0,behavior:'smooth'});});
+b.addEventListener('mouseenter',function(){b.style.transform='scale(1.12)';});
+b.addEventListener('mouseleave',function(){b.style.transform='scale(1)';});})();
+</script>
+
+</body></html>
