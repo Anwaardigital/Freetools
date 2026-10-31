@@ -1,0 +1,850 @@
+<!DOCTYPE html>
+<html lang="ur" dir="rtl">
+<head>
+<link rel="icon" type="image/png" sizes="192x192" href="https://anwaardigital.com/Freetools/freetools-icon-192.png">
+<link rel="icon" type="image/png" sizes="512x512" href="https://anwaardigital.com/Freetools/freetools-icon-512.png">
+<link rel="apple-touch-icon" href="https://anwaardigital.com/Freetools/freetools-icon-192.png">
+
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>JavaScript منی فائر | مفت پرائیویسی ٹولز</title>
+<meta name="description" content="بنیادی منی فائر سے JavaScript فائلیں چھوٹی کریں، چھوٹی فائلوں اور تیز لوڈنگ کے لیے۔ مفت۔">
+<meta property="og:type" content="website">
+<meta property="og:title" content="JavaScript منی فائر | مفت پرائیویسی ٹولز">
+<meta property="og:description" content="بنیادی منی فائر سے JavaScript فائلیں چھوٹی کریں، چھوٹی فائلوں اور تیز لوڈنگ کے لیے۔ مفت۔">
+<meta property="og:url" content="https://anwaardigital.com/Freetools/ur/tools/js-minifier.html">
+<meta property="og:image" content="https://anwaardigital.com/anwaar-icon-512.png">
+<meta name="twitter:card" content="summary">
+<link rel="canonical" href="https://anwaardigital.com/Freetools/ur/tools/js-minifier.html">
+<link rel="alternate" hreflang="ur" href="https://anwaardigital.com/Freetools/ur/tools/js-minifier.html">
+<link rel="alternate" hreflang="ar" href="https://anwaardigital.com/Freetools/ar/tools/js-minifier.html">
+<link rel="alternate" hreflang="hi" href="https://anwaardigital.com/Freetools/hi/tools/js-minifier.html">
+<link rel="alternate" hreflang="en" href="https://anwaardigital.com/Freetools/tools/js-minifier.html">
+<link rel="alternate" hreflang="x-default" href="https://anwaardigital.com/Freetools/tools/js-minifier.html">
+<link rel="stylesheet" href="../../assets/style.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebApplication",
+      "name": "JavaScript منی فائر",
+      "url": "https://anwaardigital.com/Freetools/ur/tools/js-minifier.html",
+      "description": "بنیادی منی فائر سے JavaScript فائلیں چھوٹی کریں، چھوٹی فائلوں اور تیز لوڈنگ کے لیے۔ مفت۔",
+      "inLanguage": "ur",
+      "applicationCategory": "DeveloperApplication",
+      "operatingSystem": "Any",
+      "isAccessibleForFree": true,
+      "browserRequirements": "Requires JavaScript",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      }
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "کیا یہ واقعی مفت ہے؟",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "جی ہاں — اس سائٹ کا ہر ٹول 100% مفت ہے، بغیر کسی حد، بغیر سائن اپ اور بغیر واٹر مارک کے۔"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "کیا میرا ڈیٹا محفوظ ہے؟",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "بالکل۔ تمام پروسیسنگ آپ کے براؤزر میں مقامی طور پر ہوتی ہے۔ آپ کی فائلیں کبھی کسی سرور پر اپ لوڈ نہیں ہوتیں۔"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "منی فیکیشن بالکل کیا ہٹاتا ہے؟",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "منی فیکیشن تبصرے، غیر ضروری اسپیس اور لائن بریکس ہٹاتا ہے جن کی انسانوں کو ضرورت ہوتی ہے لیکن براؤزرز کو نہیں۔ یہ بنیادی منی فائر متغیر نام دوبارہ نہیں رکھتا اور نہ کوڈ کی ساخت بدلتا ہے — متغیر مینگلنگ کے ساتھ مضبوط اصلاح کے لیے Terser یا esbuild جیسا بلڈ ٹول استعمال کریں۔"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "میری فائل کتنی چھوٹی ہو جائے گی؟",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "عام بچت 20–40% ہے، اصل میں تبصروں اور فارمیٹنگ کی مقدار پر منحصر ہے۔ اچھے تبصروں والی 100 کلو بائٹ فائل اکثر 60–70 کلو بائٹ تک آ جاتی ہے۔ زیادہ سے زیادہ بچت کے لیے منی فیکیشن کو اپنے سرور پر gzip/Brotli کمپریشن کے ساتھ جوڑیں، جو ٹیکسٹ فائلوں کو مزید 60–70% سکیڑ دیتا ہے۔"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "کیا کسی بھی JavaScript کو منی فائی کرنا محفوظ ہے؟",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "یہ منی فائر محتاط ہے — یہ کوڈ کے معنی بدلے بغیر صرف اسپیس اور تبصرے ہٹاتا ہے، اس لیے یہ معیاری اسکرپٹس کے لیے محفوظ ہے۔ لیکن ہمیشہ منی فائیڈ فائل کو ٹیسٹ کریں: مخصوص فارمیٹنگ پر منحصر کوڈ (نایاب، لیکن کچھ regex یا eval چالوں کے ساتھ ممکن) مختلف برتاؤ کر سکتا ہے۔ اصل سورس فائل کو ماسٹر کاپی کے طور پر رکھیں۔"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "کیا میں ڈویلپمنٹ کے دوران منی فائی کروں؟",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "نہیں — پڑھنے کے قابل، تبصرہ شدہ سورس فائلوں سے ڈویلپ کریں اور صرف پروڈکشن اشاعت کے لیے منی فائی کریں۔ منی فائیڈ کوڈ کو ڈیبگ کرنا تکلیف دہ ہے۔ بہتر ہے کہ صحیح بلڈ پائپ لائن کے ساتھ سورس میپس استعمال کریں؛ یہ آن لائن ٹول چھوٹے اسکرپٹس کے لیے فوری ایک بار منی فیکیشن کے لیے بہترین ہے۔"
+          }
+        }
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<header class="site-header"><div class="wrap">
+<a class="logo" href="../index.html"><img class="shield" src="../../freetools-icon-192.png" alt=""> مفت پرائیویسی ٹولز</a>
+<button class="nav-toggle" aria-label="مینیو" aria-expanded="false">☰</button><nav class="nav"><a href="../index.html">ہوم</a><a href="../index.html#tools">تمام ٹولز</a><a href="../about.html">ہمارے بارے میں</a><a href="../faq.html">عام سوالات</a><a href="../blog.html">بلاگ</a><a href="../contact.html">رابطہ کریں</a><a href="../privacy.html">پرائیویسی</a></nav>
+</div></header>
+
+<main class="wrap">
+<div class="crumbs"><a href="../index.html">ہوم</a> / ڈویلپر ٹولز / JavaScript منی فائر</div>
+<div class="tool-hero"><h1><svg class="hero-icon" aria-hidden="true"><use href="../../assets/tool-icons.svg#icon-js-minifier"/></svg> JavaScript منی فائر</h1><p>بنیادی منی فائر سے JavaScript فائلیں چھوٹی کریں، چھوٹی فائلوں اور تیز لوڈنگ کے لیے۔ مفت۔</p></div>
+<div class="ad-slot"><!-- AdSense code goes here --></div>
+<div class="tool-box" id="tool-root" data-tool="js-minifier"></div>
+<div class="howto"><h2>استعمال کرنے کا طریقہ</h2><ol><li>ان پٹ باکس میں JavaScript کوڈ پیسٹ کریں، یا اپنے کمپیوٹر سے .js فائل اپ لوڈ کریں۔</li><li>اپنے آپشنز منتخب کریں: تبصرے حذف کرنا اور اضافی اسپیس ہٹانا، اور اختیاری طور پر لائن بریکس رکھنا یا ہٹانا۔</li><li>اپنی کوڈ کو براؤزر میں فوراً کمپریس کرنے کے لیے منی فائی بٹن پر کلک کریں۔</li><li>منی فائیڈ آؤٹ پٹ کاپی کریں یا اسے .min.js فائل کے طور پر ڈاؤن لوڈ کریں، پروڈکشن کے لیے تیار۔</li></ol></div>
+<div class="faq"><h2>عام سوالات</h2><details><summary>کیا یہ واقعی مفت ہے؟</summary><p>جی ہاں — اس سائٹ کا ہر ٹول 100% مفت ہے، بغیر کسی حد، بغیر سائن اپ اور بغیر واٹر مارک کے۔</p></details><details><summary>کیا میرا ڈیٹا محفوظ ہے؟</summary><p>بالکل۔ تمام پروسیسنگ آپ کے براؤزر میں مقامی طور پر ہوتی ہے۔ آپ کی فائلیں کبھی کسی سرور پر اپ لوڈ نہیں ہوتیں۔</p></details><details><summary>منی فیکیشن بالکل کیا ہٹاتا ہے؟</summary><p>منی فیکیشن تبصرے، غیر ضروری اسپیس اور لائن بریکس ہٹاتا ہے جن کی انسانوں کو ضرورت ہوتی ہے لیکن براؤزرز کو نہیں۔ یہ بنیادی منی فائر متغیر نام دوبارہ نہیں رکھتا اور نہ کوڈ کی ساخت بدلتا ہے — متغیر مینگلنگ کے ساتھ مضبوط اصلاح کے لیے Terser یا esbuild جیسا بلڈ ٹول استعمال کریں۔</p></details><details><summary>میری فائل کتنی چھوٹی ہو جائے گی؟</summary><p>عام بچت 20–40% ہے، اصل میں تبصروں اور فارمیٹنگ کی مقدار پر منحصر ہے۔ اچھے تبصروں والی 100 کلو بائٹ فائل اکثر 60–70 کلو بائٹ تک آ جاتی ہے۔ زیادہ سے زیادہ بچت کے لیے منی فیکیشن کو اپنے سرور پر gzip/Brotli کمپریشن کے ساتھ جوڑیں، جو ٹیکسٹ فائلوں کو مزید 60–70% سکیڑ دیتا ہے۔</p></details><details><summary>کیا کسی بھی JavaScript کو منی فائی کرنا محفوظ ہے؟</summary><p>یہ منی فائر محتاط ہے — یہ کوڈ کے معنی بدلے بغیر صرف اسپیس اور تبصرے ہٹاتا ہے، اس لیے یہ معیاری اسکرپٹس کے لیے محفوظ ہے۔ لیکن ہمیشہ منی فائیڈ فائل کو ٹیسٹ کریں: مخصوص فارمیٹنگ پر منحصر کوڈ (نایاب، لیکن کچھ regex یا eval چالوں کے ساتھ ممکن) مختلف برتاؤ کر سکتا ہے۔ اصل سورس فائل کو ماسٹر کاپی کے طور پر رکھیں۔</p></details><details><summary>کیا میں ڈویلپمنٹ کے دوران منی فائی کروں؟</summary><p>نہیں — پڑھنے کے قابل، تبصرہ شدہ سورس فائلوں سے ڈویلپ کریں اور صرف پروڈکشن اشاعت کے لیے منی فائی کریں۔ منی فائیڈ کوڈ کو ڈیبگ کرنا تکلیف دہ ہے۔ بہتر ہے کہ صحیح بلڈ پائپ لائن کے ساتھ سورس میپس استعمال کریں؛ یہ آن لائن ٹول چھوٹے اسکرپٹس کے لیے فوری ایک بار منی فیکیشن کے لیے بہترین ہے۔</p></details></div><div class="tut-box" style="background:#f0f9ff;border:1px solid #bae6fd;border-radius:12px;padding:14px 18px;margin:18px 0"><p style="margin:0"><strong>مرحلہ وار گائیڈ:</strong> اس ٹول میں نئے ہیں؟ پڑھیں <a href="../blog/how-to-js-minifier-online.html">JavaScript آن لائن منی فائی کرنے کی مکمل گائیڈ</a> — عملی مثالوں کے ساتھ۔</p></div> <div class="tool-guide"><h2>JS منی فائر — مکمل گائیڈ</h2><p>JavaScript فائلیں فراخ اسپیس، وضاحتی تبصروں اور پڑھنے کے قابل فارمیٹنگ کے ساتھ بھیجی جاتی ہیں — یہ سب ڈویلپرز کے لیے ضروری اور براؤزرز کے لیے مردہ وزن ہیں۔ منی فیکیشن اس وزن کو اتار دیتا ہے، فائلوں کو 20–40% سکیڑتا ہے اور ہر صفحہ لوڈ تیز کرتا ہے۔ یہ مفت ٹول JS کو براؤزر میں فوراً منی فائی کرتا ہے، بغیر اپ لوڈ اور بغیر سیٹ اپ۔</p><h3>یہ کیسے کام کرتا ہے</h3><p>منی فائر آپ کے کوڈ کا تجزیہ کرتا ہے اور ہر وہ چیز ہٹاتا ہے جس کی JavaScript انجن کو ضرورت نہیں: سنگل لائن اور ملٹی لائن تبصرے، انڈینٹیشن، لائن بریکس، آپریٹرز اور اوقاف کے گرد اسپیس۔ اسٹرنگ مواد اور regex لٹریلز کو احتیاط سے محفوظ رکھا جاتا ہے — صرف ساختی طور پر غیر ضروری حروف ہٹائے جاتے ہیں۔ اور چونکہ یہ صرف سیدھا اسپیس/تبصرہ ہٹانا ہے (مکمل AST اصلاح نہیں)، آؤٹ پٹ ان پٹ سے معنی میں یکساں رہتا ہے۔</p><h3>یہ منی فائر بلڈ ٹولز کے مقابلے میں کیا کرتا ہے</h3><ul><li><strong>یہ ٹول:</strong> تبصرے + اسپیس ہٹاتا ہے۔ تیز، محفوظ اور قابل پیش گوئی۔ چھوٹے اسکرپٹس، اسنیپٹس اور فوری کاموں کے لیے بہترین۔</li><li><strong>Terser / UglifyJS:</strong> متغیر نام بھی چھوٹے کرتے ہیں، مردہ کوڈ حذف کرتے ہیں اور اظہار سادہ کرتے ہیں۔ 10–20% چھوٹا آؤٹ پٹ، لیکن بلڈ سیٹ اپ درکار ہے۔</li><li><strong>esbuild / swc:</strong> مکمل بنڈلرز بلڈ پائپ لائن کے حصے کے طور پر منی فائی کرتے ہیں۔ ماڈیولز اور انحصار والے حقیقی منصوبوں کے لیے بہترین۔</li></ul><p>اصول: چند سو کلو بائٹس سے کم کی ایک بار والی فائلوں کے لیے یہ آن لائن ٹول استعمال کریں؛ اور جب آپ کا منصوبہ بڑھے تو بلڈ ٹول پر منتقل ہو جائیں۔</p><h3>بہترین طریقے</h3><p><strong>کبھی منی فائیڈ فائلیں ایڈٹ نہ کریں</strong> — انہیں بلڈ پروڈکٹس سمجھیں۔ اصل <code>app.js</code> کو اپنی سچائی کا ذریعہ رکھیں اور اشاعت کے لیے <code>app.min.js</code> بنائیں۔ <strong>ہمیشہ ٹیسٹ کریں</strong> بھیجنے سے پہلے براؤزر میں منی فائیڈ ورژن؛ اگرچہ یہ منی فائر محتاط ہے، ٹیسٹنگ حیرانیوں کو پکڑ لیتی ہے۔ <strong>اپنے سرور پر gzip یا Brotli فعال کریں</strong> — منی فیکیشن اور کمپریشن بہت زیادہ جمع ہوتے ہیں (100 کلو بائٹ فائل تار پر ~20 کلو بائٹ ہو سکتی ہے)۔ <strong>.min.js کنونشن استعمال کریں</strong> تاکہ واضح ہو کہ کون سی فائلیں پروڈکشن بلڈز ہیں۔</p><h3>جب منی فیکیشن کافی نہ ہو</h3><p>اگر آپ کے اسکرپٹس منی فیکیشن کے بعد بھی بھاری رہیں تو مسئلہ کوڈ میں ہے، فارمیٹنگ میں نہیں۔ کوڈ اسپلٹنگ (ہر صفحے کے لیے صرف ضروری چیز لوڈ کرنا) یا غیر استعمال شدہ لائبریری کوڈ کے لیے ٹری شیکنگ یا بھاری انحصار کو ہلکے متبادلوں سے بدلنے پر غور کریں۔ منی فیکیشن آخری لمس ہے — اور ساخت ہی اصل غذا ہے۔</p></div><div class="related"><h2>متعلقہ ٹولز</h2><div class="grid"><a class="tool-card" href="./html-encoder.html"><div class="ticon"><svg aria-hidden="true"><use href="../../assets/tool-icons.svg#icon-html-encoder"/></svg></div><h3>HTML انکوڈر</h3><p>کوڈ اسنیپٹس یا صارف ان پٹ کے لیے HTML اینٹیٹیز کو محفوظ طریقے سے انکوڈ یا ڈی کوڈ کریں۔ مفت۔</p></a><a class="tool-card" href="./css-minifier.html"><div class="ticon"><svg aria-hidden="true"><use href="../../assets/tool-icons.svg#icon-css-minifier"/></svg></div><h3>CSS منی فائر</h3><p>فائل کا سائز کم کرنے کے لیے CSS کوڈ منی فائی کریں، یا پڑھنے میں آسانی کے لیے اسے خوبصورت بنائیں۔ مفت۔</p></a><a class="tool-card" href="./uuid-generator.html"><div class="ticon"><svg aria-hidden="true"><use href="../../assets/tool-icons.svg#icon-uuid-generator"/></svg></div><h3>UUID جنریٹر</h3><p>ڈیٹا بیسز اور APIs کے لیے ایک کلک سے بڑی تعداد میں ورژن 4 UUIDs بنائیں۔ مفت۔</p></a></div></div>
+</div>
+<div class="related-guides"><h2>متعلقہ گائیڈز</h2><div class="grid"><a class="tool-card" href="../blog/how-to-js-minifier-online.html"><h3>آن لائن مفت JavaScript منی فائی کرنے کا طریقہ (2026 گائیڈ) | مفت پرائیویسی ٹولز</h3><p>آن لائن مفت JavaScript منی فائی کرنا سیکھیں۔ JS سے تبصرے اور اسپیس ہٹانے کے لیے مرحلہ وار گائیڈ، اس بارے میں ایماندارانہ مشورے کے ساتھ کہ بنیادی منی فائر کب کافی ہے۔</p></a><a class="tool-card" href="../blog/how-to-html-encoder-online.html"><h3>آن لائن مفت HTML اینٹیٹیز انکوڈ کرنے کا طریقہ (2026 گائیڈ) | مفت پرائیویسی ٹولز</h3><p>تبدیل کریں < و> اور & اور کوٹیشن مارکس کو ویب صفحات پر کوڈ دکھانے کے لیے محفوظ HTML اینٹیٹیز میں تبدیل کریں۔ مفید اینٹیٹی ریفرنس ٹیبل کے ساتھ مفت مرحلہ وار 2026 گائیڈ۔</p></a><a class="tool-card" href="../blog/how-to-css-minifier-online.html"><h3>آن لائن مفت CSS منی فائی کرنے کا طریقہ (2026 گائیڈ) | مفت پرائیویسی ٹولز</h3><p>آن لائن مفت CSS منی فائی کرنا سیکھیں تاکہ اسٹائل شیٹس سکیڑی جائیں اور سائٹس تیز ہوں۔ پہلے/بعد مثالوں کے ساتھ مرحلہ وار گائیڈ، اس کے علاوہ خوبصورت بنانے کا آپشن کب استعمال کریں۔</p></a></div></div>
+</main>
+<footer class="site-footer"><div class="wrap">
+<div class="cols">
+<div><h4><img class="shield" src="../../freetools-icon-192.png" alt="" style="width:22px;height:22px;vertical-align:-4px;margin-right:6px"> مفت پرائیویسی ٹولز</h4><p>63 مفت آن لائن ٹولز۔ بغیر سائن اپ — سب کچھ آپ کے براؤزر میں چلتا ہے۔</p></div>
+<div><h4>مقبول</h4><a href="./image-compressor.html">تصویر کمپریسر</a><a href="./word-counter.html">الفاظ گننے والا</a><a href="./password-generator.html">پاس ورڈ بنانے والا</a><a href="./pdf-merger.html">PDF ضم کریں</a><a href="./age-calculator.html">عمر کیلکولیٹر</a></div>
+<div><h4>سائٹ</h4><a href="../index.html">ہوم</a><a href="../index.html#tools">تمام ٹولز</a><a href="../about.html">ہمارے بارے میں</a><a href="../faq.html">عام سوالات</a><a href="../blog.html">بلاگ</a><a href="../contact.html">رابطہ کریں</a><a href="../request.html">ٹول کی درخواست</a><a href="../privacy.html">پرائیویسی</a><a href="../terms.html">استعمال کی شرائط</a><a href="../disclaimer.html">ڈسکلیمر</a></div>
+</div>
+<div class="foot-note">© 2026 مفت پرائیویسی ٹولز — تمام ٹولز 100% آپ کے براؤزر میں چلتے ہیں۔<br>بنایا گیا: <a href="https://anwaardigital.com/" target="_blank" rel="noopener" style="color:#fbbf24;font-weight:700">Malik Anwaar</a></div>
+</div></footer>
+<script src="../../assets/app.js"></script>
+<script src="../../assets/tools.js"></script>
+<script src="../../assets/features.js"></script>
+
+<script>
+/* UR pages: Urdu language menu (Urdu current + English, Arabic and Hindi links), dark-mode
+   label, tool action labels, useBadge, cookie banner. muft63.js and i18n9.js
+   are NOT loaded on UR pages, so the featured carousel is built here too
+   (same logic as the site's own muft63.js carousel). */
+(function () {
+  'use strict';
+  var UR = {
+    darkLabel: 'ڈارک موڈ', lightLabel: 'لائٹ موڈ', darkTitle: 'ڈارک موڈ تبدیل کریں',
+    waChat: 'واٹس ایپ پر چیٹ', favAction: 'پسندیدہ', rateAction: 'اس ٹول کو ریٹ کریں',
+    shareAction: 'شیئر کریں', shareOn: '{name} پر شیئر کریں', rateYour: 'آپ کی ریٹنگ: {n}/5',
+    useBadge: 'اس ڈیوائس پر {n} ٹول استعمال', openBtn: 'کھولیں', allCat: 'سب'
+  };
+  function lsGet(k, d) { try { var v = localStorage.getItem(k); return v === null ? d : JSON.parse(v); } catch (e) { return d; } }
+  function onReady(fn) { if (document.readyState !== 'loading') fn(); else document.addEventListener('DOMContentLoaded', fn); }
+  function enCounterpart() {
+    var p = window.location.pathname;
+    var m = p.match(/^(.*\/Freetools\/)ur\/((tools\/)?[^\/]+\.html)$/);
+    if (m) return m[1] + m[2];
+    if (p.indexOf('/ur/tools/') !== -1) return '../../tools/' + p.split('/ur/tools/')[1];
+    return '../index.html';
+  }
+  function arCounterpart() {
+    var p = window.location.pathname;
+    var m = p.match(/^(.*\/Freetools\/)ur\/((tools\/)?[^\/]+\.html)$/);
+    if (m) return m[1] + 'ar/' + m[2];
+    if (p.indexOf('/ur/tools/') !== -1) return '../../ar/tools/' + p.split('/ur/tools/')[1];
+    return '../ar/index.html';
+  }
+  function hiCounterpart() {
+    var p = window.location.pathname;
+    var m = p.match(/^(.*\/Freetools\/)ur\/((tools\/)?[^\/]+\.html)$/);
+    if (m) return m[1] + 'hi/' + m[2];
+    if (p.indexOf('/ur/tools/') !== -1) return '../../hi/tools/' + p.split('/ur/tools/')[1];
+    return '../hi/index.html';
+  }
+  function injectStyles() {
+    if (document.getElementById('lang9StyleUr')) return;
+    var st = document.createElement('style'); st.id = 'lang9StyleUr';
+    st.textContent = '.lang9-wrap{position:relative;display:inline-flex;align-items:center}' +
+      '.lang9-btn{cursor:pointer;border:1px solid var(--border,#dbe2ea);background:var(--card,#fff);color:var(--ink,#0f172a);border-radius:999px;padding:7px 14px;font-size:14px;font-weight:700;line-height:1}' +
+      '.lang9-menu{position:absolute;top:calc(100% + 6px);inset-inline-end:0;min-width:170px;margin:0;padding:6px 0;list-style:none;background:var(--card,#fff);border:1px solid var(--border,#dbe2ea);border-radius:12px;box-shadow:0 8px 24px rgba(0,0,0,.15);z-index:100;display:none}' +
+      '.lang9-menu.open{display:block}' +
+      '.lang9-menu button{display:block;width:100%;text-align:start;background:none;border:0;cursor:pointer;padding:9px 14px;font-size:14px;color:var(--ink,#0f172a)}' +
+      '.lang9-menu button:hover{background:var(--bg,#f1f5f9)}' +
+      '.lang9-menu button.on{font-weight:800}' +
+      '.lang9-menu a{display:block;text-decoration:none;padding:9px 14px;font-size:14px;color:var(--ink,#0f172a)}' +
+      '.lang9-menu a:hover{background:var(--bg,#f1f5f9)}';
+    document.head.appendChild(st);
+  }
+  function buildSwitcher() {
+    if (document.getElementById('lang9Wrap')) return;
+    var headerWrap = document.querySelector('.site-header .wrap');
+    if (!headerWrap) return;
+    injectStyles();
+    var wrap = document.createElement('span');
+    wrap.className = 'lang9-wrap'; wrap.id = 'lang9Wrap';
+    var btn = document.createElement('button');
+    btn.type = 'button'; btn.id = 'langBtn9'; btn.className = 'lang9-btn';
+    btn.setAttribute('aria-haspopup', 'listbox'); btn.setAttribute('aria-expanded', 'false');
+    btn.setAttribute('aria-label', 'زبان'); btn.textContent = 'اردو';
+    var menu = document.createElement('ul');
+    menu.className = 'lang9-menu'; menu.id = 'langMenu9'; menu.setAttribute('role', 'listbox');
+    var li1 = document.createElement('li');
+    var cur = document.createElement('button');
+    cur.type = 'button'; cur.className = 'on'; cur.textContent = 'اردو';
+    cur.setAttribute('role', 'option');
+    cur.addEventListener('click', function () { menu.classList.remove('open'); btn.setAttribute('aria-expanded', 'false'); });
+    li1.appendChild(cur); menu.appendChild(li1);
+    var li2 = document.createElement('li');
+    var a = document.createElement('a');
+    a.href = enCounterpart(); a.textContent = 'English'; a.setAttribute('role', 'option');
+    li2.appendChild(a); menu.appendChild(li2);
+    var li3 = document.createElement('li');
+    var a3 = document.createElement('a');
+    a3.href = arCounterpart(); a3.textContent = 'العربية'; a3.setAttribute('role', 'option');
+    li3.appendChild(a3); menu.appendChild(li3);
+    var li4 = document.createElement('li');
+    var a4 = document.createElement('a');
+    a4.href = hiCounterpart(); a4.textContent = 'हिन्दी'; a4.setAttribute('role', 'option');
+    li4.appendChild(a4); menu.appendChild(li4);
+    btn.addEventListener('click', function (e) {
+      e.stopPropagation();
+      var open = menu.classList.toggle('open');
+      btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+    });
+    document.addEventListener('click', function (e) {
+      if (!wrap.contains(e.target)) { menu.classList.remove('open'); btn.setAttribute('aria-expanded', 'false'); }
+    });
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape') { menu.classList.remove('open'); btn.setAttribute('aria-expanded', 'false'); }
+    });
+    wrap.appendChild(btn); wrap.appendChild(menu);
+    var navToggle = headerWrap.querySelector('.nav-toggle');
+    if (navToggle) headerWrap.insertBefore(wrap, navToggle);
+    else headerWrap.appendChild(wrap);
+  }
+  var FEATURED = ['background-remover', 'qr-generator', 'image-compressor', 'password-generator',
+    'pdf-merger', 'word-counter', 'link-shortener', 'age-calculator',
+    'color-picker', 'images-to-pdf'];
+  function featCardUr(slug) {
+    var src = document.querySelector('.tool-card[href="tools/' + slug + '.html"]');
+    if (!src) return null;
+    var ticonEl = src.querySelector('.ticon'); var iconHtml = ticonEl ? ticonEl.innerHTML : '';
+    var name = src.querySelector('h3').textContent;
+    var desc = src.querySelector('p').textContent;
+    var card = document.createElement('div');
+    card.className = 'feat-card'; card.setAttribute('data-slug', slug);
+    var ic = document.createElement('div'); ic.className = 'feat-icon'; ic.innerHTML = iconHtml;
+    var h = document.createElement('h3'); h.textContent = name;
+    var p = document.createElement('p'); p.textContent = desc;
+    var open = document.createElement('a'); open.className = 'feat-open'; open.href = 'tools/' + slug + '.html';
+    var osp = document.createElement('span'); osp.textContent = UR.openBtn;
+    open.appendChild(osp); open.appendChild(document.createTextNode(' ›'));
+    card.appendChild(ic); card.appendChild(h); card.appendChild(p); card.appendChild(open);
+    card.addEventListener('click', function () { location.href = 'tools/' + slug + '.html'; });
+    return card;
+  }
+  function initCarouselUr() {
+    var car = document.getElementById('featCarousel');
+    if (!car) return;
+    FEATURED.forEach(function (s) { var c = featCardUr(s); if (c) car.appendChild(c); });
+    FEATURED.forEach(function (s) { var c = featCardUr(s); if (c) car.appendChild(c); });
+    var SPEED = 40, paused = false, resumeT = null, last = 0;
+    function tick(now) {
+      if (!paused && !document.hidden) {
+        if (last) {
+          car.scrollLeft += (now - last) / 1000 * SPEED;
+          var half = car.scrollWidth / 2;
+          if (half > 0 && car.scrollLeft >= half - 4) car.scrollLeft -= half;
+        }
+        last = now;
+      } else { last = 0; }
+      if (window.requestAnimationFrame) window.requestAnimationFrame(tick);
+    }
+    function pause() { paused = true; }
+    function resume() { paused = false; }
+    function scheduleResume(ms) { clearTimeout(resumeT); resumeT = setTimeout(resume, ms); }
+    car.addEventListener('pointerenter', function (e) { if (e.pointerType === 'mouse') pause(); });
+    car.addEventListener('pointerleave', function (e) { if (e.pointerType === 'mouse') resume(); });
+    car.addEventListener('touchstart', pause, { passive: true });
+    car.addEventListener('touchend', function () { scheduleResume(2500); });
+    document.addEventListener('visibilitychange', function () { if (!document.hidden) resume(); });
+    var pv = document.getElementById('carPrev'), nx = document.getElementById('carNext');
+    if (pv) pv.addEventListener('click', function () { pause(); car.scrollBy({ left: -280, behavior: 'smooth' }); scheduleResume(4000); });
+    if (nx) nx.addEventListener('click', function () { pause(); car.scrollBy({ left: 280, behavior: 'smooth' }); scheduleResume(4000); });
+    if (window.requestAnimationFrame) window.requestAnimationFrame(tick);
+  }
+/* UR widget dictionary: English strings rendered by shared assets/tools.js
+   (and the rating thanks message from features.js) -> Urdu.
+   Applied ONLY to #tool-root (plus .tool-hero .rate-msg) by the inline UR
+   block on UR tool pages. Shared assets are never modified. Select option
+   values are preserved (value attribute set to the original English text)
+   so tools whose logic compares select values keep working. */
+var WIDGET_UR = [
+['Click to choose files (or drag & drop here)', 'فائلیں منتخب کرنے کے لیے کلک کریں (یا یہاں ڈریگ اور ڈراپ کریں)'],
+['Copied!', 'کاپی ہو گیا!'],
+['Error: ', 'خرابی: '],
+['Error loading tool: ', 'ٹول لوڈ کرنے میں خرابی: '],
+['Could not load PDF engine (internet needed once).', 'PDF انجن لوڈ نہیں ہو سکا (ایک بار انٹرنیٹ درکار ہے)۔'],
+['Could not load QR engine (internet needed once).', 'QR انجن لوڈ نہیں ہو سکا (ایک بار انٹرنیٹ درکار ہے)۔'],
+['Could not load QR reader (internet needed once).', 'QR ریڈر لوڈ نہیں ہو سکا (ایک بار انٹرنیٹ درکار ہے)۔'],
+['Select 2+ PDF files to merge (in order)', 'ترتیب کے ساتھ 2 یا زیادہ PDF فائلیں منتخب کریں'],
+['Merge PDFs', 'PDFs ضم کریں'],
+['Please select at least 2 PDF files.', 'براہ کرم کم از کم 2 PDF فائلیں منتخب کریں۔'],
+['Merging...', 'ضم ہو رہا ہے...'],
+['Done! merged.pdf downloaded (', 'ہو گیا! merged.pdf ڈاؤن لوڈ ہو گئی ('],
+['Done! split.pdf downloaded.', 'ہو گیا! split.pdf ڈاؤن لوڈ ہو گئی۔'],
+['Done! images.pdf downloaded (', 'ہو گیا! images.pdf ڈاؤن لوڈ ہو گئی ('],
+['Done! ', 'ہو گیا! '],
+['Select a PDF file', 'ایک PDF فائل منتخب کریں'],
+['Pages to extract', 'نکالنے والے صفحات'],
+['e.g. 1-3, 5, 7-9', 'مثلاً 1-3، 5، 7-9'],
+['Split / Extract Pages', 'صفحات تقسیم / نکالیں'],
+['Select a PDF first.', 'پہلے ایک PDF منتخب کریں۔'],
+['Working...', 'کام ہو رہا ہے...'],
+['No valid pages. This PDF has ', 'کوئی درست صفحہ نہیں۔ اس PDF میں '],
+[' pages).', ' صفحات ہیں)۔'],
+[' pages.', ' صفحات۔'],
+['Select a PDF to compress', 'کمپریس کرنے کے لیے ایک PDF منتخب کریں'],
+['Compress PDF', 'PDF کمپریس کریں'],
+['Compressing...', 'کمپریس ہو رہا ہے...'],
+['Saved ', 'بچت ہوئی '],
+['% smaller).', '٪ چھوٹی)۔'],
+['File was already optimized.', 'فائل پہلے سے ہی بہتر بنائی گئی تھی۔'],
+[' compressed.pdf downloaded.', ' compressed.pdf ڈاؤن لوڈ ہو گئی۔'],
+['Extracted text will appear here...', 'نکالا گیا متن یہاں ظاہر ہوگا...'],
+['Extracting text...', 'متن نکالا جا رہا ہے...'],
+['--- Page ', '--- صفحہ '],
+['Copy Text', 'متن کاپی کریں'],
+['Download .txt', '.txt ڈاؤن لوڈ کریں'],
+['Select images (JPG/PNG) — in page order', 'تصاویر منتخب کریں (JPG/PNG) — صفحات کی ترتیب میں'],
+['Create PDF', 'PDF بنائیں'],
+['Select at least one image.', 'کم از کم ایک تصویر منتخب کریں۔'],
+['Creating PDF...', 'PDF بن رہی ہے...'],
+['Rebuilds the PDF with object streams to shrink file size. Best on PDFs with lots of metadata/structure.', 'فائل کا سائز کم کرنے کے لیے PDF کو آبجیکٹ اسٹریمز کے ساتھ دوبارہ بناتا ہے۔ زیادہ میٹا ڈیٹا/سٹرکچر والی PDFs کے لیے بہترین ہے۔'],
+['Select an image', 'ایک تصویر منتخب کریں'],
+['Original: ', 'اصل: '],
+['Quality (1-100)', 'کوالٹی (1-100)'],
+['Compress & Download JPG', 'JPG کمپریس اور ڈاؤن لوڈ کریں'],
+['Compress & Download WebP', 'WebP کمپریس اور ڈاؤن لوڈ کریں'],
+['Width (px)', 'چوڑائی (px)'],
+['Height (px)', 'اونچائی (px)'],
+[' Keep aspect ratio', ' تناسب برقرار رکھیں'],
+['Resize & Download', 'سائز تبدیل کریں اور ڈاؤن لوڈ کریں'],
+['Convert to', 'میں تبدیل کریں'],
+['Convert & Download', 'تبدیل کریں اور ڈاؤن لوڈ کریں'],
+['Removes solid white / light backgrounds (great for logos & product shots). For complex photos use a dedicated AI tool.', 'سفید / ہلکے رنگ کے ٹھوس بیک گراؤنڈ ہٹاتا ہے (لوگوز اور پروڈکٹ تصاویر کے لیے بہترین)۔ پیچیدہ تصاویر کے لیے مخصوص AI ٹول استعمال کریں۔'],
+['Tolerance (0-150)', 'برداشت (0-150)'],
+['Remove Background', 'بیک گراؤنڈ ہٹائیں'],
+['Download PNG', 'PNG ڈاؤن لوڈ کریں'],
+['Crop & Download', 'کراپ کریں اور ڈاؤن لوڈ کریں'],
+['Rotate 90°', '90° گھمائیں'],
+['Rotate 180°', '180° گھمائیں'],
+['Flip Horizontal', 'افقی پلٹائیں'],
+['Flip Vertical', 'عمودی پلٹائیں'],
+['Download', 'ڈاؤن لوڈ کریں'],
+['Filter', 'فلٹر'],
+['Grayscale', 'گرے اسکیل'],
+['Sepia', 'سیپیا'],
+['Invert', 'الٹا'],
+['High Contrast', 'زیادہ کنٹراسٹ'],
+['Blur', 'دھندلا'],
+['Vintage', 'ونٹیج'],
+['Apply Filter', 'فلٹر لگائیں'],
+['Reset', 'ری سیٹ کریں'],
+['Upload the PNGs to your site root as favicon-16.png etc., or convert to .ico with any converter.', 'PNGs کو favicon-16.png وغیرہ کے نام سے اپنی سائٹ کی روٹ میں اپ لوڈ کریں، یا کسی بھی کنورٹر سے .ico میں تبدیل کریں۔'],
+['Generate Favicons', 'فیویکانز بنائیں'],
+['Text / URL', 'متن / URL'],
+['Size (px)', 'سائز (px)'],
+['Generate QR Code', 'QR کوڈ بنائیں'],
+['Select an image containing a QR code', 'QR کوڈ والی تصویر منتخب کریں'],
+['Reading...', 'پڑھا جا رہا ہے...'],
+['QR content:', 'QR مواد:'],
+['Copy', 'کاپی کریں'],
+['No QR code found in this image.', 'اس تصویر میں کوئی QR کوڈ نہیں ملا۔'],
+['Paste or type your text here...', 'اپنا متن یہاں پیسٹ کریں یا لکھیں...'],
+['Result...', 'نتیجہ...'],
+['Copy Result', 'نتیجہ کاپی کریں'],
+['Type or paste text...', 'متن لکھیں یا پیسٹ کریں...'],
+['Words', 'الفاظ'],
+['Characters', 'حروف'],
+['No spaces', 'بغیر اسپیس'],
+['Sentences', 'جملے'],
+['Paragraphs', 'پیراگراف'],
+['Reading time', 'پڑھنے کا وقت'],
+[' min', ' منٹ'],
+[' characters  •  ', ' حروف  •  '],
+[' without spaces  •  ', ' بغیر اسپیس  •  '],
+[' lines', ' لائنیں'],
+['Type text...', 'متن لکھیں...'],
+['UPPERCASE', 'بڑے حروف'],
+['lowercase', 'چھوٹے حروف'],
+['Title Case', 'ٹائٹل کیس'],
+['Sentence case', 'جملے کا کیس'],
+['aLtErNaTiNg', 'مخلوط'],
+['Case sensitive', 'کیس حساس'],
+['Trim whitespace', 'اضافی اسپیس ختم کریں'],
+['Paste lines (one per line)...', 'لائنیں پیسٹ کریں (ہر لائن الگ)...'],
+['Remove Duplicates', 'ڈپلیکیٹس ہٹائیں'],
+['Sort A-Z', 'A-Z ترتیب دیں'],
+['Reverse Lines', 'لائنیں الٹی کریں'],
+['Generated text...', 'بنایا گیا متن...'],
+['Generate', 'بنائیں'],
+['Reverse Text', 'متن الٹا کریں'],
+['Reverse Words', 'الفاظ الٹے کریں'],
+['Flip Lines', 'لائنیں پلٹائیں'],
+['Paste messy text...', 'بے ترتیب متن پیسٹ کریں...'],
+['Clean Up', 'صاف کریں'],
+['Remove ALL Spaces', 'تمام اسپیس ہٹائیں'],
+['Single Line', 'ایک لائن'],
+['Type or paste...', 'لکھیں یا پیسٹ کریں...'],
+['Encode → Base64', 'Base64 میں انکوڈ کریں →'],
+['Decode Base64 →', 'Base64 ڈی کوڈ کریں →'],
+['Error: invalid Base64', 'خرابی: غلط Base64'],
+['Type or paste URL/text...', 'URL/متن لکھیں یا پیسٹ کریں...'],
+['Encode URL', 'URL انکوڈ کریں'],
+['Decode URL', 'URL ڈی کوڈ کریں'],
+['Error: invalid encoding', 'خرابی: غلط انکوڈنگ'],
+['Paste JSON here...', 'JSON یہاں پیسٹ کریں...'],
+['Format / Beautify', 'فارمیٹ / خوبصورت بنائیں'],
+['Invalid JSON: ', 'غلط JSON: '],
+['Minify', 'منی فائی کریں'],
+['Validate', 'تصدیق کریں'],
+['Valid JSON ✓', 'درست JSON ✓'],
+['Calculate', 'حساب کریں'],
+['Your birth date', 'آپ کی تاریخ پیدائش'],
+['Calculate Age', 'عمر معلوم کریں'],
+['Pick a date.', 'ایک تاریخ منتخب کریں۔'],
+['Pick a date & time.', 'ایک تاریخ اور وقت منتخب کریں۔'],
+['Pick both dates.', 'دونوں تاریخیں منتخب کریں۔'],
+[' days total • next birthday in ', ' دن کل • اگلی سالگرہ '],
+[' years, ', ' سال، '],
+[' months, ', ' مہینے، '],
+[' weeks • ', ' ہفتے • '],
+[' months • ', ' مہینے • '],
+[' years', ' سال'],
+[' days', ' دن'],
+['Weight (kg)', 'وزن (kg)'],
+['Height (cm)', 'قد (cm)'],
+['Calculate BMI', 'BMI معلوم کریں'],
+['BMI: ', 'BMI: '],
+['Category: ', 'زمرہ: '],
+['Underweight', 'کم وزن'],
+['Normal weight', 'معمول کا وزن'],
+['Overweight', 'زیادہ وزن'],
+['Obese', 'موٹاپا'],
+['Loan amount', 'قرض کی رقم'],
+['Interest % / year', 'سود % / سال'],
+['Years', 'سال'],
+['Calculate EMI', 'EMI معلوم کریں'],
+['Monthly payment: ', 'ماہانہ قسط: '],
+['Total payable: ', 'کل قابل ادائیگی: '],
+[' • Total interest: ', ' • کل سود: '],
+['Mode', 'موڈ'],
+['What is X% of Y?', 'Y کا X% کیا ہے؟'],
+['X is what % of Y?', 'Y کا X کتنا % ہے؟'],
+['Increase X by Y%', 'X میں Y% اضافہ کریں'],
+['Decrease X by Y%', 'X میں Y% کمی کریں'],
+['Bill amount', 'بل کی رقم'],
+['Tip %', 'ٹپ %'],
+['People', 'افراد'],
+['Tip: ', 'ٹپ: '],
+[' • Total: ', ' • کل: '],
+['Per person: ', 'فی شخص: '],
+['Original price', 'اصل قیمت'],
+['Discount %', 'رعایت %'],
+['You pay: ', 'آپ ادا کریں گے: '],
+['You save: ', 'آپ بچائیں گے: '],
+['Amount', 'رقم'],
+['From', 'سے'],
+['To', 'تک'],
+['Uses indicative static rates. For exact transfers check your bank.', 'اشاراتی جامد ریٹس استعمال کرتا ہے۔ درست ٹرانسفر کے لیے اپنا بینک چیک کریں۔'],
+['Convert', 'تبدیل کریں'],
+['Category', 'زمرہ'],
+['Value', 'قدر'],
+['Length', 'لمبائی'],
+['Weight', 'وزن'],
+['Temperature', 'درجہ حرارت'],
+['Volume', 'حجم'],
+['Speed', 'رفتار'],
+['Data', 'ڈیٹا'],
+['Celsius', 'سیلسیس'],
+['Fahrenheit', 'فارن ہائیٹ'],
+['Kelvin', 'کیلون'],
+['Date & time', 'تاریخ اور وقت'],
+['From zone', 'اصل ٹائم زون'],
+['To zone', 'منزل ٹائم زون'],
+['Start date', 'شروع کی تاریخ'],
+['End date', 'اختتام کی تاریخ'],
+['Uppercase', 'بڑے حروف'],
+['Lowercase', 'چھوٹے حروف'],
+['Digits', 'ہندسے'],
+['Symbols', 'علامات'],
+['Generate Password', 'پاس ورڈ بنائیں'],
+['Select at least one character set.', 'کم از کم ایک کریکٹر سیٹ منتخب کریں۔'],
+['Type text to hash...', 'ہیش کرنے کے لیے متن لکھیں...'],
+['Generate Hashes', 'ہیشز بنائیں'],
+['Simple checksum:', 'سادہ چیک سم:'],
+['Hashes are computed locally in your browser — your text never leaves your device.', 'ہیشز آپ کے براؤزر میں مقامی طور پر بنتے ہیں — آپ کا متن کبھی آپ کے آلے سے باہر نہیں جاتا۔'],
+['Min', 'کم از کم'],
+['Max', 'زیادہ سے زیادہ'],
+['Count', 'تعداد'],
+[' Unique numbers', ' منفرد نمبرز'],
+['Range too small for ', 'رینج بہت چھوٹی ہے، '],
+[' unique numbers.', ' منفرد نمبرز کے لیے۔'],
+['Flip Coin', 'سکہ اچھالیں'],
+['HEADS!', 'ہیڈز!'],
+['TAILS!', 'ٹیلز!'],
+['  —  Heads: ', '  —  ہیڈز: '],
+[' • Tails: ', ' • ٹیلز: '],
+['Heads', 'ہیڈز'],
+['Tails', 'ٹیلز'],
+['Dice', 'ڈائس'],
+['Sides', 'اطراف'],
+['Roll', 'پھینکیں'],
+['Pick a color', 'رنگ منتخب کریں'],
+['Copy HEX', 'HEX کاپی کریں'],
+['HEX → RGB', 'HEX → RGB'],
+['HEX to RGB', 'HEX سے RGB'],
+['Invalid HEX.', 'غلط HEX۔'],
+['RGB to HEX', 'RGB سے HEX'],
+['Generate Palette', 'رنگوں کا پیلیٹ بنائیں'],
+['Click any color to copy its HEX code.', 'HEX کوڈ کاپی کرنے کے لیے کسی بھی رنگ پر کلک کریں۔'],
+['Color 1', 'رنگ 1'],
+['Color 2', 'رنگ 2'],
+['Angle', 'زاویہ'],
+['Copy CSS', 'CSS کاپی کریں'],
+['Sample Text', 'نمونہ متن'],
+['Contrast ratio: ', 'کنٹراسٹ تناسب: '],
+['WCAG AA (normal text): ', 'WCAG AA (عام متن): '],
+['PASS', 'پاس'],
+['FAIL', 'فیل'],
+['Text color', 'متن کا رنگ'],
+['Background', 'بیک گراؤنڈ'],
+['Paste HTML...', 'HTML پیسٹ کریں...'],
+['Encode HTML', 'HTML انکوڈ کریں'],
+['Decode HTML', 'HTML ڈی کوڈ کریں'],
+['Paste CSS...', 'CSS پیسٹ کریں...'],
+['Minify CSS', 'CSS منی فائی کریں'],
+['Beautify CSS', 'CSS خوبصورت بنائیں'],
+['Paste JavaScript...', 'JavaScript پیسٹ کریں...'],
+['Minify JS (basic)', 'JS منی فائی کریں (بنیادی)'],
+['Basic whitespace/comment minifier. For production builds use Terser or esbuild.', 'بنیادی اسپیس/کمنٹ منی فائر۔ پروڈکشن بلڈز کے لیے Terser یا esbuild استعمال کریں۔'],
+['How many', 'کتنے'],
+['Generate UUIDs', 'UUIDs بنائیں'],
+['Copy All', 'سب کاپی کریں'],
+['Unix timestamp → date', 'Unix ٹائم اسٹیمپ → تاریخ'],
+['e.g. 1728566400', 'مثلاً 1728566400'],
+['To Date', 'تاریخ میں تبدیل کریں'],
+['Invalid timestamp.', 'غلط ٹائم اسٹیمپ۔'],
+['Local:', 'مقامی:'],
+['Date → timestamp', 'تاریخ → ٹائم اسٹیمپ'],
+['To Timestamp', 'ٹائم اسٹیمپ میں تبدیل کریں'],
+['Seconds:', 'سیکنڈز:'],
+['Milliseconds:', 'ملی سیکنڈز:'],
+['Current Timestamp', 'موجودہ ٹائم اسٹیمپ'],
+['Now (seconds):', 'اب (سیکنڈز میں):'],
+['Long URL', 'لمبا URL'],
+['Shorten Link', 'لنک چھوٹا کریں'],
+['Please paste a URL first.', 'براہ کرم پہلے ایک URL پیسٹ کریں۔'],
+['Shortening...', 'چھوٹا ہو رہا ہے...'],
+['Could not reach the shortening service. Check your internet and try again.', 'شارٹننگ سروس تک نہیں پہنچ سکے۔ اپنا انٹرنیٹ چیک کریں اور دوبارہ کوشش کریں۔'],
+['Your short link:', 'آپ کا مختصر لنک:'],
+['Copy Link', 'لنک کاپی کریں'],
+['Note: uses the free da.gd / is.gd service over HTTPS.', 'نوٹ: مفت da.gd / is.gd سروس HTTPS پر استعمال ہوتی ہے۔'],
+['Type your password...', 'اپنا پاس ورڈ لکھیں...'],
+['Show', 'دکھائیں'],
+['Hide', 'چھپائیں'],
+['Password', 'پاس ورڈ'],
+['How to improve', 'بہتر کیسے کریں'],
+['less than a second', 'ایک سیکنڈ سے کم'],
+[' seconds', ' سیکنڈز'],
+[' minutes', ' منٹس'],
+[' hours', ' گھنٹے'],
+['Weak', 'کمزور'],
+['Fair', 'درمیانہ'],
+['Good', 'اچھا'],
+['Strong', 'مضبوط'],
+['centuries', 'صدیاں'],
+[' — ', ' — '],
+['Estimated time to crack: ', 'کریک کرنے کا اندازاً وقت: '],
+[' (10 billion guesses/sec).', ' (10 ارب اندازے/سیکنڈ)۔'],
+['Make it at least 12 characters long (16+ is better).', 'اسے کم از کم 12 حروف کا بنائیں (16+ بہتر ہے)۔'],
+['Add uppercase letters.', 'بڑے حروف شامل کریں۔'],
+['Add lowercase letters.', 'چھوٹے حروف شامل کریں۔'],
+['Add numbers.', 'نمبرز شامل کریں۔'],
+['Add symbols like !@#$%.', '!@#$% جیسی علامات شامل کریں۔'],
+['Avoid repeating the same character 3+ times.', 'ایک ہی کریکٹر 3 یا زیادہ بار دہرانے سے بچیں۔'],
+['Avoid common patterns and dictionary words.', 'عام پیٹرنز اور ڈکشنری الفاظ سے بچیں۔'],
+['Great! This looks like a strong password. Use a unique one per site.', 'بہترین! یہ ایک مضبوط پاس ورڈ لگتا ہے۔ ہر سائٹ کے لیے الگ پاس ورڈ استعمال کریں۔'],
+['Checked 100% locally in your browser — your password is never sent anywhere.', '100% مقامی طور پر آپ کے براؤزر میں چیک ہوتا ہے — آپ کا پاس ورڈ کبھی کہیں نہیں بھیجا جاتا۔'],
+['IP address or domain — e.g. 8.8.8.8', 'IP ایڈریس یا ڈومین — مثلاً 8.8.8.8'],
+['IP or domain', 'IP یا ڈومین'],
+['IP address', 'IP ایڈریس'],
+['City', 'شہر'],
+['Region', 'علاقہ'],
+['Country', 'ملک'],
+['ISP / Org', 'ISP / ادارہ'],
+['Timezone', 'ٹائم زون'],
+['Latitude / Longitude', 'عرض بلد / طول بلد'],
+['Looking up…', 'تلاش ہو رہی ہے…'],
+['Lookup failed: ', 'تلاش ناکام: '],
+['Could not reach the lookup service. Check your internet and try again.', 'تلاش سروس تک نہیں پہنچ سکے۔ اپنا انٹرنیٹ چیک کریں اور دوبارہ کوشش کریں۔'],
+['Look Up', 'تلاش کریں'],
+['Enter an IP address or domain first.', 'پہلے ایک IP ایڈریس یا ڈومین درج کریں۔'],
+['My IP', 'میرا IP'],
+['Uses the free ipapi.co geolocation API. Locations are approximate (ISP level).', 'مفت ipapi.co جیو لوکیشن API استعمال ہوتی ہے۔ مقامات تقریبی ہیں (ISP سطح پر)۔'],
+['Website URL', 'ویب سائٹ URL'],
+['Strict-Transport-Security (HSTS)', 'Strict-Transport-Security (HSTS)'],
+['Forces browsers to use HTTPS only. Protects against protocol-downgrade attacks.', 'براؤزرز کو صرف HTTPS استعمال کرنے پر مجبور کرتا ہے۔ پروٹوکول ڈاؤن گریڈ حملوں سے بچاتا ہے۔'],
+['Content-Security-Policy (CSP)', 'Content-Security-Policy (CSP)'],
+['Controls which scripts, styles and resources may load. Key defense against XSS attacks.', 'کنٹرول کرتا ہے کہ کون سی اسکرپٹس، اسٹائلز اور وسائل لوڈ ہو سکتے ہیں۔ XSS حملوں کے خلاف اہم دفاع ہے۔'],
+['X-Frame-Options', 'X-Frame-Options'],
+['Prevents the page being embedded in iframes — stops clickjacking attacks.', 'صفحے کو iframes میں ایمبیڈ ہونے سے روکتا ہے — کلک جیکنگ حملے روکتا ہے۔'],
+['X-Content-Type-Options', 'X-Content-Type-Options'],
+['Stops browsers "sniffing" file types — set to nosniff.', 'براؤزرز کو فائل کی اقسام کا "اندازہ" لگانے سے روکتا ہے — اسے nosniff پر سیٹ کریں۔'],
+['Referrer-Policy', 'Referrer-Policy'],
+['Controls how much referrer info is sent when users click away.', 'کنٹرول کرتا ہے کہ صارف کے کہیں اور کلک کرنے پر کتنی ریفرر معلومات بھیجی جائیں۔'],
+['Permissions-Policy', 'Permissions-Policy'],
+['Restricts powerful browser features (camera, mic, geolocation).', 'طاقتور براؤزر فیچرز (کیمرہ، مائیک، جیو لوکیشن) کو محدود کرتا ہے۔'],
+['Pass: ', 'پاس: '],
+['Fail: ', 'فیل: '],
+['Score: ', 'اسکور: '],
+[' security headers present.', ' سیکیورٹی ہیڈرز موجود ہیں۔'],
+['For a deeper automated scan, also try securityheaders.com.', 'مزید گہرے خودکار اسکین کے لیے securityheaders.com بھی آزمائیں۔'],
+['Check Headers', 'ہیڈرز چیک کریں'],
+['Enter a website URL first.', 'پہلے ایک ویب سائٹ URL درج کریں۔'],
+['Fetching headers…', 'ہیڈرز لائے جا رہے ہیں…'],
+['No headers returned. The site may block this check — try securityheaders.com instead.', 'کوئی ہیڈرز واپس نہیں آئے۔ سائٹ اس چیک کو بلاک کر سکتی ہے — اس کے بجائے securityheaders.com آزمائیں۔'],
+['Could not reach the header service. Check your internet and try again.', 'ہیڈر سروس تک نہیں پہنچ سکے۔ اپنا انٹرنیٹ چیک کریں اور دوبارہ کوشش کریں۔'],
+['Header fetch uses the free hackertarget.com API. Explanations are educational — this is a defensive learning tool.', 'ہیڈر لانا مفت hackertarget.com API استعمال کرتا ہے۔ وضاحتیں تعلیمی ہیں — یہ ایک دفاعی سیکھنے کا ٹول ہے۔'],
+['URL to analyze', 'تجزیہ کرنے والا URL'],
+['Paste the suspicious URL here…', 'مشکوک URL یہاں پیسٹ کریں…'],
+['Check URL', 'URL چیک کریں'],
+['That does not look like a valid URL.', 'یہ درست URL نہیں لگتا۔'],
+['Uses HTTPS (encrypted connection).', 'HTTPS استعمال کرتا ہے (انکرپٹڈ کنکشن)۔'],
+['No HTTPS — data is sent unencrypted.', 'HTTPS نہیں ہے — ڈیٹا بغیر انکرپشن بھیجا جاتا ہے۔'],
+['Host is a raw IP address instead of a domain name.', 'ہوسٹ ڈومین نام کے بجائے خام IP ایڈریس ہے۔'],
+['Host is a domain name, not a raw IP.', 'ہوسٹ خام IP نہیں، ڈومین نام ہے۔'],
+['Many subdomains (', 'کئی سب ڈومینز ('],
+[' parts) — a common phishing trick.', ' حصے) — ایک عام فشنگ چال ہے۔'],
+['Subdomain depth looks normal.', 'سب ڈومین کی گہرائی معمول کی لگتی ہے۔'],
+['Uses a top-level domain often abused by scammers.', 'ایک ٹاپ لیول ڈومین استعمال کرتا ہے جسے اسکیمرز اکثر غلط استعمال کرتے ہیں۔'],
+['Top-level domain is not on the high-risk list.', 'ٹاپ لیول ڈومین زیادہ خطرے والی فہرست میں نہیں ہے۔'],
+['Contains "@" — everything before it can be fake.', '"@" شامل ہے — اس سے پہلے سب کچھ جعلی ہو سکتا ہے۔'],
+['No "@" trick in the URL.', 'URL میں "@" والی چال نہیں ہے۔'],
+['Brand-like words combined with hyphens (e.g. "paypal-secure-login").', 'ہائفنیں کے ساتھ برانڈ جیسے الفاظ (مثلاً "paypal-secure-login")۔'],
+['No brand-imitating hyphen pattern detected.', 'برانڈ کی نقل کرنے والا ہائفن پیٹرن نہیں ملا۔'],
+['URL shortener hides the real destination.', 'URL شارٹنر اصل منزل چھپاتا ہے۔'],
+['Not a known URL shortener.', 'معروف URL شارٹنر نہیں ہے۔'],
+['Very long URL (', 'بہت لمبا URL ('],
+[' chars) — can hide the true domain.', ' حروف) — اصل ڈومین چھپا سکتا ہے۔'],
+['URL length looks normal.', 'URL کی لمبائی معمول کی لگتی ہے۔'],
+['Contains non-Latin characters — possible homograph attack.', 'غیر لاطینی حروف شامل ہیں — ممکنہ ہوموگراف حملہ۔'],
+['No suspicious non-Latin characters.', 'کوئی مشکوک غیر لاطینی حروف نہیں ہیں۔'],
+['Numbers mixed into a sensitive-looking domain.', 'حساس نظر آنے والے ڈومین میں نمبرز ملے ہوئے ہیں۔'],
+['Looks Safe', 'محفوظ لگتا ہے'],
+['Suspicious', 'مشکوک'],
+['Dangerous', 'خطرناک'],
+['Warning: ', 'انتباہ: '],
+[' risk)', ' خطرہ)'],
+[' risk', ' خطرہ'],
+['Type', 'قسم'],
+['Width', 'چوڑائی'],
+['Height', 'اونچائی'],
+['https://example.com or any text', 'https://example.com یا کوئی بھی متن'],
+['Disclaimer: this is a first-pass heuristic check only and cannot guarantee a site is legitimate. When in doubt, never enter passwords or payment details.', 'ڈسکلیمر: یہ صرف پہلی سطح کا اندازاتی چیک ہے اور اس بات کی ضمانت نہیں دیتا کہ کوئی سائٹ جائز ہے۔ شک ہونے پر کبھی پاس ورڈ یا ادائیگی کی تفصیلات درج نہ کریں۔'],
+['Analysis runs 100% locally in your browser — the URL is never sent anywhere.', 'تجزیہ 100% مقامی طور پر آپ کے براؤزر میں ہوتا ہے — URL کبھی کہیں نہیں بھیجا جاتا۔'],
+['Thanks! You rated this tool ', 'شکریہ! آپ نے اس ٹول کو ریٹ کیا '],
+['Your rating: ', 'آپ کی ریٹنگ: '],
+['Add to favorites', 'پسندیدہ میں شامل کریں'],
+['Toggle dark mode', 'ڈارک موڈ تبدیل کریں']
+];
+/* Single words that also appear inside composite result strings (so they
+   need fragment replacement, not just exact-node replacement). */
+var WIDGET_FRAG_WORDS = { 'Weak': 1, 'Fair': 1, 'Good': 1, 'Strong': 1,
+  'centuries': 1, 'Underweight': 1, 'Overweight': 1, 'Obese': 1,
+  'Suspicious': 1, 'Dangerous': 1, 'Heads': 1, 'Tails': 1 };
+
+/* ---- UR widget translation (tools.js output) ---- */
+(function () {
+  var EXACT = {};
+  WIDGET_UR.forEach(function (p) { if (p[0] !== p[1]) EXACT[p[0]] = p[1]; });
+  var PAIRS = WIDGET_UR.filter(function (p) { return p[0] !== p[1]; });
+  PAIRS.sort(function (a, b) { return b[0].length - a[0].length; });
+  function isFrag(en) {
+    if (WIDGET_FRAG_WORDS[en]) return true;
+    return /[^A-Za-z]/.test(en);
+  }
+  function translateString(v) {
+    if (EXACT[v] !== undefined) return EXACT[v];
+    var t = v, changed = false;
+    for (var i = 0; i < PAIRS.length; i++) {
+      var en = PAIRS[i][0];
+      if (!isFrag(en)) continue;
+      if (t.indexOf(en) !== -1) { t = t.split(en).join(PAIRS[i][1]); changed = true; }
+    }
+    return changed ? t : v;
+  }
+  function translateNode(node) {
+    var v = node.nodeValue;
+    var tr = v.trim();
+    if (tr && EXACT[tr] !== undefined) { node.nodeValue = v.replace(tr, EXACT[tr]); return; }
+    if (!v || v.indexOf(' ') === -1 && !EXACT[v]) {
+      if (EXACT[v] !== undefined) node.nodeValue = EXACT[v];
+      return;
+    }
+    /* Skip the QR-reader echo node (user data, not UI text). */
+    var par = node.parentNode;
+    if (par && par.className && par.className.indexOf('big') !== -1) {
+      var prev = par.previousElementSibling;
+      if (prev && (prev.textContent.indexOf('QR content') !== -1 || prev.textContent.indexOf('مواد') !== -1)) return;
+    }
+    /* Skip link text (URLs) and textarea default text (user-editable samples). */
+    if (par && par.tagName === 'A') return;
+    if (par && par.tagName === 'TEXTAREA') return;
+    /* Preserve select-option values so value-compared tools keep working. */
+    if (par && par.tagName === 'OPTION' && EXACT[v] !== undefined && !par.hasAttribute('value')) {
+      par.setAttribute('value', v);
+    }
+    var nv = translateString(v);
+    if (nv !== v) node.nodeValue = nv;
+  }
+  function translateAttrs(el) {
+    var ph = el.getAttribute && el.getAttribute('placeholder');
+    if (ph && EXACT[ph] !== undefined) el.setAttribute('placeholder', EXACT[ph]);
+    var ti = el.getAttribute && el.getAttribute('title');
+    if (ti && EXACT[ti] !== undefined) el.setAttribute('title', EXACT[ti]);
+    var al = el.getAttribute && el.getAttribute('aria-label');
+    if (al && EXACT[al] !== undefined) el.setAttribute('aria-label', EXACT[al]);
+  }
+  function translateTree(root) {
+    if (!root) return;
+    var walker = document.createTreeWalker(root, NodeFilter.SHOW_TEXT, null, false);
+    var nodes = [], n;
+    while ((n = walker.nextNode())) nodes.push(n);
+    nodes.forEach(translateNode);
+    var els = root.querySelectorAll ? root.querySelectorAll('input,textarea,select,button,a') : [];
+    for (var i = 0; i < els.length; i++) translateAttrs(els[i]);
+    translateAttrs(root);
+  }
+  function translateHeroRate() {
+    var rm = document.querySelector('.tool-hero .rate-msg');
+    if (!rm) return;
+    var walker = document.createTreeWalker(rm, NodeFilter.SHOW_TEXT, null, false);
+    var nodes = [], n;
+    while ((n = walker.nextNode())) nodes.push(n);
+    nodes.forEach(function (tn) {
+      var nv = translateString(tn.nodeValue);
+      if (nv !== tn.nodeValue) tn.nodeValue = nv;
+    });
+  }
+  function translatePdfTextValue() {
+    var root = document.getElementById('tool-root');
+    if (!root || root.getAttribute('data-tool') !== 'pdf-to-text') return;
+    var ta = root.querySelector('textarea');
+    if (!ta) return;
+    var v = ta.value;
+    if (!v) return;
+    var nv = v.split('Extracting text...').join('متن نکالا جا رہا ہے...')
+      .split('Error: ').join('خرابی: ')
+      .split('--- Page ').join('--- صفحہ ');
+    if (nv !== v) ta.value = nv;
+  }
+  var busy = false;
+  function runAll() {
+    if (busy) return; busy = true;
+    try {
+      translateTree(document.getElementById('tool-root'));
+      translateHeroRate();
+      translatePdfTextValue();
+    } catch (e) {}
+    busy = false;
+  }
+  function initWidgetUr() {
+    runAll();
+    var root = document.getElementById('tool-root');
+    if (root && window.MutationObserver) {
+      var mo = new MutationObserver(function () { runAll(); });
+      mo.observe(root, { childList: true, subtree: true, characterData: true });
+    }
+    var rm = document.querySelector('.tool-hero .rate-msg');
+    if (rm && window.MutationObserver) {
+      var mo2 = new MutationObserver(function () { translateHeroRate(); });
+      mo2.observe(rm, { childList: true, subtree: true, characterData: true });
+    }
+    /* pdf-to-text writes system text into a textarea value (no DOM
+       mutation fires), so poll that one readonly output only. */
+    var rootEl = document.getElementById('tool-root');
+    if (rootEl && rootEl.getAttribute('data-tool') === 'pdf-to-text') {
+      setInterval(translatePdfTextValue, 800);
+    }
+  }
+  window.__initWidgetUr = initWidgetUr;
+})();
+
+  onReady(function () {
+    buildSwitcher();
+    var dark = document.getElementById('darkToggle');
+    if (dark) {
+      var setLabel = function () { dark.textContent = document.body.classList.contains('dark') ? UR.lightLabel : UR.darkLabel; };
+      dark.title = UR.darkTitle; dark.setAttribute('aria-label', UR.darkTitle);
+      setLabel();
+      dark.addEventListener('click', function () { setTimeout(setLabel, 0); });
+    }
+    var badge = document.getElementById('useBadge');
+    if (badge) badge.textContent = UR.useBadge.replace('{n}', lsGet('fpt_usage', 0));
+    var chips = document.querySelectorAll('#catChips .chip');
+    if (chips.length && chips[0].textContent === 'All') chips[0].textContent = UR.allCat;
+    document.querySelectorAll('.tool-actions .action-label').forEach(function (lab) {
+      var t = lab.textContent;
+      if (t === 'Favorite') lab.textContent = UR.favAction;
+      else if (t === 'Rate this tool') lab.textContent = UR.rateAction;
+      else if (t === 'Share') lab.textContent = UR.shareAction;
+    });
+    var star = document.querySelector('.tool-hero .fav-star');
+    if (star) { star.title = UR.favAction; star.setAttribute('aria-label', UR.favAction); }
+    document.querySelectorAll('.tool-hero .share-btn').forEach(function (a) {
+      var t = a.getAttribute('title') || a.getAttribute('aria-label') || '';
+      var m = /Share on (.+)$/.exec(t);
+      if (m) { var nt = UR.shareOn.replace('{name}', m[1]); a.title = nt; a.setAttribute('aria-label', nt); }
+    });
+    var rateMsg = document.querySelector('.tool-hero .rate-msg');
+    var rootEl = document.getElementById('tool-root');
+    if (rateMsg && rootEl) {
+      var ratings = lsGet('fpt_ratings', {});
+      var my = ratings[rootEl.getAttribute('data-tool')] || 0;
+      if (my) rateMsg.textContent = UR.rateYour.replace('{n}', my);
+    }
+    document.querySelectorAll('.fav-star').forEach(function (s) { s.title = UR.favAction; s.setAttribute('aria-label', UR.favAction); });
+    var wa = document.getElementById('wa-float-btn');
+    if (wa) { wa.title = UR.waChat; wa.setAttribute('aria-label', UR.waChat); }
+    var ban = document.getElementById('adCookieBanner');
+    if (ban) {
+      var sp = ban.querySelector('span');
+      if (sp) sp.textContent = 'ہم تجزیات (Google Analytics) کے لیے کوکیز استعمال کرتے ہیں تاکہ وزٹس کو سمجھ سکیں اور اپنی سائٹ بہتر بنائیں۔ تجزیاتی کوکیز کی اجازت کے لیے قبول کریں یا انکار کریں۔';
+      var acc = document.getElementById('adCookieAccept'); if (acc) acc.textContent = 'قبول کریں';
+      var dec = document.getElementById('adCookieDecline'); if (dec) dec.textContent = 'انکار کریں';
+    }
+    initCarouselUr();
+    if (window.__initWidgetUr) window.__initWidgetUr();
+  });
+})();
+</script>
+
+
+<!-- Back to top button -->
+<button id="backToTop" aria-label="اوپر واپس جائیں" title="اوپر واپس جائیں"
+style="position:fixed;bottom:24px;right:24px;width:48px;height:48px;border-radius:50%;border:none;background:#2563eb;color:#ffffff;font-size:22px;line-height:1;cursor:pointer;opacity:0;visibility:hidden;transition:opacity .3s,visibility .3s,transform .2s;box-shadow:0 4px 12px rgba(0,0,0,.35);z-index:9999;padding:0;">&#8593;</button>
+<script>
+(function(){var b=document.getElementById('backToTop');if(!b)return;
+window.addEventListener('scroll',function(){var s=window.pageYOffset||document.documentElement.scrollTop;
+if(s>300){b.style.opacity='1';b.style.visibility='visible';}else{b.style.opacity='0';b.style.visibility='hidden';}},{passive:true});
+b.addEventListener('click',function(){window.scrollTo({top:0,behavior:'smooth'});});
+b.addEventListener('mouseenter',function(){b.style.transform='scale(1.12)';});
+b.addEventListener('mouseleave',function(){b.style.transform='scale(1)';});})();
+</script>
+
+</body></html>
