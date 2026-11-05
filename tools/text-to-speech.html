@@ -116,4 +116,135 @@
 <script src="../assets/tools.js"></script>
 <script src="../assets/features.js"></script>
 <script src="../assets/i18n9.js"></script>
-</body></html>
+
+<script>
+/* FIX 2026-11-05 — Text to Speech override (page-local, tools.js untouched).
+   Stock build never set utterance.lang, showed the raw "Speech error:
+   synthesis-failed" when the browser has no voice, and showed "Speech
+   error: canceled" when the user pressed Stop. This override renders
+   after the stock tool on DOMContentLoaded, wipes it, sets lang from the
+   chosen voice (or from the text script when no voice exists), and never
+   speaks when the browser has no voice at all — it explains plainly
+   instead. Favorites, ratings and share (features.js) live outside
+   #tool-root and are untouched. */
+(function () {
+  'use strict';
+  function el(tag, attrs) {
+    var e = document.createElement(tag);
+    if (attrs) for (var k in attrs) {
+      if (k === 'class') e.className = attrs[k];
+      else if (k === 'html') e.innerHTML = attrs[k];
+      else e.setAttribute(k, attrs[k]);
+    }
+    for (var i = 2; i < arguments.length; i++) {
+      var c = arguments[i];
+      if (c === undefined || c === null) continue;
+      e.appendChild(typeof c === 'string' || typeof c === 'number' ? document.createTextNode(String(c)) : c);
+    }
+    return e;
+  }
+  function numInput(val, min, max, step) {
+    var i = el('input', { type: 'number', value: val });
+    if (min !== undefined) i.min = min;
+    if (max !== undefined) i.max = max;
+    if (step !== undefined) i.step = step;
+    return i;
+  }
+
+  var NO_VOICE_MSG = 'No voice is installed in this browser, so it cannot read aloud here. Try on your phone or on a desktop browser — most Android phones have voices built in.';
+
+  function init() {
+    var root = document.getElementById('tool-root');
+    if (!root) return;
+    root.innerHTML = '';
+
+    var ta = el('textarea', { placeholder: 'Type or paste text here — in Urdu or English...' });
+    var voiceSel = el('select');
+    var rate = numInput(1, 0.5, 2, 0.1), pitch = numInput(1, 0.5, 2, 0.1);
+    var status = el('div');
+
+    function hasSpeech() { return ('speechSynthesis' in window); }
+    function getVoices() { return hasSpeech() ? window.speechSynthesis.getVoices() : []; }
+    function loadVoices() {
+      var vs = getVoices();
+      voiceSel.innerHTML = '';
+      if (!vs.length) {
+        voiceSel.appendChild(el('option', { value: '' }, 'No voice found in this browser'));
+        return;
+      }
+      vs.forEach(function (v, i) {
+        voiceSel.appendChild(el('option', { value: String(i) }, v.name + ' (' + v.lang + ')'));
+      });
+      var ur = -1;
+      for (var i = 0; i < vs.length; i++) {
+        if (((vs[i].lang || '').toLowerCase().indexOf('ur') === 0)) { ur = i; break; }
+      }
+      if (ur >= 0) voiceSel.value = String(ur);
+    }
+    function detectLang(t) {
+      return /[\u0600-\u06FF\u0750-\u077F\uFB50-\uFDFF\uFE70-\uFEFF]/.test(t) ? 'ur-PK' : 'en-US';
+    }
+
+    if (!hasSpeech()) {
+      status.textContent = 'Sorry — text to speech is not supported in this browser. Try Chrome, Edge or Firefox.';
+    } else {
+      loadVoices();
+      window.speechSynthesis.onvoiceschanged = loadVoices;
+      setTimeout(loadVoices, 800);
+    }
+
+    function field(label, input) {
+      var d = el('div', { 'class': 'field' });
+      d.appendChild(el('label', null, label));
+      d.appendChild(input);
+      return d;
+    }
+
+    function speak() {
+      if (!hasSpeech()) return;
+      var t = ta.value.trim();
+      if (!t) { status.textContent = 'Type some text first.'; return; }
+      var vs = getVoices();
+      if (!vs.length) { status.textContent = NO_VOICE_MSG; return; }
+      window.speechSynthesis.cancel();
+      var u = new SpeechSynthesisUtterance(t);
+      var idx = parseInt(voiceSel.value, 10);
+      var v = isNaN(idx) ? null : vs[idx];
+      if (v) { u.voice = v; u.lang = v.lang || detectLang(t); }
+      else u.lang = detectLang(t);
+      u.rate = +rate.value || 1;
+      u.pitch = +pitch.value || 1;
+      u.onend = function () { status.textContent = 'Finished.'; };
+      u.onerror = function (e) {
+        var err = (e && e.error) || 'unknown';
+        if (err === 'canceled' || err === 'interrupted') return;
+        status.textContent = 'This browser could not read the text aloud (no working voice here). ' + NO_VOICE_MSG;
+      };
+      window.speechSynthesis.speak(u);
+      status.textContent = 'Speaking...';
+    }
+
+    var speakBtn = el('button', { 'class': 'btn', type: 'button' }, 'Speak');
+    speakBtn.addEventListener('click', speak);
+    var stopBtn = el('button', { 'class': 'btn secondary', type: 'button' }, 'Stop');
+    stopBtn.addEventListener('click', function () {
+      if (hasSpeech()) window.speechSynthesis.cancel();
+      status.textContent = 'Stopped.';
+    });
+    var row = el('div', { 'class': 'btn-row' });
+    row.appendChild(speakBtn);
+    row.appendChild(stopBtn);
+
+    root.appendChild(ta);
+    root.appendChild(field('Voice (Urdu voices appear first if installed)', voiceSel));
+    root.appendChild(field('Speed', rate));
+    root.appendChild(field('Pitch', pitch));
+    root.appendChild(row);
+    root.appendChild(status);
+    root.appendChild(el('p', { style: 'font-size:13px;color:#64748b' }, 'Speech is generated by your device’s own voices — nothing is uploaded. An Urdu voice appears in the list only if your phone or computer has one installed (most Android phones do; on Windows, install an Urdu voice from Settings). If this browser has no voice at all, the tool will say so instead of failing.'));
+  }
+
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', init);
+  else init();
+})();
+</script></body></html>
