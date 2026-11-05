@@ -1,4 +1,4 @@
-/* Free Privacy Tools — all 50 tools, 100% client-side. No uploads. */
+/* Free Privacy Tools — 89 tools, 100% client-side. No uploads. */
 (function () {
 'use strict';
 
@@ -367,6 +367,14 @@ reg('image-resizer', function (root) {
     chk.appendChild(l); controls.appendChild(chk);
     wI.addEventListener('input', function () { if (keep.checked && st.ow) hI.value = Math.round(wI.value * st.oh / st.ow); });
     hI.addEventListener('input', function () { if (keep.checked && st.oh) wI.value = Math.round(hI.value * st.ow / st.oh); });
+    controls.appendChild(h('div', { style: 'font-weight:700;margin:12px 0 6px' }, 'One-click sizes:'));
+    var presets = [['YouTube Thumbnail 1280x720', 1280, 720], ['Instagram Post 1080x1080', 1080, 1080], ['Instagram Story 1080x1920', 1080, 1920], ['Facebook Cover 820x312', 820, 312], ['X Header 1500x500', 1500, 500], ['Website Hero 1920x1080', 1920, 1080]];
+    var prow = h('div', { class: 'btn-row' });
+    presets.forEach(function (pr) {
+      var pb = btn(pr[0], 'secondary', function () { keep.checked = false; wI.value = pr[1]; hI.value = pr[2]; });
+      prow.appendChild(pb);
+    });
+    controls.appendChild(prow);
     controls.appendChild(btnRow(btn('Resize & Download', '', function () {
       var c = h('canvas'); c.width = +wI.value; c.height = +hI.value;
       c.getContext('2d').drawImage(st.img, 0, 0, c.width, c.height);
@@ -1474,6 +1482,967 @@ reg('phishing-url-checker', function (root) {
   })));
   root.appendChild(out);
   root.appendChild(h('p', { style: 'font-size:13px;color:#64748b' }, 'Analysis runs 100% locally in your browser — the URL is never sent anywhere.'));
+});
+
+/* ================= CREATOR + MEDIA TOOLS (2026-11-05, Wave 2) ================= */
+/* All client-side. No uploads. Tools that fetch a library use the same CDN
+   pattern as the existing tools (pdf-lib, pdf.js, qrcodejs). */
+function needScript(src, test) {
+  if (test && test()) return Promise.resolve();
+  return new Promise(function (res, rej) {
+    var s = document.createElement('script');
+    s.src = src;
+    s.onload = res;
+    s.onerror = function () { rej(new Error('Could not load the needed library (internet needed once).')); };
+    document.head.appendChild(s);
+  });
+}
+function needTesseract() { return needScript('https://cdn.jsdelivr.net/npm/tesseract.js@5.1.1/dist/tesseract.min.js', function () { return !!window.Tesseract; }); }
+function needFFmpeg() { return needScript('https://cdn.jsdelivr.net/npm/@ffmpeg/ffmpeg@0.12.10/dist/umd/ffmpeg.min.js', function () { return !!window.FFmpeg; }); }
+function needDocx() { return needScript('https://cdn.jsdelivr.net/npm/docx@8.5.0/build/index.umd.js', function () { return !!window.docx; }); }
+function needDocxPreview() { return needScript('https://cdn.jsdelivr.net/npm/docx-preview@0.3.2/dist/docx-preview.min.js', function () { return !!window.docxPreview; }); }
+function ytVideoId(url) {
+  var m = String(url || '').match(/(?:v=|youtu\.be\/|shorts\/|embed\/|live\/)([A-Za-z0-9_-]{11})/);
+  return m ? m[1] : null;
+}
+function escHtml(s) { return String(s == null ? '' : s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;'); }
+
+/* ---------- 1. YouTube Thumbnail Downloader ---------- */
+reg('youtube-thumbnail-downloader', function (root) {
+  var inp = h('input', { type: 'url', placeholder: 'Paste a YouTube video URL — e.g. https://www.youtube.com/watch?v=...' });
+  var out = h('div'); var list = h('div');
+  root.appendChild(field('YouTube video URL', inp));
+  root.appendChild(btnRow(btn('Get Thumbnails', '', function () {
+    var id = ytVideoId(inp.value);
+    list.innerHTML = '';
+    if (!id) { out.textContent = 'Could not find a video ID in that link. Paste a full YouTube watch, Shorts or youtu.be link.'; return; }
+    out.textContent = '';
+    var quals = [['HD 1280x720', 'maxresdefault'], ['SD 640x480', 'sddefault'], ['HQ 480x360', 'hqdefault'], ['MQ 320x180', 'mqdefault'], ['Default 120x90', 'default']];
+    quals.forEach(function (q) {
+      var url = 'https://i.ytimg.com/vi/' + id + '/' + q[1] + '.jpg';
+      var card = h('div', { class: 'thumb-card', style: 'margin:12px 0;padding:10px;border:1px solid #e2e8f0;border-radius:10px' });
+      card.appendChild(h('div', null, q[0]));
+      var img = h('img', { src: url, alt: q[0] + ' thumbnail', style: 'max-width:100%;border-radius:8px;margin:6px 0' });
+      img.onerror = function () { card.style.display = 'none'; };
+      card.appendChild(img);
+      card.appendChild(btnRow(
+        btn('Download JPG', '', function () {
+          fetch(url).then(function (r) { return r.blob(); }).then(function (b) {
+            downloadBlob(b, 'youtube-thumbnail-' + id + '-' + q[1] + '.jpg');
+          }).catch(function () { window.open(url, '_blank'); });
+        }),
+        btn('Copy Image URL', 'secondary', function () { copyText(url, this); })
+      ));
+      list.appendChild(card);
+    });
+  })));
+  root.appendChild(out); root.appendChild(list);
+  root.appendChild(h('p', { style: 'font-size:13px;color:#64748b' }, 'Thumbnails are fetched directly from YouTube’s image server (i.ytimg.com) — the video ID you enter is sent to YouTube so it can return the images. Only use thumbnails you have the right to use.'));
+});
+
+/* ---------- 2. Hashtag Generator ---------- */
+reg('hashtag-generator', function (root) {
+  var topic = h('input', { type: 'text', placeholder: 'e.g. homemade biryani, travel vlog, fitness tips' });
+  var plat = h('select');
+  [['instagram', 'Instagram'], ['youtube', 'YouTube'], ['tiktok', 'TikTok'], ['facebook', 'Facebook']].forEach(function (o) { plat.appendChild(h('option', { value: o[0] }, o[1])); });
+  var cnt = h('select');
+  [['10', '10 hashtags'], ['20', '20 hashtags'], ['30', '30 hashtags']].forEach(function (o) { cnt.appendChild(h('option', { value: o[0] }, o[1])); });
+  var out = h('textarea', { placeholder: 'Your hashtags will appear here...', readonly: 'readonly' });
+  var triggers = {
+    travel: ['travel', 'trip', 'tour', 'vacation', 'holiday', 'flight', 'hotel', 'beach', 'mountain', 'adventure', 'backpack', 'journey', 'destination', 'wanderlust'],
+    food: ['food', 'biryani', 'recipe', 'cooking', 'kitchen', 'restaurant', 'chai', 'cake', 'pizza', 'burger', 'dessert', 'snack', 'breakfast', 'lunch', 'dinner', 'bakery', 'chef', 'eat', 'curry', 'kebab'],
+    fitness: ['fitness', 'gym', 'workout', 'yoga', 'run', 'running', 'health', 'diet', 'weight', 'muscle', 'exercise', 'training', 'fit'],
+    tech: ['tech', 'app', 'software', 'phone', 'computer', 'gadget', 'ai', 'robot', 'coding', 'programming', 'review', 'unboxing'],
+    fashion: ['fashion', 'style', 'outfit', 'dress', 'clothes', 'shopping', 'makeup', 'look', 'trend'],
+    business: ['business', 'startup', 'money', 'marketing', 'sales', 'entrepreneur', 'shop', 'store', 'brand', 'invest'],
+    education: ['education', 'learn', 'study', 'student', 'school', 'exam', 'course', 'tutorial', 'teacher', 'english', 'urdu', 'math', 'science'],
+    gaming: ['gaming', 'game', 'gamer', 'pubg', 'fortnite', 'playstation', 'xbox', 'esports', 'gameplay'],
+    music: ['music', 'song', 'singer', 'singing', 'guitar', 'piano', 'naat', 'qawwali', 'playlist'],
+    beauty: ['beauty', 'makeup', 'skincare', 'hair', 'glow', 'cosmetics', 'mehndi'],
+    photography: ['photo', 'photography', 'camera', 'portrait', 'shoot', 'picture'],
+    motivation: ['motivation', 'inspire', 'success', 'goal', 'mindset', 'positive', 'dream', 'hardwork']
+  };
+  var niche = {
+    travel: ['travel', 'wanderlust', 'travelphotography', 'adventure', 'explore', 'vacation', 'trip', 'tourism'],
+    food: ['food', 'foodie', 'foodlover', 'recipe', 'homemade', 'delicious', 'cooking', 'foodblogger'],
+    fitness: ['fitness', 'workout', 'gym', 'health', 'fitlife', 'exercise', 'training', 'healthy'],
+    tech: ['tech', 'technology', 'gadgets', 'innovation', 'software', 'digital', 'ai', 'review'],
+    fashion: ['fashion', 'style', 'outfit', 'ootd', 'trend', 'shopping', 'lookbook'],
+    business: ['business', 'entrepreneur', 'startup', 'marketing', 'money', 'success', 'smallbusiness'],
+    education: ['education', 'learning', 'study', 'student', 'knowledge', 'tutorial', 'school'],
+    gaming: ['gaming', 'gamer', 'videogames', 'game', 'esports', 'gameplay'],
+    music: ['music', 'song', 'singer', 'musician', 'newmusic', 'playlist'],
+    beauty: ['beauty', 'makeup', 'skincare', 'glow', 'cosmetics'],
+    photography: ['photography', 'photo', 'photographer', 'photoshoot', 'portrait'],
+    motivation: ['motivation', 'inspiration', 'mindset', 'goals', 'success', 'positivevibes']
+  };
+  var platTags = {
+    instagram: ['instagood', 'photooftheday', 'instadaily', 'love', 'instamood'],
+    youtube: ['youtube', 'youtuber', 'subscribe', 'video', 'channel'],
+    tiktok: ['fyp', 'foryou', 'foryoupage', 'viral', 'trending'],
+    facebook: ['facebook', 'follow', 'like', 'share', 'community']
+  };
+  root.appendChild(field('Topic', topic));
+  root.appendChild(field('Platform', plat));
+  root.appendChild(field('How many?', cnt));
+  root.appendChild(btnRow(btn('Generate Hashtags', '', function () {
+    var t = topic.value.trim();
+    if (!t) { out.value = 'Type a topic first — e.g. "homemade biryani".'; return; }
+    var words = t.toLowerCase().replace(/[^a-z0-9\s]/g, '').split(/\s+/).filter(function (w) { return w.length > 1; });
+    var tags = [];
+    words.forEach(function (w) { tags.push(w); });
+    tags.push(words.join(''));
+    var lowWords = t.toLowerCase().split(/\s+/);
+    Object.keys(niche).forEach(function (k) {
+      var hit = lowWords.indexOf(k) >= 0 || (triggers[k] || []).some(function (w) { return lowWords.indexOf(w) >= 0; });
+      if (hit) niche[k].forEach(function (g) { tags.push(g); });
+    });
+    (platTags[plat.value] || []).forEach(function (g) { tags.push(g); });
+    tags.push('reels', 'explorepage', 'viralpost');
+    var seen = {}, uniq = [];
+    tags.forEach(function (g) { g = g.replace(/[^a-z0-9]/g, ''); if (g && !seen[g]) { seen[g] = 1; uniq.push('#' + g); } });
+    out.value = uniq.slice(0, +cnt.value).join(' ');
+  }), btn('Copy All', 'secondary', function () { copyText(out.value, this); })));
+  root.appendChild(out);
+});
+
+/* ---------- 3. Caption Generator ---------- */
+reg('caption-generator', function (root) {
+  var topic = h('input', { type: 'text', placeholder: 'e.g. morning chai, first day at gym' });
+  var tone = h('select');
+  [['funny', 'Funny'], ['motivational', 'Motivational'], ['professional', 'Professional'], ['casual', 'Casual / Friendly']].forEach(function (o) { tone.appendChild(h('option', { value: o[0] }, o[1])); });
+  var plat = h('select');
+  [['instagram', 'Instagram / Reels'], ['tiktok', 'TikTok'], ['youtube', 'YouTube Shorts'], ['facebook', 'Facebook']].forEach(function (o) { plat.appendChild(h('option', { value: o[0] }, o[1])); });
+  var out = h('div');
+  var caps = {
+    funny: ['POV: {t} and suddenly everything makes sense.', 'Nobody: ... Absolutely nobody: ... Me: {t}.', '{t} — because normal is boring.', 'I came. I saw. I did {t}. No regrets.', 'Warning: {t} may cause excessive smiling.'],
+    motivational: ['Small steps, big change. Today: {t}.', '{t} is not just a moment — it is a mindset.', 'Your only limit is the one you accept. Start with {t}.', 'Dream it. Plan it. Do {t}.', 'Every expert was once a beginner at {t}.'],
+    professional: ['A closer look at {t} — insights, tips and what actually works.', '{t}: what I learned and how you can apply it today.', 'Breaking down {t} into simple, practical steps.', 'Why {t} matters more than you think — a short, honest take.', 'The complete beginner’s guide to {t}.'],
+    casual: ['Just a little moment of {t} for your feed.', '{t} kind of day. What about you?', 'Sharing a bit of {t} — hope it makes your day better.', 'Okay but can we talk about {t} for a second?', '{t} — simple, real, and straight from the heart.']
+  };
+  root.appendChild(field('Topic', topic));
+  root.appendChild(field('Tone', tone));
+  root.appendChild(field('Platform', plat));
+  root.appendChild(btnRow(btn('Generate Captions', '', function () {
+    var t = topic.value.trim();
+    if (!t) { out.textContent = 'Type a topic first.'; return; }
+    out.innerHTML = '';
+    caps[tone.value].forEach(function (c) {
+      var text = c.split('{t}').join(t);
+      var row = h('div', { class: 'result', style: 'margin:8px 0' });
+      row.appendChild(h('div', null, text));
+      var cp = btn('Copy', 'secondary', function () { copyText(text, cp); });
+      cp.style.marginTop = '6px'; row.appendChild(cp);
+      out.appendChild(row);
+    });
+  })));
+  root.appendChild(out);
+});
+
+/* ---------- 4. YouTube Title Generator ---------- */
+reg('youtube-title-generator', function (root) {
+  var topic = h('input', { type: 'text', placeholder: 'e.g. how to make biryani, learn English' });
+  var style = h('select');
+  [['howto', 'How-To'], ['list', 'List / Numbered'], ['question', 'Question'], ['story', 'Story / "I Tried"'], ['ultimate', 'Ultimate Guide']].forEach(function (o) { style.appendChild(h('option', { value: o[0] }, o[1])); });
+  var out = h('div');
+  var tpl = {
+    howto: ['How to {T} (Step by Step for Beginners)', 'How to {T} in 10 Minutes — Easy Method', 'How to {T} Without Any Experience', 'How to {T}: The Complete 2026 Tutorial', 'Learn How to {T} From Scratch', 'How to {T} — 5 Mistakes to Avoid', 'How to {T} on a Budget', 'How to {T}: Beginner to Pro in One Video'],
+    list: ['10 Best Ways to {T}', '7 {T} Tips You Wish You Knew Earlier', '5 {T} Secrets Nobody Tells You', 'Top 10 {T} Ideas for 2026', '3 Simple {T} Tricks That Actually Work', '12 {T} Mistakes Beginners Always Make', '8 {T} Hacks That Save You Hours', '15 {T} Ideas You Can Start Today'],
+    question: ['Is {T} Really Worth It?', 'Can You {T} in Just 7 Days?', 'Why Does Nobody Talk About {T}?', 'What Happens If You {T} Every Day for 30 Days?', 'Should You Start {T} in 2026?', 'How Hard Is {T} Really?', 'What Is {T} and Why Is Everyone Talking About It?', 'Does {T} Actually Work? Honest Review'],
+    story: ['I Tried {T} for 30 Days — Here Is What Happened', 'My First Time Doing {T} (Honest Experience)', 'I Spent $0 on {T} — The Result Shocked Me', 'From Zero to {T} in 30 Days', 'I Tried {T} So You Don’t Have To', 'My {T} Journey: What I Wish I Knew', 'I Did {T} Every Day for a Month', 'How I Learned {T} Without a Teacher'],
+    ultimate: ['The Ultimate Guide to {T} (2026)', 'Everything You Need to Know About {T}', '{T} Explained: The Only Guide You Will Ever Need', 'The Complete {T} Masterclass for Beginners', '{T} in 2026: Full Beginner’s Guide', 'Master {T} — From Basics to Advanced', 'The Definitive Guide to {T}', '{T} A to Z: The Ultimate Tutorial']
+  };
+  root.appendChild(field('Video topic', topic));
+  root.appendChild(field('Title style', style));
+  root.appendChild(btnRow(btn('Generate Titles', '', function () {
+    var t = topic.value.trim();
+    if (!t) { out.textContent = 'Type a video topic first.'; return; }
+    out.innerHTML = '';
+    tpl[style.value].forEach(function (x) {
+      var title = x.split('{T}').join(t);
+      var row = h('div', { class: 'result', style: 'margin:8px 0;cursor:pointer', title: 'Click to copy' });
+      row.textContent = title;
+      row.addEventListener('click', function () { copyText(title, row); });
+      out.appendChild(row);
+    });
+    out.appendChild(h('p', { style: 'font-size:13px;color:#64748b' }, 'Click any title to copy it. Keep titles under 60 characters so they do not get cut off in search.'));
+  })));
+  root.appendChild(out);
+});
+
+/* ---------- 5. Bio Generator ---------- */
+reg('bio-generator', function (root) {
+  var name = h('input', { type: 'text', placeholder: 'Your name' });
+  var role = h('input', { type: 'text', placeholder: 'e.g. food blogger, student, shop owner' });
+  var kw = h('input', { type: 'text', placeholder: 'Keywords, comma separated — e.g. recipes, travel, tech' });
+  var plat = h('select');
+  [['instagram', 'Instagram'], ['tiktok', 'TikTok'], ['youtube', 'YouTube'], ['facebook', 'Facebook']].forEach(function (o) { plat.appendChild(h('option', { value: o[0] }, o[1])); });
+  var out = h('div');
+  root.appendChild(field('Name', name));
+  root.appendChild(field('What do you do?', role));
+  root.appendChild(field('Keywords', kw));
+  root.appendChild(field('Platform', plat));
+  root.appendChild(btnRow(btn('Generate Bios', '', function () {
+    var n = name.value.trim() || 'Your Name';
+    var r = role.value.trim() || 'creator';
+    var k = kw.value.trim();
+    var kws = k ? k.split(',').map(function (s) { return s.trim(); }).filter(Boolean).join(' | ') : '';
+    var bios = [
+      n + ' | ' + r + (kws ? '\n' + kws : '') + '\nNew posts every week. Follow for more.',
+      'Hi, I am ' + n + ' — a ' + r + ' sharing ' + (k || 'useful, honest content') + '.\nDM for collaborations.',
+      n + '\n' + r + ' • ' + (kws || 'daily content') + '\nTurning ideas into posts, one day at a time.'
+    ];
+    out.innerHTML = '';
+    bios.forEach(function (b, i) {
+      var row = h('div', { class: 'result', style: 'margin:8px 0;white-space:pre-line' });
+      row.appendChild(h('div', null, b));
+      var cp = btn('Copy Bio ' + (i + 1), 'secondary', function () { copyText(b, cp); });
+      cp.style.marginTop = '6px'; row.appendChild(cp);
+      out.appendChild(row);
+    });
+  })));
+  root.appendChild(out);
+});
+
+/* ---------- 6. Tag Extractor ---------- */
+reg('tag-extractor', function (root) {
+  var ta = h('textarea', { placeholder: 'Paste a video description, article or any text here...' });
+  var out = h('textarea', { placeholder: 'Extracted tags will appear here...', readonly: 'readonly' });
+  var stop = ('a an the and or of to in on for with is are was were be been it its this that these those you your we our they their he she his her at by from as not no do does did can could will would should i me my we us our have has had if but so than then when where which who whom what how all any each few more most other some such only own same too very just also because until while about into through after over between out against during without before under around among'.split(' '));
+  root.appendChild(ta);
+  root.appendChild(btnRow(btn('Extract Tags', '', function () {
+    var words = (ta.value.toLowerCase().match(/[a-z0-9][a-z0-9\-]{1,}/g) || []);
+    var counts = {};
+    words.forEach(function (w) { if (stop.indexOf(w) < 0) counts[w] = (counts[w] || 0) + 1; });
+    var sorted = Object.keys(counts).sort(function (a, b) { return counts[b] - counts[a]; }).slice(0, 15);
+    out.value = sorted.length ? sorted.map(function (w) { return '#' + w; }).join(' ') : 'No useful keywords found — paste longer text.';
+  }), btn('Copy Tags', 'secondary', function () { copyText(out.value, this); })));
+  root.appendChild(out);
+});
+
+/* ---------- 7. Video SEO Checker ---------- */
+reg('video-seo-checker', function (root) {
+  var title = h('input', { type: 'text', placeholder: 'Video title' });
+  var desc = h('textarea', { placeholder: 'Video description...' });
+  var tags = h('input', { type: 'text', placeholder: 'Tags, comma separated' });
+  var out = h('div');
+  function check(label, pass, hint) { return { label: label, pass: !!pass, hint: hint }; }
+  root.appendChild(field('Title', title));
+  root.appendChild(field('Description', desc));
+  root.appendChild(field('Tags (comma separated)', tags));
+  root.appendChild(btnRow(btn('Check SEO', '', function () {
+    var t = title.value.trim(), d = desc.value.trim();
+    var tagList = tags.value.split(',').map(function (s) { return s.trim(); }).filter(Boolean);
+    var firstWords = t.toLowerCase().split(/\s+/).slice(0, 3);
+    var kwInDesc = firstWords.some(function (w) { return w.length > 3 && d.toLowerCase().indexOf(w) >= 0; });
+    var checks = [
+      check('Title is 30–60 characters (shows fully in search)', t.length >= 30 && t.length <= 60, t.length + ' characters now'),
+      check('Title contains a number or list', /\d/.test(t), 'Numbers in titles get more clicks'),
+      check('Description is at least 120 characters', d.length >= 120, d.length + ' characters now'),
+      check('Main keyword appears early in the description', kwInDesc, 'Repeat your title’s main word in the first 1–2 lines'),
+      check('At least 5 tags', tagList.length >= 5, tagList.length + ' tags now'),
+      check('No more than 15 tags (too many looks like spam)', tagList.length <= 15, tagList.length + ' tags now'),
+      check('No ALL-CAPS title (looks like clickbait spam)', t !== t.toUpperCase() || t.length === 0, 'Use normal capitalization')
+    ];
+    var score = Math.round(checks.filter(function (c) { return c.pass; }).length / checks.length * 100);
+    out.innerHTML = '';
+    var big = resultBox(true);
+    big.textContent = 'SEO Score: ' + score + '/100 — ' + (score >= 85 ? 'Excellent' : score >= 60 ? 'Good, a few fixes left' : score >= 40 ? 'Needs work' : 'Needs a lot of work');
+    out.appendChild(big);
+    checks.forEach(function (c) {
+      var row = h('div', { style: 'margin:6px 0' });
+      row.appendChild(h('strong', null, (c.pass ? '✓ ' : '✗ ') + c.label));
+      row.appendChild(h('div', { style: 'font-size:13px;color:#64748b' }, c.hint));
+      out.appendChild(row);
+    });
+    out.appendChild(h('p', { style: 'font-size:13px;color:#64748b' }, 'This is a checklist based on widely used YouTube best practices — it cannot see your thumbnail or know your audience. A good thumbnail and a strong first 30 seconds matter just as much.'));
+  })));
+  root.appendChild(out);
+});
+
+/* ---------- 8. Best Posting Time Guide ---------- */
+reg('best-posting-time', function (root) {
+  var plat = h('select');
+  [['instagram', 'Instagram'], ['youtube', 'YouTube'], ['tiktok', 'TikTok'], ['facebook', 'Facebook'], ['x', 'X (Twitter)']].forEach(function (o) { plat.appendChild(h('option', { value: o[0] }, o[1])); });
+  var out = h('div');
+  var data = {
+    instagram: [['Monday – Friday', '11:00 AM – 1:00 PM, 7:00 – 9:00 PM'], ['Saturday – Sunday', '10:00 AM – 12:00 PM'], ['Best days', 'Wednesday and Friday'], ['Avoid', 'Late night (12 – 5 AM)']],
+    youtube: [['Tuesday – Thursday', '12:00 – 3:00 PM, 6:00 – 9:00 PM'], ['Saturday – Sunday', '9:00 – 11:00 AM'], ['Best days', 'Thursday and Friday'], ['Avoid', 'Very early morning']],
+    tiktok: [['Tuesday & Thursday', '6:00 – 9:00 PM'], ['Saturday', '11:00 AM – 1:00 PM'], ['Best days', 'Tuesday and Thursday evenings'], ['Avoid', 'Early weekday mornings']],
+    facebook: [['Wednesday – Friday', '11:00 AM – 1:00 PM'], ['Saturday', '12:00 – 2:00 PM'], ['Best days', 'Wednesday and Thursday'], ['Avoid', 'Sundays']],
+    x: [['Monday – Friday', '9:00 – 11:00 AM'], ['Wednesday', '9:00 AM (often the peak)'], ['Best days', 'Wednesday and Friday'], ['Avoid', 'Late nights and Sundays']]
+  };
+  root.appendChild(field('Platform', plat));
+  root.appendChild(btnRow(btn('Show Best Times', '', function () {
+    out.innerHTML = '';
+    var table = h('table', { class: 'gs-table', style: 'width:100%;border-collapse:collapse' });
+    data[plat.value].forEach(function (row) {
+      var tr = h('tr');
+      tr.appendChild(h('td', { style: 'border:1px solid #e2e8f0;padding:8px;font-weight:700' }, row[0]));
+      tr.appendChild(h('td', { style: 'border:1px solid #e2e8f0;padding:8px' }, row[1]));
+      table.appendChild(tr);
+    });
+    out.appendChild(table);
+    out.appendChild(h('p', { style: 'font-size:13px;color:#64748b' }, 'These are general windows from widely published creator guidance — your own audience is different. Check your own analytics (Instagram Insights, YouTube Analytics) for when YOUR followers are online, and test different times for 2–3 weeks. Times are in your local time.'));
+  })));
+  root.appendChild(out);
+});
+
+/* ---------- 9. Fancy Text / Fonts Generator ---------- */
+reg('fancy-text-generator', function (root) {
+  var inp = h('input', { type: 'text', placeholder: 'Type your text — e.g. Malik Anwaar' });
+  var out = h('div');
+  function mapText(t, fn) { return t.split('').map(fn).join(''); }
+  function offset(ch, baseA, basea, base0) {
+    var c = ch.charCodeAt(0);
+    if (c >= 65 && c <= 90) return String.fromCodePoint(baseA + c - 65);
+    if (c >= 97 && c <= 122) return String.fromCodePoint(basea + c - 97);
+    if (c >= 48 && c <= 57) return String.fromCodePoint(base0 + c - 48);
+    return ch;
+  }
+  var smallCaps = { a: 'ᴀ', b: 'ʙ', c: 'ᴄ', d: 'ᴅ', e: 'ᴇ', f: 'ꜰ', g: 'ɢ', h: 'ʜ', i: 'ɪ', j: 'ᴊ', k: 'ᴋ', l: 'ʟ', m: 'ᴍ', n: 'ɴ', o: 'ᴏ', p: 'ᴘ', q: 'ǫ', r: 'ʀ', s: 'ꜱ', t: 'ᴛ', u: 'ᴜ', v: 'ᴠ', w: 'ᴡ', x: 'x', y: 'ʏ', z: 'ᴢ' };
+  var styles = [
+    ['Bold', function (ch) { return offset(ch, 0x1D400, 0x1D41A, 0x1D7CE); }],
+    ['Italic', function (ch) { return offset(ch, 0x1D434, 0x1D44E, 0x1D7CE); }],
+    ['Bold Italic', function (ch) { return offset(ch, 0x1D468, 0x1D482, 0x1D7CE); }],
+    ['Script', function (ch) { return offset(ch, 0x1D49C, 0x1D4B6, 0x1D7CE); }],
+    ['Monospace', function (ch) { return offset(ch, 0x1D670, 0x1D68A, 0x1D7F6); }],
+    ['Circled', function (ch) { var c = ch.charCodeAt(0); if (c >= 65 && c <= 90) return String.fromCodePoint(0x24B6 + c - 65); if (c >= 97 && c <= 122) return String.fromCodePoint(0x24D0 + c - 97); if (c >= 48 && c <= 57) return String.fromCodePoint(c === 48 ? 0x24EA : 0x2460 + c - 49); return ch; }],
+    ['Small Caps', function (ch) { var l = ch.toLowerCase(); return smallCaps[l] || ch; }]
+  ];
+  root.appendChild(field('Your text', inp));
+  root.appendChild(btnRow(btn('Generate Styles', '', function () {
+    var t = inp.value;
+    if (!t.trim()) { out.textContent = 'Type some text first.'; return; }
+    out.innerHTML = '';
+    styles.forEach(function (s) {
+      var styled = mapText(t, s[1]);
+      var row = h('div', { class: 'result', style: 'margin:8px 0' });
+      row.appendChild(h('div', { style: 'font-size:18px' }, styled));
+      row.appendChild(h('div', { style: 'font-size:13px;color:#64748b' }, s[0]));
+      var cp = btn('Copy', 'secondary', function () { copyText(styled, cp); });
+      cp.style.marginTop = '6px'; row.appendChild(cp);
+      out.appendChild(row);
+    });
+    out.appendChild(h('p', { style: 'font-size:13px;color:#64748b' }, 'These use Unicode styled letters, so they work in Instagram bios, TikTok names and YouTube titles. Some very old phones may show boxes for a few styles.'));
+  })));
+  root.appendChild(out);
+});
+
+/* ---------- 10. Script Timer + Urdu Voice-Over Counter ---------- */
+reg('script-timer', function (root) {
+  var ta = h('textarea', { placeholder: 'Paste your video script here — in English or Urdu...' });
+  var out = h('div');
+  function upd() {
+    var t = ta.value;
+    var words = (t.trim().match(/\S+/g) || []).length;
+    var chars = t.length;
+    function mins(wpm) { var m = words / wpm; var mm = Math.floor(m), ss = Math.round((m - mm) * 60); return mm + ' min ' + (ss < 10 ? '0' : '') + ss + ' sec'; }
+    out.innerHTML = '';
+    var box = resultBox(true);
+    box.innerHTML = '';
+    box.appendChild(h('div', null, words + ' words • ' + chars + ' characters'));
+    box.appendChild(h('div', { style: 'font-size:14px;font-weight:400;margin-top:6px' }, 'Speaking time — slow (120 wpm): ' + mins(120)));
+    box.appendChild(h('div', { style: 'font-size:14px;font-weight:400' }, 'Speaking time — normal (150 wpm): ' + mins(150)));
+    box.appendChild(h('div', { style: 'font-size:14px;font-weight:400' }, 'Speaking time — fast (180 wpm): ' + mins(180)));
+    box.appendChild(h('div', { style: 'font-size:14px;font-weight:400;margin-top:6px' }, 'Urdu voice-over is usually slower — plan on about 120 words per minute (' + mins(120) + ' for this script).'));
+    out.appendChild(box);
+  }
+  ta.addEventListener('input', upd);
+  root.appendChild(ta); root.appendChild(out); upd();
+});
+
+/* ---------- 11. AdSense / RPM Earnings Estimator ---------- */
+reg('adsense-estimator', function (root) {
+  var views = numInput(10000, 0), rpm = numInput(1.5, 0, 100, 0.1);
+  var out = h('div');
+  root.appendChild(field('Monthly page views', views));
+  root.appendChild(field('RPM — earnings per 1000 views ($)', rpm));
+  root.appendChild(btnRow(btn('Estimate Earnings', '', function () {
+    var v = +views.value || 0, r = +rpm.value || 0;
+    var monthly = v / 1000 * r;
+    out.innerHTML = '';
+    var box = resultBox(true);
+    box.appendChild(h('div', null, 'Estimated: $' + monthly.toFixed(2) + ' / month'));
+    box.appendChild(h('div', { style: 'font-size:14px;font-weight:400;margin-top:6px' }, 'Yearly (same traffic): $' + (monthly * 12).toFixed(2)));
+    box.appendChild(h('div', { style: 'font-size:14px;font-weight:400' }, 'Daily: $' + (monthly / 30).toFixed(2)));
+    if (r > 0) box.appendChild(h('div', { style: 'font-size:14px;font-weight:400' }, 'Views needed for $100/month at this RPM: ' + Math.ceil(100 / r * 1000).toLocaleString('en-US')));
+    out.appendChild(box);
+    out.appendChild(h('p', { style: 'font-size:13px;color:#64748b' }, 'This is a rough estimate. Real RPM depends on country, topic, ad placement and season — finance and tech traffic usually pays more than entertainment. Your AdSense dashboard shows your real RPM.'));
+  })));
+  root.appendChild(out);
+});
+
+/* ---------- 12. Engagement Rate Calculator ---------- */
+reg('engagement-calculator', function (root) {
+  var fol = numInput(1000, 0), likes = numInput(100, 0), com = numInput(10, 0), shr = numInput(5, 0), sav = numInput(5, 0);
+  var out = h('div');
+  root.appendChild(field('Followers', fol));
+  root.appendChild(field('Likes (per post)', likes));
+  root.appendChild(field('Comments (per post)', com));
+  root.appendChild(field('Shares (per post)', shr));
+  root.appendChild(field('Saves (per post)', sav));
+  root.appendChild(btnRow(btn('Calculate Engagement', '', function () {
+    var f = +fol.value || 0;
+    var total = (+likes.value || 0) + (+com.value || 0) + (+shr.value || 0) + (+sav.value || 0);
+    if (!f) { out.textContent = 'Enter your follower count first.'; return; }
+    var rate = total / f * 100;
+    var verdict = rate < 1 ? 'Low — try more interactive posts (questions, polls)' : rate < 3 ? 'Average — healthy for most accounts' : rate < 6 ? 'Good — above average' : 'Excellent — very strong engagement';
+    out.innerHTML = '';
+    var box = resultBox(true);
+    box.appendChild(h('div', null, 'Engagement rate: ' + rate.toFixed(2) + '%'));
+    box.appendChild(h('div', { style: 'font-size:14px;font-weight:400;margin-top:6px' }, verdict));
+    box.appendChild(h('div', { style: 'font-size:14px;font-weight:400' }, total.toLocaleString('en-US') + ' total interactions per post'));
+    out.appendChild(box);
+    out.appendChild(h('p', { style: 'font-size:13px;color:#64748b' }, 'Rate = (likes + comments + shares + saves) ÷ followers × 100. Small accounts often have higher rates; compare with accounts your own size, not with celebrities.'));
+  })));
+  root.appendChild(out);
+});
+
+/* ---------- 13. Meme Maker ---------- */
+reg('meme-maker', function (root) {
+  var top = h('input', { type: 'text', placeholder: 'TOP TEXT' });
+  var bot = h('input', { type: 'text', placeholder: 'BOTTOM TEXT' });
+  var size = numInput(48, 16, 120, 1);
+  root.appendChild(h('p', null, 'Upload a photo, add top and bottom text, and download your meme. Everything stays in your browser.'));
+  imgWorkArea(root, 'image/*', function (st, cv) {
+    drawMeme(st, cv);
+  }, function (st, cv, controls) {
+    controls.appendChild(field('Top text', top));
+    controls.appendChild(field('Bottom text', bot));
+    controls.appendChild(field('Text size', size));
+    [top, bot, size].forEach(function (el) { el.addEventListener('input', function () { drawMeme(st, cv); }); });
+    controls.appendChild(btnRow(btn('Download Meme PNG', '', function () {
+      drawMeme(st, cv);
+      canvasDownload(cv, (st.name || 'meme') + '-meme.png');
+    })));
+  });
+  function drawMeme(st, cv) {
+    if (!st.img) return;
+    var ctx = cv.getContext('2d');
+    cv.width = st.img.width; cv.height = st.img.height;
+    ctx.drawImage(st.img, 0, 0);
+    var fs = +size.value || 48;
+    ctx.font = 'bold ' + fs + 'px Arial, sans-serif';
+    ctx.textAlign = 'center'; ctx.lineWidth = Math.max(3, fs / 10);
+    ctx.strokeStyle = '#000'; ctx.fillStyle = '#fff';
+    var t = top.value.trim().toUpperCase(), b = bot.value.trim().toUpperCase();
+    if (t) { ctx.strokeText(t, cv.width / 2, fs + 10); ctx.fillText(t, cv.width / 2, fs + 10); }
+    if (b) { ctx.strokeText(b, cv.width / 2, cv.height - 12); ctx.fillText(b, cv.width / 2, cv.height - 12); }
+  }
+});
+
+/* ---------- 14. Copyright-Free Resources ---------- */
+reg('copyright-free-resources', function (root) {
+  var groups = [
+    ['Free Music (no copyright)', [['YouTube Audio Library', 'https://studio.youtube.com/channel/UC/music', 'Free music and sound effects for YouTube videos — no copyright strikes.'], ['Free Music Archive', 'https://freemusicarchive.org/', 'Free music under Creative Commons licences — check each track’s licence.'], ['Pixabay Music', 'https://pixabay.com/music/', 'Royalty-free music, no attribution needed for most tracks.'], ['Bensound', 'https://www.bensound.com/', 'Free music with attribution; paid licence removes the credit line.']]],
+    ['Free Images', [['Unsplash', 'https://unsplash.com/', 'Free high-quality photos — free for commercial use, no attribution required.'], ['Pexels', 'https://www.pexels.com/', 'Free photos and videos, free for commercial use.'], ['Pixabay', 'https://pixabay.com/', 'Free images, videos and music under the Pixabay licence.'], ['Openverse', 'https://wordpress.org/openverse/', 'Search engine for openly licensed images and audio.']]],
+    ['Free Videos', [['Pexels Videos', 'https://www.pexels.com/videos/', 'Free stock video clips for creators.'], ['Pixabay Videos', 'https://pixabay.com/videos/', 'Free video clips, no attribution needed.'], ['Coverr', 'https://coverr.co/', 'Free video clips for websites and social posts.']]],
+    ['Free Fonts', [['Google Fonts', 'https://fonts.google.com/', 'Free open-source fonts for videos, thumbnails and websites.']]]
+  ];
+  root.appendChild(h('p', null, 'Every link below is a well-known free library. Always read the licence on the site itself before using something in a paid project — "free" usually means free for commercial use, sometimes with attribution.'));
+  groups.forEach(function (g) {
+    root.appendChild(h('h3', null, g[0]));
+    var ul = h('ul');
+    g[1].forEach(function (r) {
+      var li = h('li');
+      var a = h('a', { href: r[1], target: '_blank', rel: 'noopener' }, r[0]);
+      li.appendChild(a); li.appendChild(document.createTextNode(' — ' + r[2]));
+      ul.appendChild(li);
+    });
+    root.appendChild(ul);
+  });
+  root.appendChild(h('p', { style: 'font-size:13px;color:#64748b' }, 'Tip: never download "free" music or images from random re-upload channels — use the official libraries above so your videos do not get copyright claims.'));
+});
+
+/* ---------- 15. Fake Follower / Comment Spam Checker ---------- */
+reg('fake-follower-checker', function (root) {
+  var ta = h('textarea', { placeholder: 'Paste comments here — one comment per line...' });
+  var out = h('div');
+  var spamWords = ['follow me', 'follow back', 'f4f', 'check my profile', 'dm me', 'earn money', 'make money', 'crypto', 'double your', 'free followers', 'buy followers', 'check my page', 'promote it on', 'send me', 'whatsapp me'];
+  var generic = ['nice pic', 'nice', 'great', 'awesome', 'beautiful', 'amazing', 'wow', 'love it', 'cool', 'good', 'nice post', 'superb', 'fantastic', 'excellent'];
+  root.appendChild(ta);
+  root.appendChild(btnRow(btn('Check Comments', '', function () {
+    var lines = ta.value.split('\n').map(function (s) { return s.trim(); }).filter(Boolean);
+    if (!lines.length) { out.textContent = 'Paste some comments first.'; return; }
+    var seen = {}, dups = 0, links = 0, spammy = 0, flagged = [];
+    lines.forEach(function (line) {
+      var low = line.toLowerCase();
+      var reasons = [];
+      if (seen[low]) { dups++; reasons.push('repeated comment'); } else seen[low] = 1;
+      if (/https?:\/\/|www\./.test(low)) { links++; reasons.push('contains a link'); }
+      if (spamWords.some(function (w) { return low.indexOf(w) >= 0; })) { spammy++; reasons.push('spam phrase'); }
+      else if (generic.indexOf(low) >= 0 || (low.length < 12 && /^[a-z! ]+$/.test(low))) { reasons.push('very generic'); }
+      if ((line.match(/[\u{1F300}-\u{1FAFF}\u2600-\u27BF]/u) || []).length >= 4) reasons.push('emoji spam');
+      if (reasons.length) flagged.push(line + '  →  ' + reasons.join(', '));
+    });
+    var score = Math.round((dups + links + spammy) / lines.length * 100);
+    var verdict = score < 10 ? 'Looks mostly genuine' : score < 30 ? 'Mixed — some suspicious comments' : 'Likely spam-heavy — review these accounts';
+    out.innerHTML = '';
+    var box = resultBox(true);
+    box.appendChild(h('div', null, verdict + ' — spam signals in ' + score + '% of comments'));
+    box.appendChild(h('div', { style: 'font-size:14px;font-weight:400;margin-top:6px' }, lines.length + ' comments checked • ' + dups + ' repeated • ' + links + ' with links • ' + spammy + ' with spam phrases'));
+    out.appendChild(box);
+    if (flagged.length) {
+      out.appendChild(h('h3', null, 'Flagged comments'));
+      var ul = h('ul');
+      flagged.slice(0, 20).forEach(function (f) { ul.appendChild(h('li', null, f)); });
+      out.appendChild(ul);
+    }
+    out.appendChild(h('p', { style: 'font-size:13px;color:#64748b' }, 'This is a heuristic check of the words in the comments — it cannot prove an account is fake. Real fans also write short comments. Use it as a first filter, then look at the accounts themselves (no posts, no profile photo, following thousands).'));
+  })));
+  root.appendChild(out);
+});
+
+/* ---------- 16. Check Link Before Clicking ---------- */
+reg('link-safety-checker', function (root) {
+  var inp = h('input', { type: 'url', placeholder: 'Paste the link here — e.g. https://example.com/page' });
+  var out = h('div');
+  var shorteners = ['bit.ly', 'tinyurl.com', 't.co', 'goo.gl', 'ow.ly', 'is.gd', 'buff.ly', 'rebrand.ly', 'cutt.ly', 'shorte.st', 'adf.ly'];
+  var badTld = ['.xyz', '.top', '.buzz', '.click', '.link', '.zip', '.mov', '.quest', '.sbs'];
+  root.appendChild(field('Link to check', inp));
+  root.appendChild(btnRow(btn('Check This Link', '', function () {
+    var raw = inp.value.trim();
+    if (!raw) { out.textContent = 'Paste a link first.'; return; }
+    var url = /^https?:\/\//i.test(raw) ? raw : 'https://' + raw;
+    var u;
+    try { u = new URL(url); } catch (e) { out.textContent = 'That does not look like a valid link. Check for typos.'; return; }
+    var host = u.hostname.toLowerCase();
+    var issues = [], ok = [];
+    if (u.protocol === 'https:') ok.push('Uses HTTPS (encrypted connection).');
+    else issues.push('Not HTTPS — the connection is not encrypted.');
+    if (/^\d+\.\d+\.\d+\.\d+$/.test(host)) issues.push('The link points to a raw IP address instead of a domain name — suspicious.');
+    if (host.indexOf('xn--') >= 0) issues.push('Contains punycode (xn--) — a common trick to fake familiar domain names.');
+    if (shorteners.indexOf(host) >= 0) issues.push('URL shortener — the real destination is hidden. Expand it before trusting it.');
+    if (host.split('.').length > 3) issues.push('Unusually many subdomains — often used to imitate a real site (e.g. login.example.com.attacker.com).');
+    if (badTld.some(function (t) { return host.endsWith(t); })) issues.push('Unusual domain ending — extra caution needed.');
+    if (u.username || u.password || url.indexOf('@') >= 0) issues.push('Contains "@" in the link — the part before @ is ignored, so the real site may differ.');
+    if (url.length > 120) issues.push('Very long link — often used to hide the real destination.');
+    if (!issues.length) ok.push('No common warning signs found in the link text itself.');
+    out.innerHTML = '';
+    var box = resultBox(true);
+    box.appendChild(h('div', null, 'Real destination domain: ' + host));
+    box.appendChild(h('div', { style: 'font-size:14px;font-weight:400;margin-top:6px' }, issues.length ? 'Caution — ' + issues.length + ' warning sign(s) found.' : 'Looks OK on a quick check.'));
+    out.appendChild(box);
+    ok.forEach(function (s) { out.appendChild(h('div', null, '✓ ' + s)); });
+    issues.forEach(function (s) { out.appendChild(h('div', null, '✗ ' + s)); });
+    out.appendChild(h('p', { style: 'font-size:13px;color:#64748b' }, 'Decoded link: ' + decodeURIComponent(url)));
+    out.appendChild(h('p', { style: 'font-size:13px;color:#64748b' }, 'This is a first-pass heuristic check of the link text only — it cannot guarantee a site is safe. A clean result does not mean the site is trustworthy. Never enter passwords or payment details from a link you received unexpectedly. For a deeper check, use the Phishing URL Checker.'));
+  })));
+  root.appendChild(out);
+});
+
+/* ---------- 17. Video Compressor ---------- */
+reg('video-compressor', function (root) {
+  var file = null, info = h('div'), out = h('div'), prog = h('div');
+  var preset = h('select');
+  [['720p — 2.5 Mbps', 2500000], ['480p — 1 Mbps', 1000000], ['360p — 0.6 Mbps', 600000]].forEach(function (o) { preset.appendChild(h('option', { value: o[1] }, o[0])); });
+  root.appendChild(dropZone('Select a video file (MP4, WebM, MOV...)', 'video/*', false, function (fs) {
+    file = fs[0];
+    info.textContent = file ? file.name + ' (' + fmtBytes(file.size) + ')' : '';
+  }));
+  root.appendChild(info);
+  root.appendChild(field('Target quality', preset));
+  root.appendChild(btnRow(btn('Compress Video', '', function () {
+    if (!file) { out.textContent = 'Select a video first.'; return; }
+    if (!window.MediaRecorder) { out.textContent = 'Sorry — your browser does not support video recording (MediaRecorder). Try Chrome or Firefox.'; return; }
+    out.textContent = 'Compressing... please keep this tab open. The video will play once while it records.';
+    prog.textContent = '';
+    var url = URL.createObjectURL(file);
+    var vid = document.createElement('video');
+    vid.muted = true; vid.playsInline = true; vid.preload = 'auto';
+    vid.src = url;
+    vid.onloadedmetadata = function () {
+      var stream = vid.captureStream ? vid.captureStream() : vid.mozCaptureStream();
+      var rec;
+      try { rec = new MediaRecorder(stream, { mimeType: 'video/webm', videoBitsPerSecond: +preset.value }); }
+      catch (e) { try { rec = new MediaRecorder(stream, { videoBitsPerSecond: +preset.value }); } catch (e2) { out.textContent = 'Your browser could not start the recorder: ' + e2.message; return; } }
+      var chunks = [];
+      rec.ondataavailable = function (e) { if (e.data && e.data.size) chunks.push(e.data); };
+      rec.onstop = function () {
+        var blob = new Blob(chunks, { type: 'video/webm' });
+        downloadBlob(blob, file.name.replace(/\.[^.]+$/, '') + '-compressed.webm');
+        out.textContent = 'Done! Original ' + fmtBytes(file.size) + ' → compressed ' + fmtBytes(blob.size) + ' (' + Math.max(0, Math.round((1 - blob.size / file.size) * 100)) + '% smaller). Saved as WebM.';
+        URL.revokeObjectURL(url);
+      };
+      vid.ontimeupdate = function () { if (vid.duration) prog.textContent = 'Recording: ' + Math.round(vid.currentTime) + 's / ' + Math.round(vid.duration) + 's'; };
+      vid.onended = function () { try { rec.stop(); } catch (e) {} };
+      rec.start();
+      vid.play().catch(function (e) { out.textContent = 'Could not play the video: ' + e.message; });
+    };
+    vid.onerror = function () { out.textContent = 'Could not read this video file. Try an MP4 or WebM file.'; };
+  })));
+  root.appendChild(prog); root.appendChild(out);
+  root.appendChild(h('p', { style: 'font-size:13px;color:#64748b' }, 'The video is re-encoded in your browser and downloaded as a WebM file (smaller, same video). Quality depends on the target you pick — 720p keeps most detail, 360p is smallest. Very long videos take a while; the tab must stay open.'));
+});
+
+/* ---------- 18. Image to Text (OCR) ---------- */
+reg('image-to-text', function (root) {
+  var file = null;
+  var lang = h('select');
+  [['eng', 'English'], ['urd', 'Urdu'], ['eng+urd', 'English + Urdu']].forEach(function (o) { lang.appendChild(h('option', { value: o[0] }, o[1])); });
+  var out = h('textarea', { placeholder: 'Extracted text will appear here...', readonly: 'readonly' });
+  var status = h('div');
+  root.appendChild(dropZone('Select an image with text (photo, screenshot, scan)', 'image/*', false, function (fs) { file = fs[0]; status.textContent = file ? file.name + ' selected.' : ''; }));
+  root.appendChild(status);
+  root.appendChild(field('Text language', lang));
+  root.appendChild(btnRow(btn('Extract Text', '', function () {
+    if (!file) { status.textContent = 'Select an image first.'; return; }
+    status.textContent = 'Loading OCR engine (first use downloads about 10 MB)...';
+    out.value = '';
+    needTesseract().then(function () {
+      return window.Tesseract.recognize(file, lang.value, { logger: function (m) { if (m.status) status.textContent = m.status + (m.progress != null ? ' — ' + Math.round(m.progress * 100) + '%' : ''); } });
+    }).then(function (res) {
+      out.value = (res.data && res.data.text ? res.data.text.trim() : '');
+      status.textContent = out.value ? 'Done — text extracted. Check it before copying; OCR can misread blurry or handwritten text.' : 'No text found in this image. Try a clearer photo with good lighting.';
+    }).catch(function (e) { status.textContent = 'Error: ' + e.message; });
+  }), btn('Copy Text', 'secondary', function () { copyText(out.value, this); })));
+  root.appendChild(out);
+  root.appendChild(h('p', { style: 'font-size:13px;color:#64748b' }, 'OCR runs fully in your browser with the Tesseract engine (downloaded once from a CDN). Your image never leaves your device. Clear, well-lit text works best.'));
+});
+
+/* ---------- 19. Speech to Text ---------- */
+reg('speech-to-text', function (root) {
+  var lang = h('select');
+  [['en-US', 'English (US)'], ['ur-PK', 'Urdu (Pakistan)'], ['en-GB', 'English (UK)'], ['hi-IN', 'Hindi'], ['ar-SA', 'Arabic']].forEach(function (o) { lang.appendChild(h('option', { value: o[0] }, o[1])); });
+  var out = h('textarea', { placeholder: 'Your speech will appear here as text...', readonly: 'readonly' });
+  var status = h('div');
+  var rec = null, finalText = '';
+  var SR = window.SpeechRecognition || window.webkitSpeechRecognition;
+  root.appendChild(field('Language', lang));
+  if (!SR) {
+    status.textContent = 'Sorry — live speech recognition is not supported in this browser. It works in Chrome (desktop and Android). Your typed text is not sent anywhere.';
+  } else {
+    root.appendChild(btnRow(
+      btn('Start Listening', '', function () {
+        if (rec) return;
+        rec = new SR();
+        rec.lang = lang.value; rec.interimResults = true; rec.continuous = true;
+        rec.onresult = function (e) {
+          var interim = '';
+          for (var i = e.resultIndex; i < e.results.length; i++) {
+            if (e.results[i].isFinal) finalText += e.results[i][0].transcript;
+            else interim += e.results[i][0].transcript;
+          }
+          out.value = finalText + interim;
+        };
+        rec.onerror = function (e) { status.textContent = 'Microphone error: ' + (e.error || 'unknown') + '. Allow microphone access and try again.'; rec = null; };
+        rec.onend = function () { rec = null; status.textContent = 'Stopped listening.'; };
+        try { rec.start(); status.textContent = 'Listening... speak now. Click Stop when done.'; } catch (e) { status.textContent = 'Could not start: ' + e.message; rec = null; }
+      }),
+      btn('Stop', 'secondary', function () { if (rec) { try { rec.stop(); } catch (e) {} } })
+    ));
+  }
+  root.appendChild(status);
+  root.appendChild(out);
+  root.appendChild(btnRow(btn('Copy Text', 'secondary', function () { copyText(out.value, this); }), btn('Clear', 'secondary', function () { out.value = ''; finalText = ''; })));
+  root.appendChild(h('p', { style: 'font-size:13px;color:#64748b' }, 'Uses your browser’s built-in speech recognition. In Chrome, audio is sent to Google’s speech service for recognition (microphone permission required). Speak clearly in a quiet room for best results.'));
+});
+
+/* ---------- 20. Text to Speech (Urdu) ---------- */
+reg('text-to-speech', function (root) {
+  var ta = h('textarea', { placeholder: 'Type or paste text here — in Urdu or English...' });
+  var voiceSel = h('select');
+  var rate = numInput(1, 0.5, 2, 0.1), pitch = numInput(1, 0.5, 2, 0.1);
+  var status = h('div');
+  function loadVoices() {
+    var vs = window.speechSynthesis ? window.speechSynthesis.getVoices() : [];
+    voiceSel.innerHTML = '';
+    if (!vs.length) { voiceSel.appendChild(h('option', { value: '' }, 'Default voice')); return; }
+    vs.forEach(function (v, i) { voiceSel.appendChild(h('option', { value: String(i) }, v.name + ' (' + v.lang + ')')); });
+    var ur = vs.findIndex(function (v) { return (v.lang || '').toLowerCase().indexOf('ur') === 0; });
+    if (ur >= 0) voiceSel.value = String(ur);
+  }
+  if (!('speechSynthesis' in window)) {
+    status.textContent = 'Sorry — text to speech is not supported in this browser. Try Chrome, Edge or Firefox.';
+  } else {
+    loadVoices();
+    window.speechSynthesis.onvoiceschanged = loadVoices;
+  }
+  root.appendChild(ta);
+  root.appendChild(field('Voice (Urdu voices appear first if installed)', voiceSel));
+  root.appendChild(field('Speed', rate));
+  root.appendChild(field('Pitch', pitch));
+  root.appendChild(btnRow(
+    btn('Speak', '', function () {
+      if (!('speechSynthesis' in window)) return;
+      var t = ta.value.trim();
+      if (!t) { status.textContent = 'Type some text first.'; return; }
+      window.speechSynthesis.cancel();
+      var u = new SpeechSynthesisUtterance(t);
+      var vs = window.speechSynthesis.getVoices();
+      var v = vs[+voiceSel.value];
+      if (v) u.voice = v;
+      u.rate = +rate.value || 1; u.pitch = +pitch.value || 1;
+      u.onend = function () { status.textContent = 'Finished.'; };
+      u.onerror = function (e) { status.textContent = 'Speech error: ' + (e.error || 'unknown'); };
+      window.speechSynthesis.speak(u);
+      status.textContent = 'Speaking...';
+    }),
+    btn('Stop', 'secondary', function () { if ('speechSynthesis' in window) window.speechSynthesis.cancel(); status.textContent = ''; })
+  ));
+  root.appendChild(status);
+  root.appendChild(h('p', { style: 'font-size:13px;color:#64748b' }, 'Speech is generated by your device’s own voices — nothing is uploaded. An Urdu voice appears in the list only if your phone or computer has one installed (most Android phones do; on Windows, install an Urdu voice from Settings).'));
+});
+
+/* ---------- 21. Audio Trimmer ---------- */
+reg('audio-trimmer', function (root) {
+  var file = null, buf = null, actx = null;
+  var startI = numInput(0, 0), endI = numInput(0, 0);
+  var status = h('div'), wave = h('canvas', { style: 'width:100%;height:80px;border:1px solid #e2e8f0;border-radius:8px' });
+  function wavEncode(b) {
+    var ch = b.numberOfChannels, sr = b.sampleRate, len = b.length * ch * 2 + 44;
+    var ab = new ArrayBuffer(len), v = new DataView(ab), i, c;
+    function wstr(o, s) { for (var k = 0; k < s.length; k++) v.setUint8(o + k, s.charCodeAt(k)); }
+    wstr(0, 'RIFF'); v.setUint32(4, len - 8, true); wstr(8, 'WAVE'); wstr(12, 'fmt ');
+    v.setUint32(16, 16, true); v.setUint16(20, 1, true); v.setUint16(22, ch, true);
+    v.setUint32(24, sr, true); v.setUint32(28, sr * ch * 2, true); v.setUint16(32, ch * 2, true); v.setUint16(34, 16, true);
+    wstr(36, 'data'); v.setUint32(40, len - 44, true);
+    var off = 44;
+    for (i = 0; i < b.length; i++) for (c = 0; c < ch; c++) { var s = Math.max(-1, Math.min(1, b.getChannelData(c)[i])); v.setInt16(off, s < 0 ? s * 32768 : s * 32767, true); off += 2; }
+    return new Blob([ab], { type: 'audio/wav' });
+  }
+  function drawWave() {
+    if (!buf) return;
+    var ctx = wave.getContext('2d');
+    wave.width = wave.clientWidth || 600; wave.height = 80;
+    var data = buf.getChannelData(0), step = Math.floor(data.length / wave.width);
+    ctx.fillStyle = '#fff'; ctx.fillRect(0, 0, wave.width, wave.height);
+    ctx.fillStyle = '#2563eb';
+    for (var x = 0; x < wave.width; x++) {
+      var max = 0;
+      for (var i = 0; i < step; i += 10) { var a = Math.abs(data[x * step + i] || 0); if (a > max) max = a; }
+      var hh = Math.max(2, max * 78);
+      ctx.fillRect(x, (80 - hh) / 2, 1, hh);
+    }
+  }
+  root.appendChild(dropZone('Select an audio file (MP3, WAV, M4A, OGG...)', 'audio/*', false, function (fs) {
+    file = fs[0]; if (!file) return;
+    status.textContent = 'Reading ' + file.name + '...';
+    if (!actx) actx = new (window.AudioContext || window.webkitAudioContext)();
+    readAs('readAsArrayBuffer', file).then(function (ab) { return actx.decodeAudioData(ab); }).then(function (b) {
+      buf = b;
+      startI.max = b.duration; endI.max = b.duration; endI.value = Math.round(b.duration * 10) / 10;
+      status.textContent = file.name + ' — ' + Math.round(b.duration * 10) / 10 + ' seconds, ' + b.numberOfChannels + ' channel(s).';
+      drawWave();
+    }).catch(function () { status.textContent = 'Could not read this audio file. Try an MP3 or WAV file.'; });
+  }));
+  root.appendChild(status);
+  root.appendChild(wave);
+  root.appendChild(field('Start (seconds)', startI));
+  root.appendChild(field('End (seconds)', endI));
+  root.appendChild(btnRow(btn('Trim & Download WAV', '', function () {
+    if (!buf) { status.textContent = 'Select an audio file first.'; return; }
+    var s = Math.max(0, +startI.value || 0), e = Math.min(buf.duration, +endI.value || buf.duration);
+    if (e <= s) { status.textContent = 'End time must be after start time.'; return; }
+    var sr = buf.sampleRate, frames = Math.floor((e - s) * sr);
+    var out = actx.createBuffer(buf.numberOfChannels, frames, sr);
+    for (var c = 0; c < buf.numberOfChannels; c++) out.getChannelData(c).set(buf.getChannelData(c).subarray(Math.floor(s * sr), Math.floor(s * sr) + frames));
+    downloadBlob(wavEncode(out), (file ? file.name.replace(/\.[^.]+$/, '') : 'audio') + '-trimmed.wav');
+    status.textContent = 'Done! Trimmed ' + Math.round((e - s) * 10) / 10 + ' seconds, downloaded as WAV.';
+  })));
+  root.appendChild(h('p', { style: 'font-size:13px;color:#64748b' }, 'Audio is decoded and trimmed entirely in your browser. The download is a WAV file (uncompressed, works everywhere).'));
+});
+
+/* ---------- 22. Video to MP3 ---------- */
+reg('video-to-mp3', function (root) {
+  var file = null, status = h('div'), prog = h('div');
+  root.appendChild(dropZone('Select a video file (MP4, WebM, MOV...)', 'video/*', false, function (fs) { file = fs[0]; status.textContent = file ? file.name + ' (' + fmtBytes(file.size) + ')' : ''; }));
+  root.appendChild(status); root.appendChild(prog);
+  root.appendChild(btnRow(btn('Convert to MP3', '', function () {
+    if (!file) { status.textContent = 'Select a video first.'; return; }
+    status.textContent = 'Loading audio engine (first use downloads about 30 MB — please wait)...';
+    prog.textContent = '';
+    needFFmpeg().then(function () {
+      var ffmpeg = window.FFmpeg.createFFmpeg({ log: false, corePath: 'https://cdn.jsdelivr.net/npm/@ffmpeg/core@0.12.6/dist/umd/ffmpeg-core.js' });
+      ffmpeg.setProgress(function (p) { if (p && p.ratio != null) prog.textContent = 'Converting: ' + Math.round(p.ratio * 100) + '%'; });
+      return ffmpeg.load().then(function () {
+        status.textContent = 'Extracting audio...';
+        return readAs('readAsArrayBuffer', file).then(function (buf) {
+          ffmpeg.FS('writeFile', 'in.dat', new Uint8Array(buf));
+          return ffmpeg.run('-i', 'in.dat', '-vn', '-c:a', 'libmp3lame', '-q:a', '2', 'out.mp3');
+        }).then(function () {
+          var data = ffmpeg.FS('readFile', 'out.mp3');
+          downloadBlob(new Blob([data.buffer], { type: 'audio/mpeg' }), file.name.replace(/\.[^.]+$/, '') + '.mp3');
+          status.textContent = 'Done! MP3 downloaded.';
+          try { ffmpeg.FS('unlink', 'in.dat'); ffmpeg.FS('unlink', 'out.mp3'); } catch (e) {}
+        });
+      });
+    }).catch(function (e) { status.textContent = 'Error: ' + e.message + ' (Conversion needs internet once to load the engine, and works best in Chrome/Firefox.)'; });
+  })));
+  root.appendChild(h('p', { style: 'font-size:13px;color:#64748b' }, 'The video is converted in your browser with the FFmpeg engine — your file never leaves your device. First use downloads the engine (about 30 MB); later conversions are faster.'));
+});
+
+/* ---------- 23. PDF to Word ---------- */
+reg('pdf-to-word', function (root) {
+  var file = null, status = h('div');
+  root.appendChild(dropZone('Select a PDF file', '.pdf', false, function (fs) { file = fs[0]; status.textContent = file ? file.name + ' selected.' : ''; }));
+  root.appendChild(status);
+  root.appendChild(btnRow(btn('Convert to Word (.docx)', '', function () {
+    if (!file) { status.textContent = 'Select a PDF first.'; return; }
+    status.textContent = 'Reading PDF...';
+    needPdfJs().then(function () { return readAs('readAsArrayBuffer', file); }).then(function (buf) {
+      return window.pdfjsLib.getDocument({ data: buf }).promise;
+    }).then(function (pdf) {
+      var chain = Promise.resolve([]), n = pdf.numPages;
+      for (var p = 1; p <= n; p++) {
+        (function (pageNo) {
+          chain = chain.then(function (pages) {
+            return pdf.getPage(pageNo).then(function (page) { return page.getTextContent(); }).then(function (tc) {
+              var lines = {};
+              tc.items.forEach(function (it) {
+                var y = Math.round(it.transform[5]);
+                (lines[y] = lines[y] || []).push(it.str);
+              });
+              var text = Object.keys(lines).sort(function (a, b) { return b - a; }).map(function (y) { return lines[y].join(' '); }).join('\n');
+              pages.push(text);
+              status.textContent = 'Reading page ' + pageNo + ' of ' + n + '...';
+              return pages;
+            });
+          });
+        })(p);
+      }
+      return chain;
+    }).then(function (pages) {
+      status.textContent = 'Building Word file...';
+      return needDocx().then(function () {
+        var D = window.docx;
+        var children = [];
+        pages.forEach(function (pg, i) {
+          pg.split('\n').forEach(function (line) { children.push(new D.Paragraph({ children: [new D.TextRun(line)] })); });
+          if (i < pages.length - 1) children.push(new D.Paragraph({ children: [new D.PageBreak()] }));
+        });
+        var doc = new D.Document({ sections: [{ children: children }] });
+        return D.Packer.toBlob(doc);
+      });
+    }).then(function (blob) {
+      downloadBlob(blob, file.name.replace(/\.pdf$/i, '') + '.docx');
+      status.textContent = 'Done! Word file downloaded. Note: only the text is carried over — layout, images and tables are not preserved.';
+    }).catch(function (e) { status.textContent = 'Error: ' + e.message; });
+  })));
+  root.appendChild(h('p', { style: 'font-size:13px;color:#64748b' }, 'Text is extracted from your PDF and saved as a real .docx file, all in your browser. Scanned PDFs (photos of pages) have no text to extract — use the Image to Text (OCR) tool for those.'));
+});
+
+/* ---------- 24. Word to PDF ---------- */
+reg('word-to-pdf', function (root) {
+  var file = null, status = h('div');
+  var view = h('div', { id: 'docx-view', style: 'border:1px solid #e2e8f0;border-radius:8px;padding:16px;margin:12px 0;min-height:120px;background:#fff' });
+  view.textContent = 'Your document will appear here after you choose a .docx file.';
+  root.appendChild(dropZone('Select a Word file (.docx)', '.docx', false, function (fs) {
+    file = fs[0]; if (!file) return;
+    status.textContent = 'Reading document...';
+    needDocxPreview().then(function () {
+      view.innerHTML = '';
+      return window.docxPreview.renderAsync(file, view);
+    }).then(function () { status.textContent = 'Document ready. Click "Save as PDF" and choose "Save as PDF" in your browser’s print dialog.'; })
+    .catch(function (e) { status.textContent = 'Error: ' + e.message; });
+  }));
+  root.appendChild(status);
+  root.appendChild(view);
+  root.appendChild(btnRow(btn('Save as PDF (Print)', '', function () {
+    if (!file) { status.textContent = 'Select a .docx file first.'; return; }
+    var st = document.createElement('style');
+    st.textContent = '@media print { body * { visibility: hidden; } #docx-view, #docx-view * { visibility: visible; } #docx-view { position: absolute; left: 0; top: 0; width: 100%; border: none; margin: 0; padding: 0; } }';
+    document.head.appendChild(st);
+    window.print();
+  })));
+  root.appendChild(h('p', { style: 'font-size:13px;color:#64748b' }, 'Your Word file is rendered in your browser and printed to PDF with your browser’s own "Save as PDF" option — no upload, no conversion server. Layout is kept as close as the browser can render it.'));
+});
+
+/* ---------- 25. PDF Unlock ---------- */
+reg('pdf-unlock', function (root) {
+  var file = null, pass = h('input', { type: 'password', placeholder: 'PDF password' });
+  var status = h('div');
+  root.appendChild(dropZone('Select a password-protected PDF', '.pdf', false, function (fs) { file = fs[0]; status.textContent = file ? file.name + ' selected.' : ''; }));
+  root.appendChild(field('Password', pass));
+  root.appendChild(btnRow(btn('Unlock PDF', '', function () {
+    if (!file) { status.textContent = 'Select a PDF first.'; return; }
+    if (!pass.value) { status.textContent = 'Enter the PDF password. (This tool removes a password you already know — it cannot crack a password.)'; return; }
+    status.textContent = 'Opening PDF...';
+    var pdfDoc = null, pages = [];
+    needPdfJs().then(function () { return readAs('readAsArrayBuffer', file); }).then(function (buf) {
+      return window.pdfjsLib.getDocument({ data: buf, password: pass.value }).promise;
+    }).then(function (pdf) {
+      pdfDoc = pdf;
+      status.textContent = 'Rendering ' + pdf.numPages + ' page(s)...';
+      var chain = Promise.resolve();
+      for (var p = 1; p <= pdf.numPages; p++) {
+        (function (pageNo) {
+          chain = chain.then(function () {
+            return pdfDoc.getPage(pageNo).then(function (page) {
+              var vp = page.getViewport({ scale: 1.5 });
+              var cv = document.createElement('canvas');
+              cv.width = vp.width; cv.height = vp.height;
+              return page.render({ canvasContext: cv.getContext('2d'), viewport: vp }).promise.then(function () {
+                return new Promise(function (res) { cv.toBlob(function (b) { res(b); }, 'image/jpeg', 0.85); });
+              }).then(function (blob) { return blob.arrayBuffer(); }).then(function (ab) {
+                pages.push({ data: ab, w: vp.width, h: vp.height });
+                status.textContent = 'Rendered page ' + pageNo + ' of ' + pdfDoc.numPages + '...';
+              });
+            });
+          });
+        })(p);
+      }
+      return chain;
+    }).then(function () { return needPdfLib(); }).then(function () {
+      return window.PDFLib.PDFDocument.create();
+    }).then(function (doc) {
+      var chain2 = Promise.resolve();
+      pages.forEach(function (pg) {
+        chain2 = chain2.then(function () {
+          return doc.embedJpg(pg.data).then(function (img) {
+            var page = doc.addPage([pg.w, pg.h]);
+            page.drawImage(img, { x: 0, y: 0, width: pg.w, height: pg.h });
+          });
+        });
+      });
+      return chain2.then(function () { return doc.save(); });
+    }).then(function (bytes) {
+      downloadBlob(new Blob([bytes], { type: 'application/pdf' }), file.name.replace(/\.pdf$/i, '') + '-unlocked.pdf');
+      status.textContent = 'Done! Unlocked PDF downloaded. Pages are kept as images, so text selection is lost.';
+    }).catch(function (e) { status.textContent = 'Error: ' + (e && e.message ? e.message : e) + ' — check the password and try again.'; });
+  })));
+  root.appendChild(status);
+  root.appendChild(h('p', { style: 'font-size:13px;color:#64748b' }, 'This removes the password from a PDF you already know the password for — it cannot crack or guess passwords. Pages are kept as images in the unlocked file, so text selection is lost.'));
+});
+
+/* ---------- 26. Watermark Adder ---------- */
+reg('watermark-adder', function (root) {
+  var wm = h('input', { type: 'text', placeholder: 'e.g. © Malik Anwaar' });
+  var pos = h('select');
+  [['bottom-right', 'Bottom right'], ['bottom-left', 'Bottom left'], ['top-right', 'Top right'], ['top-left', 'Top left'], ['center', 'Center'], ['bottom-center', 'Bottom center']].forEach(function (o) { pos.appendChild(h('option', { value: o[0] }, o[1])); });
+  var op = numInput(0.5, 0.1, 1, 0.05), size = numInput(36, 12, 120, 1);
+  function drawWm(st, cv) {
+    if (!st.img) return;
+    var ctx = cv.getContext('2d');
+    cv.width = st.img.width; cv.height = st.img.height;
+    ctx.drawImage(st.img, 0, 0);
+    var t = wm.value.trim();
+    if (!t) return;
+    var fs = Math.max(12, Math.round(cv.width * (+size.value || 36) / 800));
+    ctx.font = 'bold ' + fs + 'px Arial, sans-serif';
+    ctx.globalAlpha = +op.value || 0.5;
+    ctx.fillStyle = '#fff'; ctx.strokeStyle = 'rgba(0,0,0,0.6)'; ctx.lineWidth = 3;
+    var tw = ctx.measureText(t).width, m = 16, x, y;
+    var p = pos.value;
+    x = p.indexOf('left') >= 0 ? m : p.indexOf('right') >= 0 ? cv.width - tw - m : (cv.width - tw) / 2;
+    y = p.indexOf('top') >= 0 ? m + fs : p === 'center' ? cv.height / 2 : cv.height - m;
+    ctx.textAlign = 'left'; ctx.textBaseline = 'alphabetic';
+    ctx.strokeText(t, x, y); ctx.fillText(t, x, y);
+    ctx.globalAlpha = 1;
+  }
+  root.appendChild(h('p', null, 'Add a text watermark to protect your photos. Everything stays in your browser.'));
+  imgWorkArea(root, 'image/*', function (st, cv) { drawWm(st, cv); }, function (st, cv, controls) {
+    controls.appendChild(field('Watermark text', wm));
+    controls.appendChild(field('Position', pos));
+    controls.appendChild(field('Opacity (0.1 – 1)', op));
+    controls.appendChild(field('Text size', size));
+    [wm, pos, op, size].forEach(function (el) { el.addEventListener('input', function () { drawWm(st, cv); }); });
+    controls.appendChild(btnRow(btn('Download Watermarked PNG', '', function () {
+      drawWm(st, cv);
+      canvasDownload(cv, (st.name || 'image') + '-watermarked.png');
+    })));
+  });
 });
 
 /* ---------- init ---------- */

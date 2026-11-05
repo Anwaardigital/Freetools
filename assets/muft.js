@@ -26,9 +26,9 @@ function refreshHearts(slug) {
 var STR = {
 en: {
   navHome:'Home', navTools:'All Tools', navAbout:'About', navFaq:'FAQ', navBlog:'Blog', navContact:'Contact', navPrivacy:'Privacy',
-  heroTitle:'63 Free Online Tools',
+  heroTitle:'89 Free Online Tools',
   heroSub:'PDF, image, text, calculators, security, color & developer tools — free forever. No signup. Everything runs privately in your browser.',
-  searchPh:'Search 63 tools... e.g. pdf, qr, password',
+  searchPh:'Search 89 tools... e.g. pdf, qr, password',
   featuredTitle:'Featured Tools', featuredSub:'Our most-loved tools — picked for you',
   openBtn:'Open',
   favTitle:'Your Favorites', favSub:'Tools you starred — saved on this device',
@@ -38,15 +38,15 @@ en: {
   nlPh:'Your email address', nlBtn:'Subscribe', nlDone:'Email saved on this device — email updates are coming soon!',
   ytTitle:'Our YouTube Channels', ytSub:'Learn, laugh and explore — subscribe for new videos every week',
   ytSubscribe:'Subscribe', footYouTube:'YouTube',
-  footTag:'63 free online tools. No signup — everything runs in your browser.',
+  footTag:'89 free online tools. No signup — everything runs in your browser.',
   footPopular:'Popular', footSite:'Site', footReq:'Request a Tool', footPrivacy:'Privacy Policy',
   useBadge:function (n) { return '' + n + ' tool uses on this device'; }
 },
 ur: {
   navHome:'ہوم', navTools:'تمام ٹولز', navAbout:'ہمارے بارے میں', navFaq:'سوالات', navBlog:'بلاگ', navContact:'رابطہ', navPrivacy:'پرائیویسی',
-  heroTitle:'63 مفت آن لائن ٹولز',
+  heroTitle:'89 مفت آن لائن ٹولز',
   heroSub:'PDF، تصویر، متن، کیلکولیٹر، سیکیورٹی، رنگ اور ڈیولپر ٹولز — ہمیشہ مفت۔ کوئی سائن اپ نہیں۔ سب کچھ آپ کے براؤزر میں نجی طور پر چلتا ہے۔',
-  searchPh:'63 ٹولز تلاش کریں... مثلاً pdf، qr، password',
+  searchPh:'89 ٹولز تلاش کریں... مثلاً pdf، qr، password',
   featuredTitle:'نمایاں ٹولز', featuredSub:'ہمارے سب سے مقبول ٹولز — آپ کے لیے منتخب',
   openBtn:'کھولیں',
   favTitle:'آپ کے پسندیدہ', favSub:'جن ٹولز کو آپ نے پسند کیا — اس ڈیوائس پر محفوظ',
@@ -56,14 +56,14 @@ ur: {
   nlPh:'آپ کا ای میل ایڈریس', nlBtn:'سبسکرائب کریں', nlDone:'ای میل اس ڈیوائس پر محفوظ ہو گئی — ای میل اپڈیٹس جلد آ رہی ہیں!',
   ytTitle:'ہمارے یوٹیوب چینلز', ytSub:'سیکھیں، ہنسیں اور دریافت کریں — ہر ہفتے نئی ویڈیوز کے لیے سبسکرائب کریں',
   ytSubscribe:'سبسکرائب', footYouTube:'یوٹیوب',
-  footTag:'63 مفت آن لائن ٹولز۔ کوئی سائن اپ نہیں — سب کچھ آپ کے براؤزر میں چلتا ہے۔',
+  footTag:'89 مفت آن لائن ٹولز۔ کوئی سائن اپ نہیں — سب کچھ آپ کے براؤزر میں چلتا ہے۔',
   footPopular:'مقبول', footSite:'سائٹ', footReq:'ٹول کی درخواست', footPrivacy:'پرائیویسی پالیسی',
   useBadge:function (n) { return 'اس ڈیوائس پر ' + n + ' ٹول استعمال'; }
 }};
 var CAT_UR = {
   'PDF Tools':'PDF ٹولز', 'Image Tools':'تصویری ٹولز', 'Text Tools':'متنی ٹولز',
   'Calculators':'کیلکولیٹرز', 'Security Tools':'سیکیورٹی ٹولز',
-  'Color Tools':'رنگ ٹولز', 'Developer Tools':'ڈیولپر ٹولز'
+  'Color Tools':'رنگ ٹولز', 'Developer Tools':'ڈیولپر ٹولز', 'Creator Tools':'کریئیٹر ٹولز', 'Audio & Video Tools':'آڈیو اور ویڈیو ٹولز'
 };
 
 function setLang(l) {
