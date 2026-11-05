@@ -106,7 +106,7 @@
 </main>
 <footer class="site-footer"><div class="wrap">
 <div class="cols">
-<div><h4><img class="shield" src="../../freetools-icon-192.png" alt="" style="width:22px;height:22px;vertical-align:-4px;margin-right:6px"> ابزارهای رایگان حریم خصوصی</h4><p>89 ابزار رایگان آنلاین. بدون ثبت نام و بدون ردیابی — همه چیز در مرورگر شما اجرا می شود.</p></div>
+<div><h4><img class="shield" src="../../freetools-icon-192.png" alt="" style="width:22px;height:22px;vertical-align:-4px;margin-right:6px"> ابزارهای رایگان حریم خصوصی</h4><p>90 ابزار رایگان آنلاین. بدون ثبت نام و بدون ردیابی — همه چیز در مرورگر شما اجرا می شود.</p></div>
 <div><h4>محبوب</h4><a href="./image-compressor.html">فشرده ساز تصویر</a><a href="./word-counter.html">شمارنده کلمات</a><a href="./password-generator.html">سازنده رمز عبور</a><a href="./pdf-merger.html">ادغام PDF</a><a href="./age-calculator.html">محاسبه گر سن</a></div>
 <div><h4>سایت</h4><a href="../index.html">خانه</a><a href="../index.html#tools">همه ابزارها</a><a href="../about.html">درباره ما</a><a href="../faq.html">سوالات پرتکرار</a><a href="../blog.html">وبلاگ</a><a href="../contact.html">تماس</a><a href="../request.html">درخواست ابزار</a><a href="../privacy.html">حریم خصوصی</a><a href="../terms.html">شرایط استفاده</a><a href="../disclaimer.html">سلب مسئولیت</a></div>
 </div>
@@ -822,4 +822,171 @@ var WIDGET_FRAG_WORDS = { 'Weak': 1, 'Fair': 1, 'Good': 1, 'Strong': 1,
 })();
 </script>
 
+
+<script>
+/* FIX 2026-11-05 — Video to MP3 override (page-local, tools.js untouched).
+   The stock tools.js build calls window.FFmpeg.createFFmpeg — the 0.11
+   legacy API. The site loads @ffmpeg/ffmpeg@0.12.10, whose UMD exposes
+   only window.FFmpegWASM.FFmpeg (the 0.12 class API); window.FFmpeg is
+   undefined, so the stock tool crashes on Convert ("Cannot read
+   properties of undefined (reading 'createFFmpeg')"). This override
+   renders after the stock tool on DOMContentLoaded, wipes it, and extracts
+   MP3 audio with FFmpeg.wasm 0.12 (class API) + libmp3lame. Favorites,
+   ratings and share (features.js) live outside #tool-root and are untouched. */
+(function () {
+  'use strict';
+  function el(tag, attrs) {
+    var e = document.createElement(tag);
+    if (attrs) for (var k in attrs) {
+      if (k === 'class') e.className = attrs[k];
+      else if (k === 'html') e.innerHTML = attrs[k];
+      else e.setAttribute(k, attrs[k]);
+    }
+    for (var i = 2; i < arguments.length; i++) {
+      var c = arguments[i];
+      if (c === undefined || c === null) continue;
+      e.appendChild(typeof c === 'string' || typeof c === 'number' ? document.createTextNode(String(c)) : c);
+    }
+    return e;
+  }
+  function fmtBytes(b) {
+    if (b < 1024) return b + ' B';
+    if (b < 1048576) return (b / 1024).toFixed(1) + ' KB';
+    return (b / 1048576).toFixed(2) + ' MB';
+  }
+  function loadScript(src) {
+    return new Promise(function (res, rej) {
+      var s = document.createElement('script');
+      s.src = src;
+      s.onload = res;
+      s.onerror = function () { rej(new Error('Could not load the audio engine (internet needed once).')); };
+      document.head.appendChild(s);
+    });
+  }
+  function waitForFFmpegWASM(ms) {
+    var t0 = Date.now();
+    return new Promise(function (res, rej) {
+      (function poll() {
+        if (window.FFmpegWASM && window.FFmpegWASM.FFmpeg) return res(window.FFmpegWASM.FFmpeg);
+        if (Date.now() - t0 > (ms || 10000)) return rej(new Error('Audio engine did not load. Check your connection and try again.'));
+        setTimeout(poll, 100);
+      })();
+    });
+  }
+  function readFileAsArrayBuffer(file) {
+    return new Promise(function (res, rej) {
+      var r = new FileReader();
+      r.onload = function () { res(r.result); };
+      r.onerror = rej;
+      r.readAsArrayBuffer(file);
+    });
+  }
+
+  function init() {
+    var root = document.getElementById('tool-root');
+    if (!root) return;
+    root.innerHTML = '';
+    var file = null, running = false, ffmpeg = null, dlUrl = null, dlBtn = null;
+
+    var info = el('div'), prog = el('div'), out = el('div'), dlBox = el('div');
+    var zone = el('div', { 'class': 'drop' }, 'Select a video file (MP4, WebM, MOV...)');
+    var hidden = el('input', { type: 'file', accept: 'video/*' });
+    hidden.style.display = 'none';
+    zone.appendChild(hidden);
+    function pick(fs) {
+      file = (fs && fs[0]) ? fs[0] : null;
+      info.textContent = file ? file.name + ' (' + fmtBytes(file.size) + ')' : '';
+      out.textContent = ''; prog.textContent = ''; dlBox.innerHTML = '';
+    }
+    zone.addEventListener('click', function () { hidden.click(); });
+    hidden.addEventListener('change', function () { pick(hidden.files); });
+    ['dragover', 'dragenter'].forEach(function (ev) {
+      zone.addEventListener(ev, function (e) { e.preventDefault(); zone.style.borderColor = '#2563eb'; });
+    });
+    ['dragleave', 'drop'].forEach(function (ev) {
+      zone.addEventListener(ev, function (e) { e.preventDefault(); zone.style.borderColor = ''; });
+    });
+    zone.addEventListener('drop', function (e) { pick(e.dataTransfer.files); });
+
+    function showDownload(blob, name) {
+      if (dlUrl) { try { URL.revokeObjectURL(dlUrl); } catch (e) {} }
+      dlUrl = URL.createObjectURL(blob);
+      dlBox.innerHTML = '';
+      dlBtn = el('a', { 'class': 'btn', href: dlUrl, download: name }, 'Download MP3 (' + fmtBytes(blob.size) + ')');
+      dlBox.appendChild(dlBtn);
+    }
+
+    function getFFmpeg() {
+      if (ffmpeg) return Promise.resolve(ffmpeg);
+      return loadScript('https://cdn.jsdelivr.net/npm/@ffmpeg/ffmpeg@0.12.10/dist/umd/ffmpeg.min.js')
+        .then(function () { return waitForFFmpegWASM(10000); })
+        .then(function (FFmpegClass) {
+          ffmpeg = new FFmpegClass();
+          ffmpeg.on('progress', function (e) {
+            if (e && e.progress != null && e.progress >= 0) prog.textContent = 'Converting: ' + Math.round(e.progress * 100) + '%';
+          });
+          return ffmpeg.load({
+            coreURL: 'https://cdn.jsdelivr.net/npm/@ffmpeg/core@0.12.6/dist/umd/ffmpeg-core.js',
+            wasmURL: 'https://cdn.jsdelivr.net/npm/@ffmpeg/core@0.12.6/dist/umd/ffmpeg-core.wasm'
+          }).then(function () { return ffmpeg; });
+        });
+    }
+
+    function convert() {
+      if (running) return;
+      if (!file) { out.textContent = 'Select a video first.'; return; }
+      running = true;
+      out.textContent = 'Loading audio engine (first use downloads about 30 MB — please wait)...';
+      prog.textContent = ''; dlBox.innerHTML = '';
+      var baseName = (file.name || 'video').replace(/\.[^.]+$/, '') || 'video';
+      getFFmpeg().then(function () {
+        out.textContent = 'Extracting audio...';
+        return readFileAsArrayBuffer(file);
+      }).then(function (buf) {
+        return ffmpeg.writeFile('in.dat', new Uint8Array(buf));
+      }).then(function () {
+        return ffmpeg.exec(['-i', 'in.dat', '-vn', '-c:a', 'libmp3lame', '-q:a', '2', 'out.mp3']);
+      }).then(function (code) {
+        if (code !== 0) throw new Error('Conversion failed (engine error ' + code + ').');
+        return ffmpeg.readFile('out.mp3');
+      }).then(function (data) {
+        var blob = new Blob([data], { type: 'audio/mpeg' });
+        return ffmpeg.deleteFile('in.dat').catch(function () {}).then(function () {
+          return ffmpeg.deleteFile('out.mp3').catch(function () {});
+        }).then(function () { return blob; });
+      }).then(function (blob) {
+        prog.textContent = '';
+        showDownload(blob, baseName + '.mp3');
+        if (blob.size < file.size) {
+          var pct = Math.round((1 - blob.size / file.size) * 100);
+          out.textContent = 'Done! Original video ' + fmtBytes(file.size) + ' → MP3 ' + fmtBytes(blob.size) + ' (' + pct + '% smaller). Saved as MP3.';
+        } else {
+          out.textContent = 'Done! MP3 is ' + fmtBytes(blob.size) + ' (from a ' + fmtBytes(file.size) + ' video). Saved as MP3 — it plays everywhere.';
+        }
+        if (dlBtn) dlBtn.click();
+      }).catch(function (e) {
+        prog.textContent = '';
+        out.textContent = 'Error: ' + (e && e.message ? e.message : 'Conversion failed.') + ' If your video has no sound track, there is nothing to extract — try a video with audio.';
+      }).then(function () { running = false; });
+    }
+
+    var btnEl = el('button', { 'class': 'btn', type: 'button' }, 'Convert to MP3');
+    btnEl.addEventListener('click', convert);
+    var row = el('div', { 'class': 'btn-row' });
+    row.appendChild(btnEl);
+
+    root.appendChild(zone);
+    root.appendChild(info);
+    root.appendChild(row);
+    root.appendChild(prog);
+    root.appendChild(out);
+    root.appendChild(dlBox);
+    root.appendChild(el('p', { style: 'font-size:13px;color:#64748b' }, 'The video is converted in your browser with the FFmpeg engine — your file never leaves your device. First use downloads the engine (about 30 MB); later conversions are faster.'));
+  }
+
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', init);
+  else init();
+})();
+
+</script>
 </body></html>
