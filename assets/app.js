@@ -132,3 +132,20 @@ document.addEventListener('DOMContentLoaded', function () {
 
   init();
 })();
+
+/* Anwaar AI button (2026-11-05, 4-site rollout): floating button on every Freetools page, opens the AI chat with this site's context. */
+(function () {
+  function addAiButton() {
+    if (document.getElementById('anwaar-ai-btn')) return;
+    var a = document.createElement('a');
+    a.id = 'anwaar-ai-btn';
+    a.href = 'https://anwaardigital.com/ai/?site=freetools';
+    a.target = '_blank';
+    a.rel = 'noopener';
+    a.setAttribute('aria-label', 'Anwaar AI');
+    a.textContent = '\u2726 Anwaar AI';
+    a.style.cssText = 'position:fixed;right:16px;bottom:16px;z-index:9999;display:flex;align-items:center;background:#1a2b4a;color:#fff;text-decoration:none;font-family:system-ui,-apple-system,sans-serif;font-size:15px;font-weight:600;padding:12px 16px;border-radius:999px;box-shadow:0 4px 16px rgba(0,0,0,.35)';
+    document.body.appendChild(a);
+  }
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', addAiButton); else addAiButton();
+})();
