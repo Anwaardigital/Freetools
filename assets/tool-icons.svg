@@ -1,5 +1,5 @@
 <svg xmlns="http://www.w3.org/2000/svg">
-<!-- Freetools tool icons: 89 line icons in the approved style (200x200, lavender #EDE9FE rounded square, dark-slate #334155 line art).
+<!-- Freetools tool icons: 90 line icons in the approved style (200x200, lavender #EDE9FE rounded square, dark-slate #334155 line art).
      Usage: <svg><use href="assets/tool-icons.svg#icon-<slug>"/>  <!-- YouTube Thumbnail Downloader | id="icon-youtube-thumbnail-downloader" -->
   <symbol id="icon-youtube-thumbnail-downloader" viewBox="0 0 200 200"><rect x="8" y="8" width="184" height="184" rx="38" fill="#EDE9FE"/><rect x="48" y="52" width="104" height="68" rx="10" fill="#FFFFFF" stroke="#334155" stroke-width="5"/><path d="M88 72 L116 86 L88 100 Z" fill="#DC2626"/><path d="M100 132 L100 156 M100 156 L88 144 M100 156 L112 144" fill="none" stroke="#2563EB" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/></symbol>
   <!-- Hashtag Generator | id="icon-hashtag-generator" -->
@@ -52,6 +52,8 @@
   <symbol id="icon-pdf-unlock" viewBox="0 0 200 200"><rect x="8" y="8" width="184" height="184" rx="38" fill="#EDE9FE"/><path d="M64 52 H96 L112 68 V120 Q112 128 104 128 H72 Q64 128 64 120 Z" fill="#FFFFFF" stroke="#334155" stroke-width="5" stroke-linejoin="round"/><text x="88" y="114" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="bold" fill="#DC2626" text-anchor="middle">PDF</text><rect x="118" y="92" width="44" height="36" rx="6" fill="#FEF3C7" stroke="#334155" stroke-width="5"/><path d="M126 92 V80 Q126 66 140 66 Q154 66 154 80 V92" fill="none" stroke="#334155" stroke-width="5"/><circle cx="140" cy="108" r="5" fill="#334155"/></symbol>
   <!-- Watermark Adder | id="icon-watermark-adder" -->
   <symbol id="icon-watermark-adder" viewBox="0 0 200 200"><rect x="8" y="8" width="184" height="184" rx="38" fill="#EDE9FE"/><rect x="48" y="52" width="104" height="88" rx="8" fill="#FFFFFF" stroke="#334155" stroke-width="5"/><path d="M48 118 L82 84 L104 106 L122 88 L152 118 Z" fill="#CBD5E1"/><text x="130" y="132" font-family="Arial, Helvetica, sans-serif" font-size="26" font-weight="bold" fill="#2563EB" text-anchor="middle">©</text></symbol>
+  <!-- Subscriber & Like Counter | id="icon-subscriber-like-counter" -->
+  <symbol id="icon-subscriber-like-counter" viewBox="0 0 200 200"><rect x="8" y="8" width="184" height="184" rx="38" fill="#EDE9FE"/><circle cx="82" cy="80" r="22" fill="#FFFFFF" stroke="#334155" stroke-width="5"/><path d="M48 142 Q48 108 82 108 Q116 108 116 142 Z" fill="#FFFFFF" stroke="#334155" stroke-width="5"/><path d="M142 150 Q118 128 118 110 Q118 96 130 96 Q140 96 142 104 Q144 96 154 96 Q166 96 166 110 Q166 128 142 150 Z" fill="#FFFFFF" stroke="#DC2626" stroke-width="5" stroke-linejoin="round"/></symbol>
 </svg>  (or xlink:href for older browsers).
      Each symbol is self-contained including its lavender background. No emojis in this file. -->
   <!-- Age Calculator | replaces [cake] emoji | id="icon-age-calculator" -->

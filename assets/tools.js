@@ -1,4 +1,4 @@
-/* Free Privacy Tools — 89 tools, 100% client-side. No uploads. */
+/* Free Privacy Tools — 90 tools, 100% client-side. No uploads. */
 (function () {
 'use strict';
 
@@ -2443,6 +2443,83 @@ reg('watermark-adder', function (root) {
       canvasDownload(cv, (st.name || 'image') + '-watermarked.png');
     })));
   });
+});
+
+/* ---------- 27. Subscriber & Like Counter ---------- */
+reg('subscriber-like-counter', function (root) {
+  var milestones = [100, 500, 1000, 5000, 10000, 50000, 100000, 500000, 1000000, 5000000, 10000000, 50000000, 100000000];
+  function gcd(a, b) { return b ? gcd(b, a % b) : a; }
+  function nextMilestone(c) {
+    for (var i = 0; i < milestones.length; i++) if (milestones[i] > c) return milestones[i];
+    return (Math.floor(c / 100000000) + 1) * 100000000;
+  }
+
+  /* 1. Subscriber goal */
+  var cur = numInput(1000, 0), perDay = numInput(10, 0), target = numInput(2000, 0);
+  var out1 = h('div');
+  root.appendChild(h('h3', null, 'Subscriber goal calculator'));
+  root.appendChild(field('Current subscribers', cur));
+  root.appendChild(field('New subscribers per day', perDay));
+  root.appendChild(field('Target subscribers', target));
+  root.appendChild(btnRow(btn('Calculate Goal', '', function () {
+    var c = +cur.value || 0, d = +perDay.value || 0, t = +target.value || 0;
+    out1.innerHTML = '';
+    var box = resultBox(true);
+    if (t <= c) {
+      box.appendChild(h('div', null, 'You already reached this goal — ' + c.toLocaleString('en-US') + ' subscribers.'));
+    } else if (d <= 0) {
+      box.appendChild(h('div', null, 'Enter how many new subscribers you gain per day (more than 0).'));
+    } else {
+      var days = Math.ceil((t - c) / d);
+      var date = new Date(Date.now() + days * 86400000);
+      box.appendChild(h('div', null, days.toLocaleString('en-US') + ' days to reach ' + t.toLocaleString('en-US') + ' subscribers'));
+      box.appendChild(h('div', { style: 'font-size:14px;font-weight:400;margin-top:6px' }, 'At ' + d.toLocaleString('en-US') + ' new subscribers a day, you get there around ' + date.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' }) + '.'));
+      box.appendChild(h('div', { style: 'font-size:14px;font-weight:400' }, (t - c).toLocaleString('en-US') + ' more subscribers to go.'));
+    }
+    out1.appendChild(box);
+  })));
+  root.appendChild(out1);
+
+  /* 2. Like ratio */
+  var likes = numInput(90, 0), dislikes = numInput(10, 0);
+  var out2 = h('div');
+  root.appendChild(h('h3', null, 'Like ratio calculator'));
+  root.appendChild(field('Likes', likes));
+  root.appendChild(field('Dislikes', dislikes));
+  root.appendChild(btnRow(btn('Calculate Like Ratio', '', function () {
+    var l = +likes.value || 0, dl = +dislikes.value || 0, total = l + dl;
+    out2.innerHTML = '';
+    var box = resultBox(true);
+    if (!total) {
+      box.appendChild(h('div', null, 'Enter likes and dislikes first.'));
+    } else {
+      var pct = l / total * 100;
+      var g = gcd(l, dl);
+      var verdict = pct >= 90 ? 'Excellent — very strong like ratio' : pct >= 80 ? 'Good — healthy' : pct >= 60 ? 'Average — room to improve' : 'Low — the video may have reached the wrong audience';
+      box.appendChild(h('div', null, 'Like percentage: ' + pct.toFixed(2) + '%'));
+      box.appendChild(h('div', { style: 'font-size:14px;font-weight:400;margin-top:6px' }, 'Like-to-dislike ratio: ' + (l / g) + ':' + (dl / g)));
+      box.appendChild(h('div', { style: 'font-size:14px;font-weight:400' }, verdict));
+      box.appendChild(h('div', { style: 'font-size:13px;color:#64748b;margin-top:6px' }, 'Like % = likes ÷ (likes + dislikes) × 100. Counts come from the numbers you type — this tool never fetches live data.'));
+    }
+    out2.appendChild(box);
+  })));
+  root.appendChild(out2);
+
+  /* 3. Milestone tracker */
+  var mc = numInput(1000, 0);
+  var out3 = h('div');
+  root.appendChild(h('h3', null, 'Milestone tracker'));
+  root.appendChild(field('Current subscribers', mc));
+  root.appendChild(btnRow(btn('Find Next Milestone', '', function () {
+    var c = +mc.value || 0;
+    var next = nextMilestone(c);
+    out3.innerHTML = '';
+    var box = resultBox(true);
+    box.appendChild(h('div', null, 'Next milestone: ' + next.toLocaleString('en-US') + ' subscribers'));
+    box.appendChild(h('div', { style: 'font-size:14px;font-weight:400;margin-top:6px' }, (next - c).toLocaleString('en-US') + ' more subscribers to go.'));
+    out3.appendChild(box);
+  })));
+  root.appendChild(out3);
 });
 
 /* ---------- init ---------- */

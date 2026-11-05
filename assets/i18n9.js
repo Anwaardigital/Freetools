@@ -155,9 +155,9 @@ var STR = {
 en: {
   navHome: 'Home', navTools: 'All Tools', navAbout: 'About', navFaq: 'FAQ', navBlog: 'Blog', navContact: 'Contact', navPrivacy: 'Privacy',
   footTerms: 'Terms of Service', footDisclaimer: 'Disclaimer',
-  heroTitle: '89 Free Online Tools',
+  heroTitle: '90 Free Online Tools',
   heroSub: 'PDF, image, text, calculators, security, color and developer tools — free forever. No signup. Everything runs privately in your browser.',
-  searchPh: 'Search 89 tools... e.g. pdf, qr, password',
+  searchPh: 'Search 90 tools... e.g. pdf, qr, password',
   badgeFree: '100% Free', badgePrivate: 'Private by design', badgeNoSignup: 'No signup', badgeMobile: 'Mobile friendly',
   useBadge: '{n} tool uses on this device',
   featuredTitle: 'Featured Tools', featuredSub: 'Our most-loved tools — picked for you', openBtn: 'Open',
@@ -168,7 +168,7 @@ en: {
   nlTitle: 'Newsletter', nlText: 'Get notified when we add new free tools. No spam, ever.',
   nlPh: 'Your email address', nlBtn: 'Subscribe', nlDone: 'Email saved on this device — email updates are coming soon!',
   ytTitle: 'Our YouTube Channels', ytSub: 'Learn, laugh and explore — subscribe for new videos every week', ytSubscribe: 'Subscribe', webTitle: 'Our Websites', webSub: 'More from Anwaar Digital — apps, guides and security resources', webVisit: 'Visit', webDescMain: '28+ Android apps, Windows software & free downloads', webDescHub: '57 guides, security tools, glossary & FAQ',
-  footTag: '89 free online tools. No signup — everything runs in your browser.',
+  footTag: '90 free online tools. No signup — everything runs in your browser.',
   footPopular: 'Popular', footSite: 'Site', footReq: 'Request a Tool', footPrivacy: 'Privacy Policy', footYouTube: 'YouTube',
   langLabel: 'Language', darkToggle: 'Toggle dark mode', darkLabel: 'Dark mode', lightLabel: 'Light mode', waChat: 'Chat on WhatsApp',
   favAction: 'Favorite', rateAction: 'Rate this tool', shareAction: 'Share', shareOn: 'Share on {name}',
@@ -183,9 +183,9 @@ en: {
 ur: {
   navHome: 'ہوم', navTools: 'تمام ٹولز', navAbout: 'ہمارے بارے میں', navFaq: 'سوالات', navBlog: 'بلاگ', navContact: 'رابطہ', navPrivacy: 'پرائیویسی',
   footTerms: 'شرائط و ضوابط', footDisclaimer: 'دستبرداری',
-  heroTitle: '89 مفت آن لائن ٹولز',
+  heroTitle: '90 مفت آن لائن ٹولز',
   heroSub: 'PDF، تصویر، متن، کیلکولیٹر، سیکیورٹی، رنگ اور ڈیولپر ٹولز — ہمیشہ مفت۔ کوئی سائن اپ نہیں۔ سب کچھ آپ کے براؤزر میں نجی طور پر چلتا ہے۔',
-  searchPh: '89 ٹولز تلاش کریں... مثلاً pdf، qr، password',
+  searchPh: '90 ٹولز تلاش کریں... مثلاً pdf، qr، password',
   badgeFree: '100% مفت', badgePrivate: 'نجی ڈیزائن', badgeNoSignup: 'کوئی سائن اپ نہیں', badgeMobile: 'موبائل دوست',
   useBadge: 'اس ڈیوائس پر {n} ٹول استعمال',
   featuredTitle: 'نمایاں ٹولز', featuredSub: 'ہمارے سب سے مقبول ٹولز — آپ کے لیے منتخب', openBtn: 'کھولیں',
@@ -196,7 +196,7 @@ ur: {
   nlTitle: 'نیوزلیٹر', nlText: 'جب ہم نئے مفت ٹولز شامل کریں تو اطلاع پائیں۔ کوئی سپام نہیں۔',
   nlPh: 'آپ کا ای میل ایڈریس', nlBtn: 'سبسکرائب کریں', nlDone: 'ای میل اس ڈیوائس پر محفوظ ہو گئی — ای میل اپڈیٹس جلد آ رہی ہیں!',
   ytTitle: 'ہمارے یوٹیوب چینلز', ytSub: 'سیکھیں، ہنسیں اور دریافت کریں — ہر ہفتے نئی ویڈیوز کے لیے سبسکرائب کریں', ytSubscribe: 'سبسکرائب', webTitle: 'ہماری ویب سائٹس', webSub: 'انوار ڈیجیٹل کی طرف سے — ایپس، گائیڈز اور سیکیورٹی وسائل', webVisit: 'وزٹ کریں', webDescMain: '28 سے زیادہ Android apps، Windows software اور مفت ڈاؤن لوڈز', webDescHub: '57 guides، security tools، glossary اور FAQ',
-  footTag: '89 مفت آن لائن ٹولز۔ کوئی سائن اپ نہیں — سب کچھ آپ کے براؤزر میں چلتا ہے۔',
+  footTag: '90 مفت آن لائن ٹولز۔ کوئی سائن اپ نہیں — سب کچھ آپ کے براؤزر میں چلتا ہے۔',
   footPopular: 'مقبول', footSite: 'سائٹ', footReq: 'ٹول کی درخواست', footPrivacy: 'پرائیویسی پالیسی', footYouTube: 'یوٹیوب',
   langLabel: 'زبان', darkToggle: 'ڈارک موڈ بدلیں', darkLabel: 'ڈارک موڈ', lightLabel: 'لائٹ موڈ', waChat: 'واٹس ایپ پر چیٹ کریں',
   favAction: 'پسندیدہ', rateAction: 'اس ٹول کی درجہ بندی کریں', shareAction: 'شیئر کریں', shareOn: '{name} پر شیئر کریں',
@@ -211,9 +211,9 @@ ur: {
 tr: {
   navHome: 'Ana Sayfa', navTools: 'Tüm Araçlar', navAbout: 'Hakkında', navFaq: 'SSS', navBlog: 'Blog', navContact: 'İletişim', navPrivacy: 'Gizlilik',
   footTerms: 'Kullanım Şartları', footDisclaimer: 'Sorumluluk Reddi',
-  heroTitle: '89 Ücretsiz Çevrimiçi Araç',
+  heroTitle: '90 Ücretsiz Çevrimiçi Araç',
   heroSub: 'PDF, resim, metin, hesap makinesi, güvenlik, renk ve geliştirici araçları — sonsuza dek ücretsiz. Kayıt yok. Her şey tarayıcınızda gizli çalışır.',
-  searchPh: '89 araçta ara... örn. pdf, qr, şifre',
+  searchPh: '90 araçta ara... örn. pdf, qr, şifre',
   badgeFree: '%100 Ücretsiz', badgePrivate: 'Gizlilik öncelikli', badgeNoSignup: 'Kayıt yok', badgeMobile: 'Mobil uyumlu',
   useBadge: 'Bu cihazda {n} araç kullanımı',
   featuredTitle: 'Öne Çıkan Araçlar', featuredSub: 'En sevilen araçlarımız — sizin için seçildi', openBtn: 'Aç',
@@ -224,7 +224,7 @@ tr: {
   nlTitle: 'Bülten', nlText: 'Yeni ücretsiz araçlar eklediğimizde haber alın. Asla spam yok.',
   nlPh: 'E-posta adresiniz', nlBtn: 'Abone ol', nlDone: 'E-posta bu cihaza kaydedildi — e-posta güncellemeleri yakında geliyor!',
   ytTitle: 'YouTube Kanallarımız', ytSub: 'Öğrenin, gülün ve keşfedin — her hafta yeni videolar için abone olun', ytSubscribe: 'Abone ol', webTitle: 'Web Sitelerimiz', webSub: 'Anwaar Digital\'den daha fazlası — uygulamalar, rehberler ve güvenlik kaynakları', webVisit: 'Ziyaret Et', webDescMain: '28+ Android uygulaması, Windows yazılımı ve ücretsiz indirmeler', webDescHub: '57 rehber, güvenlik araçları, sözlük ve SSS',
-  footTag: '89 ücretsiz çevrimiçi araç. Kayıt yok — her şey tarayıcınızda çalışır.',
+  footTag: '90 ücretsiz çevrimiçi araç. Kayıt yok — her şey tarayıcınızda çalışır.',
   footPopular: 'Popüler', footSite: 'Site', footReq: 'Araç Talebi', footPrivacy: 'Gizlilik Politikası', footYouTube: 'YouTube',
   langLabel: 'Dil', darkToggle: 'Karanlık modu değiştir', darkLabel: 'Karanlık mod', lightLabel: 'Açık mod', waChat: 'WhatsApp ile sohbet et',
   favAction: 'Favori', rateAction: 'Bu aracı puanla', shareAction: 'Paylaş', shareOn: '{name} üzerinde paylaş',
@@ -239,9 +239,9 @@ tr: {
 ar: {
   navHome: 'الرئيسية', navTools: 'كل الأدوات', navAbout: 'حول الموقع', navFaq: 'الأسئلة الشائعة', navBlog: 'المدونة', navContact: 'تواصل معنا', navPrivacy: 'الخصوصية',
   footTerms: 'شروط الاستخدام', footDisclaimer: 'إخلاء المسؤولية',
-  heroTitle: '89 أداة مجانية على الإنترنت',
+  heroTitle: '90 أداة مجانية على الإنترنت',
   heroSub: 'أدوات PDF والصور والنصوص والحاسبات والأمان والألوان والمطورين — مجانية للأبد. دون تسجيل. كل شيء يعمل بخصوصية في متصفحك.',
-  searchPh: 'ابحث في 89 أداة... مثل pdf، qr، كلمة مرور',
+  searchPh: 'ابحث في 90 أداة... مثل pdf، qr، كلمة مرور',
   badgeFree: 'مجاني 100%', badgePrivate: 'مصمم للخصوصية', badgeNoSignup: 'دون تسجيل', badgeMobile: 'مناسب للجوال',
   useBadge: '{n} استخدام أداة على هذا الجهاز',
   featuredTitle: 'أدوات مميزة', featuredSub: 'أدواتنا الأكثر حبا — اخترناها لك', openBtn: 'افتح',
@@ -252,7 +252,7 @@ ar: {
   nlTitle: 'النشرة البريدية', nlText: 'احصل على إشعار عند إضافة أدوات مجانية جديدة. دون إزعاج أبدا.',
   nlPh: 'عنوان بريدك الإلكتروني', nlBtn: 'اشترك', nlDone: 'تم حفظ البريد على هذا الجهاز — تحديثات البريد قادمة قريبا!',
   ytTitle: 'قنواتنا على يوتيوب', ytSub: 'تعلم واضحك واكتشف — اشترك لمقاطع جديدة كل أسبوع', ytSubscribe: 'اشترك', webTitle: 'مواقعنا', webSub: 'المزيد من أنوار ديجيتال — تطبيقات وأدلة وموارد أمنية', webVisit: 'زيارة', webDescMain: 'أكثر من 28 تطبيق أندرويد وبرامج ويندوز وتنزيلات مجانية', webDescHub: '57 دليلاً وأدوات أمنية وقاموس وأسئلة شائعة',
-  footTag: '89 أداة مجانية على الإنترنت. دون تسجيل — كل شيء يعمل في متصفحك.',
+  footTag: '90 أداة مجانية على الإنترنت. دون تسجيل — كل شيء يعمل في متصفحك.',
   footPopular: 'الشائعة', footSite: 'الموقع', footReq: 'طلب أداة', footPrivacy: 'سياسة الخصوصية', footYouTube: 'يوتيوب',
   langLabel: 'اللغة', darkToggle: 'تبديل الوضع الداكن', darkLabel: 'الوضع الداكن', lightLabel: 'الوضع الفاتح', waChat: 'دردشة على واتساب',
   favAction: 'مفضلة', rateAction: 'قيم هذه الأداة', shareAction: 'مشاركة', shareOn: 'مشاركة على {name}',
@@ -267,9 +267,9 @@ ar: {
 fa: {
   navHome: 'خانه', navTools: 'همه ابزارها', navAbout: 'درباره ما', navFaq: 'سوالات متداول', navBlog: 'وبلاگ', navContact: 'تماس', navPrivacy: 'حریم خصوصی',
   footTerms: 'شرایط استفاده', footDisclaimer: 'سلب مسئولیت',
-  heroTitle: '89 ابزار رایگان آنلاین',
+  heroTitle: '90 ابزار رایگان آنلاین',
   heroSub: 'ابزارهای PDF، تصویر، متن، ماشین حساب، امنیت، رنگ و توسعه دهنده — برای همیشه رایگان. بدون ثبت نام. همه چیز به صورت خصوصی در مرورگر شما اجرا می شود.',
-  searchPh: 'در 89 ابزار جستجو کنید... مثلا pdf، qr، رمز عبور',
+  searchPh: 'در 90 ابزار جستجو کنید... مثلا pdf، qr، رمز عبور',
   badgeFree: '100% رایگان', badgePrivate: 'طراحی شده برای حریم خصوصی', badgeNoSignup: 'بدون ثبت نام', badgeMobile: 'مناسب موبایل',
   useBadge: '{n} استفاده از ابزار در این دستگاه',
   featuredTitle: 'ابزارهای ویژه', featuredSub: 'محبوب ترین ابزارهای ما — برای شما انتخاب شده', openBtn: 'باز کردن',
@@ -280,7 +280,7 @@ fa: {
   nlTitle: 'خبرنامه', nlText: 'وقتی ابزارهای رایگان جدید اضافه می کنیم با خبر شوید. هرگز هرزنامه نیست.',
   nlPh: 'آدرس ایمیل شما', nlBtn: 'عضویت', nlDone: 'ایمیل در این دستگاه ذخیره شد — به روز رسانی های ایمیلی به زودی می آیند!',
   ytTitle: 'کانال های یوتیوب ما', ytSub: 'یاد بگیرید، بخندید و کاوش کنید — برای ویدیوهای جدید هر هفته عضو شوید', ytSubscribe: 'عضویت', webTitle: 'وب‌سایت‌های ما', webSub: 'بیشتر از انوار دیجیتال — اپلیکیشن‌ها، راهنماها و منابع امنیتی', webVisit: 'بازدید', webDescMain: 'بیش از 28 اپ اندروید، نرم‌افزار ویندوز و دانلودهای رایگان', webDescHub: '57 راهنما، ابزارهای امنیتی، واژه‌نامه و سؤالات متداول',
-  footTag: '89 ابزار رایگان آنلاین. بدون ثبت نام — همه چیز در مرورگر شما اجرا می شود.',
+  footTag: '90 ابزار رایگان آنلاین. بدون ثبت نام — همه چیز در مرورگر شما اجرا می شود.',
   footPopular: 'محبوب', footSite: 'سایت', footReq: 'درخواست ابزار', footPrivacy: 'سیاست حریم خصوصی', footYouTube: 'یوتیوب',
   langLabel: 'زبان', darkToggle: 'تغییر حالت تیره', darkLabel: 'حالت تیره', lightLabel: 'حالت روشن', waChat: 'گفتگو در واتساپ',
   favAction: 'علاقه مندی', rateAction: 'به این ابزار امتیاز دهید', shareAction: 'اشتراک گذاری', shareOn: 'اشتراک در {name}',
@@ -295,9 +295,9 @@ fa: {
 es: {
   navHome: 'Inicio', navTools: 'Todas las herramientas', navAbout: 'Acerca de', navFaq: 'Preguntas', navBlog: 'Blog', navContact: 'Contacto', navPrivacy: 'Privacidad',
   footTerms: 'Términos de uso', footDisclaimer: 'Aviso legal',
-  heroTitle: '89 herramientas gratis en línea',
+  heroTitle: '90 herramientas gratis en línea',
   heroSub: 'Herramientas de PDF, imagen, texto, calculadoras, seguridad, color y desarrollo — gratis para siempre. Sin registro. Todo funciona en privado en tu navegador.',
-  searchPh: 'Busca en 89 herramientas... p. ej. pdf, qr, contraseña',
+  searchPh: 'Busca en 90 herramientas... p. ej. pdf, qr, contraseña',
   badgeFree: '100% gratis', badgePrivate: 'Diseñado para la privacidad', badgeNoSignup: 'Sin registro', badgeMobile: 'Compatible con móvil',
   useBadge: '{n} usos de herramientas en este dispositivo',
   featuredTitle: 'Herramientas destacadas', featuredSub: 'Nuestras herramientas más queridas — elegidas para ti', openBtn: 'Abrir',
@@ -308,7 +308,7 @@ es: {
   nlTitle: 'Boletín', nlText: 'Recibe un aviso cuando añadamos herramientas gratis nuevas. Nunca spam.',
   nlPh: 'Tu correo electrónico', nlBtn: 'Suscribirse', nlDone: 'Correo guardado en este dispositivo — ¡las novedades por correo llegarán pronto!',
   ytTitle: 'Nuestros canales de YouTube', ytSub: 'Aprende, ríe y explora — suscríbete para vídeos nuevos cada semana', ytSubscribe: 'Suscribirse', webTitle: 'Nuestros sitios web', webSub: 'Más de Anwaar Digital — aplicaciones, guías y recursos de seguridad', webVisit: 'Visitar', webDescMain: 'Más de 28 apps Android, software Windows y descargas gratuitas', webDescHub: '57 guías, herramientas de seguridad, glosario y preguntas frecuentes',
-  footTag: '89 herramientas gratis en línea. Sin registro — todo funciona en tu navegador.',
+  footTag: '90 herramientas gratis en línea. Sin registro — todo funciona en tu navegador.',
   footPopular: 'Populares', footSite: 'Sitio', footReq: 'Solicitar una herramienta', footPrivacy: 'Política de privacidad', footYouTube: 'YouTube',
   langLabel: 'Idioma', darkToggle: 'Cambiar modo oscuro', darkLabel: 'Modo oscuro', lightLabel: 'Modo claro', waChat: 'Chatea en WhatsApp',
   favAction: 'Favorito', rateAction: 'Valora esta herramienta', shareAction: 'Compartir', shareOn: 'Compartir en {name}',
@@ -323,9 +323,9 @@ es: {
 it: {
   navHome: 'Home', navTools: 'Tutti gli strumenti', navAbout: 'Chi siamo', navFaq: 'Domande', navBlog: 'Blog', navContact: 'Contatti', navPrivacy: 'Privacy',
   footTerms: 'Termini di utilizzo', footDisclaimer: 'Nota legale',
-  heroTitle: '89 strumenti gratuiti online',
+  heroTitle: '90 strumenti gratuiti online',
   heroSub: 'Strumenti PDF, immagine, testo, calcolatrici, sicurezza, colore e sviluppo — gratuiti per sempre. Senza registrazione. Tutto funziona in privato nel tuo browser.',
-  searchPh: 'Cerca tra 89 strumenti... es. pdf, qr, password',
+  searchPh: 'Cerca tra 90 strumenti... es. pdf, qr, password',
   badgeFree: '100% gratuito', badgePrivate: 'Progettato per la privacy', badgeNoSignup: 'Senza registrazione', badgeMobile: 'Adatto ai cellulari',
   useBadge: '{n} utilizzi di strumenti su questo dispositivo',
   featuredTitle: 'Strumenti in evidenza', featuredSub: 'I nostri strumenti più amati — scelti per te', openBtn: 'Apri',
@@ -336,7 +336,7 @@ it: {
   nlTitle: 'Newsletter', nlText: 'Ricevi un avviso quando aggiungiamo nuovi strumenti gratuiti. Mai spam.',
   nlPh: 'Il tuo indirizzo email', nlBtn: 'Iscriviti', nlDone: 'Email salvata su questo dispositivo — gli aggiornamenti via email arriveranno presto!',
   ytTitle: 'I nostri canali YouTube', ytSub: 'Impara, ridi ed esplora — iscriviti per nuovi video ogni settimana', ytSubscribe: 'Iscriviti', webTitle: 'I nostri siti web', webSub: 'Altro da Anwaar Digital — app, guide e risorse di sicurezza', webVisit: 'Visita', webDescMain: 'Oltre 28 app Android, software Windows e download gratuiti', webDescHub: '57 guide, strumenti di sicurezza, glossario e FAQ',
-  footTag: '89 strumenti gratuiti online. Senza registrazione — tutto funziona nel tuo browser.',
+  footTag: '90 strumenti gratuiti online. Senza registrazione — tutto funziona nel tuo browser.',
   footPopular: 'Popolari', footSite: 'Sito', footReq: 'Richiedi uno strumento', footPrivacy: 'Informativa sulla privacy', footYouTube: 'YouTube',
   langLabel: 'Lingua', darkToggle: 'Cambia modalità scura', darkLabel: 'Modalità scura', lightLabel: 'Modalità chiara', waChat: 'Chatta su WhatsApp',
   favAction: 'Preferito', rateAction: 'Valuta questo strumento', shareAction: 'Condividi', shareOn: 'Condividi su {name}',
@@ -351,9 +351,9 @@ it: {
 de: {
   navHome: 'Start', navTools: 'Alle Tools', navAbout: 'Über uns', navFaq: 'Fragen', navBlog: 'Blog', navContact: 'Kontakt', navPrivacy: 'Datenschutz',
   footTerms: 'Nutzungsbedingungen', footDisclaimer: 'Haftungsausschluss',
-  heroTitle: '89 kostenlose Online-Tools',
+  heroTitle: '90 kostenlose Online-Tools',
   heroSub: 'PDF-, Bild-, Text-, Rechner-, Sicherheits-, Farb- und Entwickler-Tools — für immer kostenlos. Keine Anmeldung. Alles läuft privat in deinem Browser.',
-  searchPh: '89 Tools durchsuchen... z. B. pdf, qr, Passwort',
+  searchPh: '90 Tools durchsuchen... z. B. pdf, qr, Passwort',
   badgeFree: '100% kostenlos', badgePrivate: 'Privat by Design', badgeNoSignup: 'Keine Anmeldung', badgeMobile: 'Mobilfreundlich',
   useBadge: '{n} Tool-Nutzungen auf diesem Gerät',
   featuredTitle: 'Empfohlene Tools', featuredSub: 'Unsere beliebtesten Tools — für dich ausgewählt', openBtn: 'Öffnen',
@@ -364,7 +364,7 @@ de: {
   nlTitle: 'Newsletter', nlText: 'Erhalte eine Nachricht, wenn wir neue kostenlose Tools hinzufügen. Nie Spam.',
   nlPh: 'Deine E-Mail-Adresse', nlBtn: 'Abonnieren', nlDone: 'E-Mail auf diesem Gerät gespeichert — E-Mail-Updates kommen bald!',
   ytTitle: 'Unsere YouTube-Kanäle', ytSub: 'Lernen, lachen und entdecken — abonniere für neue Videos jede Woche', ytSubscribe: 'Abonnieren', webTitle: 'Unsere Webseiten', webSub: 'Mehr von Anwaar Digital — Apps, Anleitungen und Sicherheitsressourcen', webVisit: 'Besuchen', webDescMain: 'Über 28 Android-Apps, Windows-Software und kostenlose Downloads', webDescHub: '57 Anleitungen, Sicherheitstools, Glossar und FAQ',
-  footTag: '89 kostenlose Online-Tools. Keine Anmeldung — alles läuft in deinem Browser.',
+  footTag: '90 kostenlose Online-Tools. Keine Anmeldung — alles läuft in deinem Browser.',
   footPopular: 'Beliebt', footSite: 'Website', footReq: 'Tool vorschlagen', footPrivacy: 'Datenschutzerklärung', footYouTube: 'YouTube',
   langLabel: 'Sprache', darkToggle: 'Dunkelmodus umschalten', darkLabel: 'Dunkelmodus', lightLabel: 'Hellmodus', waChat: 'Auf WhatsApp chatten',
   favAction: 'Favorit', rateAction: 'Dieses Tool bewerten', shareAction: 'Teilen', shareOn: 'Teilen auf {name}',
@@ -379,9 +379,9 @@ de: {
 nl: {
   navHome: 'Home', navTools: 'Alle tools', navAbout: 'Over ons', navFaq: 'Vragen', navBlog: 'Blog', navContact: 'Contact', navPrivacy: 'Privacy',
   footTerms: 'Gebruiksvoorwaarden', footDisclaimer: 'Disclaimer',
-  heroTitle: '89 gratis online tools',
+  heroTitle: '90 gratis online tools',
   heroSub: 'PDF-, afbeeldings-, tekst-, reken-, beveiligings-, kleur- en ontwikkelaarstools — voor altijd gratis. Geen aanmelding. Alles draait privé in je browser.',
-  searchPh: 'Zoek in 89 tools... bijv. pdf, qr, wachtwoord',
+  searchPh: 'Zoek in 90 tools... bijv. pdf, qr, wachtwoord',
   badgeFree: '100% gratis', badgePrivate: 'Ontworpen voor privacy', badgeNoSignup: 'Geen aanmelding', badgeMobile: 'Mobielvriendelijk',
   useBadge: '{n} toolgebruiken op dit apparaat',
   featuredTitle: 'Uitgelichte tools', featuredSub: 'Onze populairste tools — voor jou gekozen', openBtn: 'Openen',
@@ -392,7 +392,7 @@ nl: {
   nlTitle: 'Nieuwsbrief', nlText: 'Krijg bericht als we nieuwe gratis tools toevoegen. Nooit spam.',
   nlPh: 'Je e-mailadres', nlBtn: 'Abonneren', nlDone: 'E-mail opgeslagen op dit apparaat — e-mailupdates komen binnenkort!',
   ytTitle: 'Onze YouTube-kanalen', ytSub: 'Leer, lach en ontdek — abonneer voor elke week nieuwe videos', ytSubscribe: 'Abonneren', webTitle: 'Onze websites', webSub: 'Meer van Anwaar Digital — apps, handleidingen en beveiligingsbronnen', webVisit: 'Bezoeken', webDescMain: '28+ Android-apps, Windows-software en gratis downloads', webDescHub: '57 handleidingen, beveiligingstools, woordenlijst en veelgestelde vragen',
-  footTag: '89 gratis online tools. Geen aanmelding — alles draait in je browser.',
+  footTag: '90 gratis online tools. Geen aanmelding — alles draait in je browser.',
   footPopular: 'Populair', footSite: 'Site', footReq: 'Vraag een tool aan', footPrivacy: 'Privacybeleid', footYouTube: 'YouTube',
   langLabel: 'Taal', darkToggle: 'Donkere modus wisselen', darkLabel: 'Donkere modus', lightLabel: 'Lichte modus', waChat: 'Chat op WhatsApp',
   favAction: 'Favoriet', rateAction: 'Beoordeel deze tool', shareAction: 'Delen', shareOn: 'Delen op {name}',
@@ -1121,7 +1121,12 @@ var TOOLS = {
     ur: ["واٹر مارک شامل کریں", "اپنی تصاویر کی حفاظت کے لیے متن کا واٹر مارک شامل کریں۔ متن، جگہ، سائز اور شفافیت سیٹ کریں۔"],
     tr: ["Filigran Ekleyici", "Görsellerinize tarayıcınızda metin filigranı ekleyin — metni, şeffaflığı ve konumu seçin ve indirin."],
     ar: ["إضافة علامة مائية للصور", "أضف علامة مائية نصية لصورك في متصفحك — اختر النص والشفافية والموضع ونزّلها."],
-    fa: ["افزودن واترمارک", "به تصاویر خود در مرورگر واترمارک متنی اضافه کنید — متن، شفافیت و موقعیت را انتخاب کنید و دانلود کنید."] }
+    fa: ["افزودن واترمارک", "به تصاویر خود در مرورگر واترمارک متنی اضافه کنید — متن، شفافیت و موقعیت را انتخاب کنید و دانلود کنید."] },
+  "subscriber-like-counter": { en: ["Subscriber & Like Counter", "Track your channel growth: how many days to your next subscriber goal, your like percentage, and your next milestone."],
+    ur: ["سبسکرائبر اور لائک کاؤنٹر", "اپنے چینل کی گروتھ دیکھیں: اگلے سبسکرائبر ہدف تک کتنے دن، آپ کا لائک فیصد، اور اگلا سنگ میل۔"],
+    tr: ["Abone ve Beğeni Sayacı", "Kanal büyümenizi takip edin: bir sonraki abone hedefinize kaç gün kaldı, beğeni yüzdeniz ve bir sonraki dönüm noktası."],
+    ar: ["عدّاد المشتركين والإعجابات", "تتبّع نمو قناتك: كم يومًا حتى هدف المشتركين التالي، ونسبة الإعجاب، والمعلم التالي."],
+    fa: ["شمارنده دنبال‌کننده و لایک", "رشد کانال خود را دنبال کنید: چند روز تا هدف بعدی دنبال‌کننده، درصد لایک شما و نقطه عطف بعدی."] }
 };
 
 /* --------------------------------------------------------------------------
@@ -1454,7 +1459,7 @@ window.FPT_I18N9 = { getLang: getLang, setLang: setLang, apply: function () { ap
      phrasing in longer hero text deserve a native review pass first.
      Tool-description wording in Arabic and Farsi is deliberately short
      and plain to reduce the risk of an awkward sentence.
-   - Least confident STRING SETS overall: (1) the 89 one-line tool
+   - Least confident STRING SETS overall: (1) the 90 one-line tool
      descriptions in Arabic and Farsi; (2) the Farsi category names; (3)
      the newsletter success sentence in all non-English languages, which
      is long and should be checked for naturalness in each language.
@@ -1476,6 +1481,6 @@ window.FPT_I18N9 = { getLang: getLang, setLang: setLang, apply: function () { ap
      translated by this file. The footer note is intentionally untouched
      because it contains a personal name and an email address.
    - Count check for this delivery: STR has 9 languages; CAT has 9
-     categories x 9 languages; TOOLS has 89 slugs x 9 languages x
+     categories x 9 languages; TOOLS has 90 slugs x 9 languages x
      (title + one-line description). Verified by script at build time.
    ========================================================================== */
