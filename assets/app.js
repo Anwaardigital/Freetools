@@ -149,3 +149,45 @@ document.addEventListener('DOMContentLoaded', function () {
   }
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', addAiButton); else addAiButton();
 })();
+
+/* Floating-button stack (2026-11-05): AI, WhatsApp and back-to-top must never cover each other,
+   and must sit above the cookie banner while it is visible. Base = banner height + 16, else 16. */
+(function () {
+  function placeFloats() {
+    var b = document.getElementById('adCookieBanner');
+    var base = (b ? b.offsetHeight : 0) + 16;
+    var ai = document.getElementById('anwaar-ai-btn');
+    if (ai) { ai.style.bottom = base + 'px'; ai.style.right = '16px'; }
+    var wa = document.getElementById('wa-float-btn');
+    if (wa) { wa.style.bottom = (base + 60) + 'px'; wa.style.right = '16px'; }
+    var tp = document.getElementById('backToTop');
+    if (tp) { tp.style.bottom = (base + 132) + 'px'; tp.style.right = '16px'; }
+  }
+
+  function addBackToTop() {
+    if (document.getElementById('backToTop')) return;
+    var btn = document.createElement('button');
+    btn.id = 'backToTop';
+    btn.setAttribute('aria-label', 'Back to top');
+    btn.title = 'Back to top';
+    btn.innerHTML = '&#8593;';
+    btn.style.cssText = 'position:fixed;bottom:148px;right:16px;width:48px;height:48px;border-radius:50%;border:none;background:#2563eb;color:#ffffff;font-size:22px;line-height:1;cursor:pointer;opacity:0;visibility:hidden;transition:opacity .3s,visibility .3s,transform .2s;box-shadow:0 4px 12px rgba(0,0,0,.35);z-index:9999;padding:0;';
+    document.body.appendChild(btn);
+    window.addEventListener('scroll', function () {
+      var s = window.pageYOffset || document.documentElement.scrollTop;
+      if (s > 300) { btn.style.opacity = '1'; btn.style.visibility = 'visible'; }
+      else { btn.style.opacity = '0'; btn.style.visibility = 'hidden'; }
+    }, { passive: true });
+    btn.addEventListener('click', function () { window.scrollTo({ top: 0, behavior: 'smooth' }); });
+  }
+
+  function init() {
+    addBackToTop();
+    placeFloats();
+    if (window.MutationObserver && document.body) {
+      new MutationObserver(placeFloats).observe(document.body, { childList: true });
+    }
+    window.addEventListener('resize', placeFloats);
+  }
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', init); else init();
+})();
