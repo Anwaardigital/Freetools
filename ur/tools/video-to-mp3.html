@@ -918,7 +918,7 @@ var WIDGET_FRAG_WORDS = { 'Weak': 1, 'Fair': 1, 'Good': 1, 'Strong': 1,
 
     function getFFmpeg() {
       if (ffmpeg) return Promise.resolve(ffmpeg);
-      return loadScript('https://cdn.jsdelivr.net/npm/@ffmpeg/ffmpeg@0.12.10/dist/umd/ffmpeg.min.js')
+      return loadScript('../../assets/ffmpeg/ffmpeg.min.js')
         .then(function () { return loadScript('https://cdn.jsdelivr.net/npm/@ffmpeg/util@0.12.1/dist/umd/index.js'); })
         .then(function () { return waitForFFmpegWASM(10000); })
         .then(function (FFmpegClass) {
@@ -926,11 +926,12 @@ var WIDGET_FRAG_WORDS = { 'Weak': 1, 'Fair': 1, 'Good': 1, 'Strong': 1,
           ffmpeg.on('progress', function (e) {
             if (e && e.progress != null && e.progress >= 0) prog.textContent = 'Converting: ' + Math.round(e.progress * 100) + '%';
           });
-          /* FIX 2026-11-06 — load the FFmpeg core through blob URLs.
-             new Worker() needs a same-origin script, so the CDN core URL
-             fails ("Failed to construct 'Worker'"). @ffmpeg/util's
-             toBlobURL fetches the core (jsDelivr sends CORS *) and turns
-             it into a blob URL the worker can load. */
+          /* FIX 2026-11-06 (v2) — the FFmpeg CLASS worker (814.ffmpeg.js)
+             is resolved relative to ffmpeg.min.js itself, so a CDN script
+             URL makes the browser block the worker cross-origin. The class
+             + worker scripts are now self-hosted (assets/ffmpeg/) so the
+             worker is same-origin. The core still loads via blob URLs
+             below (fetch has CORS, so the CDN core is fine). */
           var toBlobURL = (window.FFmpegUtil && window.FFmpegUtil.toBlobURL) || null;
           if (!toBlobURL) throw new Error('Video engine helper did not load. Check your connection and try again.');
           var coreBase = 'https://cdn.jsdelivr.net/npm/@ffmpeg/core@0.12.6/dist/umd';
