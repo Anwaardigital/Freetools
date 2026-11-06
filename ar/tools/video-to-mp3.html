@@ -897,15 +897,26 @@ var WIDGET_FRAG_WORDS = { 'Weak': 1, 'Fair': 1, 'Good': 1, 'Strong': 1,
     function getFFmpeg() {
       if (ffmpeg) return Promise.resolve(ffmpeg);
       return loadScript('https://cdn.jsdelivr.net/npm/@ffmpeg/ffmpeg@0.12.10/dist/umd/ffmpeg.min.js')
+        .then(function () { return loadScript('https://cdn.jsdelivr.net/npm/@ffmpeg/util@0.12.1/dist/umd/index.js'); })
         .then(function () { return waitForFFmpegWASM(10000); })
         .then(function (FFmpegClass) {
           ffmpeg = new FFmpegClass();
           ffmpeg.on('progress', function (e) {
             if (e && e.progress != null && e.progress >= 0) prog.textContent = 'Converting: ' + Math.round(e.progress * 100) + '%';
           });
-          return ffmpeg.load({
-            coreURL: 'https://cdn.jsdelivr.net/npm/@ffmpeg/core@0.12.6/dist/umd/ffmpeg-core.js',
-            wasmURL: 'https://cdn.jsdelivr.net/npm/@ffmpeg/core@0.12.6/dist/umd/ffmpeg-core.wasm'
+          /* FIX 2026-11-06 — load the FFmpeg core through blob URLs.
+             new Worker() needs a same-origin script, so the CDN core URL
+             fails ("Failed to construct 'Worker'"). @ffmpeg/util's
+             toBlobURL fetches the core (jsDelivr sends CORS *) and turns
+             it into a blob URL the worker can load. */
+          var toBlobURL = (window.FFmpegUtil && window.FFmpegUtil.toBlobURL) || null;
+          if (!toBlobURL) throw new Error('Video engine helper did not load. Check your connection and try again.');
+          var coreBase = 'https://cdn.jsdelivr.net/npm/@ffmpeg/core@0.12.6/dist/umd';
+          return Promise.all([
+            toBlobURL(coreBase + '/ffmpeg-core.js', 'text/javascript'),
+            toBlobURL(coreBase + '/ffmpeg-core.wasm', 'application/wasm')
+          ]).then(function (urls) {
+            return ffmpeg.load({ coreURL: urls[0], wasmURL: urls[1] });
           }).then(function () { return ffmpeg; });
         });
     }

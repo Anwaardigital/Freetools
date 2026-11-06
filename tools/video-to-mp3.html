@@ -101,7 +101,7 @@
 <div class="tool-box" id="tool-root" data-tool="video-to-mp3"></div>
 <div class="howto"><h2>How to use</h2><ol><li>Select a video file (MP4, WebM, MOV and more).</li><li>Click “Convert to MP3”.</li><li>Wait while the engine loads the first time (about 30 MB).</li><li>Download the MP3 when it finishes.</li></ol></div>
 <div class="faq"><h2>FAQ</h2><details><summary>Is it really free?</summary><p>Yes — every tool on this site is 100% free with no limits, no signup and no watermarks.</p></details><details><summary>Is my data private?</summary><p>Your file never leaves your device. The conversion engine is downloaded once from a CDN the first time you use the tool; the conversion itself happens locally in your browser.</p></details><details><summary>Why does the first conversion take so long?</summary><p>The first use downloads the conversion engine (about 30 MB). Later conversions are faster because the engine is already saved in your browser.</p></details><details><summary>Can I convert any video?</summary><p>Convert only videos you own or have the right to use — your own recordings, lectures you may keep, and free-use material. Do not strip audio from other people’s videos.</p></details></div>
-<div class="tool-guide"><h2>Complete Guide to Video to MP3</h2><p>Sometimes the sound is all you need: a lecture to listen to on a walk, a naat to keep, or the audio of your own video for a podcast. Extracting MP3 from video used to need installed software; this tool does it in the browser with the FFmpeg engine. The first conversion downloads the engine (about 30 MB, once), then every conversion runs locally on your device. The result is a standard MP3 at good quality that plays everywhere. Only convert videos you have the right to use.</p></div><div class="related"><h2>Related tools</h2><div class="grid"><a class="tool-card" href="./video-compressor.html"><div class="ticon"><svg aria-hidden="true"><use href="../assets/tool-icons.svg#icon-video-compressor"/></svg></div><h3>Video Compressor</h3><p>Compress videos right in your browser and download a smaller WebM file. No upload, no watermark.</p></a><a class="tool-card" href="./audio-trimmer.html"><div class="ticon"><svg aria-hidden="true"><use href="../assets/tool-icons.svg#icon-audio-trimmer"/></svg></div><h3>Audio Trimmer</h3><p>Cut any audio file to the exact seconds you need and download it as WAV. Works fully offline.</p></a><a class="tool-card" href="./speech-to-text.html"><div class="ticon"><svg aria-hidden="true"><use href="../assets/tool-icons.svg#icon-speech-to-text"/></svg></div><h3>Speech to Text</h3><p>Speak and see your words typed live. Dictate notes, messages and drafts in English or Urdu.</p></a></div></div>
+<div class="tool-guide"><h2>Complete Guide to Video to MP3</h2><p>Sometimes the sound is all you need: a lecture to listen to on a walk, a naat to keep, or the audio of your own video for a podcast. Extracting MP3 from video used to need installed software; this tool does it in the browser with the FFmpeg engine. The first conversion downloads the engine (about 30 MB, once), then every conversion runs locally on your device. The result is a standard MP3 at good quality that plays everywhere. Only convert videos you have the right to use.</p></div><div class="related"><h2>Related tools</h2><div class="grid"><a class="tool-card" href="./video-compressor.html"><div class="ticon"><svg aria-hidden="true"><use href="../assets/tool-icons.svg#icon-video-compressor"/></svg></div><h3>Video Compressor</h3><p>Compress videos right in your browser and download a smaller MP4 file. No upload, no watermark.</p></a><a class="tool-card" href="./audio-trimmer.html"><div class="ticon"><svg aria-hidden="true"><use href="../assets/tool-icons.svg#icon-audio-trimmer"/></svg></div><h3>Audio Trimmer</h3><p>Cut any audio file to the exact seconds you need and download it as WAV. Works fully offline.</p></a><a class="tool-card" href="./speech-to-text.html"><div class="ticon"><svg aria-hidden="true"><use href="../assets/tool-icons.svg#icon-speech-to-text"/></svg></div><h3>Speech to Text</h3><p>Speak and see your words typed live. Dictate notes, messages and drafts in English or Urdu.</p></a></div></div>
 </div>
 </main>
 <footer class="site-footer"><div class="wrap">
@@ -213,15 +213,26 @@
     function getFFmpeg() {
       if (ffmpeg) return Promise.resolve(ffmpeg);
       return loadScript('https://cdn.jsdelivr.net/npm/@ffmpeg/ffmpeg@0.12.10/dist/umd/ffmpeg.min.js')
+        .then(function () { return loadScript('https://cdn.jsdelivr.net/npm/@ffmpeg/util@0.12.1/dist/umd/index.js'); })
         .then(function () { return waitForFFmpegWASM(10000); })
         .then(function (FFmpegClass) {
           ffmpeg = new FFmpegClass();
           ffmpeg.on('progress', function (e) {
             if (e && e.progress != null && e.progress >= 0) prog.textContent = 'Converting: ' + Math.round(e.progress * 100) + '%';
           });
-          return ffmpeg.load({
-            coreURL: 'https://cdn.jsdelivr.net/npm/@ffmpeg/core@0.12.6/dist/umd/ffmpeg-core.js',
-            wasmURL: 'https://cdn.jsdelivr.net/npm/@ffmpeg/core@0.12.6/dist/umd/ffmpeg-core.wasm'
+          /* FIX 2026-11-06 — load the FFmpeg core through blob URLs.
+             new Worker() needs a same-origin script, so the CDN core URL
+             fails ("Failed to construct 'Worker'"). @ffmpeg/util's
+             toBlobURL fetches the core (jsDelivr sends CORS *) and turns
+             it into a blob URL the worker can load. */
+          var toBlobURL = (window.FFmpegUtil && window.FFmpegUtil.toBlobURL) || null;
+          if (!toBlobURL) throw new Error('Video engine helper did not load. Check your connection and try again.');
+          var coreBase = 'https://cdn.jsdelivr.net/npm/@ffmpeg/core@0.12.6/dist/umd';
+          return Promise.all([
+            toBlobURL(coreBase + '/ffmpeg-core.js', 'text/javascript'),
+            toBlobURL(coreBase + '/ffmpeg-core.wasm', 'application/wasm')
+          ]).then(function (urls) {
+            return ffmpeg.load({ coreURL: urls[0], wasmURL: urls[1] });
           }).then(function () { return ffmpeg; });
         });
     }
