@@ -1499,8 +1499,27 @@ function needScript(src, test) {
 }
 function needTesseract() { return needScript('https://cdn.jsdelivr.net/npm/tesseract.js@5.1.1/dist/tesseract.min.js', function () { return !!window.Tesseract; }); }
 function needFFmpeg() { return needScript('https://cdn.jsdelivr.net/npm/@ffmpeg/ffmpeg@0.12.10/dist/umd/ffmpeg.min.js', function () { return !!window.FFmpeg; }); }
-function needDocx() { return needScript('https://cdn.jsdelivr.net/npm/docx@8.5.0/build/index.umd.js', function () { return !!window.docx; }); }
-function needDocxPreview() { return needScript('https://cdn.jsdelivr.net/npm/docx-preview@0.3.2/dist/docx-preview.min.js', function () { return !!window.docxPreview; }); }
+function needDocx() { return needScript('https://cdn.jsdelivr.net/npm/docx@8.5.0/build/index.umd.js', function () { return !!(window.docx && window.docx.Document && window.docx.Packer); }); }
+function needJSZip() { return needScript('https://cdn.jsdelivr.net/npm/jszip@3.10.1/dist/jszip.min.js', function () { return !!window.JSZip; }); }
+/* FIX (2026-11-15): docx-preview's browser build defines window.docx — NOT
+   window.docxPreview — so the old code always threw "Cannot read properties
+   of undefined (reading 'renderAsync')". It also needs window.JSZip loaded
+   BEFORE it (its factory captures JSZip at load time, per its README), and
+   JSZip was never loaded. The docx creation library (needDocx above) also
+   uses the window.docx name, so stash the preview API under
+   window.docxPreview right after loading, and make needDocx's test check
+   for the creation API (Document/Packer) so a preview global can't fool it. */
+function needDocxPreview() {
+  if (window.docxPreview && window.docxPreview.renderAsync) return Promise.resolve();
+  return needJSZip().then(function () {
+    return needScript('https://cdn.jsdelivr.net/npm/docx-preview@0.3.2/dist/docx-preview.min.js', function () { return !!(window.docxPreview && window.docxPreview.renderAsync); });
+  }).then(function () {
+    if (!window.docxPreview) {
+      if (window.docx && typeof window.docx.renderAsync === 'function') { window.docxPreview = window.docx; }
+      else { throw new Error('Document reader did not load. Check your connection and try again.'); }
+    }
+  });
+}
 function ytVideoId(url) {
   var m = String(url || '').match(/(?:v=|youtu\.be\/|shorts\/|embed\/|live\/)([A-Za-z0-9_-]{11})/);
   return m ? m[1] : null;
